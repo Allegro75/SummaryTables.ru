@@ -14,7 +14,8 @@
 
 
 <body>
-<div class="forBorder">
+<!-- <div class="forBorder"> -->
+    <!-- убрал пока что рамку. Ибо не знаю как её по уму делать -->
 
     <header>
         <div class="header-top">
@@ -46,7 +47,8 @@
         </h2>
         <p class="explanation football-explanation-second-row-1">
             **по мнению букмекерских контор</p>
-        <!-- <p class="explanation football-explanation-second-row-2">Оставшиеся (не вылетевшие на данный момент) участники.</p> -->
+        <!-- <p class="explanation football-explanation-second-row-2">
+            Оставшиеся (не вылетевшие на данный момент) участники.</p> -->
         
         <table class="main-table">
 
@@ -57,14 +59,14 @@
                 <td><img src="images/MC.png" 
                     class="football-logo-table real"></td>
 
-                <td><img src="images/RealM.png" 
-                    class="football-logo-table real"></td>
+                <td><img src="images/Barcelona.png" 
+                    class="football-logo-table"></td>
 
                 <td><img src="images/Liver.png" 
                     class="football-logo-table real"></td>    
-
-                <td><img src="images/Barcelona.png" 
-                    class="football-logo-table"></td>
+    
+                <td><img src="images/RealM.png" 
+                    class="football-logo-table real"></td>
 
                 <td><img src="images/Juventus.png" 
                     class="football-logo-table"></td>
@@ -90,11 +92,11 @@
                     <td><img src="images/MC.png" 
                         class="football-logo-table real"></td>
 
-                    <td id="MCRMa" class="statistics">                        
-                                <div title="0 побед, 2 ничьи, 2 поражения.
-Кликните, чтобы узнать подробности">
-                                    <p class="games-score">+0 =2 -2</p>
-                                    <p class="goals-difference">3 - 5</p>
+                    <td id="MCBar" class="statistics">                        
+                                <div title="1 победа, 0 ничьих, 5 поражений.
+        Кликните, чтобы узнать подробности">
+                                    <p class="games-score">+1 =0 -5</p>
+                                    <p class="goals-difference">5 - 12</p>
                                 </div>
                     </td>
 
@@ -106,12 +108,12 @@
                                 </div>
                     </td>
 
-                    <td id="MCBar" class="statistics">                        
-                        <div title="1 победа, 0 ничьих, 5 поражений.
+                    <td id="MCRMa" class="statistics">                        
+                            <div title="0 побед, 2 ничьи, 2 поражения.
 Кликните, чтобы узнать подробности">
-                            <p class="games-score">+1 =0 -5</p>
-                            <p class="goals-difference">5 - 12</p>
-                        </div>
+                                <p class="games-score">+0 =2 -2</p>
+                                <p class="goals-difference">3 - 5</p>
+                            </div>
                     </td>
 
                     <td id="MCJuv" class="statistics">
@@ -143,69 +145,67 @@
 
                 </tr>
 
-            <tr class="RealM">
+            <tr class="Barcelona">
+                        <td><img src="images/Barcelona.png" 
+                            class="football-logo-table"></td>
+                        
+                        <td><div class="club-name">Барселона</div></td>
+        
+                        <td id="BarMC" class="statistics">                        
+                                <div title="5 побед, 0 ничьих, 1 поражение.
+        Кликните, чтобы узнать подробности">
+                                    <p class="games-score">+5 =0 -1</p>
+                                    <p class="goals-difference">12 - 5</p>
+                                </div>
+                            </td>
 
-                        <td><img src="images/RealM.png" 
-                            class="football-logo-table real"></td>
-    
-                        <td><div class="club-name">Реал Мадрид</div></td>
-    
-                        <td id="RMaMC" class="statistics">                        
-                                <div title="2 победы, 2 ничьи, 0 поражений.
-Кликните, чтобы узнать подробности">
-                                    <p class="games-score">+2 =2 -0</p>
-                                    <p class="goals-difference">5 - 3</p>
+                        <td><img src="images/Barcelona.png" 
+                                class="football-logo-table"></td>                                                            
+
+                        <td id="BarLiv" class="statistics">
+                                <div title="3 победы, 3 ничьи, 4 поражения.
+        Кликните, чтобы узнать подробности">
+                                    <p class="games-score">+3 =3 -4</p>
+                                    <p class="goals-difference">9 - 10</p>
+                                </div>
+                        </td>
+
+                        <td id="BarRMa" class="statistics">
+                                <div title="2 победы, 3 ничьи, 3 поражения.
+        Кликните, чтобы узнать подробности">
+                                    <p class="games-score">+2 =3 -3</p>
+                                    <p class="goals-difference">10 - 13</p>
                                 </div>
                         </td>
                         
-                        <td><img src="images/RealM.png" 
-                            class="football-logo-table real"></td>
-    
-                            <td id="RMaLiv" class="statistics">                        
-                                    <div title="3 победы, 0 ничьих, 3 поражения.
-Кликните, чтобы узнать подробности">
-                                        <p class="games-score">+3 =0 -3</p>
-                                        <p class="goals-difference">7 - 7</p>
-                                    </div>
-                                </td>
-    
-                        <td id="RMaBar" class="statistics">                        
-                            <div title="3 победы, 3 ничьи, 2 поражения.
-Кликните, чтобы узнать подробности">
-                                <p class="games-score">+3 =3 -2</p>
-                                <p class="goals-difference">13 - 10</p>
-                            </div>
+                        <td id="BarJuv" class="statistics">
+                            <div title="4 победы, 4 ничьи, 5 поражений.
+        Кликните, чтобы узнать подробности">
+                            <p class="games-score">+4 =4 -5</p>
+                            <p class="goals-difference">15 - 14</p></div>
                         </td>
-    
-                        <td id="RMaJuv" class="statistics">
-                            <div title="10 побед, 2 ничьи, 9 поражений.
-Кликните, чтобы узнать подробности">
-                            <p class="games-score">+10 =2 -9</p>
-                            <p class="goals-difference">26 - 25</p></div>
-                        </td>
-    
-                        <td id="RMaPSG" class="statistics">
-                                <div title="4 победы, 2 ничьи, 2 поражения.
-Кликните, чтобы узнать подробности">
-                                <p class="games-score">+4 =2 -2</p>
-                                <p class="goals-difference">11 - 9</p></div>
+        
+                        <td id="BarPSG" class="statistics">
+                                <div title="5 побед, 3 ничьи, 3 поражения.
+        Кликните, чтобы узнать подробности">
+                                    <p class="games-score">+5 =3 -3</p>
+                                    <p class="goals-difference">22 - 16</p></div>
+                        </td> 
+                        
+                        <td id="BarBav" class="statistics">
+                                <div title="2 победы, 2 ничьи, 6 поражений.
+        Кликните, чтобы узнать подробности">
+                                    <p class="games-score">+2 =2 -6</p>
+                                    <p class="goals-difference">14 - 18</p></div>
                         </td>
                         
-                        <td id="RMaBav" class="statistics">
-                                <div title="10 побед, 2 ничьи, 8 поражений.
-Кликните, чтобы узнать подробности">
-                                <p class="games-score">+10 =2 -8</p>
-                                <p class="goals-difference">34 - 29</p></div>
+                        <td id="BarAtM" class="statistics">
+                            <div title="1 победа, 1 ничья, 2 поражения.
+        Кликните, чтобы узнать подробности">
+                                <p class="games-score">+1 =1 -2</p>
+                                <p class="goals-difference">3 - 5</p></div>
                         </td>
-
-                        <td id="RMaAtM" class="statistics">
-                            <div title="5 побед, 2 ничьи, 3 поражения.
-Кликните, чтобы узнать подробности">
-                            <p class="games-score">+5 =2 -3</p>
-                            <p class="goals-difference">16 - 11</p></div>
-                        </td>
-    
-                </tr>
+                    </tr>     
 
             <tr class="Liverpool">
 
@@ -221,24 +221,24 @@
                                 <p class="goals-difference">5 - 1</p>
                             </div>
                         </td>
-                    
-                    <td id="LivRMa" class="statistics">                        
-                            <div title="3 победы, 0 ничьих, 3 поражения.
-Кликните, чтобы узнать подробности">
-                                <p class="games-score">+3 =0 -3</p>
-                                <p class="goals-difference">7 - 7</p>
-                            </div>
-                    </td>
-                        
-                    <td><img src="images/Liver.png" 
-                        class="football-logo-table real"></td>
 
                     <td id="LivBar" class="statistics">                        
-                        <div title="4 победы, 3 ничьи, 3 поражения.
-Кликните, чтобы узнать подробности">
-                            <p class="games-score">+4 =3 -3</p>
-                            <p class="goals-difference">10 - 9</p>
-                        </div>
+                                <div title="4 победы, 3 ничьи, 3 поражения.
+        Кликните, чтобы узнать подробности">
+                                    <p class="games-score">+4 =3 -3</p>
+                                    <p class="goals-difference">10 - 9</p>
+                                </div>
+                    </td>
+
+                    <td><img src="images/Liver.png" 
+                        class="football-logo-table real"></td>
+                    
+                    <td id="LivRMa" class="statistics">                        
+                                <div title="3 победы, 0 ничьих, 3 поражения.
+    Кликните, чтобы узнать подробности">
+                                    <p class="games-score">+3 =0 -3</p>
+                                    <p class="goals-difference">7 - 7</p>
+                                </div>
                     </td>
 
                     <td id="LivJuv" class="statistics">
@@ -271,67 +271,69 @@
 
                 </tr>
 
-            <tr class="Barcelona">
-                <td><img src="images/Barcelona.png" 
-                    class="football-logo-table"></td>
-                
-                <td><div class="club-name">Барселона</div></td>
+            <tr class="RealM">
 
-                <td id="BarMC" class="statistics">                        
-                        <div title="5 побед, 0 ничьих, 1 поражение.
+                        <td><img src="images/RealM.png" 
+                            class="football-logo-table real"></td>
+    
+                        <td><div class="club-name">Реал Мадрид</div></td>
+    
+                        <td id="RMaMC" class="statistics">                        
+                                <div title="2 победы, 2 ничьи, 0 поражений.
 Кликните, чтобы узнать подробности">
-                            <p class="games-score">+5 =0 -1</p>
-                            <p class="goals-difference">12 - 5</p>
-                        </div>
-                    </td>
-                
-                <td id="BarRMa" class="statistics">
-                        <div title="2 победы, 3 ничьи, 3 поражения.
-Кликните, чтобы узнать подробности">
-                            <p class="games-score">+2 =3 -3</p>
-                            <p class="goals-difference">10 - 13</p>
-                        </div>
-                </td>
+                                    <p class="games-score">+2 =2 -0</p>
+                                    <p class="goals-difference">5 - 3</p>
+                                </div>
+                        </td>
 
-                <td id="BarLiv" class="statistics">
-                        <div title="3 победы, 3 ничьи, 4 поражения.
-Кликните, чтобы узнать подробности">
-                            <p class="games-score">+3 =3 -4</p>
-                            <p class="goals-difference">9 - 10</p>
-                        </div>
-                </td>
-                
-                <td><img src="images/Barcelona.png" 
-                    class="football-logo-table"></td>
+                        <td id="RMaBar" class="statistics">                        
+                                <div title="3 победы, 3 ничьи, 2 поражения.
+    Кликните, чтобы узнать подробности">
+                                    <p class="games-score">+3 =3 -2</p>
+                                    <p class="goals-difference">13 - 10</p>
+                                </div>
+                        </td>
 
-                <td id="BarJuv" class="statistics">
-                    <div title="4 победы, 4 ничьи, 5 поражений.
+                        <td id="RMaLiv" class="statistics">                        
+                                    <div title="3 победы, 0 ничьих, 3 поражения.
 Кликните, чтобы узнать подробности">
-                    <p class="games-score">+4 =4 -5</p>
-                    <p class="goals-difference">15 - 14</p></div>
-                </td>
+                                        <p class="games-score">+3 =0 -3</p>
+                                        <p class="goals-difference">7 - 7</p>
+                                    </div>
+                                </td>
+                        
+                        <td><img src="images/RealM.png" 
+                            class="football-logo-table real"></td>    
+    
+                        <td id="RMaJuv" class="statistics">
+                            <div title="10 побед, 2 ничьи, 9 поражений.
+Кликните, чтобы узнать подробности">
+                            <p class="games-score">+10 =2 -9</p>
+                            <p class="goals-difference">26 - 25</p></div>
+                        </td>
+    
+                        <td id="RMaPSG" class="statistics">
+                                <div title="4 победы, 2 ничьи, 2 поражения.
+Кликните, чтобы узнать подробности">
+                                <p class="games-score">+4 =2 -2</p>
+                                <p class="goals-difference">11 - 9</p></div>
+                        </td>
+                        
+                        <td id="RMaBav" class="statistics">
+                                <div title="10 побед, 2 ничьи, 8 поражений.
+Кликните, чтобы узнать подробности">
+                                <p class="games-score">+10 =2 -8</p>
+                                <p class="goals-difference">34 - 29</p></div>
+                        </td>
 
-                <td id="BarPSG" class="statistics">
-                        <div title="5 побед, 3 ничьи, 3 поражения.
+                        <td id="RMaAtM" class="statistics">
+                            <div title="5 побед, 2 ничьи, 3 поражения.
 Кликните, чтобы узнать подробности">
-                            <p class="games-score">+5 =3 -3</p>
-                            <p class="goals-difference">22 - 16</p></div>
-                </td> 
-                
-                <td id="BarBav" class="statistics">
-                        <div title="2 победы, 2 ничьи, 6 поражений.
-Кликните, чтобы узнать подробности">
-                            <p class="games-score">+2 =2 -6</p>
-                            <p class="goals-difference">14 - 18</p></div>
-                </td>
-                
-                <td id="BarAtM" class="statistics">
-                    <div title="1 победа, 1 ничья, 2 поражения.
-Кликните, чтобы узнать подробности">
-                        <p class="games-score">+1 =1 -2</p>
-                        <p class="goals-difference">3 - 5</p></div>
-                </td>
-            </tr>
+                            <p class="games-score">+5 =2 -3</p>
+                            <p class="goals-difference">16 - 11</p></div>
+                        </td>
+    
+                </tr>
 
             <tr class="Juventus">
                 
@@ -348,13 +350,12 @@
                         </div>
                     </td>
                 
-                <td id="JuvRMa" class="statistics">
-                        <div title="9 побед, 2 ничьи, 10 поражений.
-Кликните, чтобы узнать подробности">
-                            <p class="games-score">+9 =2 -10</p>
-                            <p class="goals-difference">25 - 26</p>
-                        </div>
-                </td>
+                <td id="JuvBar" class="statistics">
+                            <div title="5 побед, 4 ничьи, 4 поражения.
+        Кликните, чтобы узнать подробности">
+                            <p class="games-score">+5 =4 -4</p>
+                            <p class="goals-difference">14 - 15</p></div>
+                        </td>
 
                 <td id="JuvLiv" class="statistics">
                         <div title="3 победы, 1 ничья, 2 поражения.
@@ -363,12 +364,13 @@
                             <p class="goals-difference">5 - 4</p>
                         </div>
                 </td>
-
-                <td id="JuvBar" class="statistics">
-                    <div title="5 побед, 4 ничьи, 4 поражения.
+                
+                <td id="JuvRMa" class="statistics">
+                        <div title="9 побед, 2 ничьи, 10 поражений.
 Кликните, чтобы узнать подробности">
-                    <p class="games-score">+5 =4 -4</p>
-                    <p class="goals-difference">14 - 15</p></div>
+                            <p class="games-score">+9 =2 -10</p>
+                            <p class="goals-difference">25 - 26</p>
+                        </div>
                 </td>
 
                 <td><img src="images/Juventus.png" 
@@ -414,13 +416,13 @@
                                 <p class="goals-difference">2 - 3</p>
                             </div>
                         </td>
-                    
-                    <td id="PSGRMa" class="statistics">                        
-                            <div title="2 победы, 2 ничьи, 4 поражения.
-Кликните, чтобы узнать подробности">
-                                <p class="games-score">+2 =2 -4</p>
-                                <p class="goals-difference">9 - 11</p>
-                            </div>
+
+                    <td id="PSGBar" class="statistics">                        
+                                <div title="3 победы, 3 ничьи, 5 поражений.
+        Кликните, чтобы узнать подробности">
+                                    <p class="games-score">+3 =3 -5</p>
+                                    <p class="goals-difference">16 - 22</p>
+                                </div>
                     </td>
 
                     <td id="PSGLiv" class="statistics">                        
@@ -431,12 +433,12 @@
                         </div>
                     </td>
 
-                    <td id="PSGBar" class="statistics">                        
-                        <div title="3 победы, 3 ничьи, 5 поражений.
+                    <td id="PSGRMa" class="statistics">                        
+                            <div title="2 победы, 2 ничьи, 4 поражения.
 Кликните, чтобы узнать подробности">
-                            <p class="games-score">+3 =3 -5</p>
-                            <p class="goals-difference">16 - 22</p>
-                        </div>
+                                <p class="games-score">+2 =2 -4</p>
+                                <p class="goals-difference">9 - 11</p>
+                            </div>
                     </td>
 
                     <td id="PSGJuv" class="statistics">
@@ -478,14 +480,14 @@
                                 <p class="goals-difference">10 - 9</p>
                             </div>
                         </td>
-                    
-                    <td id="BavRMa" class="statistics">                        
-                            <div title="8 победы, 2 ничьи, 10 поражений.
-Кликните, чтобы узнать подробности">
-                                <p class="games-score">+8 =2 -10</p>
-                                <p class="goals-difference">29 - 34</p>
-                            </div>
-                    </td>
+
+                    <td id="BavBar" class="statistics">                        
+                                <div title="6 побед, 2 ничьи, 2 поражения.
+        Кликните, чтобы узнать подробности">
+                                    <p class="games-score">+6 =2 -2</p>
+                                    <p class="goals-difference">18 - 14</p>
+                                </div>
+                            </td>
 
                     <td id="BavLiv" class="statistics">                        
                         <div title="0 побед, 1 ничья, 2 поражения.
@@ -495,12 +497,12 @@
                         </div>
                     </td>
 
-                    <td id="BavBar" class="statistics">                        
-                        <div title="6 побед, 2 ничьи, 2 поражения.
+                    <td id="BavRMa" class="statistics">                        
+                            <div title="8 победы, 2 ничьи, 10 поражений.
 Кликните, чтобы узнать подробности">
-                            <p class="games-score">+6 =2 -2</p>
-                            <p class="goals-difference">18 - 14</p>
-                        </div>
+                                <p class="games-score">+8 =2 -10</p>
+                                <p class="goals-difference">29 - 34</p>
+                            </div>
                     </td>
 
                     <td id="BavJuv" class="statistics">
@@ -542,14 +544,14 @@
                             <p class="goals-difference">-</p>
                         </div>
                     </td>
-                
-                <td id="AtMRMa" class="statistics">                        
-                        <div title="3 победы, 2 ничьи, 5 поражений.
-Кликните, чтобы узнать подробности">
-                            <p class="games-score">+3 =2 -5</p>
-                            <p class="goals-difference">11 - 16</p>
-                        </div>
-                </td>
+
+                <td id="AtMBar" class="statistics">                        
+                            <div title="2 победы, 1 ничья, 1 поражение.
+        Кликните, чтобы узнать подробности">
+                                <p class="games-score">+2 =1 -1</p>
+                                <p class="goals-difference">5 - 3</p>
+                            </div>
+                        </td>
 
                 <td id="AtMLiv" class="statistics">                        
                     <div title="1 победа, 2 ничьи, 1 поражение.
@@ -559,14 +561,14 @@
                     </div>
                 </td>
 
-                <td id="AtMBar" class="statistics">                        
-                    <div title="2 победы, 1 ничья, 1 поражение.
+                <td id="AtMRMa" class="statistics">                        
+                        <div title="3 победы, 2 ничьи, 5 поражений.
 Кликните, чтобы узнать подробности">
-                        <p class="games-score">+2 =1 -1</p>
-                        <p class="goals-difference">5 - 3</p>
-                    </div>
+                            <p class="games-score">+3 =2 -5</p>
+                            <p class="goals-difference">11 - 16</p>
+                        </div>
                 </td>
-
+                
                 <td id="AtMJuv" class="statistics">
                     <div title="3 победы, 1 ничья, 5 поражений.
 Кликните, чтобы узнать подробности">
@@ -595,7 +597,10 @@
         </table>
 
     </main>
-</div>
+
+<!-- </div> -->
+<!-- убрал пока что рамку. Ибо не знаю как её по уму делать -->
+
 <script src="scripts/football.js"></script>
 </body>    
 </html>
