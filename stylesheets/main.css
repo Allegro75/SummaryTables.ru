@@ -10,6 +10,13 @@ body{
   background-position: bottom left;
   /* background-blend-mode: multiply  ; */
   background-color: rgba(0, 0, 0, 0.1);
+
+  padding: 20px;
+  /* Убрал div.forBorder - пришлось делать padding, чтоб не прилипало слева */
+}
+
+header{
+  margin-left: 20px;
 }
 
 .forBorder{
@@ -170,7 +177,8 @@ main{
 }
 
 h1, h2{
-  text-align: center;
+  text-align: left;
+  margin-left: 20px;
 }
 
 p.explanation{
@@ -179,7 +187,8 @@ p.explanation{
 
 p.football-explanation, p.football-explanation-second-row-1{
   margin-top: -15px;
-  text-align: center;
+  text-align: left;
+  margin-left: 20px;
 }
 
 p.football-explanation-second-row-2{
