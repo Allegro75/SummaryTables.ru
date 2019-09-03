@@ -200,7 +200,12 @@ table.main-table{
   /* border-spacing: 10px; */
   border-collapse: collapse;
   font-weight: bold;
-  width: 1500px;
+  /* width: 1500px; 
+  Отменил ширину, т.к., во-первых, из-за неё фон тёмно-серый вставал криво
+  (иногда (на тлф, например) не шёл до конца на право),
+  а, во-вторых, вообще не помню, зачем я это ограничение в 1500 пикселей ставил.
+  
+  P.S. Хотя я не вполне уверен, что проблема с фоном связана именно с этим размером*/
 }
 
 .main-table td{
@@ -209,6 +214,10 @@ table.main-table{
   max-width: 150px;
   padding: 13px;
   border-right: 2px solid gray;
+}
+
+.main-table td.number{
+  font-style: italic;  
 }
 
 img.football-logo-table{
@@ -236,6 +245,12 @@ td abbr{
   text-decoration: none;
 }
 
+p.games-score{
+  white-space: nowrap;
+  /* Чтобы строчка с победами-ничьями-поражениями
+не разрывалась на две (при уменьшении масштаба)*/
+}
+
 td p.goals-difference{
   font-weight: normal;
   font-style: italic;
@@ -247,6 +262,21 @@ td div.points{
   right: 2px;
   font-size: 24px;
   color: gray;
+}
+
+button.another-table{
+  height: 80px;
+  margin: 20px;
+}
+
+button.another-table a{
+  font-size: 25px;
+  margin: 0 50px;
+  text-decoration: none;
+}
+
+button.another-table a span.bigger-text{
+  font-size: 35px;
 }
 
 td.Bar-MU,
