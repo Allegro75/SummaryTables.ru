@@ -176,7 +176,7 @@ main{
   padding-bottom: 20px;
 }
 
-h1, h2{
+h1, h2, section.selector{
   text-align: left;
   margin-left: 20px;
 }
@@ -193,6 +193,29 @@ p.football-explanation, p.football-explanation-second-row-1{
 
 p.football-explanation-second-row-2{
   margin-left: 20px;
+}
+
+section.selector{
+  margin-top: 20px;
+  background-color: gray;
+  padding: 10px;
+  padding-left: 15px;
+  color: rgb(31, 28, 28);
+  font-style: italic;
+  border-radius: 5px;
+}
+
+section.selector button{
+  height: 60px;
+  width: 100px;
+  font-size: 25px;
+  vertical-align: middle;
+}
+
+section.selector button.choice{
+  height: 80px;
+  width: 120px;
+  font-size: 40px;
 }
 
 table.main-table{
