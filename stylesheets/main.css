@@ -176,7 +176,7 @@ main{
   padding-bottom: 20px;
 }
 
-h1, h2, section.selector{
+h1, h2, section.selector, .headers p{
   text-align: left;
   margin-left: 20px;
 }
@@ -197,12 +197,16 @@ p.football-explanation-second-row-2{
 
 section.selector{
   margin-top: 20px;
-  background-color: gray;
+  background-color: rgb(180, 180, 180);
   padding: 10px;
   padding-left: 15px;
   color: rgb(31, 28, 28);
   font-style: italic;
   border-radius: 5px;
+}
+
+section.selector p{
+  font-size: 1.5em;
 }
 
 section.selector button{
@@ -216,10 +220,16 @@ section.selector button.choice{
   height: 80px;
   width: 120px;
   font-size: 40px;
+  /* position: relative; */
 }
+/* 
+section.selector span.ok{
+  position: absolute;
+} */
 
 table.main-table{
   margin-top: 20px;
+  margin-left: 20px;
   /* border-spacing: 10px; */
   border-collapse: collapse;
   font-weight: bold;
@@ -239,6 +249,17 @@ table.main-table{
   border-right: 2px solid gray;
 }
 
+.main-table tr.logotypes td{
+  position: relative;
+}
+
+tr.logotypes span.number{
+  position: absolute;
+  top: 0.5em;
+  left: 0.5em;
+  font-style: italic; 
+}
+
 .main-table td.number{
   font-style: italic;  
 }
@@ -248,6 +269,7 @@ img.football-logo-table{
   margin: 5px;
 }
 
+/* Для эмблем, вытянутых в высоту (Реал, Тоттенхэм): */
 img.real{
   height: 45px;
 }
@@ -262,10 +284,6 @@ div.club-name{
 
 .main-table tr:nth-child(even){
   background-color: aliceblue;
-}
-
-td abbr{
-  text-decoration: none;
 }
 
 p.games-score{
@@ -287,29 +305,9 @@ td div.points{
   color: gray;
 }
 
-button.another-table{
-  height: 80px;
-  margin: 20px;
+section.donate{
+  margin-left: 20px;
 }
-
-button.another-table a{
-  font-size: 25px;
-  margin: 0 50px;
-  text-decoration: none;
-}
-
-button.another-table a span.bigger-text{
-  font-size: 35px;
-}
-
-td.Bar-MU,
-td.Bar-Juv,
-td.MU-Juv,
-td.Juv-Aj{
-  position: relative;
-}
-
-
 
 .main-table div.additional-table,
 div.additional-table{
