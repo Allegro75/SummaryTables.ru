@@ -1,5 +1,5 @@
 //
-///Для того, чтобы по клику на ячейку всплывало окно с подробной статистикой:
+//Для ВСПЛЫТИЯ окон с подробной статистикой по клику на ячейку большой таблицы:
 //
 
 var table = document.querySelector('table.main-table');
@@ -18,9 +18,12 @@ table.onclick = function() {
     }
 
 
+ 
     
+
+
 //    
-//Делаем переключатель числа клубов в таблице:
+//Делаем ПЕРЕКЛЮЧАТЕЛЬ ЧИСЛА КЛУБОВ в таблице:
 //
 
 //Задаём стартовое число клубов:
@@ -29,37 +32,23 @@ let clubsQuantity = 8;
 rebuildTable(8);
 
 //Задаём js-имена кнопок переключателя:
-//const clubsMinimum = document.querySelector('.selector button.minimum');
+
 const lessClubs = document.querySelector('.selector button.less');
 const clubsChoise = document.querySelector('.selector button.choice');
 const moreClubs = document.querySelector('.selector button.more');
-//const clubsMaximum = document.querySelector('.selector button.maximum');
-//moreClubs.onclick = function () {alert("I'm a minimum");}
 
 //Делаем функции меняющие количество клубов(clubsQuantity) в переключателе:
 
-// clubsMinimum.onclick = function () {
-//     clubsQuantity = 2;
-//     clubsChoise.innerHTML = clubsQuantity;
-//     rebuildTable(clubsQuantity);
-// }
-// clubsMaximum.onclick = function () {
-//     clubsQuantity = 16;
-//     clubsChoise.innerHTML = clubsQuantity;
-//     rebuildTable(clubsQuantity);
-// }
 lessClubs.onclick = function () {
     if (clubsQuantity > 2) {
         clubsQuantity -= 1;
         clubsChoise.innerHTML = clubsQuantity;
-        //rebuildTable(clubsQuantity);
     }
 }
 moreClubs.onclick = function () {
     if (clubsQuantity < 16) {
         clubsQuantity += 1;
         clubsChoise.innerHTML = clubsQuantity;
-        //rebuildTable(clubsQuantity);
     }
 }
 clubsChoise.onclick = function () {
@@ -86,4 +75,8 @@ function rebuildTable (clubsQuantity) {
     }
 }
 
+
+// Ебёмся с input:
+// const clubsQuantityInput = document.getElementById('clubs-quantity-input');
+// alert(clubsQuantity.textContent);
 
