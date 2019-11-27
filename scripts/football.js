@@ -15,13 +15,9 @@ table.onclick = function() {
             }
         target = target.parentNode;
         }
-    }
-
+    };
 
  
-    
-
-
 //    
 //Делаем ПЕРЕКЛЮЧАТЕЛЬ ЧИСЛА КЛУБОВ в таблице:
 //
@@ -53,7 +49,7 @@ moreClubs.onclick = function () {
 }
 clubsChoise.onclick = function () {
     rebuildTable(clubsQuantity);
-}
+};
 
 
 //Делаем функцию, перестраивающую таблицу:
@@ -73,10 +69,7 @@ function rebuildTable (clubsQuantity) {
         }
         if (i > clubsQuantity) table.rows[i].hidden = true;
     }
-}
+};
 
 
-// Ебёмся с input:
-// const clubsQuantityInput = document.getElementById('clubs-quantity-input');
-// alert(clubsQuantity.textContent);
 
