@@ -1,0 +1,146 @@
+body{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+p{
+  font-size: 1.25em;
+  margin: 0.25em auto;
+}
+
+img.football-logo-table{
+  height: 40px;
+  margin: 5px;
+}
+
+/* Для эмблем, вытянутых в высоту (Реал, Тоттенхэм, Порто, Милан, Интер): */
+img.real{
+  height: 45px;
+}
+
+div.additional-table{
+  text-align: center;
+  max-width: 550px;
+  position: absolute;
+  /* если делать "position: relative", то весь div расползается на 500px 
+  А вообще не дефолтное (т.е. не "static") значение нужно, чтобы
+  логотипы встали как надо.*/
+  /*z-index: 10;
+  top: 30px;
+  left: 30px; */
+
+  background-color: gray;
+  color: black;
+  /* border: 2px solid gray; */
+  border-radius: 15px;
+  padding: 5px;
+}
+
+div.additional-table img{
+  position:absolute;
+}
+
+div.additional-table img.logo-left{
+  left: 10px;
+}
+
+div.additional-table img.logo-right{
+  right: 10px;
+}
+
+div.additional-table img.real{
+  top: 2px;
+}
+
+div.additional-table h3{
+  margin-left: 65px;
+  margin-right: 65px;
+}
+
+table.add-table{
+  /* Маргины правый и левый со значением "авто" нужны 
+  для центрирования таблицы */
+  margin-left: auto;
+  margin-right: auto;
+
+  margin-top: 20px;
+  border-collapse: collapse;
+  /* z-index: -1; */
+  /* font-weight: normal;   */
+}
+
+table.add-table td{
+  padding: 7px;
+  /* border: none; */
+}
+
+table.add-table tr:nth-child(even){
+  background-color: aliceblue;
+}
+
+table.add-table td.number-of-match{
+  font-style: italic;
+}
+
+table.add-table tr.final{
+  font-weight: bold;
+}
+
+table.add-table td span.penalty-text,
+span.add-time-text{
+  font-size: 12px;
+}
+
+/* .add-table .additional-table{
+  max-width: 500px;
+} */
+
+div.duels-text{
+  font-size: 0.9em;
+  font-style: italic;
+  margin-top: 0.7em;
+}
+
+tr.duel-result{
+  height: 0.1em;
+}
+
+/* Для фона матчей: */
+div.additional-table tr.duel-loose td{
+  background-color: rgba(255, 0, 0, 0.1);
+}
+
+div.additional-table tr.duel-win td{
+  background-color: rgba(0, 255, 0, 0.1);
+}
+
+div.additional-table tr.duel-draw td{
+  background-color: rgba(255, 255, 0, 0.1);
+}
+
+/* Для ФОНА строк с ИТОГОМ дуэли: */
+div.additional-table tr.duel-result td.duel-loose-td{
+  background-color: rgba(255, 0, 0, 0.4);
+}
+
+div.additional-table tr.duel-result td.duel-win-td{
+  background-color: rgba(0, 255, 0, 0.25);
+}
+
+div.additional-table tr.duel-result td.duel-draw-td{
+  background-color: rgba(255, 255, 0, 0.25);
+}
+
+/* Для СКРУГЛЕНИЯ рамки таблицы: */
+table.add-table tr.first-match td:first-child{
+  border-top-left-radius: 12px;
+}
+
+table.add-table tr.first-match td:last-child{
+  border-top-right-radius: 12px;
+}
+
+table.add-table tr:last-child td{
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
