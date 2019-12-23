@@ -7,20 +7,26 @@
 <meta name="author" content="Oleg Otkidach">
 <meta name="author" content="Олег Откидач">
 <title>Порто - Милан</title>
-<link rel="stylesheet" href="../stylesheets/main.css">
-<link rel="shortcut icon" href="images/football_ball.png" type="image/x-icon">
+<link rel="stylesheet" href="../stylesheets/small-tables-duels.css">
+<link rel="shortcut icon" href="../images/football_ball.png" type="image/x-icon">
 
 </head>
 
-<body class="add-table">  
+<body>  
 
 <div class="additional-table">
     <img src="../images/Porto.png" class="football-logo-table logo-left real">
-    <img src="../images/Milan.png" class="football-logo-table logo-right real">
+    <img src="../images/Milan.svg" class="football-logo-table logo-right real">
             <h3>Порто - Милан</h3>
-            <p>9 матчей</p>
+            <p>9 матчей:</p>
             <p>2 победы, 3 ничьи, 4 поражения</p>
             <p>Разница мячей: 5 - 9</p>
+
+            <div class="duels-text">
+                <p>5 дуэлей:</p>
+                <p>2 победы в дуэлях, 3 поражения</p>
+            </div>
+
             <table class="add-table">
                 <tr>
                     <td></td>
@@ -30,7 +36,7 @@
                     <td>Турнир</td>
                     <td>Стадия</td>
                 </tr>
-                <tr">
+                <tr class="duel-win">
                     <td class="number-of-match">1</td>
                     <td>д</td>
                     <td>0 : 0</td>
@@ -38,7 +44,7 @@
                     <td>Кубок чемпионов</td>
                     <td>1/16</td>
                 </tr>
-                <tr>
+                <tr class="duel-win">
                     <td class="number-of-match">2</td>
                     <td>г</td>
                     <td>1 : 0</td>
@@ -46,7 +52,15 @@
                     <td>Кубок чемпионов</td>
                     <td>1/16</td>
                 </tr>
-                <tr>
+                <tr class="duel-result duel-win"
+                title="Дуэль выше выиграна">
+                    <td colspan="5">
+                    </td>
+                    <td>
+                        &#9650;
+                    </td>
+                </tr> 
+                <tr class="duel-loose">
                     <td class="number-of-match">3</td>
                     <td>д</td>
                     <td>0 : 1</td>
@@ -54,7 +68,7 @@
                     <td>Лига чемпионов</td>
                     <td>группа</td>
                 </tr>
-                <tr>
+                <tr class="duel-loose">
                         <td class="number-of-match">4</td>
                         <td>г</td>
                         <td>0 : 1</td>
@@ -62,7 +76,15 @@
                         <td>Лига чемпионов</td>
                         <td>группа</td>
                     </tr>
-                    <tr>
+                    <tr class="duel-result duel-loose"
+                    title="Дуэль выше проиграна">
+                        <td colspan="5">
+                        </td>
+                        <td>
+                            &#9660;
+                        </td>
+                    </tr>  
+                    <tr class="duel-loose">
                         <td class="number-of-match">5</td>
                         <td>г</td>
                         <td>0 : 3</td>
@@ -70,7 +92,7 @@
                         <td>Лига чемпионов</td>
                         <td>группа</td>
                     </tr>
-                    <tr>
+                    <tr class="duel-loose">
                         <td class="number-of-match">6</td>
                         <td>д</td>
                         <td>0 : 0</td>
@@ -78,7 +100,15 @@
                         <td>Лига чемпионов</td>
                         <td>группа</td>
                     </tr>
-                    <tr>
+                    <tr class="duel-result duel-loose"
+                    title="Дуэль выше проиграна">
+                        <td colspan="5">
+                        </td>
+                        <td>
+                            &#9660;
+                        </td>
+                    </tr>  
+                    <tr class="duel-win">
                             <td class="number-of-match">7</td>
                             <td>г</td>
                             <td>3 : 2</td>
@@ -86,22 +116,38 @@
                             <td>Лига чемпионов</td>
                             <td>группа</td>
                         </tr>
-                        <tr>
+                        <tr class="duel-win">
                             <td class="number-of-match">8</td>
                             <td>д</td>
                             <td>1 : 1</td>
                             <td>1996</td>
                             <td>Лига чемпионов</td>
                             <td>группа</td>
-                        </tr>  
-                        <tr class="final">
+                        </tr>
+                        <tr class="duel-result duel-win"
+                        title="Дуэль выше выиграна">
+                            <td colspan="5">
+                            </td>
+                            <td>
+                                &#9650;
+                            </td>
+                        </tr>   
+                        <tr class="final duel-loose">
                             <td class="number-of-match">9</td>
                             <td>н</td>
                             <td>0 : 1</td>
                             <td>2003</td>
                             <td>Суперкубок</td>
                             <td>ФИНАЛ</td>
-                        </tr>                                          
+                        </tr> 
+                        <tr class="duel-result duel-loose"
+                        title="Дуэль выше проиграна">
+                            <td colspan="5">
+                            </td>
+                            <td>
+                                &#9660;
+                            </td>
+                        </tr>                                           
             </table>
         </div>
 

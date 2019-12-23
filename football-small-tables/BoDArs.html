@@ -6,22 +6,29 @@
 <meta charset="utf-8">
 <meta name="author" content="Oleg Otkidach">
 <meta name="author" content="Олег Откидач">
-<title>Боруссия Дортмунд - Арсенал</title>
-<link rel="stylesheet" href="../stylesheets/main.css">
-<link rel="shortcut icon" href="images/football_ball.png" type="image/x-icon">
+<title>Боруссия - Арсенал</title>
+<link rel="stylesheet" href="../stylesheets/small-tables-duels.css">
+<link rel="shortcut icon" href="../images/football_ball.png" type="image/x-icon">
 
 </head>
 
-<body class="add-table">  
+<body>  
 
 <div class="additional-table">
         <img src="../images/BorD.png" 
         class="football-logo-table logo-left">
         <img src="../images/Arsenal.png" class="football-logo-table logo-right">
             <h3>Боруссия Дортмунд - Арсенал</h3>
-            <p>8 матчей</p>
+            <p>8 матчей:</p>
             <p>3 победы, 1 ничья, 4 поражения</p>
             <p>Разница мячей: 8 - 10</p>
+
+            <div class="duels-text">
+                <p>4 дуэли:</p>
+                <p>0 побед в дуэлях, 1 поражение,</p>
+                <p>3 дуэли в группах не выявили победителя</p>
+            </div>
+
             <table class="add-table">
                 <tr>
                     <td></td>
@@ -31,7 +38,7 @@
                     <td>Турнир</td>
                     <td>Стадия</td>
                 </tr>
-                <tr>
+                <tr class="duel-draw first-match">
                     <td class="number-of-match">1</td>
                     <td>г</td>
                     <td>0 : 2</td>
@@ -39,7 +46,7 @@
                     <td>Лига чемпионов</td>
                     <td>группа</td>
                 </tr>
-                <tr>
+                <tr class="duel-draw">
                     <td class="number-of-match">2</td>
                     <td>д</td>
                     <td>2 : 1</td>
@@ -47,7 +54,17 @@
                     <td>Лига чемпионов</td>
                     <td>группа</td>
                 </tr>
-                <tr>
+                <tr class="duel-result duel-draw"
+                title="Дуэль выше не выявила победителя">
+                    <td colspan="5">
+                    </td>
+                    <td>
+                        <span class="yellow-circle">
+                            &#9679;
+                        </span>
+                    </td>
+                </tr> 
+                <tr class="duel-loose">
                     <td class="number-of-match">3</td>
                     <td>д</td>
                     <td>1 : 1</td>
@@ -55,15 +72,23 @@
                     <td>Лига чемпионов</td>
                     <td>группа</td>
                 </tr>
-                <tr>
+                <tr class="duel-loose">
                     <td class="number-of-match">4</td>
                     <td>г</td>
                     <td>1 : 2</td>
                     <td>2011</td>
                     <td>Лига чемпионов</td>
                     <td>группа</td>
-                </tr>   
-                <tr>
+                </tr>  
+                <tr class="duel-result duel-loose"
+                title="Дуэль выше проиграна">
+                    <td colspan="5">
+                    </td>
+                    <td>
+                        &#9660;
+                    </td>
+                </tr>                 
+                <tr class="duel-draw">
                     <td class="number-of-match">5</td>
                     <td>г</td>
                     <td>2 : 1</td>
@@ -71,7 +96,7 @@
                     <td>Лига чемпионов</td>
                     <td>группа</td>
                 </tr>
-                <tr>
+                <tr class="duel-draw">
                     <td class="number-of-match">6</td>
                     <td>д</td>
                     <td>0 : 1</td>
@@ -79,7 +104,17 @@
                     <td>Лига чемпионов</td>
                     <td>группа</td>
                 </tr> 
-                <tr>
+                <tr class="duel-result duel-draw"
+                title="Дуэль выше не выявила победителя">
+                    <td colspan="5">
+                    </td>
+                    <td>
+                        <span class="yellow-circle">
+                            &#9679;
+                        </span>
+                    </td>
+                </tr>                  
+                <tr class="duel-draw">
                     <td class="number-of-match">7</td>
                     <td>д</td>
                     <td>2 : 0</td>
@@ -87,14 +122,24 @@
                     <td>Лига чемпионов</td>
                     <td>группа</td>
                 </tr>
-                <tr>
+                <tr class="duel-draw">
                     <td class="number-of-match">8</td>
                     <td>г</td>
                     <td>0 : 2</td>
                     <td>2014</td>
                     <td>Лига чемпионов</td>
                     <td>группа</td>
-                </tr>                                                                     
+                </tr>   
+                <tr class="duel-result duel-draw"
+                title="Дуэль выше не выявила победителя">
+                    <td colspan="5">
+                    </td>
+                    <td>
+                        <span class="yellow-circle">
+                            &#9679;
+                        </span>
+                    </td>
+                </tr>                                                                                   
                                                                      
             </table>
         </div>

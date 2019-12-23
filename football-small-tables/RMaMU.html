@@ -6,9 +6,9 @@
     <meta charset="utf-8">
     <meta name="author" content="Oleg Otkidach">
     <meta name="author" content="Олег Откидач">
-    <title>Реал Мадрид - Манчестер Юнайтед</title>
-    <link rel="stylesheet" href="../stylesheets/main.css">
-    <link rel="shortcut icon" href="images/football_ball.png" type="image/x-icon">
+    <title>Реал - МанЮнайтед</title>
+    <link rel="stylesheet" href="../stylesheets/small-tables-duels.css">
+    <link rel="shortcut icon" href="../images/football_ball.png" type="image/x-icon">
 
 </head>
 
@@ -20,9 +20,15 @@
         <img src="../images/Manchester_United.png" 
         class="football-logo-table logo-right">
             <h3>Реал Мадрид - Манчестер Юнайтед</h3>
-            <p>11 матчей</p>
+            <p>11 матчей:</p>
             <p>5 побед, 4 ничьи, 2 поражения</p>
             <p>Разница мячей: 22 - 17</p>
+
+            <div class="duels-text">
+                <p>6 дуэлей:</p>
+                <p>5 побед в дуэлях, 1 поражение</p>
+            </div>
+
             <table class="add-table">
                 <tr>
                     <td></td>
@@ -32,7 +38,7 @@
                     <td>Турнир</td>
                     <td>Стадия</td>
                 </tr>
-                <tr>
+                <tr class="duel-win">
                     <td class="number-of-match">1</td>
                     <td>д</td>
                     <td>3 : 1</td>
@@ -40,7 +46,7 @@
                     <td>Кубок чемпионов</td>
                     <td>1/2</td>
                 </tr>
-                <tr>
+                <tr class="duel-win">
                     <td class="number-of-match">2</td>
                     <td>г</td>
                     <td>2 : 2</td>
@@ -48,7 +54,15 @@
                     <td>Кубок чемпионов</td>
                     <td>1/2</td>
                 </tr>
-                <tr>
+                <tr class="duel-result duel-win"
+                title="Дуэль выше выиграна">
+                    <td colspan="5">
+                    </td>
+                    <td>
+                        &#9650;
+                    </td>
+                </tr> 
+                <tr class="duel-loose">
                     <td class="number-of-match">3</td>
                     <td>г</td>
                     <td>0 : 1</td>
@@ -56,7 +70,7 @@
                     <td>Кубок чемпионов</td>
                     <td>1/2</td>
                 </tr>
-                <tr>
+                <tr class="duel-loose">
                     <td class="number-of-match">4</td>
                     <td>д</td>
                     <td>3 : 3</td>
@@ -64,7 +78,15 @@
                     <td>Кубок чемпионов</td>
                     <td>1/2</td>
                 </tr>
-                <tr>
+                <tr class="duel-result duel-loose"
+                title="Дуэль выше проиграна">
+                    <td colspan="5">
+                    </td>
+                    <td>
+                        &#9660;
+                    </td>
+                </tr>
+                <tr class="duel-win">
                     <td class="number-of-match">5</td>
                     <td>д</td>
                     <td>0 : 0</td>
@@ -72,7 +94,7 @@
                     <td>Лига чемпионов</td>
                     <td>1/4</td>
                 </tr>
-                <tr>
+                <tr class="duel-win">
                     <td class="number-of-match">6</td>
                     <td>г</td>
                     <td>3 : 2</td>
@@ -80,7 +102,15 @@
                     <td>Лига чемпионов</td>
                     <td>1/4</td>
                 </tr>
-                <tr>
+                <tr class="duel-result duel-win"
+                title="Дуэль выше выиграна">
+                    <td colspan="5">
+                    </td>
+                    <td>
+                        &#9650;
+                    </td>
+                </tr> 
+                <tr class="duel-win">
                     <td class="number-of-match">7</td>
                     <td>д</td>
                     <td>3 : 1</td>
@@ -88,7 +118,7 @@
                     <td>Лига чемпионов</td>
                     <td>1/4</td>
                 </tr>
-                <tr>
+                <tr class="duel-win">
                     <td class="number-of-match">8</td>
                     <td>г</td>
                     <td>3 : 4</td>
@@ -96,7 +126,15 @@
                     <td>Лига чемпионов</td>
                     <td>1/4</td>
                 </tr>
-                <tr>
+                <tr class="duel-result duel-win"
+                title="Дуэль выше выиграна">
+                    <td colspan="5">
+                    </td>
+                    <td>
+                        &#9650;
+                    </td>
+                </tr> 
+                <tr class="duel-win">
                         <td class="number-of-match">9</td>
                         <td>д</td>
                         <td>1 : 1</td>
@@ -104,7 +142,7 @@
                         <td>Лига чемпионов</td>
                         <td>1/8</td>
                     </tr>
-                    <tr>
+                    <tr class="duel-win">
                         <td class="number-of-match">10</td>
                         <td>г</td>
                         <td>2 : 1</td>
@@ -112,14 +150,30 @@
                         <td>Лига чемпионов</td>
                         <td>1/8</td>
                     </tr>
-                    <tr class="final">
+                    <tr class="duel-result duel-win"
+                    title="Дуэль выше выиграна">
+                        <td colspan="5">
+                        </td>
+                        <td>
+                            &#9650;
+                        </td>
+                    </tr> 
+                    <tr class="final duel-win">
                         <td class="number-of-match">11</td>
                         <td>н</td>
                         <td>2 : 1</td>
                         <td>2017</td>
                         <td>Суперкубок</td>
                         <td>ФИНАЛ</td>
-                    </tr>                  
+                    </tr>  
+                    <tr class="duel-result duel-win"
+                    title="Дуэль выше выиграна">
+                        <td colspan="5">
+                        </td>
+                        <td>
+                            &#9650;
+                        </td>
+                    </tr>                 
              </table>
         </div>
 

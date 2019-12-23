@@ -21,6 +21,8 @@ img.real{
 div.additional-table{
   text-align: center;
   max-width: 550px;
+  /* 550 пикселей нужно, чтобы матчи "Бавария"-"Реал" 
+  не громоздились в две строки */
   position: absolute;
   /* если делать "position: relative", то весь div расползается на 500px 
   А вообще не дефолтное (т.е. не "static") значение нужно, чтобы
@@ -121,29 +123,35 @@ div.additional-table tr.duel-draw td{
 }
 
 /* Для ФОНА строк с ИТОГОМ дуэли: */
-div.additional-table tr.duel-result.duel-loose{
+div.additional-table tr.duel-result.duel-loose td{
   background-color: rgba(255, 0, 0, 0.4);
   color: rgba(184, 12, 12, 0.699);
 }
 
-div.additional-table tr.duel-result.duel-win{
+div.additional-table tr.duel-result.duel-win td{
   background-color: rgba(0, 255, 0, 0.25);
   color: green;
 }
 
-div.additional-table tr.duel-result.duel-draw{
+div.additional-table tr.duel-result.duel-draw td{
   background-color: rgba(255, 255, 0, 0.25);
   color: rgba(228, 188, 13, 0.836);
   font-size: 1.5em;
-  vertical-align: text-top;
+  /* vertical-align: text-top; */
+  position: relative;
+}
+
+span.yellow-circle{
+  position: relative;
+  top: -2px;
 }
 
 /* Для СКРУГЛЕНИЯ рамки таблицы: */
-table.add-table tr.first-match td:first-child{
+table.add-table tr:nth-child(2) td:first-child{
   border-top-left-radius: 12px;
 }
 
-table.add-table tr.first-match td:last-child{
+table.add-table tr:nth-child(2) td:last-child{
   border-top-right-radius: 12px;
 }
 
@@ -154,3 +162,28 @@ table.add-table tr:last-child td:first-child{
 table.add-table tr:last-child td:last-child{
   border-bottom-right-radius: 12px;
 }
+/*  */
+
+table.add-table tr td:nth-child(3){
+  font-weight: bold;
+  /* padding-left: 0px;
+  padding-right: 0px; */
+}
+
+/* Чтобы слово "Счёт" не было жирным: */
+table.add-table tr:nth-child(1) td{
+  font-weight: normal;
+}
+
+table.add-table tr td:nth-child(2){
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+table.add-table tr td:nth-child(5){
+  min-width: 150px;
+}
+/* Это нужно, чтобы слова "Лига чемпионов"
+в простых матчах (не финалах)
+писались в одну строку, в частности, в файле
+"Челси" - "Бавария" */
