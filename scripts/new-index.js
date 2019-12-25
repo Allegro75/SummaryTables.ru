@@ -43,7 +43,7 @@ lessClubs.onclick = function () {
     }
 }
 moreClubs.onclick = function () {
-    if (clubsQuantity < 18) {
+    if (clubsQuantity < 16) {
         clubsQuantity += 1;
         clubsChoise.innerHTML = clubsQuantity;
     }
@@ -94,7 +94,7 @@ const rebuildTable = (clubsQuantity) => {
 
 //Определяем переменную clubsQuantity (иначе при попытке перестроить таблицу кнопками
 //будет вылезать ошибка):
-let clubsQuantity = 18;
+let clubsQuantity = 16;
 //И перестраиваем полную таблицу на 8 клубов:
 //rebuildTable(8);
 

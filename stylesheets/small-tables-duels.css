@@ -10,6 +10,7 @@ p{
 
 img.football-logo-table{
   height: 40px;
+  max-width: 60px;  /* Иначе лого Лейпцига становится слишком широким - оно вытянуто в ширину */
   margin: 5px;
 }
 
@@ -55,8 +56,12 @@ div.additional-table img.real{
 }
 
 div.additional-table h3{
-  margin-left: 65px;
-  margin-right: 65px;
+  /* margin-left: 65px;
+  margin-right: 65px; 
+  Раньше я так выравнивал заглавие матча*/
+  max-width: 300px;
+  /* А теперь сделал через max-width, т.к. иначе лого Лейпцига лезет на заглавие */
+  margin: 20px auto;
 }
 
 table.add-table{
