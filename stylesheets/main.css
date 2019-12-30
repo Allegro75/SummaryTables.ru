@@ -334,12 +334,13 @@ td div.points{
   color: gray;
 }
 
-section.switch-to-favorites, section.switch-to-history{
+section.switch-to-favorites, section.switch-to-history, section.switch-to-decade{
   margin-left: 20px;
   margin-top: 20px;
 }
 
-button.switch-to-favorites-button, button.switch-to-history-button{
+button.switch-to-favorites-button, button.switch-to-history-button, 
+button.switch-to-decade-button{
   padding: 10px 20px;
   border-radius: 10px;
 }
