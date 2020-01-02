@@ -1,6 +1,6 @@
 body{
 
-  min-width: 1000px;
+  /* min-width: 1000px; */
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 16px;
   color: #4f535b;
@@ -174,6 +174,8 @@ main{
   margin: 0 -40px;
   padding: 1px 40px;
   padding-bottom: 20px;
+  /* width: 100%; */
+  /* min-width: 1500px; */
 }
 
 h1, h2, section.selector, .headers p{
@@ -254,7 +256,7 @@ table.main-table{
   font-weight: bold;
   /* width: 1500px; 
   Отменил ширину, т.к., во-первых, из-за неё фон тёмно-серый вставал криво
-  (иногда (на тлф, например) не шёл до конца на право),
+  (иногда (на тлф, например) не шёл до конца направо),
   а, во-вторых, вообще не помню, зачем я это ограничение в 1500 пикселей ставил.
   
   P.S. Хотя я не вполне уверен, что проблема с фоном связана именно с этим размером*/

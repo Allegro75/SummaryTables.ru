@@ -94,9 +94,9 @@ const rebuildTable = (clubsQuantity) => {
 
 //Определяем переменную clubsQuantity (иначе при попытке перестроить таблицу кнопками
 //будет вылезать ошибка):
-let clubsQuantity = 16;
+let clubsQuantity = 8;
 //И перестраиваем полную таблицу на 8 клубов:
-//rebuildTable(8);
+rebuildTable(8);
 
 
 
