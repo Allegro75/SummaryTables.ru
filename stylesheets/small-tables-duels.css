@@ -19,6 +19,14 @@ img.real{
   height: 45px;
 }
 
+/* Для эмблемы Байера(вытянутой в ширину): */
+img.bayer.football-logo-table{
+  max-width: 45px;
+  /* высота "auto" нужна, чтоб картинка не сжималась, сохраняла пропорцию */
+  height: auto;
+  top: 8px;
+}
+
 div.additional-table{
   text-align: center;
   max-width: 550px;

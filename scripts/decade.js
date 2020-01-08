@@ -43,7 +43,7 @@ lessClubs.onclick = function () {
     }
 }
 moreClubs.onclick = function () {
-    if (clubsQuantity < 20) {
+    if (clubsQuantity < 22) {
         clubsQuantity += 1;
         clubsChoise.innerHTML = clubsQuantity;
     }
@@ -65,7 +65,7 @@ const tableColumnsQuantity = table.rows[1].cells.length;
 
 const rebuildTable = (clubsQuantity) => {
 
-    //Для начала возвращаем таблицу в 16-клубный вид (открываем все скрытые ячейки):
+    //Для начала возвращаем таблицу в максимальный вид (открываем все скрытые ячейки):
     let hiddenElements = table.querySelectorAll('td[hidden], tr[hidden]');
     for (i = 0; i < hiddenElements.length; i++) {
         hiddenElements[i].hidden = false;
@@ -95,7 +95,7 @@ const rebuildTable = (clubsQuantity) => {
 //Определяем переменную clubsQuantity (иначе при попытке перестроить таблицу кнопками
 //будет вылезать ошибка):
 let clubsQuantity = 10;
-//И перестраиваем полную таблицу на 8 клубов:
+//И перестраиваем полную таблицу на 10 клубов:
 rebuildTable(10);
 
 
