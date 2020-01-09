@@ -77,7 +77,7 @@
             <!-- Кнопки для выбора числа клубов в таблице -->
             <section class="selector">
     
-                <p>Выберите <b>число</b> (от 2 до 22) клубов в таблице (с помощью кнопок "<" и ">") 
+                <p>Выберите <b>число</b> (от 2 до 24) клубов в таблице (с помощью кнопок "<" и ">") 
                     и нажмите кнопку с числом:</p>
                 
                 <button class="less" title="Уменьшить число клубов">&lt;</button>
@@ -223,7 +223,19 @@
                         <span class="number">22</span>
                         <img alt="Байер" src="images/Bayer.png" class="bayer football-logo-table">
                     </td>                    
-                    
+
+                    <td>
+                        <span class="number">23</span>
+                        <img alt="Монако" src="images/Monaco.png" 
+                        class="football-logo-table real">
+                    </td>                    
+
+                    <td>
+                        <span class="number">24</span>                        
+                        <img alt="Наполи" src="images/Napoli.png" 
+                        class="football-logo-table">
+                    </td>
+
                     <td>
                         <span class="number">9</span>
                         <img alt="Интер" src="images/Inter.svg" 
@@ -533,7 +545,36 @@
 Кликните, чтобы узнать подробности" hidden>
                             3 - 0
                         </div>
-                    </td>                     
+                    </td>  
+                    
+                    <td id="RMaMon" class="statistics has-history">                        
+                            <div title="Реал - Монако
+1 победа, 0 ничьих, 1 поражение
+Кликните, чтобы узнать подробности" class="results">
+                                <p class="games-score">+1 =0 -1</p>
+                                <p class="goals-difference">5 - 5</p>
+                            </div>
+                    <div class="duels" title="&quot;Реал&quot; против &quot;Монако&quot;
+0 побед в дуэлях, 1 поражение
+Кликните, чтобы узнать подробности" hidden>
+                            0 - 1
+                        </div>
+                    </td> 
+
+                    <td id="RMaNap" class="statistics has-history">                        
+                        <div title="Реал - Наполи
+3 победы, 1 ничья, 0 поражений
+Кликните, чтобы узнать подробности" class="results">
+                            <p class="games-score">+3 =1 -0</p>
+                            <p class="goals-difference">9 - 3</p>
+                        </div>
+                            <div class="duels" 
+                            title="&quot;Реал&quot; против &quot;Наполи&quot;
+2 победы в дуэлях, 0 поражений
+Кликните, чтобы узнать подробности" hidden>
+                            2 - 0
+                        </div> 
+                    </td>
 
                         <td id="RMaInt" class="statistics has-history">                        
                                 <div title="Реал - Интер
@@ -867,7 +908,33 @@
 3 победы в дуэлях, 1 поражение, 1 дуэль в группе не выявила победителя
 Кликните, чтобы узнать подробности" hidden>
                             3 - 1
-                        </div></td>                        
+                        </div></td>  
+                        
+                        <td id="BarMon" class="statistics has-history">                        
+                                <div title="Барселона - Монако
+2 победы, 0 ничьих, 0 поражений
+Кликните, чтобы узнать подробности" class="results">
+                                    <p class="games-score">+2 =0 -0</p>
+                                    <p class="goals-difference">3 - 0</p>
+                                </div>
+                        <div class="duels" 
+                        title="&quot;Барселона&quot; против &quot;Монако&quot;
+1 победа в дуэлях, 0 поражений
+Кликните, чтобы узнать подробности" hidden>
+                            1 - 0
+                        </div></td>    
+                        
+                        <td id="BarNap" class="statistics no-history">
+                                <div title="Барселона - Наполи
+0 побед, 0 ничьих, 0 поражений" class="results">
+                                <p class="games-score">+ = -</p>
+                                <p class="goals-difference">-</p>
+                            </div>
+                            <div class="duels" title="&quot;Барселона&quot; против &quot;Наполи&quot;
+Не встречались" hidden>
+                                         - 
+                                    </div>
+                            </td>                         
 
                             <td id="BarInt" class="statistics has-history">                        
                                     <div title="Барселона - Интер
@@ -1200,6 +1267,32 @@
                        </div>
                </td>                            
 
+               <td id="BavMon" class="statistics no-history">
+                    <div class="results" title="Бавария - Монако
+0 побед, 0 ничьих, 0 поражений">
+                   <p class="games-score">+ = -</p>
+                   <p class="goals-difference"> - </p>
+               </div>
+               <div class="duels" title="&quot;Бавария&quot; против &quot;Монако&quot;
+Не встречались" hidden>
+                    - 
+               </div>
+       </td>  
+
+       <td id="BavNap" class="statistics has-history">
+            <div title="Бавария - Наполи
+1 победа, 2 ничьи, 1 поражение
+Кликните, чтобы узнать подробности" class="results">
+            <p class="games-score">+1 =2 -1</p>
+            <p class="goals-difference">6 - 7</p>
+        </div>
+                <div class="duels" title="&quot;Бавария&quot; против &quot;Наполи&quot;
+0 побед в дуэлях, 1 поражение, 1 дуэль в группе не выявила победителя
+Кликните, чтобы узнать подробности" hidden>
+                    0 - 1
+                </div>                 
+    </td>       
+
                         <td id="BavInt" class="statistics has-history">
                                 <div title="Бавария - Интер
 3 победы, 1 ничья, 3 поражения
@@ -1527,6 +1620,34 @@
                             </div>
                     </td>  
 
+                    <td id="JuvMon" class="statistics has-history">
+                        <div title="Ювентус - Монако
+4 победы, 1 ничья, 1 поражение
+Кликните, чтобы узнать подробности" class="results">
+                            <p class="games-score">+4 =1 -1</p>
+                            <p class="goals-difference">11 - 5</p>
+                        </div>
+                    <div class="duels" title="&quot;Ювентус&quot; против &quot;Монако&quot;
+3 победы в дуэлях, 0 поражений
+Кликните, чтобы узнать подробности" hidden>
+                                3 - 0
+                            </div>
+                    </td>
+
+            <td id="JuvNap" class="statistics has-history">
+                    <div title="Ювентус - Наполи
+1 победа, 0 ничьих, 1 поражение
+Кликните, чтобы узнать подробности" class="results">
+                    <p class="games-score">+1 =0 -1</p>
+                    <p class="goals-difference">2 - 3</p>
+                </div>
+            <div class="duels" title="&quot;Ювентус&quot; против &quot;Наполи&quot;
+0 побед в дуэлях, 1 поражение
+Кликните, чтобы узнать подробности" hidden>
+                0 - 1
+            </div> 
+            </td>                    
+
                         <td id="JuvInt" class="statistics no-history">
                                 <div title="Ювентус - Интер
 0 побед, 0 ничьих, 0 поражений" class="results">
@@ -1839,6 +1960,31 @@
 Кликните, чтобы узнать подробности" hidden>
                     3 - 1
                 </div></td> 
+
+                <td id="AtMMon" class="statistics has-history">
+                        <div title="Атлетико - Монако
+2 победы, 0 ничьих, 0 поражений
+Кликните, чтобы узнать подробности" class="results">
+                            <p class="games-score">+2 =0 -0</p>
+                            <p class="goals-difference">4 - 1</p>
+                        </div>
+                    <div class="duels" 
+                    title="&quot;Атлетико&quot; против &quot;Монако&quot;
+1 победа в дуэлях, 0 поражений
+Кликните, чтобы узнать подробности" hidden>
+                1 - 0
+            </div></td>    
+            
+            <td id="AtMNap" class="statistics no-history">
+                    <div title="Атлетико - Наполи
+0 побед, 0 ничьих, 0 поражений" class="results">
+                    <p class="games-score">+ = -</p>
+                    <p class="goals-difference"> - </p></div>
+            <div class="duels" title="&quot;Атлетико&quot; против &quot;Наполи&quot;
+Не встречались" hidden>
+                         - 
+                </div>
+            </td>            
 
                         <td id="AtMInt" class="statistics has-history">
                                 <div title="Атлетико - Интер
@@ -2165,6 +2311,34 @@
                     </div>
                 </td>
 
+               <td id="CheMon" class="statistics has-history">                        
+                    <div class="results" title="Челси - Монако
+0 побед, 1 ничья, 1 поражение
+Кликните, чтобы узнать подробности">
+                       <p class="games-score">+0 =1 -1</p>
+                       <p class="goals-difference">3 - 5</p>
+                   </div>
+                   <div class="duels" title="&quot;Челси&quot; против &quot;Монако&quot;
+0 побед в дуэлях, 1 поражение
+Кликните, чтобы узнать подробности" hidden>
+                        0 - 1
+                    </div>
+                </td>   
+                
+                    <td id="CheNap" class="statistics has-history">                        
+                    <div title="Челси - Наполи
+1 победа, 0 ничьих, 1 поражение
+Кликните, чтобы узнать подробности" class="results">
+                        <p class="games-score">+1 =0 -1</p>
+                        <p class="goals-difference">5 - 4</p>
+                    </div>
+                            <div class="duels" title="&quot;Челси&quot; против &quot;Наполи&quot;
+1 победа в дуэлях, 0 поражений
+Кликните, чтобы узнать подробности" hidden>
+                            1 - 0
+                        </div>
+                        </td>                  
+
                     <td id="CheInt" class="statistics has-history">
                             <div title="Челси - Интер
 0 побед, 0 ничьих, 2 поражения
@@ -2480,6 +2654,31 @@
                             1 - 0
                         </div>
                     </td>
+
+                    <td id="PSGMon" class="statistics no-history">
+                            <div class="results" title="ПСЖ - Монако
+0 побед, 0 ничьих, 0 поражений">
+                           <p class="games-score">+ = -</p>
+                           <p class="goals-difference"> - </p>
+                       </div>
+                       <div class="duels" title="&quot;ПСЖ&quot; против &quot;Монако&quot;
+Не встречались" hidden>
+                            - 
+                       </div>
+                        </td>
+                        
+                        <td id="PSGNap" class="statistics has-history">
+                            <div title="ПСЖ - Наполи
+1 победа, 3 ничьи, 0 поражений
+Кликните, чтобы узнать подробности" class="results">
+                            <p class="games-score">+1 =3 -0</p>
+                            <p class="goals-difference">5 - 3</p></div>
+                        <div class="duels" title="&quot;ПСЖ&quot; против &quot;Наполи&quot;
+2 победы в дуэлях, 0 поражений
+Кликните, чтобы узнать подробности" hidden>
+                            2 - 0
+                        </div>                    
+                </td>                        
 
                     <td id="PSGInt" class="statistics no-history">
                             <div title="ПСЖ - Интер
@@ -2814,7 +3013,22 @@
 Не встречались" hidden>
                              - 
                         </div>
-                </td>                
+                </td>    
+                
+                <td id="MCMon" class="statistics has-history">                        
+                        <div title="МанСити - Монако
+1 победа, 0 ничьих, 1 поражение
+Кликните, чтобы узнать подробности" class="results">
+                            <p class="games-score">+1 =0 -1</p>
+                            <p class="goals-difference">6 - 6</p>
+                        </div>
+                        <div class="duels" 
+                        title="&quot;МанСити&quot; против &quot;Монако&quot;
+0 побед в дуэлях, 1 поражение
+Кликните, чтобы узнать подробности" hidden>
+                            0 - 1
+                        </div>
+                    </td>                 
 
                     <td id="MCNap" class="statistics has-history">                        
                         <div title="МанСити - Наполи
@@ -2857,6 +3071,20 @@
                             0 - 0
                         </div>                        
                     </td>
+
+                    <td id="MCLyo-double2" class="statistics has-history">
+                            <div title="МанСити - Лион
+0 побед, 1 ничья, 1 поражение
+                            Кликните, чтобы узнать подробности" class="results">
+                            <p class="games-score">+0 =1 -1</p>
+                            <p class="goals-difference">3 - 4</p>
+                        </div>
+                            <div class="duels" title="&quot;МанСити&quot; против &quot;Лиона&quot;
+0 побед в дуэлях, 0 поражений, 1 дуэль в группе не выявила победителя
+Кликните, чтобы узнать подробности" hidden>
+                            0 - 0
+                        </div>                        
+                    </td>                    
 
                 </tr>  
 
@@ -3165,6 +3393,34 @@
                              - 
                         </div>
                     </td> 
+
+                    <td id="BoDMon" class="statistics has-history">
+                            <div class="results" title="Боруссия - Монако
+2 победы, 0 ничьих, 2 поражения
+Кликните, чтобы узнать подробности">
+                            <p class="games-score">+2 =0 -2</p>
+                            <p class="goals-difference">8 - 6</p></div>
+                            <div class="duels" 
+                            title="&quot;Боруссия&quot; против &quot;Монако&quot;
+1 победа в дуэлях, 1 поражение
+Кликните, чтобы узнать подробности" hidden>
+                                1 - 1
+                            </div>
+                        </td>
+
+            <td id="BoDNap" class="statistics has-history">                        
+                <div title="Боруссия - Наполи
+1 победа, 0 ничьих, 1 поражение
+Кликните, чтобы узнать подробности" class="results">
+                    <p class="games-score">+1 =0 -1</p>
+                    <p class="goals-difference">4 - 3</p>
+                </div>
+                    <div class="duels" title="&quot;Боруссия&quot; против &quot;Наполи&quot;
+1 победа в дуэлях, 0 поражений
+Кликните, чтобы узнать подробности" hidden>
+                        1 - 0
+                    </div>
+            </td>                        
 
                         <td id="BoDInt" class="statistics has-history">
                             <div class="results" title="Боруссия - Интер
@@ -3505,6 +3761,33 @@
                             </div>
                         </td> 
 
+                        <td id="MUMon" class="statistics has-history">
+                            <div class="results" title="МанЮнайтед - Монако
+0 побед, 2 ничьи, 0 поражений
+Кликните, чтобы узнать подробности">
+                                <p class="games-score">+0 =2 -0</p>
+                                <p class="goals-difference">1 - 1</p>
+                            </div>
+                            <div class="duels" 
+                            title="&quot;МанЮнайтед&quot; против &quot;Монако&quot;
+0 побед в дуэлях, 1 поражение
+Кликните, чтобы узнать подробности" hidden>
+                                0 - 1
+                            </div>
+                        </td> 
+
+                    <td id="MUNap" class="statistics no-history">
+                        <div title="МанЮнайтед - Наполи
+0 побед, 0 ничьих, 0 поражений" class="results">
+                        <p class="games-score">+ = -</p>
+                        <p class="goals-difference"> - </p></div>
+                <div class="duels" 
+                title="&quot;МанЮнайтед&quot; против &quot;Наполи&quot;
+Не встречались" hidden>
+                             - 
+                    </div>
+                </td>                        
+
                     <td id="MUInt" class="statistics has-history">
                             <div title="МанЮнайтед - Интер
 2 победы, 2 ничьи, 0 поражений
@@ -3840,6 +4123,33 @@
 0 побед в дуэлях, 1 поражение
 Кликните, чтобы узнать подробности" hidden>
                             0 - 1
+                        </div></td>   
+                        
+                <td id="ArsMon" class="statistics has-history">
+                    <div title="Арсенал - Монако
+1 победа, 0 ничьих, 1 поражение
+Кликните, чтобы узнать подробности" class="results">
+                        <p class="games-score">+1 =0 -1</p>
+                        <p class="goals-difference">3 - 3</p>
+                    </div>
+                <div class="duels" title="&quot;Арсенал&quot; против &quot;Монако&quot;
+0 побед в дуэлях, 1 поражение
+Кликните, чтобы узнать подробности" hidden>
+                            0 - 1
+                        </div></td>        
+                        
+                <td id="ArsNap" class="statistics has-history">
+                    <div title="Арсенал - Наполи
+3 победы, 0 ничьих, 1 поражение
+Кликните, чтобы узнать подробности" class="results">
+                        <p class="games-score">+3 =0 -1</p>
+                        <p class="goals-difference">5 - 2</p>
+                    </div>
+                <div class="duels" 
+                title="&quot;Арсенал&quot; против &quot;Наполи&quot;
+2 победы в дуэлях, 0 поражений
+Кликните, чтобы узнать подробности" hidden>
+                            2 - 0
                         </div></td>                          
 
                     <td id="ArsInt" class="statistics has-history">
@@ -4172,7 +4482,35 @@
 1 победа в дуэлях, 1 поражение
 Кликните, чтобы узнать подробности" hidden>
                         1 - 1
-                    </div></td>                    
+                    </div></td>    
+                    
+                <td id="LivMon" class="statistics has-history">                        
+                    <div title="Ливерпуль - Монако
+1 победа, 0 ничьих, 1 поражение
+Кликните, чтобы узнать подробности" class="results">
+                        <p class="games-score">+1 =0 -1</p>
+                        <p class="goals-difference">2 - 1</p>
+                    </div>
+                <div class="duels" title="&quot;Ливерпуль&quot; против &quot;Монако&quot;
+0 побед в дуэлях, 0 поражений, 1 дуэль в группе не выявила победителя
+Кликните, чтобы узнать подробности" hidden>
+                        0 - 0
+                    </div>
+                </td>   
+                
+                <td id="LivNap" class="statistics has-history">                        
+                        <div title="Ливерпуль - Наполи
+2 победы, 2 ничьи, 2 поражения
+Кликните, чтобы узнать подробности" class="results">
+                            <p class="games-score">+2 =2 -2</p>
+                            <p class="goals-difference">5 - 5</p>
+                        </div>
+                        <div class="duels" title="&quot;Ливерпуль&quot; против &quot;Наполи&quot;
+1 победа в дуэлях, 0 поражений, 2 дуэли в группах не выявили победителя
+Кликните, чтобы узнать подробности" hidden>
+                            1 - 0
+                        </div>  
+                    </td>                
 
                             <td id="LivInt" class="statistics has-history">                        
                                     <div title="Ливерпуль - Интер
@@ -4503,6 +4841,35 @@
 Не встречались" hidden>
                          - 
                     </div></td>                     
+
+                   <td id="PorMon" class="statistics has-history">
+                        <div class="results" title="Порто - Монако
+3 победы, 0 ничьих, 0 поражений
+Кликните, чтобы узнать подробности">
+                           <p class="games-score">+3 =0 -0</p>
+                           <p class="goals-difference">11 - 2</p>
+                       </div>
+                       <div class="duels" title="&quot;Порто&quot; против &quot;Монако&quot;
+2 победы в дуэлях, 0 поражений
+Кликните, чтобы узнать подробности" hidden>
+                            2 - 0
+                        </div>
+                   </td> 
+
+                   <td id="PorNap" class="statistics has-history">
+                        <div class="results" title="Порто - Наполи
+1 победа, 1 ничья, 2 поражения
+Кликните, чтобы узнать подробности">
+                           <p class="games-score">+1 =1 -2</p>
+                           <p class="goals-difference">3 - 4</p>
+                       </div>
+                       <div class="duels" 
+                       title="&quot;Порто&quot; против &quot;Наполи&quot;
+1 победа в дуэлях, 1 поражение
+Кликните, чтобы узнать подробности" hidden>
+                            1 - 1
+                        </div>
+                   </td>                    
 
                     <td id="PorInt" class="statistics has-history">
                             <div title="Порто - Интер
@@ -4847,7 +5214,34 @@
 Кликните, чтобы узнать подробности" hidden>
                    0 - 1
                </div>
-           </td>               
+           </td>   
+           
+           <td id="TotMon" class="statistics has-history">
+                <div class="results" title="Тоттенхэм - Монако
+1 победа, 1 ничья, 2 поражения
+Кликните, чтобы узнать подробности">
+                   <p class="games-score">+1 =1 -2</p>
+                   <p class="goals-difference">7 - 6</p>
+               </div>
+               <div class="duels" 
+               title="&quot;Тоттенхэм&quot; против &quot;Монако&quot;
+1 победа в дуэлях, 1 поражение
+Кликните, чтобы узнать подробности" hidden>
+                   1 - 1
+               </div>
+           </td>         
+           
+           <td id="TotNap" class="statistics no-history">
+                <div class="results" title="Тоттенхэм - Наполи
+0 побед, 0 ничьих, 0 поражений">
+               <p class="games-score">+ = -</p>
+               <p class="goals-difference"> - </p>
+           </div>
+           <div class="duels" title="&quot;Тоттенхэм&quot; против &quot;Наполи&quot;
+Не встречались" hidden>
+                - 
+           </div>
+   </td>           
 
                         <td id="TotInt" class="statistics has-history">
                             <div class="results" title="Тоттенхэм - Интер
@@ -5189,7 +5583,31 @@
 Не встречались" hidden>
         - 
    </div>
-</td>         
+</td>       
+
+<td id="SchMon" class="statistics no-history">
+        <div class="results" title="Шальке - Монако
+0 побед, 0 ничьих, 0 поражений">
+       <p class="games-score">+ = -</p>
+       <p class="goals-difference"> - </p>
+   </div>
+   <div class="duels" title="&quot;Шальке&quot; против &quot;Монако&quot;
+Не встречались" hidden>
+        - 
+   </div>
+</td> 
+
+<td id="SchNap" class="statistics no-history">
+        <div class="results" title="Шальке - Наполи
+0 побед, 0 ничьих, 0 поражений">
+       <p class="games-score">+ = -</p>
+       <p class="goals-difference"> - </p>
+   </div>
+   <div class="duels" title="&quot;Шальке&quot; против &quot;Наполи&quot;
+Не встречались" hidden>
+        - 
+   </div>
+</td> 
 
                         <td id="TotInt" class="statistics has-history">
                             <div class="results" title="Тоттенхэм - Интер
@@ -5534,6 +5952,32 @@
    1 - 1
 </div>
 </td>    
+
+<td id="RomMon" class="statistics has-history">
+    <div class="results" title="Рома - Монако
+0 побед, 1 ничья, 1 поражение
+Кликните, чтобы узнать подробности">
+   <p class="games-score">+0 =1 -1</p>
+   <p class="goals-difference">0 - 1</p>
+</div>
+<div class="duels" title="&quot;Рома&quot; против &quot;Монако&quot;
+0 побед в дуэлях, 1 поражение
+Кликните, чтобы узнать подробности" hidden>
+   0 - 1
+</div>
+</td> 
+
+<td id="RomNap" class="statistics no-history">
+        <div class="results" title="Рома - Наполи
+0 побед, 0 ничьих, 0 поражений">
+       <p class="games-score">+ = -</p>
+       <p class="goals-difference"> - </p>
+   </div>
+   <div class="duels" title="&quot;Рома&quot; против &quot;Наполи&quot;
+Не встречались" hidden>
+        - 
+   </div>
+    </td>
                         
                         <td id="TotAj" class="statistics has-history">
                             <div class="results" title="Тоттенхэм - Аякс
@@ -5891,6 +6335,36 @@
            </div>
        </td>
 
+       <td id="ShtMon" class="statistics has-history">
+            <div class="results" title="Шахтер - Монако
+1 победа, 0 ничьих, 1 поражение
+Кликните, чтобы узнать подробности">
+               <p class="games-score">+1 =0 -1</p>
+               <p class="goals-difference">2 - 3</p>
+           </div>
+           <div class="duels" 
+           title="&quot;Шахтер&quot; против &quot;Монако&quot;
+0 побед в дуэлях, 1 поражение
+Кликните, чтобы узнать подробности" hidden>
+               0 - 1
+           </div>
+       </td>    
+       
+       <td id="ShtNap" class="statistics has-history">
+            <div class="results" title="Шахтер - Наполи
+1 победа, 0 ничьих, 1 поражение
+Кликните, чтобы узнать подробности">
+               <p class="games-score">+1 =0 -1</p>
+               <p class="goals-difference">2 - 4</p>
+           </div>
+           <div class="duels" 
+           title="&quot;Шахтер&quot; против &quot;Наполи&quot;
+1 победа в дуэлях, 0 поражений
+Кликните, чтобы узнать подробности" hidden>
+               1 - 0
+           </div>
+       </td>        
+
                         <td id="TotInt" class="statistics has-history">
                             <div class="results" title="Тоттенхэм - Интер
 3 победы, 0 ничьих, 3 поражения
@@ -6220,6 +6694,33 @@
                        </div>
                        <div class="duels" 
                        title="&quot;Милан&quot; против &quot;Байера&quot;
+Не встречались" hidden>
+                            - 
+                       </div>
+                    </td>  
+
+                    <td id="MilMon" class="statistics has-history">
+                            <div title="Милан - Монако
+1 победа, 0 ничьих, 0 поражений
+Кликните, чтобы узнать подробности" class="results">
+                            <p class="games-score">+1 =0 -0</p>
+                            <p class="goals-difference">3 - 0</p></div>
+                        <div class="duels" 
+                        title="&quot;Милан&quot; против &quot;Монако&quot;
+1 победа в дуэлях, 0 поражений
+Кликните, чтобы узнать подробности" hidden>
+                                1 - 0
+                            </div>
+                        </td>                     
+
+                        <td id="MilNap" class="statistics no-history">
+                            <div class="results" title="Милан - Наполи
+0 побед, 0 ничьих, 0 поражений">
+                           <p class="games-score">+ = -</p>
+                           <p class="goals-difference"> - </p>
+                       </div>
+                       <div class="duels" 
+                       title="&quot;Милан&quot; против &quot;Наполи&quot;
 Не встречались" hidden>
                             - 
                        </div>
@@ -6565,6 +7066,31 @@
                 </div>                        
                 </td>
 
+                <td id="LyoMon" class="statistics no-history">
+                    <div title="Лион - Монако
+0 побед, 0 ничьих, 0 поражений" class="results">
+                    <p class="games-score">+ = -</p>
+                    <p class="goals-difference">-</p>
+                </div>
+                    <div class="duels" title="&quot;Лион&quot; против &quot;Монако&quot;
+Не встречались" hidden>
+                     - 
+                </div>                  
+                </td>   
+
+                <td id="LyoNap" class="statistics no-history">
+                    <div title="Лион - Наполи
+0 побед, 0 ничьих, 0 поражений" class="results">
+                    <p class="games-score">+ = -</p>
+                    <p class="goals-difference">-</p>
+                </div>
+                    <div class="duels" 
+                    title="&quot;Лион&quot; против &quot;Наполи&quot;
+Не встречались" hidden>
+                     - 
+                </div>                  
+                </td> 
+
                 <td id="LyoAta" class="statistics has-history">
                     <div title="Лион - Аталанта
 0 побед, 1 ничья, 1 поражение
@@ -6908,7 +7434,33 @@
 Не встречались" hidden>
                      - 
                 </div>                  
-                </td>                
+                </td>   
+                
+                <td id="SevMon" class="statistics no-history">
+                    <div title="Севилья - Монако
+0 побед, 0 ничьих, 0 поражений" class="results">
+                    <p class="games-score">+ = -</p>
+                    <p class="goals-difference">-</p>
+                </div>
+                    <div class="duels" 
+                    title="&quot;Севилья&quot; против &quot;Монако&quot;
+Не встречались" hidden>
+                     - 
+                </div>                  
+                </td>                 
+
+                <td id="SevNap" class="statistics no-history">
+                    <div title="Севилья - Наполи
+0 побед, 0 ничьих, 0 поражений" class="results">
+                    <p class="games-score">+ = -</p>
+                    <p class="goals-difference">-</p>
+                </div>
+                    <div class="duels" 
+                    title="&quot;Севилья&quot; против &quot;Наполи&quot;
+Не встречались" hidden>
+                     - 
+                </div>                  
+                </td>   
 
                 <td id="SevAta" class="statistics has-history">
                     <div title="Лион - Аталанта
@@ -7229,6 +7781,33 @@
 Кликните, чтобы узнать подробности" hidden>
                                 2 - 1
                             </div></td>  
+
+                    <td id="BenMon" class="statistics has-history">
+                        <div title="Бенфика - Монако
+1 победа, 1 ничья, 0 поражений
+Кликните, чтобы узнать подробности" class="results">
+                        <p class="games-score">+1 =1 -0</p>
+                        <p class="goals-difference">1 - 0</p></div>
+                    <div class="duels" 
+                    title="&quot;Бенфика&quot; против &quot;Монако&quot;
+0 побед в дуэлях, 1 поражение
+Кликните, чтобы узнать подробности" hidden>
+                                0 - 1
+                            </div></td>    
+                            
+                <td id="BenNap" class="statistics has-history">
+                    <div class="results" title="Бенфика - Наполи
+1 победа, 0 ничьих, 3 поражения
+Кликните, чтобы узнать подробности">
+                    <p class="games-score">+1 =0 -3</p>
+                    <p class="goals-difference">7 - 9</p></div>
+                        <div class="duels" 
+                        title="&quot;Бенфика&quot; против &quot;Наполи&quot;
+1 победа в дуэлях, 0 поражений, 1 дуэль в группе не выявила победителя
+Кликните, чтобы узнать подробности" hidden>
+                            1 - 0
+                        </div>                    
+                </td>                              
 
                             <td id="BenInt" class="statistics has-history">
                                 <div title="Бенфика - Интер
@@ -7565,6 +8144,33 @@
                     <img alt="Байер" src="images/Bayer.png" class="bayer football-logo-table">
                 </td>
 
+                <td id="BayMon" class="statistics has-history">                        
+                        <div title="Байер - Монако
+1 победа, 2 ничьи, 3 поражения
+Кликните, чтобы узнать подробности" class="results">
+                            <p class="games-score">+1 =2 -3</p>
+                            <p class="goals-difference">6 - 9</p>
+                        </div>
+                <div class="duels" title="&quot;Байер&quot; против &quot;Монако&quot;
+0 побед в дуэлях, 0 поражений, 3 дуэли в группах не выявили победителя
+Кликните, чтобы узнать подробности" hidden>
+                    0 - 0
+                </div>
+                </td>
+
+                <td id="BayNap" class="statistics no-history">
+                    <div title="Байер - Наполи
+0 побед, 0 ничьих, 0 поражений" class="results">
+                    <p class="games-score">+ = -</p>
+                    <p class="goals-difference">-</p>
+                </div>
+                    <div class="duels" 
+                    title="&quot;Байер&quot; против &quot;Наполи&quot;
+Не встречались" hidden>
+                     - 
+                </div>                  
+                </td>                
+
                 <td id="SevAta" class="statistics has-history">
                     <div title="Лион - Аталанта
 0 побед, 1 ничья, 1 поражение
@@ -7605,8 +8211,749 @@
                 </div>
                 </td>
 
-                </tr>                
+                </tr> 
+                
+                <tr class="Monaco">
+    
+                    <td class="number">23</td>
+        
+                    <td>
+                        <img alt="Монако" src="images/Monaco.png" 
+                        class="football-logo-table real">
+                    </td>
+        
+                    <td><div class="club-name">Монако</div></td>
 
+                <td id="MonRMa" class="statistics has-history">                        
+                        <div title="Монако - Реал
+1 победа, 0 ничьих, 1 поражение
+Кликните, чтобы узнать подробности" class="results">
+                            <p class="games-score">+1 =0 -1</p>
+                            <p class="goals-difference">5 - 5</p>
+                        </div>
+                <div class="duels" title="&quot;Монако&quot; против &quot;Реала&quot;
+1 победа в дуэлях, 0 поражений
+Кликните, чтобы узнать подробности" hidden>
+                        1 - 0
+                    </div>
+                </td>
+
+                <td id="MonBar" class="statistics has-history">                        
+                        <div title="Монако - Барселона
+0 побед, 0 ничьих, 2 поражения
+Кликните, чтобы узнать подробности" class="results">
+                            <p class="games-score">+0 =0 -2</p>
+                            <p class="goals-difference">0 - 3</p>
+                        </div>
+                <div class="duels" title="&quot;Монако&quot; против &quot;Барселоны&quot;
+0 побед в дуэлях, 1 поражение
+Кликните, чтобы узнать подробности" hidden>
+                    0 - 1
+                </div>
+                </td>
+
+                <td id="MonBav" class="statistics no-history">
+                    <div title="Монако - Бавария
+0 побед, 0 ничьих, 0 поражений" class="results">
+                    <p class="games-score">+ = -</p>
+                    <p class="goals-difference">-</p>
+                </div>
+                    <div class="duels" title="&quot;Монако&quot; против &quot;Баварии&quot;
+Не встречались" hidden>
+                     - 
+                </div>                  
+                </td>
+
+                <td id="MonJuv" class="statistics has-history">
+                    <div title="Монако - Ювентус
+1 победа, 1 ничья, 4 поражения
+Кликните, чтобы узнать подробности" class="results">
+                        <p class="games-score">+1 =1 -4</p>
+                        <p class="goals-difference">5 - 11</p>
+                    </div>
+                <div class="duels" title="&quot;Монако&quot; против &quot;Ювентуса&quot;
+0 побед в дуэлях, 3 поражения
+Кликните, чтобы узнать подробности" hidden>
+                            0 - 3
+                        </div>
+                </td> 
+
+                <td id="MonAtM" class="statistics has-history">                        
+                        <div title="Монако - Атлетико
+0 побед, 0 ничьих, 2 поражения
+Кликните, чтобы узнать подробности" class="results">
+                            <p class="games-score">+0 =0 -2</p>
+                            <p class="goals-difference">1 - 4</p>
+                        </div>
+                <div class="duels" title="&quot;Монако&quot; против &quot;Атлетико&quot;
+0 побед в дуэлях, 1 поражение
+Кликните, чтобы узнать подробности" hidden>
+                    0 - 1
+                </div>
+                </td>
+
+                <td id="MonChe" class="statistics has-history">                        
+                        <div title="Монако - Челси
+1 победа, 1 ничья, 0 поражений
+Кликните, чтобы узнать подробности" class="results">
+                            <p class="games-score">+1 =1 -0</p>
+                            <p class="goals-difference">5 - 3</p>
+                        </div>
+                <div class="duels" title="&quot;Монако&quot; против &quot;Челси&quot;
+1 победа в дуэлях, 0 поражений
+Кликните, чтобы узнать подробности" hidden>
+                        1 - 0
+                    </div>
+                </td>
+
+                <td id="MonPSG" class="statistics no-history">
+                    <div title="Монако - ПСЖ
+0 побед, 0 ничьих, 0 поражений" class="results">
+                    <p class="games-score">+ = -</p>
+                    <p class="goals-difference">-</p>
+                </div>
+                    <div class="duels" title="&quot;Монако&quot; против &quot;ПСЖ&quot;
+Не встречались" hidden>
+                     - 
+                </div>                  
+                </td>
+
+                <td id="MonMC" class="statistics has-history">
+                        <div title="Монако - МанСити
+1 победа, 0 ничьих, 1 поражение
+Кликните, чтобы узнать подробности" class="results">
+                        <p class="games-score">+1 =0 -1</p>
+                        <p class="goals-difference">6 - 6</p>
+                    </div>
+                        <div class="duels" 
+                        title="&quot;Монако&quot; против &quot;МанСити&quot;
+1 победа в дуэлях, 0 поражений
+Кликните, чтобы узнать подробности" hidden>
+                        1 - 0
+                    </div>                        
+                </td>        
+
+                <td id="MonBoD" class="statistics has-history">
+                        <div title="Монако - Боруссия
+2 победы, 0 ничьих, 2 поражения
+Кликните, чтобы узнать подробности" class="results">
+                        <p class="games-score">+2 =0 -2</p>
+                        <p class="goals-difference">6 - 8</p>
+                    </div>
+                        <div class="duels" 
+                        title="&quot;Монако&quot; против &quot;Боруссии&quot;
+1 победа в дуэлях, 1 поражение
+Кликните, чтобы узнать подробности" hidden>
+                        1 - 1
+                    </div>                        
+                </td>                 
+
+                <td id="MonMU" class="statistics has-history">
+                    <div title="Монако - МанЮнайтед
+0 побед, 2 ничьи, 0 поражений
+Кликните, чтобы узнать подробности" class="results">
+                    <p class="games-score">+0 =2 -0</p>
+                    <p class="goals-difference">1 - 1</p>
+                </div>
+                    <div class="duels" title="&quot;Монако&quot; против &quot;МанЮнайтед&quot;
+1 победа в дуэлях, 0 поражений
+Кликните, чтобы узнать подробности" hidden>
+                    1 - 0
+                </div>                        
+                </td>
+
+                <td id="MonArs" class="statistics has-history">
+                    <div title="Монако - Арсенал
+1 победа, 0 ничьих, 1 поражение
+Кликните, чтобы узнать подробности" class="results">
+                    <p class="games-score">+1 =0 -1</p>
+                    <p class="goals-difference">3 - 3</p>
+                </div>
+                    <div class="duels" title="&quot;Монако&quot; против &quot;Арсенала&quot;
+1 победа в дуэлях, 0 поражений
+Кликните, чтобы узнать подробности" hidden>
+                    1 - 0
+                </div>                        
+                </td>
+
+                <td id="MonLiv" class="statistics has-history">                        
+                    <div title="Монако - Ливерпуль
+1 победа, 0 ничьих, 1 поражение
+Кликните, чтобы узнать подробности" class="results">
+                        <p class="games-score">+1 =0 -1</p>
+                        <p class="goals-difference">1 - 2</p>
+                    </div>
+                <div class="duels" title="&quot;Монако&quot; против &quot;Ливерпуля&quot;
+0 побед в дуэлях, 0 поражений, 1 дуэль в группе не выявила победителя
+Кликните, чтобы узнать подробности" hidden>
+                        0 - 0
+                    </div>
+                </td>
+
+                <td id="MonPor" class="statistics has-history">
+                    <div title="Монако - Порто
+0 побед, 0 ничьих, 3 поражения
+Кликните, чтобы узнать подробности" class="results">
+                        <p class="games-score">+0 =0 -3</p>
+                        <p class="goals-difference">2 - 11</p>
+                    </div>
+                <div class="duels" title="&quot;Монако&quot; против &quot;Порто&quot;
+0 побед в дуэлях, 2 поражения
+Кликните, чтобы узнать подробности" hidden>
+                            0 - 2
+                        </div>
+                </td> 
+
+                <td id="MonTot" class="statistics has-history">
+                    <div class="results" title="Монако - Тоттенхэм
+2 победы, 1 ничья, 1 поражение
+Кликните, чтобы узнать подробности">
+                       <p class="games-score">+2 =1 -1</p>
+                       <p class="goals-difference">6 - 7</p>
+                   </div>
+                   <div class="duels" 
+                   title="&quot;Монако&quot; против &quot;Тоттенхэма&quot;
+1 победа в дуэлях, 1 поражение
+Кликните, чтобы узнать подробности" hidden>
+                       1 - 1
+                   </div>
+                </td> 
+
+                <td id="MonSch" class="statistics no-history">
+                    <div title="Монако - Шальке
+0 побед, 0 ничьих, 0 поражений" class="results">
+                    <p class="games-score">+ = -</p>
+                    <p class="goals-difference">-</p>
+                </div>
+                    <div class="duels" title="&quot;Монако&quot; против &quot;Шальке&quot;
+Не встречались" hidden>
+                     - 
+                </div>                  
+                </td>
+
+                <td id="MonRom" class="statistics has-history">
+                    <div class="results" title="Монако - Рома
+1 победа, 1 ничья, 0 поражений
+Кликните, чтобы узнать подробности">
+                       <p class="games-score">+1 =1 -0</p>
+                       <p class="goals-difference">1 - 0</p>
+                   </div>
+                   <div class="duels" 
+                   title="&quot;Монако&quot; против &quot;Ромы&quot;
+1 победа в дуэлях, 0 поражений
+Кликните, чтобы узнать подробности" hidden>
+                       1 - 0
+                   </div>
+                </td>
+
+                <td id="MonSht" class="statistics has-history">                        
+                    <div title="Монако - Шахтер
+1 победа, 0 ничьих, 1 поражение
+Кликните, чтобы узнать подробности" class="results">
+                        <p class="games-score">+1 =0 -1</p>
+                        <p class="goals-difference">3 - 2</p>
+                    </div>
+                <div class="duels" title="&quot;Монако&quot; против &quot;Шахтера&quot;
+1 победа в дуэлях, 0 поражений
+Кликните, чтобы узнать подробности" hidden>
+                        1 - 0
+                    </div>
+                </td>
+
+                <td id="MonMil" class="statistics has-history">
+                    <div title="Монако - Милан
+0 побед, 0 ничьих, 1 поражение
+Кликните, чтобы узнать подробности" class="results">
+                    <p class="games-score">+0 =0 -1</p>
+                    <p class="goals-difference">0 - 3</p>
+                </div>
+                    <div class="duels" title="&quot;Монако&quot; против &quot;Милана&quot;
+0 побед в дуэлях, 1 поражение
+Кликните, чтобы узнать подробности" hidden>
+                    0 - 1
+                </div>                        
+                </td>
+
+                <td id="MonLyo" class="statistics no-history">
+                    <div title="Монако - Лион
+0 побед, 0 ничьих, 0 поражений" class="results">
+                    <p class="games-score">+ = -</p>
+                    <p class="goals-difference">-</p>
+                </div>
+                    <div class="duels" title="&quot;Монако&quot; против &quot;Лиона&quot;
+Не встречались" hidden>
+                     - 
+                </div>                  
+                </td>                
+
+                <td id="MonSev" class="statistics no-history">
+                    <div title="Монако - Севилья
+0 побед, 0 ничьих, 0 поражений" class="results">
+                    <p class="games-score">+ = -</p>
+                    <p class="goals-difference">-</p>
+                </div>
+                    <div class="duels" 
+                    title="&quot;Монако&quot; против &quot;Севильи&quot;
+Не встречались" hidden>
+                     - 
+                </div>                  
+                </td> 
+
+                <td id="MonBen" class="statistics has-history">
+                    <div title="Монако - Бенфика
+0 побед, 1 ничья, 1 поражение
+Кликните, чтобы узнать подробности" class="results">
+                    <p class="games-score">+0 =1 -1</p>
+                    <p class="goals-difference">0 - 1</p>
+                </div>
+                    <div class="duels" title="&quot;Монако&quot; против &quot;Бенфики&quot;
+1 победа в дуэлях, 0 поражений
+Кликните, чтобы узнать подробности" hidden>
+                    1 - 0
+                </div>                        
+                </td>
+
+                <td id="MonBay" class="statistics has-history">
+                    <div title="Монако - Байер
+3 победы, 2 ничьи, 1 поражение
+Кликните, чтобы узнать подробности" class="results">
+                    <p class="games-score">+3 =2 -1</p>
+                    <p class="goals-difference">9 - 6</p>
+                </div>
+                    <div class="duels" title="&quot;Монако&quot; против &quot;Байера&quot;
+0 побед в дуэлях, 0 поражений, 3 дуэли в группах не выявили победителя
+Кликните, чтобы узнать подробности" hidden>
+                    0 - 0
+                </div>                        
+                </td>
+
+                    <td>
+                        <img alt="Монако" src="images/Monaco.png" 
+                        class="football-logo-table real">
+                    </td>
+
+                <td id="MonNap" class="statistics no-history">
+                    <div title="Монако - Наполи
+0 побед, 0 ничьих, 0 поражений" class="results">
+                    <p class="games-score">+ = -</p>
+                    <p class="goals-difference">-</p>
+                </div>
+                    <div class="duels" 
+                    title="&quot;Монако&quot; против &quot;Наполи&quot;
+Не встречались" hidden>
+                     - 
+                </div>                  
+                </td> 
+
+                <td id="LyoAta" class="statistics has-history">
+                    <div title="Лион - Аталанта
+0 побед, 1 ничья, 1 поражение
+Кликните, чтобы узнать подробности" class="results">
+                    <p class="games-score">+0 =1 -1</p>
+                    <p class="goals-difference">1 - 2</p>
+                </div>
+                    <div class="duels" title="&quot;Лион&quot; против &quot;Аталанты&quot;
+0 побед в дуэлях, 0 поражений, 1 дуэль в группе не выявила победителя
+Кликните, чтобы узнать подробности" hidden>
+                    0 - 0
+                </div>                        
+                </td>
+
+                <td id="LyoNap" class="statistics no-history">
+                    <div title="Лион - Наполи
+0 побед, 0 ничьих, 0 поражений" class="results">
+                    <p class="games-score">+ = -</p>
+                    <p class="goals-difference">-</p>
+                </div>
+                    <div class="duels" title="&quot;Лион&quot; против &quot;Наполи&quot;
+Не встречались" hidden>
+                     - 
+                </div>                  
+                </td>
+
+                <td id="LyoVal" class="statistics has-history">
+                    <div title="Лион - Валенсия
+1 победа, 0 ничьих, 3 поражения
+Кликните, чтобы узнать подробности" class="results">
+                    <p class="games-score">+1 =0 -3</p>
+                    <p class="goals-difference">3 - 4</p></div>
+            <div class="duels" 
+            title="&quot;Лион&quot; против &quot;Валенсии&quot;
+0 побед в дуэлях, 1 поражение, 1 дуэль в группе не выявила победителя
+Кликните, чтобы узнать подробности" hidden>
+    0 - 1
+                </div>
+                </td>
+
+                </tr> 
+                
+                <tr class="Napoli">
+
+                    <td class="number">24</td>
+    
+                    <td><img alt="Наполи" src="images/Napoli.png" 
+                        class="football-logo-table"></td>
+    
+                    <td><div class="club-name">Наполи</div></td>
+
+                    <td id="NapRMa" class="statistics has-history">                        
+                        <div title="Наполи - Реал
+0 побед, 1 ничья, 3 поражения
+Кликните, чтобы узнать подробности" class="results">
+                            <p class="games-score">+0 =1 -3</p>
+                            <p class="goals-difference">3 - 9</p>
+                        </div>
+                            <div class="duels" title="&quot;Наполи&quot; против &quot;Реала&quot;
+0 побед в дуэлях, 2 поражения
+Кликните, чтобы узнать подробности" hidden>
+                            0 - 2
+                        </div> 
+                    </td> 
+
+                    <td id="NapBar" class="statistics no-history">                        
+                            <div title="Наполи - Барселона
+0 побед, 0 ничьих, 0 поражений" class="results">
+                    <p class="games-score">+ = -</p>
+                    <p class="goals-difference">-</p>
+                </div>
+                    <div class="duels" title="&quot;Наполи&quot; против &quot;Барселоны&quot;
+Не встречались" hidden>
+                     - 
+                </div>
+                </td>
+
+                <td id="NapBav" class="statistics has-history">
+                    <div title="Наполи - Бавария
+1 победа, 2 ничьи, 1 поражение
+Кликните, чтобы узнать подробности" class="results">
+                    <p class="games-score">+1 =2 -1</p>
+                    <p class="goals-difference">7 - 6</p>
+                </div>
+                        <div class="duels" title="&quot;Наполи&quot; против &quot;Баварии&quot;
+1 победа в дуэлях, 0 поражений, 1 дуэль в группе не выявила победителя
+Кликните, чтобы узнать подробности" hidden>
+                            1 - 0
+                        </div>                 
+            </td>
+
+            <td id="NapJuv" class="statistics has-history">
+                    <div title="Наполи - Ювентус
+1 победа, 0 ничьих, 1 поражение
+Кликните, чтобы узнать подробности" class="results">
+                    <p class="games-score">+1 =0 -1</p>
+                    <p class="goals-difference">3 - 2</p>
+                </div>
+            <div class="duels" title="&quot;Наполи&quot; против &quot;Ювентуса&quot;
+1 победа в дуэлях, 0 поражений
+Кликните, чтобы узнать подробности" hidden>
+                1 - 0
+            </div> 
+            </td>
+
+            <td id="NapAtM" class="statistics no-history">
+                    <div title="Наполи - Атлетико
+0 побед, 0 ничьих, 0 поражений" class="results">
+                    <p class="games-score">+ = -</p>
+                    <p class="goals-difference">-</p>
+                </div>
+                <div class="duels" title="&quot;Наполи&quot; против &quot;Атлетико&quot;
+Не встречались" hidden>
+                             - 
+                        </div>
+                </td>
+
+                    <td id="NapChe" class="statistics has-history">                        
+                    <div title="Наполи - Челси
+1 победа, 0 ничьих, 1 поражение
+Кликните, чтобы узнать подробности" class="results">
+                        <p class="games-score">+1 =0 -1</p>
+                        <p class="goals-difference">4 - 5</p>
+                    </div>
+                            <div class="duels" title="&quot;Наполи&quot; против &quot;Челси&quot;
+0 побед в дуэлях, 1 поражение
+Кликните, чтобы узнать подробности" hidden>
+                            0 - 1
+                        </div>
+                        </td>  
+
+                    <td id="NapPSG" class="statistics has-history">
+                            <div title="Наполи - ПСЖ
+0 побед, 3 ничьи, 1 поражение
+Кликните, чтобы узнать подробности" class="results">
+                            <p class="games-score">+0 =3 -1</p>
+                            <p class="goals-difference">3 - 5</p></div>
+                        <div class="duels" title="&quot;Наполи&quot; против &quot;ПСЖ&quot;
+0 побед в дуэлях, 2 поражения
+Кликните, чтобы узнать подробности" hidden>
+                            0 - 2
+                        </div>                    
+                </td>
+
+                    <td id="NapMC" class="statistics has-history">                        
+                        <div title="Наполи - МанСити
+1 победа, 1 ничья, 2 поражения
+Кликните, чтобы узнать подробности" class="results">
+                            <p class="games-score">+1 =1 -2</p>
+                            <p class="goals-difference">6 - 8</p>
+                        </div>
+                        <div class="duels" title="&quot;Наполи&quot; против &quot;МанСити&quot;
+1 победа в дуэлях, 1 поражение
+Кликните, чтобы узнать подробности" hidden>
+                            1 - 1
+                        </div>
+                    </td>
+
+                    <td id="NapBoD" class="statistics has-history">                        
+                    <div title="Наполи - Боруссия
+1 победа, 0 ничьих, 1 поражение
+Кликните, чтобы узнать подробности" class="results">
+                        <p class="games-score">+1 =0 -1</p>
+                        <p class="goals-difference">3 - 4</p>
+                    </div>
+                        <div class="duels" title="&quot;Наполи&quot; против &quot;Боруссии&quot;
+0 побед в дуэлях, 1 поражение
+Кликните, чтобы узнать подробности" hidden>
+                            0 - 1
+                        </div>
+            </td>
+
+            <td id="NapMU" class="statistics no-history">
+                    <div title="Наполи - МанЮнайтед
+0 побед, 0 ничьих, 0 поражений" class="results">
+                    <p class="games-score">+ = -</p>
+                    <p class="goals-difference">-</p>
+                </div>
+                <div class="duels" 
+                title="&quot;Наполи&quot; против &quot;МанЮнайтед&quot;
+Не встречались" hidden>
+                             - 
+                        </div>
+                </td>   
+                
+                    <td id="NapArs" class="statistics has-history">                        
+                    <div title="Наполи - Арсенал
+1 победа, 0 ничьих, 3 поражения
+Кликните, чтобы узнать подробности" class="results">
+                        <p class="games-score">+1 =0 -3</p>
+                        <p class="goals-difference">2 - 5</p>
+                    </div>
+                        <div class="duels" 
+                        title="&quot;Наполи&quot; против &quot;Арсенала&quot;
+0 побед в дуэлях, 2 поражения
+Кликните, чтобы узнать подробности" hidden>
+                            0 - 2
+                        </div>
+            </td>                
+
+                    <td id="NapLiv" class="statistics has-history">                        
+                        <div title="Наполи - Ливерпуль
+2 победы, 2 ничьи, 2 поражения
+Кликните, чтобы узнать подробности" class="results">
+                            <p class="games-score">+2 =2 -2</p>
+                            <p class="goals-difference">5 - 5</p>
+                        </div>
+                        <div class="duels" title="&quot;Наполи&quot; против &quot;Ливерпуля&quot;
+0 побед в дуэлях, 1 поражение, 2 дуэли в группах не выявили победителя
+Кликните, чтобы узнать подробности" hidden>
+                            0 - 1
+                        </div>  
+                    </td>
+
+                    <td id="NapPor" class="statistics has-history">                        
+                        <div title="Наполи - Порто
+2 победы, 1 ничья, 1 поражение
+Кликните, чтобы узнать подробности" class="results">
+                            <p class="games-score">+2 =1 -1</p>
+                            <p class="goals-difference">4 - 3</p>
+                        </div>
+                        <div class="duels" 
+                        title="&quot;Наполи&quot; против &quot;Порто&quot;
+1 победа в дуэлях, 1 поражение
+Кликните, чтобы узнать подробности" hidden>
+                            1 - 1
+                        </div>  
+                    </td>                    
+                  
+                    <td id="NapTot" class="statistics no-history">                        
+                        <div title="Наполи - Тоттенхэм
+0 побед, 0 ничьих, 0 поражений" class="results">
+                        <p class="games-score">+ = -</p>
+                        <p class="goals-difference">-</p>
+                    </div>
+                        <div class="duels" 
+                        title="&quot;Наполи&quot; против &quot;Тоттенхэма&quot;
+Не встречались" hidden>
+                         - 
+                    </div>
+                </td> 
+                
+                <td id="NapSch" class="statistics no-history">                        
+                        <div title="Наполи - Шальке
+0 побед, 0 ничьих, 0 поражений" class="results">
+                        <p class="games-score">+ = -</p>
+                        <p class="goals-difference">-</p>
+                    </div>
+                        <div class="duels" 
+                        title="&quot;Наполи&quot; против &quot;Шальке&quot;
+Не встречались" hidden>
+                         - 
+                    </div>
+                </td>    
+                
+                <td id="NapRom" class="statistics no-history">                        
+                        <div title="Наполи - Рома
+0 побед, 0 ничьих, 0 поражений" class="results">
+                        <p class="games-score">+ = -</p>
+                        <p class="goals-difference">-</p>
+                    </div>
+                        <div class="duels" 
+                        title="&quot;Наполи&quot; против &quot;Ромы&quot;
+Не встречались" hidden>
+                         - 
+                    </div>
+                </td>   
+                
+                <td id="NapSht" class="statistics has-history">                        
+                        <div title="Наполи - Шахтер
+1 победа, 0 ничьих, 1 поражение
+Кликните, чтобы узнать подробности" class="results">
+                            <p class="games-score">+1 =0 -1</p>
+                            <p class="goals-difference">4 - 2</p>
+                        </div>
+                        <div class="duels" 
+                        title="&quot;Наполи&quot; против &quot;Шахтера&quot;
+0 побед в дуэлях, 1 поражение
+Кликните, чтобы узнать подробности" hidden>
+                            0 - 1
+                        </div>
+                    </td>  
+                    
+                <td id="NapMil" class="statistics no-history">                        
+                        <div title="Наполи - Милан
+0 побед, 0 ничьих, 0 поражений" class="results">
+                        <p class="games-score">+ = -</p>
+                        <p class="goals-difference">-</p>
+                    </div>
+                        <div class="duels" 
+                        title="&quot;Наполи&quot; против &quot;Милана&quot;
+Не встречались" hidden>
+                         - 
+                    </div>
+                </td>   
+                
+                <td id="NapLyo" class="statistics no-history">                        
+                        <div title="Наполи - Лион
+0 побед, 0 ничьих, 0 поражений" class="results">
+                        <p class="games-score">+ = -</p>
+                        <p class="goals-difference">-</p>
+                    </div>
+                        <div class="duels" 
+                        title="&quot;Наполи&quot; против &quot;Лиона&quot;
+Не встречались" hidden>
+                         - 
+                    </div>
+                </td>      
+                
+                <td id="NapSev" class="statistics no-history">                        
+                        <div title="Наполи - Севилья
+0 побед, 0 ничьих, 0 поражений" class="results">
+                        <p class="games-score">+ = -</p>
+                        <p class="goals-difference">-</p>
+                    </div>
+                        <div class="duels" 
+                        title="&quot;Наполи&quot; против &quot;Севильи&quot;
+Не встречались" hidden>
+                         - 
+                    </div>
+                </td>       
+                
+                <td id="NapBen" class="statistics has-history">
+                    <div class="results" title="Наполи - Бенфика
+3 победы, 0 ничьих, 1 поражение
+Кликните, чтобы узнать подробности">
+                    <p class="games-score">+3 =0 -1</p>
+                    <p class="goals-difference">9 - 7</p></div>
+                        <div class="duels" 
+                        title="&quot;Наполи&quot; против &quot;Бенфики&quot;
+0 побед в дуэлях, 1 поражение, 1 дуэль в группе не выявила победителя
+Кликните, чтобы узнать подробности" hidden>
+                            0 - 1
+                        </div>                    
+                </td>  
+                
+                <td id="NapBay" class="statistics no-history">                        
+                        <div title="Наполи - Байер
+0 побед, 0 ничьих, 0 поражений" class="results">
+                        <p class="games-score">+ = -</p>
+                        <p class="goals-difference">-</p>
+                    </div>
+                        <div class="duels" 
+                        title="&quot;Наполи&quot; против &quot;Байера&quot;
+Не встречались" hidden>
+                         - 
+                    </div>
+                </td>                  
+
+                <td id="NapMon" class="statistics no-history">                        
+                        <div title="Наполи - Монако
+0 побед, 0 ничьих, 0 поражений" class="results">
+                    <p class="games-score">+ = -</p>
+                    <p class="goals-difference">-</p>
+                </div>
+                        <div class="duels" 
+                        title="&quot;Наполи&quot; против &quot;Монако&quot;
+Не встречались" hidden>
+                             - 
+                        </div>
+                    </td> 
+
+                    <td>
+                        <img alt="Наполи" src="images/Napoli.png" 
+                        class="football-logo-table">
+                    </td>                    
+
+                    <td id="NapLei" class="statistics has-history">                        
+                        <div title="Наполи - Лейпциг
+1 победа, 0 ничьих, 1 поражение
+Кликните, чтобы узнать подробности" class="results">
+                            <p class="games-score">+1 =0 -1</p>
+                            <p class="goals-difference">3 - 3</p>
+                        </div>
+                        <div class="duels" title="&quot;Наполи&quot; против &quot;Лейпцига&quot;
+0 побед в дуэлях, 1 поражение
+Кликните, чтобы узнать подробности" hidden>
+                            0 - 1
+                        </div>
+                    </td> 
+                   
+                    <td id="NapVal" class="statistics has-history">                        
+                    <div title="Наполи - Валенсия
+2 победы, 0 ничьих, 0 поражений
+Кликните, чтобы узнать подробности" class="results">
+                    <p class="games-score">+2 =0 -0</p>
+                    <p class="goals-difference">6 - 1</p>
+                </div>
+                        <div class="duels" title="&quot;Наполи&quot; против &quot;Валенсии&quot;
+1 победа в дуэлях, 0 поражений
+Кликните, чтобы узнать подробности" hidden>
+                            1 - 0
+                        </div>
+                    </td>                           
+
+                    <td id="NapLyo" class="statistics no-history">
+                            <div title="Наполи - Лион
+0 побед, 0 ничьих, 0 поражений" class="results">
+                        <p class="games-score">+ = -</p>
+                        <p class="goals-difference">-</p>
+                    </div>
+                            <div class="duels" title="&quot;Наполи&quot; против &quot;Лиона&quot;
+Не встречались" hidden>
+                                 - 
+                            </div>                      
+                    </td>    
+
+                </tr>                 
+              
                 <tr class="Inter">
     
                     <td class="number">9</td>
@@ -8338,7 +9685,7 @@
 
         <script src="scripts/decade.js"></script> 
         <script>
-            //rebuildTable(22);
+            //rebuildTable(24);
             // window.open("football-small-tables-duels/AjAtM.html", '', 
             // 'width=550px, height=900px');
         </script>   
