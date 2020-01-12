@@ -43,7 +43,7 @@ lessClubs.onclick = function () {
     }
 }
 moreClubs.onclick = function () {
-    if (clubsQuantity < 18) {
+    if (clubsQuantity < 20) {
         clubsQuantity += 1;
         clubsChoise.innerHTML = clubsQuantity;
     }

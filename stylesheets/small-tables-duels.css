@@ -102,7 +102,8 @@ table.add-table tr.final{
 }
 
 table.add-table td span.penalty-text,
-span.add-time-text{
+span.add-time-text,
+span.lottery-text{
   font-size: 12px;
 }
 
