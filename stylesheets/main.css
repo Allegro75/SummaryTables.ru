@@ -299,6 +299,14 @@ img.real{
   height: 45px;
 }
 
+/* Ноттингемскому лого нужна подложка.
+Иначе бледно-красное на сером не смотрится: */
+img.nottingham{
+  border: 0.1em solid lightgray; 
+  background-color: lightgrey;
+  border-radius: 0.3em;
+}
+
 div.club-name{
   margin: 15px;
 }
@@ -349,6 +357,7 @@ button.switch-to-favorites-button, button.switch-to-history-button,
 button.switch-to-decade-button{
   padding: 10px 20px;
   border-radius: 10px;
+  width: 500px;
 }
 
 section.donate{
