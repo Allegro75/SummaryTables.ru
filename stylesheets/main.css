@@ -6,8 +6,9 @@ body{
   color: #4f535b;
 
   /* background-image: url(../images/messi.png); */
-  background-repeat: no-repeat;
-  background-position: bottom left;
+  /* Все эти позишены-репиты делал, видимо, чтобы Месси влепить: */
+  /* background-repeat: no-repeat; */
+  /* background-position: bottom left; */
   /* background-blend-mode: multiply  ; */
   background-color: rgba(0, 0, 0, 0.1);
 
@@ -19,14 +20,14 @@ header{
   margin-left: 20px;
 }
 
-.forBorder{
+/* .forBorder{
   margin: 10px;
   border: 3px solid gray; 
   border-radius: 1em;
   padding-bottom: 10px;
   padding-left: 20px;
   padding-right: 20px;
-}
+} */
 
 .the-very-top{
   text-transform: uppercase;
@@ -36,6 +37,7 @@ header{
   font-size: 1em;
 }
 
+/* Для иконки в крайнем левом углу (раньше она была пиратским флагом): */
 .pirate{
   float: left;
   width: 20px;

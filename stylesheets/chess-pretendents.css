@@ -1,0 +1,310 @@
+body{
+
+  /* min-width: 1000px; */
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+  color: #4f535b;
+
+  /* background-image: url(../images/messi.png); */
+  /* Все эти позишены-репиты делал, видимо, чтобы Месси влепить: */
+  /* background-repeat: no-repeat; */
+  /* background-position: bottom left; */
+  /* background-blend-mode: multiply  ; */
+  background-color: rgba(0, 0, 0, 0.1);
+
+  padding: 20px;
+  /* Убрал div.forBorder - пришлось делать padding, чтоб не прилипало слева */
+}
+
+header{
+  margin-left: 20px;
+}
+
+/* .forBorder{
+  margin: 10px;
+  border: 3px solid gray; 
+  border-radius: 1em;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+} */
+
+.the-very-top{
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-left: 20px;
+  margin-top: 10px;
+  font-size: 1em;
+}
+
+/* Для иконки в крайнем левом углу (раньше она была пиратским флагом): */
+.pirate{
+  float: left;
+  width: 20px;
+  margin-right: 15px;
+}
+
+nav ul{
+  list-style: none;
+}
+
+nav li{
+  display: inline-block;
+  margin-right: 50px;
+  font-weight: bold;  
+}
+
+nav li:first-child{
+  margin-left: -40px;
+}
+
+nav a:hover{
+  color: black;
+}
+
+nav a:active{
+  color: beige;
+}
+
+/* .headerBackground{
+  margin: 14px -40px 4px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+header .myPhoto{
+  display: inline-block;
+  width: 190px;
+  height: 180px;
+  background-image: url("../images/olegAndVera.jpg");
+  background-position: 75% 50%;
+  border: 3px dotted gray; 
+  margin-left: 25px;
+  border-radius: 8%;
+}
+
+header .presentation{
+  display: inline-block;
+  margin-left: 30px;
+  line-height: 1em;
+  font-size: 2.55em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  } */
+
+/* .header{
+  vertical-align: middle;
+} */
+
+em{
+  font-style: italic;
+  font-weight: bold;
+}  
+
+strong{
+  font-weight: bold;
+  line-height: 1.1em;
+  font-size: 1.5em;
+}
+
+p{
+  font-size: 1.25em;
+  margin: 0.25em auto;
+}
+
+a{
+  color: #4f535b;
+}
+
+/* .text{
+  margin-top: 5px; 
+}  */
+
+/* .reflection{
+  margin: 20px;
+  margin-left: 0;
+}
+
+.position-image{
+  margin-top: 20px;
+  width: 600px; 
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+img.diagram{
+  width: 350px;
+}
+
+.positionPresentation{
+  text-align: center;
+  font-size: 1.25em;
+  color: #4f535b;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.decision{
+  text-align: center;
+} */
+
+/* div.youtube-information{
+  margin: 20px -40px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.youtube-information a{
+  text-decoration: none;
+  font-style: italic;
+  border-bottom: 2px solid gray;
+}
+
+.youtube-information p{
+  line-height: 180%;
+  padding-left: 40px;
+} */
+
+
+/* FOR FOOTBALL */
+
+
+main{
+  background-color: rgba(0, 0, 0, 0.1);
+  margin: 0 -40px;
+  padding: 1px 40px;
+  padding-bottom: 20px;
+  /* width: 100%; */
+  /* min-width: 1500px; */
+}
+
+h1{
+    text-transform: uppercase;
+}
+
+h1, .content-headers p{
+  text-align: left;
+  margin-left: 20px;
+}
+
+p.explanation{
+  font-size: 16px;
+  margin-top: -15px;
+  text-align: left;
+  margin-left: 20px;
+}
+
+p.update-announcement{
+  margin-top: 20px;
+}
+
+/* ТАБЛИЦА: */
+
+table.main-table{
+  margin-top: 20px;
+  margin-left: 20px;
+  /* border-spacing: 10px; */
+  border-collapse: collapse;
+  font-weight: bold;
+  /* width: 1500px; 
+  Отменил ширину, т.к., во-первых, из-за неё фон тёмно-серый вставал криво
+  (иногда (на тлф, например) не шёл до конца направо),
+  а, во-вторых, вообще не помню, зачем я это ограничение в 1500 пикселей ставил.
+  
+  P.S. Хотя я не вполне уверен, что проблема с фоном связана именно с этим размером*/
+}
+
+.main-table td{
+  /* border: 1px solid rgba(0, 0, 0, 0.1); */
+  text-align: center;
+  max-width: 150px;
+  padding: 13px;
+  border-right: 2px solid gray;
+}
+
+.main-table tr.photos td{
+  position: relative;
+}
+
+tr.photos span.number{
+  position: absolute;
+  top: 0.5em;
+  left: 0.5em;
+  font-style: italic; 
+}
+
+.main-table td.number{
+  font-style: italic;  
+}
+
+img.player-photo-table{
+  height: 60px;
+  margin: 5px;
+  border-radius: 0.3em;
+  box-shadow: 0.1em 0.1em 0.1em 2px rgb(83, 83, 83);
+}
+
+div.player-last-name{
+  /* margin: 15px; */
+  text-transform: uppercase;
+}
+
+.main-table tr:nth-child(odd){
+  background-color:rgba(0, 0, 0, 0.1);
+  /* Пытался сделать полукрасные строки 
+  background-color: black;
+  opacity: 0.1; */
+}
+
+.main-table tr:nth-child(even){
+  background-color: aliceblue;
+  /* Пытался сделать полукрасные строки
+  opacity: 0.5; */
+}
+
+p.games-score{
+  white-space: nowrap;
+  /* Чтобы строчка с победами-ничьями-поражениями
+не разрывалась на две (при уменьшении масштаба)*/
+}
+
+span.victories, span.defeats{
+  font-size: 1.3em;
+  white-space: nowrap;
+}
+
+span.draws{
+    position: relative;
+    bottom: 0.1em;
+}
+
+td p.whites-blacks-quantity{
+  font-weight: normal;
+  font-style: italic;
+}
+
+span.white-games{
+  float: left;
+  margin-left: 0.3em;
+}
+
+span.black-games{
+  float: right;
+  margin-right: 0.1em;
+}
+
+/* ПОСЛЕ ТАБЛИЦЫ */
+
+section.donate{
+  margin-left: 20px;
+}
+
+footer{
+  margin-top: 20px;
+  background-color: rgb(180, 180, 180);
+  padding: 10px;
+  padding-left: 15px;
+  color: rgb(31, 28, 28);
+}
