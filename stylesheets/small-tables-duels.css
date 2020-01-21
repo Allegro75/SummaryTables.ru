@@ -66,8 +66,8 @@ div.additional-table img.real{
 /* Ноттингемскому(и марсельскому) лого нужна подложка.
 Иначе бледно-красное(и голубое) на сером не смотрится: */
 img.nottingham{
-  border: 0.1em solid lightgrey; 
-  background-color: lightgray;
+  border: 0.1em solid rgb(230, 230, 230); 
+  background-color: rgb(230, 230, 230);
   border-radius: 0.3em;
 }
 
@@ -111,7 +111,8 @@ table.add-table tr.final{
 
 table.add-table td span.penalty-text,
 span.add-time-text,
-span.lottery-text{
+span.lottery-text,
+span.add-match-text{
   font-size: 12px;
 }
 

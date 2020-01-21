@@ -304,8 +304,8 @@ img.real{
 /* Ноттингемскому лого нужна подложка.
 Иначе бледно-красное на сером не смотрится: */
 img.nottingham{
-  border: 0.1em solid lightgray; 
-  background-color: lightgrey;
+  border: 0.1em solid rgb(230, 230, 230); 
+  background-color: rgb(230, 230, 230);
   border-radius: 0.3em;
 }
 
