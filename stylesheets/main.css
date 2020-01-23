@@ -309,6 +309,12 @@ img.nottingham{
   border-radius: 0.3em;
 }
 
+/* Лого Гамбурга вытянуто в ширину, посему его настаиваем специально: */
+img.hamburg{
+  width: 50px;
+  top: 8px;
+}
+
 div.club-name{
   margin: 15px;
 }
