@@ -17,6 +17,7 @@ img.football-logo-table{
 /* Для эмблем, вытянутых в высоту (Реал, Тоттенхэм, Порто, Милан, Интер): */
 img.real{
   height: 45px;
+  top: 2px;
 }
 
 /* Для эмблемы Байера(вытянутой в ширину): */
@@ -59,10 +60,6 @@ div.additional-table img.logo-right{
   right: 10px;
 }
 
-div.additional-table img.real{
-  top: 2px;
-}
-
 /* Ноттингемскому(и марсельскому) лого нужна подложка.
 Иначе бледно-красное(и голубое) на сером не смотрится: */
 img.nottingham{
@@ -73,7 +70,11 @@ img.nottingham{
 
 /* Лого Гамбурга вытянуто в ширину, посему его настаиваем специально: */
 img.hamburg{
-  width: 50px;
+  width: 47px;
+
+  /* Если не сделать height:auto, то height будет считываться с img, 
+  будет равен 40px, пропорции нарушатся */
+  height: auto;
   top: 8px;
 }
 

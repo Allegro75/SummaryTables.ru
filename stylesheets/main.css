@@ -312,6 +312,7 @@ img.nottingham{
 /* Лого Гамбурга вытянуто в ширину, посему его настаиваем специально: */
 img.hamburg{
   width: 50px;
+  height: auto;
   top: 8px;
 }
 
