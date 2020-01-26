@@ -79,9 +79,10 @@ img.hamburg{
 }
 
 div.additional-table h3{
-  /* margin-left: 65px;
-  margin-right: 65px; 
-  Раньше я так выравнивал заглавие матча*/
+  /* margin-left: 75px;
+  margin-right: 75px;  */
+  /* Раньше я так выравнивал заглавие матча */
+
   max-width: 300px;
   /* А теперь сделал через max-width, т.к. иначе лого Лейпцига лезет на заглавие */
   margin: 20px auto;
