@@ -1,33 +1,14 @@
 body{
-
-  /* min-width: 1000px; */
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 16px;
   color: #4f535b;
-
-  /* background-image: url(../images/messi.png); */
-  /* Все эти позишены-репиты делал, видимо, чтобы Месси влепить: */
-  /* background-repeat: no-repeat; */
-  /* background-position: bottom left; */
-  /* background-blend-mode: multiply  ; */
   background-color: rgba(0, 0, 0, 0.1);
-
   padding: 20px;
-  /* Убрал div.forBorder - пришлось делать padding, чтоб не прилипало слева */
 }
 
 header{
   margin-left: 20px;
 }
-
-/* .forBorder{
-  margin: 10px;
-  border: 3px solid gray; 
-  border-radius: 1em;
-  padding-bottom: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
-} */
 
 .the-very-top{
   text-transform: uppercase;
@@ -46,16 +27,15 @@ header{
 
 nav ul{
   list-style: none;
+  padding-left: 0px;
 }
 
 nav li{
   display: inline-block;
   margin-right: 50px;
-  font-weight: bold;  
-}
-
-nav li:first-child{
-  margin-left: -40px;
+  font-weight: bold;
+  margin-bottom: 1em;  
+  /* margin-top: 0.5em; */
 }
 
 nav a:hover{
@@ -66,34 +46,9 @@ nav a:active{
   color: beige;
 }
 
-.headerBackground{
-  margin: 14px -40px 4px;
-  padding: 10px;
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-header .myPhoto{
-  display: inline-block;
-  width: 190px;
-  height: 180px;
-  background-image: url("../images/olegAndVera.jpg");
-  background-position: 75% 50%;
-  border: 3px dotted gray; 
-  margin-left: 25px;
-  border-radius: 8%;
-}
-
-header .presentation{
-  display: inline-block;
-  margin-left: 30px;
-  line-height: 1em;
-  font-size: 2.55em;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  }
-
-.header{
+/* .header{
   vertical-align: middle;
-}
+} */
 
 em{
   font-style: italic;
@@ -114,62 +69,6 @@ p{
 a{
   color: #4f535b;
 }
-
-.text{
-  margin-top: 5px; 
-} 
-
-.reflection{
-  margin: 20px;
-  margin-left: 0;
-}
-
-.position-image{
-  margin-top: 20px;
-  width: 600px; 
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-img.diagram{
-  width: 350px;
-}
-
-.positionPresentation{
-  text-align: center;
-  font-size: 1.25em;
-  color: #4f535b;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.decision{
-  text-align: center;
-}
-
-div.youtube-information{
-  margin: 20px -40px;
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-.youtube-information a{
-  text-decoration: none;
-  font-style: italic;
-  border-bottom: 2px solid gray;
-}
-
-.youtube-information p{
-  line-height: 180%;
-  padding-left: 40px;
-}
-
-
-/* FOR FOOTBALL */
-
 
 main{
   background-color: rgba(0, 0, 0, 0.1);
@@ -235,24 +134,6 @@ section.selector button.choice{
 section.selector span.ok{
   position: absolute;
 } */
-
-section.duel-button{
-  margin-left: 20px;
-  margin-top: 20px; 
-}
-
-button.results-duels-switch {
-  height:50px; 
-  /* width:200px; */
-  font-size: 1.2em;
-  border-radius: 10px;
-  /* padding: 10px 20px; */
-}
-
-button.results-duels-switch p{
-  margin: 10px 20px;
-  font-style: italic;
-}
 
 table.main-table{
   margin-top: 20px;
@@ -349,17 +230,45 @@ td p.goals-difference{
   font-style: italic;
 }
 
-td div.points{
+/* td div.points{
   position: absolute;
   top: -12px;
   right: 2px;
   font-size: 24px;
   color: gray;
+} */
+
+
+/* Про кнопку ДУЭЛЕЙ: */
+section.duel-button{
+  margin-left: 20px;
+  margin-top: 20px; 
 }
 
+button.results-duels-switch {
+  height: 100px; 
+  width: 1000px;
+  font-size: 1.6em;
+  border-radius: 10px;
+  /* padding: 10px 20px; */
+}
+
+button.results-duels-switch p{
+  margin: 10px 20px;
+  font-style: italic;
+}
+
+
+main hr{
+    margin-left: 20px; 
+}
+
+
+/* Кнопки переключения на ДРУГИЕ таблицы: */
 section.switch-to-favorites, section.switch-to-history, section.switch-to-decade{
   margin-left: 20px;
   margin-top: 20px;
+  display: inline-block;
 }
 
 button.switch-to-favorites-button, button.switch-to-history-button, 
@@ -373,110 +282,10 @@ section.donate{
   margin-left: 20px;
 }
 
-.main-table div.additional-table,
-div.additional-table{
-  text-align: center;
-  position: absolute;
-  z-index: 10;
-  top: 30px;
-  left: 30px;
-  background-color: gray;
-  color: black;
-  border: 2px solid gray;
-  border-radius: 15px;
-  margin-bottom: 50px;
-  padding: 5px;
-}
-
-div.additional-table img{
-  position:absolute;
-}
-
-div.additional-table img.cross{
-  width: 30px;
-  margin:0;
-  top:-32px;
-  right: 0;
-}
-
-div.additional-table img.logo-left{
-  left: 10px;
-}
-
-div.additional-table img.logo-right{
-  right: 10px;
-}
-
-div.additional-table img.real{
-  top: 0px;
-}
-
-div.additional-table h3{
-  margin-left: 65px;
-  margin-right: 65px;
-}
-
-.main-table table.add-table,
-table.add-table{
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 20px;
-  border-collapse: collapse;
-  z-index: -1;
-  font-weight: normal;  
-}
-
-.main-table table.add-table td,
-table.add-table td{
-  padding: 7px;
-  border: none;
-}
-
-.main-table table.add-table tr:nth-child(even),
-table.add-table tr:nth-child(even){
-  background-color: aliceblue;
-}
-
-.main-table table.add-table td.number-of-match,
-table.add-table td.number-of-match{
-  font-style: italic;
-}
-
-.main-table table.add-table tr.final,
-table.add-table tr.final{
-  font-weight: bold;
-}
-
-.main-table table.add-table td span.penalty-text,
-table.add-table td span.penalty-text,
-span.add-time-text{
-  font-size: 12px;
-}
-
 footer{
   margin-top: 20px;
   background-color: rgb(180, 180, 180);
   padding: 10px;
   padding-left: 15px;
   color: rgb(31, 28, 28);
-}
-
-
-
-
-/* body.add-table{
-  width: fit-content;
-  height: fit-content;
-} */
-
-.add-table .additional-table{
-  max-width: 500px;
-}
-
-td a{
-  text-decoration: none;
-}
-
-td a:hover{
-  text-decoration: underline;
 }

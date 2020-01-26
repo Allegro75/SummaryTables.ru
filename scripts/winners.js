@@ -51,14 +51,14 @@ lessClubs.onclick = function () {
     }
 };
 moreClubs.onclick = function () {
-    if (clubsQuantity < 20) {
+    if (clubsQuantity < 22) {
         clubsQuantity += 1;
         clubsChoise.innerHTML = clubsQuantity;
         rebuildTable(clubsQuantity);
     }
 };
 maximumOfClubs.onclick = function () {    
-    clubsQuantity = 20;
+    clubsQuantity = 22;
     clubsChoise.innerHTML = clubsQuantity;
     rebuildTable(clubsQuantity);
 };

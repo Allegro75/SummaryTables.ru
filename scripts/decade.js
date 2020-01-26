@@ -30,24 +30,39 @@ table.onclick = function() {
 
 //Задаём js-имена кнопок переключателя:
 
+const minimumOfClubs = document.querySelector('.selector button.min');
 const lessClubs = document.querySelector('.selector button.less');
 const clubsChoise = document.querySelector('.selector button.choice');
 const moreClubs = document.querySelector('.selector button.more');
+const maximumOfClubs = document.querySelector('.selector button.max');
 
 //Делаем функции меняющие количество клубов(clubsQuantity) в переключателе:
 
+minimumOfClubs.onclick = function () {    
+    clubsQuantity = 2;
+    clubsChoise.innerHTML = clubsQuantity;
+    rebuildTable(clubsQuantity);
+};
 lessClubs.onclick = function () {
     if (clubsQuantity > 2) {
         clubsQuantity -= 1;
         clubsChoise.innerHTML = clubsQuantity;
+        rebuildTable(clubsQuantity);
     }
-}
+};
 moreClubs.onclick = function () {
     if (clubsQuantity < 24) {
         clubsQuantity += 1;
         clubsChoise.innerHTML = clubsQuantity;
+        rebuildTable(clubsQuantity);
     }
-}
+};
+maximumOfClubs.onclick = function () {    
+    clubsQuantity = 24;
+    clubsChoise.innerHTML = clubsQuantity;
+    rebuildTable(clubsQuantity);
+};
+
 clubsChoise.onclick = function () {
     rebuildTable(clubsQuantity);
 };
@@ -94,9 +109,9 @@ const rebuildTable = (clubsQuantity) => {
 
 //Определяем переменную clubsQuantity (иначе при попытке перестроить таблицу кнопками
 //будет вылезать ошибка):
-let clubsQuantity = 10;
+let clubsQuantity = 12;
 //И перестраиваем полную таблицу на 10 клубов:
-rebuildTable(10);
+rebuildTable(12);
 
 
 

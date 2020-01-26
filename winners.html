@@ -20,12 +20,14 @@
 <body>
 
         <header>
-            <div class="header-top">
+            <!-- <div class="header-top"> -->
                 <img class="pirate" src="images/football_ball.svg">
                 <p class="the-very-top">
                     Футбольный сайт Олега Откидача (он же Edwards, он же Allegro)
                 </p>
+
                 <hr>
+
                 <nav>
                     <ul>
                         <li>
@@ -57,14 +59,14 @@
                             СТРАНИЧКА АВТОРА ВКОНТАКТЕ</a></li>
                     </ul>
                 </nav>
-            </div>      
+            <!-- </div>       -->
         </header>
     
         <main>
             <!-- Заголовки -->
             <section class="headers">
                 <h1>
-                    СВОДНАЯ ТАБЛИЦА ИСТОРИИ ПРОТИВОСТОЯНИЙ ЕВРОПЕЙСКИХ СУПЕРКЛУБОВ*
+                    ИСТОРИЯ ПРОТИВОСТОЯНИЙ* ЕВРОПЕЙСКИХ СУПЕРКЛУБОВ. СВОДНАЯ ТАБЛИЦА 
                 </h1>
                 <p class="explanation football-explanation">*Учитывались матчи только в рамках официальных европейских турниров - еврокубков</p>
                 <h2>
@@ -81,30 +83,16 @@
             <!-- Кнопки для выбора числа клубов в таблице -->
             <section class="selector">
     
-                <p>Выберите <b>число</b> (от 2 до 20) клубов в таблице (с помощью кнопок "<" и ">") 
-                    и нажмите кнопку с числом:</p>
-                
+                <p>Выберите <b>число</b> (от 2 до 22) клубов в таблице (с помощью кнопок "min", "<", ">" и "max"):</p>
+                <!-- <p>Выберите <b>число</b> (от 2 до 22) клубов в таблице (с помощью кнопок "<" и ">") 
+                    и нажмите кнопку с числом:</p>                     -->
+
+                <button class="min" title="Минимальное число клубов: 2">min</button>
                 <button class="less" title="Уменьшить число клубов">&lt;</button>
                 <button class="choice" title="Сформировать таблицу">10</button>
                 <button class="more" title="Увеличить число клубов">&gt;</button>
+                <button class="max" title="Максимальное число клубов: 22">max</button>
                       
-            </section>
-    
-            <!--Кнопка для переключения в дуэльный вид: -->
-            <section class="duel-button">
-                <button class="results-duels-switch">
-                    <p class="results">Переключиться на отображение счёта в ДУЭЛЯХ***</p>
-                    <p class="duels" hidden>Переключиться с дуэлей*** на ОБЫЧНЫЕ результаты</p>
-                </button>
-                <p class="duels-explanation">
-                    ***Дуэль - непосредственное столкновение двух  команд в ходе турнира.
-                    <br>
-                    В дуэли побеждает тот, кто проходит дальше в кубковом турнире,                
-                    либо выигрывает турнир (для финалов), 
-                    <br>
-                    либо для групповых этапов -
-                    проходит в стадию более высокую, чем соперник по дуэли.
-                </p>
             </section>
     
             <table class="main-table">
@@ -6868,12 +6856,31 @@
             </tbody>
             </table>
     
+            <!--Кнопка для переключения в дуэльный вид: -->
+            <section class="duel-button">
+                <button class="results-duels-switch">
+                    <p class="results">Переключиться на отображение счёта в <b>ДУЭЛЯХ</b>***</p>
+                    <p class="duels" hidden>Переключиться с дуэлей*** на ОБЫЧНЫЕ результаты</p>
+                </button>
+                <p class="duels-explanation">
+                    ***Дуэль - непосредственное столкновение двух  команд в ходе турнира.
+                    <br>
+                    В дуэли побеждает тот, кто проходит дальше в кубковом турнире,                
+                    либо выигрывает турнир (для финалов), 
+                    <br>
+                    либо для групповых этапов -
+                    проходит в стадию более высокую, чем соперник по дуэли.
+                </p>
+            </section>  
+            
+            <hr>
+    
             <!--Кнопка для переключения на таблицу с 
                 ФАВОРИТАМИ текущей Лиги: -->
             <section class="switch-to-favorites">
                 <a href="index.html">
                     <button class="switch-to-favorites-button">
-                        <p><b>Таблица с ФАВОРИТАМИ текущей Лиги</b>
+                        <p><b>Таблица с ФАВОРИТАМИ текущей Лиги чемпионов</b>
                             <br>
                         <em>(+ "Манчестер Сити", "Наполи" и другие)</em>    
                         </p>
@@ -6921,9 +6928,9 @@
                 </p>
         </footer>  
 
-        <script src="scripts/history.js"></script> 
+        <script src="scripts/winners.js"></script> 
         <script>
-            rebuildTable(22);
+            //rebuildTable(22);
             // window.open("football-small-tables-duels/AjAtM.html", '', 
             // 'width=550px, height=900px');
         </script>   
