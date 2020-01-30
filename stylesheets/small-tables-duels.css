@@ -8,26 +8,6 @@ p{
   margin: 0.25em auto;
 }
 
-img.football-logo-table{
-  height: 40px;
-  max-width: 60px;  /* Иначе лого Лейпцига становится слишком широким - оно вытянуто в ширину */
-  margin: 5px;
-}
-
-/* Для эмблем, вытянутых в высоту (Реал, Тоттенхэм, Порто, Милан, Интер): */
-img.real{
-  height: 45px;
-  top: 2px;
-}
-
-/* Для эмблемы Байера(вытянутой в ширину): */
-img.bayer.football-logo-table{
-  max-width: 45px;
-  /* высота "auto" нужна, чтоб картинка не сжималась, сохраняла пропорцию */
-  height: auto;
-  top: 8px;
-}
-
 div.additional-table{
   text-align: center;
   max-width: 550px;
@@ -58,6 +38,26 @@ div.additional-table img.logo-left{
 
 div.additional-table img.logo-right{
   right: 10px;
+}
+
+img.football-logo-table{
+  height: 40px;
+  max-width: 60px;  /* Иначе лого Лейпцига становится слишком широким - оно вытянуто в ширину */
+  margin: 5px;
+}
+
+/* Для эмблем, вытянутых в высоту (Реал, Тоттенхэм, Порто, Милан, Интер): */
+img.real{
+  height: 45px;
+  top: 2px;
+}
+
+/* Для эмблемы Байера(вытянутой в ширину): */
+img.bayer.football-logo-table{
+  max-width: 45px;
+  /* высота "auto" нужна, чтоб картинка не сжималась, сохраняла пропорцию */
+  height: auto;
+  top: 8px;
 }
 
 /* Ноттингемскому(и марсельскому) лого нужна подложка.
