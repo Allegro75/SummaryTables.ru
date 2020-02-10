@@ -22,6 +22,61 @@ table.onclick = function() {
         }
     };
 
+//
+//Для всплытия окон по клику на ячейку для УКРАИНЫ:
+//
+var ukraine = document.querySelector('table.ukraine');
+ukraine.onclick = function() {
+    var target = event.target;
+    while (target != ukraine) {
+        if (target.getAttribute('class') == 'statistics has-history') {
+            var ukrTableDataId = target.getAttribute('id');
+            var urlInWindowOpen = 'football-small-tables/' +
+            ukrTableDataId + '.html';
+            window.open(urlInWindowOpen, '', 'width=650px, height=900px');
+            return;
+            }
+        target = target.parentNode;
+        }
+    };
+
+//
+//Для всплытия окон по клику на ячейку для ГРУЗИИ:
+//
+var georgia = document.querySelector('table.georgia');
+georgia.onclick = function() {
+    var target = event.target;
+    while (target != georgia) {
+        if (target.getAttribute('class') == 'statistics has-history') {
+            var ukrTableDataId = target.getAttribute('id');
+            var urlInWindowOpen = 'football-small-tables/' +
+            ukrTableDataId + '.html';
+            window.open(urlInWindowOpen, '', 'width=650px, height=900px');
+            return;
+            }
+        target = target.parentNode;
+        }
+    };
+
+//
+//Для всплытия окон по клику на ячейку для АРМЕНИИ:
+//
+var armenia = document.querySelector('table.armenia');
+armenia.onclick = function() {
+    var target = event.target;
+    while (target != armenia) {
+        if (target.getAttribute('class') == 'statistics has-history') {
+            var ukrTableDataId = target.getAttribute('id');
+            var urlInWindowOpen = 'football-small-tables/' +
+            ukrTableDataId + '.html';
+            window.open(urlInWindowOpen, '', 'width=650px, height=900px');
+            return;
+            }
+        target = target.parentNode;
+        }
+    };    
+
+
 
  
 //    

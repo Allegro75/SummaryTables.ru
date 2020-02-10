@@ -79,7 +79,11 @@ main{
   /* min-width: 1500px; */
 }
 
-h1, h2, section.selector, .headers p{
+h3{
+  font-size: 1.5em;
+}
+
+h1, h2, h3, section.selector, .headers p{
   text-align: left;
   margin-left: 20px;
 }
@@ -138,6 +142,9 @@ section.selector button.choice{
 section.selector span.ok{
   position: absolute;
 } */
+
+
+/* ТАБЛИЦА: */
 
 table.main-table{
   margin-top: 20px;
