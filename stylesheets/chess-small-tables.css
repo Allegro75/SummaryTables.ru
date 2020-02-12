@@ -146,8 +146,13 @@ table.add-table tr:nth-child(1) td{
   font-weight: normal;
 }
 
-/* Помогает сузить колонку с результатами (как ни странно)Ж */
+/* Помогает сузить колонку с результатами (как ни странно): */
 table.add-table tr td:nth-child(2){
   padding-right: 0px;
   padding-left: 0px;
+}
+
+/* Охота, чтобы название турнира в основном писалось в 1 строку: */
+table.add-table tr td:nth-child(4){
+  min-width: 230px;
 }
