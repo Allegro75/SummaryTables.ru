@@ -276,6 +276,13 @@ table.republican-table tr td:nth-child(2){
   min-width: auto;
 }
 
+/* Чтобы ширина ячейки с названием "Арарат" не была визуально
+намного уже, чем "Динамо"Тб. А то некрасиво... */
+table.republican-table div.club-name{
+  width: 150px;
+  margin: 0 auto;
+}
+
 table.ukraine, table.georgia, table.armenia{
   margin-bottom: 80px;
 }
@@ -307,7 +314,7 @@ main hr{
 
 /* Кнопки переключения на ДРУГИЕ таблицы: */
 section.switch-to-favorites, section.switch-to-history, section.switch-to-decade,
-section.switch-to-euroleague, section.switch-to-winners{
+section.switch-to-euroleague, section.switch-to-winners, section.switch-to-russian{
   margin-left: 20px;
   margin-top: 20px;
   display: inline-block;
@@ -315,7 +322,7 @@ section.switch-to-euroleague, section.switch-to-winners{
 
 button.switch-to-favorites-button, button.switch-to-history-button, 
 button.switch-to-decade-button, button.switch-to-euroleague-button,
-button.switch-to-winners-button{
+button.switch-to-winners-button, button.switch-to-russian-button{
   padding: 10px 20px;
   border-radius: 10px;
   width: 100%;

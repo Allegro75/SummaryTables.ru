@@ -85,88 +85,98 @@ armenia.onclick = function() {
 
 //Задаём js-имена кнопок переключателя:
 
-// const minimumOfClubs = document.querySelector('.selector button.min');
-// const lessClubs = document.querySelector('.selector button.less');
-// const clubsChoise = document.querySelector('.selector button.choice');
-// const moreClubs = document.querySelector('.selector button.more');
-// const maximumOfClubs = document.querySelector('.selector button.max');
+const minimumOfClubs = document.querySelector('.selector button.min');
+const lessClubs = document.querySelector('.selector button.less');
+const clubsChoise = document.querySelector('.selector button.choice');
+const moreClubs = document.querySelector('.selector button.more');
+const maximumOfClubs = document.querySelector('.selector button.max');
 
 //Делаем функции меняющие количество клубов(clubsQuantity) в переключателе:
 
-// minimumOfClubs.onclick = function () {    
-//     clubsQuantity = 2;
-//     clubsChoise.innerHTML = clubsQuantity;
-//     rebuildTable(clubsQuantity);
-// };
-// lessClubs.onclick = function () {
-//     if (clubsQuantity > 2) {
-//         clubsQuantity -= 1;
-//         clubsChoise.innerHTML = clubsQuantity;
-//         rebuildTable(clubsQuantity);
-//     }
-// };
-// moreClubs.onclick = function () {
-//     if (clubsQuantity < 20) {
-//         clubsQuantity += 1;
-//         clubsChoise.innerHTML = clubsQuantity;
-//         rebuildTable(clubsQuantity);
-//     }
-// };
-// maximumOfClubs.onclick = function () {    
-//     clubsQuantity = 20;
-//     clubsChoise.innerHTML = clubsQuantity;
-//     rebuildTable(clubsQuantity);
-// };
+minimumOfClubs.onclick = function () {    
+    clubsQuantity = 2;
+    clubsChoise.innerHTML = clubsQuantity;
+    rebuildTable(clubsQuantity);
+};
+lessClubs.onclick = function () {
+    if (clubsQuantity > 2) {
+        clubsQuantity -= 1;
+        clubsChoise.innerHTML = clubsQuantity;
+        rebuildTable(clubsQuantity);
+    }
+};
+moreClubs.onclick = function () {
+    if (clubsQuantity < 20) {
+        clubsQuantity += 1;
+        clubsChoise.innerHTML = clubsQuantity;
+        rebuildTable(clubsQuantity);
+    }
+};
+maximumOfClubs.onclick = function () {    
+    clubsQuantity = 20;
+    clubsChoise.innerHTML = clubsQuantity;
+    rebuildTable(clubsQuantity);
+};
 
-// clubsChoise.onclick = function () {
-//     rebuildTable(clubsQuantity);
-// };
+clubsChoise.onclick = function () {
+    rebuildTable(clubsQuantity);
+};
 
 
 
 
 // //
 // //ФУНКЦИЯ для изменения ЧИСЛА клубов в таблице
-// //(функция переделанная из старой, в к-рой была зависимость от числа 16):
+// Функция переделана из старой (к-рая работает в других файлах), 
+// в к-рой одновременно уменьшались и колонки, и строки.
+// У нас здесь число строк остаётся всегда одинаковым.
 // //
 
-// const tableRowsQuantity = table.rows.length;
-// const tableColumnsQuantity = table.rows[1].cells.length;
+const tableRowsQuantity = table.rows.length;
+const tableColumnsQuantity = table.rows[1].cells.length;
 
-// const rebuildTable = (clubsQuantity) => {
+const rebuildTable = (clubsQuantity) => {
 
-//     //Для начала возвращаем таблицу в 16-клубный вид (открываем все скрытые ячейки):
-//     let hiddenElements = table.querySelectorAll('td[hidden], tr[hidden]');
-//     for (i = 0; i < hiddenElements.length; i++) {
-//         hiddenElements[i].hidden = false;
-//     }
+//     //Для начала открываем все скрытые ячейки:
+    let hiddenElements = table.querySelectorAll('td[hidden], tr[hidden]');
+    for (i = 0; i < hiddenElements.length; i++) {
+        hiddenElements[i].hidden = false;
+    };
 
 //     //Теперь перебираем таблицу и скрываем ненужное:
 //     //
-//     //Сначала скрываем лишние строки, начиная с последней:
-//     for (let i = tableRowsQuantity - 1; i > clubsQuantity; i -= 1) {
-//         table.rows[i].hidden = true;
-//     };
+
+// (коммент от 12.02.20)
+// Раньше сначала скрывались лишние строки:
+
+// (более раниий коммент)    
+//Сначала скрываем лишние строки, начиная с последней:
+    // for (let i = tableRowsQuantity - 1; i > clubsQuantity; i -= 1) {
+    //     table.rows[i].hidden = true;
+    // };
+
 //     //А когда доходим до строки, к-рую скрывать уже не надо,
 //     //начинаем перебирать строки,
-//     for (let i = clubsQuantity; i >= 0; i -= 1) {
+    for (let i = tableRowsQuantity - 1; i >= 0; i -= 1) {
 //         //а внутри них перебирать уже ячейки, начиная с последней:
-//         for (let indexOfCell = table.rows[i].cells.length - 1; 
-//             //пока не дойдём до ячейуи, к-рую скрывать не надо:
-//             indexOfCell > table.rows[i].cells.length - tableRowsQuantity + clubsQuantity;
-//             indexOfCell -= 1) {
+        for (let indexOfCell = table.rows[i].cells.length - 1; 
+//             //пока не дойдём до ячейки, к-рую скрывать не надо:
+            indexOfCell > table.rows[i].cells.length - tableColumnsQuantity + 2 + clubsQuantity;
+            indexOfCell -= 1) {
 //                 //ну, а пока не дошли, скрываем ячейки:
-//                 table.rows[i].cells[indexOfCell].hidden = true;
-//             };
-//     }; 
-// };
+                table.rows[i].cells[indexOfCell].hidden = true;
+            };
+    }; 
+};
+
+
 
 
 // //Определяем переменную clubsQuantity (иначе при попытке перестроить таблицу кнопками
 // //будет вылезать ошибка):
-// let clubsQuantity = 10;
-// //И перестраиваем полную таблицу на 8 клубов:
-// rebuildTable(10);
+let clubsQuantity = 10;
+// //И перестраиваем полную таблицу на 10 клубов:
+rebuildTable(10);
 
 
 

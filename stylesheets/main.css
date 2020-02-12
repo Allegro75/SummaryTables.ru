@@ -283,7 +283,7 @@ main hr{
 
 /* Кнопки переключения на ДРУГИЕ таблицы: */
 section.switch-to-favorites, section.switch-to-history, section.switch-to-decade,
-section.switch-to-euroleague, section.switch-to-winners{
+section.switch-to-euroleague, section.switch-to-winners, section.switch-to-russian{
   margin-left: 20px;
   margin-top: 20px;
   display: inline-block;
@@ -291,7 +291,7 @@ section.switch-to-euroleague, section.switch-to-winners{
 
 button.switch-to-favorites-button, button.switch-to-history-button, 
 button.switch-to-decade-button, button.switch-to-euroleague-button,
-button.switch-to-winners-button{
+button.switch-to-winners-button, button.switch-to-russian-button{
   padding: 10px 20px;
   border-radius: 10px;
   width: 100%;
