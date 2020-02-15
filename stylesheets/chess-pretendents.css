@@ -46,17 +46,19 @@ header{
 
 nav ul{
   list-style: none;
+  margin-left: -40px;
 }
 
 nav li{
   display: inline-block;
   margin-right: 50px;
+  margin-bottom: 10px;
   font-weight: bold;  
 }
 
-nav li:first-child{
+/* nav li:first-child{
   margin-left: -40px;
-}
+} */
 
 nav a:hover{
   color: black;
