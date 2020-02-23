@@ -281,6 +281,12 @@ main hr{
 }
 
 
+/* Экспериментируем с flex: */
+section.breadcrumbs-buttons{
+  display: flex;
+  justify-content: space-between;
+}
+
 /* Кнопки переключения на ДРУГИЕ таблицы: */
 section.switch-to-favorites, section.switch-to-history, section.switch-to-decade,
 section.switch-to-euroleague, section.switch-to-winners, section.switch-to-russian{
