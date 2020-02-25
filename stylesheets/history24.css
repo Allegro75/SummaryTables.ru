@@ -4,6 +4,7 @@ body{
   color: #4f535b;
   background-color: rgba(0, 0, 0, 0.1);
   padding: 20px;
+  padding-top: 0.2em;
 }
 
 header{
@@ -28,6 +29,7 @@ header{
 nav ul{
   list-style: none;
   padding-left: 0px;
+  margin-bottom: 0.5em;
 }
 
 nav li{
@@ -90,6 +92,11 @@ h2{
   font-size: 2em;
 }
 
+span.stars{
+  font-size: 16px;
+  vertical-align: top;
+}
+
 p.explanation{
   font-size: 16px;
 }
@@ -109,16 +116,21 @@ p.update-announcement{
 }
 
 
+section.table-plus-right-buttons{
+  white-space: nowrap;
+}
+
 /* ТАБЛИЦА: */
 
 table.main-table{
   margin-top: 20px;
   margin-left: 20px;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   border-collapse: collapse;
   font-weight: bold;
   font-size: 0.45em;
-  float: left;
+  display: inline-block;
+  /* float: left; */
 }
 
 .main-table td{
@@ -163,6 +175,7 @@ img.hamburg{
 
 div.club-name{
   margin: 0.25em;
+  white-space: normal;
 }
 
 /* Для слишком длинных названий клубов (типа "Вулверхэмптон"),
@@ -188,12 +201,6 @@ td.has-history{
   cursor: pointer;
 }
 
-p.games-score{
-  white-space: nowrap;
-  /* Чтобы строчка с победами-ничьями-поражениями
-не разрывалась на две (при уменьшении масштаба)*/
-}
-
 td p.goals-difference{
   font-weight: normal;
   font-style: italic;
@@ -201,52 +208,71 @@ td p.goals-difference{
 
 td div.duels{
   font-size: 2.1em;
-  white-space: nowrap;
+  /* white-space: nowrap; */
   margin: 0.35em 0.25em;
 }
 
 
-/* Про кнопку дуэлей СПРАВА: */
 
-section.button-right{
-  float: left;  
+button{
+  cursor: pointer;
 }
 
-.button-right button.results-duels-switch {
+/* Про кнопки СПРАВА: */
+
+section.button-right{
+  display: inline-block;
+  vertical-align: top;
+}
+
+section.button-right button.results-duels-switch,
+section.button-right button.short-history-button{
     height: 600px; 
     width: 100px;
     border-radius: 10px;
     /* padding: 10px 20px; */
 }
 
-.button-right button.results-duels-switch p{
+section.button-right button.results-duels-switch p,
+section.button-right button.short-history-button p{
     font-size: 2.2em;
     transform: rotate(90deg);
     font-style: normal;
     letter-spacing: 0.3em;
-    margin-bottom: 5em;
 }
 
-section.button-right p.duels-explanation{
+section.button-right button.results-duels-switch p{
+  margin-bottom: 5em;
+}
+
+section.button-right button.short-history-button p{
+  margin-bottom: 3em;
+}
+
+section.button-right p.duels-explanation,
+section.button-right p.explanation{
     margin-top: 1.5em;
     width: 100px;
     font-size: 0.7em;
+    white-space: normal;
+}
+
+section.short-history-button{
+  margin-top: 20px;
+  margin-left: 20px;
 }
 
 
 
-/* Про кнопку ДУЭЛЕЙ снизу: */
+/* Про кнопки СНИЗУ: */
 
-button{
-  cursor: pointer;
-}
 
 section.duel-button{
   margin-left: 20px;
   margin-top: 20px; 
 }
 
-section.button-normal button.results-duels-switch {
+section.button-normal button{
   height: 100px; 
   width: 1000px;
   font-size: 1.6em;
@@ -259,6 +285,9 @@ button.results-duels-switch p{
   font-style: italic;
 }
 
+section.button-normal button.short-history-button p{
+  font-style: italic;
+}
 
 main hr{
     margin-left: 20px; 
@@ -266,7 +295,12 @@ main hr{
 
 
 /* Экспериментируем с flex (февраль 2020): */
-section.breadcrumbs-buttons{
+/* section.breadcrumbs-buttons{
+  display: flex;
+  justify-content: space-between;
+} */
+
+div.breadscrumbs-row-1, div.breadscrumbs-row-2{
   display: flex;
   justify-content: space-between;
 }
@@ -284,7 +318,7 @@ button.switch-to-decade-button, button.switch-to-euroleague-button,
 button.switch-to-winners-button, button.switch-to-russian-button{
   padding: 10px 20px;
   border-radius: 10px;
-  width: 100%;
+  width: 32em;
 }
 
 section.donate{

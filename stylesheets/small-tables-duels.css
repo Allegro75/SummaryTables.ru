@@ -138,6 +138,7 @@ span.add-time-text,
 span.lottery-text,
 span.add-match-text{
   font-size: 12px;
+  white-space: normal;
 }
 
 /* .add-table .additional-table{
@@ -213,8 +214,7 @@ table.add-table tr:last-child td:last-child{
 
 table.add-table tr td:nth-child(3){
   font-weight: bold;
-  /* padding-left: 0px;
-  padding-right: 0px; */
+  white-space: nowrap;
 }
 
 /* Чтобы слово "Счёт" не было жирным: */

@@ -122,14 +122,14 @@
             <!-- Заголовки -->
             <section class="headers">
                 <h1>
-                    ИСТОРИЯ ПРОТИВОСТОЯНИЙ* ЕВРОПЕЙСКИХ ФУТБОЛЬНЫХ СУПЕРКЛУБОВ. СВОДНАЯ ТАБЛИЦА 
+                    ИСТОРИЯ ПРОТИВОСТОЯНИЙ<span class="stars">*</span> ЕВРОПЕЙСКИХ ФУТБОЛЬНЫХ СУПЕРКЛУБОВ. СВОДНАЯ ТАБЛИЦА 
                 </h1>
                 <p class="explanation football-explanation">*Учитывались матчи только в рамках официальных европейских турниров - еврокубков</p>
                 <p class="table-explanation">
                     <em>По клику на ячейку таблицы открывается подробная история данной пары</em>
                 </p>                 
                 <h2>
-                    <em>ЛУЧШИЕ КЛУБЫ ЕВРОПЫ ЗА ВСЮ ИСТОРИЮ**</em>
+                    <em>ЛУЧШИЕ КЛУБЫ ЕВРОПЫ ЗА ВСЮ ИСТОРИЮ<span class="stars">**</span></em>
                 </h2>
                 <p class="explanation football-explanation-second-row-1">
                     **По разности между победами и поражениями во всех евротурнирах за всё время, 
@@ -137,10 +137,13 @@
                 <!-- <p class="update-announcement"> -->
                 <p class="explanation">
                     <!-- <em> -->
-                        В таблице учтены матчи до 20.02.2020 включительно
+                        В таблице учтены матчи до 25.02.2020 включительно
                     <!-- </em> -->
                 </p>
             </section>
+
+
+            <section class="table-plus-right-buttons">
     
             <table class="main-table">
     
@@ -1042,17 +1045,20 @@
                                 1 - 1
                             </div></td>
     
-                            <td id="BavChe" class="statistics has-history">
-                                <div title="Бавария - Челси
-1 победа, 2 ничьи, 1 поражение
+                    <td id="BavChe" class="statistics has-history">
+                        <div title="Бавария - Челси
+2 победы, 2 ничьи, 1 поражение
 Кликните, чтобы узнать подробности" class="results">
-                                <p class="games-score">+1 =2 -1</p>
-                                <p class="goals-difference">8 - 9</p></div>
-                        <div class="duels" title="&quot;Бавария&quot; против &quot;Челси&quot;
+                            <p class="games-score">+2 =2 -1</p>
+                            <p class="goals-difference">11 - 9</p>
+                        </div>
+                        <div class="duels" 
+                        title="&quot;Бавария&quot; против &quot;Челси&quot;
 1 победа в дуэлях, 2 поражения
 Кликните, чтобы узнать подробности" hidden>
-                                1 - 2
-                            </div></td> 
+                            1 - 2
+                        </div>
+                    </td> 
                             
                         <td id="BavInt" class="statistics has-history">
                                 <div title="Бавария - Интер
@@ -2893,17 +2899,20 @@
                                 2 - 5
                             </div></td>
     
-                        <td id="CheBav" class="statistics has-history">
-                                <div title="Челси - Бавария
-1 победа, 2 ничьи, 1 поражение
+                    <td id="CheBav" class="statistics has-history">
+                        <div title="Челси - Бавария
+1 победа, 2 ничьи, 2 поражения
 Кликните, чтобы узнать подробности" class="results">
-                                <p class="games-score">+1 =2 -1</p>
-                                <p class="goals-difference">9 - 8</p></div>
-                        <div class="duels" title="&quot;Челси&quot; против &quot;Баварии&quot;
+                            <p class="games-score">+1 =2 -2</p>
+                            <p class="goals-difference">9 - 11</p>
+                        </div>
+                        <div class="duels" 
+                        title="&quot;Челси&quot; против &quot;Баварии&quot;
 2 победы в дуэлях, 1 поражение
 Кликните, чтобы узнать подробности" hidden>
-                                2 - 1
-                            </div></td>
+                            2 - 1
+                        </div>
+                    </td>
     
                         <td id="CheJuv" class="statistics has-history">
                                 <div title="Челси - Ювентус
@@ -8112,7 +8121,23 @@
                     либо для групповых этапов -
                     проходит в стадию более высокую, чем соперник по дуэли.
                 </p>                
-            </section>            
+            </section> 
+
+            <!--Кнопка СПРАВА для переключения на КРАТКУЮ историю: -->
+            <section class="short-history-button button-right">
+                <a href="history.html">
+                    <button class="short-history-button"
+                    title="Перейти к таблице из 10 клубов">
+                        <p><b>КРАТКО</b></p>
+                    </button>
+                </a>                    
+                <p class="explanation">
+                    Краткая таблица,<br> 10 клубов
+                </p>                                
+            </section> 
+            
+            </section>  
+
     
             <!--Кнопка СНИЗУ для переключения в ДУЭЛЬНЫЙ вид: -->
             <section class="duel-button button-normal">
@@ -8131,10 +8156,25 @@
                     проходит в стадию более высокую, чем соперник по дуэли.
                 </p>
             </section>
+
+            <!--Кнопка СНИЗУ для переключения на КРАТКУЮ историю: -->
+            <section class="short-history-button button-normal">
+                <a href="history.html">
+                    <button class="short-history-button"
+                    title="Перейти к таблице из 10 клубов">
+                        <p>Перейти к <b>КРАТКОЙ</b> таблице из <b>10</b> клубов</p>
+                    </button>
+                </a>                    
+                <!-- <p class="explanation">
+                    Краткая таблица, 10 клубов
+                </p>                                 -->
+            </section>
             
             <hr>
 
             <section class="breadcrumbs-buttons">  
+
+            <div class="breadscrums-row-1">
     
                 <!--Кнопка для переключения на таблицу с 
                     ФАВОРИТАМИ текущей Лиги: -->
@@ -8200,7 +8240,11 @@
                             </p>
                         </button>
                     </a>
-                </section>             
+                </section>       
+                
+            </div>
+
+            <div class="breadscrums-row-2">
                 
                 <!--Кнопка для переключения на таблицу с 
                     фаворитами Лиги ЕВРОПЫ: -->
@@ -8255,7 +8299,9 @@
                             </p>
                         </button>
                     </a>
-                </section>                 
+                </section> 
+                
+            </div>    
 
             </section>                      
     
