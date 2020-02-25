@@ -124,6 +124,10 @@ section.selector p{
   font-size: 1.5em;
 }
 
+button{
+  cursor: pointer;
+}
+
 section.selector button{
   height: 60px;
   width: 100px;
@@ -229,6 +233,10 @@ span.long-club-title{
   background-color: aliceblue;
   /* Пытался сделать полукрасные строки
   opacity: 0.5; */
+}
+
+td.has-history{
+  cursor: pointer;
 }
 
 p.games-score{
