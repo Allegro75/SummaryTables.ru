@@ -117,43 +117,6 @@ p.update-announcement{
   margin-top: 20px;
 }
 
-section.selector{
-  margin-top: 20px;
-  background-color: rgb(180, 180, 180);
-  padding: 10px;
-  padding-left: 15px;
-  color: rgb(31, 28, 28);
-  font-style: italic;
-  border-radius: 5px;
-}
-
-section.selector p{
-  font-size: 1.5em;
-}
-
-button{
-  cursor: pointer;
-}
-
-section.selector button{
-  height: 60px;
-  width: 100px;
-  font-size: 25px;
-  vertical-align: middle;
-  border-radius: 10px;
-}
-
-section.selector button.choice{
-  height: 80px;
-  width: 120px;
-  font-size: 40px;
-  /* position: relative; */
-}
-/* 
-section.selector span.ok{
-  position: absolute;
-} */
-
 
 /* ТАБЛИЦА: */
 
@@ -236,16 +199,20 @@ td p.goals-difference{
   font-style: italic;
 }
 
-/* td div.points{
-  position: absolute;
-  top: -12px;
-  right: 2px;
-  font-size: 24px;
-  color: gray;
-} */
-
 
 /* Про кнопку ДУЭЛЕЙ: */
+
+button{
+  cursor: pointer;
+}
+
+button.results-duels-switch:hover,
+button.results-duels-switch:active,
+button.results-duels-switch:focus{
+  background-color: lightgray;
+  outline: none;
+}
+
 section.duel-button{
   margin-left: 20px;
   margin-top: 20px; 

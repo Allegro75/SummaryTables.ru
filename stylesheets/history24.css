@@ -222,6 +222,14 @@ button{
   cursor: pointer;
 }
 
+button.results-duels-switch:hover,
+button.results-duels-switch:active,
+button.results-duels-switch:focus{
+  background-color: lightgray;
+  outline: none;
+}
+
+
 /* Про кнопки СПРАВА: */
 
 section.button-right{
