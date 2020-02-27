@@ -120,27 +120,22 @@ p.update-announcement{
 }
 
 
-section.table-plus-right-buttons{
-  white-space: nowrap;
-}
-
 /* ТАБЛИЦА: */
 
 table.main-table{
   margin-top: 20px;
   margin-left: 20px;
-  /* margin-bottom: 20px; */
   border-collapse: collapse;
   font-weight: bold;
   font-size: 0.45em;
-  display: inline-block;
-  /* float: left; */
+  /* display: inline-block; */
+  white-space: nowrap;  
 }
 
 .main-table td{
   text-align: center;
   max-width: 10em;
-  padding: 0.6em;
+  padding: 0.4em;
   border-right: 0.22em solid gray;
 }
 
@@ -150,8 +145,8 @@ table.main-table{
 
 tr.logotypes span.number{
   position: absolute;
-  top: 0.5em;
-  left: 0.5em;
+  top: 0.2em;
+  left: 0.2em;
   font-style: italic; 
 }
 
@@ -160,21 +155,29 @@ tr.logotypes span.number{
 }
 
 img.football-logo-table{
-  height: 20px;
-  margin: 0.05em;
+  height: 14px;
+  /* margin: 0.05em; */
 }
 
 /* Для эмблем, вытянутых в высоту (Реал, Тоттенхэм, Порто, Милан, Интер): */
 img.real{
-  height: 23px;
+  height: 16px;
 }
 
 /* Лого Гамбурга вытянуто в ширину, посему его настаиваем специально: */
 img.hamburg{
-  width: 24px;
+  width: 16px;
   height: auto;
   position: relative;
   top: 0.2em;
+}
+
+/* Ноттингемскому лого нужна подложка.
+Иначе бледно-красное на сером не смотрится: */
+img.nottingham{
+  border: 0.1em solid rgb(230, 230, 230); 
+  background-color: rgb(230, 230, 230);
+  border-radius: 0.3em;
 }
 
 div.club-name{
@@ -205,15 +208,10 @@ td.has-history{
   cursor: pointer;
 }
 
-td p.goals-difference{
-  font-weight: normal;
-  font-style: italic;
-}
-
 td div.duels{
-  font-size: 2.1em;
+  font-size: 1.6em;
   /* white-space: nowrap; */
-  margin: 0.35em 0.24em;
+  margin: 0.25em 0.20em;
 }
 
 
@@ -261,7 +259,7 @@ div.vertical-delimiter{
   display: inline-block;
   vertical-align: top;
   width: 0.1em;
-  height: 57.5em;
+  height: 55em;
   background-color: gray;
   margin-top: 20px;
   margin-left: 20px;
