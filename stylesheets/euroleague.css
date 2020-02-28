@@ -1,0 +1,286 @@
+body{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+  color: #4f535b;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  padding-top: 0.2em;
+}
+
+header{
+  margin-left: 20px;
+}
+
+.the-very-top{
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-left: 20px;
+  margin-top: 10px;
+  font-size: 1em;
+}
+
+/* Для иконки в крайнем левом углу (раньше она была пиратским флагом): */
+.pirate{
+  float: left;
+  width: 20px;
+  margin-right: 15px;
+}
+
+nav ul{
+  list-style: none;
+  padding-left: 0px;
+  margin-bottom: 0.5em;
+}
+
+nav li{
+  display: inline-block;
+  margin-right: 50px;
+  font-weight: bold;
+  margin-bottom: 1em;  
+  /* margin-top: 0.5em; */
+}
+
+nav a:hover{
+  color: black;
+}
+
+nav a:active{
+  color: beige;
+}
+
+/* .header{
+  vertical-align: middle;
+} */
+
+em{
+  font-style: italic;
+  font-weight: bold;
+}  
+
+strong{
+  font-weight: bold;
+  line-height: 1.1em;
+  font-size: 1.5em;
+}
+
+p{
+  font-size: 1.25em;
+  margin: 0.25em auto;
+}
+
+a{
+  color: #4f535b;
+}
+
+main{
+  background-color: rgba(0, 0, 0, 0.1);
+  margin: 0 -40px;
+  padding: 1px 40px;
+  padding-bottom: 20px;
+  /* width: 100%; */
+  /* min-width: 1500px; */
+}
+
+h3{
+  font-size: 1.5em;
+}
+
+h1, h2, h3, section.selector, .headers p{
+  text-align: left;
+  margin-left: 20px;
+}
+
+h1{
+  font-size: 2em;
+}
+
+span.stars{
+  font-size: 16px;
+  vertical-align: top;
+}
+
+p.explanation{
+  font-size: 16px;
+}
+
+p.football-explanation, p.football-explanation-second-row-1{
+  /* margin-top: -15px; */
+  text-align: left;
+  margin-left: 20px;
+}
+
+p.football-explanation-second-row-2{
+  margin-left: 20px;
+}
+
+p.update-announcement{
+  margin-top: 20px;
+}
+
+
+/* ТАБЛИЦА: */
+
+table.main-table{
+  margin-top: 20px;
+  margin-left: 20px;
+  /* border-spacing: 10px; */
+  border-collapse: collapse;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.main-table td{
+  text-align: center;
+  max-width: 10em;
+  padding: 0.7em;
+  border-right: 0.15em solid gray;
+}
+
+.main-table tr.logotypes td{
+  position: relative;
+}
+
+tr.logotypes span.number{
+  position: absolute;
+  top: 0.5em;
+  left: 0.5em;
+  font-style: italic; 
+}
+
+.main-table td.number{
+  font-style: italic;  
+}
+
+img.football-logo-table{
+  height: 40px;
+  margin: 0.05em;
+}
+
+/* Для эмблем, вытянутых в высоту (Реал, Тоттенхэм, Порто, Милан, Интер): */
+img.real{
+  height: 48px;
+}
+
+/* Для пустых колонок "Хетафе" и "Вулвз". Чтобы они не были слишком узкими: */
+table tr td:nth-child(11), table tr td:nth-child(6){
+    width: 6.5em;
+}
+
+div.club-name{
+  margin: 0.25em;
+}
+
+.main-table tr:nth-child(odd){
+  background-color:rgba(0, 0, 0, 0.1);
+  /* Пытался сделать полукрасные строки 
+  background-color: black;
+  opacity: 0.1; */
+}
+
+.main-table tr:nth-child(even){
+  background-color: aliceblue;
+  /* Пытался сделать полукрасные строки
+  opacity: 0.5; */
+}
+
+td.has-history{
+  cursor: pointer;
+}
+
+p.games-score{
+  white-space: nowrap;
+  /* Чтобы строчка с победами-ничьями-поражениями
+не разрывалась на две (при уменьшении масштаба)*/
+}
+
+td div.duels{
+  font-size: 2.1em;
+  margin: 0.32em 0.3em;
+  white-space: nowrap;
+}
+
+td p.goals-difference{
+  font-weight: normal;
+  font-style: italic;
+}
+
+
+/* Про кнопку ДУЭЛЕЙ: */
+
+button{
+  cursor: pointer;
+}
+
+button.results-duels-switch:hover,
+button.results-duels-switch:active,
+button.results-duels-switch:focus{
+  background-color: lightgray;
+  outline: none;
+}
+
+section.duel-button{
+  margin-left: 20px;
+  margin-top: 20px; 
+}
+
+button.results-duels-switch {
+  height: 100px; 
+  width: 1000px;
+  font-size: 1.6em;
+  border-radius: 10px;
+  /* padding: 10px 20px; */
+}
+
+button.results-duels-switch p{
+  margin: 10px 20px;
+  font-style: italic;
+}
+
+
+main hr{
+    margin-left: 20px; 
+}
+
+
+/* Экспериментируем с flex (февраль 2020): */
+/* section.breadcrumbs-buttons{
+  display: flex;
+  justify-content: space-between;
+} */
+
+div.breadcrumbs-row-1, div.breadcrumbs-row-2{
+  display: flex;
+  justify-content: space-between;
+  vertical-align: top;
+}
+
+/* Кнопки переключения на ДРУГИЕ таблицы: */
+section.switch-to-favorites, section.switch-to-history, section.switch-to-decade,
+section.switch-to-euroleague, section.switch-to-winners, section.switch-to-russian{
+  margin-left: 20px;
+  margin-top: 20px;
+  display: inline-block;
+}
+
+button.switch-to-favorites-button, button.switch-to-history-button, 
+button.switch-to-decade-button, button.switch-to-euroleague-button,
+button.switch-to-winners-button, button.switch-to-russian-button{
+  padding: 10px 20px;
+  border-radius: 10px;
+  width: 32em;
+  height: 10em;
+}
+
+
+
+section.donate{
+  margin-left: 20px;
+}
+
+footer{
+  margin-top: 20px;
+  background-color: rgb(180, 180, 180);
+  padding: 10px;
+  padding-left: 15px;
+  color: rgb(31, 28, 28);
+}
