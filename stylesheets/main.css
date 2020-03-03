@@ -290,9 +290,15 @@ main hr{
 
 
 /* Экспериментируем с flex: */
-section.breadcrumbs-buttons{
+/* section.breadcrumbs-buttons{
   display: flex;
   justify-content: space-between;
+} */
+
+div.breadcrumbs-row-1, div.breadcrumbs-row-2{
+  display: flex;
+  justify-content: space-between;
+  vertical-align: top;
 }
 
 /* Кнопки переключения на ДРУГИЕ таблицы: */
@@ -308,7 +314,8 @@ button.switch-to-decade-button, button.switch-to-euroleague-button,
 button.switch-to-winners-button, button.switch-to-russian-button{
   padding: 10px 20px;
   border-radius: 10px;
-  width: 100%;
+  width: 32em;
+  height: 7em;
 }
 
 section.donate{
