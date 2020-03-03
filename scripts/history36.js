@@ -18,16 +18,16 @@ table.onclick = function() {
         }
     };
 
- 
-//let addTDInnerHTML = ''; 
-//let addTD = document.createElement('td'); 
+
+//Скрипт для добаления рыбы последней колонки: 
+
+// let addTDInnerHTML = ''; 
 
 // for (let i = 1; i < table.rows.length - 1; i += 1) {
-//     addTDInnerHTML = table.rows[i].cells[25].innerHTML;
-//     //addTD.innerHTML = addTDInnerHTML;
+//     addTDInnerHTML = table.rows[i].cells[21].innerHTML;
 //     table.rows[i].append(document.createElement('td'));
-//     table.rows[i].cells[31].innerHTML = addTDInnerHTML;
-//     table.rows[i].cells[31].id = table.rows[i].cells[25].getAttribute('id');
+//     table.rows[i].cells[32].innerHTML = addTDInnerHTML;
+//     table.rows[i].cells[32].id = table.rows[i].cells[21].getAttribute('id');
+//     table.rows[i].cells[32].setAttribute('class', table.rows[i].cells[21].getAttribute('class'));
 // };   
-
-//table.rows[1].append(table.rows[1].cells[25]);    
+ 
