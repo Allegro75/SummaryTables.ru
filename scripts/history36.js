@@ -24,11 +24,11 @@ table.onclick = function() {
 // let addTDInnerHTML = ''; 
 
 // for (let i = 1; i < table.rows.length - 1; i += 1) {
-//     addTDInnerHTML = table.rows[i].cells[25].innerHTML;
+//     addTDInnerHTML = table.rows[i].cells[13].innerHTML;
 //     table.rows[i].append(document.createElement('td'));
-//     table.rows[i].cells[34].innerHTML = addTDInnerHTML;
-//     table.rows[i].cells[34].id = table.rows[i].cells[25].getAttribute('id');
-//     table.rows[i].cells[34].setAttribute('class', table.rows[i].cells[25].getAttribute('class'));
+//     table.rows[i].cells[37].innerHTML = addTDInnerHTML;
+//     table.rows[i].cells[37].id = table.rows[i].cells[13].getAttribute('id');
+//     table.rows[i].cells[37].setAttribute('class', table.rows[i].cells[13].getAttribute('class'));
 // };   
 
 
