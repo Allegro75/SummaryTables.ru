@@ -3,18 +3,26 @@ body{
   font-size: 16px;
   color: #4f535b;
   background-color: rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  padding-top: 0.2em;
+  /* padding: 20px; */
+  padding-top: 0.5em;
+  margin: 0;
 }
 
-header{
-  margin-left: 20px;
+/* header{
+  margin-top: 0.2em;
+} */
+
+section.site-title{
+  background-color: chocolate;
+  /* margin-left: -20px; */
+  padding: 0.3em 0 0.5em 0.5em;
+  color: #f5deb3;
 }
 
 .the-very-top{
   text-transform: uppercase;
   letter-spacing: 5px;
-  margin-left: 20px;
+  margin-left: 4em;
   margin-top: 10px;
   font-size: 1em;
 }
@@ -23,25 +31,67 @@ header{
 .pirate{
   float: left;
   width: 20px;
+  margin-top: 10px;
+  margin-left: 1em;
   margin-right: 15px;
+}
+
+nav{
+  /* margin-left: 20px; */
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+  color: wheat;
+}
+
+section.nav-section{
+  padding-left: 1.5em;
+  /* padding-top: -1em;   */  /* Отрицательный паддинг работать не хочет */
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+}
+
+section.football, section.chess{
+  background-color: rgb(182, 50, 3);
+}
+
+section.history{
+  background-color: chocolate;
+}
+
+nav div.href-list-title{
+  display: inline-block;
+  width: 5em;
 }
 
 nav ul{
   list-style: none;
-  padding-left: 0px;
-  margin-bottom: 0.5em;
+  /* padding: 0px; */
+  /* margin-bottom: 0.5em; */
+  display: inline-block;
+  /* padding-top: -3em; */
+  /* padding-inline-start: 0; (по умолчанию он 40px)*/
+  line-height: 0.1em; 
+  /* Всё бы хорошо (строки сжимаются как надо), да при увелиличении масштаба,
+  при расширении списка на две строки, строки слипаются*/
 }
 
 nav li{
   display: inline-block;
   margin-right: 50px;
   font-weight: bold;
-  margin-bottom: 1em;  
+  font-size: 0.9em;
+  /* padding-top: -1em; */
+  /* margin-bottom: 1em;   */
   /* margin-top: 0.5em; */
+}
+
+nav li a, a:-webkit-any-link{
+  color: wheat;
 }
 
 a{
   cursor: pointer;
+  text-decoration: none;
 }
 
 nav a:hover{
@@ -52,9 +102,9 @@ nav a:active{
   color: beige;
 }
 
-/* .header{
-  vertical-align: middle;
-} */
+span.figures-in-history-hrefs{
+  font-size: 1.3em;
+}
 
 em{
   font-style: italic;
@@ -72,9 +122,9 @@ p{
   margin: 0.25em auto;
 }
 
-a{
+/* a{
   color: #4f535b;
-}
+} */
 
 main{
   background-color: rgba(0, 0, 0, 0.1);
@@ -87,13 +137,23 @@ h3{
   font-size: 1.5em;
 }
 
-h1, h2, h3, section.selector, .headers p{
+h1, h2, h3, .headers p{
   text-align: left;
   margin-left: 20px;
 }
 
 h1{
   font-size: 2em;
+}
+
+h1, h2{
+  background-color: whitesmoke;
+  padding-top: 0.6em;
+  padding-bottom: 0.6em;
+  padding-left: 0.6em;
+  margin: 0;
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
 }
 
 span.stars{
@@ -220,95 +280,6 @@ button{
   cursor: pointer;
 }
 
-button.results-duels-switch:hover,
-button.results-duels-switch:active,
-button.results-duels-switch:focus{
-  background-color: lightgray;
-  outline: none;
-}
-
-
-/* Про кнопки СПРАВА: */
-
-section.button-right{
-  display: inline-block;
-  vertical-align: top;
-}
-
-section.button-right button.results-duels-switch,
-section.button-right button.short-history-button{
-    height: 600px; 
-    width: 100px;
-    border-radius: 10px;
-    /* padding: 10px 20px; */
-}
-
-section.button-right button.results-duels-switch p,
-section.button-right button.short-history-button p{
-    font-size: 2.2em;
-    transform: rotate(90deg);
-    font-style: normal;
-    letter-spacing: 0.3em;
-}
-
-section.button-right button.results-duels-switch p{
-  margin-bottom: 5em;
-}
-
-div.vertical-delimiter{
-  display: inline-block;
-  vertical-align: top;
-  width: 0.1em;
-  height: 55em;
-  background-color: gray;
-  margin-top: 20px;
-  margin-left: 20px;
-}
-
-section.button-right button.short-history-button p{
-  margin-bottom: 3em;
-}
-
-section.button-right p.duels-explanation,
-section.button-right p.explanation{
-    margin-top: 1.5em;
-    width: 100px;
-    font-size: 0.7em;
-    white-space: normal;
-}
-
-section.short-history-button{
-  margin-top: 20px;
-  margin-left: 20px;
-}
-
-
-
-/* Про кнопки СНИЗУ: */
-
-
-section.duel-button{
-  margin-left: 20px;
-  margin-top: 20px; 
-}
-
-section.button-normal button{
-  height: 100px; 
-  width: 1000px;
-  font-size: 1.6em;
-  border-radius: 10px;
-  /* padding: 10px 20px; */
-}
-
-button.results-duels-switch p{
-  margin: 10px 20px;
-  font-style: italic;
-}
-
-section.button-normal button.short-history-button p{
-  font-style: italic;
-}
-
 main hr{
     margin-left: 20px; 
 }
@@ -319,6 +290,10 @@ main hr{
   display: flex;
   justify-content: space-between;
 } */
+
+section.breadcrumbs-buttons{
+  display: none;
+}
 
 div.breadcrumbs-row-1, div.breadcrumbs-row-2{
   display: flex;
@@ -351,8 +326,8 @@ section.donate{
 
 footer{
   margin-top: 20px;
-  background-color: rgb(180, 180, 180);
+  background-color: rgb(182, 50, 3);
   padding: 10px;
   padding-left: 15px;
-  color: rgb(31, 28, 28);
+  color: #f5deb3;
 }
