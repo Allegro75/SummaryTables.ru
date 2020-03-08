@@ -234,3 +234,9 @@ table.add-table tr td:nth-child(5){
 в простых матчах (не финалах)
 писались в одну строку, в частности, в файле
 "Челси" - "Бавария" */
+
+a{
+  font-size: 0.6em;
+  text-decoration: none;
+  color: black;
+}
