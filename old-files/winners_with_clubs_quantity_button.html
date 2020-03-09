@@ -14,7 +14,7 @@
     Лига чемпионов. Кубок чемпионов. Лига Европы. Кубок УЕФА. Кубок кубков. Суперкубок.">
     <meta name="viewport" content="width=device-width, initial-scale=1">    
     <title>Победители ЛЧ. Личные счета суперклубов. Сводная таблица</title>
-    <link rel="stylesheet" href="stylesheets/decade.css">
+    <link rel="stylesheet" href="stylesheets/main.css">
     <link rel="shortcut icon" href="images/football_ball.png" type="image/x-icon">
 
 </head>
@@ -68,13 +68,13 @@
                     </li>                    
 
                     <li>
-                        <a href="decade.html" title="24 лучших клуба десятилетия (2011-2020). Личные встречи. Сводная таблица">
+                        <a href="decade.html" title="Лучшие клубы десятилетия (2011-2020). Личные встречи. Сводная таблица">
                             ДЕСЯТИЛЕТИЕ
                         </a>
                     </li>
 
                     <!-- <li>
-                        <a href="winners.html" title="Все 22 победителя Лиги/кубка чемпионов всех лет. Личные встречи. Сводная таблица">
+                        <a href="winners.html" title="Победители Лиги/кубка чемпионов всех лет. Личные встречи. Сводная таблица">
                             ПОБЕДИТЕЛИ ЛЧ
                         </a>
                     </li> -->
@@ -177,8 +177,7 @@
         <section class="headers">
 
             <h2>
-                ИСТОРИЯ ПРОТИВОСТОЯНИЙ<span class="stars">*</span> ЕВРОПЕЙСКИХ ФУТБОЛЬНЫХ СУПЕРКЛУБОВ. 
-                СВОДНАЯ ТАБЛИЦА 
+                ИСТОРИЯ ПРОТИВОСТОЯНИЙ<span class="stars">*</span> ЕВРОПЕЙСКИХ ФУТБОЛЬНЫХ СУПЕРКЛУБОВ. СВОДНАЯ ТАБЛИЦА 
             </h2>
 
             <p class="explanation football-explanation">
@@ -196,17 +195,52 @@
             </h1>
 
             <p class="explanation football-explanation-second-row-1">
-                Команды ранжированы по количеству побед в кубке чемпионов.
+                Команды ранжированы по количеству побед в кубке чемпионов
             </p>
 
-            <p class="explanation">
-                <!-- <em> -->
-                    В таблице учтены матчи до 28.02.2020 включительно.
-                <!-- </em> -->
+            <p class="update-announcement">
+                <em>В таблице учтены матчи до 28.02.2020 включительно</em>
             </p>
         </section>
 
-        <section class="table-plus-right-buttons">          
+        <!-- Кнопки для выбора числа клубов в таблице -->
+        <section class="selector">
+
+            <p>Выберите <b>число</b> (от 2 до 22) клубов в таблице (с помощью кнопок "min", "
+                < ", ">" и "max"):</p>
+            <!-- <p>Выберите <b>число</b> (от 2 до 22) клубов в таблице (с помощью кнопок "<" и ">") 
+                    и нажмите кнопку с числом:</p>                     -->
+
+            <button class="min" title="Минимальное число клубов: 2">min</button>
+            <button class="less" title="Уменьшить число клубов">&lt;</button>
+            <button class="choice">10</button>
+            <button class="more" title="Увеличить число клубов">&gt;</button>
+            <button class="max" title="Максимальное число клубов: 22
+1. Реал
+2. Милан
+3. Ливерпуль
+4. Бавария
+5. Барселона
+6. Аякс
+7. Интер
+8. МанЮнайтед
+9. Ювентус
+10. Бенфика
+11. Порто
+12. Ноттингем
+13. Челси
+14. Боруссия Д
+15. Марсель
+16. Стяуа
+17. Гамбург
+19. Селтик
+19. Црвена звезда
+20. ПСВ
+21. Астон Вилла
+22. Фейеноорд">
+                max</button>
+
+        </section>
 
         <table class="main-table">
 
@@ -6946,29 +6980,14 @@
             </tbody>
         </table>
 
-            <!--Кнопка СПРАВА для переключения в дуэльный вид: -->
-            <section class="duel-button button-right">
-                <button class="results-duels-switch" title="Переключиться на отображение счёта в дуэльном виде (и обратно)">
-                    <p class="results"><b>ДУЭЛИ</b>***</p>
-                    <p class="duels" hidden>ОБРАТНО</p>
-                </button>
-                <p class="duels-explanation">
-                    ***Дуэль - непосредственное столкновение двух команд в ходе турнира.
-                    <br> В дуэли побеждает тот, кто проходит дальше в кубковом турнире, либо выигрывает турнир (для финалов),
-                    <br> либо для групповых этапов - проходит в стадию более высокую, чем соперник по дуэли.
-                </p>
-            </section>          
-
-        </section>         
-
-        <!--Кнопка СНИЗУ для переключения в ДУЭЛЬНЫЙ вид: -->
-        <section class="duel-button button-normal">
-            <button class="results-duels-switch" title="Переключиться на отображение счёта в дуэльном виде (и обратно)">
-                <p class="results">Переключиться на отображение счёта в <b>ДУЭЛЯХ</b>***</p>
-                <p class="duels" hidden>Переключиться с дуэлей*** на ОБЫЧНЫЕ результаты</p>
+        <!--Кнопка для переключения в дуэльный вид: -->
+        <section class="duel-button">
+            <button class="results-duels-switch">
+                <p class="results">Переключиться на отображение счёта в <b>ДУЭЛЯХ</b>**</p>
+                <p class="duels" hidden>Переключиться с дуэлей** на ОБЫЧНЫЕ результаты</p>
             </button>
             <p class="duels-explanation">
-                ***Дуэль - непосредственное столкновение двух команд в ходе турнира.
+                **Дуэль - непосредственное столкновение двух команд в ходе турнира.
                 <br> В дуэли побеждает тот, кто проходит дальше в кубковом турнире, либо выигрывает турнир (для финалов),
                 <br> либо для групповых этапов - проходит в стадию более высокую, чем соперник по дуэли.
             </p>
@@ -7113,7 +7132,12 @@
         </p>
     </footer>
 
-    <script src="scripts/history24.js"></script>
+    <script src="scripts/winners.js"></script>
+    <!-- <script>
+            //rebuildTable(22);
+            // window.open("football-small-tables-duels/AjAtM.html", '', 
+            // 'width=550px, height=900px');
+        </script>    -->
 
 </body>
 

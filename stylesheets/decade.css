@@ -150,7 +150,7 @@ h1, h2{
   background-color: whitesmoke;
   padding-top: 0.6em;
   padding-bottom: 0.6em;
-  padding-left: 0.8em;
+  padding-left: 0.6em;
   margin: 0;
   margin-top: 0.3em;
   margin-bottom: 0.3em;
@@ -182,8 +182,6 @@ p.football-explanation-second-row-2{
 
 section.table-plus-right-buttons{
   white-space: nowrap;
-  display: flex;
-  vertical-align: top;
 }
 
 /* ТАБЛИЦА: */
@@ -295,36 +293,58 @@ button.results-duels-switch:focus{
 /* Про кнопки СПРАВА: */
 
 section.button-right{
-  display: flex;
+  display: inline-block;
   vertical-align: top;
 }
 
-section.button-right button.results-duels-switch{
-    height: 520px; 
+section.button-right button.results-duels-switch,
+section.button-right button.short-history-button{
+    height: 600px; 
     width: 100px;
     border-radius: 10px;
     /* padding: 10px 20px; */
 }
 
-section.button-right button.results-duels-switch p{
+section.button-right button.results-duels-switch p,
+section.button-right button.short-history-button p{
     font-size: 2.2em;
     transform: rotate(90deg);
     font-style: normal;
     letter-spacing: 0.3em;
 }
 
-section.button-right p.duels-explanation{
-    /* margin-top: -100em; */
-    margin-left: 2em;
+section.button-right button.results-duels-switch p{
+  margin-bottom: 5em;
+}
+
+/* div.vertical-delimiter{
+  display: inline-block;
+  vertical-align: top;
+  width: 0.1em;
+  height: 57.5em;
+  background-color: gray;
+  margin-top: 20px;
+  margin-left: 20px;
+} */
+
+/* section.button-right button.short-history-button p{
+  margin-bottom: 3em;
+} */
+
+section.button-right p.duels-explanation,
+section.button-right p.explanation{
+    margin-top: 1.5em;
     width: 150px;
     font-size: 0.7em;
     white-space: normal;
-    display: inline-block;
 }
 
-section.soviet-republics p.table-explanation{
+section.short-history-button{
+  margin-top: 20px;
   margin-left: 20px;
 }
+
+
 
 /* Про кнопки СНИЗУ: */
 
