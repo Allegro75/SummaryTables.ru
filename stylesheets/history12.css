@@ -131,6 +131,7 @@ main{
   margin: 0 -40px;
   padding: 1px 40px;
   padding-bottom: 20px;
+  width: max-content;
 }
 
 h3{
@@ -189,6 +190,7 @@ table.main-table{
   border-collapse: collapse;
   font-weight: bold;
   font-size: 0.8em;
+  margin-right: 300px;
 }
 
 .main-table td{

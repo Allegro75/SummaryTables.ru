@@ -131,6 +131,10 @@ main{
   margin: 0 -40px;
   padding: 1px 40px;
   padding-bottom: 20px;
+  /* width: 100%; */
+    /* Здесь костыльное решение для проблемы фона 
+  при малом масштабе. Почему не работает width-100% не ясно: */
+  width: max-content;
 }
 
 h3{
@@ -182,6 +186,10 @@ p.football-explanation-second-row-2{
 
 section.table-plus-right-buttons{
   white-space: nowrap;
+
+  /* Здесь костыльное решение для проблемы фона 
+  при малом масштабе. Работает вместе с main{width: max-content}: */
+  margin-right: 150px;
 }
 
 /* ТАБЛИЦА: */

@@ -131,6 +131,7 @@ main{
   margin: 0 -40px;
   padding: 1px 40px;
   padding-bottom: 20px;
+  width: max-content;
 }
 
 h3{
@@ -184,6 +185,7 @@ section.table-plus-right-buttons{
   white-space: nowrap;
   display: flex;
   vertical-align: top;
+  margin-right: 250px;
 }
 
 /* ТАБЛИЦА: */

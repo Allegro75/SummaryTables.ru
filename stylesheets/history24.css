@@ -130,6 +130,7 @@ main{
   margin: 0 -40px;
   padding: 1px 40px;
   padding-bottom: 20px;
+  width: max-content;
 }
 
 h3{
@@ -181,6 +182,7 @@ p.update-announcement{
 
 section.table-plus-right-buttons{
   white-space: nowrap;
+  margin-right: 200px;
 }
 
 /* ТАБЛИЦА: */
