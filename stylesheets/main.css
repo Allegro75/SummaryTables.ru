@@ -89,10 +89,6 @@ nav li a, a:-webkit-any-link{
   color: wheat;
 }
 
-nav section.history{
-  display: none;
-}
-
 a{
   cursor: pointer;
   text-decoration: none;
@@ -104,6 +100,10 @@ nav a:hover{
 
 nav a:active{
   color: beige;
+}
+
+span.figures-in-history-hrefs{
+  font-size: 1.3em;
 }
 
 em{
@@ -131,6 +131,7 @@ main{
   margin: 0 -40px;
   padding: 1px 40px;
   padding-bottom: 20px;
+  width: max-content;
 }
 
 h3{
@@ -179,43 +180,6 @@ p.update-announcement{
   margin-top: 20px;
 }
 
-section.selector{
-  margin-top: 20px;
-  background-color: rgb(180, 180, 180);
-  padding: 10px;
-  padding-left: 15px;
-  color: rgb(31, 28, 28);
-  font-style: italic;
-  border-radius: 5px;
-}
-
-section.selector p{
-  font-size: 1.5em;
-}
-
-button{
-  cursor: pointer;
-}
-
-section.selector button{
-  height: 60px;
-  width: 100px;
-  font-size: 25px;
-  vertical-align: middle;
-  border-radius: 10px;
-}
-
-section.selector button.choice{
-  height: 80px;
-  width: 120px;
-  font-size: 40px;
-  /* position: relative; */
-}
-/* 
-section.selector span.ok{
-  position: absolute;
-} */
-
 
 /* ТАБЛИЦА: */
 
@@ -225,20 +189,15 @@ table.main-table{
   /* border-spacing: 10px; */
   border-collapse: collapse;
   font-weight: bold;
-  /* width: 1500px; 
-  Отменил ширину, т.к., во-первых, из-за неё фон тёмно-серый вставал криво
-  (иногда (на тлф, например) не шёл до конца направо),
-  а, во-вторых, вообще не помню, зачем я это ограничение в 1500 пикселей ставил.
-  
-  P.S. Хотя я не вполне уверен, что проблема с фоном связана именно с этим размером*/
+  font-size: 0.8em;
+  margin-right: 300px;
 }
 
 .main-table td{
-  /* border: 1px solid rgba(0, 0, 0, 0.1); */
   text-align: center;
-  max-width: 150px;
-  padding: 13px;
-  border-right: 2px solid gray;
+  max-width: 10em;
+  padding: 0.7em;
+  border-right: 0.22em solid gray;
 }
 
 .main-table tr.logotypes td{
@@ -257,38 +216,17 @@ tr.logotypes span.number{
 }
 
 img.football-logo-table{
-  height: 40px;
-  margin: 5px;
+  height: 30px;
+  margin: 0.05em;
 }
 
 /* Для эмблем, вытянутых в высоту (Реал, Тоттенхэм, Порто, Милан, Интер): */
 img.real{
-  height: 45px;
-}
-
-/* Ноттингемскому лого нужна подложка.
-Иначе бледно-красное на сером не смотрится: */
-img.nottingham{
-  border: 0.1em solid rgb(230, 230, 230); 
-  background-color: rgb(230, 230, 230);
-  border-radius: 0.3em;
-}
-
-/* Лого Гамбурга вытянуто в ширину, посему его настаиваем специально: */
-img.hamburg{
-  width: 50px;
-  height: auto;
-  top: 8px;
+  height: 36px;
 }
 
 div.club-name{
-  margin: 15px;
-}
-
-/* Для слишком длинных названий клубов (типа "Вулверхэмптон"),
-к-рые в связи со своей длиной не встают в центр ячейки: */
-span.long-club-title{
-  font-size: 0.8em;
+  margin: 0.25em;
 }
 
 .main-table tr:nth-child(odd){
@@ -315,7 +253,8 @@ p.games-score{
 }
 
 td div.duels{
-  font-size: 2em;
+  font-size: 2.1em;
+  margin: 0.32em 0.3em;
   white-space: nowrap;
 }
 
@@ -323,14 +262,6 @@ td p.goals-difference{
   font-weight: normal;
   font-style: italic;
 }
-
-/* td div.points{
-  position: absolute;
-  top: -12px;
-  right: 2px;
-  font-size: 24px;
-  color: gray;
-} */
 
 
 /* Про кнопку ДУЭЛЕЙ: */
@@ -370,7 +301,7 @@ main hr{
 }
 
 
-/* Экспериментируем с flex: */
+/* Экспериментируем с flex (февраль 2020): */
 /* section.breadcrumbs-buttons{
   display: flex;
   justify-content: space-between;
