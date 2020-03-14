@@ -1,38 +1,27 @@
 body{
-
-  /* min-width: 1000px; */
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 16px;
   color: #4f535b;
-
-  /* background-image: url(../images/messi.png); */
-  /* Все эти позишены-репиты делал, видимо, чтобы Месси влепить: */
-  /* background-repeat: no-repeat; */
-  /* background-position: bottom left; */
-  /* background-blend-mode: multiply  ; */
   background-color: rgba(0, 0, 0, 0.1);
-
-  padding: 20px;
-  /* Убрал div.forBorder - пришлось делать padding, чтоб не прилипало слева */
+  /* padding: 20px; */
+  padding-top: 0.5em;
+  margin: 0;
 }
-
-header{
+/* header{
   margin-left: 20px;
-}
-
-/* .forBorder{
-  margin: 10px;
-  border: 3px solid gray; 
-  border-radius: 1em;
-  padding-bottom: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
 } */
+
+section.site-title{
+  background-color: chocolate;
+  /* margin-left: -20px; */
+  padding: 0.3em 0 0.5em 0.5em;
+  color: #f5deb3;
+}
 
 .the-very-top{
   text-transform: uppercase;
   letter-spacing: 5px;
-  margin-left: 20px;
+  margin-left: 4em;
   margin-top: 10px;
   font-size: 1em;
 }
@@ -41,25 +30,68 @@ header{
 .pirate{
   float: left;
   width: 20px;
+  margin-top: 0.6em;
+  margin-left: 1em;
   margin-right: 15px;
+}
+
+nav{
+  /* margin-left: 20px; */
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+  color: wheat;
+}
+
+section.nav-section{
+  padding-left: 1.5em;
+  /* padding-top: -1em;   */  /* Отрицательный паддинг работать не хочет */
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+}
+
+section.football, section.chess{
+  background-color: rgb(182, 50, 3);
+}
+
+section.history{
+  background-color: chocolate;
+}
+
+nav div.href-list-title{
+  display: inline-block;
+  width: 5em;
 }
 
 nav ul{
   list-style: none;
-  margin-left: -40px;
+  /* padding: 0px; */
+  /* margin-bottom: 0.5em; */
+  display: inline-block;
+  /* padding-top: -3em; */
+  /* padding-inline-start: 0; (по умолчанию он 40px)*/
+  line-height: 0.1em; 
+  /* Всё бы хорошо (строки сжимаются как надо), да при увелиличении масштаба,
+  при расширении списка на две строки, строки слипаются*/
 }
 
 nav li{
   display: inline-block;
-  margin-right: 50px;
-  margin-bottom: 10px;
-  font-weight: bold;  
+  margin-right: 40px;
+  font-weight: bold;
+  font-size: 0.8em;
+  /* padding-top: -1em; */
+  /* margin-bottom: 1em;   */
+  /* margin-top: 0.5em; */
 }
 
-/* nav li:first-child{
-  margin-left: -40px;
-} */
+nav li a, a:-webkit-any-link{
+  color: wheat;
+}
 
+a{
+  cursor: pointer;
+  text-decoration: none;
+}
 nav a:hover{
   color: black;
 }
@@ -68,34 +100,9 @@ nav a:active{
   color: beige;
 }
 
-/* .headerBackground{
-  margin: 14px -40px 4px;
-  padding: 10px;
-  background-color: rgba(0, 0, 0, 0.1);
+span.figures-in-history-hrefs{
+  font-size: 1.3em;
 }
-
-header .myPhoto{
-  display: inline-block;
-  width: 190px;
-  height: 180px;
-  background-image: url("../images/olegAndVera.jpg");
-  background-position: 75% 50%;
-  border: 3px dotted gray; 
-  margin-left: 25px;
-  border-radius: 8%;
-}
-
-header .presentation{
-  display: inline-block;
-  margin-left: 30px;
-  line-height: 1em;
-  font-size: 2.55em;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  } */
-
-/* .header{
-  vertical-align: middle;
-} */
 
 em{
   font-style: italic;
@@ -117,62 +124,6 @@ a{
   color: #4f535b;
 }
 
-/* .text{
-  margin-top: 5px; 
-}  */
-
-/* .reflection{
-  margin: 20px;
-  margin-left: 0;
-}
-
-.position-image{
-  margin-top: 20px;
-  width: 600px; 
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-img.diagram{
-  width: 350px;
-}
-
-.positionPresentation{
-  text-align: center;
-  font-size: 1.25em;
-  color: #4f535b;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.decision{
-  text-align: center;
-} */
-
-/* div.youtube-information{
-  margin: 20px -40px;
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-.youtube-information a{
-  text-decoration: none;
-  font-style: italic;
-  border-bottom: 2px solid gray;
-}
-
-.youtube-information p{
-  line-height: 180%;
-  padding-left: 40px;
-} */
-
-
-/* FOR FOOTBALL */
-
-
 main{
   background-color: rgba(0, 0, 0, 0.1);
   margin: 0 -40px;
@@ -189,6 +140,11 @@ h1{
 h1, .content-headers p{
   text-align: left;
   margin-left: 20px;
+}
+
+span.stars{
+  font-size: 16px;
+  vertical-align: top;
 }
 
 p.explanation{
@@ -253,6 +209,11 @@ div.player-last-name{
   text-transform: uppercase;
 }
 
+table td div.rating{
+  font-style: italic;
+  font-size: 0.9em;
+}
+
 .main-table tr:nth-child(odd){
   background-color:rgba(0, 0, 0, 0.1);
   /* Пытался сделать полукрасные строки 
@@ -264,6 +225,10 @@ div.player-last-name{
   background-color: aliceblue;
   /* Пытался сделать полукрасные строки
   opacity: 0.5; */
+}
+
+td.has-history{
+  cursor: pointer;
 }
 
 p.games-score{
@@ -305,8 +270,8 @@ section.donate{
 
 footer{
   margin-top: 20px;
-  background-color: rgb(180, 180, 180);
+  background-color: rgb(182, 50, 3);
   padding: 10px;
   padding-left: 15px;
-  color: rgb(31, 28, 28);
+  color: #f5deb3;
 }
