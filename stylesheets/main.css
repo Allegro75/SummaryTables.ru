@@ -8,10 +8,6 @@ body{
   margin: 0;
 }
 
-/* header{
-  margin-left: 20px;
-} */
-
 section.site-title{
   background-color: chocolate;
   /* margin-left: -20px; */
@@ -122,9 +118,6 @@ p{
   margin: 0.25em auto;
 }
 
-/* a{
-  color: #4f535b;
-} */
 
 main{
   background-color: rgba(0, 0, 0, 0.1);
