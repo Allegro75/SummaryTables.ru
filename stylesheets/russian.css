@@ -299,6 +299,7 @@ button.results-duels-switch:focus{
 section.button-right{
   display: flex;
   vertical-align: top;
+  position: relative; /* Это чтобы позиционировать абзац со словом "ДУЭЛИ" внутри кнопки */
 }
 
 section.button-right button.results-duels-switch{
@@ -313,6 +314,10 @@ section.button-right button.results-duels-switch p{
     transform: rotate(90deg);
     font-style: normal;
     letter-spacing: 0.3em;
+    /* Чтобы позиционировать абзац со словом "ДУЭЛИ" внутри кнопки: */
+    position: absolute;
+    left: -2.1em;
+    top: 8.5em;
 }
 
 section.button-right p.duels-explanation{
