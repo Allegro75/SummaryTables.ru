@@ -122,6 +122,12 @@ table.add-table{
   /* font-weight: normal;   */
 }
 
+/* Уменьшаем шрифт для надписей "№" и "Поле": */
+table.add-table tr:first-child td:first-child,
+table.add-table tr:first-child td:nth-child(2){
+  font-size: 0.8em;
+}
+
 table.add-table td{
   padding: 7px;
   /* border: none; */
@@ -131,7 +137,9 @@ table.add-table tr:nth-child(even){
   background-color: aliceblue;
 }
 
-table.add-table td.number-of-match{
+/* Наклоняем шрифт в первой колонке (с номерами матчей): */
+table.add-table td.number-of-match,
+table.add-table tr:first-child td:first-child{
   font-style: italic;
 }
 
