@@ -14,12 +14,7 @@ div.additional-table{
   /* 550 пикселей нужно, чтобы матчи "Бавария"-"Реал" 
   не громоздились в две строки */
   position: absolute;
-  /* если делать "position: relative", то весь div расползается на 500px 
-  А вообще не дефолтное (т.е. не "static") значение нужно, чтобы
-  логотипы встали как надо.*/
-  /*z-index: 10;
-  top: 30px;
-  left: 30px; */
+  /* Интересно, если дефолтное (т.е. "static") значение, то весь div расползается на 500px */
 
   background-color: gray;
   color: black;
@@ -27,17 +22,17 @@ div.additional-table{
   border-radius: 15px;
   padding: 5px;
 }
-
+/* 
 div.additional-table img{
   position:absolute;
-}
+} */
 
 div.additional-table img.logo-left{
-  left: 10px;
+  float: left;
 }
 
 div.additional-table img.logo-right{
-  right: 10px;
+  float: right;
 }
 
 img.football-logo-table{
@@ -49,7 +44,7 @@ img.football-logo-table{
 /* Для эмблем, вытянутых в высоту (Реал, Тоттенхэм, Порто, Милан, Интер): */
 img.real{
   height: 45px;
-  top: 2px;
+  /* top: 2px; */
 }
 
 /* Для эмблемы Байера(вытянутой в ширину): */
@@ -57,16 +52,15 @@ img.bayer.football-logo-table{
   max-width: 45px;
   /* высота "auto" нужна, чтоб картинка не сжималась, сохраняла пропорцию */
   height: auto;
-  top: 8px;
+  /* top: 8px; */
 }
 
 /* Для эмблемы Зенита(вытянутой в ширину): */
 img.zenit.football-logo-table{
   width: 37px;
-
   /* высота "auto" нужна, чтоб картинка не сжималась, сохраняла пропорцию */
   height: auto;
-  top: 9px;
+  /* top: 9px; */
 }
 
 /* Ноттингемскому(и марсельскому) лого нужна подложка.
@@ -80,11 +74,10 @@ img.nottingham{
 /* Лого Гамбурга вытянуто в ширину, посему его настаиваем специально: */
 img.hamburg{
   width: 42px;
-
   /* Если не сделать height:auto, то height будет считываться с img, 
   будет равен 40px, пропорции нарушатся */
   height: auto;
-  top: 10px;
+  /* top: 10px; */
 }
 
 /* Хотел сделать белый фон под заголовком пары: */
@@ -95,14 +88,12 @@ img.hamburg{
 } */
 
 div.additional-table h3{
-  /* margin-left: 75px;
-  margin-right: 75px;  */
-  /* Раньше я так выравнивал заглавие матча */
-
-  max-width: 290px;
-  /* А теперь сделал через max-width, т.к. иначе лого Лейпцига лезет на заглавие */
-  /* 11/03/2020: уменьшил с 300px до 290 из-за пары Лион - Тоттенхэм (и у мёнхенгладбаха кое-где) */
-  margin: 20px auto;
+    /*Без max-width иногда неоправданно растягивается
+    (см. "Боруссия" М - "Лион"): */
+    max-width: 300px;
+    /* Без выравнивания маргинами вторая (и зачастую появляющаяся третья) строка смещается влево,
+    т.к. "не видит" левого логотипа: */
+    margin: 20px auto;
 }
 
 p{
@@ -119,7 +110,6 @@ table.add-table{
   margin-top: 20px;
   border-collapse: collapse;
   /* z-index: -1; */
-  /* font-weight: normal;   */
 }
 
 /* Уменьшаем шрифт для надписей "№" и "Поле": */
@@ -130,7 +120,6 @@ table.add-table tr:first-child td:nth-child(2){
 
 table.add-table td{
   padding: 7px;
-  /* border: none; */
 }
 
 table.add-table tr:nth-child(even){
@@ -166,8 +155,6 @@ div.duels-text{
 }
 
 tr.duel-result{
-  /* height: 0.1em; */
-  /* font-weight: bold; */
   line-height: 0.1em;
 }
 
@@ -199,7 +186,6 @@ div.additional-table tr.duel-result.duel-draw td{
   background-color: rgba(255, 255, 0, 0.25);
   color: rgba(228, 188, 13, 0.836);
   font-size: 1.5em;
-  /* vertical-align: text-top; */
   position: relative;
 }
 
@@ -224,8 +210,8 @@ table.add-table tr:last-child td:first-child{
 table.add-table tr:last-child td:last-child{
   border-bottom-right-radius: 12px;
 }
-/*  */
 
+/* Чтобы счёт был жирным: */
 table.add-table tr td:nth-child(3){
   font-weight: bold;
   white-space: nowrap;
@@ -242,17 +228,7 @@ table.add-table tr td:nth-child(2){
 }
 /* Это даёт нулевые паддинги справа-слева у слова "Поле" */
 
-/* table.add-table tr td:nth-child(5){
-  min-width: 150px;
-} */
-/* Это нужно, чтобы слова "Лига чемпионов"
-в простых матчах (не финалах)
-писались в одну строку, в частности, в файле
-"Челси" - "Бавария"
-P.S. Вроде не стало такой проблемы на данный момент (11.03.2020) */
-
 a{
   font-size: 0.6em;
-  /* text-decoration: none; */
   color: black;
 }
