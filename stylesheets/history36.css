@@ -45,9 +45,10 @@ nav{
 
 section.nav-section{
   padding-left: 1.5em;
-  /* padding-top: -1em;   */  /* Отрицательный паддинг работать не хочет */
   margin-top: 0.2em;
   margin-bottom: 0.2em;
+  height: 36px;
+  width: 1900px;
 }
 
 section.football, section.chess{
@@ -65,14 +66,9 @@ nav div.href-list-title{
 
 nav ul{
   list-style: none;
-  /* padding: 0px; */
-  /* margin-bottom: 0.5em; */
   display: inline-block;
-  /* padding-top: -3em; */
-  /* padding-inline-start: 0; (по умолчанию он 40px)*/
-  line-height: 0.1em; 
-  /* Всё бы хорошо (строки сжимаются как надо), да при увелиличении масштаба,
-  при расширении списка на две строки, строки слипаются*/
+  margin-top: 7px;
+  margin-bottom: 10px;
 }
 
 nav li{
@@ -80,9 +76,6 @@ nav li{
   margin-right: 50px;
   font-weight: bold;
   font-size: 0.9em;
-  /* padding-top: -1em; */
-  /* margin-bottom: 1em;   */
-  /* margin-top: 0.5em; */
 }
 
 nav li a, a:-webkit-any-link{
