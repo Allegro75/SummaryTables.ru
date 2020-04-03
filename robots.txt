@@ -1,0 +1,19 @@
+User-agent: *
+Disallow: /old-files
+Disallow: /images/reserve
+Disallow: /images/chess/stock
+Disallow: /stylesheets
+Disallow: /scripts
+
+User-agent: Yandex
+Disallow: /old-files
+Disallow: /images/reserve
+Disallow: /images/chess/stock
+
+User-agent: GoogleBot
+Disallow: /old-files
+Disallow: /images/reserve
+Disallow: /images/chess/stock
+
+Sitemap: summarytables.ru/sitemap.xml
+Host: summarytables.ru
