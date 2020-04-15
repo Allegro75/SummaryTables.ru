@@ -40,3 +40,5 @@ const showHideDuels = () => {
 
 lowDuelsSwitch.onclick = function () {showHideDuels();};
 
+
+
