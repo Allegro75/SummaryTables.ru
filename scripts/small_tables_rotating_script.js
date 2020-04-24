@@ -96,6 +96,6 @@ for (let i = 1; i < scoreCells.length; i += 1) {
     else if ( cellText.includes('поражение') ) {
         scoreCells[i].innerHTML = `${oldConcededGoales} : ${oldScoredGoals}${cellText.slice(5).replace('поражение', 'победа')}`;
     }
-    else {scoreCells[i].textContent = `${oldConcededGoales} : ${oldScoredGoals}`;}
+    else {scoreCells[i].innerHTML = `${oldConcededGoales} : ${oldScoredGoals}${cellText.slice(5)}`;}
 }    
     

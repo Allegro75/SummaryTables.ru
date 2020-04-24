@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="ru">
-
+    
 <head>
 
 <meta charset="utf-8">
 <meta name="author" content="Edwards, Allegro, Edwards75, Allegro75, Oleg Otkidach">
 <meta name="author" content="Олег Откидач">
-<title>Фейеноорд - Боруссия Д</title>
+<title>Монако - Гамбург</title>
 <link rel="stylesheet" href="../stylesheets/small-tables-duels.css">
-<link rel="shortcut icon" href="../images/football_ball.svg" 
-type="image/x-icon">
+<link rel="shortcut icon" href="../images/football_ball.svg" type="image/x-icon">
 
 </head>
 
@@ -17,24 +16,23 @@ type="image/x-icon">
 
 <div class="additional-table">
 
-    <img src="../images/BorD.png" alt="Боруссия Д" 
-    class="football-logo-table logo-right">
-    <img src="../images/optimized/Feyenoord.png" alt="Фейеноорд" 
-    class="football-logo-table logo-left">
+    <img src="../images/optimized/Monaco.png" alt="Монако" class="football-logo-table real logo-left real">
+    <img src="../images/Hamburg.svg" alt="Гамбург" class="football-logo-table logo-right hamburg">
 
-            <h3>Фейеноорд - Боруссия Дортмунд</h3>
+            <h3>Монако - Гамбург</h3>
 
-            <p>3 матча:</p>
-            <p>1 победа, 2 ничьи, 0 поражений</p>
-            <p>Разница мячей: 5 - 4</p>
+            <p>3 матчей:</p>
+            <p>3 победы, 0 ничья, 0 поражения</p>
+            <p>Разница мячей: 7 - 0</p>
 
             <div class="duels-text">
                 <p>2 дуэли:</p>
-                <p>2 победы в дуэлях, 0 поражений</p>
+                <p>1 победы в дуэлях, 0 поражение,</p>
+                <p>1 дуэль в группе не выявила победителя</p>                
             </div>
 
             <table class="add-table">
-                <tr>
+                <tbody><tr>
                     <td>№</td>
                     <td>Поле</td>
                     <td>Счёт</td>
@@ -44,21 +42,28 @@ type="image/x-icon">
                 </tr>
 
                 <tr class="duel-win">
+                <!-- <tr class="duel-loose"> -->
+                <!-- <tr class="duel-draw">  -->
                     <td class="number-of-match">1</td>
                     <td title="дома">д</td>
-                    <td>1 : 1</td>
-                    <td>1999</td>
-                    <td>Лига чемпионов</td>
-                    <td>группа</td>
-                </tr>
+                    <!-- <td title="в гостях">г</td> -->
+                    <td>3 : 0</td>    
+                    <td>1996</td>
+                    <td>Кубок УЕФА</td>
+                    <td>1/8</td>
+                </tr>      
+                
                 <tr class="duel-win">
+                <!-- <tr class="duel-loose"> -->
+                <!-- <tr class="duel-draw">  -->
                     <td class="number-of-match">2</td>
+                    <!-- <td title="дома">д</td> -->
                     <td title="в гостях">г</td>
-                    <td>1 : 1</td>
-                    <td>1999</td>
-                    <td>Лига чемпионов</td>
-                    <td>группа</td>
-                </tr>
+                    <td>2 : 0</td>    
+                    <td>1996</td>
+                    <td>Кубок УЕФА</td>
+                    <td>1/8</td>
+                </tr>  
 
                 <tr class="duel-result duel-win"
                 title="Дуэль выше выиграна">
@@ -67,34 +72,41 @@ type="image/x-icon">
                     <td>
                         &#9650;
                     </td>
-                </tr>
+                </tr>  
 
-                <tr class="duel-win final">
+                <!-- <tr class="duel-loose"> -->
+                <!-- <tr class="duel-loose"> -->
+                <tr class="duel-draw"> 
                     <td class="number-of-match">3</td>
                     <td title="дома">д</td>
-                    <td>3 : 2</td>
-                    <td>2002</td>
+                    <!-- <td title="в гостях">г</td> -->
+                    <td>2 : 0</td>    
+                    <td>2005</td>
                     <td>Кубок УЕФА</td>
-                    <td>ФИНАЛ</td>
-                </tr>
-
-                <tr class="duel-result duel-win"
-                title="Дуэль выше выиграна">
+                    <td>группа</td>
+                </tr>      
+                
+                <tr class="duel-result duel-draw"
+                title="Дуэль выше не выявила победителя">
                     <td colspan="5">
                     </td>
                     <td>
-                        &#9650;
+                        <span class="yellow-circle">
+                            &#9679;
+                        </span>
                     </td>
-                </tr>
+                </tr>                
 
-            </table>
-
-            <a href="../history.html" 
-            title="Лучшие клубы Европы. Личные встречи. Сводная таблица">
+            </tbody>
+        </table>
+    
+            <a href="../history.html" title="Лучшие клубы Европы. Личные встречи. Сводная таблица">
                 Лучшие клубы Европы. Личные встречи. Сводная таблица.
-            </a> 
+            </a>   
+            
+</div>        
 
-        <!--
+        <!-- Шаблоны для вставки в таблицу выше:
 
             <p>1 дуэль в группе не выявила победителя</p>
 
@@ -132,19 +144,23 @@ type="image/x-icon">
 
             <td title="дома">д</td>
             <td title="в гостях">г</td>  
-            
+
+            <td>1 : 0<br><span class="add-time-text">
+                (доп. время)
+            </span></td> 
+                        
+            <td>0 : 0<br><span class="penalty-text">
+                (поражение<br>по пенальти)
+            </span></td>            
+                        
             <td>0 : 1<br><span class="add-match-text">
                 (доп. матч)
             </span></td> 
 
-            <td>0 : 0<br><span class="penalty-text">
-                (поражение<br>по пенальти)
-            </span></td>
-
-            <td>1 : 0<br><span class="add-time-text">
-                (доп. время)
-            </span></td>                                 
-
+            <td>3 : 0<br><span class="penalty-text">
+                (тех. победа)
+            </span></td>             
+     
 
             <td>Лига чемпионов</td>
             <td>Кубок кубков</td>
@@ -159,9 +175,10 @@ type="image/x-icon">
 
             final
             
-        -->
-                    
-        </div>
+            real nottingham bayer hamburg leipzig
+            logo-left logo-right
+        --> 
 
-</body>    
-</html>
+<!-- <script src="../scripts/small_tables_rotating_script.js"></script>  -->
+
+</body></html>
