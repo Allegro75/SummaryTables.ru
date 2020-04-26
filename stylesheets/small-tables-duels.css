@@ -101,6 +101,11 @@ p{
   margin-right: 0.4em;
 }
 
+.duels-score{
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
 table.add-table{
   /* Маргины правый и левый со значением "авто" нужны 
   для центрирования таблицы */
