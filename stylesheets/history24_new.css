@@ -230,6 +230,7 @@ img.nottingham{
 div.club-name{
   margin: 0.25em;
   white-space: normal;
+  font-size: 1.3em;
 }
 
 /* Для слишком длинных названий клубов (типа "Вулверхэмптон"),
