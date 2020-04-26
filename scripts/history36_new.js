@@ -21,26 +21,24 @@ table.onclick = function() {
 
 // Служебные скрипты для переделывания таблицы:  
 
-// Для вставки колонки с "Рейнджерс":
+// Для вставки колонки с "Гётеборгом":
 
-// for (let ri = 1; ri <= 35; ri += 1) {
-//     if (ri != 27) {
+// for (let ri = 1; ri <= 36; ri += 1) {
+//     if (ri != 34) {
 //         let rowID = ''; 
 //         if (ri === 1) { rowID = 'RMa'; }
 //         else {       
 //             let rowRMaID = table.rows[ri].cells[3].getAttribute('id');
-//             if ( rowRMaID.includes('MU') ) {rowID = 'MU';}
-//             else if ( rowRMaID.includes('Aj') ) {rowID = 'Aj';}
-//             else {rowID = rowRMaID.slice(0, 3);}
+//             rowID = rowRMaID.slice(0, 3);
 //         }
 
-//         let idInGRaRow = `GRa${rowID}`;
-//         let newCell = document.getElementById(idInGRaRow).cloneNode(true);
-//         newCell.id = `${rowID}Gra`;
+//         let idInGtbRow = `Gtb${rowID}`;
+//         let newCell = document.getElementById(idInGtbRow).cloneNode(true);
+//         newCell.id = `${rowID}Gtb`;
 //         let rowClubInRussian = table.rows[ri].cells[1].querySelector('img').getAttribute('title');
 //         let divInNewCell = newCell.querySelector('div');
 //         if ( newCell.classList.contains('no-history') ) {
-//             divInNewCell.setAttribute('title', `"${rowClubInRussian}" против "Рейнджерс"
+//             divInNewCell.setAttribute('title', `"${rowClubInRussian}" против "Гётеборга"
 // Не встречались`);
 //         }
 //         else {
@@ -54,16 +52,16 @@ table.onclick = function() {
 //                 let textWWithoutClickWords = oldTitleText.slice(0, -34);
 //                 let lastCommaIndex = textWWithoutClickWords.lastIndexOf(',');
 //                 let oldTextToCopy = textWWithoutClickWords.slice(lastCommaIndex);
-//                 divInNewCell.setAttribute('title', `"${rowClubInRussian}" против "Рейнджерс"
+//                 divInNewCell.setAttribute('title', `"${rowClubInRussian}" против "Гётеборга"
 // ${oldDefeats} побед в дуэлях, ${oldVictories} поражения${oldTextToCopy}Кликните, чтобы узнать подробности`);                 
 //             }
 //             else {
-//                 divInNewCell.setAttribute('title', `"${rowClubInRussian}" против "Рейнджерс"
+//                 divInNewCell.setAttribute('title', `"${rowClubInRussian}" против "Гётеборга"
 // ${oldDefeats} побед в дуэлях, ${oldVictories} поражения
 // Кликните, чтобы узнать подробности`); 
 //             }          
 //         }
-//         table.rows[ri].cells[28].after(newCell);
+//         table.rows[ri].cells[35].after(newCell);
 //     }
 // }
 
