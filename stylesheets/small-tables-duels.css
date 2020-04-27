@@ -87,13 +87,14 @@ img.hamburg{
   border-radius: 12px;
 } */
 
-div.additional-table h3{
+div.additional-table h1{
     /*Без max-width иногда неоправданно растягивается
     (см. "Боруссия" М - "Лион"): */
     max-width: 300px;
     /* Без выравнивания маргинами вторая (и зачастую появляющаяся третья) строка смещается влево,
     т.к. "не видит" левого логотипа: */
     margin: 20px auto;
+    font-size: 1.17em;
 }
 
 p{
