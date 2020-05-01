@@ -182,14 +182,35 @@ table.main-table{
   /* border-spacing: 10px; */
   border-collapse: collapse;
   font-weight: bold;
-  font-size: 0.8em;
+  font-size: 0.6em;
   margin-right: 300px;
+  /* border-radius: 5px; */
+}
+
+table.main-table tr:first-child td:first-child{
+  border-top-left-radius: 1.8em;    
+}
+
+table.main-table tr:last-child td:first-child{
+    border-bottom-left-radius: 1.8em;    
+}
+
+table.main-table tr:first-child td:last-child{
+    border-top-right-radius: 1.8em;    
+}
+
+table.main-table tr:last-child td:last-child{
+    border-bottom-right-radius: 1.8em;    
+}
+
+table.main-table tr td:last-child{
+    border-right: none;
 }
 
 .main-table td{
   text-align: center;
   max-width: 10em;
-  padding: 0.7em;
+  padding: 0.6em;
   border-right: 0.22em solid gray;
 }
 
@@ -236,19 +257,21 @@ img.hamburg{
 
 div.club-name{
   margin: 0.25em;
+  font-size: 1.3em;
 }
+
+/* Для слишком длинных названий клубов (типа "Вулверхэмптон"),
+к-рые в связи со своей длиной не встают в центр ячейки: */
+span.long-club-title{
+    font-size: 0.8em;
+  }
 
 .main-table tr:nth-child(odd){
   background-color:rgba(0, 0, 0, 0.1);
-  /* Пытался сделать полукрасные строки 
-  background-color: black;
-  opacity: 0.1; */
 }
 
 .main-table tr:nth-child(even){
   background-color: aliceblue;
-  /* Пытался сделать полукрасные строки
-  opacity: 0.5; */
 }
 
 td.has-history{

@@ -252,15 +252,10 @@ span.long-club-title{
 
 .main-table tr:nth-child(odd){
   background-color:rgba(0, 0, 0, 0.1);
-  /* Пытался сделать полукрасные строки 
-  background-color: black;
-  opacity: 0.1; */
 }
 
 .main-table tr:nth-child(even){
   background-color: aliceblue;
-  /* Пытался сделать полукрасные строки
-  opacity: 0.5; */
 }
 
 td.has-history{
