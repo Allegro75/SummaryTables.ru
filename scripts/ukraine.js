@@ -27,7 +27,7 @@ const duelsSwitch = document.querySelector('.duel-button button.results-duels-sw
 
 duelsSwitch.onclick = function () {showHideDuels();};
 const showHideDuels = () => {
-    for (i = 0; i < results.length; i++) {
+    for (let i = 0; i < results.length; i++) {
         results[i].hidden = !results[i].hidden;
         duels[i].hidden = !duels[i].hidden; 
     }

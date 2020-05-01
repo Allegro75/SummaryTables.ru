@@ -80,7 +80,7 @@ const lowDuelsSwitch = document.querySelector('.button-normal button.results-due
 
 duelsSwitch.onclick = function () {showHideDuels();};
 const showHideDuels = () => {
-    for (i = 0; i < results.length; i++) {
+    for (let i = 0; i < results.length; i++) {
         results[i].hidden = !results[i].hidden;
         duels[i].hidden = !duels[i].hidden; 
     }

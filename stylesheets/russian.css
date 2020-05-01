@@ -183,8 +183,12 @@ section.table-plus-right-buttons{
 
 /* ТАБЛИЦА: */
 
+table.russia{
+  margin-top: 10px;
+}
+
 table.main-table{
-  margin-top: 20px;
+  /* margin-top: 20px; */
   margin-left: 20px;
   /* margin-bottom: 20px; */
   border-collapse: collapse;
@@ -234,10 +238,23 @@ img.hamburg{
   top: 0.2em;
 }
 
+/* Ноттингемскому лого нужна подложка.
+Иначе бледно-красное на сером не смотрится: */
+img.nottingham{
+  border: 0.1em solid rgb(230, 230, 230); 
+  background-color: rgb(230, 230, 230);
+  border-radius: 0.3em;
+}
+
 div.club-name{
   margin: 0.25em;
   white-space: normal;
   font-size: 1.3em;
+}
+
+.armenia div.club-name,
+.lithuania div.club-name{
+  width: 8em;
 }
 
 /* Для слишком длинных названий клубов (типа "Вулверхэмптон"),
@@ -288,7 +305,11 @@ button.results-duels-switch:focus{
 }
 
 
-/* Про кнопки СПРАВА: */
+/* Про кнопку СПРАВА: */
+
+section.duel-button{
+  margin-left: 20px;
+}
 
 section.button-right{
   display: flex;
@@ -329,17 +350,12 @@ section.soviet-republics p.table-explanation{
 
 /* Про кнопки СНИЗУ: */
 
-
-section.duel-button{
-  margin-left: 20px;
-  margin-top: 20px; 
-}
-
 section.button-normal button{
   height: 100px; 
   width: 1000px;
   font-size: 1.6em;
   border-radius: 10px;
+  margin-top: 20px; 
   /* padding: 10px 20px; */
 }
 
