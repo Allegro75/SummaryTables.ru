@@ -196,6 +196,7 @@ table tr td:nth-child(11), table tr td:nth-child(6){
 
 div.club-name{
   margin: 0.25em;
+  font-size: 1.1em;
 }
 
 .main-table tr:nth-child(odd){
