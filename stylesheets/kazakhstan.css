@@ -218,8 +218,23 @@ img.real{
   height: 36px;
 }
 
+/* Ноттингемскому лого нужна подложка.
+Иначе бледно-красное на сером не смотрится: */
+img.nottingham{
+  border: 0.1em solid rgb(230, 230, 230); 
+  background-color: rgb(230, 230, 230);
+  border-radius: 0.3em;
+}
+
 div.club-name{
   margin: 0.25em;
+  font-size: 1.4em;
+}
+
+/* Для слишком длинных названий клубов (типа "Вулверхэмптон"),
+к-рые в связи со своей длиной не встают в центр ячейки: */
+span.long-club-title{
+  font-size: 0.8em;
 }
 
 .main-table tr:nth-child(odd){
