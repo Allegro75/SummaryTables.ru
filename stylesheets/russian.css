@@ -115,10 +115,6 @@ p{
   margin: 0.25em auto;
 }
 
-/* a{
-  color: #4f535b;
-} */
-
 main{
   background-color: rgba(0, 0, 0, 0.1);
   margin: 0 -40px;
@@ -154,29 +150,11 @@ h3{
     margin-bottom: 0em;  
 }
 
-span.stars{
-  font-size: 16px;
-  vertical-align: top;
-}
-
 p.explanation{
   font-size: 16px;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
 }
-
-p.football-explanation, p.football-explanation-second-row-1{
-  /* margin-top: -15px; */
-  text-align: left;
-  margin-left: 20px;
-}
-
-p.football-explanation-second-row-2{
-  margin-left: 20px;
-}
-
-/* p.update-announcement{
-  margin-top: 20px;
-} */
-
 
 section.table-plus-right-buttons{
   white-space: nowrap;

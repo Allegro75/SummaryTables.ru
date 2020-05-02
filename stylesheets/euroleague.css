@@ -139,27 +139,10 @@ h1, h2{
   margin-bottom: 0.3em;
 }
 
-span.stars{
-  font-size: 16px;
-  vertical-align: top;
-}
-
 p.explanation{
   font-size: 16px;
-}
-
-p.football-explanation, p.football-explanation-second-row-1{
-  /* margin-top: -15px; */
-  text-align: left;
-  margin-left: 20px;
-}
-
-p.football-explanation-second-row-2{
-  margin-left: 20px;
-}
-
-p.update-announcement{
-  margin-top: 20px;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
 }
 
 
