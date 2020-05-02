@@ -150,10 +150,6 @@ span.add-match-text{
   white-space: normal;
 }
 
-/* .add-table .additional-table{
-  max-width: 500px;
-} */
-
 div.duels-text{
   font-size: 0.9em;
   font-style: italic;
@@ -234,7 +230,18 @@ table.add-table tr td:nth-child(2){
 }
 /* Это даёт нулевые паддинги справа-слева у слова "Поле" */
 
-a{
+/* a.go-to-history */
+a:last-child{
   font-size: 0.6em;
   color: black;
+}
+
+a{
+  cursor: pointer;
+}
+
+table.add-table td a{
+  text-decoration: none;
+  color: black;
+  font-size: 1em;
 }
