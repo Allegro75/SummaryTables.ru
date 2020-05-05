@@ -16,8 +16,9 @@ const addHref = (node, year, tourney) => {
 
 const defineYearForGroup2Stage = (ri) => {
     let neighborGameRow = 
-    table.rows[ri - 1].classList.contains(`duel-result`) ?
-    table.rows[ri + 1] : table.rows[ri - 1];
+    ( !( table.rows[ri - 1].classList.contains(`duel-result`) ) &&
+    !( table.rows[ri - 1].classList.value === `` ) ) ?
+    table.rows[ri - 1] : table.rows[ri + 1];
     let year;
     if (+neighborGameRow.cells[3].textContent > +table.rows[ri].cells[3].textContent) {
         year = +neighborGameRow.cells[3].textContent;
