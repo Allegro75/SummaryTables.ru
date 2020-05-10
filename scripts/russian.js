@@ -133,6 +133,40 @@ lowDuelsSwitch.onclick = function () {showHideDuels();};
 
 // Служебные скрипты:
 
+// Для вставки полурыбных колонок с сезонами во все строки:
+
+// const allRepTables = document.querySelectorAll(`.republican-table`);
+
+// allRepTables.forEach((node) => {
+//     for (let ri = 1; ri < node.rows.length; ri ++) {
+//         let gapCell = document.createElement('td');
+//         gapCell.classList.add(`main-table__gap`);
+//         node.rows[ri].cells[node.rows[ri].cells.length - 1].after(gapCell);
+    
+//         let clubName = node.rows[ri].cells[1].querySelector(`img`).getAttribute('title');
+//         let seasNumCell = document.createElement('td');
+//         seasNumCell.classList.add(`main-table__seasons`);
+//         let titleText = `${clubName}: 20 сезонов с участием в еврокубках`;
+//         seasNumCell.setAttribute('title', titleText);
+//         seasNumCell.innerHTML = `<span class="main-table__seasons">20</span>`;
+//         node.rows[ri].cells[node.rows[ri].cells.length - 1].after(seasNumCell);
+//     }
+// });
+
+// allRepTables.forEach((node) => {
+//     let gapCell = document.createElement('td');
+//     gapCell.classList.add(`main-table__gap`);
+//     node.rows[0].cells[node.rows[0].cells.length - 1].after(gapCell);
+
+//     let seasHeaderCell = document.createElement(`td`);
+//     seasHeaderCell.innerHTML = `                    <td class="main-table__seasons"
+//                     title="Количество сезонов с участием в еврокубках">
+//                         Сезоны
+//                     </td>`;
+//     node.rows[0].cells[node.rows[0].cells.length - 1].after(seasHeaderCell);                    
+// });
+
+
 // Для удаления ячеек с "ПСЖ" и "Севильей":
 
 // for (let ri = 1; ri < table.rows.length; ri += 1) {

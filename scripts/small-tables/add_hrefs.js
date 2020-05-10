@@ -4,6 +4,8 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+// Определяем служебные переменные:    
+
     const table = document.querySelector('table');
 
     const addHrefToRow = (rowIndex, year, tourney) => {
@@ -58,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
 
-
+// Запускаем основной цикл расстановки ссылок:  
 
     for (let i = 1; i < table.rows.length; i ++) {
 

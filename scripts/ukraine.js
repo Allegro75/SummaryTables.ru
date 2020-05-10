@@ -60,6 +60,23 @@ const showHideDuels = () => {
 
 // Служебные скрипты:
 
+// Для вставки полурыбных колонок с сезонами во все строки:
+
+// for (let ri = 1; ri < table.rows.length; ri ++) {
+//     let gapCell = document.createElement('td');
+//     gapCell.classList.add(`main-table__gap`);
+//     table.rows[ri].cells[26].after(gapCell);
+
+//     let clubName = table.rows[ri].cells[1].querySelector(`img`).getAttribute('title');
+//     let seasNumCell = document.createElement('td');
+//     seasNumCell.classList.add(`main-table__seasons`);
+//     let titleText = `${clubName}: 20 сезонов с участием в еврокубках`;
+//     seasNumCell.setAttribute('title', titleText);
+//     seasNumCell.innerHTML = `<span class="main-table__seasons">20</span>`;
+//     table.rows[ri].cells[27].after(seasNumCell);
+// }
+
+
 // Для вставки полурыбных (скопированных с имеющейся 
 // (указана во сторой строке индексом у cells) колонки) ячеек во все строки:
 

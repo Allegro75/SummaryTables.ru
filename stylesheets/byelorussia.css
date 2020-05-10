@@ -179,33 +179,49 @@ p.update-announcement{
 table.main-table{
   margin-top: 20px;
   margin-left: 20px;
-  /* border-spacing: 10px; */
   border-collapse: collapse;
   font-weight: bold;
   font-size: 0.6em;
   margin-right: 300px;
-  /* border-radius: 5px; */
 }
 
+.main-table tr:nth-child(odd){
+  background-color:rgba(0, 0, 0, 0.1);
+}
+
+.main-table tr:nth-child(odd) td.main-table__gap{
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.main-table tr:nth-child(even){
+  background-color: aliceblue;
+}
+
+.main-table tr:nth-child(even) td.main-table__gap{
+  background: rgba(0, 0, 0, 0.16);
+}
+
+/* Для скругления углов таблицы: */
 table.main-table tr:first-child td:first-child{
-  border-top-left-radius: 1.8em;    
+  border-top-left-radius: 1em;    
 }
 
 table.main-table tr:last-child td:first-child{
-    border-bottom-left-radius: 1.8em;    
+  border-bottom-left-radius: 1em;    
 }
 
 table.main-table tr:first-child td:last-child{
-    border-top-right-radius: 1.8em;    
+  border-top-right-radius: 1em;    
 }
 
 table.main-table tr:last-child td:last-child{
-    border-bottom-right-radius: 1.8em;    
+  border-bottom-right-radius: 1em;    
 }
 
 table.main-table tr td:last-child{
-    border-right: none;
+  border-right: none;
 }
+/*  */
 
 .main-table td{
   text-align: center;
@@ -266,14 +282,6 @@ span.long-club-title{
     font-size: 0.8em;
   }
 
-.main-table tr:nth-child(odd){
-  background-color:rgba(0, 0, 0, 0.1);
-}
-
-.main-table tr:nth-child(even){
-  background-color: aliceblue;
-}
-
 td.has-history{
   cursor: pointer;
 }
@@ -293,6 +301,11 @@ td div.duels{
 td p.goals-difference{
   font-weight: normal;
   font-style: italic;
+}
+
+td.main-table__seasons{
+  font-size: 1.4em;
+  border-right: 0.15em solid gray;
 }
 
 

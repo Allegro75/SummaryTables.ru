@@ -170,15 +170,50 @@ table.russia{
 }
 
 table.main-table{
-  /* margin-top: 20px; */
   margin-left: 20px;
-  /* margin-bottom: 20px; */
   border-collapse: collapse;
   font-weight: bold;
   font-size: 0.45em;
   display: inline-block;
-  /* float: left; */
 }
+
+.main-table tr:nth-child(odd){
+  background-color:rgba(0, 0, 0, 0.1);
+}
+
+.main-table tr:nth-child(odd) td.main-table__gap{
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.main-table tr:nth-child(even){
+  background-color: aliceblue;
+}
+
+.main-table tr:nth-child(even) td.main-table__gap{
+  background: rgba(0, 0, 0, 0.16);
+}
+
+/* Для скругления углов таблицы: */
+table.main-table tr:first-child td:first-child{
+  border-top-left-radius: 1em;    
+}
+
+table.main-table tr:last-child td:first-child{
+  border-bottom-left-radius: 1em;    
+}
+
+table.main-table tr:first-child td:last-child{
+  border-top-right-radius: 1em;    
+}
+
+table.main-table tr:last-child td:last-child{
+  border-bottom-right-radius: 1em;    
+}
+
+table.main-table tr td:last-child{
+  border-right: none;
+}
+/*  */
 
 .main-table td{
   text-align: center;
@@ -245,19 +280,6 @@ span.long-club-title{
   font-size: 0.8em;
 }
 
-.main-table tr:nth-child(odd){
-  background-color:rgba(0, 0, 0, 0.1);
-  /* Пытался сделать полукрасные строки 
-  background-color: black;
-  opacity: 0.1; */
-}
-
-.main-table tr:nth-child(even){
-  background-color: aliceblue;
-  /* Пытался сделать полукрасные строки
-  opacity: 0.5; */
-}
-
 td.has-history{
   cursor: pointer;
 }
@@ -271,6 +293,15 @@ td div.duels{
   font-size: 2.1em;
   /* white-space: nowrap; */
   margin: 0.35em 0.24em;
+}
+
+tr.logotypes td.main-table__seasons{
+  font-size: 1.4em;  
+}
+
+td.main-table__seasons{
+  font-size: 2em;
+  border-right: 0.15em solid gray;
 }
 
 
