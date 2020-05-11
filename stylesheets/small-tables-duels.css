@@ -18,7 +18,7 @@ div.additional-table{
 
   background-color: gray;
   color: black;
-  /* border: 2px solid gray; */
+  box-shadow: 2px 2px 1px rgb(22, 19, 19);
   border-radius: 15px;
   padding: 5px;
 }
@@ -112,10 +112,8 @@ table.add-table{
   для центрирования таблицы */
   margin-left: auto;
   margin-right: auto;
-
   margin-top: 20px;
   border-collapse: collapse;
-  /* z-index: -1; */
 }
 
 /* Уменьшаем шрифт для надписей "№" и "Поле": */
@@ -230,12 +228,6 @@ table.add-table tr td:nth-child(2){
 }
 /* Это даёт нулевые паддинги справа-слева у слова "Поле" */
 
-/* a.go-to-history */
-a:last-child{
-  font-size: 0.6em;
-  color: black;
-}
-
 a{
   cursor: pointer;
 }
@@ -244,4 +236,22 @@ table.add-table td a{
   text-decoration: none;
   color: black;
   font-size: 1em;
+}
+
+
+/* Нижнняя ссылка */
+
+div.down-href-to-main-page{
+  background: lightgrey;
+  margin: 5px auto 0;
+  padding: 0 5px 3px;
+  width: fit-content;
+  border-radius: 6px;
+  box-shadow: 2px 2px 1px rgb(22, 19, 19);
+}
+
+div.down-href-to-main-page a{
+  font-size: 0.6em;
+  color: rgb(22, 20, 20);
+  vertical-align: 20%;
 }
