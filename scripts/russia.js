@@ -2,13 +2,13 @@
 //Для ВСПЛЫТИЯ окон с подробной статистикой по клику на ячейку большой таблицы:
 //
 
-var table = document.querySelector('table.main-table');
+const table = document.querySelector('table.main-table');
 table.onclick = function() {
-    var target = event.target;
+    let target = event.target;
     while (target != table) {
         if (target.getAttribute('class') == 'statistics has-history') {
-            var tableDataId = target.getAttribute('id');
-            var urlInWindowOpen = 'football-small-tables/' +
+            let tableDataId = target.getAttribute('id');
+            let urlInWindowOpen = 'football-small-tables/' +
             tableDataId + '.html';
             window.open(urlInWindowOpen, '', 'width=650px, height=900px');
             return;
@@ -20,13 +20,13 @@ table.onclick = function() {
 //
 //Для всплытия окон по клику на ячейку для УКРАИНЫ:
 //
-var ukraine = document.querySelector('table.ukraine');
+let ukraine = document.querySelector('table.ukraine');
 ukraine.onclick = function() {
-    var target = event.target;
+    let target = event.target;
     while (target != ukraine) {
         if (target.getAttribute('class') == 'statistics has-history') {
-            var ukrTableDataId = target.getAttribute('id');
-            var urlInWindowOpen = 'football-small-tables/' +
+            let ukrTableDataId = target.getAttribute('id');
+            let urlInWindowOpen = 'football-small-tables/' +
             ukrTableDataId + '.html';
             window.open(urlInWindowOpen, '', 'width=650px, height=900px');
             return;
@@ -38,13 +38,13 @@ ukraine.onclick = function() {
 //
 //Для всплытия окон по клику на ячейку для ГРУЗИИ:
 //
-var georgia = document.querySelector('table.georgia');
+let georgia = document.querySelector('table.georgia');
 georgia.onclick = function() {
-    var target = event.target;
+    let target = event.target;
     while (target != georgia) {
         if (target.getAttribute('class') == 'statistics has-history') {
-            var ukrTableDataId = target.getAttribute('id');
-            var urlInWindowOpen = 'football-small-tables/' +
+            let ukrTableDataId = target.getAttribute('id');
+            let urlInWindowOpen = 'football-small-tables/' +
             ukrTableDataId + '.html';
             window.open(urlInWindowOpen, '', 'width=650px, height=900px');
             return;
@@ -56,13 +56,13 @@ georgia.onclick = function() {
 //
 //Для всплытия окон по клику на ячейку для ЛИТВЫ:
 //
-var lith = document.querySelector('table.lithuania');
+let lith = document.querySelector('table.lithuania');
 lith.onclick = function() {
-    var target = event.target;
+    let target = event.target;
     while (target != lith) {
         if (target.getAttribute('class') == 'statistics has-history') {
-            var ukrTableDataId = target.getAttribute('id');
-            var urlInWindowOpen = 'football-small-tables/' +
+            let ukrTableDataId = target.getAttribute('id');
+            let urlInWindowOpen = 'football-small-tables/' +
             ukrTableDataId + '.html';
             window.open(urlInWindowOpen, '', 'width=650px, height=900px');
             return;
@@ -74,13 +74,13 @@ lith.onclick = function() {
 //
 //Для всплытия окон по клику на ячейку для АРМЕНИИ:
 //
-var armenia = document.querySelector('table.armenia');
+let armenia = document.querySelector('table.armenia');
 armenia.onclick = function() {
-    var target = event.target;
+    let target = event.target;
     while (target != armenia) {
         if (target.getAttribute('class') == 'statistics has-history') {
-            var ukrTableDataId = target.getAttribute('id');
-            var urlInWindowOpen = 'football-small-tables/' +
+            let ukrTableDataId = target.getAttribute('id');
+            let urlInWindowOpen = 'football-small-tables/' +
             ukrTableDataId + '.html';
             window.open(urlInWindowOpen, '', 'width=650px, height=900px');
             return;
