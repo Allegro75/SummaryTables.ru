@@ -59,7 +59,7 @@ duels.forEach((item) => {
 //         let divInNewCell = newCell.querySelector('div');
 //         if ( newCell.classList.contains('no-history') ) {
 //             divInNewCell.setAttribute('title', `"${rowClubInRussian}" против "Гётеборга"
-// Не встречались`);
+// В еврокубках не встречались`);
 //         }
 //         else {
 //             let clearDivText = divInNewCell.textContent.trim();
@@ -146,7 +146,7 @@ duels.forEach((item) => {
 //         let divInNewCell = newCell.querySelector('div');
 //         if ( newCell.classList.contains('no-history') ) {
 //             divInNewCell.setAttribute('title', `"${rowClubInRussian}" против "Монако"
-// Не встречались`);
+// В еврокубках не встречались`);
 //         }
 //         else {
 //             let clearDivText = divInNewCell.textContent.trim();
