@@ -213,6 +213,14 @@ img.hamburg{
   top: 0.2em;
 }
 
+/* Ноттингемскому лого нужна подложка.
+Иначе бледно-красное на сером не смотрится: */
+img.nottingham{
+  border: 0.1em solid rgb(230, 230, 230); 
+  background-color: rgb(230, 230, 230);
+  border-radius: 0.3em;
+}
+
 div.club-name{
   margin: 0.25em;
   white-space: normal;
