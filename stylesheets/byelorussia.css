@@ -364,7 +364,7 @@ div.breadcrumbs-row-1, div.breadcrumbs-row-2{
 
 /* Кнопки переключения на ДРУГИЕ таблицы: */
 section.switch-to-favorites, section.switch-to-history, section.switch-to-decade,
-section.switch-to-euroleague, section.switch-to-winners, section.switch-to-russian{
+section.switch-to-euroleague, section.switch-to-winners, section.switch-to-russia{
   margin-left: 20px;
   margin-top: 20px;
   display: inline-block;
@@ -372,7 +372,7 @@ section.switch-to-euroleague, section.switch-to-winners, section.switch-to-russi
 
 button.switch-to-favorites-button, button.switch-to-history-button, 
 button.switch-to-decade-button, button.switch-to-euroleague-button,
-button.switch-to-winners-button, button.switch-to-russian-button{
+button.switch-to-winners-button, button.switch-to-russia-button{
   padding: 10px 20px;
   border-radius: 10px;
   width: 32em;
