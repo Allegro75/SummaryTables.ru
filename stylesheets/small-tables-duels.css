@@ -18,9 +18,11 @@ div.additional-table{
 
   background-color: gray;
   color: black;
-  box-shadow: 2px 2px 1px rgb(22, 19, 19);
   border-radius: 15px;
   padding: 5px;
+  box-shadow: 2px 2px 1px rgb(22, 19, 19);
+  border-top: 1px solid lightgrey;
+  border-left: 1px solid lightgrey;
 }
 /* 
 div.additional-table img{
