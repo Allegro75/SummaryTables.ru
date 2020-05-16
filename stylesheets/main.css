@@ -1,9 +1,9 @@
 body{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 16px;
-  color: #4f535b;
-  background-color: rgba(0, 0, 0, 0.1);
-  /* padding: 20px; */
+  color: black;
+  /* background-color: rgba(0, 0, 0, 0.1); */
+  background: linear-gradient(to bottom right, #aaabac, #e0ddc7);
   padding-top: 0.5em;
   margin: 0;
 }
@@ -113,7 +113,7 @@ p{
 
 
 main{
-  background-color: rgba(0, 0, 0, 0.1);
+  /* background-color: rgba(0, 0, 0, 0.1); */
   margin: 0 -40px;
   padding: 1px 40px;
   padding-bottom: 20px;
