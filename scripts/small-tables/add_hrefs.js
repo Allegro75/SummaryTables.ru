@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    const defineYearForGroup2Stage = (ri) => {
+    const defineYearForGroupStage = (ri) => {
         let neighborGameRow = 
         ( !( table.rows[ri - 1].classList.contains(`duel-result`) ) &&
         !( table.rows[ri - 1].classList.value === `` ) ) ?
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     addHrefToRow(i, +table.rows[i].cells[3].textContent + 1, ['CL', 'лиги чемпионов']);
                 }
                 else if (table.rows[i].cells[5].textContent === `группа2`) {
-                    let year = defineYearForGroup2Stage(i);
+                    let year = defineYearForGroupStage(i);
                     addHrefToRow(i, year, ['CL', 'лиги чемпионов']);
                 }
                 else {
@@ -84,15 +84,67 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
+            // Специально для групп 1994 года, т.к. 
+            // 1993-1994 гг. группы были смещены в 1994 год,
+            // а в 1994-1995 гг. группы были обычными:
+            else if (+table.rows[i].cells[3].textContent == 1994) {        
+                // Тут всё обычно - для стадии отбора:        
+                if (table.rows[i].cells[5].textContent === `отбор`) {
+                    addHrefToRow(i, +table.rows[i].cells[3].textContent + 1, ['CL', 'лиги чемпионов']);
+                }
+
+                // Вот тут всё оригинальное содержание:
+                else if (table.rows[i].cells[5].textContent === `группа`) {
+
+                    // Определяем строку с соседней игрой для игры в группе-1994:
+                    let neighborGameRow1994 = 
+                    ( !( table.rows[i - 1].classList.contains(`duel-result`) ) &&
+                    !( table.rows[i - 1].classList.value === `` ) ) ?
+                    table.rows[i - 1] : table.rows[i + 1];
+
+                    // Если год этой игры - 1993, то год турнира - 1994:
+                    if (+neighborGameRow1994.cells[3].textContent == 1993) {
+                        addHrefToRow(i, 1994, ['CL', 'лиги чемпионов']);
+                    }
+
+                    else {
+                    // А если год этой игры - 1994, то тут уже либо:
+
+                    // 1) мы имеем дело с исключительным розыгрышем 1993-1994,
+                    // и тогда мы должны просто перечислить 4 пары-исключения:
+                        const pairHeader = document.querySelector('title').textContent;
+                        if (pairHeader == `Спартак - Барселона` ||
+                            pairHeader == `Барселона - Спартак` ||
+                            pairHeader == `Монако - Галатасарай` ||
+                            pairHeader == `Галатасарай - Монако` ||
+                            pairHeader == `Порто - Андерлехт` ||
+                            pairHeader == `Андерлехт - Порто` ||
+                            pairHeader == `Милан - Вердер` ||
+                            pairHeader == `Вердер - Милан`) {
+                                addHrefToRow(i, 1994, ['CL', 'лиги чемпионов']);
+                            }
+                    // 2) мы имеем дело с обычным розыгрышем 1994-1995,
+                        else {
+                            addHrefToRow(i, 1995, ['CL', 'лиги чемпионов']); 
+                        }
+                    }                    
+                }
+
+                // А тут уже как обычно - для стадии плей-офф:
+                else {
+                    addHrefToRow(i, +table.rows[i].cells[3].textContent, ['CL', 'лиги чемпионов']);
+                }
+            }            
+
 
             else if ( (+table.rows[i].cells[3].textContent >= 1991) &&
-            (+table.rows[i].cells[3].textContent < 1995) ) {
+            (+table.rows[i].cells[3].textContent < 1994) ) {
                 
                 let tour = (table.rows[i].cells[4].textContent.includes(`Лига`)) ?
                 ['CL', 'лиги чемпионов'] : ['CC', 'кубка чемпионов'];  
 
                 if (table.rows[i].cells[5].textContent === `группа`) {
-                    let year = defineYearForGroup2Stage(i);
+                    let year = defineYearForGroupStage(i);
                     addHrefToRow(i, year, tour);
                 }
                 else if ( (table.rows[i].cells[5].textContent === `ФИНАЛ`) ||
@@ -206,7 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if ( table.rows[i].cells[3].classList.contains(`next-year-tourney`) ) {
                         addHrefToRow(i, +table.rows[i].cells[3].textContent + 1, ['ICFC', 'кубка ярмарок']);
                     } else {
-                        let year = defineYearForGroup2Stage(i);
+                        let year = defineYearForGroupStage(i);
                         addHrefToRow(i, year, ['ICFC', 'кубка ярмарок']);                    
                     } 
                 }
@@ -218,7 +270,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             else if (+table.rows[i].cells[3].textContent == 1960) {
                 if (table.rows[i].cells[5].textContent === `1/4`) {
-                    let year = defineYearForGroup2Stage(i);
+                    let year = defineYearForGroupStage(i);
                     addHrefToRow(i, year, ['ICFC', 'кубка ярмарок']);                 
                 } 
                 else if (table.rows[i].cells[5].textContent === `1/8`) {
