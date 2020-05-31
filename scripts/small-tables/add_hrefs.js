@@ -224,7 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
             (table.rows[i].cells[5].textContent === `1/4`) ||
 
             ( (table.rows[i].cells[5].textContent === `1/8`) &&
-            (+table.rows[i].cells[3].textContent >= 2003) ) ||
+            (+table.rows[i].cells[3].textContent >= 2000) ) ||
 
             ( (table.rows[i].cells[5].textContent === `1/16`) &&
             (+table.rows[i].cells[3].textContent >= 2004) ) ) {

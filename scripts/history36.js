@@ -1,25 +1,37 @@
 
 //
-//Для ВСПЛЫТИЯ окон с подробной статистикой по клику на ячейку большой таблицы:
+// Для ВСПЛЫТИЯ окон с подробной статистикой по клику на ячейку большой таблицы:
 //
 
 const table = document.querySelector('table.main-table');
-table.onclick = function() {
+table.onclick = () => {
     let target = event.target;
     while (target != table) {
         if (target.getAttribute('class') == 'statistics has-history') {
             let tableDataId = target.getAttribute('id');
             let urlInWindowOpen = 'football-small-tables/' +
             tableDataId + '.html';
-            window.open(urlInWindowOpen, '', 'width=650px, height=900px');
+            window.open(urlInWindowOpen, '', 'width=500px, height=900px');
             return;
             }
         target = target.parentNode;
         }
     };
+    
+
+// Для всплытия СЛУЧАЙНОГО окна с подробной статистикой:
+
+// const allCellsWHistory = document.querySelectorAll('td.has-history');
+// let randomPairIndex = Math.floor( ( allCellsWHistory.length * Math.random() ) );
+// const randomPairCell = allCellsWHistory[randomPairIndex];
+// const randomCellID = randomPairCell.getAttribute('id'); 
+// const urlInRandomWindow = `football-small-tables/${randomCellID}.html`;
+// const newWindowLeftPosition = document.documentElement.clientWidth - 480;
+// const newWindowTopPosition = document.documentElement.clientHeight - 560;
+// window.open(urlInRandomWindow, ``, `width=480px, height=600px, left=${newWindowLeftPosition}px, top=${newWindowTopPosition}px`);
 
 
-// Скрипт для раскрашивания ячеек:
+// Для РАСКРАШИВАНИЯ ячеек:
 
 let duels = document.querySelectorAll('.duels');
 
