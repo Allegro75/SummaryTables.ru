@@ -9,8 +9,7 @@ table.onclick = () => {
     while (target != table) {
         if (target.getAttribute('class') == 'statistics has-history') {
             let tableDataId = target.getAttribute('id');
-            let urlInWindowOpen = 'football-small-tables/' +
-            tableDataId + '.html';
+            let urlInWindowOpen = `football-small-tables/${tableDataId}.html`;
             window.open(urlInWindowOpen, '', 'width=500px, height=900px');
             return;
             }
@@ -21,14 +20,14 @@ table.onclick = () => {
 
 // Для всплытия СЛУЧАЙНОГО окна с подробной статистикой:
 
-// const allCellsWHistory = document.querySelectorAll('td.has-history');
-// let randomPairIndex = Math.floor( ( allCellsWHistory.length * Math.random() ) );
-// const randomPairCell = allCellsWHistory[randomPairIndex];
-// const randomCellID = randomPairCell.getAttribute('id'); 
-// const urlInRandomWindow = `football-small-tables/${randomCellID}.html`;
-// const newWindowLeftPosition = document.documentElement.clientWidth - 480;
-// const newWindowTopPosition = document.documentElement.clientHeight - 560;
-// window.open(urlInRandomWindow, ``, `width=480px, height=600px, left=${newWindowLeftPosition}px, top=${newWindowTopPosition}px`);
+const allCellsWHistory = document.querySelectorAll('td.has-history');
+let randomPairIndex = Math.floor( ( allCellsWHistory.length * Math.random() ) );
+const randomPairCell = allCellsWHistory[randomPairIndex];
+const randomCellID = randomPairCell.getAttribute('id'); 
+const urlInRandomWindow = `football-small-tables/${randomCellID}.html`;
+const newWindowLeftPosition = document.documentElement.clientWidth - 480;
+const newWindowTopPosition = document.documentElement.clientHeight - 560;
+window.open(urlInRandomWindow, ``, `width=480px, height=600px, left=${newWindowLeftPosition}px, top=${newWindowTopPosition}px`);
 
 
 // Для РАСКРАШИВАНИЯ ячеек:
