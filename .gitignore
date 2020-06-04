@@ -8,3 +8,4 @@ _example_file.html
 /old-files/*
 /plans_to_do/*
 .vscode
+service*.js
