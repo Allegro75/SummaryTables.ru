@@ -1,0 +1,27 @@
+
+header{
+  margin-top: 8px;
+}
+
+section.cap__site-title{
+  background-color: chocolate;
+  padding: 0.3em 0 0.5em 0.5em;
+  color: #f5deb3;
+}
+
+/* Для иконки в крайнем левом углу: */
+.cap__site-title__icon{
+  float: left;
+  width: 20px;
+  margin-top: 10px;
+  margin-left: 1em;
+  margin-right: 15px;
+}
+
+.cap__site-title__text{
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-left: 4em;
+  margin-top: 10px;
+  font-size: 1em;
+}
