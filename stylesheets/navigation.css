@@ -5,12 +5,22 @@ nav{
   color: wheat;
 }
 
+nav a{
+  text-decoration: none;
+}
+
 nav a:hover{
   color: black;
 }
 
 nav a:active{
   color: beige;
+}
+
+.nav ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav__stripe{
@@ -22,20 +32,9 @@ nav a:active{
 
 .nav__stripe__title{
   display: inline-block;
-  /* width: 80px; */
   font-weight: bold;
   font-style: italic;
   margin-right: 50px;
-}
-
-nav a{
-  text-decoration: none;
-}
-
-.nav ul{
-  list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
 ul.nav__stripe__list{
