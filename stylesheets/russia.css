@@ -1,91 +1,4 @@
 
-*:link{
-  color: inherit;
-}
-
-*:visited{
-  color: inherit;
-}
-
-nav{
-  /* margin-left: 20px; */
-  padding-top: 0.8em;
-  padding-bottom: 0.8em;
-  color: wheat;
-}
-
-section.nav-section{
-  padding-left: 1.5em;
-  margin-top: 0.2em;
-  margin-bottom: 0.2em;
-  height: 36px;
-  width: 1900px;
-}
-
-section.football, section.chess{
-  background-color: rgb(182, 50, 3);
-}
-
-section.history{
-  background-color: chocolate;
-}
-
-nav div.href-list-title{
-  display: inline-block;
-  width: 5em;
-}
-
-nav ul{
-  list-style: none;
-  display: inline-block;
-  margin-top: 7px;
-  margin-bottom: 10px;
-}
-
-nav li{
-  display: inline-block;
-  margin-right: 50px;
-  font-weight: bold;
-  font-size: 0.9em;
-}
-
-nav li a, a:-webkit-any-link{
-  color: wheat;
-}
-
-a{
-  cursor: pointer;
-  text-decoration: none;
-}
-
-nav a:hover{
-  color: black;
-}
-
-nav a:active{
-  color: beige;
-}
-
-span.figures-in-history-hrefs{
-  font-size: 1.3em;
-}
-
-em{
-  font-style: italic;
-  font-weight: bold;
-}  
-
-strong{
-  font-weight: bold;
-  line-height: 1.1em;
-  font-size: 1.5em;
-}
-
-p{
-  font-size: 1.25em;
-  margin: 0.25em auto;
-}
-
 main{
   /* background-color: rgba(0, 0, 0, 0.1); */
   margin: 0 -40px;
@@ -127,6 +40,11 @@ p.explanation{
   margin-top: 0.5em;
 }
 
+p.table-explanation, span.larger{
+  font-weight: bold;
+  font-style: italic;
+}
+
 section.table-plus-right-buttons{
   white-space: nowrap;
   display: flex;
@@ -135,6 +53,11 @@ section.table-plus-right-buttons{
 }
 
 /* ТАБЛИЦА: */
+
+p{
+  font-size: 1.25em;
+  margin: 0.25em auto;
+}
 
 table.russia{
   margin-top: 10px;

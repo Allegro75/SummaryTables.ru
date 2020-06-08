@@ -18,6 +18,7 @@
     <title>Россия против Европы. Личные счета футбольных клубов. Сводная таблица</title>
     <link rel="stylesheet" href="stylesheets/football__body.css">
     <link rel="stylesheet" href="stylesheets/cap-wo-nav.css">
+    <link rel="stylesheet" href="stylesheets/navigation.css">
     <link rel="stylesheet" href="stylesheets/russia.css">
     <link rel="shortcut icon" href="images/football_ball.svg" type="image/x-icon">
 </head>
@@ -28,11 +29,9 @@
 
         <section class="cap__site-title">
 
-            <img class="cap__site-title__icon  cap__site-title__icon_left" 
-            src="images/football_ball_yellow.svg">
+            <img class="cap__site-title__icon  cap__site-title__icon_left" src="images/football_ball_yellow.svg">
 
-            <img class="cap__site-title__icon  cap__site-title__icon_right" 
-            src="images/football_ball_yellow.svg">
+            <img class="cap__site-title__icon  cap__site-title__icon_right" src="images/football_ball_yellow.svg">
 
             <p class="cap__site-title__text">
                 Футбол. Суперклубы. Истории личных встреч. Сводные таблицы.
@@ -40,136 +39,124 @@
 
         </section>
 
-        <nav>
-            <section class="nav-section football">
-                <div class="href-list-title">
-                    <em>
-                        <a href="history.html" title="Лучшие клубы Европы. Личные встречи. Сводная таблица">
-                            ФУТБОЛ:
-                        </a>
-                    </em>
+        <nav class="nav">
+
+            <section class="nav__stripe football">
+
+                <div class="nav__stripe__title">
+                    <a href="history36.html" title="Лучшие клубы Европы. Личные встречи. Сводная таблица">
+                        ФУТБОЛ:
+                    </a>
                 </div>
 
-                <ul>
-                    <li>
-                        <a href="index.html" title="Фавориты Лиги чемпионов 2019/2020. Личные встречи. Сводная таблица">
-                            ФАВОРИТЫ ТЕКУЩЕЙ ЛЧ. СВОДНАЯ ТАБЛИЦА
+                <ul class="nav__stripe__list">
+
+                    <li class="nav__stripe__list__item  dropdown  current-season">
+                        <a href="index.html" title="Фавориты еврокубков 2019/2020. Личные встречи. Сводная таблица">
+                            ТЕКУЩИЙ СЕЗОН
                         </a>
+                        <ul class="nav__stripe__list__item__droplist">
+                            <li class="nav__stripe__list__item__droplist__item">
+                                <a href="index.html" title="Фавориты Лиги чемпионов 2019/2020">
+                                    Лига чемпионов 2019/2020
+                                </a>
+                            </li>
+                            <li class="nav__stripe__list__item__droplist__item">
+                                <a href="euroleague.html" title="Фавориты Лиги Европы 2019/2020">
+                                    Лига Европы 2019/2020
+                                </a>
+                            </li>
+                        </ul>
                     </li>
 
-                    <!-- <li>
-                        <a href="russia.html" title="Российские (и советские) клубы против европейских. Личные встречи. Сводная таблица">
+                    <li class="nav__stripe__list__item  dropdown  ussr">
+                        <a href="russia.html"
+                            title="Российские (и советские) клубы против европейских. Личные встречи. Сводная таблица">
                             РОССИЯ / СССР
                         </a>
-                    </li> -->
+                        <ul class="nav__stripe__list__item__droplist">
+                            <li class="nav__stripe__list__item__droplist__item">
+                                <a href="ukraine.html" title="Украинские клубы против европейских">
+                                    Украина
+                                </a>
+                            </li>
+                            <li class="nav__stripe__list__item__droplist__item">
+                                <a href="byelorussia.html" title="Белорусские клубы против европейских">
+                                    Белоруссия
+                                </a>
+                            </li>
+                            <li class="nav__stripe__list__item__droplist__item">
+                                <a href="kazakhstan.html"
+                                    title="Казахстанские клубы против европейских. Личные встречи. Сводная таблица">
+                                    Казахстан
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
 
-                    <li>
-                        <a href="history.html"
+                    <li class="nav__stripe__list__item  dropdown  history">
+                        <a href="history36.html"
                             title="Лучшие клубы Европы за всю историю. Личные встречи. Сводная таблица">
                             вся ИСТОРИЯ
                         </a>
+                        <ul class="nav__stripe__list__item__droplist">
+                            <li class="nav__stripe__list__item__droplist__item">
+                                <a href="history.html" title="12 лучших клубов Европы за всю историю">
+                                    <span class="figures-in-history-hrefs">12</span> клубов
+                                </a>
+                            </li>
+                            <li class="nav__stripe__list__item__droplist__item">
+                                <a href="history24.html" title="24 лучших клуба Европы за всю историю"> <span
+                                        class="figures-in-history-hrefs">24</span> клуба </a>
+                            </li>
+                            <li class="nav__stripe__list__item__droplist__item">
+                                <a href="history36.html" title="36 лучших клубов Европы за всю историю"> <span
+                                        class="figures-in-history-hrefs">36</span> клубов </a>
+                            </li>
+                            <li class="nav__stripe__list__item__droplist__item">
+                                <a href="winners.html" title="Все 22 победителя Лиги/кубка чемпионов всех лет">
+                                    Победители ЛЧ
+                                </a>
+                            </li>
+                        </ul>
                     </li>
 
-                    <li>
+                    <li class="nav__stripe__list__item  decade">
                         <a href="decade.html"
                             title="24 лучших клуба десятилетия (2011-2020). Личные встречи. Сводная таблица">
-                            ДЕСЯТИЛЕТИЕ
+                            Десятилетие
                         </a>
                     </li>
 
-                    <li>
-                        <a href="winners.html"
-                            title="Все 22 победителя Лиги/кубка чемпионов всех лет. Личные встречи. Сводная таблица">
-                            ПОБЕДИТЕЛИ ЛЧ
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="euroleague.html"
-                            title="Фавориты Лиги Европы 2019/2020. Личные встречи. Сводная таблица">
-                            ЛИГА ЕВРОПЫ
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="ukraine.html"
-                            title="Украинские клубы против европейских. Личные встречи. Сводная таблица">
-                            УКРАИНА
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="byelorussia.html"
-                            title="Белорусские клубы против европейских. Личные встречи. Сводная таблица">
-                            БЕЛОРУССИЯ
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="kazakhstan.html"
-                            title="Казахстанские клубы против европейских. Личные встречи. Сводная таблица">
-                            КАЗАХСТАН
-                        </a>
-                    </li>
                 </ul>
+
             </section>
 
-            <section class="nav-section history">
-                <div class="href-list-title"
-                    title="Лучшие клубы Европы за всю историю. Личные встречи. Сводная таблица">
-                    <em>
-                        <a href="history.html">
-                            ИСТОРИЯ:
-                        </a>
-                    </em>
+            <section class="nav__stripe chess">
+
+                <div class="nav__stripe__title">
+                    <a href="chess/pretendents_2020.html"
+                        title="Участники турнира претендентов 2020. Личные встречи. Сводная таблица"
+                        target="_blank">ШАХМАТЫ:</a>
                 </div>
 
-                <ul>
-                    <!-- <li>
-                        <a href="history.html" title="12 лучших клубов Европы за всю историю. Личные встречи. Сводная таблица">
-                                    <span class="figures-in-history-hrefs">12</span> КЛУБОВ
-                                </a>
-                    </li> -->
-
-                    <li>
-                        <a href="history24.html"
-                            title="24 лучших клуба Европы за всю историю. Личные встречи. Сводная таблица"> <span
-                                class="figures-in-history-hrefs">24</span> КЛУБА </a>
-                    </li>
-
-                    <li>
-                        <a href="history36.html"
-                            title="36 лучших клубов Европы за всю историю. Личные встречи. Сводная таблица"> <span
-                                class="figures-in-history-hrefs">36</span> КЛУБОВ </a>
-                    </li>
-                </ul>
-            </section>
-
-            <section class="nav-section chess">
-                <div class="href-list-title">
-                    <em>
-                        <a href="chess/pretendents_2020.html"
-                            title="Участники турнира претендентов 2020. Личные встречи. Сводная таблица"
-                            target="_blank">ШАХМАТЫ:</a>
-                    </em>
-                </div>
-
-                <ul>
-                    <li>
+                <ul class="nav__stripe__list">
+                    <li class="nav__stripe__list__item">
                         <a href="chess/pretendents_2020.html"
                             title="Шахматы. Участники турнира претендентов 2020. Личные встречи. Сводная таблица"
-                            target="_blank">ПРЕТЕНДЕНТЫ 2020. ЛИЧНЫЕ СЧЕТА</a>
+                            target="_blank">Претенденты 2020. Личные счета</a>
                     </li>
 
-                    <li>
+                    <li class="nav__stripe__list__item">
                         <a href="https://www.youtube.com/channel/UCCNvNNsRKNqvsJK9rd4PpMQ" title="Шахматный канал Олега Откидача (aka Edwards).
 Лучшие партии автора, прежде всего в шахматы Фишера, игранные заочно. 
 Играем в позиционные шахматы.
 Только качественные партии - никакого блица!" target="_blank">
-                            YOUTUBE-КАНАЛ О ШАХМАТАХ
+                            Youtube-канал о шахматах
                         </a>
                     </li>
                 </ul>
+
             </section>
         </nav>
 
@@ -188,14 +175,14 @@
             </p>
 
             <p class="table-explanation">
-                <em>По клику на ячейку таблицы открывается подробная история данной пары</em>
+                По клику на ячейку таблицы открывается подробная история данной пары
             </p>
 
             <h1>
                 <em>РОССИЙСКИЕ КЛУБЫ ПРОТИВ ЛУЧШИХ ЕВРОПЕЙСКИХ</em>
             </h1>
 
-            <p class="explanation">Против <em>24</em> лучших иностранных клубов</p>
+            <p class="explanation">Против <span class="larger">24</span> лучших иностранных клубов</p>
 
             <p class="explanation">
                 Таблица обновлена по итогам матчей сезона 2019/2020

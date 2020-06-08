@@ -6,3 +6,12 @@
   background: linear-gradient(to top left, #aaabac, #e0ddc7);
   margin: 0;
 }
+
+/* Цвета ссылок. Чтобы не плыли в Firefox: */
+a:link, a:visited{
+  color: inherit;
+}
+
+a{
+  cursor: pointer;
+}

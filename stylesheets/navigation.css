@@ -1,0 +1,95 @@
+
+nav{
+  padding-top: 13px;
+  padding-bottom: 13px;
+  color: wheat;
+}
+
+/* section.football, section.chess,  */
+.nav__stripe{
+  background-color: rgb(182, 50, 3);
+  padding-left: 24px;
+  margin-top: 3px;
+  /* margin-bottom: 3px; */
+  text-align: center;  
+}
+
+/* section.history{
+  background-color: chocolate;
+} */
+
+/* nav div.href-list-title,  */
+.nav__stripe__title{
+  display: inline-block;
+  /* width: 80px; */
+  font-weight: bold;
+  font-style: italic;
+  margin-right: 50px;
+}
+
+nav a{
+  text-decoration: none;
+}
+
+.nav ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.nav__stripe__list{
+  display: inline-block;
+  /* margin-top: 7px; */
+  /* margin-bottom: 10px; */
+}
+
+li.nav__stripe__list__item{
+  display: inline-block;
+  margin-right: 50px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 38px;
+}
+
+li.dropdown {
+  position: relative;
+}
+
+li.dropdown:hover ul {
+  display: block;
+}
+
+li.dropdown ul {
+  display: none;
+  position: absolute;
+  /* top: 28px; */
+  color: black;
+  /* min-width: 200px; */
+  background: white;
+  border: 1px solid #dadada;  
+  /* left: -1px;  
+    padding: 0 0 5px;
+  border-top: 0;
+  border-radius: 0 0 3px 3px;
+  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.04); */
+}
+
+li.nav__stripe__list__item__droplist__item{
+    width: max-content;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* li.nav__stripe__list__item__droplist__item{
+    height: 34px;
+    line-height: 34px;
+} */
+
+nav a:hover{
+  color: black;
+}
+
+nav a:active{
+  color: beige;
+}
