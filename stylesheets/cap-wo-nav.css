@@ -6,33 +6,27 @@ header.cap{
 /* Для верхней строки шапки: */
 section.cap__site-title{
   background-color: chocolate;
-  padding-top: 5px;
-  padding-bottom: 8px;
-  padding-left: 8px;
-  padding-right: 8px;
   color: #f5deb3;
 }
 
 /* Для иконок с футбольным мячом: */
 .cap__site-title__icon{
   width: 20px;
-  margin-top: 8px;
+  margin-top: 6px;
   margin-left: 16px;
   margin-right: 16px;
 }
-
 .cap__site-title__icon_left{
   float: left;
 }
-
 .cap__site-title__icon_right{
   float: right;
 }
 
-.cap__site-title__text{
+div.cap__site-title__text{
   text-transform: uppercase;
   letter-spacing: 5px;
-  margin-top: 10px;
   font-size: 16px;
+  line-height: 32px;
   text-align: center;
 }

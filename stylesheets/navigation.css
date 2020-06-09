@@ -1,6 +1,6 @@
 
 nav{
-  padding-top: 13px;
+  /* padding-top: 13px; */
   padding-bottom: 13px;
   color: wheat;
 }
@@ -30,12 +30,14 @@ nav a:active{
   text-align: center;  
 }
 
-.nav__stripe__title{
+/* На будущее, если снова сделаем несколько строк в навигации
+нужны будут заголовки строк: */
+/* .nav__stripe__title{
   display: inline-block;
   font-weight: bold;
   font-style: italic;
   margin-right: 50px;
-}
+} */
 
 ul.nav__stripe__list{
   display: inline-block;
@@ -46,7 +48,7 @@ li.nav__stripe__list__item{
   margin-right: 50px;
   font-weight: bold;
   font-size: 14px;
-  line-height: 38px;
+  line-height: 28px;
 }
 
 li.dropdown {

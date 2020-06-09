@@ -15,16 +15,19 @@
     Реал. Барселона. Ливерпуль. Манчестер Юнайтед. Арсенал. Бавария. Ювентус. Аякс.
     Лига чемпионов. Кубок чемпионов. Лига Европы. Кубок УЕФА. Кубок кубков. Суперкубок.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/football_ball.svg" type="image/x-icon">
     <title>Россия против Европы. Личные счета футбольных клубов. Сводная таблица</title>
     <link rel="stylesheet" href="stylesheets/football__body.css">
-	<link rel="stylesheet" href="stylesheets/football__body.css">
-    <link rel="stylesheet" href="stylesheets/football__body.css">
-	<link rel="stylesheet" href="stylesheets/cap-wo-nav.css">
-    <link rel="stylesheet" href="stylesheets/football__body.css">
-	<link rel="stylesheet" href="stylesheets/navigation.css">
-    <link rel="stylesheet" href="stylesheets/football__body.css">
-	<link rel="stylesheet" href="stylesheets/russia.css">
-    <link rel="shortcut icon" href="images/football_ball.svg" type="image/x-icon">
+    <link rel="stylesheet" href="stylesheets/cap-wo-nav.css">
+    <link rel="stylesheet" href="stylesheets/navigation.css">
+    <link rel="stylesheet" href="stylesheets/captions.css">
+    <link rel="stylesheet" href="stylesheets/table-plus-right-buttons.css">
+    <link rel="stylesheet" href="stylesheets/table24.css">
+    <link rel="stylesheet" href="stylesheets/duel-button-right.css">
+    <link rel="stylesheet" href="stylesheets/soviet-republics.css">
+    <link rel="stylesheet" href="stylesheets/duel-button-lower.css">
+    <link rel="stylesheet" href="stylesheets/donate.css">
+    <link rel="stylesheet" href="stylesheets/footer.css">
 </head>
 
 <body class="football__body">
@@ -37,9 +40,9 @@
 
             <img class="cap__site-title__icon  cap__site-title__icon_right" src="images/football_ball_yellow.svg">
 
-            <p class="cap__site-title__text">
+            <div class="cap__site-title__text">
                 Футбол. Суперклубы. Истории личных встреч. Сводные таблицы.
-            </p>
+            </div>
 
         </section>
 
@@ -138,9 +141,7 @@
                     </li>
 
                     <li class="nav__stripe__list__item  dropdown  chess">
-                        <a href="chess/pretendents_2020.html"
-                            title="Шахматы"
-                            target="_blank">Шахматы</a>
+                        <a href="chess/pretendents_2020.html" title="Шахматы" target="_blank">Шахматы</a>
                         <ul class="nav__stripe__list__item__droplist">
                             <li class="nav__stripe__list__item__droplist__item">
                                 <a href="chess/pretendents_2020.html"
@@ -194,27 +195,29 @@
 
     <main>
         <!-- Заголовки -->
-        <section class="headers">
-            <h2>
+        <section class="captions">
+            <h2 class="captions__h2">
                 ИСТОРИЯ ПРОТИВОСТОЯНИЙ ФУТБОЛЬНЫХ КЛУБОВ В ЕВРОКУБКАХ. СВОДНАЯ ТАБЛИЦА
             </h2>
 
-            <p class="explanation">
+            <p class="captions__explanation">
                 Учитывались матчи только в рамках официальных европейских турниров - еврокубков: кубка чемпионов, лиги
-                чемпионов, кубка кубков, кубка ярмарок, кубка УЕФА, лиги Европы, суперкубка.
+                чемпионов, кубка кубков, кубка ярмарок, кубка УЕФА, лиги Европы, суперкубка
             </p>
 
-            <p class="table-explanation">
+            <p class="captions__table-explanation">
                 По клику на ячейку таблицы открывается подробная история данной пары
             </p>
 
-            <h1>
-                <em>РОССИЙСКИЕ КЛУБЫ ПРОТИВ ЛУЧШИХ ЕВРОПЕЙСКИХ</em>
+            <h1 class="captions__h1">
+                РОССИЙСКИЕ КЛУБЫ ПРОТИВ ЕВРОПЕЙСКИХ
             </h1>
 
-            <p class="explanation">Против <span class="larger">24</span> лучших иностранных клубов</p>
+            <p class="captions__explanation">
+                Против <span class="captions__explanation_larger">24</span> лучших европейских клубов
+            </p>
 
-            <p class="explanation">
+            <p class="captions__explanation">
                 Таблица обновлена по итогам матчей сезона 2019/2020
             </p>
         </section>
@@ -4237,22 +4240,23 @@
             </table>
 
             <!--Кнопка СПРАВА для переключения в дуэльный вид: -->
-            <section class="duel-button button-right">
-                <button class="results-duels-switch"
+            <section class="duels-switch  btn-right">
+                <button class="duels-switch__btn  btn-right__btn"
                     title="Переключиться на отображение счёта в дуэльном виде (и обратно)">
                     <p class="results"><b>ДУЭЛИ</b></p>
                     <p class="duels" hidden>ОБРАТНО</p>
                 </button>
-                <p class="duels-explanation">
-                    <b>Дуэль</b> - непосредственное столкновение двух команд в ходе турнира. <br />
+                <p class="btn-right__duels-explanation">
+                    <b>Дуэль</b> - непосредственное столкновение двух команд в ходе турнира. <br>
                     В дуэли побеждает тот, кто проходит дальше в кубковом турнире, либо выигрывает турнир (для финалов),
-                    <br />
+                    <br>
                     либо для групповых этапов - проходит в стадию более высокую, чем соперник по дуэли.
                 </p>
             </section>
+
         </section>
 
-        <hr />
+        <hr>
 
         <section class="soviet-republics">
             <h3>
@@ -4260,11 +4264,11 @@
             </h3>
 
             <p class="table-explanation">
-                <em>Матчи до 1991 года</em>
+                Матчи до 1991 года
             </p>
 
             <h2>
-                <em>УКРАИНА</em>
+                УКРАИНА
             </h2>
 
             <table class="main-table republican-table ukraine">
@@ -4963,10 +4967,10 @@
                 </tbody>
             </table>
 
-            <hr />
+            <hr>
 
             <h2>
-                <em>ГРУЗИЯ</em>
+                ГРУЗИЯ
             </h2>
 
             <table class="main-table republican-table georgia">
@@ -5093,10 +5097,10 @@
                 </tbody>
             </table>
 
-            <hr />
+            <hr>
 
             <h2>
-                <em>ЛИТВА</em>
+                ЛИТВА
             </h2>
 
             <table class="main-table republican-table lithuania">
@@ -5152,10 +5156,10 @@
                 </tbody>
             </table>
 
-            <hr />
+            <hr>
 
             <h2>
-                <em>АРМЕНИЯ</em>
+                АРМЕНИЯ
             </h2>
 
             <table class="main-table republican-table armenia">
@@ -5209,24 +5213,25 @@
                 </tbody>
             </table>
 
-            <hr />
+            <hr>
         </section>
 
         <!--Кнопка СНИЗУ для переключения в ДУЭЛЬНЫЙ вид: -->
-        <section class="duel-button button-normal">
-            <button class="results-duels-switch" title="Переключиться на отображение счёта в дуэльном виде (и обратно)">
+        <section class="duels-switch  btn-lower">
+            <button class="duels-switch__btn  btn-lower__btn"
+                title="Переключиться на отображение счёта в дуэльном виде (и обратно)">
                 <p class="results">Переключиться на отображение счёта в <b>ДУЭЛЯХ</b></p>
                 <p class="duels" hidden>Переключиться с дуэлей на ОБЫЧНЫЕ результаты</p>
             </button>
-            <p class="duels-explanation">
-                <b>Дуэль</b> - непосредственное столкновение двух команд в ходе турнира. <br />
+            <p class="btn-lower__duels-explanation">
+                <b>Дуэль</b> - непосредственное столкновение двух команд в ходе турнира. <br>
                 В дуэли побеждает тот, кто проходит дальше в кубковом турнире, либо выигрывает турнир (для финалов),
-                <br />
+                <br>
                 либо для групповых этапов - проходит в стадию более высокую, чем соперник по дуэли.
             </p>
         </section>
 
-        <hr />
+        <hr>
     </main>
 
     <section class="donate">
@@ -5235,18 +5240,18 @@
     </section>
     <iframe
         src="https://money.yandex.ru/quickpay/shop-widget?writer=seller&amp;targets=%D0%BD%D0%B0%20%D0%BF%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%BA%D1%83%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0&amp;targets-hint=&amp;default-sum=50&amp;button-text=13&amp;payment-type-choice=on&amp;mobile-payment-type-choice=on&amp;hint=&amp;successURL=https%3A%2F%2Fallegro75.github.io%2Fgithub.io%2F&amp;quickpay=shop&amp;account=410011017638757"
-        allowtransparency="true" scrolling="no" width="100%" height="222" frameborder="0"></iframe>
+        allowtransparency="true" scrolling="no" width="100%" height="222" frameborder="0">
+    </iframe>
 
     <footer>
         <p class="email">
             Обратная связь: otkidach75@yandex.ru
-            <br />
+            <br>
             Пишите отзывы, замечания, предложения. Сообщайте о найденных ошибках.
         </p>
     </footer>
 
-    <!-- <script src="scripts/russia.js"></script> -->
-    <script src="scripts/showHideDuels.js"></script>
+    <script src="scripts/showHideDuelsNEW.js"></script>
     <script src="scripts/showSmallTableOnCellClick.js"></script>
 
 </body>

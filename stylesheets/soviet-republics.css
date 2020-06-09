@@ -1,0 +1,30 @@
+
+section.soviet-republics h2, h3{
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 0.2em;  
+  padding-top: 0.6em;
+  padding-bottom: 0.6em;
+  background-color: whitesmoke;  
+}
+
+section.soviet-republics h2{
+    font-style: italic;
+}
+
+section.soviet-republics p.table-explanation{
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 20px;  
+}
+
+h3{
+  font-size: 24px;
+  /* margin-bottom: 0em;   */
+}
+
+.armenia div.club-name,
+.lithuania div.club-name{
+  width: 8em;
+}

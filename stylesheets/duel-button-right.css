@@ -1,0 +1,49 @@
+
+/* Про КНОПКИ дуэлей: */
+
+.duels-switch__btn:hover,
+.duels-switch__btn:active,
+.duels-switch__btn:focus{
+  background-color: lightgray;
+  outline: none;
+}
+
+/* Про кнопку СПРАВА: */
+
+section.btn-right{
+  display: flex;
+  vertical-align: top;
+  position: relative; /* Это чтобы позиционировать абзац со словом "ДУЭЛИ" внутри кнопки */
+  margin-left: 20px;
+}
+
+section.btn-right button{
+    /* height: 520px;  */
+    width: 100px;
+    border-radius: 10px;
+}
+
+section.btn-right button p{
+    margin: 10px 20px;
+    font-size: 2.2em;
+    transform: rotate(90deg);
+    font-style: normal;
+    letter-spacing: 0.3em;
+    /* Чтобы позиционировать абзац со словом "ДУЭЛИ" внутри кнопки: */
+    position: absolute;
+    left: -1.5em;
+    top: 8.5em;
+}
+
+section.btn-right button p.duels{
+    left: -2.3em;
+}
+
+p.btn-right__duels-explanation{
+    margin-left: 2em;
+    width: 150px;
+    font-size: 0.7em;
+    white-space: normal;
+    text-align: justify;
+    /* display: inline-block; */
+}

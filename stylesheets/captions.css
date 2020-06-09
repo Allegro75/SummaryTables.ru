@@ -1,0 +1,31 @@
+
+.captions__h1, .captions__h2, .captions p{
+  text-align: center;
+}
+
+.captions__h1, .captions__h2{
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;  
+  padding-top: 0.6em;
+  padding-bottom: 0.6em;
+  background-color: whitesmoke;
+}
+
+.captions__h1{
+  font-size: 32px;
+  font-style: italic;  
+}
+
+p.captions__explanation{
+  font-size: 16px;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+}
+
+p.captions__table-explanation, 
+span.captions__explanation_larger{
+  font-weight: bold;
+  font-style: italic;
+  font-size: 20px;
+  margin: 0.25em auto;
+}

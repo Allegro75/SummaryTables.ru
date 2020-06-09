@@ -1,0 +1,38 @@
+
+/* Про кнопку СНИЗУ: */
+
+section.btn-lower{
+    width: fit-content;
+    width: -moz-fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section.btn-lower button{
+  height: 100px; 
+  width: 1000px;
+  font-size: 1.6em;
+  border-radius: 10px;
+  margin-top: 20px; 
+  /* padding: 10px 20px; */
+}
+
+.btn-lower__btn p{
+  margin: 10px 20px;
+  font-style: italic;
+}
+
+/* p.btn-lower__duels-explanation{
+    text-align: center;
+} */
+
+/* 
+section.button-normal button.short-history-button p{
+  font-style: italic;
+}
+
+section.button-normal p,
+section.donate p{
+  font-size: 1.25em;
+  margin: 0.25em auto;
+} */
