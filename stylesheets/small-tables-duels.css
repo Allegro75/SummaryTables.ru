@@ -116,6 +116,8 @@ table.add-table{
   margin-right: auto;
   margin-top: 20px;
   border-collapse: collapse;
+  /* overflow: hidden;
+  border-radius: 12px; */
 }
 
 /* Уменьшаем шрифт для надписей "№" и "Поле": */
@@ -199,18 +201,22 @@ span.yellow-circle{
 /* Для СКРУГЛЕНИЯ рамки таблицы: */
 table.add-table tr:nth-child(2) td:first-child{
   border-top-left-radius: 12px;
+  /* overflow: hidden; */
 }
 
 table.add-table tr:nth-child(2) td:last-child{
   border-top-right-radius: 12px;
+  /* overflow: hidden; */
 }
 
 table.add-table tr:last-child td:first-child{
   border-bottom-left-radius: 12px;
+  /* overflow: hidden; */
 }
 
 table.add-table tr:last-child td:last-child{
   border-bottom-right-radius: 12px;
+  /* overflow: hidden; */
 }
 
 /* Чтобы счёт был жирным: */

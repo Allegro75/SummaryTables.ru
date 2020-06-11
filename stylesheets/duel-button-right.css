@@ -41,9 +41,9 @@ section.btn-right button p.duels{
 
 p.btn-right__duels-explanation{
     margin-left: 2em;
+    margin-top: 0;    
     width: 150px;
     font-size: 0.7em;
     white-space: normal;
     text-align: justify;
-    /* display: inline-block; */
 }

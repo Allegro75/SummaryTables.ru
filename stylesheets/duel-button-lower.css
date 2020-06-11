@@ -1,4 +1,13 @@
 
+/* Про КНОПКИ дуэлей: */
+
+.duels-switch__btn:hover,
+.duels-switch__btn:active,
+.duels-switch__btn:focus{
+  background-color: lightgray;
+  outline: none;
+}
+
 /* Про кнопку СНИЗУ: */
 
 section.btn-lower{
