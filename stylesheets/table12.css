@@ -4,8 +4,7 @@
 table.main-table{
   border-collapse: collapse;
   font-weight: bold;
-  /* font-size: 0.8em;   */
-  font-size: 20px;
+  font-size: 15px;  
   white-space: nowrap;
   margin-left: auto;
   margin-right: auto;
@@ -43,22 +42,14 @@ table.main-table tr:last-child td:last-child{
 
 .main-table td{
   text-align: center;
-  /* max-width: 12em; */
-  max-width: 10em;  
+  max-width: 10em;
   padding: 0.6em;
-  border-right: 0.12em solid gray;
+  border-right: 0.22em solid gray;
 }
-
-/* .main-table tr{
-    max-height: 48px; 
-} */
 
 .main-table td.statistics{
   box-sizing: content-box;
-  /* max-width: 80px;  */
-  /* max-width: 60px;    */ 
-  max-height: 40px;  
-  min-width: 104px;
+  /* max-height: 40px;   */
 }
 
 table.main-table tr td:last-child{
@@ -107,7 +98,7 @@ img.nottingham{
 .main-table div.club-name{
   margin: 0.25em;
   white-space: normal;
-  font-size: 21px;
+  font-size: 1.11em;
 }
 
 /* Для слишком длинных названий клубов (типа "Вулверхэмптон"),
@@ -132,8 +123,7 @@ img.nottingham{
 }
 
 .main-table td div.duels{
-  font-size: 1.68em;
-  /* margin: 0.35em 0.24em; */
+  font-size: 1.7em;
   margin: 0.32em 0.24em;  
 }
 
