@@ -10,20 +10,20 @@
 
 /* Про кнопку СПРАВА: */
 
-section.btn-right{
+div.btn-right{
   display: flex;
   vertical-align: top;
   position: relative; /* Это чтобы позиционировать абзац со словом "ДУЭЛИ" внутри кнопки */
   margin-left: 20px;
 }
 
-section.btn-right button{
+div.btn-right button{
     height: 520px; 
     width: 100px;
     border-radius: 10px;
 }
 
-section.btn-right button p{
+div.btn-right button p{
     margin: 10px 20px;
     font-size: 2.2em;
     transform: rotate(90deg);
@@ -35,7 +35,7 @@ section.btn-right button p{
     top: 8.5em;
 }
 
-section.btn-right button p.duels{
+div.btn-right button p.duels{
     left: -2.3em;
 }
 

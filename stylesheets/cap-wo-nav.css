@@ -4,7 +4,7 @@ header.cap{
 }
 
 /* Для верхней строки шапки: */
-section.cap__site-title{
+div.cap__site-title{
   background-color: chocolate;
   color: #f5deb3;
 }
