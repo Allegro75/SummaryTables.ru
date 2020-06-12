@@ -64,7 +64,8 @@ li.dropdown ul {
   position: absolute;
   color: black;
   background: white;
-  border: 1px solid #dadada;  
+  border: 1px solid #dadada; 
+  z-index: 1; 
 }
 
 li.nav__stripe__list__item__droplist__item{
