@@ -1,0 +1,42 @@
+
+.random-buttons{
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+div.random-buttons__btns{
+  display: grid;
+  grid-template-columns: 400px 30px 400px;  
+}
+
+div.random-buttons__div{
+  display: inline-block;
+}
+
+button.show-random__btn{
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    outline: none;
+}
+
+div.show-random__btn__text{
+    font-size: 12px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;    
+}
+
+div.random-onload label{
+  position: relative;
+}
+
+#random-onload__input{
+  position: absolute;
+  top: 2px;
+}
+
+p.random-onload__text{
+  font-size: 12px;
+  display: inline-block;
+  margin-left: 25px;
+}

@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="stylesheets/captions.css">  
     <link rel="stylesheet" href="stylesheets/table16.css">   
     <link rel="stylesheet" href="stylesheets/duel-button-lower.css">               
+    <link rel="stylesheet" href="stylesheets/random-buttons.css">
     <link rel="stylesheet" href="stylesheets/donate.css">
     <link rel="stylesheet" href="stylesheets/footer.css">
 
@@ -1271,6 +1272,34 @@
             </p>
         </div>
 
+        <div class="random-buttons">
+            <div class="random-buttons__gap">
+                <!-- Этот div только затем, чтобы "застолбить" пустоту в сетке-grid'е-->
+            </div>
+            <div class="random-buttons__btns">
+
+                <div class="random-buttons__div show-random">
+                    <button class="show-random__btn" title="Показать всплывающее окно с историей игр случайной пары клубов">
+                        <div class="show-random__btn__text">
+                            Показать случайную пару сейчас
+                        </div>
+                    </button>
+                </div>
+
+                <div class="random-buttons__div gap"></div>
+
+                <div class="random-buttons__div random-onload">
+                    <label for="random-onload__input">
+                        <input type="checkbox" id="random-onload__input">
+                        <p class="random-onload__text">
+                            Показывать случайную пару при загрузке страницы
+                        </p>
+                    </label>
+                </div>
+
+            </div>
+        </div>         
+
         <hr>
 
     </main>
@@ -1289,7 +1318,10 @@
     </footer>
 
     <script src="scripts/showSmallTableOnCellClick.js"></script>
-    <script src="scripts/showHideDuels.js"></script>   
+    <script src="scripts/showHideDuels.js"></script>
+    <script src="scripts/randomWindowOnLoad.js"></script>
+    <script src="scripts/randPairOnLoadButton.js"></script>
+    <script src="scripts/randomWindowOnClick.js"></script>      
 
 </body>
 
