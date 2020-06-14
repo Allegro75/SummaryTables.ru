@@ -21,7 +21,7 @@ button.show-random__btn{
     outline: none;
 }
 
-div.show-random__btn__text{
+span.show-random__btn__text{
     font-size: 12px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;    
 }
@@ -30,12 +30,17 @@ div.random-onload label{
   position: relative;
 }
 
+div.random-onload label{
+  position: relative;
+  top: 8px;
+}
+
 #random-onload__input{
   position: absolute;
   top: 2px;
 }
 
-p.random-onload__text{
+span.random-onload__text{
   font-size: 12px;
   display: inline-block;
   margin-left: 25px;

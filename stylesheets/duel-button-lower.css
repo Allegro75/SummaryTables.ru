@@ -26,22 +26,7 @@ div.btn-lower button{
   /* padding: 10px 20px; */
 }
 
-.btn-lower__btn div{
+.btn-lower__btn span{
   margin: 10px 20px;
   font-style: italic;
 }
-
-/* p.btn-lower__duels-explanation{
-    text-align: center;
-} */
-
-/* 
-section.button-normal button.short-history-button p{
-  font-style: italic;
-}
-
-section.button-normal p,
-section.donate p{
-  font-size: 1.25em;
-  margin: 0.25em auto;
-} */

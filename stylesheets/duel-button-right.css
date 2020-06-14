@@ -23,7 +23,7 @@ div.btn-right button{
     border-radius: 10px;
 }
 
-div.btn-right button div{
+div.btn-right button span{
     margin: 10px 20px;
     font-size: 2.2em;
     transform: rotate(90deg);
@@ -35,7 +35,7 @@ div.btn-right button div{
     top: 8.5em;
 }
 
-div.btn-right button div.duels{
+div.btn-right button span.duels{
     left: -2.3em;
 }
 
