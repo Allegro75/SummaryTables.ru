@@ -11,6 +11,13 @@ a, button{
   cursor: pointer;
 }
 
+button:hover,
+button:active,
+button:focus{
+  background-color: lightgray;
+  outline: none;
+}
+
 /* Цвета ссылок. Чтобы не плыли в Firefox: */
 a:link, a:visited{
   color: inherit;
