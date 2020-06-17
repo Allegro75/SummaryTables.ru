@@ -4,29 +4,34 @@ header.cap{
 }
 
 /* Для верхней строки шапки: */
-div.cap__site-title{
+div.cap__site-title-stripe{
   background-color: chocolate;
   color: #f5deb3;
 }
 
 /* Для иконок с футбольным мячом: */
-.cap__site-title__icon{
+.site-title-stripe__icon{
   width: 20px;
-  margin-top: 6px;
-  margin-left: 16px;
-  margin-right: 16px;
+  margin-top: 7px;
+  margin-left: 6px;
+  margin-right: 6px;
 }
-.cap__site-title__icon_left{
+.site-title-stripe__icon_left{
   float: left;
 }
-.cap__site-title__icon_right{
+.site-title-stripe__icon_right{
   float: right;
 }
 
-div.cap__site-title__text{
+div.site-title-stripe__text{
   text-transform: uppercase;
   letter-spacing: 5px;
   font-size: 16px;
   line-height: 32px;
   text-align: center;
+}
+
+span.site-title-stripe__text_delimiter{
+  font-size: 20px;
+  margin: auto 15px auto 15px;
 }
