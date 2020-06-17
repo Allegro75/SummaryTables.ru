@@ -21,8 +21,8 @@ button.show-random__btn{
     outline: none;
 }
 
-span.show-random__btn__text{
-    font-size: 12px;
+span.show-random__text{
+    /* font-size: 12px; */
     font-family: Verdana, Geneva, Tahoma, sans-serif;    
 }
 
