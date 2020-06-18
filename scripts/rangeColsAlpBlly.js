@@ -6,10 +6,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const alphaBetaDiv = document.querySelector(`div.change-range-text`);
     const table = document.querySelector(`table.main-table`);
     
-    // Задаём массив с ОРИГИНАЛЬНЫМ(по достижениям) порядком клубов:
+    // Задаём массив с ОРИГИНАЛЬНЫМ (по достижениям) порядком клубов:
     const origOrder = [];
+    // Определяем индекс последнего логотипа:
+    const finalLogoRowIndex = table.rows[0].cells.length - 1;
+    let indexOfLastLogo;
+    if ( table.rows[0].cells[finalLogoRowIndex].classList.contains(`main-table_seasons`) ) {
+        indexOfLastLogo = finalLogoRowIndex - 2;
+    } else {
+        indexOfLastLogo = finalLogoRowIndex;
+    }
     // Перебираем строку с логотипами:
-    for (i = 1; i < table.rows[0].cells.length - 2; i++) {
+    for (i = 1; i <= indexOfLastLogo; i++) {
         // Ищем НАЗВАНИЯ клубов массива:
         let clubName = table.rows[0].cells[i].querySelector(`img`).getAttribute('title');
         // Ищем ID для клубов массива:
