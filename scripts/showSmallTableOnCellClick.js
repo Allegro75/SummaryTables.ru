@@ -2,7 +2,6 @@
 // Для ВСПЛЫТИЯ окон с подробной статистикой по клику на ячейку большой таблицы:
 
 document.addEventListener('DOMContentLoaded', () => {
-    // const table = document.querySelector('table.main-table');
     const allTables = document.querySelectorAll('table.main-table');
 
     allTables.forEach( item => item.onclick = function () {showSmallTable();} )

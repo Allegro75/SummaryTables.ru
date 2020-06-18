@@ -4,8 +4,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     let results = document.querySelectorAll('.results');
     let duels = document.querySelectorAll('.duels');
-    // const duelsSwitch = document.querySelector('.duel-button button.results-duels-switch');
-    // const lowDuelsSwitch = document.querySelector('.button-normal button.results-duels-switch');
     const allDuelsButtons = document.querySelectorAll(`button.duels-switch__btn`);
 
     // duelsSwitch.onclick = function () {showHideDuels();};
@@ -39,8 +37,4 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     };
-
-    // allDuelsButtons.forEach(item => item.onclick = function () {showHideDuels();});
-
-    // lowDuelsSwitch.onclick = function () {showHideDuels();};
 });

@@ -47,6 +47,10 @@ table.main-table tr:last-child td:last-child{
   border-right: 0.22em solid gray;
 }
 
+div.change-range-text{
+  cursor: pointer;
+}
+
 .main-table td.statistics{
   box-sizing: content-box;
   
