@@ -44,7 +44,7 @@ table.main-table tr:last-child td:last-child{
   text-align: center;
   max-width: 10em;
   padding: 0.6em;
-  border-right: 2px solid gray;
+  border-right: 0.15em solid gray;
 }
 
 .main-table td.statistics{
