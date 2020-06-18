@@ -1,28 +1,6 @@
 User-agent: *
-Disallow: /old-files
-Disallow: /images/reserve
-Disallow: /images/chess/stock
 Disallow: /stylesheets
 Disallow: /scripts
-Disallow: /clubs_range
-Disallow: /plans
-Disallow: /chess/old_files
-
-User-agent: Yandex
-Disallow: /old-files
-Disallow: /images/reserve
-Disallow: /images/chess/stock
-Disallow: /clubs_range
-Disallow: /plans
-Disallow: /chess/old_files
-
-User-agent: GoogleBot
-Disallow: /old-files
-Disallow: /images/reserve
-Disallow: /images/chess/stock
-Disallow: /clubs_ranges
-Disallow: /plans
-Disallow: /chess/old_files
 
 Sitemap: summarytables.ru/sitemap.xml
 Host: summarytables.ru
