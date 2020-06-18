@@ -19,10 +19,10 @@ table.main-table{
   background-color: aliceblue;
 }
 
-.main-table tr:nth-child(odd) td.main-table__gap{
+.main-table tr:nth-child(odd) td.main-table_gap{
   background: rgba(255, 255, 255, 0.3);
 }
-.main-table tr:nth-child(even) td.main-table__gap{
+.main-table tr:nth-child(even) td.main-table_gap{
   background: rgba(0, 0, 0, 0.16);
 }
 
