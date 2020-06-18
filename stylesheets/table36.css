@@ -4,7 +4,7 @@
 table.main-table{
   border-collapse: collapse;
   font-weight: bold;
-  font-size: 7px;
+  font-size: 7.2px;
   white-space: nowrap;
   margin-left: auto;
   margin-right: auto;
@@ -26,20 +26,6 @@ table.main-table{
   background: rgba(0, 0, 0, 0.16);
 }
 
-/* Для скругления углов таблицы: */
-/* table.main-table tr:first-child td:first-child{
-  border-top-left-radius: 1em;    
-}
-table.main-table tr:last-child td:first-child{
-  border-bottom-left-radius: 1em;    
-}
-table.main-table tr:first-child td:last-child{
-  border-top-right-radius: 1em;    
-}
-table.main-table tr:last-child td:last-child{
-  border-bottom-right-radius: 1em;    
-} */
-
 .main-table td{
   text-align: center;
   max-width: 82px;
@@ -47,13 +33,9 @@ table.main-table tr:last-child td:last-child{
   border-right: 0.22em solid gray;
 }
 
-.main-table td.statistics{
+/* .main-table td.statistics{
   box-sizing: content-box;
-  
-  /* max-width: 44px;   */
-  /* Если зажимать ширину с помощью max-width -
-  возникает проблема с Реал-Баварией */
-}
+} */
 
 table.main-table tr td:last-child{
   border-right: none;
