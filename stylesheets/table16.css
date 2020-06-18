@@ -4,8 +4,7 @@
 table.main-table{
   border-collapse: collapse;
   font-weight: bold;
-  /* font-size: 0.45em;   */
-  font-size: 0.6em;
+  font-size: 10px;
   white-space: nowrap;
   margin-left: auto;
   margin-right: auto;
@@ -27,32 +26,18 @@ table.main-table{
   background: rgba(0, 0, 0, 0.16);
 }
 
-/* Для скругления углов таблицы: */
-/* table.main-table tr:first-child td:first-child{
-  border-top-left-radius: 1em;    
-}
-table.main-table tr:last-child td:first-child{
-  border-bottom-left-radius: 1em;    
-}
-table.main-table tr:first-child td:last-child{
-  border-top-right-radius: 1em;    
-}
-table.main-table tr:last-child td:last-child{
-  border-bottom-right-radius: 1em;    
-} */
-
 .main-table td{
   text-align: center;
-  /* max-width: 82px; */
   max-width: 10em;  
+  box-sizing: content-box;
+  height: 41px;  
   padding: 0.6em;
-  border-right: 0.22em solid gray;
+  border-right: 0.15em solid gray;
 }
 
 .main-table td.statistics{
   box-sizing: content-box;
-  /* max-width: 44px;  */
-  max-width: 60px;   
+  max-width: 63px;
 }
 
 table.main-table tr td:last-child{
@@ -102,6 +87,7 @@ img.nottingham{
   margin: 0.25em;
   white-space: normal;
   font-size: 16px;
+  /* line-height: 14px; */
 }
 
 /* Для слишком длинных названий клубов (типа "Вулверхэмптон"),

@@ -26,20 +26,6 @@ table.main-table{
   background: rgba(0, 0, 0, 0.16);
 }
 
-/* Для скругления углов таблицы: */
-/* table.main-table tr:first-child td:first-child{
-  border-top-left-radius: 1em;    
-}
-table.main-table tr:last-child td:first-child{
-  border-bottom-left-radius: 1em;    
-}
-table.main-table tr:first-child td:last-child{
-  border-top-right-radius: 1em;    
-}
-table.main-table tr:last-child td:last-child{
-  border-bottom-right-radius: 1em;    
-} */
-
 .main-table td{
   text-align: center;
   max-width: 10em;
@@ -49,7 +35,17 @@ table.main-table tr:last-child td:last-child{
 
 .main-table td.statistics{
   box-sizing: content-box;
-  /* max-height: 40px;   */
+  max-width: 76px;
+}
+
+#RMaJuv, #JuvRMa{
+  width: 87px;
+  padding: 0;
+}
+
+#RMaBav, #BavRMa{
+  width: 97px;
+  padding: 0;
 }
 
 table.main-table tr td:last-child{
