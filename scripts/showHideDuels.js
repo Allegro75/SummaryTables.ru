@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let duels = document.querySelectorAll('.duels');
     const allDuelsButtons = document.querySelectorAll(`button.duels-switch__btn`);
 
-    // duelsSwitch.onclick = function () {showHideDuels();};
     allDuelsButtons.forEach( item => item.onclick = function () {showHideDuels();} );
 
     const showHideDuels = () => {
