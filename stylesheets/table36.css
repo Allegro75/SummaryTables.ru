@@ -33,10 +33,6 @@ table.main-table{
   border-right: 0.22em solid gray;
 }
 
-/* .main-table td.statistics{
-  box-sizing: content-box;
-} */
-
 table.main-table tr td:last-child{
   border-right: none;
 }
@@ -98,4 +94,16 @@ img.nottingham{
 .main-table td div.duels{
   font-size: 1.64em;
   margin: 0.25em 0.2em;
+}
+
+tr.logotypes td.main-table_criterion{
+  font-size: 1em;  
+}
+/* 
+td.main-table_criterion{
+  font-size: 2em;
+} */
+
+span.main-table_criterion{
+  font-size: 1.32em;
 }
