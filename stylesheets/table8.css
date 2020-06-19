@@ -27,20 +27,6 @@ table.main-table{
   background: rgba(0, 0, 0, 0.16);
 }
 
-/* Для скругления углов таблицы: */
-/* table.main-table tr:first-child td:first-child{
-  border-top-left-radius: 1em;    
-}
-table.main-table tr:last-child td:first-child{
-  border-bottom-left-radius: 1em;    
-}
-table.main-table tr:first-child td:last-child{
-  border-top-right-radius: 1em;    
-}
-table.main-table tr:last-child td:last-child{
-  border-bottom-right-radius: 1em;    
-} */
-
 .main-table td{
   text-align: center;
   /* max-width: 12em; */
@@ -49,14 +35,8 @@ table.main-table tr:last-child td:last-child{
   border-right: 0.12em solid gray;
 }
 
-/* .main-table tr{
-    max-height: 48px; 
-} */
-
 .main-table td.statistics{
   box-sizing: content-box;
-  /* max-width: 80px;  */
-  /* max-width: 60px;    */ 
   max-height: 40px;  
   min-width: 104px;
 }
@@ -82,19 +62,20 @@ tr.logotypes span.number{
 
 /* Логотипы: */
 img.football-logo-table{
-  height: 30px;
+  height: 2em;
+  /* Высота лого - 40px (2em) */
   margin: 0.05em;
 }
 /* Для эмблем, вытянутых в высоту (Реал, Тоттенхэм, Порто, Милан): */
 img.real{
-  height: 36px;
+  height: 2.4em;
 }
 /* Лого Гамбурга вытянуто в ширину, посему его настаиваем специально: */
 img.hamburg{
-  width: 42px;
+  width: 2.4em;
   height: auto;
-  position: relative;
-  top: 0.2em;
+  /* position: relative; */
+  /* top: 0.2em; */
 }
 /* Ноттингемскому лого нужна подложка.
 Иначе бледно-красное на сером не смотрится: */
