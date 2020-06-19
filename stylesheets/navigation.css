@@ -24,7 +24,7 @@ nav a:active{
 }
 
 .nav__stripe{
-  background-color: rgb(182, 50, 3);
+  background-color: rgba(182, 50, 3, 0.9);
   padding-left: 24px;
   margin-top: 3px;
   text-align: center;  

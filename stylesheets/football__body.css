@@ -22,3 +22,10 @@ button:focus{
 a:link, a:visited{
   color: inherit;
 }
+
+.football__background{
+  background-image: url(.././images/football_ball_translucent.png), url(.././images/football_ball_translucent.png);
+  background-size: 40%, 15%;
+  background-repeat: no-repeat;
+  background-position: right bottom, left top;
+}

@@ -1,6 +1,7 @@
 
 .captions__h1, .captions__h2, .captions p{
   text-align: center;
+  text-shadow: 1px 1px 1px snow;
 }
 
 .captions__h1, .captions__h2{
@@ -8,7 +9,8 @@
   margin-bottom: 0.3em;  
   padding-top: 0.6em;
   padding-bottom: 0.6em;
-  background-color: whitesmoke;
+  /* background-color: whitesmoke; */
+  background-color: rgba(245, 245, 245, 0.9);
 }
 
 .captions__h1{
@@ -20,6 +22,10 @@ p.captions__explanation{
   font-size: 16px;
   margin-bottom: 0.5em;
   margin-top: 0.5em;
+}
+
+span.explanation_outline{
+  text-shadow: 2px 2px 2px snow, -2px -2px 2px snow, -2px 2px 2px snow, 2px -2px 2px snow;
 }
 
 p.captions__table-explanation, 

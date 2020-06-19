@@ -5,7 +5,7 @@ header.cap{
 
 /* Для верхней строки шапки: */
 div.cap__site-title-stripe{
-  background-color: chocolate;
+  background-color: rgba(210, 105, 30, 0.9);
   color: #f5deb3;
 }
 
