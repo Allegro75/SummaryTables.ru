@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Определяем индекс последнего логотипа:
     const finalLogoRowIndex = table.rows[0].cells.length - 1;
     let indexOfLastLogo;
-    if ( table.rows[0].cells[finalLogoRowIndex].classList.contains(`main-table_seasons`) ) {
+    if ( table.rows[0].cells[finalLogoRowIndex].classList.contains(`main-table_criterion`) ) {
         indexOfLastLogo = finalLogoRowIndex - 2;
     } else {
         indexOfLastLogo = finalLogoRowIndex;

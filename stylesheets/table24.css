@@ -30,7 +30,7 @@ table.main-table{
   text-align: center;
   max-width: 82px;
   padding: 0.6em;
-  border-right: 0.22em solid gray;
+  border-right: 1.6px solid gray;
 }
 
 div.change-range-text{
@@ -126,10 +126,14 @@ img.nottingham{
   margin: 0.35em 0.24em;
 }
 
-tr.logotypes td.main-table_seasons{
+tr.logotypes td.main-table_criterion{
   font-size: 1.4em;  
 }
 
-td.main-table_seasons{
+td.main-table_criterion{
   font-size: 2em;
+}
+
+span.criterion_primary{
+  font-size: 1.2em;
 }
