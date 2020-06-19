@@ -11,6 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // const newWindowLeftPosition = document.documentElement.clientWidth - 480;
         // const newWindowTopPosition = document.documentElement.clientHeight - 560;
         // window.open(urlInRandomWindow, ``, `width=480px, height=600px, left=${newWindowLeftPosition}px, top=${newWindowTopPosition}px`);
-        window.open(urlInRandomWindow, ``, `width=500px, height=900px`);
+        window.open(urlInRandomWindow, ``, `width=520px, height=970px`);
     });
 });

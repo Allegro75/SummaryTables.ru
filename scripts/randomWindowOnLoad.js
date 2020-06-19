@@ -8,6 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const randomPairCell = allCellsWHistory[randomPairIndex];
         const randomCellID = randomPairCell.getAttribute('id'); 
         const urlInRandomWindow = `football-small-tables/${randomCellID}.html`;
-        window.open(urlInRandomWindow, ``, `width=500px, height=900px`);
+        window.open(urlInRandomWindow, ``, `width=520px, height=970px`);
     }
 });

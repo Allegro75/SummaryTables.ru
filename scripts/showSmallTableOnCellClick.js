@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (target.getAttribute('class') == 'statistics has-history') {
                 let tableDataId = target.getAttribute('id');
                 let urlInWindowOpen = `football-small-tables/${tableDataId}.html`;
-                window.open(urlInWindowOpen, '', 'width=500px, height=900px');
+                window.open(urlInWindowOpen, '', 'width=520px, height=970px');
                 return;
                 }
             target = target.parentNode;
