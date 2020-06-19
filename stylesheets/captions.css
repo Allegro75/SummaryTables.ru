@@ -24,9 +24,9 @@ p.captions__explanation{
   margin-top: 0.5em;
 }
 
-span.explanation_outline{
+/* span.explanation_outline{
   text-shadow: 2px 2px 2px snow, -2px -2px 2px snow, -2px 2px 2px snow, 2px -2px 2px snow;
-}
+} */
 
 p.captions__table-explanation, 
 span.captions__explanation_larger{
