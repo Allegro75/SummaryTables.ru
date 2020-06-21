@@ -24,6 +24,12 @@ h3{
   /* margin-bottom: 0em;   */
 }
 
+/* Это нужно, чтобы таблицы не растягивались
+в 1525px как прописано в table24 */
+.soviet-republics table{
+  width: auto;
+} 
+
 .armenia div.club-name,
 .lithuania div.club-name{
   width: 8em;

@@ -10,6 +10,9 @@ table.main-table{
   margin-right: auto;
   border-radius: 10px;
   overflow: hidden;
+  /* Width нужна, чтобы в Firefox кое-как стабилизировать
+  ширину таблицы в дульном-недэульном видах:  */
+  width: 1525px;
 }
 
 .main-table tr:nth-child(odd){
@@ -99,6 +102,12 @@ img.nottingham{
   margin: 0.25em;
   white-space: normal;
   font-size: 1.3em;
+  /* Width здесь (так же, как и в table вообще)
+  нужна, чтобы в Firefox кое-как стабилизировать
+  ширину таблицы в дульном-недэульном видах
+  (от этого, правда, несколько страдает
+  колонка с сезонами в России в Chrome):  */  
+  width: 68px;
 }
 
 /* Для слишком длинных названий клубов (типа "Вулверхэмптон"),
