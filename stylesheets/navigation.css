@@ -51,8 +51,27 @@ li.nav__stripe__list__item{
   line-height: 28px;
 }
 
+li.nav__stripe__list__item:last-child{
+  margin-right: 25px;
+}
+
+img.nav__icon{
+  height: 13px;
+  position: relative;
+  top: 1px;
+  margin-right: 5px;
+}
+
+img.nav__icon_black{
+  display: none;
+}
+
 li.dropdown {
   position: relative;
+}
+
+li.dropdown:hover{
+  color: black;
 }
 
 li.dropdown:hover ul {
