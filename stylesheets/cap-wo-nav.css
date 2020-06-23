@@ -31,6 +31,10 @@ div.site-title-stripe__text{
   text-align: center;
 }
 
+.cap a{
+  text-decoration: none;
+}
+
 span.site-title-stripe__text_delimiter{
   font-size: 20px;
   margin: auto 15px auto 15px;
