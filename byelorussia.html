@@ -1300,12 +1300,29 @@
 
             <div class="settings">
 
-                <div class="settings__row random-buttons-row">
+                <div class="settings__row coloring-row">
 
-                    <!-- <div class="random-buttons__gap"> -->
-                    <!-- Этот div только затем, чтобы "застолбить" пустоту в сетке-grid'е-->
-                    <!-- </div> -->
-                    <!-- <div class="random-buttons__btns"> -->
+                    <div class="coloring-buttons__div make-coloring">
+                        <button class="make-coloring__btn"
+                            title="Раскрасить таблицу зелёным, жёлтым, красным в зависимости от результатов в парах">
+                            <span class="make-coloring__text">
+                                Раскрасить / Отменить раскрашивание
+                            </span>
+                        </button>
+                    </div>
+
+                    <div class="coloring-buttons__div coloring-onload">
+                        <label for="coloring-onload__input">
+                            <input type="checkbox" id="coloring-onload__input">
+                            <span class="coloring-onload__text">
+                                Не раскрашивать по умолчанию
+                            </span>
+                        </label>
+                    </div>
+
+                </div>
+
+                <div class="settings__row random-buttons-row">
 
                     <div class="random-buttons__div show-random">
                         <button class="show-random__btn"
@@ -1367,6 +1384,8 @@
 
     <script src="scripts/showSmallTableOnCellClick.js"></script>
     <script src="scripts/showHideDuels.js"></script>
+    <script src="scripts/cellsColoring.js"></script>
+    <script src="scripts/coloringOnLoad.js"></script>
     <script src="scripts/randPairOnLoad.js"></script>
     <script src="scripts/randomWindowOnClick.js"></script>
 	<script src="scripts/duelsOnLoad.js"></script>

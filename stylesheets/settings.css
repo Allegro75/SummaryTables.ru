@@ -6,57 +6,38 @@
 .settings__row{
   margin: 5px 0 5px 0;
   display: flex;
-  /* grid-template-columns: 1fr 1fr 1fr; */
   justify-content: center;
   flex-wrap: wrap;  
   min-height: 40px;
 }
 
-/* .random-buttons{
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-} */
-
-/* div.random-buttons__btns{
-  display: grid;
-  grid-template-columns: 400px 30px 400px;  
-} */
-
-div.random-buttons__div{
-  /* display: inline-block; */
+.random-buttons__div, .coloring-buttons__div{
   margin: 0 15px 0 15px;
   width: 400px;
 }
 
-button.show-random__btn{
+.settings button{
     padding: 10px;
     width: 100%;
     border-radius: 5px;
     outline: none;
 }
 
-span.show-random__text{
-    /* font-size: 12px; */
+span.show-random__text, span.coloring-onload__text{
     font-family: Verdana, Geneva, Tahoma, sans-serif;    
 }
 
-/* .random-onload label, .duels-row__div label{
-  position: relative;
-} */
-
-div.random-onload label, .duels-row__div label{
+.settings__row label{
   position: relative;
   top: 8px;
 }
 
-#random-onload__input, #duels-row__input{
+#random-onload__input, #duels-row__input, #coloring-onload__input{
   position: absolute;
   top: 2px;
 }
 
-span.random-onload__text, span.duels-row__text{
+span.random-onload__text, span.duels-row__text, span.coloring-onload__text{
   font-size: 12px;
   display: inline-block;
   margin-left: 25px;

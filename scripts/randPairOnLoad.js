@@ -11,11 +11,13 @@ document.addEventListener('DOMContentLoaded', () => {
         window.open(urlInRandomWindow, ``, `width=520px, height=970px`);
     }
 
-// Для управления localStorage.showRandomWindow:
+    // Для установки галки в чекбокс, если он был отжат раньше:
     const randomOnLoadBtn = document.getElementById(`random-onload__input`);
     if (localStorage.showRandomWindow === `true`) {
         randomOnLoadBtn.checked = true; 
     }
+
+    // Реакции на пользовательские манипуляции с чекбоксом:
     randomOnLoadBtn.addEventListener('change', () => {
         if (!localStorage.showRandomWindow) {
             localStorage.showRandomWindow = true;
