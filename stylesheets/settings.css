@@ -1,6 +1,9 @@
 
 .settings{
   margin-top: 30px;  
+  display: grid;
+  grid-template-areas: 
+  "first-row" "second-row" "third-row";
 }
 
 .settings__row{
@@ -9,6 +12,18 @@
   justify-content: center;
   flex-wrap: wrap;  
   min-height: 40px;
+}
+
+.duels__row{
+  grid-area: first-row;
+}
+
+.coloring-row{
+  grid-area: second-row;  
+}
+
+.random-buttons-row{
+  grid-area: third-row;  
 }
 
 .random-buttons__div, .coloring-buttons__div{
