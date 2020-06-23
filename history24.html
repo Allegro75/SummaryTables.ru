@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="stylesheets/table24.css">
     <link rel="stylesheet" href="stylesheets/duel-button-right.css">
     <link rel="stylesheet" href="stylesheets/duel-button-lower.css">
-    <link rel="stylesheet" href="stylesheets/random-buttons.css">
+    <link rel="stylesheet" href="stylesheets/settings.css">
     <link rel="stylesheet" href="stylesheets/donate.css">
     <link rel="stylesheet" href="stylesheets/footer.css">
 
@@ -8493,11 +8493,14 @@
                 </p>
             </div>
 
-            <div class="random-buttons">
-                <div class="random-buttons__gap">
+            <div class="settings">
+
+                <div class="settings__row random-buttons-row">
+
+                    <!-- <div class="random-buttons__gap"> -->
                     <!-- Этот div только затем, чтобы "застолбить" пустоту в сетке-grid'е-->
-                </div>
-                <div class="random-buttons__btns">
+                    <!-- </div> -->
+                    <!-- <div class="random-buttons__btns"> -->
 
                     <div class="random-buttons__div show-random">
                         <button class="show-random__btn"
@@ -8508,7 +8511,7 @@
                         </button>
                     </div>
 
-                    <div class="random-buttons__div gap"></div>
+                    <!-- <div class="random-buttons__div gap"></div> -->
 
                     <div class="random-buttons__div random-onload">
                         <label for="random-onload__input">
@@ -8519,7 +8522,22 @@
                         </label>
                     </div>
 
+                    <!-- </div> -->
                 </div>
+
+                <div class="settings__row duels-row">
+
+                    <div class="duels-row__div">
+                        <label for="duels-row__input">
+                            <input type="checkbox" id="duels-row__input">
+                            <span class="duels-row__text">
+                                Начинать показ с дуэльного вида
+                            </span>
+                        </label>
+                    </div>
+
+                </div>
+
             </div>
 
             <hr>
@@ -8544,9 +8562,9 @@
 
     <script src="scripts/showSmallTableOnCellClick.js"></script>
     <script src="scripts/showHideDuels.js"></script>
-    <script src="scripts/randomWindowOnLoad.js"></script>
-    <script src="scripts/randPairOnLoadButton.js"></script>
+    <script src="scripts/randPairOnLoad.js"></script>
     <script src="scripts/randomWindowOnClick.js"></script>
+	<script src="scripts/duelsOnLoad.js"></script>
     <script src="scripts/navMouseOver.js"></script>
     <!-- <script src="scripts/service_rebuildTable.js"></script>       -->
 
