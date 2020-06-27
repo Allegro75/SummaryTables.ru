@@ -11,3 +11,4 @@ _example_file.html
 .vscode
 service*.js
 *.php
+*.ini
