@@ -14,7 +14,8 @@ table.main-table{
   white-space: nowrap;
   margin-left: 20px;
   margin-right: 20px;
-  border-radius: 20px;
+  margin-top: 10px;
+  border-radius: 10px;
   overflow: hidden;
   display: inline-block;
   box-shadow: 2px 2px 1px rgb(22, 19, 19);
@@ -39,9 +40,13 @@ table.main-table{
   max-width: 82px;
   padding: 0.3em;
   border-right: 1.6px solid gray;
-  height: 23px;
+  height: 25px;
   box-sizing: border-box;
 }
+
+/* .main-table tr{
+  height: 30px;
+} */
 
 div.change-range-text{
   cursor: pointer;
@@ -58,20 +63,21 @@ table.main-table tr td:last-child{
 /* Иконки: */
 td.main-table_victory img{
   height: 16px;
+  position: relative;
+  top: 1px;
 }
 
 /* Логотипы: */
 img.football-logo-table{
-  height: 20px;
-  margin: 0.05em;
+  height: 14px;
 }
 /* Для эмблем, вытянутых в высоту (Реал, Тоттенхэм, Порто, Милан): */
 img.real{
-  height: 23px;
+  height: 16px;
 }
 /* Лого Гамбурга вытянуто в ширину, посему его настаиваем специально: */
 img.hamburg{
-  width: 24px;
+  width: 16px;
   height: auto;
   position: relative;
   top: 0.2em;
@@ -88,7 +94,7 @@ img.nottingham{
   margin: 0.25em;
   white-space: normal;
   font-size: 0.8em;
-  width: 68px;
+  /* width: 68px; */
 }
 
 /* Для слишком длинных названий клубов (типа "Вулверхэмптон"),
@@ -110,10 +116,6 @@ tr.main-table__header td.playoff_quarter{
 tr.main-table__header td.main-table_playoff{
     padding: 0.1em;
 }
-
-/* td.main-table_criterion{
-  font-size: 1.4em;
-} */
 
 span.main-table_victory{
   font-size: 1.2em;

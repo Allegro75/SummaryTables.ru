@@ -20,6 +20,10 @@ section.captions{
   font-style: italic;  
 }
 
+.captions__h1_range{
+  margin-top: 0;
+}
+
 p.captions__explanation{
   font-size: 16px;
   margin-bottom: 0.5em;
