@@ -17,6 +17,7 @@ table.main-table{
   border-radius: 20px;
   overflow: hidden;
   display: inline-block;
+  box-shadow: 2px 2px 1px rgb(22, 19, 19);
 }
 
 .main-table tr:nth-child(odd){
