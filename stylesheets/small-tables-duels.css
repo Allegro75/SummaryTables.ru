@@ -82,6 +82,11 @@ img.hamburg{
   /* top: 10px; */
 }
 
+img.leipzig{
+  width: 62px;
+  height: auto;
+}
+
 /* Хотел сделать белый фон под заголовком пары: */
 /* section.pair-title{
   background-color: rgb(236, 234, 234);
