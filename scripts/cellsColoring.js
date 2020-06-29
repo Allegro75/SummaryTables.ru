@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector(`button.make-coloring__btn`).addEventListener('click', () => {
         // Если сейчас ячейки раскрашены:
         if (document.querySelector('td.has-history').style.backgroundColor) {
+            // то отменяем раскраску:            
             document.querySelectorAll('td.has-history').forEach((item) => {
                 item.style.backgroundColor = '';
             });

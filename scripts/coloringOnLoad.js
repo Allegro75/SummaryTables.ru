@@ -7,6 +7,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const coloringCheckBox = document.getElementById(`coloring-onload__input`);
     if (localStorage.woColoringOnLoad === `true`) {
         coloringCheckBox.checked = true;
+        // Если сейчас ячейки раскрашены (т.е. если мы в history36):
+        if (document.querySelector('td.has-history').style.backgroundColor) {
+            // то отменяем раскраску:
+            document.querySelectorAll('td.has-history').forEach((item) => {
+                item.style.backgroundColor = '';
+            });
+        }
     }
 
     // Для раскрашивания при первой загрузке сайта
