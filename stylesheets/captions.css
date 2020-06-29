@@ -1,3 +1,6 @@
+section.captions{
+  margin-bottom: 15px;
+}
 
 .captions__h1, .captions__h2, .captions p{
   text-align: center;

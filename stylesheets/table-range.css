@@ -1,15 +1,22 @@
 
 /* ТАБЛИЦА: */
 
+.tables{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;      
+}
+
 table.main-table{
   border-collapse: collapse;
   font-weight: bold;
-  font-size: 7.2px;
+  font-size: 12px;
   white-space: nowrap;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 20px;
   overflow: hidden;
+  display: inline-block;
 }
 
 .main-table tr:nth-child(odd){
@@ -29,45 +36,41 @@ table.main-table{
 .main-table td{
   text-align: center;
   max-width: 82px;
-  padding: 0.4em;
-  border-right: 0.22em solid gray;
+  padding: 0.3em;
+  border-right: 1.6px solid gray;
+  height: 23px;
+  box-sizing: border-box;
 }
 
-/* Для того, чтобы снять ограничение по ширине с колонки с названиями клубов: */
-.main-table tr td:nth-child(3){
-  max-width: none;
+div.change-range-text{
+  cursor: pointer;
 }
 
 table.main-table tr td:last-child{
   border-right: none;
 }
 
-.main-table tr.logotypes td{
-  position: relative;
-}
-
-tr.logotypes span.number{
-  position: absolute;
-  top: 0.2em;
-  left: 0.2em;
-  font-style: italic; 
-}
-
 .main-table td.number{
   font-style: italic;  
 }
 
+/* Иконки: */
+td.main-table_victory img{
+  height: 16px;
+}
+
 /* Логотипы: */
 img.football-logo-table{
-  height: 14px;
+  height: 20px;
+  margin: 0.05em;
 }
 /* Для эмблем, вытянутых в высоту (Реал, Тоттенхэм, Порто, Милан): */
 img.real{
-  height: 16px;
+  height: 23px;
 }
 /* Лого Гамбурга вытянуто в ширину, посему его настаиваем специально: */
 img.hamburg{
-  width: 16px;
+  width: 24px;
   height: auto;
   position: relative;
   top: 0.2em;
@@ -83,7 +86,8 @@ img.nottingham{
 .main-table div.club-name{
   margin: 0.25em;
   white-space: normal;
-  /* font-size: 1.3em; */
+  font-size: 0.8em;
+  width: 68px;
 }
 
 /* Для слишком длинных названий клубов (типа "Вулверхэмптон"),
@@ -92,19 +96,28 @@ img.nottingham{
   font-size: 0.8em;
 }
 
-.main-table td.has-history{
-  cursor: pointer;
+tr.main-table__header td.main-table_playoff{
+  font-size: 1.5em;  
 }
 
-.main-table td div.duels{
-  font-size: 1.64em;
-  margin: 0.25em 0.2em;
+tr.main-table__header td.playoff_semi,
+tr.main-table__header td.playoff_quarter{
+    font-size: 1em;  
 }
 
-tr.logotypes td.main-table_criterion{
-  font-size: 1em;  
+/* Чтобы колонки с плей-офф не были слишком широкими: */
+tr.main-table__header td.main-table_playoff{
+    padding: 0.1em;
 }
 
-span.main-table_criterion{
-  font-size: 1.32em;
+/* td.main-table_criterion{
+  font-size: 1.4em;
+} */
+
+span.main-table_victory{
+  font-size: 1.2em;
+}
+
+td.main-table_victory{
+    width: 26px;
 }
