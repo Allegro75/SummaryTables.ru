@@ -24,8 +24,8 @@ a:link, a:visited{
 }
 
 .football__background{
-  background-image: url(.././images/football_ball_translucent.png), url(.././images/football_ball_translucent.png);
-  background-size: 40%, 15%;
+  background-image: url(.././images/football_ball_translucent.png), url(.././images/football_ball_translucent.png), url(.././images/football_ball_translucent.png);
+  background-size: 40%, 25%, 15%;
   background-repeat: no-repeat;
-  background-position: right bottom, left top;
+  background-position: left bottom, right 40%, left top;
 }
