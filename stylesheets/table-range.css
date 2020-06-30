@@ -80,7 +80,7 @@ img.hamburg{
   width: 16px;
   height: auto;
   position: relative;
-  top: 0.2em;
+  top: 1px;
 }
 /* Ноттингемскому лого нужна подложка.
 Иначе бледно-красное на сером не смотрится: */
@@ -92,9 +92,8 @@ img.nottingham{
 
 .main-table div.club-name{
   margin: 0.25em;
-  white-space: normal;
+  /* Чтобы Астон Вилла не переносилась:: */ white-space: nowrap; 
   font-size: 0.8em;
-  /* width: 68px; */
 }
 
 /* Для слишком длинных названий клубов (типа "Вулверхэмптон"),
@@ -109,7 +108,7 @@ tr.main-table__header td.main-table_playoff{
 
 tr.main-table__header td.playoff_semi,
 tr.main-table__header td.playoff_quarter{
-    font-size: 1em;  
+    font-size: 0.7em;  
 }
 
 /* Чтобы колонки с плей-офф не были слишком широкими: */
