@@ -42,11 +42,8 @@ table.main-table{
   border-right: 1.6px solid gray;
   height: 25px;
   box-sizing: border-box;
+  text-shadow: 1px 1px 1px snow;
 }
-
-/* .main-table tr{
-  height: 30px;
-} */
 
 div.change-range-text{
   cursor: pointer;
@@ -70,6 +67,8 @@ td.main-table_victory img{
 /* Логотипы: */
 img.football-logo-table{
   height: 14px;
+  position: relative;
+  top: 1px;
 }
 /* Для эмблем, вытянутых в высоту (Реал, Тоттенхэм, Порто, Милан): */
 img.real{
@@ -80,7 +79,7 @@ img.hamburg{
   width: 16px;
   height: auto;
   position: relative;
-  top: 1px;
+  top: 2px;
 }
 /* Ноттингемскому лого нужна подложка.
 Иначе бледно-красное на сером не смотрится: */
@@ -92,7 +91,12 @@ img.nottingham{
 
 .main-table div.club-name{
   margin: 0.25em;
-  /* Чтобы Астон Вилла не переносилась:: */ white-space: nowrap; 
+  /* Чтобы Астон Вилла (и прочие) не переносилась: */ 
+  white-space: nowrap; 
+  font-size: 0.8em;
+}
+
+span.club-mame_minsize{
   font-size: 0.8em;
 }
 
@@ -102,24 +106,55 @@ img.nottingham{
   font-size: 0.8em;
 }
 
-tr.main-table__header td.main-table_playoff{
-  font-size: 1.5em;  
+/* Для колонки финалов ("Ф"): */
+tr.main-table__header td.playoff_final{
+  font-size: 1.2em;
+  padding: 0.3em;
 }
 
 tr.main-table__header td.playoff_semi,
 tr.main-table__header td.playoff_quarter{
     font-size: 0.7em;  
-}
-
-/* Чтобы колонки с плей-офф не были слишком широкими: */
-tr.main-table__header td.main-table_playoff{
     padding: 0.1em;
 }
 
 span.main-table_victory{
   font-size: 1.2em;
+  color: #660000;
 }
 
 td.main-table_victory{
     width: 26px;
+}
+
+.main-table tr.russia, p.explanation_russia{
+  background-color: rgba(255, 0, 0, 0.2);
+}
+
+.main-table tr.ukraine, p.explanation_ukraine{
+  background-color: rgba(0, 0, 255, 0.2);
+}
+
+td.criterion_current-participant, p.explanation_current{
+  background: rgba(255, 255, 0, 0.4);
+}
+
+.table-explanation{
+  margin-top: 12px;
+}
+
+p.table-explanation__explanation{
+  margin-top: 2px;
+  margin-bottom: 2px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+  font-style: italic;
+  font-size: 12px;
+  width: 1700px;
+  text-shadow: 1px 1px 1px snow;
+  box-shadow: 1px 1px 1px rgb(70, 67, 67);
 }
