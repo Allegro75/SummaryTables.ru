@@ -40,7 +40,7 @@ table.main-table{
   max-width: 82px;
   padding: 0.3em;
   border-right: 1.6px solid gray;
-  height: 25px;
+  /* Чтобы выровнять высоту всех строк: */  height: 27px;
   box-sizing: border-box;
   text-shadow: 1px 1px 1px snow;
 }
