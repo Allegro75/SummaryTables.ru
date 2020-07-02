@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const randomPairCell = allCellsWHistory[randomPairIndex];
         const randomCellID = randomPairCell.getAttribute('id'); 
         const urlInRandomWindow = `football-small-tables/${randomCellID}.html`;
-        window.open(urlInRandomWindow, ``, `width=520px, height=970px`);
+        window.open(urlInRandomWindow, ``, `width=520px, height=970px, top=0, left=0`);
     }
 
     // Для установки галки в чекбокс, если он был отжат раньше:
