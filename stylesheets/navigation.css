@@ -9,13 +9,14 @@ nav a{
   text-decoration: none;
 }
 
-nav a:hover{
+nav a:hover,
+nav a:active{
   color: black;
 }
 
-nav a:active{
+/* nav a:active{
   color: beige;
-}
+} */
 
 .nav ul{
   list-style: none;
@@ -55,20 +56,77 @@ li.nav__stripe__list__item:last-child{
   margin-right: 25px;
 }
 
-img.nav__icon{
+/* img.nav__icon{
   height: 13px;
   position: relative;
   top: 1px;
   margin-right: 5px;
-}
+} */
 
-img.nav__icon_black{
-  display: none;
-}
-
-/* ul.nav__stripe__list__item__droplist li{
-  text-align: center;
+.nav__icon{
   display: inline-block;
+  height: 13px;
+  width: 13px;
+  position: relative;
+  top: 1.5px;
+  margin-right: 5px;
+}
+
+nav div.football li.dropdown a div.nav__icon
+/* Такое подробное описание нужно, чтобы дать больший приоритет,
+чем у li.chess:hover .nav__icon (если приоритет у последней, то 
+пешка отображается нехорошо) */{
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+li.current-season .nav__icon{
+  background: url('../images/screamer.png');
+}
+
+li.current-season:hover .nav__icon,
+li.current-season:focus .nav__icon{
+  background: url('../images/screamer_black.png');
+}
+
+li.ussr .nav__icon{
+  background: url('../images/ussr.png');
+}
+
+li.ussr:hover .nav__icon,
+li.ussr:focus .nav__icon{
+  background: url('../images/ussr_black.png');
+}
+
+li.history .nav__icon{
+  background: url('../images/history_icon.png');
+}
+
+li.history:hover .nav__icon,
+li.history:focus .nav__icon{
+  background: url('../images/history_icon_black.png');
+}
+
+li.decade .nav__icon{
+  background: url('../images/ten.png');
+}
+
+li.decade:hover .nav__icon,
+li.decade:focus .nav__icon{
+  background: url('../images/ten_black.png');
+}
+
+li.chess .nav__icon{
+  background: url('../images/chess/white_pawn_13px.png');
+}
+
+li.chess:hover .nav__icon,
+li.chess:focus .nav__icon{
+  background: url('../images/chess/black_pawn_13px.png');
+}
+
+/* img.nav__icon_black{
+  display: none;
 } */
 
 li.dropdown {
