@@ -66,6 +66,11 @@ img.nav__icon_black{
   display: none;
 }
 
+ul.nav__stripe__list__item__droplist li{
+  text-align: center;
+  display: inline-block;
+}
+
 li.dropdown {
   position: relative;
 }
