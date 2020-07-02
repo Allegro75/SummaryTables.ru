@@ -47,8 +47,19 @@ table.main-table{
   text-shadow: 1px 1px 1px snow;
 }
 
-div.change-range-text{
-  cursor: pointer;
+table a{
+  text-decoration: none;
+}
+
+.for-href{
+  width: 100%;
+  height: 100%;
+  /* vertical-align: middle; */
+}
+
+.for-href > span{
+  position: relative;
+  top: 23%;
 }
 
 table.main-table tr td:last-child{
@@ -135,6 +146,10 @@ td.main-table_victory{
 
 .main-table tr.ukraine, p.explanation_ukraine{
   background-color: rgba(0, 0, 255, 0.2);
+}
+
+td.criterion_current-participant{
+  padding: 0;
 }
 
 td.criterion_current-participant, p.explanation_current{
