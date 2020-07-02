@@ -1,5 +1,9 @@
 section.captions{
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+}
+
+.captions a{
+  text-decoration: none;
 }
 
 .captions__h1, .captions__h2, .captions p{
@@ -38,6 +42,10 @@ p.captions__table-explanation,
 span.captions__explanation_larger{
   font-weight: bold;
   font-style: italic;
-  font-size: 20px;
+  font-size: 1.25em;
   margin: 0.25em auto;
+}
+
+p.captions__explanation_12clubs{
+  font-size: 1.2em;
 }
