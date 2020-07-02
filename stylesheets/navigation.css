@@ -116,6 +116,15 @@ li.decade:focus .nav__icon{
   background: url('../images/ten_black.png');
 }
 
+li.range .nav__icon{
+  background: url('../images/bar_chart.png');
+}
+
+li.range:hover .nav__icon,
+li.range:focus .nav__icon{
+  background: url('../images/bar_chart_black.png');
+}
+
 li.chess .nav__icon{
   background: url('../images/chess/white_pawn_13px.png');
 }
