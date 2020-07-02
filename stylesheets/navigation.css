@@ -66,10 +66,10 @@ img.nav__icon_black{
   display: none;
 }
 
-ul.nav__stripe__list__item__droplist li{
+/* ul.nav__stripe__list__item__droplist li{
   text-align: center;
   display: inline-block;
-}
+} */
 
 li.dropdown {
   position: relative;
@@ -94,6 +94,14 @@ li.dropdown ul {
 
 li.nav__stripe__list__item__droplist__item{
     width: max-content;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 8px;
+    padding-right: 8px;
+    text-align: center;
+    display: inline-block;
+}
+
+li.nav__stripe__list__item__droplist__item a:hover,
+li.nav__stripe__list__item__droplist__item a:focus
+/* Почему-то срабатывает только на a, не на родительском li */{
+  color: #660000;
 }
