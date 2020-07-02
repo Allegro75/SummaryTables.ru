@@ -11,9 +11,14 @@ table.main-table{
   border-radius: 10px;
   overflow: hidden;
   /* Width нужна, чтобы в Firefox кое-как стабилизировать
-  ширину таблицы в дульном-недэульном видах:  */
-  width: 1525px;
+  ширину таблицы в дульном-недэульном видах:  
+  (однако, при добавлении inline-block и рамки сверху-слева в decade жопа
+  с последней колонкой)*/
+  /* width: 1525px; */
+  display: inline-block;
   box-shadow: 2px 2px 1px rgb(22, 19, 19);
+  border-top: oldlace solid 1px;
+  border-left: oldlace solid 1px;
 }
 
 .main-table tr:nth-child(odd){

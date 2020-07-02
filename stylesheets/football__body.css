@@ -29,3 +29,8 @@ a:link, a:visited{
   background-repeat: no-repeat;
   background-position: left bottom, right 40%, left top;
 }
+
+main{
+  /* Это нужно, чтобы таблицы в состоянии inline-block вставали по центру: */
+  text-align: center;
+}
