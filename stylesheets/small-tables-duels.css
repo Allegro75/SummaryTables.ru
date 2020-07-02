@@ -119,6 +119,10 @@ table.add-table{
   border-radius: 12px;
 }
 
+table.add-table tr:first-child{
+  color: #333333;
+}
+
 /* Уменьшаем шрифт для надписей "№" и "Поле": */
 table.add-table tr:first-child td:first-child,
 table.add-table tr:first-child td:nth-child(2){
