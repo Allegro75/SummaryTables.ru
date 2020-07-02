@@ -1,13 +1,4 @@
 
-/* Про КНОПКИ дуэлей: */
-
-/* .duels-switch__btn:hover,
-.duels-switch__btn:active,
-.duels-switch__btn:focus{
-  background-color: lightgray;
-  outline: none;
-} */
-
 /* Про кнопку СНИЗУ: */
 
 div.btn-lower{
@@ -23,7 +14,6 @@ div.btn-lower button{
   font-size: 1.6em;
   border-radius: 10px;
   margin-top: 20px; 
-  /* padding: 10px 20px; */
 }
 
 .btn-lower__btn span{
