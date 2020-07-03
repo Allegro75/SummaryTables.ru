@@ -34,8 +34,10 @@ p.captions__explanation{
   margin-top: 0.5em;
 }
 
-/* span.explanation_outline{
-  text-shadow: 2px 2px 2px snow, -2px -2px 2px snow, -2px 2px 2px snow, 2px -2px 2px snow;
+/* span.captions__explanation_circle{
+  color: #660000;
+  font-size: 1.5em;
+  vertical-align: -7%;
 } */
 
 p.captions__table-explanation, 
