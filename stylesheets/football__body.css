@@ -20,9 +20,11 @@ button{
 
 button:hover,
 button:active,
-button:focus{
+button:focus{ 
   background-color: lightgray;
   outline: none;
+  /* Почему-то если не прописать bg-image: none, не срабатывает смена цвета при hover: */
+  background-image: none;
 }
 
 /* Цвета ссылок. Чтобы не плыли в Firefox: */
