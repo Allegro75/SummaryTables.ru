@@ -144,12 +144,18 @@ li.dropdown ul {
 }
 
 li.nav__stripe__list__item__droplist__item{
-    width: max-content;
-    padding-left: 8px;
-    padding-right: 8px;
+  min-width: max-content;
+    width: 100%;
+    /* padding-left: 8px;
+    padding-right: 8px; */
     text-align: center;
     display: inline-block;
     border-bottom: 1px solid #dadada; 
+}
+
+li.nav__stripe__list__item__droplist__item a{
+  margin-left: 8px;
+  margin-right: 8px;
 }
 
 /* Не получается сделать нормально изменение фона */
@@ -158,9 +164,17 @@ li.nav__stripe__list__item__droplist__item{
     width: 100%;
 } */
 
+li.nav__stripe__list__item__droplist__item:hover,
+li.nav__stripe__list__item__droplist__item:focus
+/* Почему-то срабатывает только на a, не на родительском li */{
+  color: #990000;
+  background-color: wheat;
+}
+
 li.nav__stripe__list__item__droplist__item a:hover,
 li.nav__stripe__list__item__droplist__item a:focus
 /* Почему-то срабатывает только на a, не на родительском li */{
   color: #990000;
-  /* background-color: wheat; */
 }
+
+
