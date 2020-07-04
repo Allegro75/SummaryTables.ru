@@ -119,10 +119,6 @@ table.add-table{
   border-radius: 12px;
 }
 
-table.add-table tr:first-child{
-  color: #333333;
-}
-
 /* Уменьшаем шрифт для надписей "№" и "Поле": */
 table.add-table tr:first-child td:first-child,
 table.add-table tr:first-child td:nth-child(2){
@@ -137,6 +133,11 @@ table.add-table tr:nth-child(odd){
   background-color: aliceblue;
   /* border-top-left-radius: 12px;
   overflow: hidden; */
+}
+
+table.add-table tr:first-child{
+  /* color: #333333; */
+  background-color: #999999;
 }
 
 /* Наклоняем шрифт в первой колонке (с номерами матчей): */
