@@ -1,6 +1,5 @@
 
 nav{
-  /* padding-top: 13px; */
   padding-bottom: 13px;
   color: wheat;
 }
@@ -13,10 +12,6 @@ nav a:hover,
 nav a:active{
   color: black;
 }
-
-/* nav a:active{
-  color: beige;
-} */
 
 .nav ul{
   list-style: none;
@@ -55,13 +50,6 @@ li.nav__stripe__list__item{
 li.nav__stripe__list__item:last-child{
   margin-right: 25px;
 }
-
-/* img.nav__icon{
-  height: 13px;
-  position: relative;
-  top: 1px;
-  margin-right: 5px;
-} */
 
 .nav__icon{
   display: inline-block;
@@ -134,10 +122,6 @@ li.chess:focus .nav__icon{
   background: url('../images/chess/black_pawn_13px.png');
 }
 
-/* img.nav__icon_black{
-  display: none;
-} */
-
 li.dropdown {
   position: relative;
 }
@@ -165,10 +149,18 @@ li.nav__stripe__list__item__droplist__item{
     padding-right: 8px;
     text-align: center;
     display: inline-block;
+    border-bottom: 1px solid #dadada; 
 }
+
+/* Не получается сделать нормально изменение фона */
+/* li.nav__stripe__list__item__droplist__item:hover{
+    background-color: wheat;
+    width: 100%;
+} */
 
 li.nav__stripe__list__item__droplist__item a:hover,
 li.nav__stripe__list__item__droplist__item a:focus
 /* Почему-то срабатывает только на a, не на родительском li */{
   color: #990000;
+  /* background-color: wheat; */
 }
