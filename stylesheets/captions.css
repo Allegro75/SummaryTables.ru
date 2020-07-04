@@ -28,17 +28,33 @@ section.captions{
   margin-top: 0;
 }
 
-p.captions__explanation{
+p.captions__explanation::before
+/* ,
+p.captions__table-explanation::before */
+{
+  content: '';
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  background:brown;
+  position: relative;
+  bottom: 1px;
+  box-shadow: 1px 1px 1px snow;
+  margin-right: 2px;
+}
+
+p.captions__explanation{  
   font-size: 16px;
   margin-bottom: 0.5em;
   margin-top: 0.5em;
 }
 
-/* span.captions__explanation_circle{
-  color: #660000;
+span.captions__explanation_circle{
+  display: none;
+  /* color: #660000;
   font-size: 1.5em;
-  vertical-align: -7%;
-} */
+  vertical-align: -7%; */
+}
 
 p.captions__table-explanation, 
 span.captions__explanation_larger{
