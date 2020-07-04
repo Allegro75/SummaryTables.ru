@@ -12,7 +12,8 @@ a, button{
 }
 
 button{
-  background: linear-gradient(to top left, #aaabac, #e0ddc7);
+  /* background: linear-gradient(to top left, #aaabac, #e0ddc7); */
+  background: linear-gradient(to top left, rgba(170, 171, 172, 0.5), rgba(224, 221, 199, 0.5));
   border-top: oldlace solid 1px;
   border-left: oldlace solid 1px;   
   box-shadow: 2px 2px 1px rgb(22, 19, 19);
