@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 item.style.backgroundColor = `#FF9999`;
                 highlightRows(`russia`, `#FF9999`);
             } else if ( item.classList.contains(`explanation_ukraine`) ) {
-                item.style.backgroundColor = `#9999ff`;
-                highlightRows(`ukraine`, `#9999ff`);
+                item.style.backgroundColor = `#66ccff`;
+                highlightRows(`ukraine`, `#66ccff`);
             } else if ( item.classList.contains(`explanation_current`) ) {
                 item.style.backgroundColor = `#ffffcc`;
                 highlightRows(`current`, `#ffffcc`);
