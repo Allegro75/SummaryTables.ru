@@ -146,27 +146,22 @@ li.dropdown ul {
 li.nav__stripe__list__item__droplist__item{
   min-width: max-content;
     width: 100%;
-    /* padding-left: 8px;
-    padding-right: 8px; */
     text-align: center;
     display: inline-block;
     border-bottom: 1px solid #dadada; 
 }
 
 li.nav__stripe__list__item__droplist__item a{
-  margin-left: 8px;
-  margin-right: 8px;
+  /* margin-left: 8px; */
+  margin-right: 16px;  /* Почему-то именно таким образом 
+  цетрируется (и даёт нужные отступы), 
+  а не с помощью двух маргинов по 8px*/
+  display: block;
+  width: 100%;
 }
 
-/* Не получается сделать нормально изменение фона */
-/* li.nav__stripe__list__item__droplist__item:hover{
-    background-color: wheat;
-    width: 100%;
-} */
-
 li.nav__stripe__list__item__droplist__item:hover,
-li.nav__stripe__list__item__droplist__item:focus
-/* Почему-то срабатывает только на a, не на родительском li */{
+li.nav__stripe__list__item__droplist__item:focus{
   color: #990000;
   background-color: wheat;
 }
