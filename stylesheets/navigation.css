@@ -164,12 +164,15 @@ li.nav__stripe__list__item__droplist__item:hover,
 li.nav__stripe__list__item__droplist__item:focus{
   color: #990000;
   background-color: wheat;
+  color:wheat;
+  background-color: #999999;
 }
 
 li.nav__stripe__list__item__droplist__item a:hover,
 li.nav__stripe__list__item__droplist__item a:focus
 /* Почему-то срабатывает только на a, не на родительском li */{
   color: #990000;
+  color:wheat;
 }
 
 
