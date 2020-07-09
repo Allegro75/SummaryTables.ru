@@ -47,17 +47,20 @@ div.change-range-text{
 }
 
 .main-table td.statistics{
-  box-sizing: content-box;  
-  max-width: 45px;  
+  box-sizing: border-box;  
+  min-width: 55px;
+  max-width: 55px;
+  /* min-height: 39px; */
 }
 
 #RMaJuv, #JuvRMa{
-  width: 52px;
+  /* width: 52px; */
   padding: 0;
 }
 
-#RMaBav, #BavRMa{
-  width: 58px;
+.main-table td.statistics#RMaBav, 
+.main-table td.statistics#BavRMa{
+  min-width: 62px;
   padding: 0;
 }
 
