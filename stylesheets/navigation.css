@@ -99,6 +99,11 @@ li.decade .nav__icon{
   background: url('../images/ten.png');
 }
 
+li.decade:hover,
+li.range:hover{
+  color: black;
+}
+
 li.decade:hover .nav__icon,
 li.decade:focus .nav__icon{
   background: url('../images/ten_black.png');
