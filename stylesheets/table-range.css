@@ -44,7 +44,7 @@ table.main-table{
   border-right: 1.6px solid gray;
   /* Чтобы выровнять высоту всех строк: */  height: 27px;
   box-sizing: border-box;
-  text-shadow: 1px 1px 1px snow;
+  /* text-shadow: 1px 1px 1px snow; */
 }
 
 table a{
@@ -172,6 +172,6 @@ p.table-explanation__explanation{
   font-style: italic;
   font-size: 12px;
   width: 1700px;
-  text-shadow: 1px 1px 1px snow;
+  /* text-shadow: 1px 1px 1px snow; */
   box-shadow: 1px 1px 1px rgb(70, 67, 67);
 }
