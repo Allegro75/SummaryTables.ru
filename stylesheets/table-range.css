@@ -133,7 +133,8 @@ tr.main-table__header td.playoff_quarter{
 
 span.main-table_victory{
   font-size: 1.2em;
-  color: #660000;
+  /* color: #660000; */
+  color: #990000;
 }
 
 td.main-table_victory{

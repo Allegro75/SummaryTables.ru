@@ -165,6 +165,14 @@ li.nav__stripe__list__item__droplist__item a{
   width: 100%;
 }
 
+/* li.nav__stripe__list__item__droplist__item:visited,
+li.nav__stripe__list__item__droplist__item:visited,
+li.nav__stripe__list__item__droplist__item a:visited,
+li.nav__stripe__list__item__droplist__item a:visited{
+  color: #cc9900;
+  background-color: #999999;
+} */
+
 li.nav__stripe__list__item__droplist__item:hover,
 li.nav__stripe__list__item__droplist__item:focus{
   /* color: #990000;
