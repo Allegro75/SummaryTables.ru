@@ -176,3 +176,149 @@ p.table-explanation__explanation{
   /* text-shadow: 1px 1px 1px snow; */
   box-shadow: 1px 1px 1px rgb(70, 67, 67);
 }
+
+.nations__header{
+  padding: 5px;
+  margin-bottom: 3px;
+  background-color: rgba(245, 245, 245, 0.9);
+}
+
+.nations__list{
+  display: grid;
+  grid-template-areas:
+    "a1 a2 a3 a4 a5 a6 a7 a8 a9"
+    "b1 b2 b3 b4 b5 b6 b7 b8 b9"
+    "c1 c2 c3 c4 c5 c6 c7 c8 c9";
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+.nations__item{
+  /* border-radius: 8px; */
+  border-right: 1px solid gray;
+  /* border-left: 1px solid gray; */
+  /* display: flex;
+  justify-content: stretch;
+  flex-wrap: wrap; */
+}
+
+.item__item{
+  display: inline-block;
+  text-align: left;
+}
+
+.nations__flag{
+  width: 20px;
+}
+
+.nations__name{
+  width: 85px;
+  font-size: 0.8em;
+}
+
+.nations__number{
+  width: 20px;
+  text-align: right;
+  font-weight: bold;
+}
+
+.nations__item.england{
+  grid-area: a1;
+}
+
+.nations__item.germany{
+  grid-area: b1;
+}
+
+.nations__item.spain{
+  grid-area: c1;
+}
+
+.nations__item.italy{
+  grid-area: a2;
+}
+
+.nations__item.france{
+  grid-area: b2;
+}
+
+.nations__item.holland{
+  grid-area: c2;
+}
+
+.nations__item.scotland{
+  grid-area: a3;
+}
+
+.nations__item.belgium{
+  grid-area: b3;
+}
+
+.nations__item.portugal{
+  grid-area: c3;
+}
+
+.nations__item.ukraine{
+  grid-area: a4;
+}
+
+.nations__item.russia{
+  grid-area: b4;
+}
+
+.nations__item.hungary{
+  grid-area: c4;
+}
+
+.nations__item.gdr{
+  grid-area: a5;
+}
+
+.nations__item.serbia{
+  grid-area: b5;
+}
+
+.nations__item.sweden{
+  grid-area: c5;
+}
+
+.nations__item.romania{
+  grid-area: a6;
+}
+
+.nations__item.austria{
+  grid-area: b6;
+}
+
+.nations__item.czechia{
+  grid-area: c6;
+}
+
+.nations__item.croatia{
+  grid-area: a7;
+}
+
+.nations__item.switzerland{
+  grid-area: b7;
+}
+
+.nations__item.greece{
+  grid-area: c7;
+}
+
+.nations__item.turkey{
+  grid-area: a8;
+}
+
+.nations__item.bulgary{
+  grid-area: b8;
+}
+
+.nations__item.poland{
+  grid-area: c8;
+}
+
+.nations__item.slovakia{
+  grid-area: a9;
+  border-right: none;
+}

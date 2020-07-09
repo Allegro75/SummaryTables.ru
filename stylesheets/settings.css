@@ -3,7 +3,7 @@
   margin-top: 30px;  
   display: grid;
   grid-template-areas: 
-  "first-row" "second-row" "third-row";
+    "first-row" "second-row" "third-row";
 }
 
 .settings__row{

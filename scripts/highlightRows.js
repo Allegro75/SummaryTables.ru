@@ -3,10 +3,6 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    const allCurrentRows = document.querySelectorAll(`tr.current`);
-
-    const allLegendStripes = document.querySelectorAll(`.table-explanation__explanation`);
-
     const highlightRows = (parameter, color) => {
         const rowsToHighlight = document.querySelectorAll(`tr.${parameter}`);
         rowsToHighlight.forEach(item => {item.style.backgroundColor = color;});
@@ -17,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         rowsToReturn.forEach(item => {item.style.backgroundColor = ``;});
     }
 
+    const allLegendStripes = document.querySelectorAll(`.table-explanation__explanation`);    
     allLegendStripes.forEach(item => {
         item.addEventListener('mouseover', () => {
             if ( item.classList.contains(`explanation_russia`) ) {
@@ -41,6 +38,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 returnColor(`current`);
                 item.style.backgroundColor = ``;
             }
+        });
+    });
+
+    const allNationsRows = document.querySelectorAll(`.nations__item`); 
+    allNationsRows.forEach(item => {
+        let nation = item.classList[1];
+        item.addEventListener('mouseover', () => {
+            item.style.backgroundColor = `#33cc33`;
+            highlightRows(nation, `#33cc33`);
+        });
+        item.addEventListener('mouseout', () => {
+            item.style.backgroundColor = ``;
+            returnColor(nation);
         });
     });
 }); 
