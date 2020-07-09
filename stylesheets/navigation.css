@@ -165,12 +165,14 @@ li.nav__stripe__list__item__droplist__item a{
   width: 100%;
 }
 
+/* Почему-то при применении этого правила 
+все время начинает показывать всё как visited,
+хотя куки вроде очистил: */
 /* li.nav__stripe__list__item__droplist__item:visited,
 li.nav__stripe__list__item__droplist__item:visited,
 li.nav__stripe__list__item__droplist__item a:visited,
 li.nav__stripe__list__item__droplist__item a:visited{
-  color: #cc9900;
-  background-color: #999999;
+  color: #666666;
 } */
 
 li.nav__stripe__list__item__droplist__item:hover,
