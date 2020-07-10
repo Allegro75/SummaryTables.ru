@@ -1,0 +1,95 @@
+.ab-list__letter{
+    /* position: relative; */
+    text-align: left;
+    padding-left: 30px;
+    background-color: rgba(245, 245, 245, 0.2);
+}
+
+.ab-letter-block__letter{
+    font-size: 64px;
+    font-weight: bold;
+    /* text-align: left; */
+    /* padding-left: 20px; */
+    display: inline-block;
+    /* float: left; */
+    /* position: absolute; */
+    text-align: center;
+    width: 80px;
+    height: 80px;
+    background-color: brown;
+    color: wheat;
+}
+
+.ablist-header{
+    text-align: left;
+    margin-top: 5px;
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgba(245, 245, 245, 0.4);
+}
+
+.ablist-header__item{
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.ablist-header__title{
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.ab-row{
+    padding-left: 30px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.ab-row:nth-child(odd){
+    background-color: rgba(36, 35, 35, 0.2);
+}
+
+.ab-row:nth-child(even){
+    background-color: rgba(245, 245, 245, 0.6);
+}
+
+.ab-row,
+.ab-row__pair-score{
+    text-align: left;
+}
+
+.ab-row div,
+.ab-score__games,
+.ab-score__goals,
+.ab-score__games div,
+.ab-score__goals div{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.row-logo img{
+    height: 20px;
+    position: relative;
+    top: 2px;
+}
+
+.row-club_2{
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.ab-games,
+.ab-goals{
+    position: relative;
+    bottom: 2px;
+}
+
+.ab-games{
+    margin-left: 10px;
+    font-weight: bold; 
+}
+
+.ab-goals{
+    margin-left: 10px;
+}

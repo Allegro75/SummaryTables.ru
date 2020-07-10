@@ -1,5 +1,5 @@
 
-/* ТАБЛИЦА: */
+/* ТАБЛИЦЫ: */
 
 .tables{
     display: flex;
@@ -157,6 +157,8 @@ td.criterion_current-participant, p.explanation_current{
   background: rgba(255, 255, 0, 0.4);
 }
 
+/* РУССКО-УКРАИНСКИЙ БЛОК: */
+
 .table-explanation{
   margin-top: 12px;
 }
@@ -176,6 +178,8 @@ p.table-explanation__explanation{
   /* text-shadow: 1px 1px 1px snow; */
   box-shadow: 1px 1px 1px rgb(70, 67, 67);
 }
+
+/* БЛОК НАЦИЙ: */
 
 .nations__header{
   padding: 5px;
