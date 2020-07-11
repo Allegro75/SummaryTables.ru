@@ -11,8 +11,7 @@ section.captions{
   text-shadow: 1px 1px 1px snow;
 }
 
-.captions__h1, .captions__h2{
-  margin-top: 0.3em;
+.captions__h1, .captions__h2{  
   margin-bottom: 0.3em;  
   padding-top: 0.6em;
   padding-bottom: 0.6em;
@@ -20,8 +19,12 @@ section.captions{
 }
 
 .captions__h1{
+  margin-top: 0.3em;
   font-size: 32px;
   font-style: italic;  
+}
+.captions__h2{
+  margin-top: 0px;
 }
 
 .captions__h1_range{

@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Задаём массив с ОРИГИНАЛЬНЫМ (по достижениям) порядком клубов:
     const origOrder = [];
-    // Определяем индекс последнего логотипа:
+        // Определяем индекс последнего логотипа:
     const finalLogoRowIndex = table.rows[0].cells.length - 1;
     let indexOfLastLogo;
     if ( table.rows[0].cells[finalLogoRowIndex].classList.contains(`main-table_criterion`) ) {
@@ -16,21 +16,22 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
         indexOfLastLogo = finalLogoRowIndex;
     }
-    // Перебираем строку с логотипами:
+        // Перебираем строку с логотипами:
     for (i = 1; i <= indexOfLastLogo; i++) {
-        // Ищем НАЗВАНИЯ клубов массива:
+            // Ищем НАЗВАНИЯ клубов массива:
         let clubName = table.rows[0].cells[i].querySelector(`img`).getAttribute('title');
-        // Ищем ID для клубов массива:
+            // Ищем ID для клубов массива:
         let clubId = ``;
         if ( table.rows[1].cells[i + 2].getAttribute('id') ) {
             clubId = table.rows[1].cells[i + 2].getAttribute('id').slice(3);
         } 
-            // Если в первой строке (в основном мы с работаем только с ней)
-            // клубов встретили логотип самого клуба,
-            // обращаемся ко второй строке:
+                // Если в первой строке (в основном мы с работаем только с ней)
+                // клубов встретили логотип самого клуба,
+                // обращаемся ко второй строке:
         else {
             clubId = table.rows[2].cells[i + 2].getAttribute('id').slice(3);
-        }        
+        }
+        // Формируем массив:        
         origOrder.push({name: clubName, id: clubId});
     }
 
