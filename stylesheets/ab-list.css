@@ -1,7 +1,11 @@
+a{
+    text-decoration: none;
+}
+
 .ab-list__letter{
     /* position: relative; */
-    text-align: left;
-    padding-left: 30px;
+    text-align: center;
+    /* padding-left: 30px; */
     background-color: rgba(245, 245, 245, 0.2);
 }
 
@@ -20,28 +24,99 @@
     color: wheat;
 }
 
+.ab-list__lists{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.list-club{
+    margin: 0 5px;
+}
+
 .ablist-header{
     text-align: left;
     margin-top: 5px;
-    padding-left: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
-    background-color: rgba(245, 225, 175, 0.4);
+    /* background-color: rgba(245, 225, 175, 0.4); */
+    background-color: #999999;
+    height: 55px;
+    width: 500px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    /* display: grid;
+    grid-template-areas: 
+        "a b c"
+        "a b d"; */
 }
 
 .ablist-header__item{
-    display: inline-block;
-    margin-right: 10px;
+    /* display: inline-block; */
+    /* margin-right: 10px; */
     vertical-align: middle;
 }
+
+.nation__item{
+    display: inline-block;
+    /* margin-right: 10px; */
+    vertical-align: middle;
+}
+
+/* .ablist-header__emblem{
+    grid-area: a;
+}
+
+.ablist-header__title{
+    grid-area: b;
+}
+
+.ablist-header__city,
+.ablist-header__country,
+.ablist-header__flag{
+    grid-area: c;
+}
+
+.ablist-header__range-place{
+    grid-area: d;
+} */
 
 .ablist-header__title{
     font-size: 32px;
     font-weight: bold;
+    position: relative;
+    top: 7px;
+}
+
+.details__nation{
+    font-style: italic;
+    margin-bottom: 5px;
+    text-align: center;
+    word-spacing: 3px;
+}
+
+.details__range-place{
+    text-align: center;
+    background: #cccccc;
+    padding: 5px;
+    border-radius: 7px;
+    border: 1px solid gray;
+    font-size: 13px;
+    box-shadow: 2px 2px 1px rgb(22, 19, 19);
+}
+
+span.range-place-text_number{
+    font-size: 18px;
+    font-weight: bold;  
 }
 
 .ab-row{
-    padding-left: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
     padding-top: 3px;
     padding-bottom: 3px;
     cursor: pointer;
@@ -53,6 +128,11 @@
 
 .ab-row:nth-child(even){
     background-color: rgba(245, 245, 245, 0.6);
+}
+
+.ab-row:last-child{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .ab-row,
@@ -77,7 +157,7 @@
 
 .row-club_2{
     font-weight: bold;
-    margin-left: 10px;
+    /* margin-left: 10px; */
 }
 
 .ab-games,
