@@ -67,11 +67,11 @@ a{
     vertical-align: middle;
 }
 
-/* .ablist-header__emblem{
-    grid-area: a;
+.ablist-header__emblem img{
+    height: 50px;
 }
 
-.ablist-header__title{
+/* .ablist-header__title{
     grid-area: b;
 }
 
