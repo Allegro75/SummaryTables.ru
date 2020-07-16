@@ -10,18 +10,28 @@ a{
 }
 
 .ab-letter-block__letter{
-    font-size: 64px;
+    font-size: 16px;
     font-weight: bold;
     /* text-align: left; */
-    /* padding-left: 20px; */
+    padding: 5px;
     display: inline-block;
     /* float: left; */
     /* position: absolute; */
     text-align: center;
-    width: 80px;
-    height: 80px;
-    background-color: brown;
+    /* width: 80px;
+    height: 80px; */
+    /* background-color: brown; */
+    background-color: #666666;
+    /* color: wheat; */
     color: wheat;
+}
+
+.ab-letter-block__letter_back{
+    float: left;
+}
+
+.ab-letter-block__letter_forward{
+    float: right;
 }
 
 .ab-list__lists{
@@ -104,9 +114,9 @@ a{
     background: #cccccc;
     padding: 5px;
     border-radius: 7px;
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
     font-size: 13px;
-    box-shadow: 2px 2px 1px rgb(22, 19, 19);
+    /* box-shadow: 2px 2px 1px rgb(22, 19, 19); */
 }
 
 span.range-place-text_number{
@@ -173,4 +183,12 @@ span.range-place-text_number{
 
 .ab-goals{
     margin-left: 10px;
+}
+
+.ab-letter-block_low{
+    margin-top: 5px;
+}
+
+.letter_pagination{
+    width: 35px;
 }
