@@ -32,7 +32,7 @@ a{
 }
 
 .letter_wo-left-arrow{
-    margin-left: 36px;
+    margin-left: 65px;
     /* Это нужно, чтобы выровнять по центру.
     Т.к. на 1-ой странице нет стрелочной ссылки на "Назад" слева,
     центрация нарушается */
@@ -112,7 +112,9 @@ a{
 
 span.range-place-text_number{
     font-size: 18px;
-    font-weight: bold;  
+    font-weight: bold; 
+    position: relative;
+    top: 1px; 
 }
 
 .ab-row{
@@ -184,7 +186,7 @@ span.range-place-text_number{
 .letter_pagination,
 .ab-letter-block__letter_forward,
 .ab-letter-block__letter_back{
-    width: 36px;
+    width: 65px;
     background-color: #666666;
     color: wheat;
 }
