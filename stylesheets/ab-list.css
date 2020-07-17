@@ -21,17 +21,26 @@ a{
     /* width: 80px;
     height: 80px; */
     /* background-color: brown; */
-    background-color: #666666;
-    /* color: wheat; */
-    color: wheat;
+    background-color: #333333;
+    color: white;
+    border-radius: 3px;
 }
 
 .ab-letter-block__letter_back{
     float: left;
+    width: 36px;
+}
+
+.letter_wo-left-arrow{
+    margin-left: 36px;
+    /* Это нужно, чтобы выровнять по центру.
+    Т.к. на 1-ой странице нет стрелочной ссылки на "Назад" слева,
+    центрация нарушается */
 }
 
 .ab-letter-block__letter_forward{
     float: right;
+    width: 36px;
 }
 
 .ab-list__lists{
@@ -59,10 +68,6 @@ a{
     border-top-left-radius: 10px;
     display: flex;
     justify-content: space-between;
-    /* display: grid;
-    grid-template-areas: 
-        "a b c"
-        "a b d"; */
 }
 
 .ablist-header__item{
@@ -80,20 +85,6 @@ a{
 .ablist-header__emblem img{
     height: 50px;
 }
-
-/* .ablist-header__title{
-    grid-area: b;
-}
-
-.ablist-header__city,
-.ablist-header__country,
-.ablist-header__flag{
-    grid-area: c;
-}
-
-.ablist-header__range-place{
-    grid-area: d;
-} */
 
 .ablist-header__title{
     font-size: 32px;
@@ -130,6 +121,7 @@ span.range-place-text_number{
     padding-top: 3px;
     padding-bottom: 3px;
     cursor: pointer;
+    width: 500px;
 }
 
 .ab-row:nth-child(odd){
@@ -189,6 +181,10 @@ span.range-place-text_number{
     margin-top: 5px;
 }
 
-.letter_pagination{
-    width: 35px;
+.letter_pagination,
+.ab-letter-block__letter_forward,
+.ab-letter-block__letter_back{
+    width: 36px;
+    background-color: #666666;
+    color: wheat;
 }
