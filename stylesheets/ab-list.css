@@ -31,22 +31,21 @@ a{
     width: 36px;
 }
 
-.letter_wo-left-arrow{
-    margin-left: 65px;
-    /* Это нужно, чтобы выровнять по центру.
-    Т.к. на 1-ой странице нет стрелочной ссылки на "Назад" слева,
-    центрация нарушается */
-}
-
 .ab-letter-block__letter_forward{
     float: right;
     width: 36px;
+}
+
+.ab-letter-block__letter.ab-letter-block_empty{
+    /* Эти объекты нужны, чтобы сохранялась центрация для пагинации на 1-й и последней страницах */
+    background-color: transparent;
 }
 
 .ab-list__lists{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-bottom: 10px;
 }
 
 .list-club{
@@ -206,4 +205,8 @@ span.range-place-text_number{
     width: 65px;
     background-color: #666666;
     color: wheat;
+}
+
+.ab-letter-block_low .ab-letter-block__letter{
+    margin-bottom: 3px;
 }
