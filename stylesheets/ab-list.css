@@ -29,17 +29,19 @@ a{
 .ab-letter-block__letter_back{
     float: left;
     width: 36px;
+    margin-left: 3px;
 }
 
 .ab-letter-block__letter_forward{
     float: right;
     width: 36px;
+    margin-right: 3px;
 }
 
-.ab-letter-block__letter.ab-letter-block_empty{
-    /* Эти объекты нужны, чтобы сохранялась центрация для пагинации на 1-й и последней страницах */
-    background-color: transparent;
-}
+/* Эти объекты нужны были, чтобы сохранялась центрация для пагинации на 1-й и последней страницах: */
+/* .ab-letter-block__letter.ab-letter-block_empty{
+        background-color: transparent;
+} */
 
 .ab-list__lists{
     display: flex;
