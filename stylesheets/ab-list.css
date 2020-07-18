@@ -93,6 +93,23 @@ a{
     top: 7px;
 }
 
+span.ablist-header__title_long-club-name_08{
+    font-size: 0.8em;
+    /* line-height: 0.4em; */
+}
+
+span.ablist-header__title_long-club-name_07{
+    font-size: 0.7em;
+    position: relative;
+    top: -4px;
+}
+
+span.ablist-header__title_long-club-name_06{
+    font-size: 0.6em;
+    position: relative;
+    top: -4px;
+}
+
 .details__nation{
     font-style: italic;
     margin-bottom: 5px;
