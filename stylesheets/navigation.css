@@ -100,7 +100,8 @@ li.decade .nav__icon{
 }
 
 li.decade:hover,
-li.range:hover{
+li.range:hover,
+li.alphabet:hover{
   color: black;
 }
 
@@ -116,6 +117,16 @@ li.range .nav__icon{
 li.range:hover .nav__icon,
 li.range:focus .nav__icon{
   background: url('../images/bar_chart_black.png');
+}
+
+li.alphabet .nav__icon{
+  background: url('../images/alphabet.png');
+  width: 16px;
+}
+
+li.alphabet:hover .nav__icon,
+li.alphabet:focus .nav__icon{
+  background: url('../images/alphabet_black.png');
 }
 
 li.chess .nav__icon{
