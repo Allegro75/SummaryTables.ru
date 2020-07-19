@@ -148,8 +148,27 @@ span.range-place-text_number{
     padding-right: 10px;
     padding-top: 3px;
     padding-bottom: 3px;
+    /* padding-top: auto;
+    padding-bottom: auto; */
     cursor: pointer;
     width: 500px;
+}
+
+.marseille .ab-row,
+.row-w-marseille{
+    height: 23.2px;
+    /* box-sizing: border-box; */
+    /* vertical-align: middle; */
+    /* padding-top: 0;
+    padding-bottom: 0; */
+}
+
+.row-w-marseille .ab-pair-title,
+.row-w-marseille .ab-score,
+.marseille .ab-pair-title,
+.marseille .ab-score{
+    position: relative;
+    top: -3.5px;
 }
 
 .ab-row:nth-child(odd){
@@ -223,6 +242,14 @@ span.range-place-text_number{
 .ab-letter-block__letter_forward,
 .ab-letter-block__letter_back{
     width: 65px;
+}
+
+/* Ноттингемскому(и марсельскому) лого нужна подложка.
+Иначе бледно-красное(и голубое) на сером не смотрится: */
+img.nottingham{
+  border: 0.2em solid white; 
+  background-color: white;
+  border-radius: 0.3em;
 }
 
 .ab-letter-block_low .ab-letter-block__letter{
