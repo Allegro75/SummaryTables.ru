@@ -1,8 +1,8 @@
 
-// Для ВСПЛЫТИЯ окон с подробной статистикой по клику на строку из списка:
-
 document.addEventListener(`DOMContentLoaded`, () => {
     const allStatRows = document.querySelectorAll(`.ab-row`);
+
+    // Для навешивания подсказок (titles) на строки:
 
     allStatRows.forEach( item => item.addEventListener('mouseover', () => {
         let club1Name = item.querySelector(`.row-club_1`).innerHTML.trim().slice(0, - 2);
@@ -26,6 +26,8 @@ document.addEventListener(`DOMContentLoaded`, () => {
 ${victories} ${victInRus}, ${draws} ${drawsInRus}, ${lesions} ${lesionsInRus}
 Кликните, чтобы узнать подробности`);
     }) );
+
+    // Для ВСПЛЫТИЯ окон с подробной статистикой по клику на строку из списка:
 
     allStatRows.forEach( item => item.addEventListener('click', () => {
         let tableDataId = item.getAttribute(`id`);
