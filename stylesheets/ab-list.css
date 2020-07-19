@@ -2,6 +2,10 @@ a{
     text-decoration: none;
 }
 
+.ab-letter-block{
+    margin-bottom: 5px;
+}
+
 .ab-list__letter{
     /* position: relative; */
     text-align: center;
@@ -42,6 +46,10 @@ a{
 /* .ab-letter-block__letter.ab-letter-block_empty{
         background-color: transparent;
 } */
+
+.ab-letter-block_current .ab-letter-block__letter{
+ font-size: 24px;
+}
 
 .ab-list__lists{
     display: flex;
@@ -204,9 +212,17 @@ span.range-place-text_number{
 .letter_pagination,
 .ab-letter-block__letter_forward,
 .ab-letter-block__letter_back{
-    width: 65px;
     background-color: #666666;
     color: wheat;
+}
+
+.letter_pagination{
+    width: 45px;
+}
+
+.ab-letter-block__letter_forward,
+.ab-letter-block__letter_back{
+    width: 65px;
 }
 
 .ab-letter-block_low .ab-letter-block__letter{
