@@ -3,72 +3,142 @@
 		<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 	<loc>http://summarytables.ru/</loc>
-	<lastmod>2020-07-03T11:40:01+01:00</lastmod>
+	<lastmod>2020-07-20T02:04:48+01:00</lastmod>
 	<priority>1.0</priority>
 </url>
 <url>
 	<loc>http://summarytables.ru/index.html</loc>
-	<lastmod>2020-07-03T11:40:01+01:00</lastmod>
+	<lastmod>2020-07-20T02:04:48+01:00</lastmod>
 	<priority>1.0</priority>
 </url>
 <url>
 	<loc>http://summarytables.ru/euroleague.html</loc>
-	<lastmod>2020-07-03T11:40:03+01:00</lastmod>
+	<lastmod>2020-07-20T02:04:49+01:00</lastmod>
 	<priority>1.0</priority>
 </url>
 <url>
 	<loc>http://summarytables.ru/russia.html</loc>
-	<lastmod>2020-07-03T11:40:03+01:00</lastmod>
+	<lastmod>2020-07-20T02:04:50+01:00</lastmod>
 	<priority>1.0</priority>
 </url>
 <url>
 	<loc>http://summarytables.ru/ukraine.html</loc>
-	<lastmod>2020-07-03T11:40:04+01:00</lastmod>
+	<lastmod>2020-07-20T02:04:50+01:00</lastmod>
 	<priority>1.0</priority>
 </url>
 <url>
 	<loc>http://summarytables.ru/byelorussia.html</loc>
-	<lastmod>2020-07-03T11:40:04+01:00</lastmod>
+	<lastmod>2020-07-20T02:04:50+01:00</lastmod>
 	<priority>1.0</priority>
 </url>
 <url>
 	<loc>http://summarytables.ru/kazakhstan.html</loc>
-	<lastmod>2020-07-03T11:40:04+01:00</lastmod>
+	<lastmod>2020-07-20T02:04:51+01:00</lastmod>
 	<priority>1.0</priority>
 </url>
 <url>
 	<loc>http://summarytables.ru/history36.html</loc>
-	<lastmod>2020-07-03T11:40:05+01:00</lastmod>
+	<lastmod>2020-07-20T02:04:51+01:00</lastmod>
 	<priority>1.0</priority>
 </url>
 <url>
 	<loc>http://summarytables.ru/history.html</loc>
-	<lastmod>2020-07-03T11:40:05+01:00</lastmod>
+	<lastmod>2020-07-20T02:04:51+01:00</lastmod>
 	<priority>1.0</priority>
 </url>
 <url>
 	<loc>http://summarytables.ru/history24.html</loc>
-	<lastmod>2020-07-03T11:40:06+01:00</lastmod>
+	<lastmod>2020-07-20T02:04:52+01:00</lastmod>
 	<priority>1.0</priority>
 </url>
 <url>
 	<loc>http://summarytables.ru/winners.html</loc>
-	<lastmod>2020-07-03T11:40:07+01:00</lastmod>
+	<lastmod>2020-07-20T02:04:53+01:00</lastmod>
 	<priority>1.0</priority>
 </url>
 <url>
 	<loc>http://summarytables.ru/range.html</loc>
-	<lastmod>2020-07-03T11:40:07+01:00</lastmod>
+	<lastmod>2020-07-20T02:04:52+01:00</lastmod>
 	<priority>1.0</priority>
 </url>
 <url>
 	<loc>http://summarytables.ru/decade.html</loc>
-	<lastmod>2020-07-03T11:40:07+01:00</lastmod>
+	<lastmod>2020-07-20T02:04:53+01:00</lastmod>
 	<priority>1.0</priority>
 </url>
 <url>
+	<loc>http://summarytables.ru/alphabet.html</loc>
+	<lastmod>2020-07-20T02:04:53+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>http://summarytables.ru/alphabet/alphabet_01.html</loc>
+	<lastmod>2020-07-20T02:04:53+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>http://summarytables.ru/alphabet/alphabet_02.html</loc>
+	<lastmod>2020-07-20T02:04:54+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>http://summarytables.ru/alphabet/alphabet_03.html</loc>
+	<lastmod>2020-07-20T02:04:54+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>http://summarytables.ru/alphabet/alphabet_04.html</loc>
+	<lastmod>2020-07-20T02:04:54+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>http://summarytables.ru/alphabet/alphabet_05.html</loc>
+	<lastmod>2020-07-20T02:04:54+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>http://summarytables.ru/alphabet/alphabet_06.html</loc>
+	<lastmod>2020-07-20T02:04:54+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>http://summarytables.ru/alphabet/alphabet_07.html</loc>
+	<lastmod>2020-07-20T02:04:54+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>http://summarytables.ru/alphabet/alphabet_08.html</loc>
+	<lastmod>2020-07-20T02:04:55+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>http://summarytables.ru/alphabet/alphabet_09.html</loc>
+	<lastmod>2020-07-20T02:04:55+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>http://summarytables.ru/alphabet/alphabet_10.html</loc>
+	<lastmod>2020-07-20T02:04:55+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>http://summarytables.ru/alphabet/alphabet_11.html</loc>
+	<lastmod>2020-07-20T02:04:56+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>http://summarytables.ru/alphabet/alphabet_12.html</loc>
+	<lastmod>2020-07-20T02:04:55+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>http://summarytables.ru/alphabet/alphabet_13.html</loc>
+	<lastmod>2020-07-20T02:04:56+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
 	<loc>http://summarytables.ru/chess/pretendents_2020.html</loc>
-	<lastmod>2020-07-03T11:40:08+01:00</lastmod>
+	<lastmod>2020-07-20T02:04:55+01:00</lastmod>
 	<priority>0.8</priority>
 </url>
 </urlset>
