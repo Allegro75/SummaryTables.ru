@@ -12,3 +12,4 @@ _example_file.html
 service*.js
 *.php
 *.ini
+wildstat
