@@ -1,4 +1,3 @@
-YAROBOT
 <IfModule dir_module>
     DirectoryIndex index.php index.html
 </IfModule>
