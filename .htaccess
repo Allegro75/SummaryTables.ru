@@ -1,6 +1,2 @@
 DirectoryIndex index.php index.html
 AddDefaultCharset UTF-8
-<FilesMatch "\.(html)$">
-   Header set Cache-Control: "no-cache, no-store"
-   Header unset ETag
-</FilesMatch>
