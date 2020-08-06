@@ -1,5 +1,23 @@
 // Скрипты для автоматического создания обратной (с переменой очередности клубов) копиии
 // малой таблицы: 
+
+// Определяем основные (длинные) названия клубов:
+const h1TagContent = document.getElementsByTagName('h1')[0].textContent;    
+const headerDelimiterIndex = h1TagContent.indexOf(' - ');
+const longName2 = h1TagContent.slice(headerDelimiterIndex + 3);
+const longName1 = h1TagContent.slice(0, headerDelimiterIndex);
+
+// Для перезаписи мета-тэга description в head:
+const descrContent = document.querySelector(`meta[name="description"]`).getAttribute(`content`).trim();
+const pointIndInDescrCont = descrContent.indexOf(`.`);
+const pairPartOfDescrCont = descrContent.slice(0, pointIndInDescrCont);
+const newDescrContent = `${longName2} - ${longName1}${descrContent.slice(pointIndInDescrCont)}`;
+document.querySelector(`meta[name="description"]`).setAttribute(`content`, newDescrContent);
+
+// Для перезаписи мета-тэга keywords в head:
+document.querySelector(`meta[name="keywords"]`).setAttribute(`content`, `${longName2}. ${longName1}.
+Личные встречи. Личный счет. vs. История игр. История противостояний.
+Футбол. Еврокубки.`);
     
 // Для перезаписи тэга title в head:
 const titleTagContent = document.getElementsByTagName('title')[0].textContent;    
@@ -17,12 +35,8 @@ logotypes[1].classList.toggle('logo-left');
 logotypes[1].classList.toggle('logo-right');    
     
 // Для перезаписи заголовка:
-const h3TagContent = document.getElementsByTagName('h3')[0].textContent;    
-const headerDelimiterIndex = h3TagContent.indexOf(' - ');
-const longName2 = h3TagContent.slice(headerDelimiterIndex + 3);
-const longName1 = h3TagContent.slice(0, headerDelimiterIndex);
 const newHeaderContent = `${longName2} - ${longName1}`;
-document.getElementsByTagName('h3')[0].textContent = newHeaderContent;
+document.getElementsByTagName('h1')[0].textContent = newHeaderContent;
     
 // Для перезаписи абзацев с общей статой по матчам:
 //
@@ -42,12 +56,13 @@ const goalsPText = paragraphs[2].textContent,
 paragraphs[2].textContent = `${goalsPText.slice(0, 15)}${oldConcededGoales} - ${oldScoredGoals}`;  
     
 // Для перезаписи абзаца со счетом в дуэлях:
-const duelPs = document.querySelectorAll('div.duels-text p'),
-    duelsPText = duelPs[1].textContent,
-    oldDuelsVictories = duelsPText[0],
-    duelsSpaceIndex = duelsPText.lastIndexOf(' '),
-    oldDuelsDefeats = duelsPText[duelsSpaceIndex - 1];
-duelPs[1].textContent = `${oldDuelsDefeats}${duelsPText.slice(1, duelsSpaceIndex - 1)}${oldDuelsVictories}${duelsPText.slice(duelsSpaceIndex)}`;
+const duelSpans = document.querySelectorAll('div.duels-text p span'),
+    // duelsPText = duelPs[1].textContent.trim(),
+    oldDuelsVictories = duelSpans[0].textContent.trim(),
+    // duelsSpaceIndex = duelsPText.lastIndexOf(' '),
+    oldDuelsDefeats = duelSpans[1].textContent.trim();
+    duelSpans[0].textContent = oldDuelsDefeats;
+    duelSpans[1].textContent = oldDuelsVictories;
 //
 
 // Для перезаписи цвета строк (красный - зелёный):
@@ -87,7 +102,7 @@ fieldCells[i].textContent = 'д';
 // Для перезаписи колонки таблицы "Счёт":
 const scoreCells = document.querySelectorAll('table tr td:nth-child(3)');
 for (let i = 1; i < scoreCells.length; i += 1) {
-    let cellText = scoreCells[i].innerHTML;
+    let cellText = scoreCells[i].innerHTML.trim();
     let oldScoredGoals = cellText[0];
     let oldConcededGoales = cellText[4];
     if ( cellText.includes('победа') ) {

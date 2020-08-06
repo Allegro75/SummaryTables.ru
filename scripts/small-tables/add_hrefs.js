@@ -71,8 +71,8 @@ document.addEventListener('DOMContentLoaded', () => {
             
             if (+table.rows[i].cells[3].textContent >= 1995) {
                 
-                if (table.rows[i].cells[5].textContent === `группа` ||
-                table.rows[i].cells[5].textContent === `отбор`) {
+                if (table.rows[i].cells[5].textContent.trim() === `группа` ||
+                table.rows[i].cells[5].textContent.trim() === `отбор`) {
                     addHrefToRow(i, +table.rows[i].cells[3].textContent + 1, ['CL', 'лиги чемпионов']);
                 }
                 else if (table.rows[i].cells[5].textContent === `группа2`) {
