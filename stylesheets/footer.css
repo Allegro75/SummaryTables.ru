@@ -7,3 +7,12 @@ footer{
   color: #f5deb3;
   text-align: center;
 }
+
+a.social{
+  margin-right: 15px;
+  text-decoration: none;
+}
+
+a.social:last-child{
+  margin-right: 0;
+}
