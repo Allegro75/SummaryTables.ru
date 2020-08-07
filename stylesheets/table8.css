@@ -43,6 +43,8 @@ table.main-table{
   max-width: 10em;  
   padding: 0.6em;
   border-right: 0.12em solid gray;
+  position: relative; /*Это нужно, чтоб внутри ячеек
+  абсолютно позиционировать иконки с восклицательным знаком*/
 }
 
 .main-table td.statistics{
@@ -126,6 +128,12 @@ img.nottingham{
   font-size: 1.68em;
   /* margin: 0.35em 0.24em; */
   margin: 0.32em 0.24em;  
+}
+
+img.current-pair{
+  position: absolute;
+  bottom: 1px;
+  right: 1px;
 }
 
 tr.logotypes td.main-table_criterion{
