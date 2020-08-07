@@ -263,19 +263,19 @@ p.table-explanation__explanation{
   grid-area: c3;
 }
 
-.nations__item.ukraine{
+.nations__item.russia{
   grid-area: a4;
 }
 
-.nations__item.russia{
+.nations__item.hungary{
   grid-area: b4;
 }
 
-.nations__item.hungary{
+.nations__item.gdr{
   grid-area: c4;
 }
 
-.nations__item.gdr{
+.nations__item.switzerland{
   grid-area: a5;
 }
 
@@ -283,11 +283,11 @@ p.table-explanation__explanation{
   grid-area: b5;
 }
 
-.nations__item.sweden{
+.nations__item.ukraine{
   grid-area: c5;
 }
 
-.nations__item.romania{
+.nations__item.sweden{
   grid-area: a6;
 }
 
@@ -303,7 +303,7 @@ p.table-explanation__explanation{
   grid-area: a7;
 }
 
-.nations__item.switzerland{
+.nations__item.romania{
   grid-area: b7;
 }
 
