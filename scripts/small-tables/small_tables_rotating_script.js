@@ -43,10 +43,20 @@ document.getElementsByTagName('h1')[0].textContent = newHeaderContent;
 // Для перезаписи абзаца с победами-поражениями:
 const paragraphs = document.getElementsByTagName('p'),
     resultsPText = paragraphs[1].textContent,
-    oldVictories = resultsPText[0],
+    oldVictories = +resultsPText[0],
+    resFirstCommaInd = resultsPText.indexOf(`,`);
+    resSecCommaInd = resultsPText.lastIndexOf(`,`);
     resultsSpaceIndex = resultsPText.lastIndexOf(' '),
-    oldDefeats = resultsPText[resultsSpaceIndex - 1];
-paragraphs[1].textContent = `${oldDefeats}${resultsPText.slice(1, resultsSpaceIndex - 1)}${oldVictories}${resultsPText.slice(resultsSpaceIndex)}`;   
+    oldDefeats = +resultsPText[resultsSpaceIndex - 1];
+let victInRus;
+if (oldDefeats === 1) {victInRus = `победа`;}
+else if ((oldDefeats !== 0) && (oldDefeats <= 4)) {victInRus = `победы`;}
+else {victInRus = `побед`;}
+let lesionsInRus;
+if (oldVictories === 1) {lesionsInRus = `поражение`;}
+else if ((oldVictories !== 0) && (oldVictories <= 4)) {lesionsInRus = `поражения`;}
+else {lesionsInRus = `поражений`;}
+paragraphs[1].textContent = `${oldDefeats} ${victInRus}${resultsPText.slice(resFirstCommaInd, resSecCommaInd + 1)} ${oldVictories} ${lesionsInRus}`;   
 
 // Для перезаписи абзаца с разницей мячей:
 const goalsPText = paragraphs[2].textContent,
@@ -57,12 +67,13 @@ paragraphs[2].textContent = `${goalsPText.slice(0, 15)}${oldConcededGoales} - ${
     
 // Для перезаписи абзаца со счетом в дуэлях:
 const duelSpans = document.querySelectorAll('div.duels-text p span'),
-    // duelsPText = duelPs[1].textContent.trim(),
     oldDuelsVictories = duelSpans[0].textContent.trim(),
-    // duelsSpaceIndex = duelsPText.lastIndexOf(' '),
     oldDuelsDefeats = duelSpans[1].textContent.trim();
-    duelSpans[0].textContent = oldDuelsDefeats;
-    duelSpans[1].textContent = oldDuelsVictories;
+    parToRewrite = document.querySelectorAll('div.duels-text p')[1];
+parToRewrite.innerHTML = `
+<span class="duels-score">${oldDuelsDefeats}</span> ${victInRus} в дуэлях, 
+<span class="duels-score">${oldDuelsVictories}</span> ${lesionsInRus}
+`; 
 //
 
 // Для перезаписи цвета строк (красный - зелёный):
