@@ -27,6 +27,7 @@ table.main-table{
 .main-table tr:nth-child(odd){
   background-color:rgba(0, 0, 0, 0.1);
 }
+
 .main-table tr:nth-child(even){
   background-color: aliceblue;
 }
@@ -36,6 +37,28 @@ table.main-table{
 }
 .main-table tr:nth-child(even) td.main-table_gap{
   background: rgba(0, 0, 0, 0.16);
+}
+
+/* Для обесцвечивания выбывших команд в файлах текущих турниров: */
+.main-table tr.dropout{
+  filter: opacity(35%);
+}
+table.champs-league tr td:nth-child(9),
+table.champs-league tr td:nth-child(10),
+table.euroleague tr td:nth-child(8),
+table.euroleague tr td:nth-child(9),
+table.euroleague tr td:nth-child(10),
+table.euroleague tr td:nth-child(11) {
+  filter: opacity(35%);
+}
+table.champs-league tr:first-child td{
+  filter: none;
+}
+table.champs-league tr:first-child td:nth-child(7),
+table.champs-league tr:first-child td:nth-child(8),
+table.euroleague tr:first-child td:nth-child(6),
+table.euroleague tr:first-child td:nth-child(7){
+  filter: opacity(35%);
 }
 
 .main-table td{
