@@ -46,18 +46,19 @@ table.main-table{
 table.champs-league tr td:nth-child(8),
 table.champs-league tr td:nth-child(9),
 table.champs-league tr td:nth-child(10),
+table.champs-league tr td:nth-child(11),
 table.euroleague tr td:nth-child(8),
 table.euroleague tr td:nth-child(9),
 table.euroleague tr td:nth-child(10),
 table.euroleague tr td:nth-child(11) {
   filter: opacity(35%);
 }
-table.champs-league tr:first-child td{
+/* table.champs-league tr:first-child td{
   filter: none;
-}
+} */
 table.champs-league tr:first-child td:nth-child(6),
 table.champs-league tr:first-child td:nth-child(7),
-table.champs-league tr:first-child td:nth-child(8),
+/* table.champs-league tr:first-child td:nth-child(8), */
 table.euroleague tr:first-child td:nth-child(6),
 table.euroleague tr:first-child td:nth-child(7){
   filter: opacity(35%);
