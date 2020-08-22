@@ -32,6 +32,10 @@ table.main-table{
   background-color: aliceblue;
 }
 
+.main-table.euroleague tr:nth-child(2){
+  background-color: rgba(255, 238, 0, 0.2);
+}
+
 .main-table tr:nth-child(odd) td.main-table_gap{
   background: rgba(255, 255, 255, 0.3);
 }
@@ -148,7 +152,7 @@ img.nottingham{
   margin: 0.32em 0.24em;  
 }
 
-img.current-pair{
+img.current-pair, img.winner{
   position: absolute;
   bottom: 1px;
   right: 1px;
