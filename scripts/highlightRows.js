@@ -22,10 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
             } else if ( item.classList.contains(`explanation_ukraine`) ) {
                 item.style.backgroundColor = `#66ccff`;
                 highlightRows(`ukraine`, `#66ccff`);
-            } else if ( item.classList.contains(`explanation_current`) ) {
-                item.style.backgroundColor = `#ffffcc`;
-                highlightRows(`current`, `#ffffcc`);
-            }
+            } 
+            // Деактивировал строку с текущими клубами с связи с завершением сезона:
+            // else if ( item.classList.contains(`explanation_current`) ) {
+            //     item.style.backgroundColor = `#ffffcc`;
+            //     highlightRows(`current`, `#ffffcc`);
+            // }
         });
         item.addEventListener('mouseout', () => {
             if ( item.classList.contains(`explanation_russia`) ) {
