@@ -237,7 +237,7 @@ p.table-explanation__explanation{
   grid-area: b1;
 }
 
-.nations__item.spain{
+.nations__item.ESP{
   grid-area: c1;
 }
 
@@ -325,7 +325,7 @@ p.table-explanation__explanation{
   grid-area: c8;
 }
 
-.nations__item.slovakia{
+.nations__item.SVK{
   grid-area: a9;
   border-right: none;
 }
