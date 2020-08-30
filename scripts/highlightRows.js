@@ -16,12 +16,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const allLegendStripes = document.querySelectorAll(`.table-explanation__explanation`);    
     allLegendStripes.forEach(item => {
         item.addEventListener('mouseover', () => {
-            if ( item.classList.contains(`explanation_russia`) ) {
+            if ( item.classList.contains(`explanation_RUS`) ) {
                 item.style.backgroundColor = `#FF9999`;
-                highlightRows(`russia`, `#FF9999`);
-            } else if ( item.classList.contains(`explanation_ukraine`) ) {
+                highlightRows(`RUS`, `#FF9999`);
+            } else if ( item.classList.contains(`explanation_UKR`) ) {
                 item.style.backgroundColor = `#66ccff`;
-                highlightRows(`ukraine`, `#66ccff`);
+                highlightRows(`UKR`, `#66ccff`);
             } 
             // Деактивировал строку с текущими клубами с связи с завершением сезона:
             // else if ( item.classList.contains(`explanation_current`) ) {
@@ -30,11 +30,11 @@ document.addEventListener('DOMContentLoaded', () => {
             // }
         });
         item.addEventListener('mouseout', () => {
-            if ( item.classList.contains(`explanation_russia`) ) {
-                returnColor(`russia`);
+            if ( item.classList.contains(`explanation_RUS`) ) {
+                returnColor(`RUS`);
                 item.style.backgroundColor = ``;
-            } else if ( item.classList.contains(`explanation_ukraine`) ) {
-                returnColor(`ukraine`);
+            } else if ( item.classList.contains(`explanation_UKR`) ) {
+                returnColor(`UKR`);
                 item.style.backgroundColor = ``;
             } else if ( item.classList.contains(`explanation_current`) ) {
                 returnColor(`current`);

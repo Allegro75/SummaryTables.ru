@@ -141,11 +141,11 @@ td.main-table_victory{
     width: 26px;
 }
 
-.main-table tr.russia, p.explanation_russia{
+.main-table tr.RUS, p.explanation_RUS{
   background-color: rgba(255, 0, 0, 0.3);
 }
 
-.main-table tr.ukraine, p.explanation_ukraine{
+.main-table tr.UKR, p.explanation_UKR{
   background-color: rgba(0, 0, 255, 0.2);
 }
 
@@ -229,11 +229,11 @@ p.table-explanation__explanation{
   font-weight: bold;
 }
 
-.nations__item.england{
+.nations__item.ENG{
   grid-area: a1;
 }
 
-.nations__item.germany{
+.nations__item.GER{
   grid-area: b1;
 }
 
@@ -241,87 +241,87 @@ p.table-explanation__explanation{
   grid-area: c1;
 }
 
-.nations__item.italy{
+.nations__item.ITA{
   grid-area: a2;
 }
 
-.nations__item.france{
+.nations__item.FRA{
   grid-area: b2;
 }
 
-.nations__item.holland{
+.nations__item.HOL{
   grid-area: c2;
 }
 
-.nations__item.scotland{
+.nations__item.SCO{
   grid-area: a3;
 }
 
-.nations__item.belgium{
+.nations__item.BEL{
   grid-area: b3;
 }
 
-.nations__item.portugal{
+.nations__item.POR{
   grid-area: c3;
 }
 
-.nations__item.russia{
+.nations__item.RUS{
   grid-area: a4;
 }
 
-.nations__item.hungary{
+.nations__item.HUN{
   grid-area: b4;
 }
 
-.nations__item.gdr{
+.nations__item.GDR{
   grid-area: c4;
 }
 
-.nations__item.switzerland{
+.nations__item.SUI{
   grid-area: a5;
 }
 
-.nations__item.serbia{
+.nations__item.SRB{
   grid-area: b5;
 }
 
-.nations__item.ukraine{
+.nations__item.UKR{
   grid-area: c5;
 }
 
-.nations__item.sweden{
+.nations__item.SWE{
   grid-area: a6;
 }
 
-.nations__item.austria{
+.nations__item.AUT{
   grid-area: b6;
 }
 
-.nations__item.czechia{
+.nations__item.CZE{
   grid-area: c6;
 }
 
-.nations__item.croatia{
+.nations__item.CRO{
   grid-area: a7;
 }
 
-.nations__item.romania{
+.nations__item.ROU{
   grid-area: b7;
 }
 
-.nations__item.greece{
+.nations__item.GRE{
   grid-area: c7;
 }
 
-.nations__item.turkey{
+.nations__item.TUR{
   grid-area: a8;
 }
 
-.nations__item.bulgary{
+.nations__item.BUL{
   grid-area: b8;
 }
 
-.nations__item.poland{
+.nations__item.POL{
   grid-area: c8;
 }
 
