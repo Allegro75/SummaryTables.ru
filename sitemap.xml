@@ -9,6 +9,10 @@
 	<priority>1.0</priority>
 </url>
 <url>
+	<loc>http://summarytables.ru/champ_league_current.html</loc>
+	<priority>1.0</priority>
+</url>
+<url>
 	<loc>http://summarytables.ru/euroleague.html</loc>
 	<priority>1.0</priority>
 </url>
