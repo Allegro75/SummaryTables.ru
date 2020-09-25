@@ -12,9 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
         for (let ci = 2; ci <= 5; ci ++) {
             let node = table.rows[rowIndex].cells[ci];
             node.innerHTML = `
-                                <a href="http://wildstat.ru/p/50/ch/EUR_${tourney[0]}_${year - 1}_${year}" 
+                                <a href="../archive/${tourney[0]}/${tourney[1]}_${year}.html" 
                                 target="_blank"
-                                title="Посмотреть турнир ${tourney[1]} ${year - 1}/${year}">
+                                title="Посмотреть турнир ${tourney[2]} ${year - 1}/${year}">
                                     ${node.innerHTML}
                                 </a>                            
                             `;        
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         for (let ci = 2; ci <= 5; ci ++) {
             let node = table.rows[rowIndex].cells[ci];
             node.innerHTML = `
-                                <a href="http://wildstat.ru/p/51/ch/EUR_ICFC_1958_1960" 
+                                <a href="../archive/euroleague/el_1960.html" 
                                 target="_blank"
                                 title="Посмотреть турнир кубка ярмарок 1958/1960">
                                     ${node.innerHTML}
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         for (let ci = 2; ci <= 5; ci ++) {
             let node = table.rows[rowIndex].cells[ci];
             node.innerHTML = `
-                                <a href="http://wildstat.ru/p/51/ch/EUR_ICFC_1955_1958" 
+                                <a href="../archive/euroleague/el_1958.html" 
                                 target="_blank"
                                 title="Посмотреть турнир кубка ярмарок 1955/1958">
                                     ${node.innerHTML}
@@ -73,14 +73,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 if (table.rows[i].cells[5].textContent.trim() === `группа` ||
                 table.rows[i].cells[5].textContent.trim() === `отбор`) {
-                    addHrefToRow(i, +table.rows[i].cells[3].textContent + 1, ['CL', 'лиги чемпионов']);
+                    addHrefToRow(i, +table.rows[i].cells[3].textContent + 1, ['champ_league', 'cl', 'лиги чемпионов']);
                 }
                 else if (table.rows[i].cells[5].textContent === `группа2`) {
                     let year = defineYearForGroupStage(i);
-                    addHrefToRow(i, year, ['CL', 'лиги чемпионов']);
+                    addHrefToRow(i, year, ['champ_league', 'cl', 'лиги чемпионов']);
                 }
                 else {
-                    addHrefToRow(i, +table.rows[i].cells[3].textContent, ['CL', 'лиги чемпионов']);
+                    addHrefToRow(i, +table.rows[i].cells[3].textContent, ['champ_league', 'cl', 'лиги чемпионов']);
                 }
             }
 
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
             else if (+table.rows[i].cells[3].textContent == 1994) {        
                 // Тут всё обычно - для стадии отбора:        
                 if (table.rows[i].cells[5].textContent === `отбор`) {
-                    addHrefToRow(i, +table.rows[i].cells[3].textContent + 1, ['CL', 'лиги чемпионов']);
+                    addHrefToRow(i, +table.rows[i].cells[3].textContent + 1, ['champ_league', 'cl', 'лиги чемпионов']);
                 }
 
                 // Вот тут всё оригинальное содержание:
@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     // Если год этой игры - 1993, то год турнира - 1994:
                     if (+neighborGameRow1994.cells[3].textContent == 1993) {
-                        addHrefToRow(i, 1994, ['CL', 'лиги чемпионов']);
+                        addHrefToRow(i, 1994, ['champ_league', 'cl', 'лиги чемпионов']);
                     }
 
                     else {
@@ -121,18 +121,18 @@ document.addEventListener('DOMContentLoaded', () => {
                             pairHeader == `Андерлехт - Порто` ||
                             pairHeader == `Милан - Вердер` ||
                             pairHeader == `Вердер - Милан`) {
-                                addHrefToRow(i, 1994, ['CL', 'лиги чемпионов']);
+                                addHrefToRow(i, 1994, ['champ_league', 'cl', 'лиги чемпионов']);
                             }
                     // 2) мы имеем дело с обычным розыгрышем 1994-1995,
                         else {
-                            addHrefToRow(i, 1995, ['CL', 'лиги чемпионов']); 
+                            addHrefToRow(i, 1995, ['champ_league', 'cl', 'лиги чемпионов']); 
                         }
                     }                    
                 }
 
                 // А тут уже как обычно - для стадии плей-офф:
                 else {
-                    addHrefToRow(i, +table.rows[i].cells[3].textContent, ['CL', 'лиги чемпионов']);
+                    addHrefToRow(i, +table.rows[i].cells[3].textContent, ['champ_league', 'cl', 'лиги чемпионов']);
                 }
             }            
 
@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
             (+table.rows[i].cells[3].textContent < 1994) ) {
                 
                 let tour = (table.rows[i].cells[4].textContent.includes(`Лига`)) ?
-                ['CL', 'лиги чемпионов'] : ['CC', 'кубка чемпионов'];  
+                ['champ_league', 'cl', 'лиги чемпионов'] : ['champ_league', 'cl', 'кубка чемпионов'];  
 
                 if (table.rows[i].cells[5].textContent === `группа`) {
                     let year = defineYearForGroupStage(i);
@@ -159,17 +159,17 @@ document.addEventListener('DOMContentLoaded', () => {
             
 
             else if (+table.rows[i].cells[3].textContent < 1991) {
-            // Надо иметь в виду исключтительный розыгрыш КЧ 1955/1956 (первый КЧ в истории).
+            // Надо иметь в виду исключительный розыгрыш КЧ 1955/1956 (первый КЧ в истории).
             // Там нек-рые матчи 1/4 проходили в 1955. В частности, Милан - Рапид Вена.
             // Если Рапид Вена когда-нибудь будет добавлен, то надо будет доработать скрипт.
 
                 if ( (table.rows[i].cells[5].textContent === `ФИНАЛ`) ||
                 (table.rows[i].cells[5].textContent === `1/2`) ||
                 (table.rows[i].cells[5].textContent === `1/4`) ) {
-                    addHrefToRow(i, +table.rows[i].cells[3].textContent, ['CC', 'кубка чемпионов']);
+                    addHrefToRow(i, +table.rows[i].cells[3].textContent, ['champ_league', 'cl', 'кубка чемпионов']);
                 }
                 else {
-                    addHrefToRow(i, +table.rows[i].cells[3].textContent + 1, ['CC', 'кубка чемпионов']);
+                    addHrefToRow(i, +table.rows[i].cells[3].textContent + 1, ['champ_league', 'cl', 'кубка чемпионов']);
                 }
             }        
         }
@@ -185,17 +185,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 if ( (table.rows[i].cells[5].textContent === `ФИНАЛ`) ||
                 (table.rows[i].cells[5].textContent === `1/2`) ||
                 (table.rows[i].cells[5].textContent === `1/4`) ) {
-                    addHrefToRow(i, +table.rows[i].cells[3].textContent, ['CWC', 'кубка кубков']);            
+                    addHrefToRow(i, +table.rows[i].cells[3].textContent, ['cup_win_cup', 'cwc', 'кубка кубков']);            
                 }
                 else {
-                    addHrefToRow(i, +table.rows[i].cells[3].textContent + 1, ['CWC', 'кубка кубков']);
+                    addHrefToRow(i, +table.rows[i].cells[3].textContent + 1, ['cup_win_cup', 'cwc', 'кубка кубков']);
                 }
             }
 
             // Специально для первого кубка кубков (1960/1961), в к-ром
             // 1/4 финала игралась в 1960 г.:        
             else {
-                addHrefToRow(i, +table.rows[i].cells[3].textContent + 1, ['CWC', 'кубка кубков']);
+                addHrefToRow(i, +table.rows[i].cells[3].textContent + 1, ['cup_win_cup', 'cwc', 'кубка кубков']);
             }
         }
 
@@ -208,10 +208,10 @@ document.addEventListener('DOMContentLoaded', () => {
         ( table.rows[i].cells[4].textContent.includes(`Европы`) ) ) {
             if ( ( table.rows[i].cells[5].textContent.includes(`группа`) ) ||
             ( table.rows[i].cells[5].textContent.includes(`отбор`) ) ) {
-                addHrefToRow(i, +table.rows[i].cells[3].textContent + 1, ['EL', 'лиги Европы']);         
+                addHrefToRow(i, +table.rows[i].cells[3].textContent + 1, ['euroleague', 'el', 'лиги Европы']);         
             }
             else {
-                addHrefToRow(i, +table.rows[i].cells[3].textContent, ['EL', 'лиги Европы']);        
+                addHrefToRow(i, +table.rows[i].cells[3].textContent, ['euroleague', 'el', 'лиги Европы']);        
             }
         }
 
@@ -228,9 +228,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             ( (table.rows[i].cells[5].textContent === `1/16`) &&
             (+table.rows[i].cells[3].textContent >= 2004) ) ) {
-                addHrefToRow(i, +table.rows[i].cells[3].textContent, ['UEFA', 'кубка УЕФА']);
+                addHrefToRow(i, +table.rows[i].cells[3].textContent, ['euroleague', 'el', 'кубка УЕФА']);
             } else {
-                addHrefToRow(i, +table.rows[i].cells[3].textContent + 1, ['UEFA', 'кубка УЕФА']);
+                addHrefToRow(i, +table.rows[i].cells[3].textContent + 1, ['euroleague', 'el', 'кубка УЕФА']);
             }
         }
 
@@ -242,39 +242,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if ( (table.rows[i].cells[5].textContent === `ФИНАЛ`) ||
                 (table.rows[i].cells[5].textContent === `1/2`) ) {
-                    addHrefToRow(i, +table.rows[i].cells[3].textContent, ['ICFC', 'кубка ярмарок']);
+                    addHrefToRow(i, +table.rows[i].cells[3].textContent, ['euroleague', 'el', 'кубка ярмарок']);
                 }
                 
                 else if (table.rows[i].cells[5].textContent === `1/4`) {
                     if ( (+table.rows[i].cells[3].textContent == 1961) ||
                     (+table.rows[i].cells[3].textContent == 1960) ) {
-                        addHrefToRow(i, 1961, ['ICFC', 'кубка ярмарок']);
+                        addHrefToRow(i, 1961, ['euroleague', 'el', 'кубка ярмарок']);
                     } else {
-                        addHrefToRow(i, +table.rows[i].cells[3].textContent, ['ICFC', 'кубка ярмарок']);
+                        addHrefToRow(i, +table.rows[i].cells[3].textContent, ['euroleague', 'el', 'кубка ярмарок']);
                     }
                 }
 
                 else if (table.rows[i].cells[5].textContent === `1/8`) {
                     if ( table.rows[i].cells[3].classList.contains(`next-year-tourney`) ) {
-                        addHrefToRow(i, +table.rows[i].cells[3].textContent + 1, ['ICFC', 'кубка ярмарок']);
+                        addHrefToRow(i, +table.rows[i].cells[3].textContent + 1, ['euroleague', 'el', 'кубка ярмарок']);
                     } else {
                         let year = defineYearForGroupStage(i);
-                        addHrefToRow(i, year, ['ICFC', 'кубка ярмарок']);                    
+                        addHrefToRow(i, year, ['euroleague', 'el', 'кубка ярмарок']);                    
                     } 
                 }
 
                 else {
-                    addHrefToRow(i, +table.rows[i].cells[3].textContent + 1, ['ICFC', 'кубка ярмарок']);
+                    addHrefToRow(i, +table.rows[i].cells[3].textContent + 1, ['euroleague', 'el', 'кубка ярмарок']);
                 }
             }
 
             else if (+table.rows[i].cells[3].textContent == 1960) {
                 if (table.rows[i].cells[5].textContent === `1/4`) {
                     let year = defineYearForGroupStage(i);
-                    addHrefToRow(i, year, ['ICFC', 'кубка ярмарок']);                 
+                    addHrefToRow(i, year, ['euroleague', 'el', 'кубка ярмарок']);                 
                 } 
                 else if (table.rows[i].cells[5].textContent === `1/8`) {
-                    addHrefToRow(i, +table.rows[i].cells[3].textContent + 1, ['ICFC', 'кубка ярмарок']);
+                    addHrefToRow(i, +table.rows[i].cells[3].textContent + 1, ['euroleague', 'el', 'кубка ярмарок']);
                 } 
                 else {
                     addHrefForFairCup5860(i);
