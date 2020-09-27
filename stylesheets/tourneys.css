@@ -4,6 +4,7 @@
 
 .stage_final .tour-stage_name {
     font-size: 24px;
+    text-transform: uppercase;
 }
 
 .tour-stage_name {
@@ -53,6 +54,10 @@
 .content-row div.matches-row_1-match{
     display: grid;
     grid-template-columns: 1fr 100px 1fr;
+}
+
+div.stage_final .content-row_2-matches{
+    display: block;
 }
 
 .matches-row__1st-club,
@@ -252,8 +257,6 @@ table.group-table .group_field-data{
     font-weight: normal;
 }
 
-
-
 .stage_final .content-row_row-1{
     display: grid;
     grid-template-columns: 1fr 100px 1fr;
@@ -284,7 +287,7 @@ img.img_flag {
     /* Ниже коррекция, к-рая почему-то не нужна в php-файлах,
     но в html вылезает дурное положение этих флагов: */
     position: relative;
-    top: 7px;
+    top: 2px;
 }
 
 table.group-table img.img_flag {
@@ -312,6 +315,10 @@ table.group-table img.img_flag {
     position: static;
 }
 
+.field-row__3rd-match{
+    margin-bottom: 5px;
+}
+
 .field-row__3rd-match div{
     margin-left: 5px;
     margin-right: 5px;
@@ -321,8 +328,16 @@ table.group-table img.img_flag {
     margin-right: 10px;
 }
 
+div.stage_final .content-row_2-matches .penalty{
+    margin-right: -10px;
+}
+
 .stage_final .field {
     margin-right: 5px;
+}
+
+.final-2matches .field_1 {
+    margin-right: 20px;
 }
 
 .stage_final .date {
@@ -330,5 +345,5 @@ table.group-table img.img_flag {
 }
 
 .stage-content {
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 }
