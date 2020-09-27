@@ -86,7 +86,8 @@ li.ussr:focus .nav__icon{
   background: url('../images/ussr_black.png');
 }
 
-li.history .nav__icon{
+li.history .nav__icon,
+li.archive .nav__icon{
   background: url('../images/history_icon.png');
 }
 
