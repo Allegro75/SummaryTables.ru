@@ -92,7 +92,9 @@ li.archive .nav__icon{
 }
 
 li.history:hover .nav__icon,
-li.history:focus .nav__icon{
+li.history:focus .nav__icon,
+li.archive:hover .nav__icon,
+li.archive:focus .nav__icon{
   background: url('../images/history_icon_black.png');
 }
 
