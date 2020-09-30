@@ -277,8 +277,17 @@ table.group-table .group_field-data{
     text-align: left;
 }
 
+.stage_final .club-name{
+    font-size: 1.2em;
+}
+
+.stage_final .club-name_winner{
+    font-size: 1.4em;
+}
+
 .stage_final .score {
     font-size: 21px;
+    position: static;
 }
 
 .logo {
