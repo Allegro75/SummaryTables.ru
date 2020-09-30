@@ -185,6 +185,12 @@ img.nottingham{
   border-radius: 0.3em;
 }
 
+/* Для слишком длинных названий клубов (типа "Вулверхэмптон"),
+к-рые в связи со своей длиной не встают в центр ячейки: */
+table span.long-club-title{
+    font-size: 0.8em;
+}
+
 table.group-table td{
   text-align: center;
   max-width: 10em;
