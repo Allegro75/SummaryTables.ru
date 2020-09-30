@@ -2,6 +2,10 @@
     margin-bottom: 15px;
 }
 
+.stage_et-pos-match{
+margin-top: 10px;
+}
+
 .stage_final .tour-stage_name {
     font-size: 24px;
     text-transform: uppercase;
@@ -283,11 +287,13 @@ table.group-table .group_field-data{
 
 .stage_final .club-name_winner{
     font-size: 1.4em;
+    bottom: 3px;
 }
 
 .stage_final .score {
     font-size: 21px;
-    position: static;
+    position: relative;
+    bottom: 1px;
 }
 
 .logo {
