@@ -240,10 +240,10 @@ img.football-logo-table{
 img.real{
   height: 36px;
 }
-/* Лого Гамбурга вытянуто в ширину, посему его настаиваем специально: */
+/* Лого Гамбурга вытянуто в ширину, посему его настраиваем специально: */
 .logo img.hamburg,
 img.hamburg{
-  width: 42px;
+  width: 27px;
   height: auto;
   position: relative;
   top: 0.2em;
