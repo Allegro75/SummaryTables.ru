@@ -253,6 +253,13 @@ img.hamburg{
   position: relative;
   top: 0.2em;
 }
+.logo img.leipzig,
+img.leipzig{
+  width: 48px;
+  height: auto;
+  position: relative;
+  top: 0.2em;
+}
 /* Ноттингемскому лого нужна подложка.
 Иначе бледно-красное на сером не смотрится: */
 img.nottingham{
