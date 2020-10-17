@@ -156,7 +156,7 @@ td.criterion_current-participant{
 td.criterion_current-participant, p.explanation_current{
   background: rgba(255, 255, 0, 0.4);
   /* В связи с окончанием сезона: */
-  color: gray;
+  /* color: gray; */
 }
 
 /* РУССКО-УКРАИНСКИЙ БЛОК: */

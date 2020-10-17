@@ -23,11 +23,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 item.style.backgroundColor = `#66ccff`;
                 highlightRows(`UKR`, `#66ccff`);
             } 
-            // Деактивировал строку с текущими клубами с связи с завершением сезона:
-            // else if ( item.classList.contains(`explanation_current`) ) {
-            //     item.style.backgroundColor = `#ffffcc`;
-            //     highlightRows(`current`, `#ffffcc`);
-            // }
+            else if ( item.classList.contains(`explanation_current`) ) {
+                item.style.backgroundColor = `#ffffcc`;
+                highlightRows(`current`, `#ffffcc`);
+            }
         });
         item.addEventListener('mouseout', () => {
             if ( item.classList.contains(`explanation_RUS`) ) {
