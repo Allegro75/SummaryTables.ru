@@ -168,6 +168,11 @@ div.duels-text{
   margin-top: 0.7em;
 }
 
+div.duels-text p{
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
 tr.duel-result{
   line-height: 0.1em;
 }
