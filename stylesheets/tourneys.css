@@ -248,7 +248,7 @@ img.real,
 /* Для эмблем, вытянутых в высоту внутри групповых таблиц: */
 table img.real,
 table .logo img.real{
-  height: 40px;
+  height: 36px;
 }
 /* table .logo img.real{
     position: relative;
