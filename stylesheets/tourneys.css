@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 .tour-stage {
     margin-bottom: 15px;
 }
@@ -45,7 +49,8 @@ margin-top: 10px;
 }
 
 
-.arrow-nav-btn{
+.arrow-nav-btn,
+#toTop {
     font-size: 16px;
     font-weight: bold;
     padding: 5px;
@@ -69,7 +74,8 @@ margin-top: 10px;
 } */
 
 .arrow-nav-btn_forward,
-.arrow-nav-btn_back{
+.arrow-nav-btn_back,
+#toTop{
     background-color: #666666;
     color: wheat;
 }
@@ -79,13 +85,15 @@ margin-top: 10px;
     width: 135px;
 }
 
-/* .ar-btn-inactive{
-    filter: opacity(50%);
-} */
-
-/* .tourney{
-    z-index: 20;
-} */
+#toTop {
+    display: none;
+    position: fixed;
+    bottom: 18px;
+    right: 18px;
+    z-index: 10;
+    padding: 15px;
+    border-radius: 7px;
+}
 
 .content-row:nth-child(odd) {
     background-color: rgba(255, 255, 255, 0.2);
