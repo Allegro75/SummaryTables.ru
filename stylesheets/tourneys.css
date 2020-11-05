@@ -245,6 +245,15 @@ img.real,
     position: relative;
     bottom: 0.3em;    
 }
+/* Для эмблем, вытянутых в высоту внутри групповых таблиц: */
+table img.real,
+table .logo img.real{
+  height: 40px;
+}
+/* table .logo img.real{
+    position: relative;
+    bottom: 0.3em;    
+} */
 /* Лого Гамбурга вытянуто в ширину, посему его настраиваем специально: */
 .logo img.hamburg,
 img.hamburg{
