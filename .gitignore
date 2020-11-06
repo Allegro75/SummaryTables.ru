@@ -13,3 +13,4 @@ service*.js
 php
 *.ini
 wildstat
+/service/*
