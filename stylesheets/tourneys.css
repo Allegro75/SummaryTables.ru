@@ -275,6 +275,13 @@ img.az{
   width: 36px;
   height: auto;
   position: relative;
+  top: 0.25em;
+}
+table .logo img.az,
+table img.az{
+  width: 36px;
+  height: auto;
+  position: relative;
   top: 0.1em;
 }
 .logo img.leipzig,
