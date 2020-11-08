@@ -251,7 +251,7 @@ img.real,
 }
 .logo img.real{
     position: relative;
-    bottom: 0.3em;    
+    bottom: 0.2em;    
 }
 /* Для эмблем, вытянутых в высоту внутри групповых таблиц: */
 table img.real,
