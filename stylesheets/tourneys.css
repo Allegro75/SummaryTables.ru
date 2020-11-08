@@ -247,7 +247,7 @@ img.football-logo-table{
 /* Для эмблем, вытянутых в высоту (Реал, Тоттенхэм, Порто, Милан): */
 img.real,
 .logo img.real{
-  height: 33px;
+  height: 29px;
 }
 .logo img.real{
     position: relative;
