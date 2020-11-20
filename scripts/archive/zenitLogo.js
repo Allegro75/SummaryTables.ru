@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Ищем логотипы для ЗАМЕНЫ на СВЕТЛОЕ в групповых таблицах:
     const queryPart = `table img.football-logo-table[src='../../images/`;
-    const logosToLightInTables = document.querySelectorAll(`${queryPart}Zen.png'], ${queryPart}Mar.png']`);
+    const logosToLightInTables = document.querySelectorAll(`${queryPart}Zen.png'], ${queryPart}Mar.png'], ${queryPart}Nan.png']`);
 
     // Если таких логотипов нет, то уходим:
     if (logosToLightInTables.length === 0) return;
