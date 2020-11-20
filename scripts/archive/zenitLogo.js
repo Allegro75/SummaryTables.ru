@@ -15,15 +15,15 @@ document.addEventListener('DOMContentLoaded', () => {
         // Если же чётный:
         else {
             // Меняем лого на белый в верхней строке:
-            zenitLogoInTable[0].setAttribute('src', '../../images/Zen_white.png');
+            zenitLogoInTable[0].setAttribute('src', '../../images/Zen_light.png');
             // Определяем строку Зенита:
             const zenitRowNumber = +zenitLogoInTable[1].parentElement.previousElementSibling.innerText;
             // Если номер строки нечётный, то уходим:
             if ((zenitRowNumber % 2) === 1) return;
             // Если же чётный:
             else {
-                zenitLogoInTable[1].setAttribute('src', '../../images/Zen_white.png');
-                zenitLogoInTable[2].setAttribute('src', '../../images/Zen_white.png');
+                zenitLogoInTable[1].setAttribute('src', '../../images/Zen_light.png');
+                zenitLogoInTable[2].setAttribute('src', '../../images/Zen_light.png');
             }
         }
     }
