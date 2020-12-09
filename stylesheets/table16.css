@@ -42,6 +42,8 @@ table.main-table{
   box-sizing: content-box;
   height: 41px;  
   padding: 0.2em;
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
   border-right: 0.15em solid gray;
 }
 
@@ -110,7 +112,7 @@ img.nottingham{
 }
 
 .main-table div.results p{
-  font-size: 9px;
+  font-size: 10px;
   /* font-size: 1.25em;   */
   margin: 0.25em auto;
 }
