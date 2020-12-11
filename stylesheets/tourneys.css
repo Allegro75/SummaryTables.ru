@@ -330,6 +330,10 @@ td.balls-cell{
     width: 90px;
 }
 
+.explanation-in-table{
+    font-size: 7px; 
+}
+
 table.group-table tr td:nth-child(9),
 table.group-table tr td:nth-child(10),
 table.group-table tr td:nth-child(11),
@@ -343,14 +347,6 @@ table.group-table tr td:nth-child(13)
 table.group-table tr td:last-child{
     font-size: 20px;
 }
-
-/* table.group-table tr td.gap{
-    max-width: 5px;
-} */
-
-/* table.group-table tr:first-child{
-    border-bottom: 0.15em solid gray; 
-} */
 
 table.group-table tr td:last-child{
     border-right: none;
