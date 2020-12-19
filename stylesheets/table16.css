@@ -45,6 +45,8 @@ table.main-table{
   padding-top: 0.1em;
   padding-bottom: 0.1em;
   border-right: 0.15em solid gray;
+  position: relative; /*Это нужно, чтоб внутри ячеек
+  абсолютно позиционировать иконки с восклицательным знаком*/  
 }
 
 .main-table td.statistics{
@@ -129,6 +131,15 @@ img.nottingham{
 .main-table td div.duels{
   font-size: 2.1em;
   margin: 0.35em 0.24em;
+  /* Чтобы инфа о статистике была выше восклицательного знака:*/
+  position: relative;
+  z-index: 1;
+}
+
+/* Чтобы инфа о статистике была выше восклицательного знака:*/
+.main-table td div.results{
+  position: relative;
+  z-index: 1;
 }
 
 tr.logotypes td.main-table_criterion{
@@ -137,4 +148,17 @@ tr.logotypes td.main-table_criterion{
 
 td.main-table_criterion{
   font-size: 2em;
+}
+
+img.screamer{
+  height: 20px;
+  position: relative;
+  top: 4px;
+}
+
+img.current-pair{
+  position: absolute;
+  bottom: 1px;
+  right: 1px;
+  height: 20px;  
 }
