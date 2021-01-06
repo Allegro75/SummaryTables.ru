@@ -1,33 +1,71 @@
+
 // Для ЗАМЕНЫ логотипов на лого другой светлоты:
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Формируем набор логотипов "Андерлехта" в строках таблиц:
-    let allAnderlLogos, pathToImage;
-    const tryToMakeLogosList = document.querySelectorAll(`.ab-row img[src='../images/And.png`);
-    if (tryToMakeLogosList.length > 0 ) {
-        allAnderlLogos = tryToMakeLogosList;
+    // Для определения КОДА клуба по адресу его лого:
+    const logoCode = (elem) => {
+        if (elem.getAttribute(`src`).slice(-9, -4) === `_dark`) {
+            return elem.getAttribute(`src`).slice(-12, -9);
+        } else
+        return elem.getAttribute(`src`).slice(-7, -4);
+    }    
+
+    // Формируем наборы логотипов (из строк таблиц) для изменения их светлоты:
+    let allLogosToLight, allLogosToDark;
+    let pathToImage;
+    let queryPart = `.ab-row img[src='../images/`; 
+
+    const tryToMakeBrightList = document.querySelectorAll(`${queryPart}And.png'], ${queryPart}Mar.png']`);
+    const tryToMakeDarkList = document.querySelectorAll(`${queryPart}And.png']`);
+
+    if (tryToMakeBrightList.length > 0 ) {
+        allLogosToLight = tryToMakeBrightList;
         pathToImage = `../images/`;
-    } else {
+    }
+    else {
         // Это сработает в файле alphabet.html из корня проекта:
-        allAnderlLogos = document.querySelectorAll(`.ab-row img[src='images/And.png`);        
-        if (allAnderlLogos.length === 0) return;
+        queryPart = `.ab-row img[src='images/`;
         pathToImage = `images/`;
+        allLogosToLight = document.querySelectorAll(`${queryPart}And.png'], ${queryPart}Mar.png']`);       
+        if (allLogosToLight.length === 0) return;
     }
 
-    // Перебираем массив логотипов:
-    for (let i = 0; i < allAnderlLogos.length; i++) {
+    // Перебираем массив логотипов для ОСВЕТЛЕНИЯ:
+    allLogosToLight.forEach(elem => {
         // Находим список, в к-ром находится данный логотип:
-        let listWLogo = allAnderlLogos[i].parentElement.parentElement.parentElement.parentElement;
+        let listWLogo = elem.parentElement.parentElement.parentElement.parentElement;
         // Находим строку, в к-рой находится данный логотип:
-        let strWLogo = allAnderlLogos[i].parentElement.parentElement.parentElement;
+        let strWLogo = elem.parentElement.parentElement.parentElement;        
         // Находим индекс строки с данным логотипом в списке:
         let indexInList = [...listWLogo.children].indexOf(strWLogo);
-
         if ((indexInList % 2) === 0) {
-            allAnderlLogos[i].setAttribute('src', `${pathToImage}And_light.png`);
-        } else {
-            allAnderlLogos[i].setAttribute('src', `${pathToImage}And_dark.png`);
-        }
+           elem.setAttribute('src', `${pathToImage}${logoCode(elem)}_light.png`);
+        }            
+    });
+
+    if (tryToMakeDarkList.length > 0 ) {
+        allLogosToDark = tryToMakeDarkList;
+        pathToImage = `../images/`;
     }
+    else {
+        // Это сработает в файле alphabet.html из корня проекта:
+        queryPart = `.ab-row img[src='images/`;
+        pathToImage = `images/`;
+        allLogosToDark = document.querySelectorAll(`${queryPart}And.png']`);;       
+        if (allLogosToDark.length === 0) return;
+    }
+
+    // Перебираем массив логотипов для ЗАТЕМНЕНИЯ:
+    allLogosToDark.forEach(elem => {
+        // Находим список, в к-ром находится данный логотип:
+        let listWLogo = elem.parentElement.parentElement.parentElement.parentElement;
+        // Находим строку, в к-рой находится данный логотип:
+        let strWLogo = elem.parentElement.parentElement.parentElement;        
+        // Находим индекс строки с данным логотипом в списке:
+        let indexInList = [...listWLogo.children].indexOf(strWLogo);
+        if ((indexInList % 2) === 1) {
+           elem.setAttribute('src', `${pathToImage}${logoCode(elem)}_dark.png`);
+        }            
+    });    
 
 });

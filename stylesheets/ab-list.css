@@ -140,29 +140,25 @@ span.range-place-text_number{
 .ab-row{
     padding-left: 10px;
     padding-right: 10px;
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-top: 1px;
+    padding-bottom: 1px;
     /* padding-top: auto;
     padding-bottom: auto; */
     cursor: pointer;
     width: 500px;
 }
 
-.marseille .ab-row,
-.row-w-marseille{
+.higher .ab-row,
+.row-w-higher{
     height: 23.2px;
-    /* box-sizing: border-box; */
-    /* vertical-align: middle; */
-    /* padding-top: 0;
-    padding-bottom: 0; */
 }
 
-.row-w-marseille .ab-pair-title,
-.row-w-marseille .ab-score,
-.marseille .ab-pair-title,
-.marseille .ab-score{
-    position: relative;
-    top: -3.5px;
+.row-w-higher .ab-pair-title,
+.row-w-higher .ab-score,
+.higher .ab-pair-title,
+.higher .ab-score{
+    /* position: relative;
+    top: -3.5px; */
 }
 
 .ab-row:nth-child(odd){
@@ -238,12 +234,10 @@ span.range-place-text_number{
     width: 65px;
 }
 
-/* Марсельскому лого нужна подложка.
-Иначе бледно-голубое на сером не смотрится: */
-img.nottingham{
-  border: 0.2em solid white; 
-  background-color: white;
-  border-radius: 0.3em;
+/* Для логотипов, нуждающихся в увеличении высоты (бывший класс 'real') */
+img.higher{
+    height: 23px;
+    margin: -1px 0;
 }
 
 .ablist-header__emblem > img.hamburg{
@@ -255,6 +249,9 @@ img.nottingham{
 
 .ab-pair-title__logo > img.hamburg{
     width: 20px;
+    height: auto;
+    position: relative;
+    top: 1px;
 }
 
 .ab-letter-block_low .ab-letter-block__letter{
