@@ -146,20 +146,13 @@ span.range-place-text_number{
     padding-bottom: auto; */
     cursor: pointer;
     width: 500px;
-}
-
-.higher .ab-row,
-.row-w-higher{
     height: 23.2px;
 }
 
-.row-w-higher .ab-pair-title,
-.row-w-higher .ab-score,
-.higher .ab-pair-title,
-.higher .ab-score{
-    /* position: relative;
-    top: -3.5px; */
-}
+/* .higher .ab-row,
+.row-w-higher{
+    height: 23.2px;
+} */
 
 .ab-row:nth-child(odd){
     background-color: rgba(36, 35, 35, 0.2);
