@@ -70,3 +70,9 @@ span.captions__explanation_larger{
 p.captions__explanation_12clubs{
   font-size: 1.2em;
 }
+
+img.screamer {
+  height: 20px;
+  position: relative;
+  top: 4px;
+}
