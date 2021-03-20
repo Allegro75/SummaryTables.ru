@@ -17,13 +17,6 @@ table.main-table{
   /* background: linear-gradient(to top left, rgba(170, 171, 172, 0.5), rgba(224, 221, 199, 0.5)); */
 }
 
-/* .main-table tr:nth-child(odd) td:not(.main-table_gap){
-  background-color:rgba(0, 0, 0, 0.1);
-}
-.main-table tr:nth-child(even) td:not(.main-table_gap){
-  background-color: aliceblue;
-} */
-
 .main-table tr:nth-child(odd){
   background-color:rgba(0, 0, 0, 0.1);
 }
@@ -32,10 +25,11 @@ table.main-table{
   background-color: aliceblue;
 }
 
-.main-table.champs-league tr:nth-child(2),
+/* Для обозначения победителя турнира: */
+/* .main-table.champs-league tr:nth-child(2),
 .main-table.euroleague tr:nth-child(2){
   background-color: rgba(255, 238, 0, 0.2);
-}
+} */
 
 .main-table tr:nth-child(odd) td.main-table_gap{
   background: rgba(255, 255, 255, 0.3);
@@ -48,18 +42,6 @@ table.main-table{
 .main-table tr.dropout{
   filter: opacity(35%);
 }
-/* table.champs-league tr td:nth-child(6),
-table.champs-league tr td:nth-child(8),
-table.champs-league tr td:nth-child(9),
-table.champs-league tr td:nth-child(10),
-table.champs-league tr td:nth-child(11) */
-/* table.euroleague tr td:nth-child(6), */
-/* {
-  filter: opacity(35%);
-} */
-/* table.champs-league tr:first-child td{
-  filter: none;
-} */
 
 .main-table td{
   text-align: center;
