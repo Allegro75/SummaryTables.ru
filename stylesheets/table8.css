@@ -55,7 +55,8 @@ table.main-table{
 .main-table td.statistics{
   box-sizing: content-box;
   max-height: 40px;  
-  min-width: 104px;
+  min-width: 130px;
+  max-width: 130px;
 }
 
 table.main-table tr td:last-child{
