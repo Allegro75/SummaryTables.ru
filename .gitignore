@@ -14,3 +14,4 @@ php
 *.ini
 wildstat
 /service/*
+/database/*
