@@ -39,6 +39,7 @@ p.btn-right__duels-explanation{
     text-align: justify;
 }
 
-#history25 p.btn-right__duels-explanation {
+#history25 p.btn-right__duels-explanation,
+#russia p.btn-right__duels-explanation {
     width: 100px;
 }
