@@ -38,3 +38,7 @@ p.btn-right__duels-explanation{
     white-space: normal;
     text-align: justify;
 }
+
+#history25 p.btn-right__duels-explanation {
+    width: 100px;
+}
