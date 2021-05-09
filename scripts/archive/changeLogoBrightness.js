@@ -3,20 +3,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Ищем логотипы для ЗАМЕНЫ на СВЕТЛОЕ в групповых таблицах:
     const queryPart = `table img.football-logo-table[src='../../images/`;
-    const logosToLightInTables = document.querySelectorAll(`${queryPart}Zen.png'], ${queryPart}Mar.png'], ${queryPart}Nan.png'], ${queryPart}And_dark.png'], ${queryPart}DyK.png']`);
+    const logosToLightInTables = document.querySelectorAll(`${queryPart}Zen.png'], ${queryPart}Mar.png'], ${queryPart}Nan.png'], ${queryPart}And_dark.png'], ${queryPart}DyK.png'], ${queryPart}Mon.png']`);
+    // Доп. массив для логотипов, нуждающихся в замене на светлый вариант даже на светло-сером фоне:
+    const additionalArray = [`Mon`, `Zen`];
 
     const logoCode = (elem) => {
         if (elem.getAttribute(`src`).slice(-9, -4) === `_dark`) {
             return elem.getAttribute(`src`).slice(-12, -9);
         } else
-        return elem.getAttribute(`src`).slice(-7, -4);
+            return elem.getAttribute(`src`).slice(-7, -4);
     }
+
+    // Служебный массив, в к-рый мы будем добавлять логоКоды по ходу перебора с тем, чтобы не обрабатыватьл заново уже перебранный клуб:
+    const noHandlingElems = [];
+
+    // Служебный массив, в к-рый мы будем добавлять логотипы из logosToLightInTables с тем, чтобы затем осветлить логотипы:
+    const toLightLogosInds = [];
 
     // Если такие логотипы есть:
     if (logosToLightInTables.length > 0) {
 
         // Запускаем перебор логотипов:
-        for (let i = 0; i <= logosToLightInTables.length - 3; i += 3) {
+        for (let i = 0; i <= logosToLightInTables.length - 3; i += 1) {
+
+            // Если такой клуб уже обработан - идём дальше:
+            if (noHandlingElems.includes(logoCode(logosToLightInTables[i]))) continue;
+
+            noHandlingElems.push(logoCode(logosToLightInTables[i]));
 
             // Определяем таблицу, в к-рой находится наше лого:
             const zenitTable = logosToLightInTables[i].parentElement.parentElement.parentElement.parentElement;
@@ -24,22 +37,40 @@ document.addEventListener('DOMContentLoaded', () => {
             // Определяем номер группы:
             const groupNumber = +zenitTable.querySelector(`thead td:first-child`).innerText;
 
-            // Если номер группы чётный:
-            if ((groupNumber % 2) === 0) {
-                // Меняем лого на светлый в верхней строке:
-                logosToLightInTables[i].setAttribute('src', `../../images/${logoCode(logosToLightInTables[i])}_light.png`);
+            // Если номер группы чётный
+            // или текущий лого относится к типу "Монако", нуждающихся в замене на светлый вариант даже на светло-сером фоне:
+            if (((groupNumber % 2) === 0) || (additionalArray.includes(logoCode(logosToLightInTables[i])))) {
+
+                toLightLogosInds.push(logosToLightInTables[i]);
+
+                // Определяем две следующих (после верхней строки группы) позиции текущего лого в logosToLightInTables:
+                let logo2 = logo3 = 0;
+                for (let innerIter = i + 1; logo3 === 0; innerIter += 1) {
+                    if (logoCode(logosToLightInTables[i]) === logoCode(logosToLightInTables[innerIter])) {
+                        if (logo2 === 0) {
+                            logo2 = innerIter;
+                        } else {
+                            logo3 = innerIter;
+                        }
+                    }
+                }
 
                 // Определяем строку нашего клуба:
-                const zenitRowNumber = +logosToLightInTables[i + 1].parentElement.previousElementSibling.innerText;
+                const zenitRowNumber = +logosToLightInTables[logo2].parentElement.previousElementSibling.innerText;
+
                 // Если номер строки нечётный, то уходим:
                 if ((zenitRowNumber % 2) === 1) continue;
                 // Если же чётный:
                 else {
-                    logosToLightInTables[i + 1].setAttribute('src', `../../images/${logoCode(logosToLightInTables[i + 1])}_light.png`);
-                    logosToLightInTables[i + 2].setAttribute('src', `../../images/${logoCode(logosToLightInTables[i + 2])}_light.png`);
+                    toLightLogosInds.push(logosToLightInTables[logo2], logosToLightInTables[logo3]);
                 }
             }
         }
+
+        // Осветляем логотипы:
+        toLightLogosInds.forEach((el) => {
+            el.setAttribute('src', `../../images/${logoCode(el)}_light.png`);
+        })
     }
 
     // Ищем логотипы для ЗАМЕНЫ на ТЁМНОЕ в групповых таблицах:
@@ -92,6 +123,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         }
-    }    
-    
+    }
+
 });
