@@ -35,17 +35,24 @@ margin-top: 10px;
 }
 
 .ar-nav-left{
-    /* float: left; */
-    /* margin-left: 3px; */    
     position: absolute;
     left: 3px;
 }
 
 .ar-nav-right{
-    /* float: right;
-    margin-right: 3px; */
     position: absolute;
     right: 3px;
+}
+
+.ar-nav-bottom {
+    /* height: 100px; */
+    /* width: 150px; */
+    /* background-color: #fff; */
+    position: fixed;
+    bottom: 3px;
+    right:50%;
+    transform: translate(+50%, 0%);
+    text-align: center;
 }
 
 
@@ -62,27 +69,19 @@ margin-top: 10px;
     margin-top: 5px;
 }
 
-/* .arrow-nav-btn_back{ */
-    /* float: left; */
-    /* width: 36px; */
-    /* margin-left: 3px; */
-/* } */
-
-/* .arrow-nav-btn_forward{
-    float: right;
-    margin-right: 3px;
-} */
-
 .arrow-nav-btn_forward,
 .arrow-nav-btn_back,
+.arrow-nav-btn_bottom,
 #toTop{
     background-color: #666666;
     color: wheat;
+    cursor: pointer;
 }
 
 .arrow-nav-btn_forward,
-.arrow-nav-btn_back{
-    width: 135px;
+.arrow-nav-btn_back,
+.arrow-nav-btn_bottom{
+    width: 100px;
 }
 
 #toTop {
@@ -258,10 +257,6 @@ table img.real,
 table .logo img.real{
   height: 36px;
 }
-/* table .logo img.real{
-    position: relative;
-    bottom: 0.3em;    
-} */
 /* Лого Гамбурга вытянуто в ширину, посему его настраиваем специально: */
 .logo img.hamburg,
 img.hamburg{

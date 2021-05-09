@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Если же нет (не кубком кубков):
             else {
                 leftCWCAnchor.setAttribute(`href`, `../cup_win_cup/cwc_${cTY - 1}.html`);
-                leftCWCAnchor.setAttribute(`title`, `Кубок кубков предыдущего сезона, ${cTY - 2}/${cTY - 1}`)
+                leftCWCAnchor.setAttribute(`title`, `Кубок кубков предыдущего сезона, ${cTY - 2}/${cTY - 1}`);
             }
             const leftCWCDiv = document.createElement(`div`);
             leftCWCAnchor.append(leftCWCDiv);
@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (curTourneyName === `cl`) {
             rightCLAnchor.setAttribute(`href`, `cl_${cTY + 1}.html`);
             if (cTY <= 1991) {
-                rightCLAnchor.setAttribute(`title`, `Следующий кубок чемпионов, ${cTY}/${cTY + 1}`);                
+                rightCLAnchor.setAttribute(`title`, `Следующий кубок чемпионов, ${cTY}/${cTY + 1}`);
             } else {
                 rightCLAnchor.setAttribute(`title`, `Следующая лига чемпионов, ${cTY}/${cTY + 1}`);
                 cLAbbr = `ЛЧ`;
@@ -224,7 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 rightELAnchor.setAttribute(`href`, `../euroleague/el_1958.html`);
                 rightELAnchor.setAttribute(`title`, `Следующий кубок ярмарок, 1955/1958`);
                 eLYear = 1958;
-            }              
+            }
             else if (cTY === 1958 || cTY === 1959) {
                 rightELAnchor.setAttribute(`href`, `../euroleague/el_1960.html`);
                 rightELAnchor.setAttribute(`title`, `Следующий кубок ярмарок, 1958/1960`);
@@ -252,4 +252,75 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }
 
+
+    // Создаём блок для ссылок на "соседние" турниры:
+    const bottomDiv = document.createElement(`div`);
+    document.body.append(bottomDiv);
+    bottomDiv.classList.add(`ar-nav-bottom`);
+
+    // Создаём ссылку на соседнюю лигу ЧЕМПИОНОВ:
+    if (curTourneyName !== `cl`) /* убеждаемся, что данный файл не является лигой чемпионов */ {
+        const bottomCLAnchor = document.createElement(`a`);
+        bottomDiv.append(bottomCLAnchor);
+        cLAbbr = `КЧ`;
+        bottomCLAnchor.setAttribute(`href`, `../champ_league/cl_${cTY}.html`);
+        if (cTY >= 1993) {
+            bottomCLAnchor.setAttribute(`title`, `Лига чемпионов этого сезона, ${cTY - 1}/${cTY}`);
+            cLAbbr = `ЛЧ`;
+        } else {
+            bottomCLAnchor.setAttribute(`title`, `Кубок чемпионов этого сезона, ${cTY - 1}/${cTY}`);
+        }
+        const bottomCLDiv = document.createElement(`div`);
+        bottomCLAnchor.append(bottomCLDiv);
+        bottomCLDiv.classList.add(`arrow-nav-btn`, `arrow-nav-btn_bottom`);
+        bottomCLDiv.innerText = `${cLAbbr} ${cTY}`;
+    }
+
+    // Создаём ссылку на соседний кубок КУБКОВ:
+    if ((cTY >= 1961) && (cTY <= 1999) && (curTourneyName !== `cwc`)) {
+        const bottomCWCAnchor = document.createElement(`a`);
+        bottomDiv.append(bottomCWCAnchor);
+        bottomCWCAnchor.setAttribute(`href`, `../cup_win_cup/cwc_${cTY}.html`);
+        bottomCWCAnchor.setAttribute(`title`, `Кубок кубков этого сезона, ${cTY - 1}/${cTY}`);
+        const bottomCWCDiv = document.createElement(`div`);
+        bottomCWCAnchor.append(bottomCWCDiv);
+        bottomCWCDiv.classList.add(`arrow-nav-btn`, `arrow-nav-btn_bottom`);
+        bottomCWCDiv.innerText = `КК ${cTY}`;
+    }
+
+    // Создаём ссылку на соседнюю лигу ЕВРОПЫ:
+    if ((cTY >= 1956) && (curTourneyName !== `el`)) {
+        const bottomELAnchor = document.createElement(`a`);
+        bottomDiv.append(bottomELAnchor);
+        let eLAbbr = `КЯ`;
+        let eLYear = cTY;     
+        if (cTY >= 1956 && cTY <= 1958) {
+            bottomELAnchor.setAttribute(`href`, `../euroleague/el_1958.html`);
+            bottomELAnchor.setAttribute(`title`, `Параллельно идущий кубок ярмарок, 1955/1958`);
+            eLYear = 1958;
+        }
+        else if (cTY === 1959 || cTY === 1960) {
+            bottomELAnchor.setAttribute(`href`, `../euroleague/el_1960.html`);
+            bottomELAnchor.setAttribute(`title`, `Параллельно идущий кубок ярмарок, 1958/1960`);
+            eLYear = 1960;
+        }
+        else if (cTY <= 1971) {
+            bottomELAnchor.setAttribute(`href`, `../euroleague/el_${cTY}.html`);
+            bottomELAnchor.setAttribute(`title`, `Кубок ярмарок этого сезона, ${cTY - 1}/${cTY}`);
+        }
+        else if (cTY <= 2009) {
+            bottomELAnchor.setAttribute(`href`, `../euroleague/el_${cTY}.html`);
+            bottomELAnchor.setAttribute(`title`, `Кубок УЕФА этого сезона, ${cTY - 1}/${cTY}`);
+            eLAbbr = `КУ`;
+        }
+        else {
+            bottomELAnchor.setAttribute(`href`, `../euroleague/el_${cTY}.html`);
+            bottomELAnchor.setAttribute(`title`, `Лига Европы этого сезона, ${cTY - 1}/${cTY}`);
+            eLAbbr = `ЛЕ`;
+        } 
+        const bottomELDiv = document.createElement(`div`);
+        bottomELAnchor.append(bottomELDiv);
+        bottomELDiv.classList.add(`arrow-nav-btn`, `arrow-nav-btn_bottom`);
+        bottomELDiv.innerText = `${eLAbbr} ${eLYear}`; 
+    }
 });
