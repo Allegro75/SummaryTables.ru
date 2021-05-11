@@ -6,8 +6,8 @@ html {
     margin-bottom: 15px;
 }
 
-.stage_et-pos-match{
-margin-top: 10px;
+.stage_et-pos-match {
+    margin-top: 10px;
 }
 
 .stage_final .tour-stage_name {
@@ -24,22 +24,22 @@ margin-top: 10px;
     padding-bottom: 5px;
 }
 
-.arrow-navigation{
+.arrow-navigation {
     height: 0;
     position: sticky;
     position: -webkit-sticky;
-    top: 50%;  
-    display: grid;  
+    top: 50%;
+    display: grid;
     grid-template-columns: 1fr 1fr;
     /* z-index: 10; */
 }
 
-.ar-nav-left{
+.ar-nav-left {
     position: absolute;
     left: 3px;
 }
 
-.ar-nav-right{
+.ar-nav-right {
     position: absolute;
     right: 3px;
 }
@@ -50,14 +50,12 @@ margin-top: 10px;
     /* background-color: #fff; */
     position: fixed;
     bottom: 3px;
-    right:50%;
+    right: 50%;
     transform: translate(+50%, 0%);
     text-align: center;
 }
 
-
-.arrow-nav-btn,
-#toTop {
+.arrow-nav-btn, #toTop {
     font-size: 16px;
     font-weight: bold;
     padding: 5px;
@@ -69,18 +67,13 @@ margin-top: 10px;
     margin-top: 5px;
 }
 
-.arrow-nav-btn_forward,
-.arrow-nav-btn_back,
-.arrow-nav-btn_bottom,
-#toTop{
+.arrow-nav-btn_forward, .arrow-nav-btn_back, .arrow-nav-btn_bottom, #toTop {
     background-color: #666666;
     color: wheat;
     cursor: pointer;
 }
 
-.arrow-nav-btn_forward,
-.arrow-nav-btn_back,
-.arrow-nav-btn_bottom{
+.arrow-nav-btn_forward, .arrow-nav-btn_back, .arrow-nav-btn_bottom {
     width: 100px;
 }
 
@@ -123,28 +116,25 @@ margin-top: 10px;
     vertical-align: middle;
 }
 
-.content-row div.matches-row,
-.content-row div.field-row {
+.content-row div.matches-row, .content-row div.field-row {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
 
-.content-row div.matches-row_1-match{
+.content-row div.matches-row_1-match {
     display: grid;
     grid-template-columns: 1fr 100px 1fr;
 }
 
-div.stage_final .content-row_2-matches{
+div.stage_final .content-row_2-matches {
     display: block;
 }
 
-.matches-row__1st-club,
-.field-row__1st-match {
+.matches-row__1st-club, .field-row__1st-match {
     text-align: right;
 }
 
-.matches-row__2nd-club,
-.field-row__2nd-match {
+.matches-row__2nd-club, .field-row__2nd-match {
     text-align: left;
 }
 
@@ -154,7 +144,7 @@ div.stage_final .content-row_2-matches{
     bottom: 2px;
 }
 
-.club-name_winner{
+.club-name_winner {
     color: #993300;
     font-size: 18px;
 }
@@ -172,12 +162,12 @@ div.stage_final .content-row_2-matches{
     position: static;
 }
 
-.field-row__1st-match .penalty{
+.field-row__1st-match .penalty {
     margin-left: -10px;
     margin-right: 15px;
 }
 
-.field-row_1-match .penalty{
+.field-row_1-match .penalty {
     margin-left: 0px;
     margin-right: 0px;
 }
@@ -200,15 +190,17 @@ div.stage_final .content-row_2-matches{
     margin-right: 10px;
 }
 
-/* .content-group{
-    display: grid;
-    text-align: center; 
-}*/
+.content-group {
+    display: flex;
+    justify-content: space-evenly;
+    justify-items: center;
+    /* position: relative; */
+}
 
-table.group-table{
+table.group-table {
     border-collapse: collapse;
     font-weight: bold;
-    font-size: 15px;  
+    font-size: 15px;
     white-space: nowrap;
     margin-left: auto;
     margin-right: auto;
@@ -220,15 +212,16 @@ table.group-table{
     border-left: oldlace solid 1px;
 }
 
-.stage-content table.group-table thead tr{
-    background-color:rgba(0, 0, 0, 0.1);
+.stage-content table.group-table thead tr {
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
-table.group-table tr:nth-child(odd){
-  background-color: aliceblue;
+table.group-table tr:nth-child(odd) {
+    background-color: aliceblue;
 }
-table.group-table tr:nth-child(even){
-  background-color:rgba(0, 0, 0, 0.1);
+
+table.group-table tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 /* table.group-table tr:nth-child(odd) td.gap{
@@ -239,118 +232,122 @@ table.group-table tr:nth-child(even) td.gap{
 } */
 
 /* Логотипы в таблицах: */
-img.football-logo-table{
-  height: 30px;
-  margin: 0.05em;
+
+img.football-logo-table {
+    height: 30px;
+    margin: 0.05em;
 }
+
 /* Для эмблем, вытянутых в высоту (Реал, Тоттенхэм, Порто, Милан): */
-img.real,
-.logo img.real{
-  height: 29px;
+
+img.real, .logo img.real {
+    height: 29px;
 }
-.logo img.real{
+
+.logo img.real {
     position: relative;
-    bottom: 0.2em;    
+    bottom: 0.2em;
 }
+
 /* Для эмблем, вытянутых в высоту внутри групповых таблиц: */
-table img.real,
-table .logo img.real{
-  height: 36px;
+
+table img.real, table .logo img.real {
+    height: 36px;
 }
+
 /* Лого Гамбурга вытянуто в ширину, посему его настраиваем специально: */
-.logo img.hamburg,
-img.hamburg{
-  width: 27px;
-  height: auto;
-  position: relative;
-  top: 0.2em;
+
+.logo img.hamburg, img.hamburg {
+    width: 27px;
+    height: auto;
+    position: relative;
+    top: 0.2em;
 }
-.logo img.az,
-img.az{
-  width: 36px;
-  height: auto;
-  position: relative;
-  top: 0.25em;
+
+.logo img.az, img.az {
+    width: 36px;
+    height: auto;
+    position: relative;
+    top: 0.25em;
 }
-table .logo img.az,
-table img.az{
-  width: 36px;
-  height: auto;
-  position: relative;
-  top: 0.1em;
+
+table .logo img.az, table img.az {
+    width: 36px;
+    height: auto;
+    position: relative;
+    top: 0.1em;
 }
-.logo img.leipzig,
-img.leipzig{
-  width: 48px;
-  height: auto;
-  /* position: relative;
+
+.logo img.leipzig, img.leipzig {
+    width: 48px;
+    height: auto;
+    /* position: relative;
   top: 0.2em; */
 }
+
 /* Ноттингемскому лого нужна подложка.
 Иначе бледно-красное на сером не смотрится: */
-img.nottingham{
-  border: 0.1em solid rgb(230, 230, 230); 
-  background-color: rgb(230, 230, 230);
-  border-radius: 0.3em;
+
+img.nottingham {
+    border: 0.1em solid rgb(230, 230, 230);
+    background-color: rgb(230, 230, 230);
+    border-radius: 0.3em;
 }
 
 /* Для слишком длинных названий клубов (типа "Вулверхэмптон"),
 к-рые в связи со своей длиной не встают в центр ячейки: */
-table span.long-club-title{
+
+table span.long-club-title {
     font-size: 0.8em;
 }
 
-table.group-table td{
-  text-align: center;
-  max-width: 10em;
-  /* min-width: 30px; */
-  padding: 0.6em;
-  border-right: 0.15em solid gray;
+table.group-table td {
+    text-align: center;
+    max-width: 10em;
+    /* min-width: 30px; */
+    padding: 0.6em;
+    border-right: 0.15em solid gray;
 }
 
-td.logo-cell_aside{
+td.logo-cell_aside {
     width: 50px;
 }
 
-td.club-name-cell{
+td.club-name-cell {
     max-width: 150px;
     min-width: 150px;
 }
 
-td.match-cell{
+td.match-cell {
     width: 100px;
 }
 
-td.balls-cell{
+td.balls-cell {
     width: 90px;
 }
 
-.explanation-in-table{
-    font-size: 7px; 
+.explanation-in-table {
+    font-size: 7px;
 }
 
-table.group-table tr td:nth-child(9),
-table.group-table tr td:nth-child(10),
-table.group-table tr td:nth-child(11),
-table.group-table tr td:nth-child(12),
-table.group-table tr td:nth-child(13)
-{
+table.group-table tr td:nth-child(9), table.group-table tr td:nth-child(10), table.group-table tr td:nth-child(11), table.group-table tr td:nth-child(12), table.group-table tr td:nth-child(13) {
     min-width: 30px;
 }
 
 /* Для колонки очков: */
-table.group-table tr td:last-child{
+
+table.group-table tr td:last-child {
     font-size: 20px;
 }
 
-table.group-table tr td:last-child{
+table.group-table tr td:last-child {
     border-right: none;
-  }
+}
 
-table.group-table div.club-name{
-  margin: 0.25em;
-  white-space: normal;
-  font-size: 1.11em;
+table.group-table div.club-name {
+    margin: 0.25em;
+    white-space: normal;
+    font-size: 1.11em;
 }
 
 table.group-table div.club-name_winner {
@@ -358,18 +355,18 @@ table.group-table div.club-name_winner {
     font-size: 18.5px;
 }
 
-table.group-table .group_score{
+table.group-table .group_score {
     /* text-align: center; */
     font-size: 18px;
     /* letter-spacing: 0.4em; */
 }
 
-table.group-table .group_field-data{
+table.group-table .group_field-data {
     font-size: 10px;
     font-weight: normal;
 }
 
-.stage_final .content-row_row-1{
+.stage_final .content-row_row-1 {
     display: grid;
     grid-template-columns: 1fr 100px 1fr;
 }
@@ -382,11 +379,11 @@ table.group-table .group_field-data{
     text-align: left;
 }
 
-.stage_final .club-name{
+.stage_final .club-name {
     font-size: 1.2em;
 }
 
-.stage_final .club-name_winner{
+.stage_final .club-name_winner {
     font-size: 1.4em;
     bottom: 3px;
 }
@@ -430,20 +427,20 @@ table.group-table img.img_flag {
     font-size: 12px;
 }
 
-.stage-content .content-row_row-3{
+.stage-content .content-row_row-3 {
     padding-top: 0px;
     padding-bottom: 0px;
 }
 
-.stage-content .content-row_row-3 .score{
+.stage-content .content-row_row-3 .score {
     position: static;
 }
 
-.field-row__3rd-match{
+.field-row__3rd-match {
     margin-bottom: 5px;
 }
 
-.field-row__3rd-match div{
+.field-row__3rd-match div {
     margin-left: 5px;
     margin-right: 5px;
 }
@@ -452,7 +449,7 @@ table.group-table img.img_flag {
     margin-right: 10px;
 }
 
-div.stage_final .content-row_2-matches .penalty{
+div.stage_final .content-row_2-matches .penalty {
     margin-right: -10px;
 }
 
@@ -470,4 +467,12 @@ div.stage_final .content-row_2-matches .penalty{
 
 .stage-content {
     margin-bottom: 15px;
+}
+
+/* Для больших декоративных цифр - номеров групп: */
+.content-group__group-number-big {
+    font-size: 200px;
+    font-weight: bold;
+    color: lightgray;
+    line-height: 280px;
 }
