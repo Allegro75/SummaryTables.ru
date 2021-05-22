@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Служебный массив, в к-рый мы будем добавлять логотипы из logosToLightInTables с тем, чтобы затем осветлить логотипы:
     const toLightLogosInds = [];
 
-    // Если такие логотипы есть:
+    // Если логотипы, нуждающиеся в замене на светлый вариант есть:
     if (logosToLightInTables.length > 0) {
 
         // Запускаем перебор логотипов:
