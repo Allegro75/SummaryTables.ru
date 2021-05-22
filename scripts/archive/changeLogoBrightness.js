@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Служебный массив, в к-рый мы будем добавлять логотипы из logosToLightInTables с тем, чтобы затем осветлить логотипы:
     const toLightLogosInds = [];
 
-    // Если логотипы, нуждающиеся в замене на светлый вариант есть:
+    // Если логотипы, нуждающиеся в замене на светлый вариант, есть:
     if (logosToLightInTables.length > 0) {
 
         // Запускаем перебор логотипов:
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             let curCode = logoCode(logosToLightInTables[i]);
             // Проверяем, чтобы либо клуб не встречался ранее, 
-            // либо встретился в 4-й раз (т.е. на странице две группы с этим клубом - касается ЛЧ в период 2000-2003, кажется)
+            // либо встретился в 4-й раз (т.е. на странице две группы с этим клубом - касается ЛЧ в период в районе 2000-2003)
             if (!(curCode in noHandlingObj) || noHandlingObj[curCode] === 3) { 
                 
                 noHandlingObj[curCode] = (curCode in noHandlingObj) ? 4 : 1;
