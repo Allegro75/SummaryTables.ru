@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
             return elem.getAttribute(`src`).slice(-7, -4);
     }
 
-    // Служебный массив, в к-рый мы будем добавлять логоКоды по ходу перебора с тем, чтобы не обрабатыватьл заново уже перебранный клуб:
-    const noHandlingElems = [];
+    // Служебный объект, в к-рый мы будем добавлять логоКоды по ходу перебора с тем, чтобы не обрабатывать заново уже перебранный клуб:
+    let noHandlingObj = {};    
 
     // Служебный массив, в к-рый мы будем добавлять логотипы из logosToLightInTables с тем, чтобы затем осветлить логотипы:
     const toLightLogosInds = [];
@@ -24,46 +24,55 @@ document.addEventListener('DOMContentLoaded', () => {
     if (logosToLightInTables.length > 0) {
 
         // Запускаем перебор логотипов:
+            // Раннее мы перебирали, прыгая через три позиции, что давало корректный результат для большинства случаев,
+            // однако, для групп, внутри к-рых сразу два логотипа, нуждающихся в коррекции, это не работало,
+            // поэтому перебор усложнился:
         for (let i = 0; i <= logosToLightInTables.length - 3; i += 1) {
 
-            // Если такой клуб уже обработан - идём дальше:
-            if (noHandlingElems.includes(logoCode(logosToLightInTables[i]))) continue;
+            let curCode = logoCode(logosToLightInTables[i]);
+            // Проверяем, чтобы либо клуб не встречался ранее, 
+            // либо встретился в 4-й раз (т.е. на странице две группы с этим клубом - касается ЛЧ в период 2000-2003, кажется)
+            if (!(curCode in noHandlingObj) || noHandlingObj[curCode] === 3) { 
+                
+                noHandlingObj[curCode] = (curCode in noHandlingObj) ? 4 : 1;
 
-            noHandlingElems.push(logoCode(logosToLightInTables[i]));
+                // Определяем таблицу, в к-рой находится наше лого:
+                const zenitTable = logosToLightInTables[i].parentElement.parentElement.parentElement.parentElement;
 
-            // Определяем таблицу, в к-рой находится наше лого:
-            const zenitTable = logosToLightInTables[i].parentElement.parentElement.parentElement.parentElement;
+                // Определяем номер группы:
+                const groupNumber = +zenitTable.querySelector(`thead td:first-child`).innerText;
 
-            // Определяем номер группы:
-            const groupNumber = +zenitTable.querySelector(`thead td:first-child`).innerText;
+                // Если номер группы чётный
+                // или текущий лого относится к типу "Монако", нуждающихся в замене на светлый вариант даже на светло-сером фоне:
+                if (((groupNumber % 2) === 0) || (additionalArray.includes(curCode))) {
 
-            // Если номер группы чётный
-            // или текущий лого относится к типу "Монако", нуждающихся в замене на светлый вариант даже на светло-сером фоне:
-            if (((groupNumber % 2) === 0) || (additionalArray.includes(logoCode(logosToLightInTables[i])))) {
+                    toLightLogosInds.push(logosToLightInTables[i]);
 
-                toLightLogosInds.push(logosToLightInTables[i]);
-
-                // Определяем две следующих (после верхней строки группы) позиции текущего лого в logosToLightInTables:
-                let logo2 = logo3 = 0;
-                for (let innerIter = i + 1; logo3 === 0; innerIter += 1) {
-                    if (logoCode(logosToLightInTables[i]) === logoCode(logosToLightInTables[innerIter])) {
-                        if (logo2 === 0) {
-                            logo2 = innerIter;
-                        } else {
-                            logo3 = innerIter;
+                    // Определяем две следующих (после верхней строки группы) позиции текущего лого в logosToLightInTables:
+                    let logo2 = logo3 = 0;
+                    for (let innerIter = i + 1; logo3 === 0; innerIter += 1) {
+                        if (curCode === logoCode(logosToLightInTables[innerIter])) {
+                            if (logo2 === 0) {
+                                logo2 = innerIter;
+                            } else {
+                                logo3 = innerIter;
+                            }
                         }
                     }
-                }
 
-                // Определяем строку нашего клуба:
-                const zenitRowNumber = +logosToLightInTables[logo2].parentElement.previousElementSibling.innerText;
+                    // Определяем строку нашего клуба:
+                    const zenitRowNumber = +logosToLightInTables[logo2].parentElement.previousElementSibling.innerText;
 
-                // Если номер строки нечётный, то уходим:
-                if ((zenitRowNumber % 2) === 1) continue;
-                // Если же чётный:
-                else {
-                    toLightLogosInds.push(logosToLightInTables[logo2], logosToLightInTables[logo3]);
+                    // Если номер строки нечётный, то уходим:
+                    if ((zenitRowNumber % 2) === 1) continue;
+                    // Если же чётный:
+                    else {
+                        toLightLogosInds.push(logosToLightInTables[logo2], logosToLightInTables[logo3]);
+                    }
                 }
+            } else {
+                noHandlingObj[curCode] += 1;
+                continue;
             }
         }
 
@@ -72,6 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
             el.setAttribute('src', `../../images/${logoCode(el)}_light.png`);
         })
     }
+
 
     // Ищем логотипы для ЗАМЕНЫ на ТЁМНОЕ в групповых таблицах:
     const logosToDarkInTables = document.querySelectorAll(`${queryPart}Zur.png']`);
@@ -91,6 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
+
 
     // Ищем логотипы для ЗАМЕНЫ на ТЁМНОЕ на СВЕТЛО-СЕРОМ в групповых таблицах:
     const logosOnLightGrey = document.querySelectorAll(`${queryPart}DyK.png']`);
