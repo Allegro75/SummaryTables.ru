@@ -39,7 +39,7 @@ table.main-table{
   text-align: center;
   max-width: 82px;
   padding: 0.6em;
-  border-right: 1.6px solid gray;
+  border-right: 1px solid gray;
 }
 
 div.change-range-text{

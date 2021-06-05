@@ -36,7 +36,7 @@ table.main-table{
   box-sizing: content-box;
   height: 41px;  
   padding: 0.6em;
-  border-right: 0.15em solid gray;
+  border-right: 2px solid gray;
 }
 
 .main-table td.statistics{

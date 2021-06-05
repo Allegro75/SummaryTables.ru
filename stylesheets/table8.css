@@ -49,7 +49,7 @@ table.main-table{
   text-align: center;
   max-width: 10em;
   padding: 0.6em;
-  border-right: 0.12em solid gray;
+  border-right: 2px solid gray;
   position: relative; /*Это нужно, чтоб внутри ячеек
   абсолютно позиционировать иконки с восклицательным знаком*/
 }

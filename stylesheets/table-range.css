@@ -41,7 +41,7 @@ table.main-table{
   text-align: center;
   max-width: 82px;
   padding: 0.3em;
-  border-right: 1.6px solid gray;
+  border-right: 1px solid gray;
   /* Чтобы выровнять высоту всех строк: */  height: 27px;
   box-sizing: border-box;
   /* text-shadow: 1px 1px 1px snow; */

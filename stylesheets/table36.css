@@ -34,8 +34,7 @@ table.main-table{
   text-align: center;
   max-width: 82px;
   padding: 0.4em;
-  border-right: 0.22em solid gray;
-  /* text-shadow: 1px 1px 1px snow; */
+  border-right: 0.1em solid gray;
 }
 
 /* Для того, чтобы снять ограничение по ширине с колонки с названиями клубов: */
