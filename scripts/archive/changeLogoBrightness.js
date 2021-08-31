@@ -3,9 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Ищем логотипы для ЗАМЕНЫ на СВЕТЛОЕ в групповых таблицах:
     const queryPart = `table img.football-logo-table[src='../../images/`;
-    const logosToLightInTables = document.querySelectorAll(`${queryPart}Zen.png'], ${queryPart}Mar.png'], ${queryPart}Nan.png'], ${queryPart}And_dark.png'], ${queryPart}DyK.png'], ${queryPart}Mon.png'], ${queryPart}Mlm.png']`);
+    const logosToLightInTables = document.querySelectorAll(`${queryPart}Zen.png'], ${queryPart}Mar.png'], ${queryPart}Nan.png'], ${queryPart}And_dark.png'], ${queryPart}DyK.png'], ${queryPart}Mon.png'], ${queryPart}Mlm.png'], ${queryPart}RSo.png'], ${queryPart}RaW.png']`);
     // Доп. массив для логотипов, нуждающихся в замене на светлый вариант даже на светло-сером фоне:
-    const additionalArray = [`Mon`, `Zen`];
+    const additionalArray = [`Mon`, `Zen`, `Mar`];
 
     const logoCode = (elem) => {
         if (elem.getAttribute(`src`).slice(-9, -4) === `_dark`) {
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // Ищем логотипы для ЗАМЕНЫ на ТЁМНОЕ в групповых таблицах:
-    const logosToDarkInTables = document.querySelectorAll(`${queryPart}Zur.png']`);
+    const logosToDarkInTables = document.querySelectorAll(`${queryPart}Zur.png'], ${queryPart}Gal.png'], ${queryPart}SpM.png']`);
 
     // Если такие логотипы есть:
     if (logosToDarkInTables.length > 0) {
@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // Ищем логотипы для ЗАМЕНЫ на ТЁМНОЕ на СВЕТЛО-СЕРОМ в групповых таблицах:
-    const logosOnLightGrey = document.querySelectorAll(`${queryPart}DyK.png']`);
+    const logosOnLightGrey = document.querySelectorAll(`${queryPart}DyK.png'], ${queryPart}Gal.png'], ${queryPart}SpM.png']`);
 
     // Если такие логотипы есть:
     if (logosOnLightGrey.length > 0) {
