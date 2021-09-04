@@ -5,12 +5,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const highlightRows = (parameter, color) => {
         const rowsToHighlight = document.querySelectorAll(`tr.${parameter}`);
-        rowsToHighlight.forEach(item => {item.style.backgroundColor = color;});
+        rowsToHighlight.forEach((item) => {
+            item.style.backgroundColor = color;
+            if (parameter === `current`) {
+                item.style.borderBottom = `1px solid orange`;
+                item.style.borderTop = `1px solid orange`;
+            }
+        });
     }
 
-    const returnColor = parameter => {
+    const returnColor = (parameter) => {
         const rowsToReturn = document.querySelectorAll(`tr.${parameter}`);
-        rowsToReturn.forEach(item => {item.style.backgroundColor = ``;});
+        rowsToReturn.forEach((item) => {
+            item.style.backgroundColor = ``;
+            if (parameter === `current`) {
+                item.style.border = ``;
+            }            
+        });
     }
 
     const allLegendStripes = document.querySelectorAll(`.table-explanation__explanation`);    
