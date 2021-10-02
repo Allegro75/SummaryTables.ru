@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Ищем логотипы для ЗАМЕНЫ на СВЕТЛОЕ в групповых таблицах:
     const queryPart = `table img.football-logo-table[src='../../images/`;
     const logosToLightInTables = document.querySelectorAll(`${queryPart}Zen.png'], ${queryPart}Mar.png'], ${queryPart}Nan.png'], ${queryPart}And_dark.png'], ${queryPart}DyK.png'], ${queryPart}Mon.png'], ${queryPart}Mlm.png'], ${queryPart}RSo.png'], ${queryPart}RaW.png']`);
+    console.log(logosToLightInTables)
     // Доп. массив для логотипов, нуждающихся в замене на светлый вариант даже на светло-сером фоне:
     const additionalArray = [`Mon`, `Zen`, `Mar`];
 
@@ -49,7 +50,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     toLightLogosInds.push(logosToLightInTables[i]);
 
                     // Определяем две следующих (после верхней строки группы) позиции текущего лого в logosToLightInTables:
-                    let logo2 = logo3 = 0;
+                    let logo2 = 0;
+                    let logo3 = 0;
                     for (let innerIter = i + 1; logo3 === 0; innerIter += 1) {
                         if (curCode === logoCode(logosToLightInTables[innerIter])) {
                             if (logo2 === 0) {
