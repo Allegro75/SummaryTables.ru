@@ -45,3 +45,7 @@ main{
   /* Это нужно, чтобы таблицы в состоянии inline-block вставали по центру: */
   text-align: center;
 }
+
+#BavRMa p.games-score, #RMaBav p.games-score{
+  letter-spacing: -0.05em;
+}
