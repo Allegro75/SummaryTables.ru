@@ -31,7 +31,8 @@
         <div class="duels-text">
             <p>6 дуэлей:</p>
             <p><span class="duels-score">0</span> побед в дуэлях, <span class="duels-score">5</span> поражений,</p>
-            <p>1 дуэль не завершена</p>
+            <p>1 дуэль в группе не выявила победителя</p>
+            <!-- <p>1 дуэль не завершена</p> -->
         </div>
 
         <table class="add-table">
@@ -160,7 +161,7 @@
             </tr>
 
             <!-- <tr class="duel-loose"> -->
-            <tr class="duel">
+            <tr class="duel-draw">
                 <td class="number-of-match">11</td>
                 <td title="дома">д</td>
                 <td>0 : 4</td>
@@ -168,7 +169,7 @@
                 <td>Лига чемпионов</td>
                 <td>группа</td>
             </tr>
-            <tr class="duel">
+            <tr class="duel-draw">
                 <td class="number-of-match">12</td>
                 <td title="в гостях">г</td>
                 <td>2 : 5</td>
@@ -176,6 +177,17 @@
                 <td>Лига чемпионов</td>
                 <td>группа</td>
             </tr>
+
+            <tr class="duel-result duel-draw"
+            title="Дуэль выше не выявила победителя">
+                <td colspan="5">
+                </td>
+                <td>
+                    <span class="yellow-circle">
+                        &#9679;
+                    </span>
+                </td>
+            </tr>            
 
         </table>
 
