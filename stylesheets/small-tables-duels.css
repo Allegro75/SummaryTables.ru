@@ -73,8 +73,19 @@ img.hamburg{
   /* Если не сделать height:auto, то height будет считываться с img, 
   будет равен 40px, пропорции нарушатся */
   height: auto;
-  /* top: 10px; */
+  /* Для улучшения положения логотипов вытянутых в ширину */
+  position: absolute;
+  top: 15px;
 }
+
+/* Для улучшения положения логотипов вытянутых в ширину */
+img.hamburg.logo-right{
+  right: 5px;
+}
+img.hamburg.logo-left{
+  left: 5px;
+}
+
 
 img.leipzig{
   position: relative;
@@ -96,7 +107,9 @@ div.additional-table h1{
     max-width: 300px;
     /* Без выравнивания маргинами вторая (и зачастую появляющаяся третья) строка смещается влево,
     т.к. "не видит" левого логотипа: */
-    margin: 20px auto;
+    /* margin: 20px auto; */
+    /* После появления postion:absolute у hamburg в CZvHam стало съедаться название "Гамбург". Поэтому пришлось вводить маргин 55px */
+    margin: 20px 55px;
     font-size: 1.17em;
 }
 
