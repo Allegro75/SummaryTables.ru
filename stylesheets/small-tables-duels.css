@@ -74,17 +74,28 @@ img.hamburg{
   будет равен 40px, пропорции нарушатся */
   height: auto;
   /* Для улучшения положения логотипов вытянутых в ширину */
-  position: absolute;
+  /* position: absolute; */
   top: 15px;
 }
 
 /* Для улучшения положения логотипов вытянутых в ширину */
-img.hamburg.logo-right{
+/* Отказался от этого, т.к. в итоге страдают названия длинных пар типа AtMBav */
+/* img.hamburg.logo-right{
   right: 5px;
 }
 img.hamburg.logo-left{
   left: 5px;
+} */
+/* Пробуем иначе (через position, а не float) выстроить позиционирование логотипов */
+/* Ничего не выходит. Где-то в наборе AtMBav, CZvHam, PSVMon всегда есть проблемы. */
+/* img.logo-right{
+  position: absolute;
+  right: 5px;
 }
+img.logo-left{
+  position: absolute;
+  left: 5px;
+} */
 
 
 img.leipzig{
@@ -107,11 +118,18 @@ div.additional-table h1{
     max-width: 300px;
     /* Без выравнивания маргинами вторая (и зачастую появляющаяся третья) строка смещается влево,
     т.к. "не видит" левого логотипа: */
-    /* margin: 20px auto; */
+    margin: 20px auto;
     /* После появления postion:absolute у hamburg в CZvHam стало съедаться название "Гамбург". Поэтому пришлось вводить маргин 55px */
-    margin: 20px 55px;
+    /* margin: 20px 55px; */
     font-size: 1.17em;
 }
+
+/* Костыль для AtMBav, RMaInt: */
+/* Передемал вводить такие костыли, их тогда погтребуется слишком много */
+/* div.additional-table.AtMBav h1, div.additional-table.BavAtM h1, 
+div.additional-table.RMaInt h1, div.additional-table.IntRMa h1 {
+  max-width: none;
+} */
 
 p{
   margin-left: 0.4em;
