@@ -243,14 +243,29 @@ img.real, .logo img.real {
     height: 29px;
 }
 
+/* Для эмблем, вытянутых в высоту, но не столь сильно как "Реал" (Рома, Порто): */
+img.roma, .logo img.roma {
+    height: 27px;
+}
+
 .logo img.real {
     position: relative;
     bottom: 0.2em;
 }
 
+.logo img.roma {
+    position: relative;
+    bottom: 0.1em;
+}
+
 /* Для эмблем, вытянутых в высоту внутри групповых таблиц: */
 table img.real, table .logo img.real {
     height: 36px;
+}
+
+/* Для эмблем, вытянутых в высоту не стлоь сильно, внутри групповых таблиц: */
+table img.roma, table .logo img.roma {
+    height: 33px;
 }
 
 /* Лого Гамбурга вытянуто в ширину, посему его настраиваем специально: */
