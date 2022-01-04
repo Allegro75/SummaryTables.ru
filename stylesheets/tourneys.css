@@ -225,10 +225,10 @@ table.group-table tr:nth-child(even) {
 }
 
 /* table.group-table tr:nth-child(odd) td.gap{
-  background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.3);
 }
 table.group-table tr:nth-child(even) td.gap{
-  background: rgba(0, 0, 0, 0.16);
+    background: rgba(0, 0, 0, 0.16);
 } */
 
 /* Логотипы в таблицах: */
@@ -238,14 +238,24 @@ img.football-logo-table {
     margin: 0.05em;
 }
 
-/* Для эмблем, вытянутых в высоту (Реал, Тоттенхэм, Порто, Милан): */
-img.real, .logo img.real {
-    height: 29px;
+/* Для эмблем, вытянутых в высоту максимально (Боруссия М. У обычных лого высота 24px): */
+img.real, .logo img.height-32 {
+    height: 32px; 
 }
 
-/* Для эмблем, вытянутых в высоту, но не столь сильно как "Реал" (Рома, Порто): */
+/* Для эмблем, вытянутых в высоту (Реал, Тоттенхэм, Порто, Милан. У обычных лого высота 24px): */
+img.real, .logo img.real {
+    height: 29px; 
+}
+
+/* Для эмблем, вытянутых в высоту, но не столь сильно как "Реал" (Рома, Порто. У обычных лого высота 24px): */
 img.roma, .logo img.roma {
     height: 27px;
+}
+
+.logo img.height-32 {
+    position: relative;
+    bottom: 0.3em;
 }
 
 .logo img.real {
@@ -256,6 +266,11 @@ img.roma, .logo img.roma {
 .logo img.roma {
     position: relative;
     bottom: 0.1em;
+}
+
+/* Для эмблем, вытянутых в высоту максимально (Боруссия М) внутри групповых таблиц: */
+table img.height-40, table .logo img.height-40 {
+    height: 40px;
 }
 
 /* Для эмблем, вытянутых в высоту внутри групповых таблиц: */
