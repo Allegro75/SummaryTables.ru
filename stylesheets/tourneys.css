@@ -278,7 +278,7 @@ table img.real, table .logo img.real {
     height: 36px;
 }
 
-/* Для эмблем, вытянутых в высоту не стлоь сильно, внутри групповых таблиц: */
+/* Для эмблем, вытянутых в высоту не столь сильно, внутри групповых таблиц: */
 table img.roma, table .logo img.roma {
     height: 33px;
 }
@@ -300,6 +300,14 @@ table img.roma, table .logo img.roma {
 
 table .logo img.az, table img.az {
     width: 36px;
+    height: auto;
+    position: relative;
+    top: 0.1em;
+}
+
+/* Для лого "Зальцбурга" в таблицах, вытянутого в ширину, но промежуточно между Гамбургом и АЗ: */
+table .logo img.width-33, table img.width-33 {
+    width: 33px;
     height: auto;
     position: relative;
     top: 0.1em;
