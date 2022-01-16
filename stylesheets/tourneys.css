@@ -291,6 +291,14 @@ table img.roma, table .logo img.roma {
     top: 0.2em;
 }
 
+/* Лого ПСВ: */
+.logo img.width-30, img.width-30 {
+    width: 30px;
+    height: auto;
+    position: relative;
+    top: 0.1em;
+}
+
 .logo img.az, img.az {
     width: 36px;
     height: auto;
