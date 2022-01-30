@@ -1,0 +1,414 @@
+
+/* ТАБЛИЦЫ: */
+
+.tables{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;      
+}
+
+table.main-table{
+  border-collapse: collapse;
+  font-weight: bold;
+  font-size: 12px;
+  white-space: nowrap;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: inline-block;
+  box-shadow: 2px 2px 1px rgb(22, 19, 19);
+  border-top: oldlace solid 1px;
+  border-left: oldlace solid 1px;
+}
+
+.main-table tr:nth-child(odd){
+  background-color:rgba(0, 0, 0, 0.1);
+}
+.main-table tr:nth-child(even){
+  background-color: aliceblue;
+}
+
+.main-table tr:nth-child(odd) td.main-table_gap{
+  background: rgba(255, 255, 255, 0.3);
+}
+.main-table tr:nth-child(even) td.main-table_gap{
+  background: rgba(0, 0, 0, 0.16);
+}
+
+.main-table td{
+  text-align: center;
+  max-width: 82px;
+  padding: 0.3em;
+  border-right: 1px solid gray;
+  /* Чтобы выровнять высоту всех строк: */  height: 27px;
+  box-sizing: border-box;
+  /* text-shadow: 1px 1px 1px snow; */
+}
+
+table a{
+  text-decoration: none;
+}
+
+.for-href{
+  width: 100%;
+  height: 100%;
+  /* vertical-align: middle; */
+}
+
+.for-href > span{
+  position: relative;
+  top: 23%;
+}
+
+table.main-table tr td:last-child{
+  border-right: none;
+}
+
+.main-table td.number{
+  font-style: italic;  
+}
+
+/* Иконки: */
+td.main-table_victory img{
+  height: 16px;
+  position: relative;
+  top: 1px;
+}
+
+/* Логотипы: */
+img.football-logo-table{
+  height: 14px;
+  position: relative;
+  top: 1px;
+}
+/* Для эмблем, вытянутых в высоту (Реал, Тоттенхэм, Порто, Милан): */
+img.real{
+  height: 16px;
+}
+/* Лого Гамбурга вытянуто в ширину, посему его настаиваем специально: */
+img.hamburg{
+  width: 16px;
+  height: auto;
+  position: relative;
+  top: 2px;
+}
+/* Класс "hamburg" для "Лейпцига" не понравился, поэтому делаю специальный класс для "Лейпцига": */
+img.logo-like-leipzig{
+  width: 20px;
+  height: auto;
+  position: static;
+}
+/* Ноттингемскому лого нужна подложка.
+Иначе бледно-красное на сером не смотрится: */
+img.nottingham{
+  border: 0.1em solid rgb(230, 230, 230); 
+  background-color: rgb(230, 230, 230);
+  border-radius: 0.3em;
+}
+
+.main-table div.club-name{
+  margin: 0.25em;
+  /* Чтобы Астон Вилла (и прочие) не переносилась: */ 
+  white-space: nowrap; 
+  font-size: 0.8em;
+}
+
+span.club-mame_minsize{
+  font-size: 0.8em;
+}
+
+/* Для слишком длинных названий клубов (типа "Вулверхэмптон"),
+к-рые в связи со своей длиной не встают в центр ячейки: */
+.main-table span.long-club-title{
+  font-size: 0.8em;
+}
+
+/* Для колонки финалов ("Ф"): */
+tr.main-table__header td.playoff_final{
+  font-size: 1.2em;
+  padding: 0.3em;
+}
+
+tr.main-table__header td.playoff_semi,
+tr.main-table__header td.playoff_quarter{
+    font-size: 0.7em;  
+    padding: 0.1em;
+}
+
+span.main-table_victory{
+  font-size: 1.2em;
+  /* color: #660000; */
+  color: #990000;
+}
+
+td.main-table_victory{
+    width: 26px;
+}
+
+.main-table tr.RUS, p.explanation_RUS{
+  background-color: rgba(255, 0, 0, 0.3);
+}
+
+.main-table tr.UKR, p.explanation_UKR{
+  background-color: rgba(0, 0, 255, 0.2);
+}
+
+td.criterion_current-participant{
+  padding: 0;
+}
+
+td.criterion_current-participant, p.explanation_current{
+  background: rgba(255, 255, 0, 0.4);
+  /* В связи с окончанием сезона: */
+  /* color: gray; */
+}
+
+
+/* Для всплывающих окон с информацией о турнирах: */
+
+tr.club-row td.main-table_victory.has-achieves, tr.club-row td.main-table_playoff.has-achieves {
+  cursor: pointer;
+}
+
+.main-table .popup {
+  position: absolute;   
+  z-index: 10; 
+  background-color: lightgray; 
+  color:black; 
+  border-radius: 10px; 
+  box-shadow: 2px 2px 1px rgb(22 19 19); 
+  border-top: oldlace solid 1px; 
+  border-left: oldlace solid 1px;
+}
+
+.d-none {
+  display: none;
+}
+
+.main-table .popup .popup__club-info {
+  margin: 6px 25px;
+}
+
+.main-table .popup .popup__club-info_logo {
+  margin-right:5px;
+}
+
+.main-table .popup .achives-info_explanation-achieves {
+  margin: 2px 10px; 
+  font-size: 0.7em;
+}
+
+.main-table .popup .achives-info_explanation-click {
+  margin: 2px 10px 6px 10px; 
+  font-size: 0.7em;
+}
+
+.main-table .popup .popup__achieves-info {
+  background-color: aliceblue; 
+  padding: 3px; 
+}
+
+.main-table .popup .popup__achieves-info:last-child {
+  background-color: aliceblue; 
+  padding: 3px; 
+  border-bottom-right-radius: 10px; 
+  border-bottom-left-radius: 10px;
+}
+
+.main-table .popup .tourney-info {
+  color: brown; 
+  margin: 0;
+}
+
+.main-table .popup .popup__cross {
+  position: absolute; 
+  right: 5px; 
+  top: 5px;
+  cursor: pointer;
+}
+
+.main-table .popup .popup__cross img {
+  height: 15px;
+}
+
+
+/* РУССКО-УКРАИНСКИЙ БЛОК: */
+
+.table-explanation{
+  margin-top: 12px;
+}
+
+p.table-explanation__explanation{
+  margin-top: 2px;
+  margin-bottom: 2px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+  font-style: italic;
+  font-size: 12px;
+  width: 1700px;
+  /* text-shadow: 1px 1px 1px snow; */
+  box-shadow: 1px 1px 1px rgb(70, 67, 67);
+  border-radius: 5px;
+}
+
+/* БЛОК НАЦИЙ: */
+
+.nations__header{
+  padding: 5px;
+  margin-bottom: 3px;
+  background-color: rgba(245, 245, 245, 0.9);
+}
+
+.nations__list{
+  display: grid;
+  grid-template-areas:
+    "a1 a2 a3 a4 a5 a6 a7 a8 a9"
+    "b1 b2 b3 b4 b5 b6 b7 b8 b9"
+    "c1 c2 c3 c4 c5 c6 c7 c8 c9";
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+.nations__item{
+  /* border-radius: 8px; */
+  border-right: 1px solid gray;
+  /* margin-bottom: 10px; */
+  /* border-left: 1px solid gray; */
+  /* display: flex;
+  justify-content: stretch;
+  flex-wrap: wrap; */
+}
+
+.item__item{
+  display: inline-block;
+  text-align: left;
+}
+
+.nations__flag{
+  width: 20px;
+}
+
+.nations__name{
+  width: 85px;
+  font-size: 0.8em;
+}
+
+.nations__number{
+  width: 20px;
+  text-align: right;
+  font-weight: bold;
+}
+
+.nations__item.ENG{
+  grid-area: a1;
+}
+
+.nations__item.GER{
+  grid-area: b1;
+}
+
+.nations__item.ESP{
+  grid-area: c1;
+}
+
+.nations__item.ITA{
+  grid-area: a2;
+}
+
+.nations__item.FRA{
+  grid-area: b2;
+}
+
+.nations__item.HOL{
+  grid-area: c2;
+}
+
+.nations__item.SCO{
+  grid-area: a3;
+}
+
+.nations__item.BEL{
+  grid-area: b3;
+}
+
+.nations__item.POR{
+  grid-area: c3;
+}
+
+.nations__item.RUS{
+  grid-area: a4;
+}
+
+.nations__item.HUN{
+  grid-area: b4;
+}
+
+.nations__item.GDR{
+  grid-area: c4;
+}
+
+.nations__item.SUI{
+  /* grid-area: a5; */
+  grid-area: a7;
+}
+
+.nations__item.SRB{
+  /* grid-area: b5; */
+  grid-area: a5;
+}
+
+.nations__item.UKR{
+  /* grid-area: c5; */
+  grid-area: b5;
+}
+
+.nations__item.SWE{
+  /* grid-area: a6; */
+  grid-area: c5;
+}
+
+.nations__item.AUT{
+  /* grid-area: b6; */
+  grid-area: a6;
+}
+
+.nations__item.CZE{
+  /* grid-area: c6; */
+  grid-area: b6;
+}
+
+.nations__item.CRO{
+  /* grid-area: a7; */
+  grid-area: c6;
+}
+
+.nations__item.ROU{
+  grid-area: b7;
+}
+
+.nations__item.GRE{
+  grid-area: c7;
+}
+
+.nations__item.TUR{
+  grid-area: a8;
+}
+
+.nations__item.BUL{
+  grid-area: b8;
+}
+
+.nations__item.POL{
+  grid-area: c8;
+}
+
+.nations__item.SVK{
+  grid-area: a9;
+  border-right: none;
+}
