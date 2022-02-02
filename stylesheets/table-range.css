@@ -94,6 +94,12 @@ img.hamburg{
   position: relative;
   top: 2px;
 }
+/* Класс "hamburg" для "Лейпцига" не понравился, поэтому делаю специальный класс для "Лейпцига": */
+img.logo-like-leipzig{
+  width: 20px;
+  height: auto;
+  position: static;
+}
 /* Ноттингемскому лого нужна подложка.
 Иначе бледно-красное на сером не смотрится: */
 img.nottingham{
@@ -109,7 +115,7 @@ img.nottingham{
   font-size: 0.8em;
 }
 
-span.club-mame_minsize{
+span.club-name_minsize{
   font-size: 0.8em;
 }
 
@@ -158,6 +164,75 @@ td.criterion_current-participant, p.explanation_current{
   /* В связи с окончанием сезона: */
   /* color: gray; */
 }
+
+
+/* Для всплывающих окон с информацией о турнирах: */
+
+tr.club-row td.main-table_victory.has-achieves, tr.club-row td.main-table_playoff.has-achieves {
+  cursor: pointer;
+}
+
+.main-table .popup {
+  position: absolute;   
+  z-index: 10; 
+  background-color: lightgray; 
+  color:black; 
+  border-radius: 10px; 
+  box-shadow: 2px 2px 1px rgb(22 19 19); 
+  border-top: oldlace solid 1px; 
+  border-left: oldlace solid 1px;
+}
+
+.d-none {
+  display: none;
+}
+
+.main-table .popup .popup__club-info {
+  margin: 6px 25px;
+}
+
+.main-table .popup .popup__club-info_logo {
+  margin-right:5px;
+}
+
+.main-table .popup .achives-info_explanation-achieves {
+  margin: 2px 10px; 
+  font-size: 0.7em;
+}
+
+.main-table .popup .achives-info_explanation-click {
+  margin: 2px 10px 6px 10px; 
+  font-size: 0.7em;
+}
+
+.main-table .popup .popup__achieves-info {
+  background-color: aliceblue; 
+  padding: 3px; 
+}
+
+.main-table .popup .popup__achieves-info:last-child {
+  background-color: aliceblue; 
+  padding: 3px; 
+  border-bottom-right-radius: 10px; 
+  border-bottom-left-radius: 10px;
+}
+
+.main-table .popup .tourney-info {
+  color: brown; 
+  margin: 0;
+}
+
+.main-table .popup .popup__cross {
+  position: absolute; 
+  right: 5px; 
+  top: 5px;
+  cursor: pointer;
+}
+
+.main-table .popup .popup__cross img {
+  height: 15px;
+}
+
 
 /* РУССКО-УКРАИНСКИЙ БЛОК: */
 
@@ -279,31 +354,38 @@ p.table-explanation__explanation{
 }
 
 .nations__item.SUI{
-  grid-area: a5;
+  /* grid-area: a5; */
+  grid-area: a7;
 }
 
 .nations__item.SRB{
-  grid-area: b5;
+  /* grid-area: b5; */
+  grid-area: a5;
 }
 
 .nations__item.UKR{
-  grid-area: c5;
+  /* grid-area: c5; */
+  grid-area: b5;
 }
 
 .nations__item.SWE{
-  grid-area: a6;
+  /* grid-area: a6; */
+  grid-area: c5;
 }
 
 .nations__item.AUT{
-  grid-area: b6;
+  /* grid-area: b6; */
+  grid-area: a6;
 }
 
 .nations__item.CZE{
-  grid-area: c6;
+  /* grid-area: c6; */
+  grid-area: b6;
 }
 
 .nations__item.CRO{
-  grid-area: a7;
+  /* grid-area: a7; */
+  grid-area: c6;
 }
 
 .nations__item.ROU{
