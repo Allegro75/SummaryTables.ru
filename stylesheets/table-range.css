@@ -81,10 +81,10 @@ td.main-table_victory img{
 img.football-logo-table{
   height: 14px;
   position: relative;
-  top: 1px;
+  top: 2px;
 }
 /* Для эмблем, вытянутых в высоту (Реал, Тоттенхэм, Порто, Милан): */
-img.real{
+img.real, img.logo-like-real{
   height: 16px;
 }
 /* Лого Гамбурга вытянуто в ширину, посему его настаиваем специально: */
