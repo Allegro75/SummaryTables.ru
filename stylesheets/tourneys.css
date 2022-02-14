@@ -466,6 +466,14 @@ table.group-table img.img_flag {
     margin-left: 5px;
 }
 
+.content-row_note-1 {
+    font-size: 12px;
+}
+
+.content-row_note-2 {
+    height: 10px;
+}
+
 .content-row_row-2, .content-row_row-4 {
     font-size: 12px;
 }
