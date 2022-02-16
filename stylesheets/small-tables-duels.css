@@ -25,11 +25,14 @@ div.additional-table{
 
 div.additional-table img.logo-left{
   float: left;
+  margin-right: 15px;
 }
 
 div.additional-table img.logo-right{
   float: right;
+  margin-left: 15px;
 }
+
 
 img.football-logo-table{
   height: 40px;
@@ -37,26 +40,94 @@ img.football-logo-table{
   margin: 5px;
 }
 
+img.football-logo-table.flag-image {
+  height: 20px;
+  position: relative;
+  top: 12px;
+  margin-bottom: 20px;
+}
+
+img.logo-like-soligorsk {
+  position: relative;
+  top: 4px;  
+}
+
 /* Для эмблем, вытянутых в высоту (Реал, Тоттенхэм, Порто, Милан, Интер): */
-img.real{
+img.real, img.logo-like-real{
   height: 45px;
-  /* top: 2px; */
+  position: relative;
+  bottom: 4px;  
+}
+
+img.logo-like-crvena{
+  height: 45px;
+  position: relative;
+  bottom: 3px;  
+}
+
+img.logo-like-zarya {
+  height: 45px;
+}
+
+img.logo-like-granada{
+  height: 50px;
+  position: relative;
+  bottom: 3px;
+}
+
+img.roma, img.logo-like-roma{
+  height: 42px;
+}
+
+img.logo-like-metallist{
+  height: 37px;
 }
 
 /* Для эмблемы Байера(вытянутой в ширину): */
-img.bayer.football-logo-table{
+img.bayer.football-logo-table, img.logo-like-bayer{
   max-width: 45px;
-  /* высота "auto" нужна, чтоб картинка не сжималась, сохраняла пропорцию */
   height: auto;
-  /* top: 8px; */
 }
 
-/* Для эмблемы Зенита(вытянутой в ширину): */
-img.zenit.football-logo-table{
-  width: 37px;
-  /* высота "auto" нужна, чтоб картинка не сжималась, сохраняла пропорцию */
+img.logo-like-spartak {
+  width: 48px;
   height: auto;
-  /* top: 9px; */
+  top: 3px;
+  position: relative;  
+}
+
+img.logo-like-az {
+  width: 45px;
+  height: auto;
+  top: 10px;
+  position: relative;  
+}
+
+img.logo-like-dresden{
+  width: 42px;
+  height: auto;
+  position: relative;
+  top: 4px;
+}
+
+img.logo-like-lazio {
+    width: 50px;
+    height: auto;
+    position: relative;
+    top: 4px;
+}
+
+/* У самого Зенита класс bayer, не факт, что класс zenit вообще нужен: */
+img.zenit.football-logo-table, img.logo-like-zenit{
+  width: 37px;
+  height: auto;
+}
+
+img.logo-like-rostov{
+  width: 37px;
+  height: auto;
+  top: 3px;
+  position: relative;
 }
 
 /* Ноттингемскому(и марсельскому) лого нужна подложка.
@@ -73,9 +144,8 @@ img.hamburg{
   /* Если не сделать height:auto, то height будет считываться с img, 
   будет равен 40px, пропорции нарушатся */
   height: auto;
-  /* Для улучшения положения логотипов вытянутых в ширину */
-  /* position: absolute; */
-  top: 15px;
+  top: 8px;
+  position: relative;
 }
 
 /* Для улучшения положения логотипов вытянутых в ширину */
@@ -97,8 +167,21 @@ img.logo-left{
   left: 5px;
 } */
 
+img.logo-like-salzburg{
+  width: 42px;
+  height: auto;
+  top: 3px;
+  position: relative;
+}
 
-img.leipzig{
+img.logo-like-dnieper{
+  width: 42px;
+  height: auto;
+  top: 2px;
+  position: relative;  
+}
+
+img.leipzig, img.logo-like-leipzig{
   position: relative;
   top: 5px;
   width: 62px;
