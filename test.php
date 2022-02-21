@@ -21,9 +21,9 @@
     <link rel="stylesheet" href="stylesheets/cap-wo-nav.css">
     <link rel="stylesheet" href="stylesheets/navigation.css">
     <link rel="stylesheet" href="stylesheets/captions.css">
-    <link rel="stylesheet" href="stylesheets/table16.css">
-    <link rel="stylesheet" href="stylesheets/duel-button-lower.css">
-    <link rel="stylesheet" href="stylesheets/settings.css">
+    <!-- <link rel="stylesheet" href="stylesheets/table16.css"> -->
+    <!-- <link rel="stylesheet" href="stylesheets/duel-button-lower.css"> -->
+    <!-- <link rel="stylesheet" href="stylesheets/settings.css"> -->
     <link rel="stylesheet" href="stylesheets/donate.css">
     <link rel="stylesheet" href="stylesheets/footer.css">
 
