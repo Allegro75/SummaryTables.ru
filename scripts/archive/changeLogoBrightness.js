@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // Ищем логотипы для ЗАМЕНЫ на ТЁМНОЕ в групповых таблицах:
-    const logosToDarkInTables = document.querySelectorAll(`${queryPart}Zur.png'], ${queryPart}Gal.png'], ${queryPart}SpM.png']`);
+    const logosToDarkInTables = document.querySelectorAll(`${queryPart}Gal.png'], ${queryPart}SpM.png'], ${queryPart}Zur.png']`);
 
     // Если такие логотипы есть:
     if (logosToDarkInTables.length > 0) {
