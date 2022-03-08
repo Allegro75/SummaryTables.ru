@@ -253,8 +253,8 @@
 
             <?
                 var_dump("test");
-                require_once 'config.php';
-                require_once 'connect.php';
+                require_once 'database/config/config.php';
+                require_once 'database/config/connect.php';
                 
                 $conn = connect();
                 
