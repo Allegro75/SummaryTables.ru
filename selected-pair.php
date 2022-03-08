@@ -253,6 +253,28 @@
 
             <?
                 var_dump("test");
+                require_once 'config.php';
+                require_once 'connect.php';
+                
+                $conn = connect();
+                
+                $firstClubId = 760;
+                // Определяем данные клубов:
+                $sql =
+                    "SELECT * 
+                    FROM `eurocups_clubs` 
+                    WHERE id = {$firstClubId}
+                ";
+                $result = mysqli_query($conn, $sql);
+                if ($item = mysqli_fetch_assoc($result)) {
+                    $firstClubFullName = $item['basicFullName'];
+                    $firstClubShortName = $item['shortName'];
+                    $firstClubAltNames = $item['altNames'];
+                    $firstClubCode = $item['code'];
+                    $firstClubLogoClass = $item['CSSClass'];
+                    $firstClubCountryEngCode = $item['countryEngCode'];
+                }
+                var_dump($firstClubFullName);              
             ?>
 
         </main>
