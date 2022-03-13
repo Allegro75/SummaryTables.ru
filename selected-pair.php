@@ -304,7 +304,7 @@
 
                             <? foreach ($clubsList as $clubName_2 => $clubInfo_2): ?>
                                 
-                                <option value="<?=$clubInfo_2['id']?>" <?= ($secondClubDemoId == $clubInfo_1['id']) ? "selected" : "" ?>><?=$clubName_2?></option>
+                                <option value="<?=$clubInfo_2['id']?>" <?= ($secondClubDemoId == $clubInfo_2['id']) ? "selected" : "" ?>><?=$clubName_2?></option>
 
                             <? endforeach; ?>
 
@@ -319,8 +319,10 @@
 
             <?
                 
-                $firstClubId = isset($_GET['club_1']) ? (int)($_GET['club_1']) : 0;
-                $secondClubId = isset($_GET['club_2']) ? (int)($_GET['club_2']) : 0;
+                // $firstClubId = isset($_GET['club_1']) ? (int)($_GET['club_1']) : 0;
+                // $secondClubId = isset($_GET['club_2']) ? (int)($_GET['club_2']) : 0;
+                $firstClubId = $firstClubDemoId;
+                $secondClubId = $secondClubDemoId;
                 $haveIncorrectClubIds = false;
                 if (($firstClubId <= 0) || ($secondClubId <= 0) || ($firstClubId == $secondClubId)) {
                     $haveIncorrectClubIds = true;
