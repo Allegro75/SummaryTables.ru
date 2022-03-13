@@ -266,19 +266,25 @@
 
                 <form action="">
 
-                    <select name="club_1">
+                    <label for="">
+                        Клуб 1
+                        <select name="club_1">
 
-                        <option value="165">Реал Мадрид</option>
-                        <option value="21">Барселона</option>
+                            <option value="165">Реал Мадрид</option>
+                            <option value="21">Барселона</option>
 
-                    </select>
+                        </select>
+                    </label>
 
-                    <select name="club_2">
+                    <label for="">
+                        Клуб 2
+                        <select name="club_2">
 
-                        <option value="165">Реал Мадрид</option>
-                        <option value="21">Барселона</option>
+                            <option value="165">Реал Мадрид</option>
+                            <option value="21">Барселона</option>
 
-                    </select>
+                        </select>
+                    </label>
 
                     <button type="submit">Показать историю встреч</button>
 
