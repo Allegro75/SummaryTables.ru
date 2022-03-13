@@ -19,7 +19,7 @@ section.pair-select {
 section.pair-select form{
     display: inline-flex;
     justify-content: space-between;
-    width: 600px;
+    width: 800px;
 }
 
 section.pair-select form label span{

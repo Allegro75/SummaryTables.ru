@@ -271,6 +271,7 @@
                     $clubsList[$item['basicFullName']]["id"] = $item["id"];
                 }
                 ksort($clubsList);
+                $clubsList = ["" => ["id" => 0]] + $clubsList;
                 // var_dump($clubsList);                
 
             ?>
