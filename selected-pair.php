@@ -260,6 +260,19 @@
                 
                 $conn = connect();
 
+                // Список клубов:
+                $clubsList = [];
+                $sql =
+                    "SELECT * 
+                    FROM `eurocups_clubs`
+                ";
+                $result = mysqli_query($conn, $sql);
+                if ($item = mysqli_fetch_assoc($result)) {
+                    $clubsList[$item['basicFullName']]["id"] = $item["id"];
+                }
+                ksort($clubsList);
+                var_dump($clubsList);                
+
             ?>
             
             <section class="pair-select">
