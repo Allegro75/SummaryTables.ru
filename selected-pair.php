@@ -299,9 +299,9 @@
                 // Массив имён файлов с логотипами (нужен чтобы правильно добавлять к коду клуба ".png", ".svg" и т.п.)
                 // $logoFiles = scandir("../images");
                 $logoFiles = scandir("images");
-                echo '<pre>';
-                echo 'logoFiles:';
-                var_dump($logoFiles);
+                // echo '<pre>';
+                // echo 'logoFiles:';
+                // var_dump($logoFiles);
 
                 // Имя файла с картинкой логотипа:
                 $specialImages = [
@@ -358,6 +358,8 @@
 
 
             ?>
+
+        <img src='images/<?=$firstLogoImageFile?>' alt='' class='football-logo-table logo-left'>
 
         </main>
 
