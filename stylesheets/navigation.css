@@ -68,6 +68,15 @@ nav div.football li.dropdown a div.nav__icon
   background-position: center;
 }
 
+li.select-pair .nav__icon{
+  background: url('../images/screamer.png');
+}
+
+li.select-pair:hover .nav__icon,
+li.select-pair:focus .nav__icon{
+  background: url('../images/screamer_black.png');
+}
+
 li.current-season .nav__icon{
   background: url('../images/screamer.png');
 }
