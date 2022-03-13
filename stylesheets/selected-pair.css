@@ -8,6 +8,14 @@ p {
     margin: 0.25em auto;
 }
 
+section.pair-select {
+    margin-bottom: 0.3em;
+    padding-top: 0.6em;
+    padding-bottom: 0.6em;
+    background-color: rgba(245, 245, 245, 0.9);
+}
+
+
 div.additional-table {
     display: inline-block;
     text-align: center;

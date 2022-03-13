@@ -251,14 +251,33 @@
                         Учтены матчи до 10.03.2022 включительно
                     <span class="captions__explanation_circle">&#8226;</span>
                 </p>  
-            </section>        
-
+            </section>  
+            
             <?
 
                 require_once 'database/config/config.php';
                 require_once 'database/config/connect.php';
                 
                 $conn = connect();
+
+            ?>
+            
+            <section class="pair-select">
+
+                <form action="">
+
+                    <select name="club_1" id="">
+
+                        <option value="165">Реал Мадрид</option>
+                        <option value="21">Барселона</option>
+
+                    </select>
+
+                </form>
+
+            </section>
+
+            <?
                 
                 $firstClubId = isset($_GET['club_1']) ? (int)($_GET['club_1']) : 0;
                 $secondClubId = isset($_GET['club_2']) ? (int)($_GET['club_2']) : 0;
