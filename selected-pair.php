@@ -65,16 +65,6 @@
                     </div> -->
                     <ul class="nav__stripe__list">
 
-                        <li class="nav__stripe__list__item select-pair">
-                            <a href="selected-pair.php" title="Узнать историю встреч пары клубов нс свой выбор">
-                                <div class="nav__icon select-pair">
-                                    <!-- Сюда через css подставляется иконка -->
-                                </div>
-                                Выбрать пару
-                            </a>
-                        </li>
-
-
                         <li class="nav__stripe__list__item  dropdown  current-season">
                             <a href="champ_league_current.html"
                                 title="Фавориты еврокубков текущего сезона. Личные встречи. Сводная таблица">
