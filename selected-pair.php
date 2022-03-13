@@ -267,7 +267,7 @@
                 <form action="">
 
                     <label for="">
-                        Клуб 1
+                        <span>Клуб 1:</span>
                         <select name="club_1">
 
                             <option value="165">Реал Мадрид</option>
@@ -277,7 +277,7 @@
                     </label>
 
                     <label for="">
-                        Клуб 2
+                        <span>Клуб 2:</span>
                         <select name="club_2">
 
                             <option value="165">Реал Мадрид</option>
