@@ -246,7 +246,7 @@
 
                 <p class="captions__explanation">
                     <span class="captions__explanation_circle">&#8226;</span>                
-                        Учтены матчи до 17.02.2022 включительно
+                        Учтены матчи до 10.03.2022 включительно
                     <span class="captions__explanation_circle">&#8226;</span>
                 </p>  
             </section>        
@@ -279,7 +279,84 @@
                     $firstClubLogoClass = $item['CSSClass'];
                     $firstClubCountryEngCode = $item['countryEngCode'];
                 }
-                var_dump($firstClubFullName);              
+                // var_dump($firstClubFullName);   
+                
+                $sql =
+                    "SELECT * 
+                    FROM `eurocups_clubs` 
+                    WHERE id = {$secondClubId}
+                ";
+                $result = mysqli_query($conn, $sql);
+                if ($item = mysqli_fetch_assoc($result)) {
+                    $secondClubFullName = $item['basicFullName'];
+                    $secondClubShortName = $item['shortName'];
+                    $secondClubAltNames = explode(",", $item['altNames']);
+                    $secondClubCode = $item['code'];
+                    $secondClubLogoClass = $item['CSSClass'];
+                    $secondClubCountryEngCode = $item['countryEngCode'];
+                }                
+
+                // Массив имён файлов с логотипами (нужен чтобы правильно добавлять к коду клуба ".png", ".svg" и т.п.)
+                // $logoFiles = scandir("../images");
+                $logoFiles = scandir("images");
+                echo '<pre>';
+                echo 'logoFiles:';
+                var_dump($logoFiles);
+
+                // Имя файла с картинкой логотипа:
+                $specialImages = [
+                    "Akt" => "Akt_light.png",
+                    "AuW" => "AuW_light.png",
+                    "DuP" => "DuP_light.png",
+                    "Mar" => "Mar_light.png",
+                    "Mlm" => "Mlm_light.png",
+                    "Nan" => "Nan_light.png",
+                    "New" => "New_light.png",
+                    "Not" => "Not_light.png",
+                    "Prt" => "Prt_light.png",
+                    "SpL" => "SpL_light.png",
+                    "StL" => "StL_light.png",
+                    "Zen" => "Zen_light.png",
+                ];
+                $firstLogoImageFile = $secondLogoImageFile = $firstFlagClass = $secondFlagClass = "";
+                if ($firstClubCode != "") {
+                    if (in_array($firstClubCode, array_keys($specialImages))) {
+                        $firstLogoImageFile = $specialImages[$firstClubCode];
+                    } else {        
+                        if (in_array("{$firstClubCode}.png", $logoFiles)) {
+                            $firstLogoImageFile = "{$firstClubCode}.png";
+                        } elseif (in_array("{$firstClubCode}.svg", $logoFiles)) {
+                            $firstLogoImageFile = "{$firstClubCode}.svg";
+                        } elseif (in_array("{$firstClubCode}.jpg", $logoFiles)) {
+                            $firstLogoImageFile = "{$firstClubCode}.jpg";
+                        }
+                    }
+                } else {
+                    $firstLogoImageFile = "flags/{$firstClubCountryEngCode}.png";
+                    $firstFlagClass = " flag-image";
+                }
+                if ($secondClubCode != "") {
+                    if (in_array($secondClubCode, array_keys($specialImages))) {
+                        $secondLogoImageFile = $specialImages[$secondClubCode];
+                    } else {    
+                        if (in_array("{$secondClubCode}.png", $logoFiles)) {
+                            $secondLogoImageFile = "{$secondClubCode}.png";
+                        } elseif (in_array("{$secondClubCode}.svg", $logoFiles)) {
+                            $secondLogoImageFile = "{$secondClubCode}.svg";
+                        } elseif (in_array("{$secondClubCode}.jpg", $logoFiles)) {
+                            $secondLogoImageFile = "{$secondClubCode}.jpg";
+                        }
+                    }
+                } else {
+                    $secondLogoImageFile = "flags/{$secondClubCountryEngCode}.png";
+                    $secondFlagClass = " flag-image";
+                }
+
+                // var_dump($firstClubFullName,$firstClubShortName,$firstClubCode,$secondClubFullName,$secondClubShortName,$secondClubCode);
+                $firstClubLogoClassToInsert = ($firstClubLogoClass != "") ? " {$firstClubLogoClass}" : "";
+                $secondClubLogoClassToInsert = ($secondClubLogoClass != "") ? " {$secondClubLogoClass}" : "";
+
+
             ?>
 
         </main>
