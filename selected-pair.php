@@ -252,6 +252,7 @@
             </section>        
 
             <?
+
                 require_once 'database/config/config.php';
                 require_once 'database/config/connect.php';
                 
@@ -355,6 +356,53 @@
                 // var_dump($firstClubFullName,$firstClubShortName,$firstClubCode,$secondClubFullName,$secondClubShortName,$secondClubCode);
                 $firstClubLogoClassToInsert = ($firstClubLogoClass != "") ? " {$firstClubLogoClass}" : "";
                 $secondClubLogoClassToInsert = ($secondClubLogoClass != "") ? " {$secondClubLogoClass}" : "";
+
+                // Определяем статистику:
+                $sql =
+                    "SELECT * 
+                    FROM `matches` 
+                    WHERE 
+                        (
+                                (
+                                    firstClubId = '{$firstClubId}' 
+                                    AND secondClubId = '{$secondClubId}'
+                                ) 
+                            OR 
+                                (
+                                    firstClubId = '{$secondClubId}' 
+                                    AND secondClubId = '{$firstClubId}'
+                                )
+                        )
+                    AND `score` != ''
+                ";
+                $result = mysqli_query($conn, $sql);
+                $matchesArr = array();
+                if (mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $matchesArr[] = $row;
+                    }
+                }
+                $noHistory = false;
+                if (count($matchesArr) === 0) {
+                    $noHistory = true;
+                }
+                echo '<pre>';
+                var_dump($matchesArr);
+                echo '</pre>';
+
+                // Про количество матчей:
+                $matchesQuantity = count($matchesArr);
+                $matchesWord = 'матчей';
+                if (($matchesQuantity != 11) && (($matchesQuantity % 10) === 1)) {
+                    $matchesWord = 'матч';
+                } else if (
+                    ((($matchesQuantity % 10) === 2) || (($matchesQuantity % 10) === 3) || (($matchesQuantity % 10) === 4)) &&
+                    ($matchesQuantity != 12) &&
+                    ($matchesQuantity != 13)  &&
+                    ($matchesQuantity != 14)
+                ) {
+                    $matchesWord = 'матча';
+                }                
 
 
             ?>
