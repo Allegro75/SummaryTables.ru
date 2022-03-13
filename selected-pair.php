@@ -262,6 +262,7 @@
 
                 // Список клубов:
                 $clubsList = [];
+                $allClubsIds = [0];
                 $sql =
                     "SELECT * 
                     FROM `eurocups_clubs`
@@ -269,10 +270,14 @@
                 $result = mysqli_query($conn, $sql);
                 while ($item = mysqli_fetch_assoc($result)) {
                     $clubsList[$item['basicFullName']]["id"] = $item["id"];
+                    $allClubsIds[] = $item["id"];
                 }
                 ksort($clubsList);
                 $clubsList = ["" => ["id" => 0]] + $clubsList;
-                // var_dump($clubsList);                
+                // var_dump($clubsList);
+                
+                $firstClubDemoId = (isset($_GET['club_1']) && (in_array($_GET['club_1'], $allClubsIds))) ? $_GET['club_1'] : 165;
+                $secondClubDemoId = (isset($_GET['club_2']) && (in_array($_GET['club_2'], $allClubsIds))) ? $_GET['club_2'] : 21;
 
             ?>
             
@@ -286,7 +291,7 @@
 
                             <? foreach ($clubsList as $clubName_1 => $clubInfo_1): ?>
                                 
-                                <option value="<?=$clubInfo_1['id']?>" <?= (isset($_GET['club_1']) && ($_GET['club_1'] == $clubInfo_1['id'])) ? "selected" : "" ?>><?=$clubName_1?></option>
+                                <option value="<?=$clubInfo_1['id']?>" <?= ($firstClubDemoId == $clubInfo_1['id']) ? "selected" : "" ?>><?=$clubName_1?></option>
 
                             <? endforeach; ?>
 
@@ -299,7 +304,7 @@
 
                             <? foreach ($clubsList as $clubName_2 => $clubInfo_2): ?>
                                 
-                                <option value="<?=$clubInfo_2['id']?>" <?= (isset($_GET['club_2']) && ($_GET['club_2'] == $clubInfo_2['id'])) ? "selected" : "" ?>><?=$clubName_2?></option>
+                                <option value="<?=$clubInfo_2['id']?>" <?= ($secondClubDemoId == $clubInfo_1['id']) ? "selected" : "" ?>><?=$clubName_2?></option>
 
                             <? endforeach; ?>
 
