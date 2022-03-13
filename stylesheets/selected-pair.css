@@ -1,0 +1,405 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+p {
+    font-size: 1.25em;
+    margin: 0.25em auto;
+}
+
+div.additional-table {
+    display: inline-block;
+    text-align: center;
+    max-width: 550px;
+    /* 550 пикселей нужно, чтобы матчи "Бавария"-"Реал" 
+  не громоздились в две строки */
+    /* position: absolute; */
+    background-color: gray;
+    color: black;
+    border-radius: 15px;
+    padding: 5px;
+    box-shadow: 2px 2px 1px rgb(22, 19, 19);
+    border-top: oldlace solid 1px;
+    border-left: oldlace solid 1px;
+}
+
+div.additional-table img.logo-left {
+    float: left;
+    margin-right: 15px;
+}
+
+div.additional-table img.logo-right {
+    float: right;
+    margin-left: 15px;
+}
+
+
+img.football-logo-table {
+    height: 40px;
+    max-width: 60px;
+    /* Иначе лого Лейпцига становится слишком широким - оно вытянуто в ширину */
+    margin: 5px;
+}
+
+img.football-logo-table.flag-image {
+    height: 20px;
+    position: relative;
+    top: 12px;
+    margin-bottom: 20px;
+}
+
+img.logo-like-soligorsk {
+    position: relative;
+    top: 4px;
+}
+
+/* Для эмблем, вытянутых в высоту (Реал, Тоттенхэм, Порто, Милан, Интер): */
+img.real, img.logo-like-real {
+    height: 45px;
+    position: relative;
+    bottom: 4px;
+}
+
+img.logo-like-crvena {
+    height: 45px;
+    position: relative;
+    bottom: 3px;
+}
+
+img.logo-like-zarya {
+    height: 45px;
+}
+
+img.logo-like-granada {
+    height: 50px;
+    position: relative;
+    bottom: 3px;
+}
+
+img.roma, img.logo-like-roma {
+    height: 42px;
+}
+
+img.logo-like-metallist {
+    height: 37px;
+}
+
+/* Для эмблемы Байера(вытянутой в ширину): */
+img.bayer.football-logo-table, img.logo-like-bayer {
+    max-width: 45px;
+    height: auto;
+}
+
+img.logo-like-spartak {
+    width: 48px;
+    height: auto;
+    top: 3px;
+    position: relative;
+}
+
+img.logo-like-az {
+    width: 45px;
+    height: auto;
+    top: 10px;
+    position: relative;
+}
+
+img.logo-like-dresden {
+    width: 42px;
+    height: auto;
+    position: relative;
+    top: 4px;
+}
+
+img.logo-like-lazio {
+    width: 50px;
+    height: auto;
+    position: relative;
+    top: 4px;
+}
+
+/* У самого Зенита класс bayer, не факт, что класс zenit вообще нужен: */
+img.zenit.football-logo-table, img.logo-like-zenit {
+    width: 37px;
+    height: auto;
+}
+
+img.logo-like-rostov {
+    width: 37px;
+    height: auto;
+    top: 3px;
+    position: relative;
+}
+
+/* Ноттингемскому(и марсельскому) лого нужна подложка.
+Иначе бледно-красное(и голубое) на сером не смотрится: */
+img.nottingham {
+    border: 0.2em solid white;
+    background-color: white;
+    border-radius: 0.3em;
+}
+
+/* Лого Гамбурга вытянуто в ширину, посему его настаиваем специально: */
+img.hamburg {
+    width: 42px;
+    /* Если не сделать height:auto, то height будет считываться с img, 
+  будет равен 40px, пропорции нарушатся */
+    height: auto;
+    top: 8px;
+    position: relative;
+}
+
+/* Для улучшения положения логотипов вытянутых в ширину */
+/* Отказался от этого, т.к. в итоге страдают названия длинных пар типа AtMBav */
+/* img.hamburg.logo-right{
+  right: 5px;
+}
+img.hamburg.logo-left{
+  left: 5px;
+} */
+/* Пробуем иначе (через position, а не float) выстроить позиционирование логотипов */
+/* Ничего не выходит. Где-то в наборе AtMBav, CZvHam, PSVMon всегда есть проблемы. */
+/* img.logo-right{
+  position: absolute;
+  right: 5px;
+}
+img.logo-left{
+  position: absolute;
+  left: 5px;
+} */
+
+img.logo-like-salzburg {
+    width: 42px;
+    height: auto;
+    top: 3px;
+    position: relative;
+}
+
+img.logo-like-dnieper {
+    width: 42px;
+    height: auto;
+    top: 2px;
+    position: relative;
+}
+
+img.leipzig, img.logo-like-leipzig {
+    position: relative;
+    top: 5px;
+    width: 62px;
+    height: auto;
+}
+
+/* Хотел сделать белый фон под заголовком пары: */
+/* section.pair-title{
+  background-color: rgb(236, 234, 234);
+  padding: 20px 0;
+  border-radius: 12px;
+} */
+
+div.additional-table h1 {
+    /*Без max-width иногда неоправданно растягивается
+    (см. "Боруссия" М - "Лион"): */
+    max-width: 300px;
+    /* Без выравнивания маргинами вторая (и зачастую появляющаяся третья) строка смещается влево,
+    т.к. "не видит" левого логотипа: */
+    margin: 20px auto;
+    /* После появления postion:absolute у hamburg в CZvHam стало съедаться название "Гамбург". Поэтому пришлось вводить маргин 55px */
+    /* margin: 20px 55px; */
+    font-size: 1.17em;
+}
+
+/* Костыль для AtMBav, RMaInt: */
+/* Передемал вводить такие костыли, их тогда погтребуется слишком много */
+/* div.additional-table.AtMBav h1, div.additional-table.BavAtM h1, 
+div.additional-table.RMaInt h1, div.additional-table.IntRMa h1 {
+  max-width: none;
+} */
+
+p {
+    margin-left: 0.4em;
+    margin-right: 0.4em;
+}
+
+.duels-score {
+    font-size: 1.2em;
+    /* font-weight: bold; */
+}
+
+table.add-table {
+    /* Маргины правый и левый со значением "авто" нужны 
+  для центрирования таблицы */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 2px 2px 1px rgb(22, 19, 19);
+    /* Рамки сверху и слева несовместимы с overflow: hidden: */
+    /* border-top: oldlace solid 1px;
+  border-left: oldlace solid 1px; */
+}
+
+/* Уменьшаем шрифт для надписей "№" и "Поле": */
+table.add-table tr:first-child td:first-child,
+table.add-table tr:first-child td:nth-child(2) {
+    font-size: 0.8em;
+}
+
+table.add-table td {
+    padding: 7px;
+}
+
+table.add-table tr:nth-child(odd) {
+    background-color: aliceblue;
+    /* border-top-left-radius: 12px;
+  overflow: hidden; */
+}
+
+table.add-table tr:first-child {
+    /* color: #333333; */
+    background-color: #999999;
+}
+
+/* Наклоняем шрифт в первой колонке (с номерами матчей): */
+table.add-table td.number-of-match,
+table.add-table tr:first-child td:first-child {
+    font-style: italic;
+}
+
+table.add-table tr.final {
+    font-weight: bold;
+}
+
+table.add-table td span.penalty-text,
+span.add-time-text,
+span.lottery-text,
+span.add-match-text {
+    font-size: 12px;
+    white-space: normal;
+}
+
+div.duels-text {
+    font-size: 0.9em;
+    font-style: italic;
+    margin-top: 0.7em;
+}
+
+div.duels-text p {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+tr.duel-result {
+    line-height: 0.1em;
+}
+
+/* Для фона матчей: */
+div.additional-table tr.duel-loose td {
+    background-color: rgba(255, 0, 0, 0.1);
+}
+
+div.additional-table tr.duel-win td {
+    background-color: rgba(0, 255, 0, 0.1);
+}
+
+div.additional-table tr.duel-draw td {
+    background-color: rgba(255, 255, 0, 0.1);
+}
+
+/* Для ФОНА строк с ИТОГОМ дуэли: */
+div.additional-table tr.duel-result.duel-loose td {
+    background-color: rgba(255, 0, 0, 0.4);
+    color: rgba(184, 12, 12, 0.699);
+}
+
+div.additional-table tr.duel-result.duel-win td {
+    background-color: rgba(0, 255, 0, 0.25);
+    color: green;
+}
+
+div.additional-table tr.duel-result.duel-draw td {
+    background-color: rgba(255, 255, 0, 0.25);
+    color: rgba(228, 188, 13, 0.836);
+    font-size: 1.5em;
+    position: relative;
+}
+
+span.yellow-circle {
+    position: relative;
+    top: -2px;
+}
+
+/* Для СКРУГЛЕНИЯ рамки таблицы: */
+/* table.add-table tr:nth-child(2){
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  overflow: hidden;
+} */
+
+/* table.add-table tr:nth-child(2) td:first-child{
+  border-top-left-radius: 12px;
+  overflow: hidden;
+} */
+
+/* table.add-table tr:nth-child(2) td:last-child{
+  border-top-right-radius: 12px;
+  overflow: hidden;
+} */
+
+table.add-table tr:last-child td:first-child {
+    border-bottom-left-radius: 12px;
+    /* overflow: hidden; */
+}
+
+table.add-table tr:last-child td:last-child {
+    border-bottom-right-radius: 12px;
+    /* overflow: hidden; */
+}
+
+/* Чтобы счёт был жирным: */
+table.add-table tr td:nth-child(3) {
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* Чтобы слово "Счёт" не было жирным: */
+table.add-table tr:nth-child(1) td {
+    font-weight: normal;
+}
+
+table.add-table tr td:nth-child(2) {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+/* Это даёт нулевые паддинги справа-слева у слова "Поле" */
+
+a {
+    cursor: pointer;
+}
+
+table.add-table td a {
+    text-decoration: none;
+    color: black;
+    font-size: 1em;
+}
+
+
+/* Нижнняя ссылка */
+
+div.down-href-to-main-page {
+    background: lightgrey;
+    margin: 5px auto 0;
+    padding: 0 5px 3px;
+    width: fit-content;
+    border-radius: 6px;
+    box-shadow: 2px 2px 1px rgb(22, 19, 19);
+}
+
+div.down-href-to-main-page a {
+    font-size: 0.6em;
+    color: rgb(22, 20, 20);
+    vertical-align: 20%;
+}
