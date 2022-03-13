@@ -271,7 +271,7 @@
                     $clubsList[$item['basicFullName']]["id"] = $item["id"];
                 }
                 ksort($clubsList);
-                var_dump($clubsList);                
+                // var_dump($clubsList);                
 
             ?>
             
@@ -283,8 +283,11 @@
                         <span>Клуб 1:</span>
                         <select name="club_1">
 
-                            <option value="165">Реал Мадрид</option>
-                            <option value="21">Барселона</option>
+                            <? foreach ($clubsList as $clubName_1 => $clubInfo_1): ?>
+                                
+                                <option value="<?=$clubInfo_1['id']?>" <?= (isset($_GET['club_1']) && ($_GET['club_1'] == $clubInfo_1['id'])) ? "selected" : "" ?>><?=$clubName_1?></option>
+
+                            <? endforeach; ?>
 
                         </select>
                     </label>
@@ -293,8 +296,11 @@
                         <span>Клуб 2:</span>
                         <select name="club_2">
 
-                            <option value="165">Реал Мадрид</option>
-                            <option value="21">Барселона</option>
+                            <? foreach ($clubsList as $clubName_2 => $clubInfo_2): ?>
+                                
+                                <option value="<?=$clubInfo_2['id']?>" <?= (isset($_GET['club_2']) && ($_GET['club_2'] == $clubInfo_2['id'])) ? "selected" : "" ?>><?=$clubName_2?></option>
+
+                            <? endforeach; ?>
 
                         </select>
                     </label>
