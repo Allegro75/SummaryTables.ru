@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="stylesheets/cap-wo-nav.css">
     <link rel="stylesheet" href="stylesheets/navigation.css">
     <link rel="stylesheet" href="stylesheets/captions.css">
+    <link rel='stylesheet' href='stylesheets/small-tables-duels.css'>
     <link rel="stylesheet" href="stylesheets/donate.css">
     <link rel="stylesheet" href="stylesheets/footer.css">
 
