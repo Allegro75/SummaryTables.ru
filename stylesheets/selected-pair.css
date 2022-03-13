@@ -22,6 +22,10 @@ section.pair-select form{
     width: 600px;
 }
 
+section.pair-select form label span{
+    font-style: italic;
+    font-size: 0.8em;
+}
 
 div.additional-table {
     display: inline-block;
