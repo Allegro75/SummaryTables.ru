@@ -933,14 +933,177 @@
                                 <td>Стадия</td>
                             </tr>";
                 
-                    echo '<pre>';
-                    var_dump($duelsArr);
-                    echo '</pre>';
+                    // echo '<pre>';
+                    // var_dump($duelsArr);
+                    // echo '</pre>';
 
+                    // Сортируем матчи внутри дуэлей по дате:
+                    foreach ($duelsArr as &$duelData) {
+                        usort($duelData, function($a, $b) {
+                            return (strtotime($a["matchDate"]) > strtotime($b["matchDate"])) ? 1 : -1;
+                        });
+                    }
+                    unset($duelData);
+
+                    $output = "";
+                    $matchNumber = 1;
+
+                    $stagesToShowArr = [
+                        "Финал" => "ФИНАЛ",
+                        "1/2 финала" => "1/2",
+                        "1/4 финала" => "1/4",
+                        "группа2" => "группа2",
+                        "1/8 финала" => "1/8",
+                        "1/16 финала" => "1/16",
+                        "группа" => "группа",
+                        "1/32 финала" => "1/32",
+                        "1/64 финала" => "1/64",
+                        "Раунд плей-офф" => "отбор",
+                        "Третий квалификационный раунд" => "отбор",
+                        "Третий отборочный раунд" => "отбор",
+                        "2-й квалификационный раунд" => "отбор",
+                        "Второй квалификационный раунд" => "отбор",
+                        "Второй отборочный раунд" => "отбор",
+                        "1-й квалификационный раунд" => "отбор",
+                        "Первый квалификационный раунд" => "отбор",
+                        "Первый отборочный раунд" => "отбор",
+                        "Первый раунд" => "отбор",
+                        "Квалификационный раунд" => "отбор",
+                        "Отборочный раунд" => "отбор",
+                        "Предварительный раунд, финал" => "отбор",
+                        "Предварительный раунд, 1/2 финала" => "отбор",
+                        "Предварительный раунд" => "отбор",
+                    ];
+
+                    foreach ($duelsArr as $duelSerialInd => $duelData) {
+
+                        $duelResultClass = "win";
+                        $duelResRow = 
+                        "<tr class='duel-result duel-win' title='Дуэль выше выиграна'>
+                            <td colspan='5'>
+                            </td>
+                            <td>
+                                &#9650;
+                            </td>
+                        </tr>";
+                        if ($duelsResults[$duelSerialInd]["result"] === "secondClubVictory") {
+                            $duelResultClass = "loose";
+                            $duelResRow = "
+                            <tr class='duel-result duel-loose' title='Дуэль выше проиграна'>
+                                <td colspan='5'>
+                                </td>
+                                <td>
+                                    &#9660;
+                                </td>
+                            </tr>";
+                        } elseif ($duelsResults[$duelSerialInd]["result"] === "draw") {
+                            $duelResultClass = "draw";
+                            $duelResRow = "
+                            <tr class='duel-result duel-draw'
+                            title='Дуэль выше не выявила победителя'>
+                                <td colspan='5'>
+                                </td>
+                                <td>
+                                    <span class='yellow-circle'>
+                                        &#9679;
+                                    </span>
+                                </td>
+                            </tr>";
+                        } elseif ($duelsResults[$duelSerialInd]["result"] === "notFinished") {
+                            $duelResultClass = "";
+                            $duelResRow = "";
+                        }
+                        // $duelInd = unserialize($duelSerialInd);
+
+                        $finalClass = "";
+                        if ($duelData[0]["tourneyStage"] === "Финал") {
+                            $finalClass = " final";
+                        }        
+
+                        foreach ($duelData as $curMatch) {
+
+                            $output = "{$output}<tr class='duel-{$duelResultClass}{$finalClass}'>";
+
+                            $output = "{$output}<td class='number-of-match'>{$matchNumber}</td>";
+                            $matchNumber++;
+
+                            $homeCell = "<td title='дома'>д</td>";
+                            if ($curMatch["home"] === "neutral") {
+                                $homeCell = "<td title='нейтральное поле'>н</td>";
+                            } elseif ( ($curMatch["home"] === $secondClubFullName) || ($curMatch["home"] === $secondClubShortName) || (in_array($curMatch["home"], $secondClubAltNames)) ) {
+                                $homeCell = "<td title='в гостях'>г</td>";
+                            }
+                            $output = "{$output}{$homeCell}";
+
+                            $firstClubGoals = $secondClubGoals = 0;
+                            if ($curMatch["firstClubId"] == $firstClubId) {
+                                $firstClubGoals = $curMatch["firstClubGoals"];
+                                $secondClubGoals = $curMatch["secondClubGoals"];
+                            } else {
+                                $firstClubGoals = $curMatch["secondClubGoals"];
+                                $secondClubGoals = $curMatch["firstClubGoals"];                
+                            }
+
+                            // Доп. инфо по матчу. (Нужно ещё доработать на случай жребия и двух событий одновременно (жребий и доп. матч. например))
+                            $addText = "";
+                            if ($curMatch["hadEfficientAddTime"] == 1) {
+                                $addText = "<br><span class='add-time-text'>(доп. время)</span>";
+                            }
+                            if ($curMatch["hadPenalties"] == 1) {
+                                $victOrLes = "победа";
+                                if ($duelsResults[$duelSerialInd]["result"] === "secondClubVictory") {
+                                    $victOrLes = "поражение";
+                                }
+                                $addText = "<br><span class='penalty-text'>({$victOrLes}<br>по пенальти)</span>";
+                            }
+                            if ($curMatch["comments"] === "доп. матч") {
+                                $addText = "<br><span class='add-match-text'>(доп. матч)</span>";
+                            }
+                            if (($curMatch["comments"] === "тех. победа") && ($curMatch["firstClubId"] == $firstClubId)) {
+                                $addText = "<br><span class='add-time-text'>(тех. победа)</span>";
+                            } elseif (($curMatch["comments"] === "тех. победа") && ($curMatch["firstClubId"] == $secondClubId)) {
+                                $addText = "<br><span class='add-time-text'>(тех. поражение)</span>";
+                            } elseif (($curMatch["comments"] === "тех. поражение") && ($curMatch["firstClubId"] == $firstClubId)) {
+                                $addText = "<br><span class='add-time-text'>(тех. поражение)</span>";
+                            } elseif (($curMatch["comments"] === "тех. поражение") && ($curMatch["firstClubId"] == $secondClubId)) {
+                                $addText = "<br><span class='add-time-text'>(тех. победа)</span>";
+                            }
+
+                            $output = "{$output}<td>{$firstClubGoals} : {$secondClubGoals}{$addText}</td>";
+
+                            $year = $curMatch["year"];
+                            $output = "{$output}<td>{$year}</td>";
+
+                            $tourney = $curMatch["tourneyTitle"];
+                            $output = "{$output}<td>{$tourney}</td>";
+
+                            $stageToShow = $stagesToShowArr[$curMatch["tourneyStage"]];
+                            $output = "{$output}<td>{$stageToShow}</td>";
+
+                        }
+
+
+
+                        $output = "{$output}</tr>";
+                        $output = "{$output}{$duelResRow}";
+
+                    }
+
+                    echo $output;
+
+                    echo 
+                    "   </table>
+                
+                        <div class='down-href-to-main-page'>
+                            <a href='../history.html' title='Лучшие клубы Европы. Личные встречи. Сводная таблица'>
+                                Лучшие клубы Европы. Личные встречи. Сводная таблица.
+                            </a>
+                        </div>
+                    </div>"    
 
             ?>
 
-        <!-- <img src='images/<?=$firstLogoImageFile?>' alt='' class='football-logo-table logo-left'> -->
+        <script src="../scripts/small-tables/add_hrefs.js"></script>  
 
         </main>
 
