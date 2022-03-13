@@ -252,13 +252,18 @@
             </section>        
 
             <?
-                var_dump("test");
                 require_once 'database/config/config.php';
                 require_once 'database/config/connect.php';
                 
                 $conn = connect();
                 
-                $firstClubId = 760;
+                $firstClubId = isset($_GET['club_1']) ? (int)($_GET['club_1']) : 0;
+                $secondClubId = isset($_GET['club_2']) ? (int)($_GET['club_2']) : 0;
+                $haveIncorrectClubIds = false;
+                if (($firstClubId <= 0) || ($secondClubId <= 0) || ($firstClubId == $secondClubId)) {
+                    $haveIncorrectClubIds = true;
+                }
+                
                 // Определяем данные клубов:
                 $sql =
                     "SELECT * 
