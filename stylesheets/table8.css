@@ -28,10 +28,10 @@ table.main-table{
 }
 
 /* Для обозначения победителя турнира: */
-.main-table.champs-league tr:nth-child(2),
+/* .main-table.champs-league tr:nth-child(2),
 .main-table.euroleague tr:nth-child(2){
   background-color: rgba(255, 238, 0, 0.2);
-}
+} */
 
 .main-table tr:nth-child(odd) td.main-table_gap{
   background: rgba(255, 255, 255, 0.3);
