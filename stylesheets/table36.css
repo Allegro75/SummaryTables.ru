@@ -66,11 +66,14 @@ img.football-logo-table{
   height: 14px;
 }
 /* Для эмблем, вытянутых в высоту (Реал, Тоттенхэм, Порто, Милан): */
-img.real{
+img.real, img.logo-like-real{
   height: 16px;
 }
+img.roma, img.logo-like-roma{
+  height: 15px;
+}
 /* Лого Гамбурга вытянуто в ширину, посему его настаиваем специально: */
-img.hamburg{
+img.hamburg, img.logo-like-hamburg{
   width: 16px;
   height: auto;
   position: relative;
