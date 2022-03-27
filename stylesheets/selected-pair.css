@@ -160,7 +160,7 @@ img.nottingham {
 }
 
 /* Лого Гамбурга вытянуто в ширину, посему его настаиваем специально: */
-img.hamburg {
+img.hamburg, img.logo-like-hamburg {
     width: 42px;
     /* Если не сделать height:auto, то height будет считываться с img, 
   будет равен 40px, пропорции нарушатся */
