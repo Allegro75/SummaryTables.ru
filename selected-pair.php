@@ -888,7 +888,7 @@
                                             if($row["count"] > 0) {
                                                 $duelsResults[$duelInd]["result"] = "secondClubVictory";
                                             } else {
-                                                if (($curDuelInd["tourFinYear"] == 2022) && (($curDuelInd["tourneyStage"] == "1/4 финала") || ($curDuelInd["tourneyStage"] == "1/8 финала") || ($curDuelInd["tourneyStage"] == "1/16 финала"))) { // для незавершенных дуэлей 2021/2022
+                                                if (($curDuelInd["tourFinYear"] == 2022) && (($curDuelInd["tourneyStage"] == "1/2 финала") || ($curDuelInd["tourneyStage"] == "1/4 финала") || ($curDuelInd["tourneyStage"] == "1/8 финала") || ($curDuelInd["tourneyStage"] == "1/16 финала"))) { // для незавершенных дуэлей 2021/2022
                                                     $duelsResults[$duelInd]["result"] = "notFinished";
                                                 } else {
                                                     $duelsResults[$duelInd]["result"] = "draw";
