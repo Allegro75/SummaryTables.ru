@@ -838,9 +838,10 @@
                                             OR `secondClubId` = {$secondClubId}
                                         )
                                 ";
-                                $res = mysqli_query($conn, $sql);
-                                if ($row = mysqli_fetch_assoc($res)) {
-                                    $hasSecondClubAdvance = ($row["count"] > 0) ? true : false;
+                                if ($res = mysqli_query($conn, $sql)) {
+                                    if ($row = mysqli_fetch_assoc($res)) {
+                                        $hasSecondClubAdvance = ($row["count"] > 0) ? true : false;
+                                    }
                                 }
 
                                 if ($hasFirstClubAdvance && !$hasSecondClubAdvance) {
@@ -864,9 +865,10 @@
                                                 OR `secondClubId` = {$firstClubId}
                                             )
                                     ";
-                                    $res = mysqli_query($conn, $sql);
-                                    if ($row = mysqli_fetch_assoc($res)) {
-                                        $hasFCEuroLeagueAdvance = ($row["count"] > 0) ? true : false;
+                                    if ($res = mysqli_query($conn, $sql)) {
+                                        if ($row = mysqli_fetch_assoc($res)) {
+                                            $hasFCEuroLeagueAdvance = ($row["count"] > 0) ? true : false;
+                                        }
                                     }
                                     if ($hasFCEuroLeagueAdvance) {
                                         $duelsResults[$duelInd]["result"] = "firstClubVictory";
@@ -883,17 +885,18 @@
                                                     OR `secondClubId` = {$secondClubId}
                                                 )
                                         ";
-                                        $res = mysqli_query($conn, $sql);
-                                        if ($row = mysqli_fetch_assoc($res)) {
-                                            // $duelsResults[$duelInd]["result"] = ($row["count"] > 0) ? "secondClubVictory" : "draw";
-                                            if($row["count"] > 0) {
-                                                $duelsResults[$duelInd]["result"] = "secondClubVictory";
-                                            } else {
-                                                if (($curDuelInd["tourFinYear"] == 2022) && (($curDuelInd["tourneyStage"] == "1/2 финала") || ($curDuelInd["tourneyStage"] == "1/4 финала") || ($curDuelInd["tourneyStage"] == "1/8 финала") || ($curDuelInd["tourneyStage"] == "1/16 финала"))) { // для незавершенных дуэлей 2021/2022
-                                                    $duelsResults[$duelInd]["result"] = "notFinished";
+                                        if ($res = mysqli_query($conn, $sql)) {
+                                            if ($row = mysqli_fetch_assoc($res)) {
+                                                // $duelsResults[$duelInd]["result"] = ($row["count"] > 0) ? "secondClubVictory" : "draw";
+                                                if($row["count"] > 0) {
+                                                    $duelsResults[$duelInd]["result"] = "secondClubVictory";
                                                 } else {
-                                                    $duelsResults[$duelInd]["result"] = "draw";
-                                                } 
+                                                    if (($curDuelInd["tourFinYear"] == 2022) && (($curDuelInd["tourneyStage"] == "1/2 финала") || ($curDuelInd["tourneyStage"] == "1/4 финала") || ($curDuelInd["tourneyStage"] == "1/8 финала") || ($curDuelInd["tourneyStage"] == "1/16 финала"))) { // для незавершенных дуэлей 2021/2022
+                                                        $duelsResults[$duelInd]["result"] = "notFinished";
+                                                    } else {
+                                                        $duelsResults[$duelInd]["result"] = "draw";
+                                                    } 
+                                                }
                                             }
                                         }
                                     }
