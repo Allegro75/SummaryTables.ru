@@ -820,9 +820,10 @@
                                 // var_dump($sql);
                                 // echo '</pre>';  
 
-                                $res = mysqli_query($conn, $sql);
-                                if ($row = mysqli_fetch_assoc($res)) {
-                                    $hasFirstClubAdvance = ($row["count"] > 0) ? true : false;
+                                if ($res = mysqli_query($conn, $sql)) {
+                                    if ($row = mysqli_fetch_assoc($res)) {
+                                        $hasFirstClubAdvance = ($row["count"] > 0) ? true : false;
+                                    }
                                 }
 
                                 $sql =
