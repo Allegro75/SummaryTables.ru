@@ -43,7 +43,7 @@
             const wordInput = document.getElementById(`new-word__word`);
             const newWord = wordInput.value;
             document.getElementById(`submit-btn`).addEventListener(`submit`, () => {
-                document.cookie = `newWord=${newWord}; path=.summarytables.ru/elefly;`
+                document.cookie = `newWord=${newWord}; path=summarytables.ru/elefly;`
                 // document.cookie = `room=${newHallId}; path=/qr/<?=$pointId?>`;
             })
         })
