@@ -16,19 +16,21 @@
 
     <div>
         <div>Текущее слово:</div>
-        <div class='current-word' style="min-width: 200px;">
+        <div class='current-word' style="max-width: 300px; min-height: 20px; border: solid 1px; border-radius: 3px;">
             <?=$wordToShow?>
         </div>
     </div>
 
-    <form action="">
+    <form action="" style="margin-top: 10px;">
         <div class='new-word'>
             <label for='new-word__word'>Новое слово:</label>
             <input type='text' class='new-word__word' id='new-word__word' name='word'>
         </div>
 
         <div class='submit'>
-            <button type='submit' class='submit-btn' id="submit-btn" value='Отправить'>
+            <button type='submit' class='submit-btn' id="submit-btn">
+                Отправить
+            </button>
         </div>
     </form>
 
