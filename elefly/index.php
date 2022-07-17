@@ -14,32 +14,36 @@
 
     ?> 
 
-    <div>
-        <div>Текущее слово:</div>
-        <div class='current-word' style="max-width: 300px; min-height: 20px; border: solid 1px; border-radius: 3px;">
-            <?=$wordToShow?>
+    <div class="content">
+
+        <div>
+            <div>Текущее слово:</div>
+            <div class='current-word' style="max-width: 300px; min-height: 20px; border: solid 1px; border-radius: 3px;">
+                <?=$wordToShow?>
+            </div>
         </div>
+
+        <form action="" style="margin-top: 10px;">
+            <div class='new-word'>
+                <label for='new-word__word'>Новое слово:</label>
+                <input type='text' class='new-word__word' id='new-word__word' name='word'>
+            </div>
+
+            <div class='submit' style="margin-top: 5px;">
+                <button type='submit' class='submit-btn' id="submit-btn">
+                    Отправить
+                </button>
+            </div>
+        </form>
+        
     </div>
-
-    <form action="" style="margin-top: 10px;">
-        <div class='new-word'>
-            <label for='new-word__word'>Новое слово:</label>
-            <input type='text' class='new-word__word' id='new-word__word' name='word'>
-        </div>
-
-        <div class='submit'>
-            <button type='submit' class='submit-btn' id="submit-btn">
-                Отправить
-            </button>
-        </div>
-    </form>
 
     <script>
         document.addEventListener(`DOMContentLoaded`, () => {
             const wordInput = document.getElementById(`new-word__word`);
             const newWord = wordInput.value;
             document.getElementById(`submit-btn`).addEventListener(`submit`, () => {
-                document.cookie = `newWord=${newWord}; path=/;`
+                document.cookie = `newWord=${newWord}; path=/elefly;`
                 // document.cookie = `room=${newHallId}; path=/qr/<?=$pointId?>`;
             })
         })
