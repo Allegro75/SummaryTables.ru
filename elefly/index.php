@@ -30,9 +30,9 @@
             </div>
 
             <div class='submit' style="margin-top: 5px;">
-                <button type='submit' class='submit-btn' id="submit-btn">
+                <div type='submit' class='submit-btn' id="submit-btn">
                     Отправить
-                </button>
+                </div>
             </div>
         </form>
 
@@ -42,8 +42,8 @@
         document.addEventListener(`DOMContentLoaded`, () => {
             const wordInput = document.getElementById(`new-word__word`);
             const newWord = wordInput.value;
-            document.getElementById(`submit-btn`).addEventListener(`submit`, (e) => {
-                e.preventDefault();
+            document.getElementById(`submit-btn`).addEventListener(`click`, (e) => {
+                // e.preventDefault();
                 console.log(newWord);
                 document.cookie = `newWord=${newWord}; path=summarytables.ru/elefly;`
                 // document.cookie = `room=${newHallId}; path=/qr/<?=$pointId?>`;
