@@ -44,11 +44,11 @@
 
     <script>
         document.addEventListener(`DOMContentLoaded`, () => {
-            const wordInput = document.getElementById(`new-word__word`);
-            const newWord = wordInput.value;
+            const wordInput = document.getElementById(`new-word__word`);            
             // const newWord = wordInput.innerText;
             document.getElementById(`submit-btn`).addEventListener(`click`, (e) => {
                 // e.preventDefault();
+                const newWord = wordInput.value;
                 console.log(newWord);
                 document.cookie = `newWord=${newWord}; path=summarytables.ru/elefly;`
                 // document.cookie = `room=${newHallId}; path=/qr/<?=$pointId?>`;
