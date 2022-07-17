@@ -18,7 +18,7 @@
 
         <div>
             <div>Текущее слово:</div>
-            <div class='current-word' style="max-width: 300px; min-height: 20px; border: solid 1px; border-radius: 3px;">
+            <div class='current-word' style="max-width: 300px; min-height: 30px; border: solid 1px; border-radius: 3px;">
                 <?=$wordToShow?>
             </div>
         </div>
@@ -28,11 +28,11 @@
         
             <div class='new-word'>
                 <label for='new-word__word'>Новое слово:</label>
-                <input type='text' class='new-word__word' id='new-word__word' name='word'>
+                <input type='text' class='new-word__word' id='new-word__word' name='word' style="min-height: 30px;">
             </div>
 
             <div class='submit' style="margin-top: 5px;">
-                <div type='submit' class='submit-btn' id="submit-btn" style="border: solid 1px; border-radius: 3px;">
+                <div type='submit' class='submit-btn' id="submit-btn" style="border: solid 1px; border-radius: 3px; width: 100px; padding: 3px; text-align: center;">
                     Отправить
                 </div>
             </div>
@@ -45,7 +45,8 @@
     <script>
         document.addEventListener(`DOMContentLoaded`, () => {
             const wordInput = document.getElementById(`new-word__word`);
-            const newWord = wordInput.innerText;
+            const newWord = wordInput.value;
+            // const newWord = wordInput.innerText;
             document.getElementById(`submit-btn`).addEventListener(`click`, (e) => {
                 // e.preventDefault();
                 console.log(newWord);
