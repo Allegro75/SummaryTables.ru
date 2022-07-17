@@ -23,25 +23,29 @@
             </div>
         </div>
 
-        <form action="" style="margin-top: 10px;">
+        <!-- <form action="" style="margin-top: 10px;"> -->
+        <div style="margin-top: 10px;">
+        
             <div class='new-word'>
                 <label for='new-word__word'>Новое слово:</label>
                 <input type='text' class='new-word__word' id='new-word__word' name='word'>
             </div>
 
             <div class='submit' style="margin-top: 5px;">
-                <div type='submit' class='submit-btn' id="submit-btn">
+                <div type='submit' class='submit-btn' id="submit-btn" style="border: solid 1px; border-radius: 3px;">
                     Отправить
                 </div>
             </div>
-        </form>
+
+        <!-- </form> -->
+        </div>
 
     </div>
 
     <script>
         document.addEventListener(`DOMContentLoaded`, () => {
             const wordInput = document.getElementById(`new-word__word`);
-            const newWord = wordInput.value;
+            const newWord = wordInput.innerText;
             document.getElementById(`submit-btn`).addEventListener(`click`, (e) => {
                 // e.preventDefault();
                 console.log(newWord);
