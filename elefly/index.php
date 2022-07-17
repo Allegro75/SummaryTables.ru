@@ -18,7 +18,7 @@
 
         <div>
             <div>Текущее слово:</div>
-            <div class='current-word' style="max-width: 300px; min-height: 30px; border: solid 1px; border-radius: 3px;">
+            <div class='current-word' style="max-width: 300px; min-height: 30px; border: solid 1px; border-radius: 3px; padding: 10px; font-size: 24px; letter-spacing: 0.2em;">
                 <?=$wordToShow?>
             </div>
         </div>
