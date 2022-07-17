@@ -9,8 +9,15 @@
     
     <?php
 
+        $currentMoveNumber = $_COOKIE["currentMoveNumber"] ?? 0;
+        setcookie("currentMoveNumber", $currentMoveNumber + 1);
+
         $currentWord = $_COOKIE["newWord"] ?? "";
         $wordToShow = mb_strtoupper($currentWord);
+
+        if ( ! (empty($currentWord))) {
+            setcookie("oldWord-{$currentMoveNumber}", $currentWord);
+        }
 
     ?> 
 
@@ -38,6 +45,9 @@
             </div>
 
         <!-- </form> -->
+        </div>
+
+        <div id="gameCourse">            
         </div>
 
     </div>
