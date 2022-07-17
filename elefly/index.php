@@ -44,6 +44,7 @@
             const newWord = wordInput.value;
             document.getElementById(`submit-btn`).addEventListener(`submit`, (e) => {
                 e.preventDefault();
+                console.log(newWord);
                 document.cookie = `newWord=${newWord}; path=summarytables.ru/elefly;`
                 // document.cookie = `room=${newHallId}; path=/qr/<?=$pointId?>`;
             })
