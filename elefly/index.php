@@ -7,34 +7,40 @@
 </head>
 <body>
     
-<?php
+    <?php
 
-if (!isset($_POST['word']) OR $_POST['word'] === '') {
-    $_POST['word'] = 'плоть';
-}
+        $currentWord = $_COOKIE["newWord"] ?? "";
+        $wordToShow = mb_strtoupper($currentWord);
 
-$wordToShow = mb_strtoupper($_POST['word']);
+    ?> 
 
-echo "<div class='current-word'>{$wordToShow}</div>
+    <div>
+        <div>Текущее слово:</div>
+        <div class='current-word' style="min-width: 200px;">
+            <?=$wordToShow?>
+        </div>
+    </div>
 
-<br>
+    <form action="">
+        <div class='new-word'>
+            <label for='new-word__word'>Новое слово:</label>
+            <input type='text' class='new-word__word' id='new-word__word' name='word'>
+        </div>
 
-<form action='' method='POST' enctype='multipart/form-data'>
+        <div class='submit'>
+            <button type='submit' class='submit-btn' id="submit-btn" value='Отправить'>
+        </div>
+    </form>
 
-<div class='new-word'>
-    <label for='new-word__word'>Новое слово:</label>
-    <input type='text' class='new-word__word' id='new-word__word' name='word'>
-</div>
-
-<div class='submit'>
-    <a href='index?={$_POST['word']}'>
-        <input type='submit' class='submit-btn' value='Отправить'>
-    </a>
-</div>
-
-</form>";
-
-?>
+    <script>
+        document.addEventListener(`DOMContentLoaded`, () => {
+            const wordInput = document.getElementById(`new-word__word`);
+            const newWord = wordInput.value;
+            document.getElementById(`submit-btn`).addEventListener(`submit`, () => {
+                document.cookie = `newWord=${newWord};`
+            })
+        })
+    </script>
 
 </body>
 </html>
