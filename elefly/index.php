@@ -52,7 +52,7 @@
             })
 
             // Вебсокет:
-            let socket = new WebSocket("wss://summarytables.ru/elefly/socket_1");
+            let socket = new WebSocket("wss://summarytables.ru/elefly/socket_1.php");
             socket.addEventListener("open", () => {
                 console.log("We are connected");
                 socket.send(JSON.stringify({'newWord' : wordInput.value,}));              
