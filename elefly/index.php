@@ -6,20 +6,6 @@
     <title>Elefly</title>
 </head>
 <body>
-    
-    <?php
-
-        $currentMoveNumber = $_COOKIE["currentMoveNumber"] ?? 0;
-        setcookie("currentMoveNumber", $currentMoveNumber + 1);
-
-        $currentWord = $_COOKIE["newWord"] ?? "";
-        $wordToShow = mb_strtoupper($currentWord);
-
-        if ( ! (empty($currentWord))) {
-            setcookie("oldWord-{$currentMoveNumber}", $currentWord);
-        }
-
-    ?> 
 
     <div class="content">
 
@@ -30,7 +16,6 @@
             </div>
         </div>
 
-        <!-- <form action="" style="margin-top: 10px;"> -->
         <div style="margin-top: 10px;">
         
             <div class='new-word'>
@@ -44,7 +29,6 @@
                 </div>
             </div>
 
-        <!-- </form> -->
         </div>
 
         <div id="gameCourse">            
@@ -52,17 +36,60 @@
 
     </div>
 
+    <!-- Для обработки клика на кнопку "Отправить" -->
     <script>
+        
         document.addEventListener(`DOMContentLoaded`, () => {
-            const wordInput = document.getElementById(`new-word__word`);            
+
+            const wordInput = document.getElementById(`new-word__word`);
+
+            // Для обработки клика на кнопку "Отправить":    
             document.getElementById(`submit-btn`).addEventListener(`click`, (e) => {
                 const newWord = wordInput.value;
                 console.log(newWord);
                 document.cookie = `newWord=${newWord}; path=summarytables.ru/elefly;`
-                location.reload();
+                // location.reload();
             })
+
+            // Вебсокет:
+            let socket = new WebSocket("wss://summarytables.ru/elefly/socket_1");
+            socket.addEventListener("open", () => {
+                console.log("We are connected");
+                socket.send(JSON.stringify({'newWord' : wordInput.value,}));              
+            });
+            ws.addEventListener("message", (e) => {
+                console.log(e.data);
+            })
+
         })
     </script>
+
+    <!-- Код с whatsapp.qr: -->
+    <!-- document.getElementById(`getQrBtnDiv-<?=$counter?>`).addEventListener(`click`, () => {
+
+    document.getElementById(`wait_please-<?=$counter?>`).classList.remove(`d-none`);
+    const ws = new WebSocket("wss://vds2300205.my-ihor.ru:3000/qrcode");
+    var point = <?=$this->point?>;
+    var num = '<?=$curPhone?>';
+    ws.addEventListener("open", () => {
+        console.log("We are connected");
+        ws.send(JSON.stringify({'point':point,'num': num}));                        
+    });
+    let haveQrStrGot = false;
+    ws.addEventListener("message", (e) => {  
+        if (haveQrStrGot === false) {                      
+            console.log(e.data);
+            let msg = JSON.parse(e.data)
+            const qrStr = msg["qr"] ? msg["qr"] : "";
+            if (qrStr) {
+                console.log(qrStr);
+                haveQrStrGot = true;
+                showQrCode(qrStr);
+            }
+        }                                                  
+    });                            
+
+    })     -->
 
 </body>
 </html>
