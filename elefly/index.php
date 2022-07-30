@@ -53,7 +53,8 @@
 
             // Вебсокет:
             // let socket = new WebSocket("wss://summarytables.ru/elefly/socket_1.php");
-            let socket = new WebSocket("ws://echo.websocket.org/");
+            // let socket = new WebSocket("ws://echo.websocket.org/");
+            let socket = new WebSocket("wss://demo.piesocket.com/v3/channel_1?api_key=VCXCEuvhGcBDP7XhiJJUDvR1e1D3eiVjgZ9VRiaV&notify_self");
             socket.addEventListener("open", () => {
                 console.log("We are connected");
                 console.log(wordInput.value);
