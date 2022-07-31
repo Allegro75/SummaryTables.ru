@@ -1,5 +1,3 @@
-<!-- Файл, используенмый для генерации сокета для socket_try_to_connect.php -->
-
 <?php
 $socket = stream_socket_server("tcp://0.0.0.0:8000", $errno, $errstr);
 if (!$socket) {
