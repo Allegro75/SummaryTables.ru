@@ -52,16 +52,16 @@
             })
 
             // Вебсокет:
-            // let socket = new WebSocket("wss://summarytables.ru/elefly/socket_1.php");
-            // // let socket = new WebSocket("wss://demo.piesocket.com/v3/channel_1?api_key=VCXCEuvhGcBDP7XhiJJUDvR1e1D3eiVjgZ9VRiaV&notify_self"); // Тестовый сервис
-            // socket.addEventListener("open", () => {
-            //     console.log("We are connected");
-            //     console.log(wordInput.value);
-            //     socket.send(JSON.stringify({'newWord' : wordInput.value,}));    
-            // });
-            // socket.addEventListener("message", (e) => {
-            //     console.log(e.data);
-            // })
+            let socket = new WebSocket("wss://summarytables.ru/elefly/socket_1.php");
+            // let socket = new WebSocket("wss://demo.piesocket.com/v3/channel_1?api_key=VCXCEuvhGcBDP7XhiJJUDvR1e1D3eiVjgZ9VRiaV&notify_self"); // Тестовый сервис
+            socket.addEventListener("open", () => {
+                console.log("We are connected");
+                console.log(wordInput.value);
+                socket.send(JSON.stringify({'newWord' : wordInput.value,}));    
+            });
+            socket.addEventListener("message", (e) => {
+                console.log(e.data);
+            })
 
             // Код с whatsapp.qr:
             // const ws = new WebSocket("wss://vds2300205.my-ihor.ru:3000/qrcode");
