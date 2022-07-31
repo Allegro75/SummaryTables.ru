@@ -63,56 +63,30 @@
             //     console.log(e.data);
             // })
 
-            const ws = new WebSocket("wss://vds2300205.my-ihor.ru:3000/qrcode");
-            var point = 7999999;
-            var num = '+79516537928';
-            ws.addEventListener("open", () => {
-                console.log("We are connected");
-                ws.send(JSON.stringify({'point':point,'num': num}));                        
-            }); 
-            let haveQrStrGot = false;
-            ws.addEventListener("message", (e) => {  
-                if (haveQrStrGot === false) {                      
-                    console.log(e.data);
-                    let msg = JSON.parse(e.data)
-                    const qrStr = msg["qr"] ? msg["qr"] : "";
-                    if (qrStr) {
-                        console.log(qrStr);
-                        haveQrStrGot = true;
-                        showQrCode(qrStr);
-                    }
-                }                                                  
-            });                        
+            // Код с whatsapp.qr:
+            // const ws = new WebSocket("wss://vds2300205.my-ihor.ru:3000/qrcode");
+            // var point = 7999999;
+            // var num = '+79516537928';
+            // ws.addEventListener("open", () => {
+            //     console.log("We are connected");
+            //     ws.send(JSON.stringify({'point':point,'num': num}));                        
+            // }); 
+            // let haveQrStrGot = false;
+            // ws.addEventListener("message", (e) => {  
+            //     if (haveQrStrGot === false) {                      
+            //         console.log(e.data);
+            //         let msg = JSON.parse(e.data)
+            //         const qrStr = msg["qr"] ? msg["qr"] : "";
+            //         if (qrStr) {
+            //             console.log(qrStr);
+            //             haveQrStrGot = true;
+            //             showQrCode(qrStr);
+            //         }
+            //     }                                                  
+            // });                        
 
         })
     </script>
-
-    <!-- Код с whatsapp.qr: -->
-    <!-- document.getElementById(`getQrBtnDiv-<?=$counter?>`).addEventListener(`click`, () => {
-
-    document.getElementById(`wait_please-<?=$counter?>`).classList.remove(`d-none`);
-    const ws = new WebSocket("wss://vds2300205.my-ihor.ru:3000/qrcode");
-    var point = <?=$this->point?>;
-    var num = '<?=$curPhone?>';
-    ws.addEventListener("open", () => {
-        console.log("We are connected");
-        ws.send(JSON.stringify({'point':point,'num': num}));                        
-    });
-    let haveQrStrGot = false;
-    ws.addEventListener("message", (e) => {  
-        if (haveQrStrGot === false) {                      
-            console.log(e.data);
-            let msg = JSON.parse(e.data)
-            const qrStr = msg["qr"] ? msg["qr"] : "";
-            if (qrStr) {
-                console.log(qrStr);
-                haveQrStrGot = true;
-                showQrCode(qrStr);
-            }
-        }                                                  
-    });                            
-
-    })     -->
 
 </body>
 </html>
