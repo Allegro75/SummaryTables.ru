@@ -2,7 +2,7 @@
 <?php
 
 // $socket = stream_socket_server("tcp://0.0.0.0:8000", $errno, $errstr);
-$socket = stream_socket_server("tcp://127.0.0.1:8000", $errno, $errstr);
+$socket = stream_socket_server("tcp://127.0.0.1:2000", $errno, $errstr);
 if (!$socket) {
     die("$errstr ($errno)\n");
 }
