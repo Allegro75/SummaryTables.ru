@@ -46,15 +46,14 @@
             // Для обработки клика на кнопку "Отправить":    
             document.getElementById(`submit-btn`).addEventListener(`click`, (e) => {
                 const newWord = wordInput.value;
-                console.log(newWord);
+                // console.log(newWord);
                 document.cookie = `newWord=${newWord}; path=summarytables.ru/elefly;`
                 // location.reload();
             })
 
             // Вебсокет:
             let socket = new WebSocket("wss://summarytables.ru/elefly/socket_1.php");
-            // let socket = new WebSocket("ws://echo.websocket.org/");
-            // let socket = new WebSocket("wss://demo.piesocket.com/v3/channel_1?api_key=VCXCEuvhGcBDP7XhiJJUDvR1e1D3eiVjgZ9VRiaV&notify_self");
+            // let socket = new WebSocket("wss://demo.piesocket.com/v3/channel_1?api_key=VCXCEuvhGcBDP7XhiJJUDvR1e1D3eiVjgZ9VRiaV&notify_self"); // Тестовый сервис
             socket.addEventListener("open", () => {
                 console.log("We are connected");
                 console.log(wordInput.value);
