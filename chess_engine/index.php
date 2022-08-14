@@ -29,7 +29,7 @@ include_once("Piece.php");
 
 $wRook_a7 = new Rook(["position" => $actualPosition["whitePiecesPositions"]["rooks"][0]]);
 $wKing_h6 = new King(["position" => $actualPosition["whitePiecesPositions"]["king"]]);
-$bKing_h8 = new King(["color" => "black", "position" => $actualPosition["whitePiecesPositions"]["king"]]);
+$bKing_h8 = new King(["color" => "black", "position" => $actualPosition["blackPiecesPositions"]["king"]]);
 
 echo "<pre>";
 // var_dump($actualPosition);
