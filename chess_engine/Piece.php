@@ -4,7 +4,7 @@ abstract class Piece
 {
 
     protected $color = "white";
-    protected $name;
+    private $name;
     public $position;
     const CELLS = [
         "a" => ["1","2","3","4","5","6","7","8",],
@@ -55,10 +55,10 @@ class King extends Piece
 
     private $name = "king";
 
-    public function getName()
-    {
-        return $this->name;
-    }
+    // public function getName()
+    // {
+    //     return $this->name;
+    // }
 
 }
 
