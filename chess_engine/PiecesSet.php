@@ -27,7 +27,7 @@ class PiecesSet
             
             foreach($piecesColor as $curPieceName) {
                 if ($curPieceName === "king") {
-                    $actualPosition[$curPieceColorIndex][] = new King(["color" => $curPieceColor, "position" => $curPieceName["position"]]);
+                    $this->actualPosition[$curPieceColorIndex][] = new King(["color" => $curPieceColor, "position" => $curPieceName["position"]]);
                 }
 
             }
