@@ -1,5 +1,6 @@
 <?php
 
+// Шахматные фигуры, их свойства
 abstract class Piece
 {
 
