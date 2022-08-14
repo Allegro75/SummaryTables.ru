@@ -18,7 +18,7 @@ class PiecesSet
         $actualPiecesSet = [];
         foreach ($opts["actualPosition"] as $piecesColor => $curColorPiecesSet) {
 
-            var_dump($piecesColor);
+            // var_dump($piecesColor);
             if ($piecesColor === "whitePiecesPositions") {
                 $curPieceColorIndex = "whites";
                 $curPieceColor = "white";
@@ -26,11 +26,12 @@ class PiecesSet
                 $curPieceColorIndex = "blacks";
                 $curPieceColor = "black";
             }
+            var_dump($curPieceColorIndex);
             
             foreach($curColorPiecesSet as $curPieceName) {
                 if ($curPieceName === "king") {
                     // var_dump("yes");
-                    $actualPiecesSet[$curPieceColorIndex][] = new King(["color" => $curPieceColor, "position" => $curPieceName["position"]]);
+                    $actualPiecesSet[$curPieceColorIndex][] = new King(["color" => $curPieceColor, "position" => $curPieceName]);
                 }
 
             }
