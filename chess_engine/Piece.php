@@ -65,7 +65,7 @@ class King extends Piece
 class Rook extends Piece
 {
 
-    private $name = "rook";
+    protected $name = "rook";
 
     // public function getName()
     // {
