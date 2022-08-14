@@ -1,2 +1,3 @@
 <?
-phpinfo();
+// phpinfo();
+echo "Spartak";
