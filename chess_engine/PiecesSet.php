@@ -7,12 +7,13 @@ class PiecesSet
 {
 
     protected $actualPosition;
-    protected $actualPiecesSet = [];
+    protected $actualPiecesSet;
 
     public function __construct($opts=[])
     {
         
         $this->actualPosition = $opts["actualPosition"];
+        $actualPiecesSet = [];
 
         // Формируем набор фигур для актуальной позиции:
         foreach ($opts["actualPosition"] as $piecesColor) {
@@ -27,12 +28,13 @@ class PiecesSet
             
             foreach($piecesColor as $curPieceName) {
                 if ($curPieceName === "king") {
-                    $this->actualPiecesSet[$curPieceColorIndex][] = new King(["color" => $curPieceColor, "position" => $curPieceName["position"]]);
+                    $actualPiecesSet[$curPieceColorIndex][] = new King(["color" => $curPieceColor, "position" => $curPieceName["position"]]);
                 }
 
             }
 
         }
+        $this->actualPiecesSet = $actualPiecesSet;
 
     }
 
