@@ -7,7 +7,7 @@ class PiecesSet
 {
 
     protected $actualPosition;
-    protected $actualPiecesSet;
+    protected $actualPiecesSet = [];
 
     public function __construct($opts=[])
     {
@@ -27,7 +27,7 @@ class PiecesSet
             
             foreach($piecesColor as $curPieceName) {
                 if ($curPieceName === "king") {
-                    $this->actualPosition[$curPieceColorIndex][] = new King(["color" => $curPieceColor, "position" => $curPieceName["position"]]);
+                    $this->actualPiecesSet[$curPieceColorIndex][] = new King(["color" => $curPieceColor, "position" => $curPieceName["position"]]);
                 }
 
             }
