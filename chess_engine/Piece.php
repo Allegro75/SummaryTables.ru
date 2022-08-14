@@ -53,12 +53,7 @@ abstract class Piece
 class King extends Piece
 {
 
-    private $name = "king";
-
-    // public function getName()
-    // {
-    //     return $this->name;
-    // }
+    protected $name = "king";
 
 }
 
@@ -66,11 +61,6 @@ class Rook extends Piece
 {
 
     protected $name = "rook";
-
-    // public function getName()
-    // {
-    //     return $this->name;
-    // }
 
     // Получение полей, доступных для ладьи
     // Пока без учёта возможных препятствий на пути ладьи
