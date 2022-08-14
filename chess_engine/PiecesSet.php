@@ -18,7 +18,7 @@ class PiecesSet
         $actualPiecesSet = [];
         foreach ($opts["actualPosition"] as $piecesColor => $curColorPiecesSet) {
 
-            // var_dump("yes");
+            var_dump($piecesColor);
             if ($piecesColor === "whitePiecesPositions") {
                 $curPieceColorIndex = "whites";
                 $curPieceColor = "white";
