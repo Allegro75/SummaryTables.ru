@@ -24,5 +24,12 @@ $actualPosition = [
         ],
     ],
 ];
+
+include_once("Piece.php");
+
+$wRook_a7 = new Rook(["position" => $actualPosition["whitePiecesPositions"]["rooks"][0]]);
+
+
 echo "<pre>";
-var_dump($actualPosition);
+// var_dump($actualPosition);
+var_dump($wRook_a7->getName());
