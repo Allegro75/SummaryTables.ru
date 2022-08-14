@@ -66,19 +66,11 @@ class King extends Piece
         $rookHorizontal = $position["horizontal"]; // горизонталь, на к-рой находится король
         $accessibleCells = [];
 
-        // Перебираем поля на вертикали нахождения ладьи
-        foreach (self::CELLS[$rookVertical] as $curVertCellNum) {
-            if ($curVertCellNum != $rookHorizontal) {
-                $curCell = "{$rookVertical}{$curVertCellNum}";
-                $accessibleCells[] = $curCell;
-            }
-        }
-        // Перебираем вертикали доски
-        foreach (array_keys(self::CELLS) as $curVertName) {
-            if ($curVertName != $rookVertical) {
-                $curCell = "{$curVertName}{$rookHorizontal}";
-                $accessibleCells[] = $curCell;
-            }
+        // Формируем набор актуальных для следующего хода короля вертикалей (в количестве от 2 до 3):
+        if (true) {
+            // Индекс верткали, занимаемой королём в массиве вертикалей:
+            $kingVertIndex = array_search($rookVertical, array_keys(self::CELLS));
+            return $kingVertIndex;
         }
 
         return $accessibleCells;
