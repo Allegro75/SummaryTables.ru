@@ -69,8 +69,11 @@ class King extends Piece
         // Формируем набор актуальных для следующего хода короля вертикалей (в количестве от 2 до 3):
         if (true) {
             // Индекс верткали, занимаемой королём в массиве вертикалей:
+            $actualVerticals = [];
             $kingVertIndex = array_search($rookVertical, array_keys(self::CELLS));
-            return $kingVertIndex;
+            // return $kingVertIndex;
+            $actualVertIndexes = [$kingVertIndex - 1, $kingVertIndex, $kingVertIndex + 1];
+            return $actualVertIndexes;
         }
 
         return $accessibleCells;
