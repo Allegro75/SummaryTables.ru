@@ -5,17 +5,7 @@ abstract class Piece
 
     protected $color = "white";
     // private $name;
-    public $position;
-    const CELLS = [
-        "a" => ["1","2","3","4","5","6","7","8",],
-        "b" => ["1","2","3","4","5","6","7","8",],
-        "c" => ["1","2","3","4","5","6","7","8",],
-        "d" => ["1","2","3","4","5","6","7","8",],
-        "e" => ["1","2","3","4","5","6","7","8",],
-        "f" => ["1","2","3","4","5","6","7","8",],
-        "g" => ["1","2","3","4","5","6","7","8",],
-        "h" => ["1","2","3","4","5","6","7","8",],
-    ];    
+    public $position; 
 
     public function __construct ($opts = []) {
 
@@ -48,6 +38,18 @@ abstract class Piece
         return $this->position;
     }
 
+    // Все поля шахматной доски:
+    const CELLS = [
+        "a" => ["1","2","3","4","5","6","7","8",],
+        "b" => ["1","2","3","4","5","6","7","8",],
+        "c" => ["1","2","3","4","5","6","7","8",],
+        "d" => ["1","2","3","4","5","6","7","8",],
+        "e" => ["1","2","3","4","5","6","7","8",],
+        "f" => ["1","2","3","4","5","6","7","8",],
+        "g" => ["1","2","3","4","5","6","7","8",],
+        "h" => ["1","2","3","4","5","6","7","8",],
+    ];    
+
 }
 
 class King extends Piece
@@ -64,15 +66,17 @@ class King extends Piece
         $rookHorizontal = $position["horizontal"]; // горизонталь, на к-рой находится король
         $accessibleCells = [];
 
+        // Перебираем поля на вертикали нахождения ладьи
         foreach (self::CELLS[$rookVertical] as $curVertCellNum) {
             if ($curVertCellNum != $rookHorizontal) {
                 $curCell = "{$rookVertical}{$curVertCellNum}";
                 $accessibleCells[] = $curCell;
             }
         }
-        foreach (array_keys(self::CELLS) as $curHorCellName) {
-            if ($curHorCellName != $rookVertical) {
-                $curCell = "{$curHorCellName}{$rookHorizontal}";
+        // Перебираем вертикали доски
+        foreach (array_keys(self::CELLS) as $curVertName) {
+            if ($curVertName != $rookVertical) {
+                $curCell = "{$curVertName}{$rookHorizontal}";
                 $accessibleCells[] = $curCell;
             }
         }

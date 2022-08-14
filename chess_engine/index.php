@@ -36,3 +36,4 @@ echo "<pre>";
 // var_dump($wKing_h6->getName());
 // var_dump($wRook_a7->getPosition());
 var_dump($wRook_a7->getAccesibleCells());
+var_dump($wKing_h6->getAccesibleCells());
