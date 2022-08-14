@@ -4,6 +4,7 @@ abstract class Piece
 {
 
     protected $color = "white";
+    protected $name;
     public $position;
     const CELLS = [
         "a" => ["1","2","3","4","5","6","7","8",],
@@ -26,7 +27,11 @@ abstract class Piece
 
     }
 
-    abstract public function getName();
+    // abstract public function getName();
+    public function getName()
+    {
+        return $this->name;
+    }
 
     // public function setColor($color)
     // {
@@ -62,16 +67,18 @@ class Rook extends Piece
 
     private $name = "rook";
 
-    public function getName()
-    {
-        return $this->name;
-    }
+    // public function getName()
+    // {
+    //     return $this->name;
+    // }
 
+    // Получение полей, доступных для ладьи
+    // Пока без учёта возможных препятствий на пути ладьи
     public function getAccesibleCells ($opts = []) {
 
         $position = $this->position;
-        $rookVertical = $position["vertical"];
-        $rookHorizontal = $position["horizontal"];
+        $rookVertical = $position["vertical"]; // вертикаль, на к-рой находится ладья
+        $rookHorizontal = $position["horizontal"]; // горизонталь, на к-рой находится ладья
         $accessibleCells = [];
 
         foreach (self::CELLS[$rookVertical] as $curVertCellNum) {
@@ -89,7 +96,7 @@ class Rook extends Piece
 
         return $accessibleCells;
 
-    }    
+    }
 
 }
 
