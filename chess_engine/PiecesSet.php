@@ -29,6 +29,7 @@ class PiecesSet
             var_dump($curPieceColorIndex);
             
             foreach($curColorPiecesSet as $curPieceName) {
+                var_dump($curPieceName);
                 if ($curPieceName === "king") {
                     // var_dump("yes");
                     $actualPiecesSet[$curPieceColorIndex][] = new King(["color" => $curPieceColor, "position" => $curPieceName]);
