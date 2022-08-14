@@ -26,7 +26,7 @@ abstract class Piece
 
     }
 
-    // abstract public function getName();
+    abstract public function getName();
 
     // public function setColor($color)
     // {
@@ -38,13 +38,10 @@ abstract class Piece
     //     return $this->color;
     // }
 
-    // public function getPieceDescr () {
-    //     return
-    //     [
-    //         "name" => $this->getName(),
-    //         "color" => $this->getColor(),
-    //     ];
-    // }
+    public function getPosition()
+    {
+        return $this->position;
+    }
 
 }
 
@@ -72,8 +69,9 @@ class Rook extends Piece
 
     public static function getAccesibleCells ($opts = []) {
 
-        $rookVertical = $opts["rookPosition"]["vertical"];
-        $rookHorizontal = $opts["rookPosition"]["horizontal"];
+        // $position = $this->position;
+        $rookVertical = $position["vertical"];
+        $rookHorizontal = $position["horizontal"];
         $accessibleCells = [];
 
         foreach (self::CELLS[$rookVertical] as $curVertCellNum) {
