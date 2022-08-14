@@ -26,13 +26,13 @@ class PiecesSet
                 $curPieceColorIndex = "blacks";
                 $curPieceColor = "black";
             }
-            var_dump($curPieceColorIndex);
+            // var_dump($curPieceColorIndex);
             
-            foreach($curColorPiecesSet as $curPieceName) {
+            foreach($curColorPiecesSet as $curPieceName => $curPiecePosition) {
                 var_dump($curPieceName);
                 if ($curPieceName === "king") {
                     // var_dump("yes");
-                    $actualPiecesSet[$curPieceColorIndex][] = new King(["color" => $curPieceColor, "position" => $curPieceName]);
+                    $actualPiecesSet[$curPieceColorIndex][] = new King(["color" => $curPieceColor, "position" => $curPiecePosition]);
                 }
 
             }
