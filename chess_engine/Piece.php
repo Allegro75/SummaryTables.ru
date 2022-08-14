@@ -55,20 +55,13 @@ class King extends Piece
 
     protected $name = "king";
 
-}
-
-class Rook extends Piece
-{
-
-    protected $name = "rook";
-
-    // Получение полей, доступных для ладьи
-    // Пока без учёта возможных препятствий на пути ладьи
+    // Получение полей, доступных для короля
+    // Пока без учёта возможных препятствий на пути короля (всегда получаем от 3 до 8 полей в зависимости от позиции короля)
     public function getAccesibleCells ($opts = []) {
 
         $position = $this->position;
-        $rookVertical = $position["vertical"]; // вертикаль, на к-рой находится ладья
-        $rookHorizontal = $position["horizontal"]; // горизонталь, на к-рой находится ладья
+        $rookVertical = $position["vertical"]; // вертикаль, на к-рой находится король
+        $rookHorizontal = $position["horizontal"]; // горизонталь, на к-рой находится король
         $accessibleCells = [];
 
         foreach (self::CELLS[$rookVertical] as $curVertCellNum) {
@@ -80,6 +73,41 @@ class Rook extends Piece
         foreach (array_keys(self::CELLS) as $curHorCellName) {
             if ($curHorCellName != $rookVertical) {
                 $curCell = "{$curHorCellName}{$rookHorizontal}";
+                $accessibleCells[] = $curCell;
+            }
+        }
+
+        return $accessibleCells;
+
+    }    
+
+}
+
+class Rook extends Piece
+{
+
+    protected $name = "rook";
+
+    // Получение полей, доступных для ладьи
+    // Пока без учёта возможных препятствий на пути ладьи (всегда получаем 14 полей)
+    public function getAccesibleCells ($opts = []) {
+
+        $position = $this->position;
+        $rookVertical = $position["vertical"]; // вертикаль, на к-рой находится ладья
+        $rookHorizontal = $position["horizontal"]; // горизонталь, на к-рой находится ладья
+        $accessibleCells = [];
+
+        // Перебираем поля на вертикали нахождения ладьи
+        foreach (self::CELLS[$rookVertical] as $curVertCellNum) {
+            if ($curVertCellNum != $rookHorizontal) {
+                $curCell = "{$rookVertical}{$curVertCellNum}";
+                $accessibleCells[] = $curCell;
+            }
+        }
+        // Перебираем вертикали доски
+        foreach (array_keys(self::CELLS) as $curVertName) {
+            if ($curVertName != $rookVertical) {
+                $curCell = "{$curVertName}{$rookHorizontal}";
                 $accessibleCells[] = $curCell;
             }
         }
