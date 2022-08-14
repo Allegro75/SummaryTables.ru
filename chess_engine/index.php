@@ -29,7 +29,7 @@ include_once("PiecesSet.php");
 // $wKing_h6 = new King(["position" => $actualPosition["whitePiecesPositions"]["king"]]);
 // $bKing_h8 = new King(["color" => "black", "position" => $actualPosition["blackPiecesPositions"]["king"]]);
 
-$actualPicesSet = new PiecesSet($actualPosition);
+$actualPicesSet = new PiecesSet(["actualPosition" => $actualPosition]);
 
 echo "<pre>";
 // var_dump($actualPosition);
