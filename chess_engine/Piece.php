@@ -62,15 +62,14 @@ class King extends Piece
     public function getAccesibleCells ($opts = []) {
 
         $position = $this->position;
-        $rookVertical = $position["vertical"]; // вертикаль, на к-рой находится король
-        $rookHorizontal = $position["horizontal"]; // горизонталь, на к-рой находится король
+        $kingVertical = $position["vertical"]; // вертикаль, на к-рой находится король
+        $kingHorizontal = $position["horizontal"]; // горизонталь, на к-рой находится король
         $accessibleCells = [];
 
         // Формируем набор актуальных для следующего хода короля вертикалей (в количестве от 2 до 3):
         if (true) {            
-            $actualVerticals = [];
             // Индекс верткали, занимаемой королём в массиве вертикалей:
-            $kingVertIndex = array_search($rookVertical, array_keys(self::CELLS));
+            $kingVertIndex = array_search($kingVertical, array_keys(self::CELLS));
             // return $kingVertIndex;
             $actualVertIndexes = [$kingVertIndex - 1, $kingVertIndex, $kingVertIndex + 1];
             // return $actualVertIndexes;
@@ -79,8 +78,23 @@ class King extends Piece
         // Формируем набор актуальных для следующего хода короля горизонталей (в количестве от 2 до 3):
         if (true) {
             $actualHorizontals = [];
-            $actualHorizontals = [$rookHorizontal - 1, $rookHorizontal, $rookHorizontal + 1];
-            return $actualHorizontals;
+            $actualHorizontals = [$kingHorizontal - 1, $kingHorizontal, $kingHorizontal + 1];
+            // return $actualHorizontals;
+        }
+        
+        $kingPositionCell = "{$kingVertical}{$kingHorizontal}";
+        foreach ($actualVertIndexes as $curVertIndex) {
+            $curVertName = isset(array_keys(self::CELLS)[$curVertIndex]) ? array_keys(self::CELLS)[$curVertIndex] : null;
+            if (isset($curVertName)) {
+                foreach ($actualHorizontals as $curHorNum) {
+                    if (($curHorNum >= 1) && ($curHorNum <= 8)) {
+                        $curCell = "{$curVertName}{$curHorNum}";
+                        if ($curCell !== $kingPositionCell) {
+                            $accessibleCells[] = $curCell;
+                        }
+                    }
+                }
+            }
         }
 
         return $accessibleCells;
