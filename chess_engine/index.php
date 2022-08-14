@@ -32,4 +32,5 @@ $wRook_a7 = new Rook(["position" => $actualPosition["whitePiecesPositions"]["roo
 
 echo "<pre>";
 // var_dump($actualPosition);
-var_dump($wRook_a7->getName());
+// var_dump($wRook_a7->getName());
+var_dump($wRook_a7->getAccesibleCells());
