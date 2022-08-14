@@ -12,12 +12,13 @@ class PiecesSet
     public function __construct($opts=[])
     {
         
-        $this->actualPosition = $opts["actualPosition"];
-        $actualPiecesSet = [];
+        $this->actualPosition = $opts["actualPosition"];        
 
         // Формируем набор фигур для актуальной позиции:
-        foreach ($opts["actualPosition"] as $piecesColor) {
+        $actualPiecesSet = [];
+        foreach ($opts["actualPosition"] as $piecesColor => $curColorPiecesSet) {
 
+            // var_dump("yes");
             if ($piecesColor === "whitePiecesPositions") {
                 $curPieceColorIndex = "whites";
                 $curPieceColor = "white";
@@ -26,9 +27,9 @@ class PiecesSet
                 $curPieceColor = "black";
             }
             
-            foreach($piecesColor as $curPieceName) {
+            foreach($curColorPiecesSet as $curPieceName) {
                 if ($curPieceName === "king") {
-                    var_dump("yes");
+                    // var_dump("yes");
                     $actualPiecesSet[$curPieceColorIndex][] = new King(["color" => $curPieceColor, "position" => $curPieceName["position"]]);
                 }
 
