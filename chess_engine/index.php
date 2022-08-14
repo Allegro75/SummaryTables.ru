@@ -24,4 +24,5 @@ $actualPosition = [
         ],
     ],
 ];
+echo "<pre>";
 var_dump($actualPosition);
