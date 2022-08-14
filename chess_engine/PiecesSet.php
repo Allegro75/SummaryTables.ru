@@ -6,8 +6,8 @@ include_once("Piece.php");
 class PiecesSet
 {
 
-    protected $actualPosition;
-    protected $actualPiecesSet;
+    public $actualPosition;
+    public $actualPiecesSet;
 
     public function __construct($opts=[])
     {
