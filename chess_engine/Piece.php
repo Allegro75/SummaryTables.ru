@@ -67,9 +67,9 @@ class Rook extends Piece
         return $this->name;
     }
 
-    public static function getAccesibleCells ($opts = []) {
+    public function getAccesibleCells ($opts = []) {
 
-        // $position = $this->position;
+        $position = $this->position;
         $rookVertical = $position["vertical"];
         $rookHorizontal = $position["horizontal"];
         $accessibleCells = [];
