@@ -4,7 +4,6 @@ abstract class Piece
 {
 
     protected $color = "white";
-    // private $name;
     public $position; 
 
     public function __construct ($opts = []) {
@@ -28,10 +27,10 @@ abstract class Piece
     //     $this->color = $color;
     // }
 
-    // public function getColor()
-    // {
-    //     return $this->color;
-    // }
+    public function getColor()
+    {
+        return $this->color;
+    }
 
     public function getPosition()
     {
@@ -70,9 +69,7 @@ class King extends Piece
         if (true) {            
             // Индекс верткали, занимаемой королём в массиве вертикалей:
             $kingVertIndex = array_search($kingVertical, array_keys(self::CELLS));
-            // return $kingVertIndex;
             $actualVertIndexes = [$kingVertIndex - 1, $kingVertIndex, $kingVertIndex + 1];
-            // return $actualVertIndexes;
         }
 
         // Формируем набор актуальных для следующего хода короля горизонталей (в количестве от 2 до 3):
