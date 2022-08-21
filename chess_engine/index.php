@@ -43,3 +43,5 @@ echo "<pre>";
 // var_dump($bKing_h8->getColor());
 var_dump($actualPicesSet);
 // var_dump($actualPicesSet->actualPiecesSet["whites"]["king"]->getAccesibleCells());
+var_dump($actualPicesSet->actualPiecesSet["blacks"]["king"]->getAccesibleCells());
+// var_dump($actualPicesSet->actualPiecesSet["whites"]["king"]->getAccesibleCells());

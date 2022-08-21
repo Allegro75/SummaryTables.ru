@@ -41,7 +41,7 @@ class PiecesSet
                         $cPNFLinUpperCase = mb_strtoupper($cPNFL);
                         $curPieceNameRestPart = mb_substr($curPieceName, 1);
                         $curPieceClassName = "{$cPNFLinUpperCase}{$curPieceNameRestPart}";
-                        $actualPiecesSet[$curPieceColorIndex][$curPieceName] = new $curPieceClassName(["color" => $curPieceColor, "position" => $curOrdinaryPiece]);
+                        $actualPiecesSet[$curPieceColorIndex][$curPieceNameInPosDescr][] = new $curPieceClassName(["color" => $curPieceColor, "position" => $curOrdinaryPiece]);
                     }
                 }
 
