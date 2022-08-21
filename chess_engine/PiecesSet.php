@@ -1,6 +1,6 @@
 <?
 
-include_once("Piece.php");
+// include_once("Piece.php");
 
 // Шахматная позиция - конкретный набор фигур (отсылающий к свойствам фигур из Piece)
 class PiecesSet
