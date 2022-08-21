@@ -5,7 +5,7 @@ abstract class Piece
 {
 
     protected $color = "white";
-    public $position; 
+    public $position;
 
     public function __construct ($opts = []) {
 

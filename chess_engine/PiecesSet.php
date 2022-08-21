@@ -1,7 +1,7 @@
 <?
 
-// include_once("Piece.php");
-namespace chess_engine;
+include_once("Piece.php");
+// namespace chess_engine;
 
 // Шахматная позиция - конкретный набор фигур (отсылающий к свойствам фигур из Piece)
 class PiecesSet
