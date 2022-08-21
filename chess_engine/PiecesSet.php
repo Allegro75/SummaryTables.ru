@@ -27,10 +27,17 @@ class PiecesSet
                 $curPieceColor = "black";
             }
             
-            foreach($curColorPiecesSet as $curPieceName => $curPiecePosition) {
-                // var_dump($curPieceName);
-                if ($curPieceName === "king") {
-                    $actualPiecesSet[$curPieceColorIndex]["king"] = new King(["color" => $curPieceColor, "position" => $curPiecePosition]);
+            foreach($curColorPiecesSet as $curPieceNameInPosDescr => $curPieceInfo) {
+
+                // var_dump($curPieceNameInPosDescr);
+                if ($curPieceNameInPosDescr === "king") {
+                    $actualPiecesSet[$curPieceColorIndex]["king"] = new King(["color" => $curPieceColor, "position" => $curPieceInfo]);
+                } else {
+                    foreach ($curPieceInfo as $curOrdinaryPiece) {
+                        $curPieceNameLength = mb_strlen($curPieceNameInPosDescr);
+                        $curPieceName = mb_substr($curPieceNameInPosDescr, 0, $curPieceNameLength - 1);
+                        var_dump($curPieceName);
+                    }
                 }
 
             }
