@@ -36,7 +36,12 @@ class PiecesSet
                     foreach ($curPieceInfo as $curOrdinaryPiece) {
                         $curPieceNameLength = mb_strlen($curPieceNameInPosDescr);
                         $curPieceName = mb_substr($curPieceNameInPosDescr, 0, $curPieceNameLength - 1);
-                        var_dump($curPieceName);
+                        // var_dump($curPieceName);
+                        $curPieceNameFirstLetter = $cPNFL = mb_substr($curPieceName, 0, 1);
+                        $cPNFLinUpperCase = mb_strtoupper($cPNFL);
+                        $curPieceNameRestPart = mb_substr($curPieceName, 1);
+                        $curPieceClassName = "{$cPNFLinUpperCase}{$curPieceNameRestPart}";
+                        $actualPiecesSet[$curPieceColorIndex][$curPieceName] = new $curPieceClassName(["color" => $curPieceColor, "position" => $curOrdinaryPiece]);
                     }
                 }
 
