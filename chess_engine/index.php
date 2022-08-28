@@ -30,7 +30,7 @@ include_once("ActualPosition.php");
 
 // $wRook_a7 = new Rook(["position" => $actualPosition["whitePiecesPositions"]["rooks"][0]]);
 
-$actualPicesSet = new ActualPosition(["actualPosition" => $actualPosition]);
+$actualPosition = new ActualPosition(["actualPosition" => $actualPosition]);
 
 echo "<pre>";
 // var_dump($actualPosition);
@@ -42,9 +42,10 @@ echo "<pre>";
 // var_dump($bKing_h8->getAccesibleCells());
 // var_dump($wKing_h6->getColor());
 // var_dump($bKing_h8->getColor());
-// var_dump($actualPicesSet);
-// var_dump($actualPicesSet->actualPiecesSet["whites"]["king"]->getAccesibleCells());
-// var_dump($actualPicesSet->actualPiecesSet["blacks"]["king"]->getAccesibleCells());
-// var_dump($actualPicesSet->actualPiecesSet["whites"]["rooks"][0]->getAccesibleCells());
-// var_dump($actualPicesSet->actualPosition["moveColor"]);
-var_dump($actualPicesSet->getMoveColor());
+// var_dump($actualPosition);
+var_dump($actualPosition->actualPiecesSet);
+// var_dump($actualPosition->actualPiecesSet["whites"]["king"]->getAccesibleCells());
+// var_dump($actualPosition->actualPiecesSet["blacks"]["king"]->getAccesibleCells());
+// var_dump($actualPosition->actualPiecesSet["whites"]["rooks"][0]->getAccesibleCells());
+// var_dump($actualPosition->actualPosition["moveColor"]);
+// var_dump($actualPosition->getMoveColor());

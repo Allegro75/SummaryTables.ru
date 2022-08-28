@@ -62,8 +62,10 @@ class ActualPosition
     public function getAvailableMoves ($opts=[]) // Получение списка возможных ходов
     {
 
-        $moveColor = $this->actualPosition["moveColor"];
-        return $moveColor;
+        $moveColor = $this->getMoveColor();
+        foreach ($this->actualPiecesSet[$moveColor] as $curPieceNameInPosDescr => $curPieceInfo) {
+            
+        }
 
     }
 
