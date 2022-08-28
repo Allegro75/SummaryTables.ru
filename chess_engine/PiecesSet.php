@@ -17,7 +17,7 @@ class PiecesSet
 
         // Формируем набор фигур для актуальной позиции:
         $actualPiecesSet = [];
-        foreach ($opts["actualPosition"] as $piecesColor => $curColorPiecesSet) {
+        foreach ($opts["actualPosition"]["piecesPositions"] as $piecesColor => $curColorPiecesSet) {
 
             if ($piecesColor === "whitePiecesPositions") {
                 $curPieceColorIndex = "whites";
