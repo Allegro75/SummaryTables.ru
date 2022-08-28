@@ -125,7 +125,7 @@ class Rook extends Piece
 
     // Получение полей, доступных для ладьи
     // Пока без учёта возможных препятствий на пути ладьи (всегда получаем 14 полей)
-    public function getAccesibleCells ($opts = []) {
+    public function getAccessibleCells ($opts = []) {
 
         $position = $this->position;
         $rookVertical = $position["vertical"]; // вертикаль, на к-рой находится ладья
