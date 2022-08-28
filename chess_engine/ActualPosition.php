@@ -52,4 +52,19 @@ class ActualPosition
 
     }
 
+    public function getMoveColor ($opts=[]) // Получение информации об очереди хода
+    {
+
+        return $this->actualPosition["moveColor"];
+
+    }
+
+    public function getAvailableMoves ($opts=[]) // Получение списка возможных ходов
+    {
+
+        $moveColor = $this->actualPosition["moveColor"];
+        return $moveColor;
+
+    }
+
 }

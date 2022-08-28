@@ -45,5 +45,6 @@ echo "<pre>";
 // var_dump($actualPicesSet);
 // var_dump($actualPicesSet->actualPiecesSet["whites"]["king"]->getAccesibleCells());
 // var_dump($actualPicesSet->actualPiecesSet["blacks"]["king"]->getAccesibleCells());
-var_dump($actualPicesSet->actualPiecesSet["whites"]["rooks"][0]->getAccesibleCells());
-var_dump($actualPicesSet->actualPosition["moveColor"]);
+// var_dump($actualPicesSet->actualPiecesSet["whites"]["rooks"][0]->getAccesibleCells());
+// var_dump($actualPicesSet->actualPosition["moveColor"]);
+var_dump($actualPicesSet->getMoveColor());
