@@ -82,12 +82,8 @@ class ActualPosition
                     $piecePosition = $curOrdinaryPiece->getPositionNotation();
                     $curPieceNameLength = mb_strlen($curPieceNameInPosDescr);
                     $curPieceName = mb_substr($curPieceNameInPosDescr, 0, $curPieceNameLength - 1);
-                    var_dump($curPieceName);
-                    $curPieceNameFirstLetter = $cPNFL = mb_substr($curPieceName, 0, 1);
-                    $cPNFLinUpperCase = mb_strtoupper($cPNFL);
-                    $curPieceNameRestPart = mb_substr($curPieceName, 1);
-                    $curPieceClassName = "{$cPNFLinUpperCase}{$curPieceNameRestPart}";                    
-                    $pieceNotation = Piece::DESIGNATIONS[$curPieceClassName]; // Однобуквенное обозначение данной фигуры в нотации
+                    // var_dump($curPieceName);         
+                    $pieceNotation = Piece::DESIGNATIONS[$curPieceName]; // Однобуквенное обозначение данной фигуры в нотации
                     foreach ($curOrdinaryPiece->getAccessibleCells() as $curCell) {
                         $availableMoves[] = "{$pieceNotation}{$piecePosition}-{$curCell}";
                     }
