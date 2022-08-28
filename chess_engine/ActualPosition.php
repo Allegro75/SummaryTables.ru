@@ -4,7 +4,7 @@ include_once("Piece.php");
 // namespace chess_engine;
 
 // Шахматная позиция - конкретный набор фигур (отсылающий к свойствам фигур из Piece)
-class PiecesSet
+class ActualPosition
 {
 
     public $actualPosition;
@@ -14,7 +14,7 @@ class PiecesSet
     {
         
         $this->actualPosition = $opts["actualPosition"];
-        
+
         // Формируем набор фигур для актуальной позиции:
         $actualPiecesSet = [];
         foreach ($opts["actualPosition"]["piecesPositions"] as $piecesColor => $curColorPiecesSet) {

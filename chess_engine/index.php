@@ -26,11 +26,11 @@ $actualPosition = [
 ];
 
 // include_once("Piece.php");
-include_once("PiecesSet.php");
+include_once("ActualPosition.php");
 
 // $wRook_a7 = new Rook(["position" => $actualPosition["whitePiecesPositions"]["rooks"][0]]);
 
-$actualPicesSet = new PiecesSet(["actualPosition" => $actualPosition]);
+$actualPicesSet = new ActualPosition(["actualPosition" => $actualPosition]);
 
 echo "<pre>";
 // var_dump($actualPosition);
@@ -45,5 +45,5 @@ echo "<pre>";
 // var_dump($actualPicesSet);
 // var_dump($actualPicesSet->actualPiecesSet["whites"]["king"]->getAccesibleCells());
 // var_dump($actualPicesSet->actualPiecesSet["blacks"]["king"]->getAccesibleCells());
-// var_dump($actualPicesSet->actualPiecesSet["whites"]["rooks"][0]->getAccesibleCells());
+var_dump($actualPicesSet->actualPiecesSet["whites"]["rooks"][0]->getAccesibleCells());
 var_dump($actualPicesSet->actualPosition["moveColor"]);
