@@ -76,7 +76,7 @@ class King extends Piece
 
     // Получение полей, доступных для короля
     // Пока без учёта возможных препятствий на пути короля (всегда получаем от 3 до 8 полей в зависимости от позиции короля)
-    public function getAccesibleCells ($opts = []) {
+    public function getAccessibleCells ($opts = []) {
 
         $position = $this->position;
         $kingVertical = $position["vertical"]; // вертикаль, на к-рой находится король
