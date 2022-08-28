@@ -63,8 +63,18 @@ class ActualPosition
     {
 
         $moveColor = $this->getMoveColor();
+        $isKingHandled = false;
+        $availableMoves = [];
         foreach ($this->actualPiecesSet[$moveColor] as $curPieceNameInPosDescr => $curPieceInfo) {
             
+            if (($isKingHandled === false) && ($curPieceNameInPosDescr === "king")) {
+                $isKingHandled = true;
+                $kingPosition = $curPieceInfo->getPositionNotation();
+                foreach ($curPieceInfo->getAccessibleCells() as $curCell) {
+                    $availableMoves[] = "K{$kingPosition}-{$curCell}";
+                }
+            }
+
         }
 
     }

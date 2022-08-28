@@ -38,6 +38,13 @@ abstract class Piece
         return $this->position;
     }
 
+    public function getPositionNotation()
+    {
+        $vertical = $this->position["vertical"];
+        $horizontal = $this->position["horizontal"];
+        return "{$vertical}{$horizontal}";
+    }
+
     // Все поля шахматной доски:
     const CELLS = [
         "a" => ["1","2","3","4","5","6","7","8",],
@@ -48,7 +55,17 @@ abstract class Piece
         "f" => ["1","2","3","4","5","6","7","8",],
         "g" => ["1","2","3","4","5","6","7","8",],
         "h" => ["1","2","3","4","5","6","7","8",],
-    ];    
+    ];
+
+    // Обозначения фигур в нотации:
+    const DESIGNATIONS = [
+        "king" => "K",
+        "queen" => "Q",
+        "rook" => "R",
+        "bishop" => "B",
+        "knight" => "N",
+        "pawn" => "p",
+    ];
 
 }
 
