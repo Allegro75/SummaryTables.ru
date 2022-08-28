@@ -80,8 +80,9 @@ class ActualPosition
                 foreach ($curPieceInfo as $curOrdinaryPiece) {
 
                     $piecePosition = $curOrdinaryPiece->getPositionNotation();
-                    $curPieceNameLength = mb_strlen($curPieceNameInPosDescr);
-                    $curPieceName = mb_substr($curPieceNameInPosDescr, 0, $curPieceNameLength - 1);
+                    // $curPieceNameLength = mb_strlen($curPieceNameInPosDescr);
+                    // $curPieceName = mb_substr($curPieceNameInPosDescr, 0, $curPieceNameLength - 1);
+                    $curPieceName = $curOrdinaryPiece->getName();
                     // var_dump($curPieceName);         
                     $pieceNotation = Piece::DESIGNATIONS[$curPieceName]; // Однобуквенное обозначение данной фигуры в нотации
                     foreach ($curOrdinaryPiece->getAccessibleCells() as $curCell) {
