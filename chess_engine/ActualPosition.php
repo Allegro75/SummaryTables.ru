@@ -77,6 +77,8 @@ class ActualPosition
 
         }
 
+        return $availableMoves;
+
     }
 
 }
