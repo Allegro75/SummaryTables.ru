@@ -13,8 +13,8 @@ class PiecesSet
     public function __construct($opts=[])
     {
         
-        $this->actualPosition = $opts["actualPosition"];        
-
+        $this->actualPosition = $opts["actualPosition"];
+        
         // Формируем набор фигур для актуальной позиции:
         $actualPiecesSet = [];
         foreach ($opts["actualPosition"]["piecesPositions"] as $piecesColor => $curColorPiecesSet) {
