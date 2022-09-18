@@ -33,4 +33,10 @@ if (true) {
 }
 
 $bodyCloseTagPosition = mb_strpos($originalFileContent, "</body>");
-var_dump($bodyCloseTagPosition);
+// var_dump($bodyCloseTagPosition);
+
+$parserJsScriptStr = '<script src="js/getClubsAndMatchesArrays.js"></script>';
+
+$newFileContent = substr_replace($originalFileContent, "{$parserJsScriptStr}</body>", $bodyCloseTagPosition, 7);
+
+echo $newFileContent;
