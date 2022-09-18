@@ -39,10 +39,11 @@ $footerPosition = mb_strpos($originalFileContent, '<div class="footer">');
 // echo $footerPosition;
 
 $newFileContent = mb_substr($originalFileContent, 0, $footerPosition);
-echo $newFileContent;
+// echo $newFileContent;
 
-// $parserJsScriptStr = '<script src="js/getClubsAndMatchesArrays.js"></script>';
+$parserJsScriptStr = '<script src="js/getClubsAndMatchesArrays.js"></script>';
 
 // $newFileContent = substr_replace($originalFileContent, "{$parserJsScriptStr}</body>", $bodyCloseTagPosition, 7);
+$newFileContent = "{$newFileContent}{$parserJsScriptStr}";
 
-// echo $newFileContent;
+echo $newFileContent;
