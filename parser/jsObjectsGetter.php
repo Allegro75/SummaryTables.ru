@@ -32,11 +32,16 @@ if (true) {
     // echo $originalFileContent;
 }
 
-$bodyCloseTagPosition = mb_strpos($originalFileContent, "</body>");
+// $bodyCloseTagPosition = mb_strpos($originalFileContent, "</body>");
 // var_dump($bodyCloseTagPosition);
 
-$parserJsScriptStr = '<script src="js/getClubsAndMatchesArrays.js"></script>';
+$footerPosition = mb_strpos($originalFileContent, '<div class="footer">');
+echo $footerPosition;
 
-$newFileContent = substr_replace($originalFileContent, "{$parserJsScriptStr}</body>", $bodyCloseTagPosition, 7);
+// echo $newFileContent;
 
-echo $newFileContent;
+// $parserJsScriptStr = '<script src="js/getClubsAndMatchesArrays.js"></script>';
+
+// $newFileContent = substr_replace($originalFileContent, "{$parserJsScriptStr}</body>", $bodyCloseTagPosition, 7);
+
+// echo $newFileContent;
