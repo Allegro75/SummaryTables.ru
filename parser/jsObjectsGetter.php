@@ -26,8 +26,11 @@ if (true) {
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
     curl_setopt($ch, CURLOPT_HEADER, true);
-    $html = curl_exec($ch);
+    $originalFileContent = curl_exec($ch);
     curl_close($ch);
      
-    echo $html;
+    // echo $originalFileContent;
 }
+
+$bodyCloseTagPosition = mb_strpos($originalFileContent, "</body>");
+var_dump($bodyCloseTagPosition);
