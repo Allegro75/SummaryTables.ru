@@ -1,14 +1,18 @@
 
 console.log('yes')
 
-let clubsArr = []
-let matchesArr = []
+document.addEventListener('DOMContentLoaded', () => {
 
-const bigTable = document.querySelector('.stat-results__table')
-bigTable.rows.array.forEach((row, rowInd) => {
+    let clubsArr = []
+    let matchesArr = []
 
-    if (rowInd > 0) {
-        console.log(row.cells[3].textContent)
-    }
-    
-});
+    const bigTable = document.querySelector('.stat-results__table')
+    bigTable.rows.forEach((row, rowInd) => {
+
+        if (rowInd > 0) {
+            console.log(row.cells[3].textContent)
+        }
+        
+    });
+
+})
