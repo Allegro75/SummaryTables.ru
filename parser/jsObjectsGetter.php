@@ -36,9 +36,10 @@ if (true) {
 // var_dump($bodyCloseTagPosition);
 
 $footerPosition = mb_strpos($originalFileContent, '<div class="footer">');
-echo $footerPosition;
+// echo $footerPosition;
 
-// echo $newFileContent;
+$newFileContent = mb_substr($originalFileContent, 0, $footerPosition);
+echo $newFileContent;
 
 // $parserJsScriptStr = '<script src="js/getClubsAndMatchesArrays.js"></script>';
 
