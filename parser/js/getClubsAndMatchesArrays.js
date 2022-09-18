@@ -7,12 +7,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let matchesArr = []
 
     const bigTable = document.querySelector('.stat-results__table')
-    bigTable.rows.forEach((row, rowInd) => {
+    console.log(bigTable)
+    // bigTable.rows.forEach((row, rowInd) => {
 
-        if (rowInd > 0) {
-            console.log(row.cells[3].textContent)
-        }
+    //     if (rowInd > 0) {
+    //         console.log(row.cells[3].textContent)
+    //     }
         
-    });
+    // });
 
 })
