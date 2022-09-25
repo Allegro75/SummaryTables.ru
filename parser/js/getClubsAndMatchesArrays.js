@@ -61,7 +61,8 @@ document.addEventListener('DOMContentLoaded', async function() {
       // };
       
       let response = await fetch('parser.php', {
-        method: 'POST',
+        // method: 'POST',
+        type: "POST",
         // dataType: 'html',
         headers: {
           'Content-Type': 'application/json;charset=utf-8'
