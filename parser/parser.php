@@ -1,10 +1,9 @@
 
 <?
 
-// return ['yes'];
-$arr = [
-    'yes' => 1,
-    'message' => 2,
-];
+// $arr = [
+//     'yes' => 1,
+//     'message' => 2,
+// ];
 
-echo json_encode($arr);
+echo json_encode($_POST['body']);
