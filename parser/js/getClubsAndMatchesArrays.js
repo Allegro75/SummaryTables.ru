@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     if (true) {
 
       let clubsArr = {}
+      let rawClubsArr = [] // Массив названий клубов вместе со страной их "приписки"
       let matchesArr = {}
 
       const bigTable = document.querySelector('.stat-results__table')
@@ -15,20 +16,28 @@ document.addEventListener('DOMContentLoaded', async function() {
 
               if (row.cells[7].textContent.trim() !== '– : –') { // Если матч сыгран
 
-                  console.log('стадия:\n') // стадия
-                  console.log(row.cells[3].textContent) // стадия
+                  // console.log('стадия:\n') // стадия
+                  // console.log(row.cells[3].textContent) // стадия
 
-                  console.log('дата:\n') // дата
-                  console.log(row.cells[5].textContent.trim().substr(0, 10)) // дата
+                  // console.log('дата:\n') // дата
+                  // console.log(row.cells[5].textContent.trim().substr(0, 10)) // дата
 
                   const clubNames = row.cells[6].querySelectorAll('span.table-item__name')
-                  console.log('клубы-участники:\n') // клубы-участники
-                  console.log(clubNames[0].textContent) // клубы-участники
-                  console.log(clubNames[1].textContent) // клубы-участники
+                  // console.log('клубы-участники:\n') // клубы-участники
+                  // console.log(clubNames[0].textContent) // клубы-участники
+                  // console.log(clubNames[1].textContent) // клубы-участники
+                  let rawClubName_1 = clubNames[0].textContent
+                  let rawClubName_2 = clubNames[1].textContent
+                  if ( ! (rawClubsArr.includes(rawClubName_1)) ) {
+                    rawClubsArr.push(rawClubName_1)
+                  }
+                  if ( ! (rawClubsArr.includes(rawClubName_2)) ) {
+                    rawClubsArr.push(rawClubName_2)
+                  }
 
-                  console.log('счёт:\n') // счёт
-                  console.log(row.cells[7].textContent.trim()) // счёт
-                  console.log('\n')
+                  // console.log('счёт:\n') // счёт
+                  // console.log(row.cells[7].textContent.trim()) // счёт
+                  // console.log('\n')
 
               }
 
@@ -36,20 +45,13 @@ document.addEventListener('DOMContentLoaded', async function() {
           
       });
 
+      console.log(rawClubsArr);
+
     }
 
 
     // AJAX-запрос:
     if (true) {
-
-      // let response = fetch('parser.php');
-      // console.log(response);
-
-      // if (response.ok) { // если HTTP-статус в диапазоне 200-299      
-      //   let json = response.json();      
-      // } else {
-      //   alert("Ошибка HTTP: " + response.status);
-      // }
 
       let user = {
         name: 'John',
@@ -69,7 +71,6 @@ document.addEventListener('DOMContentLoaded', async function() {
       let result = await response.json();
       // console.log(result);
       console.log(result.yes);
-      // alert(result.message);
 
     }
 
