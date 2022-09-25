@@ -35,10 +35,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    let response = await fetch('../parser.php');
+    let response = fetch('../parser.php');
 
     if (response.ok) { // если HTTP-статус в диапазоне 200-299      
-      let json = await response.json();
+      let json = response.json();
       console.log(response);
     } else {
       alert("Ошибка HTTP: " + response.status);
