@@ -58,8 +58,9 @@ document.addEventListener('DOMContentLoaded', async function() {
       body: JSON.stringify(user)
     });
     
+    console.log(response);
     let result = await response.json();
-    console.log(result);
+    // console.log(result);
     alert(result.message);
 
 })
