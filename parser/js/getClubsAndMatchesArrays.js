@@ -2,66 +2,75 @@
 document.addEventListener('DOMContentLoaded', async function() {
 
     // Получение данных о клубах и матчах:
-    let clubsArr = {}
-    let matchesArr = {}
+    if (true) {
 
-    const bigTable = document.querySelector('.stat-results__table')
-    const tableRowsArr = Array.from(bigTable.rows);
-    tableRowsArr.forEach((row, rowInd) => {
+      let clubsArr = {}
+      let matchesArr = {}
 
-        if (rowInd > 0) {
+      const bigTable = document.querySelector('.stat-results__table')
+      const tableRowsArr = Array.from(bigTable.rows);
+      tableRowsArr.forEach((row, rowInd) => {
 
-            // if (row.cells[7].textContent.trim() !== '– : –') { // Если матч сыгран
+          if (rowInd > 0) {
 
-            //     console.log('стадия:\n') // стадия
-            //     console.log(row.cells[3].textContent) // стадия
+              if (row.cells[7].textContent.trim() !== '– : –') { // Если матч сыгран
 
-            //     console.log('дата:\n') // дата
-            //     console.log(row.cells[5].textContent.trim().substr(0, 10)) // дата
+                  console.log('стадия:\n') // стадия
+                  console.log(row.cells[3].textContent) // стадия
 
-            //     const clubNames = row.cells[6].querySelectorAll('span.table-item__name')
-            //     console.log('клубы-участники:\n') // клубы-участники
-            //     console.log(clubNames[0].textContent) // клубы-участники
-            //     console.log(clubNames[1].textContent) // клубы-участники
+                  console.log('дата:\n') // дата
+                  console.log(row.cells[5].textContent.trim().substr(0, 10)) // дата
 
-            //     console.log('счёт:\n') // счёт
-            //     console.log(row.cells[7].textContent.trim()) // счёт
-            //     console.log('\n')
+                  const clubNames = row.cells[6].querySelectorAll('span.table-item__name')
+                  console.log('клубы-участники:\n') // клубы-участники
+                  console.log(clubNames[0].textContent) // клубы-участники
+                  console.log(clubNames[1].textContent) // клубы-участники
 
-            // }
+                  console.log('счёт:\n') // счёт
+                  console.log(row.cells[7].textContent.trim()) // счёт
+                  console.log('\n')
 
-        }
-        
-    });
+              }
+
+          }
+          
+      });
+
+    }
 
 
     // AJAX-запрос:
-    // let response = fetch('parser.php');
-    // console.log(response);
+    if (true) {
 
-    // if (response.ok) { // если HTTP-статус в диапазоне 200-299      
-    //   let json = response.json();      
-    // } else {
-    //   alert("Ошибка HTTP: " + response.status);
-    // }
+      // let response = fetch('parser.php');
+      // console.log(response);
 
-    let user = {
-      name: 'John',
-      surname: 'Smith'
-    };
-    
-    let response = await fetch('parser.php', {
-      method: 'POST',
-      dataType: 'html',
-      headers: {
-        'Content-Type': 'application/json;charset=utf-8'
-      },
-      body: JSON.stringify(user)
-    });
-    
-    console.log(response);
-    let result = await response.json();
-    // console.log(result);
-    alert(result.message);
+      // if (response.ok) { // если HTTP-статус в диапазоне 200-299      
+      //   let json = response.json();      
+      // } else {
+      //   alert("Ошибка HTTP: " + response.status);
+      // }
+
+      let user = {
+        name: 'John',
+        surname: 'Smith'
+      };
+      
+      let response = await fetch('parser.php', {
+        method: 'POST',
+        // dataType: 'html',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8'
+        },
+        body: JSON.stringify(user)
+      });
+      
+      // console.log(response);
+      let result = await response.json();
+      // console.log(result);
+      console.log(result.yes);
+      // alert(result.message);
+
+    }
 
 })
