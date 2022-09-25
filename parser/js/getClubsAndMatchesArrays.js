@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', async function() {
       
       // console.log(response);
       let result = await response.json();
-      console.log(result);
+      console.log(result[0]);
       // console.log(result.yes);
       // console.log(result.message);
 
