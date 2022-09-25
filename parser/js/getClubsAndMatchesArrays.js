@@ -1,13 +1,13 @@
 
 document.addEventListener('DOMContentLoaded', async function() {
 
+    let clubsArr = {}
+    let rawClubsArr = [] // Массив названий клубов вместе со страной их "приписки"
+    let matchesArr = {}
+
     // Получение данных о клубах и матчах:
     // if (true) {
-      async function getClubsArr () {
-
-      let clubsArr = {}
-      let rawClubsArr = [] // Массив названий клубов вместе со страной их "приписки"
-      let matchesArr = {}
+    async function getClubsArr () {
 
       const bigTable = document.querySelector('.stat-results__table')
       const tableRowsArr = Array.from(bigTable.rows);
