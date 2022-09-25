@@ -2,4 +2,5 @@
 <?
 
 // return ['yes'];
-return "{'yes' : 1}";
+$arr = ['yes' => 1];
+return json_encode($arr);
