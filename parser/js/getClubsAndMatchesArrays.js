@@ -1,5 +1,5 @@
 
-document.addEventListener('DOMContentLoaded', () => {
+// document.addEventListener('DOMContentLoaded', () => {
 
     // Получение данных о клубах и матчах:
     let clubsArr = {}
@@ -35,13 +35,31 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    let response = fetch('parser.php');
-    console.log(response);
+    // AJAX-запрос:
+    // let response = fetch('parser.php');
+    // console.log(response);
 
-    if (response.ok) { // если HTTP-статус в диапазоне 200-299      
-      let json = response.json();      
-    } else {
-      alert("Ошибка HTTP: " + response.status);
-    }    
+    // if (response.ok) { // если HTTP-статус в диапазоне 200-299      
+    //   let json = response.json();      
+    // } else {
+    //   alert("Ошибка HTTP: " + response.status);
+    // }
 
-})
+    let user = {
+      name: 'John',
+      surname: 'Smith'
+    };
+    
+    let response = await fetch('parser.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8'
+      },
+      body: JSON.stringify(user)
+    });
+    
+    let result = await response.json();
+    console.log(result);
+    alert(result.message);
+
+// })
