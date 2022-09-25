@@ -53,10 +53,10 @@ document.addEventListener('DOMContentLoaded', async function() {
     // AJAX-запрос:
     if (true) {
 
-      let user = {
-        name: 'John',
-        surname: 'Smith'
-      };
+      // let user = {
+      //   name: 'John',
+      //   surname: 'Smith'
+      // };
       
       let response = await fetch('parser.php', {
         method: 'POST',
@@ -64,13 +64,15 @@ document.addEventListener('DOMContentLoaded', async function() {
         headers: {
           'Content-Type': 'application/json;charset=utf-8'
         },
-        body: JSON.stringify(user)
+        // body: JSON.stringify(user)
+        body: JSON.stringify(rawClubsArr)
       });
       
       // console.log(response);
       let result = await response.json();
       // console.log(result);
       console.log(result.yes);
+      console.log(result.message);
 
     }
 
