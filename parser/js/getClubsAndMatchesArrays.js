@@ -2,7 +2,8 @@
 document.addEventListener('DOMContentLoaded', async function() {
 
     // Получение данных о клубах и матчах:
-    if (true) {
+    // if (true) {
+      async function getClubsArr () {
 
       let clubsArr = {}
       let rawClubsArr = [] // Массив названий клубов вместе со страной их "приписки"
@@ -51,7 +52,8 @@ document.addEventListener('DOMContentLoaded', async function() {
 
 
     // AJAX-запрос:
-    if (true) {
+    // if (true) {
+    async function ajax () {
 
       // let user = {
       //   name: 'John',
@@ -75,5 +77,9 @@ document.addEventListener('DOMContentLoaded', async function() {
       console.log(result.message);
 
     }
+
+
+    await getClubsArr()
+    await ajax()
 
 })
