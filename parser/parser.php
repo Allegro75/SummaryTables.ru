@@ -1,4 +1,5 @@
 
 <?
 
-return ['yes'];
+// return ['yes'];
+return "{'yes' : 1}";
