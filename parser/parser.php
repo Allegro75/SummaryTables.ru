@@ -6,4 +6,5 @@
 //     'message' => 2,
 // ];
 
-echo json_encode($_POST['body']);
+// echo json_encode($_POST['body']);
+echo json_encode($_POST);
