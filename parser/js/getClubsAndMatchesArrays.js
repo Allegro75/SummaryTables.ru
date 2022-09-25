@@ -1,5 +1,5 @@
 
-// document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async function() {
 
     // Получение данных о клубах и матчах:
     let clubsArr = {}
@@ -62,4 +62,4 @@
     console.log(result);
     alert(result.message);
 
-// })
+})
