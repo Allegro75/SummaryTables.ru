@@ -37,16 +37,17 @@ if (true) {
         ";
         if ($result = mysqli_query($conn, $sql)) {
             if ($item = mysqli_fetch_assoc($result)) {
-                $clubsList['existingClubs'][] = [
-                    "dbId" => $item["id"],
-                    'basicFullName' => $item['basicFullName'],
+                $clubsList['existingClubs'][] = [                    
+                    // "dbId" => $item["id"],
+                    // 'basicFullName' => $item['basicFullName'],
+                    'web' => $curClub,
+                    'db' => $item,
                 ];
             } else {
                 $clubsList['newClubs'][] = $curClub;
             }
         } else {
             $clubsList['newClubs'][] = $curClub;
-            // $clubsList['newClubs'][] = $sql;
         }
     }
     echo json_encode($clubsList);
