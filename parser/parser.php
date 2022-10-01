@@ -43,7 +43,8 @@ if (true) {
             }
         }
         else {
-            $clubsList['newClubs'][] = $curClub;
+            // $clubsList['newClubs'][] = $curClub;
+            $clubsList['newClubs'][] = $sql;
         }
     }
     echo json_encode($clubsList);
