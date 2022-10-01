@@ -31,7 +31,7 @@ if (true) {
             FROM `eurocups_clubs`
             WHERE `basicFullName` = '{$curClub['title']}'
             OR `shortName` = '{$curClub['title']}'
-            OR `altNames` = '{$curClub['title']}'
+            OR `altNames` LIKE '{$curClub['title']}'
             AND `country` = '{$curClub['country']}'
         ";
         if ($result = mysqli_query($conn, $sql)) {
