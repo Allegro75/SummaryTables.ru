@@ -3,6 +3,10 @@ document.addEventListener('DOMContentLoaded', async function() {
 
     let rawClubsArr = [] // Массив названий клубов вместе со страной их "приписки"
     let matchesArr = []
+    const clubsAndMatches = {
+      'clubs' : rawClubsArr,
+      'matches' : matchesArr,
+    }
 
     // Получение данных о клубах и матчах:
     // if (true) {
@@ -52,10 +56,6 @@ document.addEventListener('DOMContentLoaded', async function() {
 
       // console.log(rawClubsArr);
       console.log(matchesArr);
-      const clubsAndMatches = {
-        'clubs' : rawClubsArr,
-        'matches' : matchesArr,
-      }
 
     }
 
