@@ -25,6 +25,7 @@ if (true) {
     $conn = connect();
 
     $clubsList = [];
+    $countryName = ($curClub['country'] === 'Беларусь') ? 'Белоруссия' : $curClub['country'];
     foreach ($processedClubsArr as $curClub) {
         $sql =
             "SELECT * 
@@ -32,7 +33,7 @@ if (true) {
             WHERE `basicFullName` = '{$curClub['title']}'
             OR `shortName` = '{$curClub['title']}'
             OR `altNames` LIKE '%{$curClub['title']}%'
-            AND `country` = '{$curClub['country']}'
+            AND `country` = '{$countryName}'
         ";
         if ($result = mysqli_query($conn, $sql)) {
             if ($item = mysqli_fetch_assoc($result)) {
