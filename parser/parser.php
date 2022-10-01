@@ -1,12 +1,8 @@
 
 <?
 
-// Сырой массив с клубами.
-// Его элементы имеют вид 'ПСВ Эйндховен (Нидерланды)'
-// $rawClubsArr = json_decode(file_get_contents('php://input'), true);
-// echo json_encode($rawClubsArr);
 $clubsAndMatchesArr = json_decode(file_get_contents('php://input'), true);
-$rawClubsArr = $clubsAndMatchesArr['clubs'];
+$rawClubsArr = $clubsAndMatchesArr['clubs']; // Сырой массив с клубами. Его элементы имеют вид 'ПСВ Эйндховен (Нидерланды)'
 
 // Выясняем название клуба и страну:
 $processedClubsArr = [];
