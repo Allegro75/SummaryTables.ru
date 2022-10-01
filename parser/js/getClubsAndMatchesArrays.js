@@ -1,13 +1,12 @@
 
 document.addEventListener('DOMContentLoaded', async function() {
 
-    let clubsArr = {}
     let rawClubsArr = [] // Массив названий клубов вместе со страной их "приписки"
-    let matchesArr = {}
+    let matchesArr = []
 
     // Получение данных о клубах и матчах:
     // if (true) {
-    async function getClubsArr () {
+    async function getClubsAndMatchesArrs () {
 
       const bigTable = document.querySelector('.stat-results__table')
       const tableRowsArr = Array.from(bigTable.rows);
@@ -17,16 +16,16 @@ document.addEventListener('DOMContentLoaded', async function() {
 
               if (row.cells[7].textContent.trim() !== '– : –') { // Если матч сыгран
 
+                  let curMatch = {}
                   // console.log('стадия:\n') // стадия
                   // console.log(row.cells[3].textContent) // стадия
+                  curMatch['stage'] = row.cells[3].textContent
 
                   // console.log('дата:\n') // дата
                   // console.log(row.cells[5].textContent.trim().substr(0, 10)) // дата
+                  curMatch['date'] = row.cells[5].textContent.trim().substr(0, 10)
 
-                  const clubNames = row.cells[6].querySelectorAll('span.table-item__name')
-                  // console.log('клубы-участники:\n') // клубы-участники
-                  // console.log(clubNames[0].textContent) // клубы-участники
-                  // console.log(clubNames[1].textContent) // клубы-участники
+                  const clubNames = row.cells[6].querySelectorAll('span.table-item__name') // клубы-участники
                   let rawClubName_1 = clubNames[0].textContent
                   let rawClubName_2 = clubNames[1].textContent
                   if ( ! (rawClubsArr.includes(rawClubName_1)) ) {
@@ -35,10 +34,15 @@ document.addEventListener('DOMContentLoaded', async function() {
                   if ( ! (rawClubsArr.includes(rawClubName_2)) ) {
                     rawClubsArr.push(rawClubName_2)
                   }
+                  curMatch['firstClub'] = rawClubName_1
+                  curMatch['secClub'] = rawClubName_2
 
                   // console.log('счёт:\n') // счёт
                   // console.log(row.cells[7].textContent.trim()) // счёт
                   // console.log('\n')
+                  curMatch['score'] = row.cells[7].textContent.trim()
+
+                  matchesArr.push(curMatch)
 
               }
 
@@ -46,7 +50,12 @@ document.addEventListener('DOMContentLoaded', async function() {
           
       });
 
-      console.log(rawClubsArr);
+      // console.log(rawClubsArr);
+      console.log(matchesArr);
+      const clubsAndMatches = {
+        'clubs' : rawClubsArr,
+        'matches' : matchesArr,
+      }
 
     }
 
@@ -70,7 +79,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     }
 
 
-    await getClubsArr()
+    await getClubsAndMatchesArrs()
     await ajax()
 
 })
