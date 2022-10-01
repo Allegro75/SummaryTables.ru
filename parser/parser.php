@@ -29,10 +29,10 @@ if (true) {
         $sql =
             "SELECT * 
             FROM `eurocups_clubs`
-            WHERE `basicFullName` = {$curClub['title']}
-            OR `shortName` = {$curClub['title']}
-            OR `altNames` = {$curClub['title']}
-            AND `country` = {$curClub['country']}
+            WHERE `basicFullName` = '{$curClub['title']}'
+            OR `shortName` = '{$curClub['title']}'
+            OR `altNames` = '{$curClub['title']}'
+            AND `country` = '{$curClub['country']}'
         ";
         if ($result = mysqli_query($conn, $sql)) {
             while ($item = mysqli_fetch_assoc($result)) {
@@ -43,8 +43,8 @@ if (true) {
             }
         }
         else {
-            // $clubsList['newClubs'][] = $curClub;
-            $clubsList['newClubs'][] = $sql;
+            $clubsList['newClubs'][] = $curClub;
+            // $clubsList['newClubs'][] = $sql;
         }
     }
     echo json_encode($clubsList);
