@@ -70,7 +70,8 @@ document.addEventListener('DOMContentLoaded', async function() {
         headers: {
           'Content-Type': 'application/json;charset=utf-8'
         },
-        body: JSON.stringify(rawClubsArr)
+        // body: JSON.stringify(rawClubsArr)
+        body: JSON.stringify(clubsAndMatches)
       });
       
       let result = await response.json();
