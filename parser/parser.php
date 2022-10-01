@@ -9,16 +9,43 @@ $rawClubsArr = json_decode(file_get_contents('php://input'), true);
 // Выясняем название клуба и страну:
 $processedClubsArr = [];
 foreach ($rawClubsArr as $curClub) {
-
-    // $openBracketInd = mb_strpos($curClub, '(');
-    // $processedClubsArr[] = $openBracketInd;
-
     $arr = explode('(', $curClub);
     $processedClubsArr[] = [
         'title' => trim($arr[0]),
         'country' => trim(mb_substr($arr[1], 0, mb_strlen($arr[1]) - 1)),
     ];
+}
+// echo json_encode($processedClubsArr);
+
+// Ищем клубы в базе:
+if (true) {
+
+    require_once '../database/config/config.php';
+    require_once '../database/config/connect.php';
+    $conn = connect();
+
+    $clubsList = [];
+    foreach ($processedClubsArr as $curClub) {
+        $sql =
+            "SELECT * 
+            FROM `eurocups_clubs`
+            WHERE `basicFullName` = {$curClub['title']}
+            OR `shortName` = {$curClub['title']}
+            OR `altNames` = {$curClub['title']}
+            AND `country` = {$curClub['country']}
+        ";
+        if ($result = mysqli_query($conn, $sql)) {
+            while ($item = mysqli_fetch_assoc($result)) {
+                $clubsList['existingClubs'][] = [
+                    "dbId" => $item["id"],
+                    'basicFullName' => $item['basicFullName'],
+                ];
+            }
+        }
+        else {
+            $clubsList['newClubs'][] = $curClub;
+        }
+    }
+    echo json_encode($clubsList);
 
 }
-
-echo json_encode($processedClubsArr);
