@@ -24,9 +24,9 @@ if (true) {
     require_once '../database/config/connect.php';
     $conn = connect();
 
-    $clubsList = [];
-    $countryName = ($curClub['country'] === 'Беларусь') ? 'Белоруссия' : $curClub['country'];
+    $clubsList = [];    
     foreach ($processedClubsArr as $curClub) {
+        $countryName = ($curClub['country'] === 'Беларусь') ? 'Белоруссия' : $curClub['country'];
         $sql =
             "SELECT * 
             FROM `eurocups_clubs`
