@@ -35,14 +35,15 @@ if (true) {
             AND `country` = '{$curClub['country']}'
         ";
         if ($result = mysqli_query($conn, $sql)) {
-            while ($item = mysqli_fetch_assoc($result)) {
+            if ($item = mysqli_fetch_assoc($result)) {
                 $clubsList['existingClubs'][] = [
                     "dbId" => $item["id"],
                     'basicFullName' => $item['basicFullName'],
                 ];
+            } else {
+                $clubsList['newClubs'][] = $curClub;
             }
-        }
-        else {
+        } else {
             $clubsList['newClubs'][] = $curClub;
             // $clubsList['newClubs'][] = $sql;
         }
