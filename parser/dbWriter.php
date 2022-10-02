@@ -48,7 +48,7 @@ if (true) {
             $clubsList['newClubs'][] = $curClub;
         }
     }
-    echo json_encode($clubsList);
+    // echo json_encode($clubsList);
 
 }
 
@@ -133,5 +133,6 @@ if (true) {
         }
 
     }
+    echo json_encode($netMatchesArr);
 
 }
