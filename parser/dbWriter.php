@@ -112,7 +112,7 @@ if (true) {
 
             // Ищем имена и индексы клубов, игравших в текущем матче
             $firstClubName = $secondClubName = '';
-            foreach ($clubsList as $curClub) {
+            foreach ($clubsList['existingClubs'] as $curClub) {
 
                 $webClubTitle = "{$curClub['web']['title']} ({$curClub['web']['country']})";
                 if (($firstClubName === '') && ($curMatch['firstClub'] === $webClubTitle)) {
