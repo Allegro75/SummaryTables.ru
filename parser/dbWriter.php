@@ -107,8 +107,8 @@ if (true) {
     $netMatchesArr = [];
     foreach ($clubsAndMatchesArr['matches'] as $ind => $curMatch) {
 
-        // if (true) {
-        if ($ind == 0) {
+        if (true) {
+        // if ($ind == 0) {
 
             // Ищем имена и индексы клубов, игравших в текущем матче
             $firstClubName = $secondClubName = '';
