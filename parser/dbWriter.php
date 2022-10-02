@@ -116,7 +116,8 @@ if (false) {
 }
 
 // Записываем матчи в базу:
-if (true) {
+// if (true) {
+if (false) {
 
     $netMatchesArr = [];
     foreach ($clubsAndMatchesArr['matches'] as $ind => $curMatch) {
