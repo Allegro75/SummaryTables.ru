@@ -57,8 +57,8 @@ $netMatchesArr = [];
 foreach ($clubsAndMatchesArr['matches'] as $ind => $curMatch) {
 
     // Получаем веб-страницу из Сети
-    // if (true) {
-    if ($ind == 100) {
+    if (true) {
+    // if ($ind == 100) {
         // $originalFileContent = file_get_contents("https://www.championat.com/football/_ucl/tournament/4993/calendar/");
         // echo $originalFileContent;
 
