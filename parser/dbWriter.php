@@ -33,6 +33,9 @@ if (true) {
             case 'Монако':
                 $countryName = 'Франция';
                 break;
+            case "Фарерские острова":
+                $countryName = 'Фареры';
+                break;
             default:
                 $countryName = $curClub['country'];
                 break;
