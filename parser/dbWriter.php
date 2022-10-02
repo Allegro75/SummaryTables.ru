@@ -50,6 +50,7 @@ if (true) {
                     $clubsList['existingClubs'][] = [                    
                         'web' => $curClub,
                         'db' => $item,
+                        'sql' => $sql,
                     ];
                     break;
                 }
