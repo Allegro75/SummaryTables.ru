@@ -119,7 +119,7 @@ if (true) {
                     $firstClubName = $curClub['db']['basicFullName'];
                     $firstClubId = $curClub['db']['id'];
                 }
-                if (($secondClubName === '') && ($curMatch['firstClub'] === $webClubTitle)) {
+                if (($secondClubName === '') && ($curMatch['secClub'] === $webClubTitle)) {
                     $secondClubName = $curClub['db']['basicFullName'];
                     $secondClubId = $curClub['db']['id'];
                 }
