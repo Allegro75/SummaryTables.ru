@@ -25,6 +25,7 @@ if (true) {
     $clubsList = [];    
     foreach ($processedClubsArr as $curClub) {
         $countryName = ($curClub['country'] === 'Беларусь') ? 'Белоруссия' : $curClub['country'];
+        $countryName = ($curClub['country'] === 'Монако') ? 'Франция' : $curClub['country'];
         $sql =
             "SELECT * 
             FROM `eurocups_clubs`
