@@ -88,7 +88,10 @@ foreach ($clubsAndMatchesArr['matches'] as $ind => $curMatch) {
         // echo $originalFileContent;
 
         $approximateNeededNodeIndex = mb_strpos($originalFileContent, 'match-info__extra-row');
-        $netMatchesArr[] = $approximateNeededNodeIndex;
+        $startInd = mb_strpos($originalFileContent, '(', $approximateNeededNodeIndex);
+        $endInd = mb_strpos($originalFileContent, ')', $approximateNeededNodeIndex);
+        $rawPlaceInfo = mb_substr($originalFileContent, $startInd + 1, $endInd - $startInd);
+        $netMatchesArr[] = $rawPlaceInfo;
 
     }
 
