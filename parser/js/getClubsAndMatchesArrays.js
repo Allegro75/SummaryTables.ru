@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     // if (true) {
     async function ajax () {
       
-      let response = await fetch('parser.php', {
+      let response = await fetch('dbWriter.php', {
         method: 'POST',
         // dataType: 'html',
         headers: {
