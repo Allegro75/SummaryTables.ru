@@ -34,21 +34,35 @@ if (true) {
             AND `country` = '{$countryName}'
         ";
         if ($result = mysqli_query($conn, $sql)) {
-            if ($item = mysqli_fetch_assoc($result)) {
-                $clubsList['existingClubs'][] = [                    
-                    // "dbId" => $item["id"],
-                    // 'basicFullName' => $item['basicFullName'],
-                    'web' => $curClub,
-                    'db' => $item,
-                ];
-            } else {
+            $clubIsFound = false;
+            while ($item = mysqli_fetch_assoc($result)) {
+                if ($curClub['title'] === $item['basicFullName']) {
+                    $clubIsFound = true;
+                } elseif ($curClub['title'] === $item['shortName']) {
+                    $clubIsFound = true;
+                } else {
+                    $altNames = explode(',', $item['altNames']);
+                    if (in_array($curClub['title'], $altNames)) {
+                        $clubIsFound = true;
+                    }
+                }
+                if ($clubIsFound === true) {
+                    $clubsList['existingClubs'][] = [                    
+                        'web' => $curClub,
+                        'db' => $item,
+                    ];
+                    break;
+                }
+            } 
+            if ($clubIsFound === false) {
                 $clubsList['newClubs'][] = $curClub;
             }
-        } else {
+        } 
+        else {
             $clubsList['newClubs'][] = $curClub;
         }
     }
-    // echo json_encode($clubsList);
+    echo json_encode($clubsList);
 
 }
 
