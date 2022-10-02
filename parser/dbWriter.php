@@ -24,8 +24,19 @@ if (true) {
 
     $clubsList = [];    
     foreach ($processedClubsArr as $curClub) {
-        $countryName = ($curClub['country'] === 'Беларусь') ? 'Белоруссия' : $curClub['country'];
-        $countryName = ($curClub['country'] === 'Монако') ? 'Франция' : $curClub['country'];
+        switch ($curClub['country']) {
+            // $countryName = ($curClub['country'] === 'Беларусь') ? 'Белоруссия' : $curClub['country'];
+            // $countryName = ($curClub['country'] === 'Монако') ? 'Франция' : $curClub['country'];
+            case 'Беларусь':
+                $countryName = 'Белоруссия';
+                break;
+            case 'Монако':
+                $countryName = 'Франция';
+                break;
+            default:
+                $countryName = $curClub['country'];
+                break;
+        }
         $sql =
             "SELECT * 
             FROM `eurocups_clubs`
@@ -54,7 +65,7 @@ if (true) {
                     $clubsList['existingClubs'][] = [                    
                         'web' => $curClub,
                         'db' => $item,
-                        'sql' => $sql,
+                        // 'sql' => $sql,
                     ];
                     break;
                 }
