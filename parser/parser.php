@@ -54,10 +54,11 @@ if (true) {
 
 // Определяем места проведения матчей
 $netMatchesArr = [];
-foreach ($clubsAndMatchesArr['matches'] as $curMatch) {
+foreach ($clubsAndMatchesArr['matches'] as $ind => $curMatch) {
 
     // Получаем веб-страницу из Сети
-    if (true) {
+    // if (true) {
+    if ($ind == 100) {
         // $originalFileContent = file_get_contents("https://www.championat.com/football/_ucl/tournament/4993/calendar/");
         // echo $originalFileContent;
 
@@ -86,7 +87,7 @@ foreach ($clubsAndMatchesArr['matches'] as $curMatch) {
         curl_close($ch);        
         // echo $originalFileContent;
 
-        $approximateNeededNodeIndex = mb_strpos($originalFileContent, 'wghxp match-info__extra-row');
+        $approximateNeededNodeIndex = mb_strpos($originalFileContent, 'match-info__extra-row');
         $netMatchesArr[] = $approximateNeededNodeIndex;
 
     }
