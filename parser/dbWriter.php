@@ -28,9 +28,12 @@ if (true) {
         $sql =
             "SELECT * 
             FROM `eurocups_clubs`
-            WHERE `basicFullName` = '{$curClub['title']}'
-            OR `shortName` = '{$curClub['title']}'
-            OR `altNames` LIKE '%{$curClub['title']}%'
+            WHERE 
+                (
+                    `basicFullName` = '{$curClub['title']}'
+                    OR `shortName` = '{$curClub['title']}'
+                    OR `altNames` LIKE '%{$curClub['title']}%'
+                )
             AND `country` = '{$countryName}'
         ";
         if ($result = mysqli_query($conn, $sql)) {
