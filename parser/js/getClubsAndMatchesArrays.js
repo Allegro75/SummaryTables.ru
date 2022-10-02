@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', async function() {
 
                   curMatch['score'] = row.cells[7].textContent.trim() // счёт
 
-                  curMatch['matchWebPage'] = row.cells[7].querySelector('a').getAttribute('href')
+                  // curMatch['matchWebPage'] = row.cells[7].querySelector('a').getAttribute('href')
 
                   matchesArr.push(curMatch)
 

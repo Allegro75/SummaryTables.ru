@@ -53,6 +53,7 @@ if (true) {
 }
 
 // Определяем места проведения матчей
+// Оказалось, как минимум слишком долго (плюс с налёту и вовсе не удалось добиться корректного результата на всём массиве сразу)
 if (false) {
     $netMatchesArr = [];
     foreach ($clubsAndMatchesArr['matches'] as $ind => $curMatch) {
@@ -98,4 +99,39 @@ if (false) {
 
     }
     echo json_encode($netMatchesArr);
+}
+
+// Записываем матчи в базу:
+if (true) {
+
+    $netMatchesArr = [];
+    foreach ($clubsAndMatchesArr['matches'] as $ind => $curMatch) {
+
+        // if (true) {
+        if ($ind == 0) {
+
+            // Ищем имена и индексы клубов, игравших в текущем матче
+            $firstClubName = $secondClubName = '';
+            foreach ($clubsList as $curClub) {
+
+                $webClubTitle = "{$curClub['web']['title']} ({$curClub['web']['country']})";
+                if (($firstClubName === '') && ($curMatch['firstClub'] === $webClubTitle)) {
+                    $firstClubName = $curClub['db']['basicFullName'];
+                    $firstClubId = $curClub['db']['id'];
+                }
+                if (($secondClubName === '') && ($curMatch['firstClub'] === $webClubTitle)) {
+                    $secondClubName = $curClub['db']['basicFullName'];
+                    $secondClubId = $curClub['db']['id'];
+                }
+                if (($firstClubName !== '') && ($secondClubName !== '')) {
+                    break;
+                }
+
+            }
+            $netMatchesArr[] = [$firstClubName, $firstClubId, $secondClubName, $secondClubId];
+
+        }
+
+    }
+
 }
