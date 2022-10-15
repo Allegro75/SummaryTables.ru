@@ -178,7 +178,7 @@ if (true) {
             if (mb_strpos($curMatch['score'], "\n") === false) { // Если нет данных о доп. времени и пенальти
                 $score = str_replace(' ', '', $curMatch['score']);
             } else { // Если присутствуют данные о доп. времени и пенальти
-                $scoreArr = explode('\n', $curMatch['score']);
+                $scoreArr = explode("\n", $curMatch['score']);
                 $score = str_replace(' ', '', $scoreArr[0]);
             }
 
