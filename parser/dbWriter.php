@@ -236,7 +236,7 @@ if (true) {
     $sqlDebugArr = [];
     foreach ($netMatchesArr as $ind => $curMatch) {
 
-        if ($ind == 1) {
+        if ($ind == 2) {
             $sql =
                 "INSERT INTO `matches` (
                     `firstClubName`, 
