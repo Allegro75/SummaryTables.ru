@@ -140,7 +140,7 @@ if (false) {
 if (true) {
 // if (false) {
 
-    $netMatchesArr = [];
+    $netMatchesArr = []; // Готовим массив $netMatchesArr с матчами под запись в базу
     foreach ($clubsAndMatchesArr['matches'] as $ind => $curMatch) {
 
         if (true) {
@@ -168,12 +168,24 @@ if (true) {
             // Счёт матча:
             $score = $curMatch['score'];
 
+            // Стадия:
+            if (mb_substr($curMatch['stage'], 0, 6) === 'Группа') {
+                $stage = 'группа';
+            } else {
+                $stage = $curMatch['stage'];
+            }
+
             $netMatchesArr[] = [
                 'firstClubName' => $firstClubName, 
                 'firstClubId' => $firstClubId, 
                 'secondClubName' => $secondClubName, 
                 'secondClubId' => $secondClubId,
                 'score' => $score,
+                'home' => $firstClubName, // Это придётся контролировать руками, в частности, при записи матчей с нейтральных полей
+                'tourneyTitle' => 'Лига чемпионов',
+                'tourneyFinalYear' => 2023,
+                'tourneyStartYear' => 2022,
+                'tourneyStage' => $stage,
             ];
 
         }
