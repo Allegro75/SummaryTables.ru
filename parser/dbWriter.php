@@ -225,11 +225,70 @@ if (true) {
                 'penaltiesWinner' => $penaltiesWinner,
             ];
             // Также руками надо будет прописать в базе значения столбца 'fieldCountry' для матчей на нейтральых полях
-            // И руками 'baseTimeScore' для матчей с доп. временем
+            // И руками 'baseTimeScore' для матчей с доп. временем. И надо ещё проверять, не было ли результативного доп. времени в матчах с пенальти.
 
         }
 
     }
     echo json_encode($netMatchesArr);
+
+    // Пишем в базу:
+    foreach ($netMatchesArr as $ind => $curMatch) {
+
+        if ($ind == 0) {
+            $sql =
+                "INSERT INTO `matches` (
+                    'firstClubName', 
+                    'firstClubId', 
+                    'secondClubName', 
+                    'secondClubId',
+                    'score',
+                    'home',
+                    'tourneyTitle',
+                    'tourneyFinalYear',
+                    'tourneyStartYear',
+                    'tourneyStage',
+                    'year',
+                    'date',
+                    'matchDate',
+                    'fieldCity',
+                    'firstClubGoals',
+                    'secondClubGoals',
+                    'fCVictory',
+                    'fCDraw',
+                    'fCLesion',
+                    'hadEfficientAddTime',
+                    'hadPenalties',
+                    'penaltiesWinner',
+                )
+                VALUES (
+                    '{$curMatch['firstClubName']}', 
+                    '{$curMatch['firstClubId']}', 
+                    '{$curMatch['secondClubName']}', 
+                    '{$curMatch['secondClubId']}',
+                    '{$curMatch['score']}',
+                    '{$curMatch['home']}',
+                    '{$curMatch['tourneyTitle']}',
+                    '{$curMatch['tourneyFinalYear']}',
+                    '{$curMatch['tourneyStartYear']}',
+                    '{$curMatch['tourneyStage']}',
+                    '{$curMatch['year']}',
+                    '{$curMatch['date']}',
+                    '{$curMatch['matchDate']}',
+                    '{$curMatch['fieldCity']}',
+                    '{$curMatch['firstClubGoals']}',
+                    '{$curMatch['secondClubGoals']}',
+                    '{$curMatch['fCVictory']}',
+                    '{$curMatch['fCDraw']}',
+                    '{$curMatch['fCLesion']}',
+                    '{$curMatch['hadEfficientAddTime']}',
+                    '{$curMatch['hadPenalties']}',
+                    '{$curMatch['penaltiesWinner']}',
+                )
+            ";
+            mysqli_query($conn, $sql);
+        }
+
+    }
 
 }
