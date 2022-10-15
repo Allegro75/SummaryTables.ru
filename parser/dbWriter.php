@@ -173,17 +173,29 @@ if (true) {
                 $stage = $curMatch['stage'];
             }
 
+            // Счёт:
+            // if ((mb_strlen($curMatch['score']) === 5) || (mb_strlen($curMatch['score']) === 6)) {
+            if (mb_strpos($curMatch['score'], '\n') !== false) { // Если нет данных о доп. времени и пенальти
+                $score = str_replace(' ', '', $curMatch['score']);
+            } else { // Если присутствуют данные о доп. времени и пенальти
+                $scoreArr = explode('\n', $curMatch['score']);
+                $score = str_replace(' ', '', $scoreArr[0]);
+            }
+
             // Голы:
-            $goalsArr = explode(':', $curMatch['score']);
+            // $goalsArr = explode(':', $curMatch['score']);
+            // $firstClubGoals = trim($goalsArr[0]);
+            // $secondClubGoals = trim(preg_replace('/D+/i', '', $goalsArr[1])); // Устраняем данные о доп. времени и пенальти
+            $goalsArr = explode(':', $score);
             $firstClubGoals = trim($goalsArr[0]);
-            $secondClubGoals = trim(preg_replace('/D/i', '', $goalsArr[1])); // Устраняем данные о доп. времени и пенальти
+            $secondClubGoals = trim(preg_replace('/D+/i', '', $goalsArr[1])); // Устраняем данные о доп. времени и пенальти
 
             $netMatchesArr[] = [
                 'firstClubName' => $firstClubName, 
                 'firstClubId' => $firstClubId, 
                 'secondClubName' => $secondClubName, 
                 'secondClubId' => $secondClubId,
-                'score' => $curMatch['score'],
+                'score' => $score,
                 'home' => $firstClubName, // Это придётся контролировать руками, в частности, при записи матчей с нейтральных полей
                 'tourneyTitle' => 'Лига чемпионов',
                 'tourneyFinalYear' => 2023,
