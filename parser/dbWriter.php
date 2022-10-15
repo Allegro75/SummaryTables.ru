@@ -176,7 +176,7 @@ if (true) {
             // Счёт:
             $scoreArr = [];
             $hadPenalties = 0;
-            $penaltiesScore = '';
+            $penaltiesScore = $penaltiesWinner = '';
             if (mb_strpos($curMatch['score'], "\n") === false) { // Если нет данных о доп. времени и пенальти
                 $score = str_replace(' ', '', $curMatch['score']);
             } else { // Если присутствуют данные о доп. времени и пенальти                
@@ -185,13 +185,17 @@ if (true) {
                 if (mb_strpos($scoreArr[1], ":") !== false) { // Если была серия пенальти
                     $hadPenalties = 1;
                     $penaltiesScore = str_replace(' ', '', $scoreArr[1]);
+                    $penaltesArr = explode(':', $score);
+                    $firstClubPenaltiesGoals = trim($penaltesArr[0]);
+                    $secondClubPenaltiesGoals = trim($penaltesArr[1]);                    
+                    $penaltiesWinner = ($firstClubPenaltiesGoals > $secondClubPenaltiesGoals) ? $firstClubName : $secondClubName;
                 }
             }
 
             // Голы:
             $goalsArr = explode(':', $score);
             $firstClubGoals = trim($goalsArr[0]);
-            $secondClubGoals = trim($goalsArr[1]); // Устраняем данные о доп. времени и пенальти
+            $secondClubGoals = trim($goalsArr[1]);
 
             $netMatchesArr[] = [
                 'firstClubName' => $firstClubName, 
@@ -218,7 +222,7 @@ if (true) {
                 'fCLesion' => ($firstClubGoals < $secondClubGoals) ? 1 : 0,
                 'hadEfficientAddTime' => (mb_strpos($curMatch['score'], "ДВ") !== false) ? 1 : 0,
                 'hadPenalties' => $hadPenalties,
-                'penaltiesScore' => $penaltiesScore,
+                'penaltiesWinner' => $penaltiesWinner,
             ];
             // Также руками надо будет прописать в базе значения столбца 'fieldCountry' для матчей на нейтральых полях
             // И руками 'baseTimeScore' для матчей с доп. временем
