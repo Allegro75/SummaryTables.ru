@@ -329,8 +329,6 @@
 
             <?
                 
-                // $firstClubId = isset($_GET['club_1']) ? (int)($_GET['club_1']) : 0;
-                // $secondClubId = isset($_GET['club_2']) ? (int)($_GET['club_2']) : 0;
                 $firstClubId = $firstClubDemoId;
                 $secondClubId = $secondClubDemoId;
                 $haveIncorrectClubIds = false;
@@ -580,7 +578,9 @@
                                 "Первый раунд",
                                 "Квалификационный раунд",
                                 "Отборочный раунд",
+                                'Предварительный раунд - Финал',
                                 "Предварительный раунд, финал",
+                                'Предварительный раунд - 1/2 финала',
                                 "Предварительный раунд, 1/2 финала",
                                 "Предварительный раунд",
                             ];
