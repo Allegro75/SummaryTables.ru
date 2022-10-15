@@ -173,6 +173,11 @@ if (true) {
                 $stage = $curMatch['stage'];
             }
 
+            // Голы:
+            $goalsArr = explode(':', $curMatch['score']);
+            $firstClubGoals = trim($goalsArr[0]);
+            $secondClubGoals = trim($goalsArr[1]);
+
             $netMatchesArr[] = [
                 'firstClubName' => $firstClubName, 
                 'firstClubId' => $firstClubId, 
@@ -188,6 +193,8 @@ if (true) {
                 'date' => date("d.m", strtotime($curMatch['date'])),
                 'matchDate' => date("Y-m-d", strtotime($curMatch['date'])),
                 'fieldCity' => $firstClubCity, // также контролировать руками, в частности, при записи матчей с нейтральных полей
+                'firstClubGoals' => $firstClubGoals,
+                'secondClubGoals' => $secondClubGoals,
             ];
             // Также руками надо будет прописать в базе значения столбца 'fieldCountry' для матчей на нейтральых полях
 
