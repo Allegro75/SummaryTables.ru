@@ -164,7 +164,17 @@ if (true) {
                 }
 
             }
-            $netMatchesArr[] = ['firstClubName' => $firstClubName, 'firstClubId' => $firstClubId, 'secondClubName' => $secondClubName, 'secondClubId' => $secondClubId];
+
+            // Счёт матча:
+            $score = $curMatch['score'];
+
+            $netMatchesArr[] = [
+                'firstClubName' => $firstClubName, 
+                'firstClubId' => $firstClubId, 
+                'secondClubName' => $secondClubName, 
+                'secondClubId' => $secondClubId,
+                'score' => $score,
+            ];
 
         }
 
