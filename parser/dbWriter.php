@@ -185,9 +185,9 @@ if (true) {
                 if (mb_strpos($scoreArr[1], ":") !== false) { // Если была серия пенальти
                     $hadPenalties = 1;
                     $penaltiesScore = str_replace(' ', '', $scoreArr[1]);
-                    $penaltesArr = explode(':', $score);
-                    $firstClubPenaltiesGoals = trim($penaltesArr[0]);
-                    $secondClubPenaltiesGoals = trim($penaltesArr[1]);                    
+                    $penaltiesArr = explode(':', $penaltiesScore);
+                    $firstClubPenaltiesGoals = trim($penaltiesArr[0]);
+                    $secondClubPenaltiesGoals = trim($penaltiesArr[1]);
                     $penaltiesWinner = ($firstClubPenaltiesGoals > $secondClubPenaltiesGoals) ? $firstClubName : $secondClubName;
                 }
             }
