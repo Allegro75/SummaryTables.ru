@@ -183,12 +183,9 @@ if (true) {
             }
 
             // Голы:
-            // $goalsArr = explode(':', $curMatch['score']);
-            // $firstClubGoals = trim($goalsArr[0]);
-            // $secondClubGoals = trim(preg_replace('/D+/i', '', $goalsArr[1])); // Устраняем данные о доп. времени и пенальти
             $goalsArr = explode(':', $score);
             $firstClubGoals = trim($goalsArr[0]);
-            $secondClubGoals = trim(preg_replace('/D+/i', '', $goalsArr[1])); // Устраняем данные о доп. времени и пенальти
+            $secondClubGoals = trim($goalsArr[1]); // Устраняем данные о доп. времени и пенальти
 
             $netMatchesArr[] = [
                 'firstClubName' => $firstClubName, 
@@ -197,8 +194,8 @@ if (true) {
                 'secondClubId' => $secondClubId,
                 'score' => $score,
                 // 'scoreDebug' => ( ! (empty($scoreArr)) ) ? $scoreArr[0] : [],
-                'scoreDebug' => $curMatch['score'],
-                'scoreDebug_2' => mb_strpos($curMatch['score'], "\n"),
+                // 'scoreDebug' => $curMatch['score'],
+                // 'scoreDebug_2' => mb_strpos($curMatch['score'], "\n"),
                 'home' => $firstClubName, // Это придётся контролировать руками, в частности, при записи матчей с нейтральных полей
                 'tourneyTitle' => 'Лига чемпионов',
                 'tourneyFinalYear' => 2023,
