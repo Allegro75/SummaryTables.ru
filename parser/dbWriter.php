@@ -230,9 +230,10 @@ if (true) {
         }
 
     }
-    echo json_encode($netMatchesArr);
+    // echo json_encode($netMatchesArr);
 
     // Пишем в базу:
+    $sqlDebugArr = [];
     foreach ($netMatchesArr as $ind => $curMatch) {
 
         if ($ind == 0) {
@@ -286,9 +287,11 @@ if (true) {
                     '{$curMatch['penaltiesWinner']}',
                 )
             ";
+            $sqlDebugArr[$ind] = $sql;
             mysqli_query($conn, $sql);
         }
 
     }
+    echo json_encode($sqlDebugArr);
 
 }
