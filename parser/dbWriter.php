@@ -175,7 +175,7 @@ if (true) {
 
             // Счёт:
             $scoreArr = [];
-            if (mb_strpos($curMatch['score'], '\n') === false) { // Если нет данных о доп. времени и пенальти
+            if (mb_strpos($curMatch['score'], "\n") === false) { // Если нет данных о доп. времени и пенальти
                 $score = str_replace(' ', '', $curMatch['score']);
             } else { // Если присутствуют данные о доп. времени и пенальти
                 $scoreArr = explode('\n', $curMatch['score']);
@@ -198,7 +198,7 @@ if (true) {
                 'score' => $score,
                 // 'scoreDebug' => ( ! (empty($scoreArr)) ) ? $scoreArr[0] : [],
                 'scoreDebug' => $curMatch['score'],
-                'scoreDebug_2' => mb_strpos($curMatch['score'], '\n'),
+                'scoreDebug_2' => mb_strpos($curMatch['score'], "\n"),
                 'home' => $firstClubName, // Это придётся контролировать руками, в частности, при записи матчей с нейтральных полей
                 'tourneyTitle' => 'Лига чемпионов',
                 'tourneyFinalYear' => 2023,
