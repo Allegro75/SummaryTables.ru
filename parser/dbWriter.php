@@ -241,7 +241,8 @@ if (true) {
         // if (($ind >= 6) && ($ind <= 10) ) {
         // if (($ind >= 11) && ($ind <= 20) ) {
         // if (($ind >= 21) && ($ind <= 40) ) {
-        if (($ind >= 41) && ($ind <= 76) ) {
+        // if (($ind >= 41) && ($ind <= 76) ) {
+        if (($ind >= 77) && ($ind <= 88) ) {
             $sql =
                 "INSERT INTO `matches` (
                     `firstClubName`, 
