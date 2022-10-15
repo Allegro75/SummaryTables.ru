@@ -224,7 +224,7 @@ if (true) {
                 'hadPenalties' => $hadPenalties,
                 'penaltiesWinner' => $penaltiesWinner,
             ];
-            // Также руками надо будет прописать в базе значения столбца 'fieldCountry' для матчей на нейтральых полях
+            // Также руками надо будет прописать в базе значения столбца 'fieldCountry' для матчей на нейтральных полях
             // И руками 'baseTimeScore' для матчей с доп. временем. И надо ещё проверять, не было ли результативного доп. времени в матчах с пенальти.
 
         }
@@ -236,7 +236,8 @@ if (true) {
     $sqlDebugArr = [];
     foreach ($netMatchesArr as $ind => $curMatch) {
 
-        if ($ind == 3) {
+        // if ($ind == 3) {
+        if (($ind >= 4) && ($ind <= 5) ) {
             $sql =
                 "INSERT INTO `matches` (
                     `firstClubName`, 
