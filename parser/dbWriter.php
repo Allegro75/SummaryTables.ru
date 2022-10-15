@@ -197,7 +197,7 @@ if (true) {
                 'secondClubId' => $secondClubId,
                 'score' => $score,
                 // 'scoreDebug' => ( ! (empty($scoreArr)) ) ? $scoreArr[0] : [],
-                'scoreDebug' => (mb_strpos($curMatch['score'], '\n')),
+                'scoreDebug' => phpversion(),
                 'home' => $firstClubName, // Это придётся контролировать руками, в частности, при записи матчей с нейтральных полей
                 'tourneyTitle' => 'Лига чемпионов',
                 'tourneyFinalYear' => 2023,
