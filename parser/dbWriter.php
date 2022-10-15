@@ -198,7 +198,7 @@ if (true) {
                 'score' => $score,
                 // 'scoreDebug' => ( ! (empty($scoreArr)) ) ? $scoreArr[0] : [],
                 'scoreDebug' => $curMatch['score'],
-                'scoreDebug_2' => mb_strpos($curMatch['score'], '\n'),
+                'scoreDebug_2' => strpos($curMatch['score'], '\n'),
                 'home' => $firstClubName, // Это придётся контролировать руками, в частности, при записи матчей с нейтральных полей
                 'tourneyTitle' => 'Лига чемпионов',
                 'tourneyFinalYear' => 2023,
