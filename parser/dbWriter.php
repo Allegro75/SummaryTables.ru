@@ -236,7 +236,7 @@ if (true) {
     $sqlDebugArr = [];
     foreach ($netMatchesArr as $ind => $curMatch) {
 
-        if ($ind == 0) {
+        if ($ind == 1) {
             $sql =
                 "INSERT INTO `matches` (
                     `firstClubName`, 
@@ -260,7 +260,7 @@ if (true) {
                     `fCLesion`,
                     `hadEfficientAddTime`,
                     `hadPenalties`,
-                    `penaltiesWinner`,
+                    `penaltiesWinner`
                 )
                 VALUES (
                     '{$curMatch['firstClubName']}', 
@@ -284,7 +284,7 @@ if (true) {
                     '{$curMatch['fCLesion']}',
                     '{$curMatch['hadEfficientAddTime']}',
                     '{$curMatch['hadPenalties']}',
-                    '{$curMatch['penaltiesWinner']}',
+                    '{$curMatch['penaltiesWinner']}'
                 )
             ";
             $sqlDebugArr[$ind] = $sql;
