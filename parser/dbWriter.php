@@ -210,6 +210,7 @@ if (true) {
                 'fCVictory' => ($firstClubGoals > $secondClubGoals) ? 1 : 0,
                 'fCDraw' => ($firstClubGoals == $secondClubGoals) ? 1 : 0,
                 'fCLesion' => ($firstClubGoals < $secondClubGoals) ? 1 : 0,
+                'hadEfficientAddTime' => (mb_strpos($curMatch['score'], "ДВ") !== false) ? 1 : 0,
             ];
             // Также руками надо будет прописать в базе значения столбца 'fieldCountry' для матчей на нейтральых полях
 
