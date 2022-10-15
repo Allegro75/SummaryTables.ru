@@ -237,7 +237,8 @@ if (true) {
     foreach ($netMatchesArr as $ind => $curMatch) {
 
         // if ($ind == 3) {
-        if (($ind >= 4) && ($ind <= 5) ) {
+        // if (($ind >= 4) && ($ind <= 5) ) {
+        if (($ind >= 6) && ($ind <= 10) ) {
             $sql =
                 "INSERT INTO `matches` (
                     `firstClubName`, 
