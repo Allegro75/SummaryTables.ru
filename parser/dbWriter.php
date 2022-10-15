@@ -15,7 +15,9 @@ foreach ($rawClubsArr as $curClub) {
 }
 // echo json_encode($processedClubsArr);
 
-// Ищем клубы в базе:
+// Ищем клубы в базе.
+// Формируем массив $clubsList, состоящий из двух элементов - existingClubs и newClubs.
+// Добиваемся того, чтобы все клубы с веб-страницы были опознаны, т.е. все клубы были записаны в existingClubs
 if (true) {
 
     require_once '../database/config/config.php';
@@ -162,7 +164,7 @@ if (true) {
                 }
 
             }
-            $netMatchesArr[] = [$firstClubName, $firstClubId, $secondClubName, $secondClubId];
+            $netMatchesArr[] = ['firstClubName' => $firstClubName, 'firstClubId' => $firstClubId, 'secondClubName' => $secondClubName, 'secondClubId' => $secondClubId];
 
         }
 
