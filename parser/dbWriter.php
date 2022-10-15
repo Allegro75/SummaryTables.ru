@@ -176,7 +176,7 @@ if (true) {
             // Голы:
             $goalsArr = explode(':', $curMatch['score']);
             $firstClubGoals = trim($goalsArr[0]);
-            $secondClubGoals = trim(preg_replace('/D/i', '', $goalsArr[1]));
+            $secondClubGoals = trim(preg_replace('/D/i', '', $goalsArr[1])); // Устраняем данные о доп. времени и пенальти
 
             $netMatchesArr[] = [
                 'firstClubName' => $firstClubName, 
