@@ -207,6 +207,9 @@ if (true) {
                 'fieldCity' => $firstClubCity, // также контролировать руками, в частности, при записи матчей с нейтральных полей
                 'firstClubGoals' => $firstClubGoals,
                 'secondClubGoals' => $secondClubGoals,
+                'fCVictory' => ($firstClubGoals > $secondClubGoals) ? 1 : 0,
+                'fCDraw' => ($firstClubGoals == $secondClubGoals) ? 1 : 0,
+                'fCLesion' => ($firstClubGoals < $secondClubGoals) ? 1 : 0,
             ];
             // Также руками надо будет прописать в базе значения столбца 'fieldCountry' для матчей на нейтральых полях
 
