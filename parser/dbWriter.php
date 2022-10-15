@@ -154,6 +154,7 @@ if (true) {
                 if (($firstClubName === '') && ($curMatch['firstClub'] === $webClubTitle)) {
                     $firstClubName = $curClub['db']['basicFullName'];
                     $firstClubId = $curClub['db']['id'];
+                    $firstClubCity = $curClub['db']['city'];
                 }
                 if (($secondClubName === '') && ($curMatch['secClub'] === $webClubTitle)) {
                     $secondClubName = $curClub['db']['basicFullName'];
@@ -164,9 +165,6 @@ if (true) {
                 }
 
             }
-
-            // Счёт матча:
-            $score = $curMatch['score'];
 
             // Стадия:
             if (mb_substr($curMatch['stage'], 0, 6) === 'Группа') {
@@ -180,7 +178,7 @@ if (true) {
                 'firstClubId' => $firstClubId, 
                 'secondClubName' => $secondClubName, 
                 'secondClubId' => $secondClubId,
-                'score' => $score,
+                'score' => $curMatch['score'],
                 'home' => $firstClubName, // Это придётся контролировать руками, в частности, при записи матчей с нейтральных полей
                 'tourneyTitle' => 'Лига чемпионов',
                 'tourneyFinalYear' => 2023,
@@ -189,7 +187,9 @@ if (true) {
                 'year' => date("Y", strtotime($curMatch['date'])),
                 'date' => date("d.m", strtotime($curMatch['date'])),
                 'matchDate' => date("Y-m-d", strtotime($curMatch['date'])),
+                'fieldCity' => $firstClubCity, // также контролировать руками, в частности, при записи матчей с нейтральных полей
             ];
+            // Также руками надо будет прописать в базе значения столбца 'fieldCountry' для матчей на нейтральых полях
 
         }
 
