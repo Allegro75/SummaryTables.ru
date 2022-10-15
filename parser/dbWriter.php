@@ -186,6 +186,9 @@ if (true) {
                 'tourneyFinalYear' => 2023,
                 'tourneyStartYear' => 2022,
                 'tourneyStage' => $stage,
+                'year' => date("Y", strtotime($curMatch['date'])),
+                'date' => date("d.m", strtotime($curMatch['date'])),
+                'matchDate' => date("Y-m-d", strtotime($curMatch['date'])),
             ];
 
         }
