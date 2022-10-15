@@ -175,11 +175,17 @@ if (true) {
 
             // Счёт:
             $scoreArr = [];
+            $hadPenalties = 0;
+            $penaltiesScore = '';
             if (mb_strpos($curMatch['score'], "\n") === false) { // Если нет данных о доп. времени и пенальти
                 $score = str_replace(' ', '', $curMatch['score']);
-            } else { // Если присутствуют данные о доп. времени и пенальти
+            } else { // Если присутствуют данные о доп. времени и пенальти                
                 $scoreArr = explode("\n", $curMatch['score']);
                 $score = str_replace(' ', '', $scoreArr[0]);
+                if (mb_strpos($scoreArr[1], ":") !== false) { // Если была серия пенальти
+                    $hadPenalties = 1;
+                    $penaltiesScore = str_replace(' ', '', $scoreArr[1]);
+                }
             }
 
             // Голы:
@@ -211,8 +217,11 @@ if (true) {
                 'fCDraw' => ($firstClubGoals == $secondClubGoals) ? 1 : 0,
                 'fCLesion' => ($firstClubGoals < $secondClubGoals) ? 1 : 0,
                 'hadEfficientAddTime' => (mb_strpos($curMatch['score'], "ДВ") !== false) ? 1 : 0,
+                'hadPenalties' => $hadPenalties,
+                'penaltiesScore' => $penaltiesScore,
             ];
             // Также руками надо будет прописать в базе значения столбца 'fieldCountry' для матчей на нейтральых полях
+            // И руками 'baseTimeScore' для матчей с доп. временем
 
         }
 
