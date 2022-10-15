@@ -539,9 +539,9 @@
                         $duelsArr[$duelShortIndicator][] = $curMatch;
                         // }
                     }
-                    // echo '<pre>';
-                    // var_dump($duelsArr);
-                    // echo '</pre>';
+                    echo '<pre>';
+                    var_dump($duelsArr);
+                    echo '</pre>';
                     // echo '<pre>';
                     // var_dump(array_keys($duelsArr));
                     // echo '</pre>';
