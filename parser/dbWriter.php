@@ -83,7 +83,7 @@ if (true) {
             $clubsList['newClubs'][] = $curClub;
         }
     }
-    // echo json_encode($clubsList);
+    echo json_encode($clubsList);
 
 }
 
@@ -137,8 +137,8 @@ if (false) {
 }
 
 // Записываем матчи в базу:
-if (true) {
-// if (false) {
+// if (true) {
+if (false) {
 
     $netMatchesArr = []; // Готовим массив $netMatchesArr с матчами под запись в базу
     foreach ($clubsAndMatchesArr['matches'] as $ind => $curMatch) {
