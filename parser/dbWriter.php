@@ -83,7 +83,7 @@ if (true) {
             $clubsList['newClubs'][] = $curClub;
         }
     }
-    echo json_encode($clubsList);
+    // echo json_encode($clubsList);
 
 }
 
@@ -137,8 +137,8 @@ if (false) {
 }
 
 // Записываем матчи в базу:
-// if (true) {
-if (false) {
+if (true) {
+// if (false) {
 
     $netMatchesArr = []; // Готовим массив $netMatchesArr с матчами под запись в базу
     foreach ($clubsAndMatchesArr['matches'] as $ind => $curMatch) {
@@ -203,11 +203,9 @@ if (false) {
                 'secondClubName' => $secondClubName, 
                 'secondClubId' => $secondClubId,
                 'score' => $score,
-                // 'scoreDebug' => ( ! (empty($scoreArr)) ) ? $scoreArr[0] : [],
-                // 'scoreDebug' => $curMatch['score'],
-                // 'scoreDebug_2' => mb_strpos($curMatch['score'], "\n"),
                 'home' => $firstClubName, // Это придётся контролировать руками, в частности, при записи матчей с нейтральных полей
-                'tourneyTitle' => 'Лига чемпионов',
+                // 'tourneyTitle' => 'Лига чемпионов',
+                'tourneyTitle' => 'Лига Европы',
                 'tourneyFinalYear' => 2023,
                 'tourneyStartYear' => 2022,
                 'tourneyStage' => $stage,
@@ -230,75 +228,77 @@ if (false) {
         }
 
     }
-    // echo json_encode($netMatchesArr);
+    echo json_encode($netMatchesArr);
 
     // Пишем в базу:
-    $sqlDebugArr = [];
-    foreach ($netMatchesArr as $ind => $curMatch) {
+    if (false) {
+        $sqlDebugArr = [];
+        foreach ($netMatchesArr as $ind => $curMatch) {
 
-        // if ($ind == 3) {
-        // if (($ind >= 4) && ($ind <= 5)) {
-        // if (($ind >= 6) && ($ind <= 10)) {
-        // if (($ind >= 11) && ($ind <= 20)) {
-        // if (($ind >= 21) && ($ind <= 40)) {
-        // if (($ind >= 41) && ($ind <= 76)) {
-        // if (($ind >= 77) && ($ind <= 88)) {
-        if (($ind >= 89)) {
-            $sql =
-                "INSERT INTO `matches` (
-                    `firstClubName`, 
-                    `firstClubId`, 
-                    `secondClubName`, 
-                    `secondClubId`,
-                    `score`,
-                    `home`,
-                    `tourneyTitle`,
-                    `tourneyFinalYear`,
-                    `tourneyStartYear`,
-                    `tourneyStage`,
-                    `year`,
-                    `date`,
-                    `matchDate`,
-                    `fieldCity`,
-                    `firstClubGoals`,
-                    `secondClubGoals`,
-                    `fCVictory`,
-                    `fCDraw`,
-                    `fCLesion`,
-                    `hadEfficientAddTime`,
-                    `hadPenalties`,
-                    `penaltiesWinner`
-                )
-                VALUES (
-                    '{$curMatch['firstClubName']}', 
-                    '{$curMatch['firstClubId']}', 
-                    '{$curMatch['secondClubName']}', 
-                    '{$curMatch['secondClubId']}',
-                    '{$curMatch['score']}',
-                    '{$curMatch['home']}',
-                    '{$curMatch['tourneyTitle']}',
-                    '{$curMatch['tourneyFinalYear']}',
-                    '{$curMatch['tourneyStartYear']}',
-                    '{$curMatch['tourneyStage']}',
-                    '{$curMatch['year']}',
-                    '{$curMatch['date']}',
-                    '{$curMatch['matchDate']}',
-                    '{$curMatch['fieldCity']}',
-                    '{$curMatch['firstClubGoals']}',
-                    '{$curMatch['secondClubGoals']}',
-                    '{$curMatch['fCVictory']}',
-                    '{$curMatch['fCDraw']}',
-                    '{$curMatch['fCLesion']}',
-                    '{$curMatch['hadEfficientAddTime']}',
-                    '{$curMatch['hadPenalties']}',
-                    '{$curMatch['penaltiesWinner']}'
-                )
-            ";
-            $sqlDebugArr[$ind] = $sql;
-            mysqli_query($conn, $sql);
+            // if ($ind == 3) {
+            // if (($ind >= 4) && ($ind <= 5)) {
+            // if (($ind >= 6) && ($ind <= 10)) {
+            // if (($ind >= 11) && ($ind <= 20)) {
+            // if (($ind >= 21) && ($ind <= 40)) {
+            // if (($ind >= 41) && ($ind <= 76)) {
+            // if (($ind >= 77) && ($ind <= 88)) {
+            if (($ind >= 89)) {
+                $sql =
+                    "INSERT INTO `matches` (
+                        `firstClubName`, 
+                        `firstClubId`, 
+                        `secondClubName`, 
+                        `secondClubId`,
+                        `score`,
+                        `home`,
+                        `tourneyTitle`,
+                        `tourneyFinalYear`,
+                        `tourneyStartYear`,
+                        `tourneyStage`,
+                        `year`,
+                        `date`,
+                        `matchDate`,
+                        `fieldCity`,
+                        `firstClubGoals`,
+                        `secondClubGoals`,
+                        `fCVictory`,
+                        `fCDraw`,
+                        `fCLesion`,
+                        `hadEfficientAddTime`,
+                        `hadPenalties`,
+                        `penaltiesWinner`
+                    )
+                    VALUES (
+                        '{$curMatch['firstClubName']}', 
+                        '{$curMatch['firstClubId']}', 
+                        '{$curMatch['secondClubName']}', 
+                        '{$curMatch['secondClubId']}',
+                        '{$curMatch['score']}',
+                        '{$curMatch['home']}',
+                        '{$curMatch['tourneyTitle']}',
+                        '{$curMatch['tourneyFinalYear']}',
+                        '{$curMatch['tourneyStartYear']}',
+                        '{$curMatch['tourneyStage']}',
+                        '{$curMatch['year']}',
+                        '{$curMatch['date']}',
+                        '{$curMatch['matchDate']}',
+                        '{$curMatch['fieldCity']}',
+                        '{$curMatch['firstClubGoals']}',
+                        '{$curMatch['secondClubGoals']}',
+                        '{$curMatch['fCVictory']}',
+                        '{$curMatch['fCDraw']}',
+                        '{$curMatch['fCLesion']}',
+                        '{$curMatch['hadEfficientAddTime']}',
+                        '{$curMatch['hadPenalties']}',
+                        '{$curMatch['penaltiesWinner']}'
+                    )
+                ";
+                $sqlDebugArr[$ind] = $sql;
+                mysqli_query($conn, $sql);
+            }
+
         }
-
+        echo json_encode($sqlDebugArr);
     }
-    echo json_encode($sqlDebugArr);
 
 }
