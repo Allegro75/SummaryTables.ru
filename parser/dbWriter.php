@@ -237,8 +237,8 @@ if (true) {
         foreach ($netMatchesArr as $ind => $curMatch) {
 
             // if ($ind == 3) {
-            if (($ind >= 0) && ($ind <= 13)) {
-            // if (($ind >= 6) && ($ind <= 10)) {
+            // if (($ind >= 0) && ($ind <= 13)) {
+            if (($ind >= 14) && ($ind <= 33)) {
             // if (($ind >= 11) && ($ind <= 20)) {
             // if (($ind >= 21) && ($ind <= 40)) {
             // if (($ind >= 41) && ($ind <= 76)) {
