@@ -228,7 +228,7 @@ if (true) {
         }
 
     }
-    echo json_encode($netMatchesArr);
+    // echo json_encode($netMatchesArr);
 
     // Пишем в базу:
     // if (false) {
@@ -243,7 +243,7 @@ if (true) {
             // if (($ind >= 21) && ($ind <= 40)) {
             // if (($ind >= 41) && ($ind <= 76)) {
             // if (($ind >= 77) && ($ind <= 88)) {
-            if (($ind >= 89)) {
+            // if (($ind >= 89)) {
                 $sql =
                     "INSERT INTO `matches` (
                         `firstClubName`, 
