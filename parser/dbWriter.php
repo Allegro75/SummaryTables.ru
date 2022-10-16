@@ -231,12 +231,13 @@ if (true) {
     echo json_encode($netMatchesArr);
 
     // Пишем в базу:
-    if (false) {
+    // if (false) {
+    if (true) {
         $sqlDebugArr = [];
         foreach ($netMatchesArr as $ind => $curMatch) {
 
             // if ($ind == 3) {
-            // if (($ind >= 4) && ($ind <= 5)) {
+            if (($ind >= 0) && ($ind <= 13)) {
             // if (($ind >= 6) && ($ind <= 10)) {
             // if (($ind >= 11) && ($ind <= 20)) {
             // if (($ind >= 21) && ($ind <= 40)) {
@@ -298,7 +299,7 @@ if (true) {
             }
 
         }
-        echo json_encode($sqlDebugArr);
+        // echo json_encode($sqlDebugArr);
     }
 
 }
