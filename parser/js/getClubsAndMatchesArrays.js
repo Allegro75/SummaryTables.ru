@@ -75,6 +75,6 @@ document.addEventListener('DOMContentLoaded', async function() {
 
 
     await getClubsAndMatchesArrs()
-    // await ajax()
+    await ajax()
 
 })
