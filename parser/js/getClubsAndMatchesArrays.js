@@ -50,8 +50,8 @@ document.addEventListener('DOMContentLoaded', async function() {
           
       });
 
-      // console.log(rawClubsArr);
-      console.log(matchesArr);
+      console.log(rawClubsArr);
+      // console.log(matchesArr);
 
     }
 
@@ -62,7 +62,6 @@ document.addEventListener('DOMContentLoaded', async function() {
       
       let response = await fetch('dbWriter.php', {
         method: 'POST',
-        // dataType: 'html',
         headers: {
           'Content-Type': 'application/json;charset=utf-8'
         },
@@ -76,6 +75,6 @@ document.addEventListener('DOMContentLoaded', async function() {
 
 
     await getClubsAndMatchesArrs()
-    await ajax()
+    // await ajax()
 
 })

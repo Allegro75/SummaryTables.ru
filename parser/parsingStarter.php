@@ -19,7 +19,8 @@ if (true) {
         'accept-language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7',
     );
      
-    $ch = curl_init("https://www.championat.com/football/_ucl/tournament/4993/calendar/");
+    // $ch = curl_init("https://www.championat.com/football/_ucl/tournament/4993/calendar/"); // ЛЧ 2023
+    $ch = curl_init("https://www.championat.com/football/_europeleague/tournament/4995/calendar/"); // ЛЕ 2023
     curl_setopt($ch, CURLOPT_COOKIEFILE, __DIR__ . '/cookie.txt');
     curl_setopt($ch, CURLOPT_COOKIEJAR, __DIR__ . '/cookie.txt');
     curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
@@ -32,18 +33,13 @@ if (true) {
     // echo $originalFileContent;
 }
 
-// $bodyCloseTagPosition = mb_strpos($originalFileContent, "</body>");
-// var_dump($bodyCloseTagPosition);
-
 $footerPosition = mb_strpos($originalFileContent, '<div class="footer">');
-// echo $footerPosition;
 
 $newFileContent = mb_substr($originalFileContent, 0, $footerPosition);
-// echo $newFileContent;
 
 $parserJsScriptStr = '<script src="js/getClubsAndMatchesArrays.js"></script>';
 
-// $newFileContent = substr_replace($originalFileContent, "{$parserJsScriptStr}</body>", $bodyCloseTagPosition, 7);
+// Добавляем в файл наш js (getClubsAndMatchesArrays.js)
 $newFileContent = "{$newFileContent}{$parserJsScriptStr}";
 
 echo $newFileContent;
