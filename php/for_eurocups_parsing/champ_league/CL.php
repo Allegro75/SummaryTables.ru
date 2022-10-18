@@ -305,6 +305,14 @@ require_once('../cup_win_cup/templates/header.php');
                             getClubByName('Реал Мадрид', $clubs),
                             getClubByName('Манчестер Сити', $clubs),
                             getClubByName('Пари Сен-Жермен', $clubs),
+                            getClubByName('Ливерпуль', $clubs),
+                            getClubByName('Порто', $clubs),
+                            getClubByName('Интер Милан', $clubs),
+                            getClubByName('Олимпик Марсель', $clubs),
+                            getClubByName('Зальцбург', $clubs),
+                            getClubByName('РБ Лейпциг', $clubs),
+                            getClubByName('Боруссия Дортмунд', $clubs),
+                            getClubByName('Бенфика', $clubs),
                         ];
                     }
                     if ( getStageMatches($matches, 'группа') ) {
