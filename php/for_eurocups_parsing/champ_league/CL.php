@@ -294,9 +294,9 @@ require_once('../cup_win_cup/templates/header.php');
                     }
                     // Пишем следующую стадию и дополняем массив клубов:
                     if ( getStageMatches($matches, 'группа') ) {
-                        echo '<pre>';
-                        var_dump(getStageMatches($matches, 'группа'));
-                        echo '</pre>';
+                        // echo '<pre>';
+                        // var_dump(getStageMatches($matches, 'группа'));
+                        // echo '</pre>';
                         $orderedClubs = writeGroupStage($orderedClubs, $matches, 'группа', $clubs, $imagesList, $tourFinalYear);
                     } 
                 }

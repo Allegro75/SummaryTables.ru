@@ -707,7 +707,7 @@ function writeGroupStage($orderedClubs, $matches, $stage, $clubs, $imagesList, $
     // echo '<br>';    
 
     if ($stage == 'группа') {
-        $stageTitle = 'Групповой этап';
+        $stageTitle = 'ГРУППОВОЙ этап';
     } else if ($stage == 'группа2') {
         $stageTitle = 'Второй групповой этап';
     }
