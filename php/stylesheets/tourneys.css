@@ -240,7 +240,7 @@ img.football-logo-table {
 
 /* Для эмблем, вытянутых в высоту максимально (Боруссия М. У обычных лого высота 24px): */
 /* img.real, .logo img.height-32, img.zarya, .logo img.zarya{ */
-.logo img.height-32, img.zarya, .logo img.zarya {
+.logo img.height-32, img.zarya, .logo img.zarya,  img.logo-like-zarya, .logo img.logo-like-zarya{
     height: 32px; 
 }
 
