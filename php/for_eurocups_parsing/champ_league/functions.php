@@ -120,10 +120,13 @@ function getImageAdress($club, $imagesList)
 function writeMatchesByStage($name, $matches, $orderedClubs, $clubs, $imagesList)
 {
 
-    echo "<pre>";
-    print_r($orderedClubs);
-    echo "</pre>";
+    // echo "<pre>";
+    // print_r($orderedClubs);
+    // echo "</pre>";
     $orderedStageMatches = orderMatchesInStage($name, $matches, $orderedClubs);
+    echo "<pre>";
+    var_dump($orderedStageMatches);
+    echo "</pre>";    
 
     // Дополняем упорядоченный массив клубов:
     $orderedClubs = addClubsToOrdered($orderedStageMatches, $orderedClubs, $clubs);
