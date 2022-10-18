@@ -189,6 +189,7 @@ function writeMatchesByStage($name, $matches, $orderedClubs, $clubs, $imagesList
         // Определяем победителя ДУЭЛИ:
         $goals_1_sum = $goals_1_1 + $goals_2_1;
         $goals_2_sum = $goals_1_2 + $goals_2_2;
+        var_dump($goals_1_sum, $goals_2_sum);
 
         // если число голов неравное:
         if ($goals_1_sum > $goals_2_sum) {
