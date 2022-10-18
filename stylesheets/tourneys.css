@@ -239,7 +239,8 @@ img.football-logo-table {
 }
 
 /* Для эмблем, вытянутых в высоту максимально (Боруссия М. У обычных лого высота 24px): */
-img.real, .logo img.height-32 {
+/* img.real, .logo img.height-32, img.zarya, .logo img.zarya{ */
+.logo img.height-32, img.zarya, .logo img.zarya {
     height: 32px; 
 }
 
@@ -269,7 +270,7 @@ img.roma, .logo img.roma, img.logo-like-roma, .logo img.logo-like-roma {
 }
 
 /* Для эмблем, вытянутых в высоту максимально (Боруссия М) внутри групповых таблиц: */
-table img.height-40, table .logo img.height-40 {
+table img.height-40, table .logo img.height-40, table img.logo-like-zarya, table .logo img.logo-like-zarya {
     height: 40px;
 }
 
