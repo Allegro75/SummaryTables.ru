@@ -87,6 +87,7 @@ require_once('../cup_win_cup/templates/header.php');
                 <?php
 
                 require_once('functions.php');
+                $imagesList = scandir('../../images');
                 $orderedClubs = [];
 
                 if ( getStageMatches($matches, 'Финал') ) { // Разбираемся с ФИНАЛОМ:
