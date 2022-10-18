@@ -166,6 +166,7 @@ function writeMatchesByStage($name, $matches, $orderedClubs, $clubs, $imagesList
         // Для формирования необязательного дива penalty:
         $penalty2 = '';
         $penalty3 = '';
+        $hadPenalties = false;
 
         // Про ДОПОЛНИТЕЛЬНОЕ время:
         $addTime2 = '';
@@ -244,14 +245,17 @@ function writeMatchesByStage($name, $matches, $orderedClubs, $clubs, $imagesList
             } 
             // Если решали пенальти:
             else if ($orderedStageMatches[$i][1]['hadPenalties'] == 1) {
+                $hadPenalties = true;
                 if ($orderedStageMatches[$i][1]['penaltiesWinner'] === $orderedStageMatches[$i][1]['firstClubName']) {
                     $club1Classes = 'club-name';
                     $club2Classes = 'club-name club-name_winner';
                     $penalty2 = "<div class='penalty'>(победа по пенальти)</div>";
+                    $penalty2_basePart = "победа по пенальти";
                 } else {
                     $club1Classes = 'club-name club-name_winner';
                     $club2Classes = 'club-name';
                     $penalty2 = "<div class='penalty'>(поражение по пенальти)</div>";
+                    $penalty2_basePart = "поражение по пенальти";
                 }
             }
         }
@@ -284,6 +288,9 @@ function writeMatchesByStage($name, $matches, $orderedClubs, $clubs, $imagesList
             if ($addTime2 === "доп. время") {
                 if ($toss2 !== '') {
                     $penalty2 = "<div class='penalty'>(доп. время, {$toss2})</div>";
+                }
+                elseif ($hadPenalties) {
+                    $penalty2 = "<div class='penalty'>(доп. время, основное - {$baseTimeScore}, {$penalty2_basePart})</div>";
                 }
                 else {
                     // $penalty2 = "<div class='penalty'>(доп. время)</div>";
