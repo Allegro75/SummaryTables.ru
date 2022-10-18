@@ -293,6 +293,19 @@ require_once('../cup_win_cup/templates/header.php');
                         $orderedClubs = writeMatchesByStage('1/8 финала', $matches, $orderedClubs, $clubs, $imagesList);
                     }
                     // Пишем следующую стадию и дополняем массив клубов:
+                    if (true) { // Пишем текущий турнир ЛЧ 2022/2023. Т.к. турнир не закончен, формируем массив $orderedClubs 'искуственно'               
+                        $orderedClubs = 
+                        [
+                            getClubByName('Наполи', $clubs),
+                            getClubByName('Брюгге', $clubs),
+                            getClubByName('Бавария', $clubs),
+                            getClubByName('Тотенхэм Хотспур', $clubs),
+                            getClubByName('Челси', $clubs),
+                            getClubByName('Реал Мадрид', $clubs),
+                            getClubByName('Манчестер Сити', $clubs),
+                            getClubByName('Пари Сен-Жермен', $clubs),
+                        ];
+                    }
                     if ( getStageMatches($matches, 'группа') ) {
                         // echo '<pre>';
                         // var_dump(getStageMatches($matches, 'группа'));
