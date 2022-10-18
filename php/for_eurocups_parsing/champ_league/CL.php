@@ -4,8 +4,8 @@
 
 <?php
 // Получаем массив МАТЧЕЙ турнира:
-require_once '../../config.php';
-require_once '../../connect.php';
+require_once '../../../database/config/config.php';
+require_once '../../../database/config/connect.php';
 $conn = connect();
 $sql = "SELECT * FROM `eurocups_matches` WHERE tourneyTitle = 'Лига чемпионов' AND tourneyFinalYear = {$_GET['year']}";
 $result = mysqli_query($conn, $sql);
