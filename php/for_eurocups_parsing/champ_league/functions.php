@@ -884,11 +884,17 @@ function writeGroupStage($orderedClubs, $matches, $stage, $clubs, $imagesList, $
                             for ($index = 0; $index < count($groupInfo); $index++) {
 
                                 $match = getMatchByClubs($groupInfo[$ri][0], $groupInfo[$index][0], $thisGroupMatches);
+                                $score = "{$match['firstClubGoals']} : {$match['secondClubGoals']}";
+                                if ($match) { // Проверяем, состоялся ли матч
+                                    $hintRecord = " title = '{$match['firstClubName']} - {$match['secondClubName']}, {$score}'";
+                                } else { // и если нет, то не ставим пустую всплывающую подсказку
+                                    $hintRecord = '';
+                                }
+
                                 $ifNeutral = '';
                                 if ($match['home'] === 'neutral') {
                                     $ifNeutral = ", {$match['fieldCountry']}";
-                                }
-                                $score = "{$match['firstClubGoals']} : {$match['secondClubGoals']}";
+                                }                                
 
                                 if ($index === $ri) {
                                     echo
@@ -898,7 +904,7 @@ function writeGroupStage($orderedClubs, $matches, $stage, $clubs, $imagesList, $
                                 }
                                 else {
                                     echo
-                                    "<td class='match-cell' title = '{$match['firstClubName']} - {$match['secondClubName']}, {$score}'>
+                                    "<td class='match-cell'{$hintRecord}>
                                         <div class='group_score'>{$score}</div>
                                         <div class='group_field-data'>
                                             <div class='group_field'>{$match['fieldCity']}{$ifNeutral}</div>
