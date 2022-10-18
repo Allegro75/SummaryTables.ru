@@ -104,11 +104,11 @@ function getImageAdress($club, $imagesList)
     $imageAdress = '';
     if ($code = $club['code']) {
         if (in_array("{$code}.png", $imagesList)) {
-            $imageAdress = ["{$code}.png", '', ''];
+            $imageAdress = ["{$code}.png", "{$club['CSSClass']}", ''];
         } else if (in_array("{$code}.svg", $imagesList)) {
-            $imageAdress = ["{$code}.svg", '', ''];
+            $imageAdress = ["{$code}.svg", "{$club['CSSClass']}", ''];
         } else if (in_array("{$code}.jpg", $imagesList)) {
-            $imageAdress = ["{$code}.jpg", '', ''];
+            $imageAdress = ["{$code}.jpg", "{$club['CSSClass']}", ''];
         }
     } else {
         $imageAdress = ["flags/{$club['countryEngCode']}.png", 'img_flag', "{$club['country']}"];
@@ -700,7 +700,7 @@ function getMatchByClubs ($name1, $name2, $matchList) {
     }
 }
 
-// Функция для заполнения содержания ГРУППОВОй стадии в 1992 - 1994 гг. (имеются в виду годы финалов):
+// Для заполнения содержания ГРУППОВОй стадии:
 function writeGroupStage($orderedClubs, $matches, $stage, $clubs, $imagesList, $tourneyYear) {
 
     // echo '<pre>';
