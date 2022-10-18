@@ -300,7 +300,7 @@ require_once('../cup_win_cup/templates/header.php');
                             getClubByName('Наполи', $clubs),
                             getClubByName('Брюгге', $clubs),
                             getClubByName('Бавария', $clubs),
-                            getClubByName('Тотенхэм Хотспур', $clubs),
+                            getClubByName('Тоттенхэм Хотспур', $clubs),
                             getClubByName('Челси', $clubs),
                             getClubByName('Реал Мадрид', $clubs),
                             getClubByName('Манчестер Сити', $clubs),
