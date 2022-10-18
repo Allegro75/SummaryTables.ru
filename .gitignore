@@ -10,7 +10,6 @@ _example_file.html
 /plans_to_do/*
 .vscode
 service*.js
-php
 *.ini
 wildstat
 /service/*
