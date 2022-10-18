@@ -371,7 +371,12 @@ require_once('../cup_win_cup/templates/header.php');
                 // Пишем следующую стадию и дополняем массив клубов:
                 if ( getStageMatches($matches, 'Второй квалификационный раунд') ) {
                     $orderedClubs = writeMatchesByStage('Второй квалификационный раунд', $matches, $orderedClubs, $clubs, $imagesList);
-                }                
+                }
+
+                // Пишем следующую стадию и дополняем массив клубов:
+                if ( getStageMatches($matches, '2-й квалификационный раунд') ) {
+                    $orderedClubs = writeMatchesByStage('2-й квалификационный раунд', $matches, $orderedClubs, $clubs, $imagesList);
+                }
                 
                 // Пишем следующую стадию и дополняем массив клубов:
                 if ( getStageMatches($matches, 'Первый отборочный раунд') ) {
@@ -381,7 +386,12 @@ require_once('../cup_win_cup/templates/header.php');
                 // Пишем следующую стадию и дополняем массив клубов:
                 if ( getStageMatches($matches, 'Первый квалификационный раунд') ) {
                     $orderedClubs = writeMatchesByStage('Первый квалификационный раунд', $matches, $orderedClubs, $clubs, $imagesList);
-                }                   
+                }
+                
+                // Пишем следующую стадию и дополняем массив клубов:
+                if ( getStageMatches($matches, '1-й квалификационный раунд') ) {
+                    $orderedClubs = writeMatchesByStage('1-й квалификационный раунд', $matches, $orderedClubs, $clubs, $imagesList);
+                }
                 
                 // Пишем следующую стадию и дополняем массив клубов:
                 if ( getStageMatches($matches, 'Отборочный раунд') ) {
