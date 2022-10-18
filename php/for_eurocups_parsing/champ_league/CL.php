@@ -65,7 +65,7 @@ echo
     <div class='football__background'>";
 
 // Печатаем шапку:
-require_once('../templates/header.php');    
+require_once('../cup_win_cup/templates/header.php');    
 ?>
 
         <main>
@@ -375,8 +375,8 @@ require_once('../templates/header.php');
         </main>
 
 <?php
-require_once('../templates/donate.php');
-require_once('../templates/footer.php');
+require_once('../cup_win_cup/templates/donate.php');
+require_once('../cup_win_cup/templates/footer.php');
 ?>
 
     </div>
