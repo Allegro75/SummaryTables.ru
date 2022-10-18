@@ -289,7 +289,8 @@ function writeMatchesByStage($name, $matches, $orderedClubs, $clubs, $imagesList
                 if ($toss2 !== '') {
                     $penalty2 = "<div class='penalty'>(доп. время, {$toss2})</div>";
                 }
-                elseif ($hadPenalties) {
+                // elseif ($hadPenalties) {
+                elseif ($orderedStageMatches[$i][1]['hadPenalties'] == 1) {
                     $penalty2 = "<div class='penalty'>(доп. время, основное - {$baseTimeScore}, {$penalty2_basePart})</div>";
                 }
                 else {
