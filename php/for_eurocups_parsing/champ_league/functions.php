@@ -166,7 +166,6 @@ function writeMatchesByStage($name, $matches, $orderedClubs, $clubs, $imagesList
         // Для формирования необязательного дива penalty:
         $penalty2 = '';
         $penalty3 = '';
-        $hadPenalties = false;
 
         // Про ДОПОЛНИТЕЛЬНОЕ время:
         $addTime2 = '';
@@ -245,13 +244,15 @@ function writeMatchesByStage($name, $matches, $orderedClubs, $clubs, $imagesList
             } 
             // Если решали пенальти:
             else if ($orderedStageMatches[$i][1]['hadPenalties'] == 1) {
-                $hadPenalties = true;
+                var_dump('yes');
                 if ($orderedStageMatches[$i][1]['penaltiesWinner'] === $orderedStageMatches[$i][1]['firstClubName']) {
+                    var_dump('club1');
                     $club1Classes = 'club-name';
                     $club2Classes = 'club-name club-name_winner';
                     $penalty2 = "<div class='penalty'>(победа по пенальти)</div>";
                     $penalty2_basePart = "победа по пенальти";
                 } else {
+                    var_dump('club2');
                     $club1Classes = 'club-name club-name_winner';
                     $club2Classes = 'club-name';
                     $penalty2 = "<div class='penalty'>(поражение по пенальти)</div>";
@@ -289,12 +290,10 @@ function writeMatchesByStage($name, $matches, $orderedClubs, $clubs, $imagesList
                 if ($toss2 !== '') {
                     $penalty2 = "<div class='penalty'>(доп. время, {$toss2})</div>";
                 }
-                // elseif ($hadPenalties) {
                 elseif ($orderedStageMatches[$i][1]['hadPenalties'] == 1) {
                     $penalty2 = "<div class='penalty'>(доп. время, основное - {$baseTimeScore}, {$penalty2_basePart})</div>";
                 }
                 else {
-                    // $penalty2 = "<div class='penalty'>(доп. время)</div>";
                     $penalty2 = "<div class='penalty'>(доп. время, основное - {$baseTimeScore})</div>";
                 }
             }
