@@ -888,6 +888,7 @@ function writeGroupStage($orderedClubs, $matches, $stage, $clubs, $imagesList, $
                                 if ($match['home'] === 'neutral') {
                                     $ifNeutral = ", {$match['fieldCountry']}";
                                 }
+                                $score = "{$match['firstClubGoals']} : {$match['secondClubGoals']}";
 
                                 if ($index === $ri) {
                                     echo
@@ -897,14 +898,14 @@ function writeGroupStage($orderedClubs, $matches, $stage, $clubs, $imagesList, $
                                 }
                                 else {
                                     echo
-                                    "<td class='match-cell' title = '{$match['firstClubName']} - {$match['secondClubName']}, {$match['score']}'>
-                                        <div class='group_score'>{$match['firstClubGoals']} : {$match['secondClubGoals']}</div>
+                                    "<td class='match-cell' title = '{$match['firstClubName']} - {$match['secondClubName']}, {$score}'>
+                                        <div class='group_score'>{$score}</div>
                                         <div class='group_field-data'>
                                             <div class='group_field'>{$match['fieldCity']}{$ifNeutral}</div>
                                             <div class='group_data'>{$match['date']}.{$match['year']}</div>
                                         </div>
                                     </td>";
-                                }                            
+                                }
                             }
                                 echo
                                 "<td class='gap'></td>
@@ -955,5 +956,6 @@ function writeGroupStage($orderedClubs, $matches, $stage, $clubs, $imagesList, $
     // echo '<br>';    
 
     // return array_merge($orderedClubs, $newOrderedClubs); 
-    return $orderedClubs; 
+    return $orderedClubs;
+
 }
