@@ -172,7 +172,7 @@ function writeMatchesByStage($name, $matches, $orderedClubs, $clubs, $imagesList
         $addTime3 = '';
         if ($orderedStageMatches[$i][1]["hadEfficientAddTime"]) {
             $addTime2 = "доп. время";
-            $baseTimeScore = $orderedStageMatches[$i][1]["baseTimeScore"];
+            $baseTimeScore = strrev($orderedStageMatches[$i][1]["baseTimeScore"]);
         }
         if ($orderedStageMatches[$i][2]["hadEfficientAddTime"]) {
             $addTime3 = "доп. время";
