@@ -249,7 +249,7 @@ img.real, .logo img.real {
 }
 
 /* Для эмблем, вытянутых в высоту, но не столь сильно как "Реал" (Рома, Порто. У обычных лого высота 24px): */
-img.roma, .logo img.roma {
+img.roma, .logo img.roma, img.logo-like-roma, .logo img.logo-like-roma {
     height: 27px;
 }
 
