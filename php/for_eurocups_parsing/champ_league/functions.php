@@ -119,6 +119,10 @@ function getImageAdress($club, $imagesList)
 // ГЛАВНАЯ функция для ЗАПОЛНЕНИЯ СОДЕРЖАНИЯ стадии матчами:
 function writeMatchesByStage($name, $matches, $orderedClubs, $clubs, $imagesList)
 {
+
+    echo "<pre>";
+    print_r($orderedClubs);
+    echo "</pre>";
     $orderedStageMatches = orderMatchesInStage($name, $matches, $orderedClubs);
 
     // Дополняем упорядоченный массив клубов:
