@@ -1,0 +1,158 @@
+body{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+div.additional-table{
+  text-align: center;
+  max-width: 550px;
+  /* 550 пикселей нужно, чтобы матчи "Бавария"-"Реал" 
+  не громоздились в две строки */
+  position: absolute;
+  /* если делать "position: relative", то весь div расползается на 500px 
+  А вообще не дефолтное (т.е. не "static") значение нужно, чтобы
+  логотипы встали как надо.*/
+  /*z-index: 10;
+  top: 30px;
+  left: 30px; */
+
+  background-color: gray;
+  color: black;
+  /* border: 2px solid gray; */
+  border-radius: 15px;
+  padding: 5px;
+}
+
+img.player-photo-table{
+  height: 50px;
+  /* margin: 0.5em; */
+  border-radius: 0.3em;
+  box-shadow: 0.1em 0.1em 0.1em 2px rgb(83, 83, 83);
+}
+
+div.additional-table img{
+  position:absolute;
+}
+
+div.additional-table img.photo-left{
+  left: 0.5em;
+  top: 0.5em;
+}
+
+div.additional-table img.photo-right{
+  right: 0.5em;
+  top: 0.5em;
+}
+
+div.additional-table h3{
+  margin: 0.5em auto;
+  max-width: 80%;
+  /* А теперь сделал через max-width, т.к. иначе лого Лейпцига лезет на заглавие */
+}
+
+span.last-name{
+  text-transform: uppercase;  
+}
+
+p{
+  font-size: 1.25em;
+  margin: 0.25em auto;
+}
+
+/* Иначе прилипает к бокам: */
+div.games-score{
+    margin: 0 0.8em;
+    /* background-color: white;
+    border-top: 0.5em solid white; */
+}
+
+p.whites-blacks-quantity{
+    font-style: italic;
+    font-size: 1.1em;
+}
+
+table.add-table{
+  /* Маргины правый и левый со значением "авто" нужны 
+  для центрирования таблицы */
+  margin-left: auto;
+  margin-right: auto;
+
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  border-collapse: collapse;
+  width: 96%;
+  /* z-index: -1; */
+  /* font-weight: normal;   */
+}
+
+table.add-table td{
+  padding: 7px;
+  /* border: none; */
+}
+
+table.add-table tr:first-child{
+    font-style: italic;
+}
+
+table.add-table tr:nth-child(even){
+  background-color: aliceblue;
+}
+
+table.add-table td.number-of-game{
+  font-style: italic;
+}
+
+/* Для СКРУГЛЕНИЯ рамки таблицы: */
+/* table.add-table tr:nth-child(2) td:first-child{
+  border-top-left-radius: 12px;
+}
+
+table.add-table tr:nth-child(2) td:last-child{
+  border-top-right-radius: 12px;
+} */
+
+table.add-table tr:last-child td:first-child{
+  border-bottom-left-radius: 12px;
+}
+
+table.add-table tr:last-child td:last-child{
+  border-bottom-right-radius: 12px;
+}
+
+tbody{
+    /* border: 1px solid white; */
+    border-radius: 12px;
+    box-shadow: 0 0 0 2px rgb(156, 155, 155);
+}
+
+table.add-table tr td:first-child{
+    font-size: 0.8em;
+}
+
+/*  Чтобы результат был жирным:*/
+table.add-table tr td:nth-child(3){
+  font-weight: bold;
+  font-size: 0.7em;
+  /* padding-left: 0px;
+  padding-right: 0px; */
+}
+
+table.add-table tr td:nth-child(3).scoring-game{
+    font-size: 1em;
+}
+
+/* Чтобы слово "Счёт" не было жирным: */
+table.add-table tr:nth-child(1) td{
+  font-weight: normal;
+}
+
+/* Помогает сузить колонку с результатами (как ни странно): */
+table.add-table tr td:nth-child(2){
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+/* Охота, чтобы название турнира в основном писалось в 1 строку: */
+table.add-table tr td:nth-child(4){
+  min-width: 230px;
+}

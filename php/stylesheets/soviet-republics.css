@@ -1,0 +1,36 @@
+
+section.soviet-republics h2, h3{
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 0.2em;  
+  padding-top: 0.6em;
+  padding-bottom: 0.6em;
+  background-color: rgba(245, 245, 245, 0.9);
+}
+
+section.soviet-republics h2{
+    font-style: italic;
+}
+
+section.soviet-republics p.table-explanation{
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 20px;  
+}
+
+h3{
+  font-size: 24px;
+  /* margin-bottom: 0em;   */
+}
+
+/* Это нужно, чтобы таблицы не растягивались
+в 1525px как прописано в table24 */
+.soviet-republics table{
+  width: auto;
+} 
+
+.armenia div.club-name,
+.lithuania div.club-name{
+  width: 8em;
+}
