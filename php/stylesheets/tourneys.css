@@ -244,7 +244,7 @@ img.real, .logo img.height-32 {
 }
 
 /* Для эмблем, вытянутых в высоту (Реал, Тоттенхэм, Порто, Милан. У обычных лого высота 24px): */
-img.real, .logo img.real {
+img.real, .logo img.real, img.logo-like-real, .logo img.logo-like-real {
     height: 29px; 
 }
 
