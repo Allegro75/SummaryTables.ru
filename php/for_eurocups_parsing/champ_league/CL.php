@@ -95,7 +95,7 @@ require_once('../cup_win_cup/templates/header.php');
 
                 // Определяем счёт финального матча: 
                 $firstGoals = $finalMatches[0]["firstClubGoals"];
-                $secondGoals = $finalMatches[0]["secondClubGoals"]; 
+                $secondGoals = $finalMatches[0]["secondClubGoals"];
                 
                 $winClass_1 = '';
                 $winClass_2 = '';

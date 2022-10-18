@@ -94,8 +94,8 @@ function addClubsToOrdered($arr, $orderedClubs, $clubs)
 }
 
 // Функция для определения адреса ЛОГОТИПА:
-require_once('../../getFileList.php');
-$imagesList = getFileList('../../images');
+// require_once('../../getFileList.php');
+// $imagesList = getFileList('../../images');
 // echo "<pre>";
 // print_r($imagesList);
 function getImageAdress($club, $imagesList)
