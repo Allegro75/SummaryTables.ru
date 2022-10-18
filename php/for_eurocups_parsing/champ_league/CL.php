@@ -87,181 +87,185 @@ require_once('../cup_win_cup/templates/header.php');
                 <?php
 
                 require_once('functions.php');
-
-            // Разбираемся с ФИНАЛОМ:
-                // Определяем финальный матч(и):                
-                $finalMatches = getStageMatches($matches, 'Финал');
-                // echo '<pre>';
-                // print_r($finalMatches);
-
-                // Определяем счёт финального матча: 
-                $firstGoals = $finalMatches[0]["firstClubGoals"];
-                $secondGoals = $finalMatches[0]["secondClubGoals"];
+                $orderedClubs = [];
                 
-                $winClass_1 = '';
-                $winClass_2 = '';
+                if ( getStageMatches($matches, 'Финал') ) { // Разбираемся с ФИНАЛОМ:
+                    
+                    // Определяем финальный матч(и):                
+                    $finalMatches = getStageMatches($matches, 'Финал');
+                    // echo '<pre>';
+                    // print_r($finalMatches);
 
-                // Определяем ПОБЕДИТЕЛЯ финального матча:
-                if ($secondGoals > $firstGoals) {
-                    $winClass_2 = ' club-name_winner';
-                }
-                else if ($secondGoals < $firstGoals) {
-                    $winClass_1 = ' club-name_winner';
-                } 
+                    // Определяем счёт финального матча: 
+                    $firstGoals = $finalMatches[0]["firstClubGoals"];
+                    $secondGoals = $finalMatches[0]["secondClubGoals"];
+                    
+                    $winClass_1 = '';
+                    $winClass_2 = '';
 
-                // Разбираемся с доп. временем и ПЕНАЛЬТИ:
-                $add = '';
-                $penalty = '';
-                if ($finalMatches[0]["hadEfficientAddTime"]) {
-                    if ($finalMatches[0]['hadPenalties']) {
+                    // Определяем ПОБЕДИТЕЛЯ финального матча:
+                    if ($secondGoals > $firstGoals) {
+                        $winClass_2 = ' club-name_winner';
+                    }
+                    else if ($secondGoals < $firstGoals) {
+                        $winClass_1 = ' club-name_winner';
+                    } 
+
+                    // Разбираемся с доп. временем и ПЕНАЛЬТИ:
+                    $add = '';
+                    $penalty = '';
+                    if ($finalMatches[0]["hadEfficientAddTime"]) {
+                        if ($finalMatches[0]['hadPenalties']) {
+                            if ($finalMatches[0]['penaltiesWinner'] == $finalMatches[0]['firstClubName']) {
+                                $penalty = "<div class='penalty'>(доп. время, победа по пенальти)</div>";
+                                $winClass_1 = ' club-name_winner';  
+                            }
+                            else if ($finalMatches[0]['penaltiesWinner'] == $finalMatches[0]['secondClubName']) {
+                                $penalty = "<div class='penalty'>(доп. время, поражение по пенальти)</div>";
+                                $winClass_2 = ' club-name_winner';  
+                            }
+                        }
+                        else {
+                            $penalty = "<div class='penalty'>(доп. время)</div>";
+                        }
+                    } else if ($finalMatches[0]['hadPenalties']) {
                         if ($finalMatches[0]['penaltiesWinner'] == $finalMatches[0]['firstClubName']) {
-                            $penalty = "<div class='penalty'>(доп. время, победа по пенальти)</div>";
+                            $penalty = "<div class='penalty'>(победа по пенальти)</div>";
                             $winClass_1 = ' club-name_winner';  
                         }
                         else if ($finalMatches[0]['penaltiesWinner'] == $finalMatches[0]['secondClubName']) {
-                            $penalty = "<div class='penalty'>(доп. время, поражение по пенальти)</div>";
+                            $penalty = "<div class='penalty'>(поражение по пенальти)</div>";
                             $winClass_2 = ' club-name_winner';  
                         }
+                    }                
+
+                    if (count($finalMatches) == 2) {
+                        if ($finalMatches[0]['timeStamp'] > $finalMatches[1]['timeStamp']) {
+                            $finalMatches = array_reverse($finalMatches);
+                        }
                     }
-                    else {
-                        $penalty = "<div class='penalty'>(доп. время)</div>";
+
+                    // Определяем коды участников финального матча:
+                    $club1Name = $finalMatches[0]["firstClubName"];
+                    $club2Name = $finalMatches[0]["secondClubName"];
+                    $club1 = getClubByName($club1Name, $clubs);
+                    $club2 = getClubByName($club2Name, $clubs);
+                    $code1 = getImageAdress($club1, $imagesList);
+                    $code2 = getImageAdress($club2, $imagesList);
+
+                    // Определяем место финального матча: 
+                    $finCity = $finalMatches[0]["fieldCity"];
+                    $finCountry = $finalMatches[0]["fieldCountry"];
+
+                    // Определяем дату финального матча: 
+                    $finDate = $finalMatches[0]["date"];
+                    $finYear = $finalMatches[0]["year"];
+
+                    // Про ДОП. МАТЧ:
+                    if ($finalMatches[1]["comments"] === 'доп. матч') {
+                        $penalty2 = "<div class='penalty'>(доп. матч)</div>"; 
                     }
-                } else if ($finalMatches[0]['hadPenalties']) {
-                    if ($finalMatches[0]['penaltiesWinner'] == $finalMatches[0]['firstClubName']) {
-                        $penalty = "<div class='penalty'>(победа по пенальти)</div>";
-                        $winClass_1 = ' club-name_winner';  
+
+                    // Начинаем упорядочивать массив с клубами:
+                    // $orderedClubs = [];
+                    if ($winClass_1 === ' club-name_winner') {
+                        $orderedClubs[0] = $club1;
+                        $orderedClubs[1] = $club2;
+                    } else {
+                        $orderedClubs[0] = $club2;
+                        $orderedClubs[1] = $club1; 
                     }
-                    else if ($finalMatches[0]['penaltiesWinner'] == $finalMatches[0]['secondClubName']) {
-                        $penalty = "<div class='penalty'>(поражение по пенальти)</div>";
-                        $winClass_2 = ' club-name_winner';  
-                    }
-                }                
 
-                if (count($finalMatches) == 2) {
-                    if ($finalMatches[0]['timeStamp'] > $finalMatches[1]['timeStamp']) {
-                        $finalMatches = array_reverse($finalMatches);
-                    }
-                }
+                    // Печатаем ФИНАЛ:
+                    echo
+                        "<div class='tourney__stage tour-stage stage_final'>
 
-                // Определяем коды участников финального матча:
-                $club1Name = $finalMatches[0]["firstClubName"];
-                $club2Name = $finalMatches[0]["secondClubName"];
-                $club1 = getClubByName($club1Name, $clubs);
-                $club2 = getClubByName($club2Name, $clubs);
-                $code1 = getImageAdress($club1, $imagesList);
-                $code2 = getImageAdress($club2, $imagesList);
+                        <div class='tour-stage_name'>ФИНАЛ</div>
 
-                // Определяем место финального матча: 
-                $finCity = $finalMatches[0]["fieldCity"];
-                $finCountry = $finalMatches[0]["fieldCountry"];
+                        <div class='tour-stage__content stage-content'>
 
-                // Определяем дату финального матча: 
-                $finDate = $finalMatches[0]["date"];
-                $finYear = $finalMatches[0]["year"];
+                            <div class='stage-content__row content-row content-row_row-1'>
 
-                // Про ДОП. МАТЧ:
-                if ($finalMatches[1]["comments"] === 'доп. матч') {
-                    $penalty2 = "<div class='penalty'>(доп. матч)</div>"; 
-                }
+                                <div class='club-info club-info_1'>
+                                    <div class='logo logo-left'>
+                                        <img src='../../images/{$code1[0]}' alt='{$club1Name}' class='{$code1[1]}' title='{$code1[2]}'>
+                                    </div>
+                                    <div class='club-name{$winClass_1}'>
+                                        {$club1Name}
+                                    </div>
+                                </div>
 
-                // Начинаем упорядочивать массив с клубами:
-                $orderedClubs = [];
-                if ($winClass_1 === ' club-name_winner') {
-                    $orderedClubs[0] = $club1;
-                    $orderedClubs[1] = $club2;
-                } else {
-                    $orderedClubs[0] = $club2;
-                    $orderedClubs[1] = $club1; 
-                }
+                                <div class='score'>
+                                    {$firstGoals} : {$secondGoals}
+                                </div>
 
-                // Печатаем ФИНАЛ:
-                echo
-                    "<div class='tourney__stage tour-stage stage_final'>
+                                <div class='club-info club-info_2'>
+                                    <div class='club-name{$winClass_2}'>
+                                        {$club2Name}
+                                    </div> 
+                                    <div class='logo logo-right'>
+                                        <img src='../../images/{$code2[0]}' alt='{$club2Name}' class='{$code2[1]}' title='{$code2[2]}'>
+                                    </div>  
+                                </div>  
 
-                    <div class='tour-stage_name'>ФИНАЛ</div>
+                            </div>
 
-                    <div class='tour-stage__content stage-content'>
+                            <div class='stage-content__row content-row content-row_row-2'>
+                                {$penalty}
+                                <div class='field'>
+                                    {$finCity}, {$finCountry}
+                                </div>    
+                                <div class='date'>
+                                    {$finDate}.{$finYear}
+                                </div>                                            
+                            </div>";
 
-                        <div class='stage-content__row content-row content-row_row-1'>
+
+                        //Если матчей в ФИНАЛЕ ДВА:
+                        if (count($finalMatches) === 2) {
+                        // Определяем счёт ВТОРОГО финального матча: 
+                        $firstGoals = $finalMatches[1]["firstClubGoals"];
+                        $secondGoals = $finalMatches[1]["secondClubGoals"];
+
+                        // Определяем место ВТОРОГО финального матча: 
+                        $finCity = $finalMatches[1]["fieldCity"];
+                        $finCountry = $finalMatches[1]["fieldCountry"];
+
+                        // Определяем дату ВТОРОГО финального матча: 
+                        $finDate = $finalMatches[1]["date"];
+                        $finYear = $finalMatches[1]["year"];
+                        echo 
+                        "<div class='stage-content__row content-row content-row_row-1'>
 
                             <div class='club-info club-info_1'>
-                                <div class='logo logo-left'>
-                                    <img src='../../images/{$code1[0]}' alt='{$club1Name}' class='{$code1[1]}' title='{$code1[2]}'>
-                                </div>
-                                <div class='club-name{$winClass_1}'>
-                                    {$club1Name}
-                                </div>
                             </div>
 
                             <div class='score'>
                                 {$firstGoals} : {$secondGoals}
                             </div>
 
-                            <div class='club-info club-info_2'>
-                                <div class='club-name{$winClass_2}'>
-                                    {$club2Name}
-                                </div> 
-                                <div class='logo logo-right'>
-                                    <img src='../../images/{$code2[0]}' alt='{$club2Name}' class='{$code2[1]}' title='{$code2[2]}'>
-                                </div>  
+                            <div class='club-info club-info_2'>  
                             </div>  
 
                         </div>
 
                         <div class='stage-content__row content-row content-row_row-2'>
-                            {$penalty}
+                            {$penalty2}
                             <div class='field'>
                                 {$finCity}, {$finCountry}
                             </div>    
                             <div class='date'>
                                 {$finDate}.{$finYear}
                             </div>                                            
-                        </div>";
+                        </div>";                    
+                        }
 
+                    echo
+                        "</div>
 
-                    //Если матчей в ФИНАЛЕ ДВА:
-                    if (count($finalMatches) === 2) {
-                    // Определяем счёт ВТОРОГО финального матча: 
-                    $firstGoals = $finalMatches[1]["firstClubGoals"];
-                    $secondGoals = $finalMatches[1]["secondClubGoals"];
+                    </div>";
 
-                    // Определяем место ВТОРОГО финального матча: 
-                    $finCity = $finalMatches[1]["fieldCity"];
-                    $finCountry = $finalMatches[1]["fieldCountry"];
-
-                    // Определяем дату ВТОРОГО финального матча: 
-                    $finDate = $finalMatches[1]["date"];
-                    $finYear = $finalMatches[1]["year"];
-                    echo 
-                    "<div class='stage-content__row content-row content-row_row-1'>
-
-                        <div class='club-info club-info_1'>
-                        </div>
-
-                        <div class='score'>
-                            {$firstGoals} : {$secondGoals}
-                        </div>
-
-                        <div class='club-info club-info_2'>  
-                        </div>  
-
-                    </div>
-
-                    <div class='stage-content__row content-row content-row_row-2'>
-                        {$penalty2}
-                        <div class='field'>
-                            {$finCity}, {$finCountry}
-                        </div>    
-                        <div class='date'>
-                            {$finDate}.{$finYear}
-                        </div>                                            
-                    </div>";                    
-                    }
-
-                echo
-                    "</div>
-
-                </div>";
+                }
 
                 // echo '<pre>';
                 // print_r($orderedClubs);
