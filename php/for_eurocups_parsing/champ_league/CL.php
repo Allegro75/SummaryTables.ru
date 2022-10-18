@@ -88,7 +88,7 @@ require_once('../cup_win_cup/templates/header.php');
 
                 require_once('functions.php');
                 $orderedClubs = [];
-                
+
                 if ( getStageMatches($matches, 'Финал') ) { // Разбираемся с ФИНАЛОМ:
                     
                     // Определяем финальный матч(и):                
@@ -294,6 +294,9 @@ require_once('../cup_win_cup/templates/header.php');
                     }
                     // Пишем следующую стадию и дополняем массив клубов:
                     if ( getStageMatches($matches, 'группа') ) {
+                        echo '<pre>';
+                        var_dump(getStageMatches($matches, 'группа'));
+                        echo '</pre>';
                         $orderedClubs = writeGroupStage($orderedClubs, $matches, 'группа', $clubs, $imagesList, $tourFinalYear);
                     } 
                 }
