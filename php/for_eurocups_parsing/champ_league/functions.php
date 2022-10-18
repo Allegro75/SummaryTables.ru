@@ -42,7 +42,8 @@ function getMatchesByClubName($arr, $club)
 function getMatchByTimeStamp($timeStamp, $arr)
 {
     for ($i = 0; $i < count($arr); $i++) {
-        if ($arr[$i]['timeStamp'] == $timeStamp) {
+        // if ($arr[$i]['timeStamp'] == $timeStamp) {
+        if (strtotime($arr[$i]['matchDate']) == $timeStamp) {
             return $arr[$i];
         }
     }
@@ -125,9 +126,9 @@ function writeMatchesByStage($name, $matches, $orderedClubs, $clubs, $imagesList
     // print_r($orderedClubs);
     // echo "</pre>";
     $orderedStageMatches = orderMatchesInStage($name, $matches, $orderedClubs);
-    echo "<pre>";
-    var_dump($orderedStageMatches);
-    echo "</pre>";    
+    // echo "<pre>";
+    // var_dump($orderedStageMatches);
+    // echo "</pre>";    
 
     // Дополняем упорядоченный массив клубов:
     $orderedClubs = addClubsToOrdered($orderedStageMatches, $orderedClubs, $clubs);
