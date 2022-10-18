@@ -189,7 +189,7 @@ function writeMatchesByStage($name, $matches, $orderedClubs, $clubs, $imagesList
         // Определяем победителя ДУЭЛИ:
         $goals_1_sum = $goals_1_1 + $goals_2_1;
         $goals_2_sum = $goals_1_2 + $goals_2_2;
-        var_dump($goals_1_sum, $goals_2_sum);
+        // var_dump($goals_1_sum, $goals_2_sum);
 
         // если число голов неравное:
         if ($goals_1_sum > $goals_2_sum) {
@@ -236,24 +236,24 @@ function writeMatchesByStage($name, $matches, $orderedClubs, $clubs, $imagesList
                     $toss2 = "поражение по жребию";
                 }
                 // Если решали голы на ЧУЖОМ поле:
-            } else if ($goals_2_1 > $goals_1_2) {
+            } else if (($orderedStageMatches[$i][1]['tourneyFinalYear'] < 2022) && ($goals_2_1 > $goals_1_2)) { // про голы на чужоим поле
                 $club1Classes = 'club-name club-name_winner';
                 $club2Classes = 'club-name';
-            } else if ($goals_1_2 > $goals_2_1) {
+            } else if (($orderedStageMatches[$i][1]['tourneyFinalYear'] < 2022) && ($goals_1_2 > $goals_2_1)) { // про голы на чужоим поле
                 $club1Classes = 'club-name';
                 $club2Classes = 'club-name club-name_winner';
             } 
             // Если решали пенальти:
             else if ($orderedStageMatches[$i][1]['hadPenalties'] == 1) {
-                var_dump('yes');
+                // var_dump('yes');
                 if ($orderedStageMatches[$i][1]['penaltiesWinner'] === $orderedStageMatches[$i][1]['firstClubName']) {
-                    var_dump('club1');
+                    // var_dump('club1');
                     $club1Classes = 'club-name';
                     $club2Classes = 'club-name club-name_winner';
                     $penalty2 = "<div class='penalty'>(победа по пенальти)</div>";
                     $penalty2_basePart = "победа по пенальти";
                 } else {
-                    var_dump('club2');
+                    // var_dump('club2');
                     $club1Classes = 'club-name club-name_winner';
                     $club2Classes = 'club-name';
                     $penalty2 = "<div class='penalty'>(поражение по пенальти)</div>";
