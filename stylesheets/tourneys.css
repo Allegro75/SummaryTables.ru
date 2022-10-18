@@ -240,7 +240,7 @@ img.football-logo-table {
 
 /* Для эмблем, вытянутых в высоту максимально (Боруссия М. У обычных лого высота 24px): */
 /* img.real, .logo img.height-32, img.zarya, .logo img.zarya{ */
-.logo img.height-32, img.zarya, .logo img.zarya,  img.logo-like-zarya, .logo img.logo-like-zarya{
+.logo img.height-32, img.zarya, .logo img.zarya,  img.logo-like-zarya, .logo img.logo-like-zarya {
     height: 32px; 
 }
 
@@ -254,9 +254,9 @@ img.roma, .logo img.roma, img.logo-like-roma, .logo img.logo-like-roma {
     height: 27px;
 }
 
-.logo img.height-32 {
+.logo img.height-32, img.zarya, .logo img.zarya,  img.logo-like-zarya, .logo img.logo-like-zarya {
     position: relative;
-    bottom: 0.3em;
+    bottom: 0.15em;
 }
 
 .logo img.real {
@@ -285,7 +285,7 @@ table img.roma, table .logo img.roma, table img.logo-like-roma, table .logo img.
 }
 
 /* Лого Гамбурга вытянуто в ширину, посему его настраиваем специально: */
-.logo img.hamburg, img.hamburg, .logo img.bayer, img.bayer {
+.logo img.hamburg, img.hamburg, .logo img.logo-like-hamburg, img.logo-like-hamburg, .logo img.bayer, img.bayer {
     width: 27px;
     height: auto;
     position: relative;
@@ -322,7 +322,7 @@ table .logo img.width-33, table img.width-33 {
     top: 0.1em;
 }
 
-.logo img.leipzig, img.leipzig {
+.logo img.leipzig, img.leipzig, .logo img.logo-like-leipzig, img.logo-like-leipzig {
     width: 48px;
     height: auto;
     /* position: relative;
