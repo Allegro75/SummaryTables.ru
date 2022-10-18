@@ -172,6 +172,7 @@ function writeMatchesByStage($name, $matches, $orderedClubs, $clubs, $imagesList
         $addTime3 = '';
         if ($orderedStageMatches[$i][1]["hadEfficientAddTime"]) {
             $addTime2 = "доп. время";
+            $baseTimeScore = $orderedStageMatches[$i][1]["baseTimeScore"];
         }
         if ($orderedStageMatches[$i][2]["hadEfficientAddTime"]) {
             $addTime3 = "доп. время";
@@ -285,7 +286,8 @@ function writeMatchesByStage($name, $matches, $orderedClubs, $clubs, $imagesList
                     $penalty2 = "<div class='penalty'>(доп. время, {$toss2})</div>";
                 }
                 else {
-                    $penalty2 = "<div class='penalty'>(доп. время)</div>";
+                    // $penalty2 = "<div class='penalty'>(доп. время)</div>";
+                    $penalty2 = "<div class='penalty'>(доп. время, основное - {$baseTimeScore})</div>";
                 }
             }
             else {
