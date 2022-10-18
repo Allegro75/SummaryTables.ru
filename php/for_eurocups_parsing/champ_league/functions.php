@@ -104,11 +104,11 @@ function getImageAdress($club, $imagesList)
     $imageAdress = '';
     if ($code = $club['code']) {
         if (in_array("{$code}.png", $imagesList)) {
-            $imageAdress = ["{$code}.png", "{$club['CSSClass']}", ''];
+            $imageAdress = ["{$code}.png", "{$club['CSSClass']}", "{$club['shortName']}"];
         } else if (in_array("{$code}.svg", $imagesList)) {
-            $imageAdress = ["{$code}.svg", "{$club['CSSClass']}", ''];
+            $imageAdress = ["{$code}.svg", "{$club['CSSClass']}", "{$club['shortName']}"];
         } else if (in_array("{$code}.jpg", $imagesList)) {
-            $imageAdress = ["{$code}.jpg", "{$club['CSSClass']}", ''];
+            $imageAdress = ["{$code}.jpg", "{$club['CSSClass']}", "{$club['shortName']}"];
         }
     } else {
         $imageAdress = ["flags/{$club['countryEngCode']}.png", 'img_flag', "{$club['country']}"];

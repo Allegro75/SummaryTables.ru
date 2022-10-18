@@ -244,12 +244,12 @@ img.real, .logo img.height-32 {
 }
 
 /* Для эмблем, вытянутых в высоту (Реал, Тоттенхэм, Порто, Милан. У обычных лого высота 24px): */
-img.real, .logo img.real {
+img.real, .logo img.real, img.logo-like-real, .logo img.logo-like-real {
     height: 29px; 
 }
 
 /* Для эмблем, вытянутых в высоту, но не столь сильно как "Реал" (Рома, Порто. У обычных лого высота 24px): */
-img.roma, .logo img.roma {
+img.roma, .logo img.roma, img.logo-like-roma, .logo img.logo-like-roma {
     height: 27px;
 }
 
@@ -274,12 +274,12 @@ table img.height-40, table .logo img.height-40 {
 }
 
 /* Для эмблем, вытянутых в высоту внутри групповых таблиц: */
-table img.real, table .logo img.real {
+table img.real, table .logo img.real, table img.logo-like-real, table .logo img.logo-like-real {
     height: 36px;
 }
 
 /* Для эмблем, вытянутых в высоту не столь сильно, внутри групповых таблиц: */
-table img.roma, table .logo img.roma {
+table img.roma, table .logo img.roma, table img.logo-like-roma, table .logo img.logo-like-roma {
     height: 33px;
 }
 
