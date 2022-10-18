@@ -59,7 +59,8 @@ function orderMatchesInStage($stage, $matches, $orderedClubs)
         $pairMatches = getMatchesByClubName($stageMatches, $orderedClubs[$i]);
         $allTimeStamps = [];
         for ($ind = 0; $ind < count($pairMatches); $ind++) {
-            $allTimeStamps[] = $pairMatches[$ind]['timeStamp'];
+            // $allTimeStamps[] = $pairMatches[$ind]['timeStamp'];
+            $allTimeStamps[] = strtotime($pairMatches[$ind]['matchDate']); // Похоже, раньше в таблице с матчами у меня было поле 'timeStamp'. Сейчас его нет.
         }
         sort($allTimeStamps);
         $orderedPairMatches = [];
