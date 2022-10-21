@@ -137,11 +137,11 @@ function writeMatchesByStage($name, $matches, $orderedClubs, $clubs, $imagesList
 
     echo
         "<div class='tourney__stage tour-stage'>
-                        <div class='tour-stage_name'>
-                            {$name}
-                        </div>";
+            <div class='tour-stage_name'>
+                {$name}
+            </div>";
     $out =
-        "               <div class='tour-stage__content stage-content'>";
+        "   <div class='tour-stage__content stage-content'>";
 
     for ($i = 0; $i < count($orderedStageMatches); $i++) {
         $club1Name = $orderedStageMatches[$i][0]['firstClubName'];
@@ -357,52 +357,52 @@ function writeMatchesByStage($name, $matches, $orderedClubs, $clubs, $imagesList
         // Если матч был ОДИН (в основном это тех. победы. Но есть ещё полуфиналы ЛЧ-1994.
         // И есть ещё отбор к ЛЧ-2019. И короновирусные турниры-2020):
         if (count($orderedStageMatches[$i]) == 1) {
-            $out = 
-        "<div class='tour-stage__content stage-content'>
-            <div class='stage-content__row content-row content-row_row-1'>
-                <div class='row_matches__grid matches-row matches-row_1-match'>
+            $out .= 
+                "
+                    <div class='stage-content__row content-row content-row_row-1'>
+                        <div class='row_matches__grid matches-row matches-row_1-match'>
 
-                    <div class='matches-row__1st-club'>
-                        <div class='logo logo-left'>
-                            <img src='../../images/{$code1[0]}' alt='{$club1Name}' class='{$code1[1]}' title='{$code1[2]}'>
+                            <div class='matches-row__1st-club'>
+                                <div class='logo logo-left'>
+                                    <img src='../../images/{$code1[0]}' alt='{$club1Name}' class='{$code1[1]}' title='{$code1[2]}'>
+                                </div>
+                                <div class='{$club1Classes}'>
+                                    {$club1Name}
+                                </div>
+                            </div>
+
+                            <div class='score score_1'>
+                                {$goals_1_1} : {$goals_1_2}
+                            </div>
+
+                            <div class='matches-row__2nd-club'>
+                                <div class='{$club2Classes}'>
+                                    {$club2Name}
+                                </div>
+                                <div class='logo logo-right'>
+                                    <img src='../../images/{$code2[0]}' alt='{$club2Name}' class='{$code2[1]}' title='{$code2[2]}'>
+                                </div>
+                            </div>
+
                         </div>
-                        <div class='{$club1Classes}'>
-                            {$club1Name}
+
+                    <div class='stage-content__row content-row content-row_row-2'>
+                        <div class='field-row__1st-match field-row_1-match'>
+                            {$penalty}
+                            <div class='field field_1' style='margin-right:5px; margin-left:5px;'>
+                                {$field1}
+                            </div>
+                            <div class='date date_1' style='margin-left:5px;'>
+                                {$date1}{$year1}
+                            </div>                     
                         </div>
                     </div>
 
-                    <div class='score score_1'>
-                        {$goals_1_1} : {$goals_1_2}
-                    </div>
-
-                    <div class='matches-row__2nd-club'>
-                        <div class='{$club2Classes}'>
-                            {$club2Name}
-                        </div>
-                        <div class='logo logo-right'>
-                            <img src='../../images/{$code2[0]}' alt='{$club2Name}' class='{$code2[1]}' title='{$code2[2]}'>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class='stage-content__row content-row content-row_row-2'>
-                <div class='field-row__1st-match field-row_1-match'>
-                    {$penalty}
-                    <div class='field field_1' style='margin-right:5px; margin-left:5px;'>
-                        {$field1}
-                    </div>
-                    <div class='date date_1' style='margin-left:5px;'>
-                        {$date1}{$year1}
-                    </div>                     
-                </div>
-            </div>
-        </div>"; 
+            </div>"; 
         }
         // Если же матчей было как минимум ДВА (нормальный случай):
         else if ($orderedStageMatches[$i][1]) {
-            $out =
+            $out = $out.
                 "
                                 <div class='stage-content__row content-row content-row_row-1'>
                                     <div class='row_matches__grid matches-row'>
@@ -485,7 +485,7 @@ function writeMatchesByStage($name, $matches, $orderedClubs, $clubs, $imagesList
         echo $out;
         echo "</div>";
     }
-    echo "</div>";
+    echo "  </div>";
     return $orderedClubs;
 }
 
