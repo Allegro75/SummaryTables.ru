@@ -404,9 +404,19 @@ require_once('../cup_win_cup/templates/header.php');
                 }                 
 
                 // Пишем следующую стадию и дополняем массив клубов:
+                if ( getStageMatches($matches, 'Предварительный раунд - Финал') ) {
+                    $orderedClubs = writeMatchesByStage('Предварительный раунд, финал', $matches, $orderedClubs, $clubs, $imagesList);
+                }                 
+
+                // Пишем следующую стадию и дополняем массив клубов:
                 if ( getStageMatches($matches, 'Предварительный раунд, 1/2 финала') ) {
                     $orderedClubs = writeMatchesByStage('Предварительный раунд, 1/2 финала', $matches, $orderedClubs, $clubs, $imagesList);
-                }                 
+                }
+
+                // Пишем следующую стадию и дополняем массив клубов:
+                if ( getStageMatches($matches, 'Предварительный раунд - 1/2 финала') ) {
+                    $orderedClubs = writeMatchesByStage('Предварительный раунд, 1/2 финала', $matches, $orderedClubs, $clubs, $imagesList);
+                }
 
                 // Пишем следующую стадию и дополняем массив клубов:
                 if ( getStageMatches($matches, 'Предварительный раунд') ) {
