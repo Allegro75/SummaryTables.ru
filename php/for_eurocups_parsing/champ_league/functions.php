@@ -479,11 +479,10 @@ function writeMatchesByStage($name, $matches, $orderedClubs, $clubs, $imagesList
                                     </div>
 
                                 </div>
-                            </div>                            
-
-                        </div>";
+                            </div>";
         }
         echo $out;
+        echo "</div>";
     }
     echo "</div>";
     return $orderedClubs;
