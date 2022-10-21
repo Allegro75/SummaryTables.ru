@@ -906,11 +906,14 @@ function writeGroupStage($orderedClubs, $matches, $stage, $clubs, $imagesList, $
                                 if ($match) { // Проверяем, состоялся ли матч
                                     $hintRecord = " title = '{$match['firstClubName']} - {$match['secondClubName']}, {$score}'";
                                     $curClubCity = $match['fieldCity'];
+                                    $matchDate = "{$match['date']}.{$match['year']}";
                                 } else { // и если нет, то
                                     $hintRecord = ''; // ставим пустую всплывающую подсказку
                                     // Определяем город проведения будущего матча:
                                     $curClub = getClubByName($groupInfo[$ri][0], $clubs);
                                     $curClubCity = $curClub['city'];
+                                    // "Рыба" даты проведения будущего матча:
+                                    $matchDate = '25.10.2022';
                                 }
 
                                 $ifNeutral = '';
@@ -930,7 +933,7 @@ function writeGroupStage($orderedClubs, $matches, $stage, $clubs, $imagesList, $
                                         <div class='group_score'>{$score}</div>
                                         <div class='group_field-data'>
                                             <div class='group_field'>{$curClubCity}{$ifNeutral}</div>
-                                            <div class='group_data'>{$match['date']}.{$match['year']}</div>
+                                            <div class='group_data'>{$matchDate}</div>
                                         </div>
                                     </td>";
                                 }
