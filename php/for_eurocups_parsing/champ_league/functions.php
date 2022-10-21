@@ -144,6 +144,7 @@ function writeMatchesByStage($name, $matches, $orderedClubs, $clubs, $imagesList
         "   <div class='tour-stage__content stage-content'>";
 
     for ($i = 0; $i < count($orderedStageMatches); $i++) {
+
         $club1Name = $orderedStageMatches[$i][0]['firstClubName'];
         $club2Name = $orderedStageMatches[$i][0]['secondClubName'];
         $club1 = getClubByName($club1Name, $orderedClubs);
@@ -482,11 +483,15 @@ function writeMatchesByStage($name, $matches, $orderedClubs, $clubs, $imagesList
                                 </div>
                             </div>";
         }
-        echo $out;
-        echo "</div>";
+
     }
-    echo "  </div>";
+    echo $out;
+    echo 
+    "   </div>
+    </div>";
+
     return $orderedClubs;
+    
 }
 
 // Функция для определения всех (обычно двух) матчей нек-рой пары клубов между собой
