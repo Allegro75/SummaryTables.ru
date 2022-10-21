@@ -909,7 +909,7 @@ function writeGroupStage($orderedClubs, $matches, $stage, $clubs, $imagesList, $
                                 } else { // и если нет, то
                                     $hintRecord = ''; // ставим пустую всплывающую подсказку
                                     // Определяем город проведения будущего матча:
-                                    $curClub = getClubByName($leaderRivalNames[$index], $clubs);
+                                    $curClub = getClubByName($groupInfo[$index][0], $clubs);
                                     $curClubCity = $curClub['city'];
                                 }
 
