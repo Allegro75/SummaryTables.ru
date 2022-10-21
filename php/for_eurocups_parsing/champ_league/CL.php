@@ -436,7 +436,7 @@ require_once('../cup_win_cup/templates/footer.php');
 
     <!-- <script src="../../scripts/archive/arrowNav.js"></script> -->
     <script src="../../scripts/archive/changeLogoBrightness.js"></script>
-    <script src="../../scripts/archive/toTopButton.js"></script>
+    <!-- <script src="../../scripts/archive/toTopButton.js"></script> -->
     <!-- <script src="../../scripts/archive/service.js"></script> -->    
 
 </body>
