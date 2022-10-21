@@ -40,9 +40,7 @@ $tourFinalYear = $_GET['year'];
 
 // Печатаем head:
 echo 
-"
-
-<head>
+"\n\n<head>
     <meta charset='utf-8'>
     <meta name='author' content='Edwards, Allegro, Edwards75, Allegro75, Oleg Otkidach'>
     <meta name='author' content='Олег Откидач'>
