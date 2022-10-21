@@ -140,6 +140,8 @@ function writeMatchesByStage($name, $matches, $orderedClubs, $clubs, $imagesList
                         <div class='tour-stage_name'>
                             {$name}
                         </div>";
+    $out =
+        "               <div class='tour-stage__content stage-content'>";
 
     for ($i = 0; $i < count($orderedStageMatches); $i++) {
         $club1Name = $orderedStageMatches[$i][0]['firstClubName'];
@@ -401,8 +403,7 @@ function writeMatchesByStage($name, $matches, $orderedClubs, $clubs, $imagesList
         // Если же матчей было как минимум ДВА (нормальный случай):
         else if ($orderedStageMatches[$i][1]) {
             $out =
-                "<div class='tour-stage__content stage-content'>
-
+                "
                                 <div class='stage-content__row content-row content-row_row-1'>
                                     <div class='row_matches__grid matches-row'>
                                         <div class='matches-row__1st-club'>
