@@ -361,6 +361,7 @@ function writeMatchesByStage($name, $matches, $orderedClubs, $clubs, $imagesList
             $out .= 
                 "
                     <div class='stage-content__row content-row content-row_row-1'>
+
                         <div class='row_matches__grid matches-row matches-row_1-match'>
 
                             <div class='matches-row__1st-club'>
@@ -387,6 +388,8 @@ function writeMatchesByStage($name, $matches, $orderedClubs, $clubs, $imagesList
 
                         </div>
 
+                    </div>
+
                     <div class='stage-content__row content-row content-row_row-2'>
                         <div class='field-row__1st-match field-row_1-match'>
                             {$penalty}
@@ -397,9 +400,7 @@ function writeMatchesByStage($name, $matches, $orderedClubs, $clubs, $imagesList
                                 {$date1}{$year1}
                             </div>                     
                         </div>
-                    </div>
-
-            </div>"; 
+                    </div>"; 
         }
         // Если же матчей было как минимум ДВА (нормальный случай):
         else if ($orderedStageMatches[$i][1]) {
@@ -491,7 +492,7 @@ function writeMatchesByStage($name, $matches, $orderedClubs, $clubs, $imagesList
     </div>";
 
     return $orderedClubs;
-    
+
 }
 
 // Функция для определения всех (обычно двух) матчей нек-рой пары клубов между собой
