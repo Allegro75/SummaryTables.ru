@@ -914,7 +914,8 @@ function writeGroupStage($orderedClubs, $matches, $stage, $clubs, $imagesList, $
                                     $curClubCity = $match['fieldCity'];
                                     $matchDate = "{$match['date']}.{$match['year']}";
                                 } else { // и если нет, то
-                                    $hintRecord = ''; // ставим пустую всплывающую подсказку
+                                    // $hintRecord = ''; // ставим пустую всплывающую подсказку
+                                    $hintRecord = " title = '{$groupInfo[$ri][0]} - {$groupInfo[$index][0]}'";
                                     // Определяем город проведения будущего матча:
                                     $curClub = getClubByName($groupInfo[$ri][0], $clubs);
                                     $curClubCity = $curClub['city'];
