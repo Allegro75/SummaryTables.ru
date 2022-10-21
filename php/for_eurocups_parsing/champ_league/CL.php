@@ -75,10 +75,7 @@ require_once('../cup_win_cup/templates/header.php');
             <!-- Заголовок -->
             <section class="captions">
                 <h1 class="captions__h1">
-                    Лига ЧЕМПИОНОВ
-                        <?php
-                        echo "{$tourStartYear}/{$tourFinalYear}";
-                        ?>
+                    Лига ЧЕМПИОНОВ <?="{$tourStartYear}/{$tourFinalYear}"?>
                 </h1>
             </section>
 
