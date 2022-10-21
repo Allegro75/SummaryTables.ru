@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Создаём блок для кнопок "Вперёд":
-    if (cTY <= 2021) {
+    if (cTY <= 2022) {
         const rightDiv = document.createElement(`div`);
         arNavDiv.append(rightDiv);
         rightDiv.classList.add(`ar-nav__right`, `ar-nav-right`);
