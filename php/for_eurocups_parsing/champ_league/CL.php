@@ -40,8 +40,6 @@ $tourFinalYear = $_GET['year'];
 
 // Печатаем head:
 
-echo "\n";
-echo "\n";
 echo 
 "<head>
     <meta charset='utf-8'>
