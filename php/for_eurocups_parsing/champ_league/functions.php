@@ -824,7 +824,6 @@ function writeGroupStage($orderedClubs, $matches, $stage, $clubs, $imagesList, $
         // echo '<br>';
 
         // Задаём массив с инфой о событиях в группе:
-        // $groupInfo = orderClubsInGroup ($leaderRivalNames, $thisGroupMatches, $clubs, $tourneyYear);
         $groupInfo = getOrderAndInfo($leaderRivalNames, $thisGroupMatches, $clubs, $tourneyYear);
         // echo '<pre>';
         // print_r ( $groupInfo );
@@ -906,8 +905,12 @@ function writeGroupStage($orderedClubs, $matches, $stage, $clubs, $imagesList, $
                                 $score = "{$match['firstClubGoals']} : {$match['secondClubGoals']}";
                                 if ($match) { // Проверяем, состоялся ли матч
                                     $hintRecord = " title = '{$match['firstClubName']} - {$match['secondClubName']}, {$score}'";
-                                } else { // и если нет, то не ставим пустую всплывающую подсказку
-                                    $hintRecord = '';
+                                    $curClubCity = $match['fieldCity'];
+                                } else { // и если нет, то
+                                    $hintRecord = ''; // ставим пустую всплывающую подсказку
+                                    // Определяем город проведения будущего матча:
+                                    $curClub = getClubByName($leaderRivalNames[$index], $clubs);
+                                    $curClubCity = $curClub['city'];
                                 }
 
                                 $ifNeutral = '';
@@ -926,7 +929,7 @@ function writeGroupStage($orderedClubs, $matches, $stage, $clubs, $imagesList, $
                                     "<td class='match-cell'{$hintRecord}>
                                         <div class='group_score'>{$score}</div>
                                         <div class='group_field-data'>
-                                            <div class='group_field'>{$match['fieldCity']}{$ifNeutral}</div>
+                                            <div class='group_field'>{$curClubCity}{$ifNeutral}</div>
                                             <div class='group_data'>{$match['date']}.{$match['year']}</div>
                                         </div>
                                     </td>";
