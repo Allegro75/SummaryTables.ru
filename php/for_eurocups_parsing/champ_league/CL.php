@@ -63,7 +63,7 @@ echo
 </head>
 
 <body class='football__body'>
-    <div class='football__background'>";
+    <div class='football__background'>\n";
 
 // Печатаем шапку:
 require_once('../cup_win_cup/templates/header.php');    
