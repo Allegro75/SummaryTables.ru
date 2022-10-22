@@ -2,6 +2,7 @@
 <html lang="ru" class="football">
 
 <?php
+// 22.10.2022 решил писать Лигу Европы через файл champ_league/CL (изначально заточенный под ЛЧ).
 $tourFinalYear = $_GET['year'];
 $tourStartYear = $_GET['year'] - 1;
 if ($tourFinalYear <= 1971) {

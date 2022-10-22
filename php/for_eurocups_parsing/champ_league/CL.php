@@ -7,7 +7,9 @@
 require_once '../../../database/config/config.php';
 require_once '../../../database/config/connect.php';
 $conn = connect();
-$sql = "SELECT * FROM `matches` WHERE tourneyTitle = 'Лига чемпионов' AND tourneyFinalYear = {$_GET['year']}";
+// $tourneyTitle = 'Лига чемпионов';
+$tourneyTitle = 'Лига Европы';
+$sql = "SELECT * FROM `matches` WHERE tourneyTitle = '{$tourneyTitle}' AND tourneyFinalYear = {$_GET['year']}";
 $result = mysqli_query($conn, $sql);
 $matches = array();
 if (mysqli_num_rows($result) > 0) {

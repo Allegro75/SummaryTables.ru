@@ -83,7 +83,7 @@ if (true) {
             $clubsList['newClubs'][] = $curClub;
         }
     }
-    echo json_encode($clubsList);
+    // echo json_encode($clubsList);
 
 }
 
@@ -141,9 +141,11 @@ if (false) {
 if (false) {
 
     $netMatchesArr = []; // Готовим массив $netMatchesArr с матчами под запись в базу
+    $lastRecordedMatchDate = '13.10.2022';
     foreach ($clubsAndMatchesArr['matches'] as $ind => $curMatch) {
 
-        if (true) {
+        // if (true) {
+        if (date("Y-m-d", strtotime($curMatch['date'])) > date("Y-m-d", strtotime($lastRecordedMatchDate))) {
         // if ($ind == 0) {
 
             // Ищем имена и индексы клубов, игравших в текущем матче
@@ -228,7 +230,7 @@ if (false) {
         }
 
     }
-    // echo json_encode($netMatchesArr);
+    echo json_encode($netMatchesArr);
 
     // Пишем в базу:
     if (false) {
