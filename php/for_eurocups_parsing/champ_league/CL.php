@@ -47,14 +47,14 @@ echo
     <meta charset='utf-8'>
     <meta name='author' content='Edwards, Allegro, Edwards75, Allegro75, Oleg Otkidach'>
     <meta name='author' content='Олег Откидач'>
-    <meta name='description' content='Лига чемпионов {$tourStartYear}/{$tourFinalYear}'>
-    <meta name='keywords' content='Лига чемпионов. {$tourFinalYear}.{$tourStartYear}. 
+    <meta name='description' content='{$tourneyTitle} {$tourStartYear}/{$tourFinalYear}'>
+    <meta name='keywords' content='{$tourneyTitle}. {$tourFinalYear}.{$tourStartYear}. 
     Футбол. Еврокубки. Европа. 
     Статистика. История. Результаты.    
     Лига чемпионов. Кубок чемпионов. Кубок кубков. Лига Европы. Кубок УЕФА. Суперкубок.'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <link rel='shortcut icon' href='../../images/football_ball.svg' type='image/x-icon'>
-    <title>Лига чемпионов {$tourStartYear}/{$tourFinalYear}</title>
+    <title>{$tourneyTitle} {$tourStartYear}/{$tourFinalYear}</title>
     <link rel='stylesheet' href='../../stylesheets/football__body.css'>
     <link rel='stylesheet' href='../../stylesheets/cap-wo-nav.css'>
     <link rel='stylesheet' href='../../stylesheets/navigation.css'>
@@ -69,7 +69,8 @@ echo
     <div class='football__background'>\n";
 
 // Печатаем шапку:
-require_once('../cup_win_cup/templates/header.php');    
+require_once('../cup_win_cup/templates/header.php');
+$tourneyTitleToH1 = ($tourneyTitle === 'Лига Европы') ? $tourneyTitle : 'Лига ЧЕМПИОНОВ';
 ?>
 
         <main>
@@ -77,7 +78,7 @@ require_once('../cup_win_cup/templates/header.php');
             <!-- Заголовок -->
             <section class="captions">
                 <h1 class="captions__h1">
-                    Лига ЧЕМПИОНОВ <?="{$tourStartYear}/{$tourFinalYear}"?>
+                    <?="{$tourneyTitleToH1} {$tourStartYear}/{$tourFinalYear}"?>
                 </h1>
             </section>
 
