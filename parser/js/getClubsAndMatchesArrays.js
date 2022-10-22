@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', async function() {
       });
 
       // console.log(rawClubsArr);
-      console.log(matchesArr);
+      // console.log(matchesArr);
 
     }
 

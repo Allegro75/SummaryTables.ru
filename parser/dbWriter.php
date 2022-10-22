@@ -137,8 +137,8 @@ if (false) {
 }
 
 // Записываем матчи в базу:
-// if (true) {
-if (false) {
+if (true) {
+// if (false) {
 
     $netMatchesArr = []; // Готовим массив $netMatchesArr с матчами под запись в базу
     $lastRecordedMatchDate = '13.10.2022';
