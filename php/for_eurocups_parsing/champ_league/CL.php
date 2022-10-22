@@ -454,7 +454,7 @@ $tourneyTitleToH1 = ($tourneyTitle === 'Лига Европы') ? $tourneyTitle 
         </main>
 
 <?php
-require_once('../cup_win_cup/templates/donate.php');
+// require_once('../cup_win_cup/templates/donate.php');
 require_once('../cup_win_cup/templates/footer.php');
 ?>
 
