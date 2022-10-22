@@ -800,9 +800,9 @@ function writeGroupStage($orderedClubs, $matches, $stage, $clubs, $imagesList, $
                 }
                 if ( $oCI === (count($orderedClubs) - 1) ) {
                     $newClubs++;
-                    // echo '<pre>';          
-                    // print_r($leaderRivalNames[$lRVNI]);
-                    // echo '<br>';                    
+                    echo '<pre>';          
+                    print_r($leaderRivalNames[$lRVNI]);
+                    echo '<br>';                    
                     break;
                 }
             }
