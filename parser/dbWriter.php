@@ -137,8 +137,8 @@ if (false) {
 }
 
 // Записываем матчи в базу:
-if (true) {
-// if (false) {
+// if (true) {
+if (false) {
 
     $netMatchesArr = []; // Готовим массив $netMatchesArr с матчами под запись в базу
     $lastRecordedMatchDate = '13.10.2022'; // Дата последнего записанного матча. При обновлении базы, будут писаться только матчи, прошедшие после этой даты
@@ -233,8 +233,8 @@ if (true) {
     // echo json_encode($netMatchesArr);
 
     // Пишем в базу:
-    // if (false) {
-    if (true) {
+    if (false) {
+    // if (true) {
         $sqlDebugArr = [];
         foreach ($netMatchesArr as $ind => $curMatch) {
 
