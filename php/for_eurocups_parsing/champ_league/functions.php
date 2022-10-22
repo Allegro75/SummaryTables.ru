@@ -783,11 +783,11 @@ function writeGroupStage($orderedClubs, $matches, $stage, $clubs, $imagesList, $
                 $leaderRivalNames[] = $rawLeaderRivalNames[$ind];
             }
         }
-        echo '<pre>';          
+        echo '<pre>';
         print_r($leaderRivalNames);
-        echo '<br>';
-        print_r($orderedClubs);
-        echo '<br>';
+        // echo '<br>';
+        // print_r($orderedClubs);
+        // echo '<br>';
 
         // Теперь нам надо определить, есть ли среди соперников данной потенциальной "матки" новые клубы
         // (ещё не упомянутые в orderedClubs), и только если они есть - продолжить выполнение данной итерации
