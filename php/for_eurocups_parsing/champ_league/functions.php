@@ -783,8 +783,8 @@ function writeGroupStage($orderedClubs, $matches, $stage, $clubs, $imagesList, $
                 $leaderRivalNames[] = $rawLeaderRivalNames[$ind];
             }
         }
-        echo '<pre>';
-        print_r($leaderRivalNames);
+        // echo '<pre>';
+        // print_r($leaderRivalNames);
         // echo '<br>';
         // print_r($orderedClubs);
         // echo '<br>';
@@ -978,7 +978,7 @@ function writeGroupStage($orderedClubs, $matches, $stage, $clubs, $imagesList, $
             // print_r ( $ind );        
         for (; $ind < count($groupInfo); $ind++) {
             $currentClub =  getClubByName($groupInfo[$ind][0], $clubs);
-            if (! in_array($currentClub, $orderedClubs)) {
+            if ( ! (in_array($currentClub, $orderedClubs)) ) {
                 $orderedClubs[] = getClubByName($groupInfo[$ind][0], $clubs);
             }
             // echo '<pre>';
