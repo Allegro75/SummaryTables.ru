@@ -201,33 +201,11 @@
 
                         </li>
 
-                        <!--<li class="nav__stripe__list__item  dropdown  chess">
-                            <a href="../../chess/pretendents_2020.html" title="Шахматы" target="_blank">
-                                <div class="nav__icon chess">
-                                    
-                                </div>
-                                Шахматы
-                            </a>
-                            <ul class="nav__stripe__list__item__droplist">
-                                <li class="nav__stripe__list__item__droplist__item">
-                                    <a href="../../chess/pretendents_2020.html"
-                                        title="Участники турнира претендентов 2020. Личные встречи. Сводная таблица"
-                                        target="_blank">Претенденты 2020. Личные счета</a>
-                                </li>
-                                <li class="nav__stripe__list__item__droplist__item">
-                                    <a href="../../https://www.youtube.com/channel/UCCNvNNsRKNqvsJK9rd4PpMQ" title="Шахматный канал Олега Откидача (aka Edwards).
-Лучшие партии автора, прежде всего в шахматы Фишера, игранные заочно. 
-Играем в позиционные шахматы.
-Только качественные партии - никакого блица!" target="_blank">
-                                        Youtube-канал о шахматах
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>-->
                     </ul>
                 </div>
 
-                <? require_once('nav-tourney-stripe-cl.php'); ?>
+                <? // require_once('nav-tourney-stripe-cl.php'); ?>
+                <? require_once('nav-tourney-stripe-el.php'); ?>
 
             </nav>
 
