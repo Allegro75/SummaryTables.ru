@@ -80,6 +80,9 @@ $tourneyTitleToH1 = ($tourneyTitle === 'Лига Европы') ? $tourneyTitle 
                 <h1 class="captions__h1">
                     <?="{$tourneyTitleToH1} {$tourStartYear}/{$tourFinalYear}"?>
                 </h1>
+                <p class="captions__explanation">
+                    Учтены матчи до 20.10.2022 включительно
+                </p>                
             </section>
 
             <!-- Турнир -->

@@ -763,9 +763,8 @@ function writeGroupStage($orderedClubs, $matches, $stage, $clubs, $imagesList, $
         $target = 2;
     }
 
-    // $target = 2;
-
     for ($i = 0, $num = 1; $i < $target; $i++) {
+
         // Определяем массив матчей данной группы (группы с данной маткой).
             // Для этого сначала ищем имена соперников матки на этой стадии.
                 // Для этого сначала ищем матчи матки на этой стадии:
@@ -776,12 +775,13 @@ function writeGroupStage($orderedClubs, $matches, $stage, $clubs, $imagesList, $
             $rawLeaderRivalNames[] = $leaderMatches[$ind]["firstClubName"];
             $rawLeaderRivalNames[] = $leaderMatches[$ind]["secondClubName"];
         }
-        // print_r($rawLeaderRivalNames);
-        // echo '<br>';
+        print_r($rawLeaderRivalNames);
+        echo '<br>';
         $leaderRivalNames = [];  
         for ($ind = 0; $ind < count($rawLeaderRivalNames); $ind++) {
-            if (! in_array($rawLeaderRivalNames[$ind], $leaderRivalNames))
-            $leaderRivalNames[] = $rawLeaderRivalNames[$ind];
+            if ( ! (in_array($rawLeaderRivalNames[$ind], $leaderRivalNames)) ) {
+                $leaderRivalNames[] = $rawLeaderRivalNames[$ind];
+            }
         }
         // echo '<pre>';          
         // print_r($leaderRivalNames);
@@ -833,7 +833,7 @@ function writeGroupStage($orderedClubs, $matches, $stage, $clubs, $imagesList, $
         $groupInfo = getOrderAndInfo($leaderRivalNames, $thisGroupMatches, $clubs, $tourneyYear);
         // echo '<pre>';
         // print_r ( $groupInfo );
-        // echo '<br>'; 
+        // echo '<br>';
         
         // Адреса логотипов:
         $logo1 = getImageAdress(getClubByName($groupInfo[0][0], $clubs), $imagesList);
@@ -920,7 +920,7 @@ function writeGroupStage($orderedClubs, $matches, $stage, $clubs, $imagesList, $
                                     $curClub = getClubByName($groupInfo[$ri][0], $clubs);
                                     $curClubCity = $curClub['city'];
                                     // "Рыба" даты проведения будущего матча:
-                                    $matchDate = '25.10.2022';
+                                    $matchDate = '27.10.2022';
                                 }
 
                                 $ifNeutral = '';
@@ -984,16 +984,17 @@ function writeGroupStage($orderedClubs, $matches, $stage, $clubs, $imagesList, $
             // echo '<pre>';
             // print_r ( $groupInfo[$ind][0] );
         }
-        $num++;        
+
+        $num++;
+
     }
     echo 
         "</div>
     </div>";
     // echo '<pre>';
     // print_r ( array_merge($orderedClubs, $newOrderedClubs) );
-    // echo '<br>';    
-
-    // return array_merge($orderedClubs, $newOrderedClubs); 
+    // echo '<br>';
+    
     return $orderedClubs;
 
 }
