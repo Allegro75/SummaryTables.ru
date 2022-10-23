@@ -258,7 +258,7 @@
 
                 <p class="captions__explanation">
                     <span class="captions__explanation_circle">&#8226;</span>                
-                        Учтены матчи до 13.10.2022 включительно
+                        Учтены матчи до 20.10.2022 включительно
                     <span class="captions__explanation_circle">&#8226;</span>
                 </p>  
             </section>  
