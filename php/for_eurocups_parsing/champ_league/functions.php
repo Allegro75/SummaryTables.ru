@@ -749,9 +749,9 @@ function writeGroupStage($orderedClubs, $matches, $stage, $clubs, $imagesList, $
                     
     // Cначала выбираем все матчи групповой стадии во всех группах:
     $groupMatches = getStageMatches($matches, $stage);
-    echo '<pre>';
-    var_dump($groupMatches);
-    echo '</pre>';    
+    // echo '<pre>';
+    // var_dump($groupMatches);
+    // echo '</pre>';
 
     // Перебираем все, кроме последнего элементы нашего массива orderedClubs (состоящего из команд, вышедших из групп) -
     // - участников плей-офф - находим клубы с новыми (отсутствующими в orderedClubs) соперниками по группе
@@ -844,7 +844,9 @@ function writeGroupStage($orderedClubs, $matches, $stage, $clubs, $imagesList, $
         $logo3 = getImageAdress(getClubByName($groupInfo[2][0], $clubs), $imagesList);
         $logo4 = getImageAdress(getClubByName($groupInfo[3][0], $clubs), $imagesList);
 
-        echo
+        // Пишем html для таблицы с группой:
+        if (true) {
+            echo
             "<div class='stage-content__group content-group group{$num}'>
                 <table class='group-table'>
                     <thead>
@@ -968,6 +970,7 @@ function writeGroupStage($orderedClubs, $matches, $stage, $clubs, $imagesList, $
                     "</tbody>
                 </table>
             </div>";
+        }
 
         // Дополняем наш массив упорядоченных клубов: 
             // В зависимости от года розыгрыша - от наличия полуфиналов в розыгрыше -
@@ -975,7 +978,8 @@ function writeGroupStage($orderedClubs, $matches, $stage, $clubs, $imagesList, $
         if (($tourneyYear <= 1993) || ($tourneyYear == 1998) || ($tourneyYear == 1999)) {
             $ind = 1;
         } else if ($tourneyYear >= 1994) {
-            $ind = 2;
+            // $ind = 2;
+            $ind = 0;
         }
             // echo '<pre>';
             // print_r ( $ind );        
