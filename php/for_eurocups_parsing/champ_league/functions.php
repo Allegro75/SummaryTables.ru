@@ -676,54 +676,9 @@ function getOrderAndInfo($clubNamesArr, $matchesList, $clubs, $year) {
             // Если же делёж четверной (это добавлено только 23.10.2022, когда проблема встретилась впервые, причём на не завершённом групповом турнире):
             // else if ($pointsArr[$i + 1][6] == $pointsArr[$i + 2][6]) {
             else if (($pointsArr[$i + 1][6] == $pointsArr[$i + 2][6]) && ($pointsArr[$i + 1][6] == $pointsArr[$i + 3][6])) {
-
-                // $sharClubNames = [ $pointsArr[$i][0], $pointsArr[$i + 1][0], $pointsArr[$i + 2][0] ];
-                // echo "<pre>";
-                // print_r($sharClubNames);
-
-                // $sharMatchList = array_merge( getPairMatches($sharClubNames[0], $sharClubNames[1], $matchesList), getPairMatches($sharClubNames[0], $sharClubNames[2], $matchesList), getPairMatches($sharClubNames[1], $sharClubNames[2], $matchesList) );
-                // echo "<pre>";
-                // print_r($sharMatchList);
-
-                // Собираем массив с инфой об успехах на тройном турнире:
-                // $threeClPointsArr = [];
-                // for ($ind = 0; $ind < count($sharClubNames); $ind++) {
-                //     $threeClPointsArr[] = getPoints( $sharClubNames[$ind], getMatchesByClubName($sharMatchList, getClubByName($sharClubNames[$ind], $clubs)), $year );
-                // }
-
-                // Сортируем этот тройственный массив по набранным очкам:
-                // usort($threeClPointsArr, 'comparePoints');
-                // Проверяем этот массив на предмет равенства очков.
-                // Начнём с проверки на тройной делёж:
-                // if ($threeClPointsArr[0][6] == $threeClPointsArr[2][6]) {
-                    // то сортируем по разности мячей:
-                    // usort($threeClPointsArr, 'compareByGoalsDiff');
-                    // echo '<pre>';
-                    // var_dump($pointsArr);
-                    // echo '</pre>';                    
-                    usort($pointsArr, 'compareByGoalsDiff');
-                    return $pointsArr;
-                    // echo '<pre>';
-                    // var_dump($pointsArr);
-                    // echo '</pre>';
-                    // и пока на этом успокоимся.
-                // }
-
-                // $threeClForMergArr = getThreeClubsForMergeArr ($threeClPointsArr, $pointsArr);
-                // if ($i === 0) {
-                //     $threeClForMergArr[] = $pointsArr[3];
-                //     $resultArr = $threeClForMergArr;
-                //     return $resultArr;
-                // } 
-                // else if ($i === 1) {
-                //     $resultArr[1] = $threeClForMergArr[0];
-                //     $resultArr[2] = $threeClForMergArr[1];
-                //     $resultArr[3] = $threeClForMergArr[2];
-                //     return $resultArr;
-                // }
-
-                // $resultArr[$i] = $pointsArr[$i];
-                // $resultArr[$i + 1] = $pointsArr[$i + 1];
+                  
+                usort($pointsArr, 'compareByGoalsDiff');
+                return $pointsArr;
 
             }
 
@@ -1046,8 +1001,7 @@ function writeGroupStage($orderedClubs, $matches, $stage, $clubs, $imagesList, $
             $ind = 1;
         } else if ($tourneyYear >= 1994) {
             $ind = 2;
-            // $ind = 0; // UPD. Поначалу перебор осуществлялся, начиная с 3-й коиманды в группе. Это работало для завершившихмя турниров, в к-рых 1-я и 2-я команды определялись навенрняка, благодаря известности своего последующего участия в плей-офф. Сбой произошёл в ходе попытки описать идущий турнир, при к-рой 1-е и 2-е место в группе определились моим кодом неправильно (почему это произошло - пока  (23.10.2022) не выяснил). 
-            // Последствия сбоя легко устраняются полным (начинающимся с индекса 0) перебором команд группы.
+            // $ind = 0; // UPD. Можно перебирать и полностью, начиная с нулевого индекса.
         }
             // echo '<pre>';
             // print_r ( $ind );        
