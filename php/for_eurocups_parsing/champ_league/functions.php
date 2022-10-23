@@ -728,9 +728,9 @@ function getMatchByClubs ($name1, $name2, $matchList) {
 // Для заполнения содержания ГРУППОВОй стадии:
 function writeGroupStage($orderedClubs, $matches, $stage, $clubs, $imagesList, $tourneyYear) {
 
-    // echo '<pre>';
-    // print_r($orderedClubs);
-    // echo '<br>';    
+    echo '<pre>';
+    print_r($orderedClubs);
+    echo '</pre>';
 
     if ($stage == 'группа') {
         $stageTitle = 'ГРУППОВОЙ этап';
