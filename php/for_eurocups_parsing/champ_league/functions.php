@@ -729,7 +729,7 @@ function getMatchByClubs ($name1, $name2, $matchList) {
 function writeGroupStage($orderedClubs, $matches, $stage, $clubs, $imagesList, $tourneyYear) {
 
     echo '<pre>';
-    print_r($orderedClubs);
+    var_dump($orderedClubs);
     echo '</pre>';
 
     if ($stage == 'группа') {
