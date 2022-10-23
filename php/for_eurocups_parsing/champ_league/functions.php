@@ -698,13 +698,14 @@ function getOrderAndInfo($clubNamesArr, $matchesList, $clubs, $year) {
                 // if ($threeClPointsArr[0][6] == $threeClPointsArr[2][6]) {
                     // то сортируем по разности мячей:
                     // usort($threeClPointsArr, 'compareByGoalsDiff');
-                    echo '<pre>';
-                    var_dump($pointsArr);
-                    echo '</pre>';                    
+                    // echo '<pre>';
+                    // var_dump($pointsArr);
+                    // echo '</pre>';                    
                     usort($pointsArr, 'compareByGoalsDiff');
-                    echo '<pre>';
-                    var_dump($pointsArr);
-                    echo '</pre>';
+                    return $pointsArr;
+                    // echo '<pre>';
+                    // var_dump($pointsArr);
+                    // echo '</pre>';
                     // и пока на этом успокоимся.
                 // }
 
@@ -721,8 +722,8 @@ function getOrderAndInfo($clubNamesArr, $matchesList, $clubs, $year) {
                 //     return $resultArr;
                 // }
 
-                $resultArr[$i] = $pointsArr[$i];
-                $resultArr[$i + 1] = $pointsArr[$i + 1];
+                // $resultArr[$i] = $pointsArr[$i];
+                // $resultArr[$i + 1] = $pointsArr[$i + 1];
 
             }
 
@@ -900,9 +901,9 @@ function writeGroupStage($orderedClubs, $matches, $stage, $clubs, $imagesList, $
 
         // Задаём массив с инфой о событиях в группе:
         $groupInfo = getOrderAndInfo($leaderRivalNames, $thisGroupMatches, $clubs, $tourneyYear);
-        // echo '<pre>';
-        // print_r ( $groupInfo );
-        // echo '<br>';
+        echo '<pre>';
+        print_r ( $groupInfo );
+        echo '<br>';
         
         // Адреса логотипов:
         $logo1 = getImageAdress(getClubByName($groupInfo[0][0], $clubs), $imagesList);
