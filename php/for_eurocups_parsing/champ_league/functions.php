@@ -698,7 +698,13 @@ function getOrderAndInfo($clubNamesArr, $matchesList, $clubs, $year) {
                 // if ($threeClPointsArr[0][6] == $threeClPointsArr[2][6]) {
                     // то сортируем по разности мячей:
                     // usort($threeClPointsArr, 'compareByGoalsDiff');
+                    echo '<pre>';
+                    var_dump($pointsArr);
+                    echo '</pre>';                    
                     usort($pointsArr, 'compareByGoalsDiff');
+                    echo '<pre>';
+                    var_dump($pointsArr);
+                    echo '</pre>';
                     // и пока на этом успокоимся.
                 // }
 
