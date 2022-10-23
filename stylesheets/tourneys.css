@@ -307,7 +307,7 @@ table img.roma, table .logo img.roma, table img.logo-like-roma, table .logo img.
     top: 0.25em;
 }
 
-table .logo img.az, table img.az {
+table .logo img.az, table img.az, table .logo img.logo-like-hamburg, table img.logo-like-hamburg {
     width: 36px;
     height: auto;
     position: relative;
