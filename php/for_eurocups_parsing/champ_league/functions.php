@@ -901,9 +901,9 @@ function writeGroupStage($orderedClubs, $matches, $stage, $clubs, $imagesList, $
 
         // Задаём массив с инфой о событиях в группе:
         $groupInfo = getOrderAndInfo($leaderRivalNames, $thisGroupMatches, $clubs, $tourneyYear);
-        echo '<pre>';
-        print_r ( $groupInfo );
-        echo '<br>';
+        // echo '<pre>';
+        // print_r ( $groupInfo );
+        // echo '<br>';
         
         // Адреса логотипов:
         $logo1 = getImageAdress(getClubByName($groupInfo[0][0], $clubs), $imagesList);
