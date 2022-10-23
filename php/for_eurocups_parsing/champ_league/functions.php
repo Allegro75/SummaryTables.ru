@@ -561,6 +561,7 @@ function getThreeClubsForMergeArr ($threeClubsArr, $fourClubsArr) {
 
 // Функция для РАСПРЕДЕЛЕНИЯ мест и получения прочей инфы о группе:
 function getOrderAndInfo($clubNamesArr, $matchesList, $clubs, $year) {
+
     // Сначала собираем массив клубов с инфой об их успехах на данном массиве матчей:
     $pointsArr = [];
     for ($i = 0; $i < count($clubNamesArr); $i++) {
@@ -573,10 +574,13 @@ function getOrderAndInfo($clubNamesArr, $matchesList, $clubs, $year) {
     $resultArr = [];
     // Далее запускаем попарный перебор на предмет выяснения РАВЕНСТВА очков:
     for ($i = 0; $i < count($pointsArr) - 1; $i++) {
+
         // Если очков у первой и второй команды поровну:
         if ($pointsArr[$i][6] == $pointsArr[$i + 1][6]) {
+
             // И при этом их больше, чем у третьей команды:
             if ($pointsArr[$i + 1][6] > $pointsArr[$i + 2][6]) {
+
                 // то ищем победителя дуэли в личных встречах:
                 $winner = getDuelWinner( $pointsArr[$i][0], $pointsArr[$i + 1][0], getMatchesByClubName( getMatchesByClubName( $matchesList, getClubByName($pointsArr[$i][0], $clubs) ), getClubByName( $pointsArr[$i + 1][0], $clubs ) ) );
                 if ($winner === $pointsArr[$i][0]) {
@@ -626,9 +630,13 @@ function getOrderAndInfo($clubNamesArr, $matchesList, $clubs, $year) {
                         } 
                     }
                 }
+
             }
+
             // Если же у нас тройной делёж:
-            else if ($pointsArr[$i + 1][6] == $pointsArr[$i + 2][6]) {
+            // else if ($pointsArr[$i + 1][6] == $pointsArr[$i + 2][6]) {
+            else if (($pointsArr[$i + 1][6] == $pointsArr[$i + 2][6]) && ($pointsArr[$i + 1][6] > $pointsArr[$i + 3][6])) {
+
                 $sharClubNames = [ $pointsArr[$i][0], $pointsArr[$i + 1][0], $pointsArr[$i + 2][0] ];
                 // echo "<pre>";
                 // print_r($sharClubNames);
@@ -662,15 +670,67 @@ function getOrderAndInfo($clubNamesArr, $matchesList, $clubs, $year) {
                     $resultArr[3] = $threeClForMergArr[2];
                     return $resultArr;
                 }
+
             }
+
+            // Если же делёж четверной (это добавлено только 23.10.2022, когда проблема встретилась впервые, причём на не завершённом групповом турнире):
+            // else if ($pointsArr[$i + 1][6] == $pointsArr[$i + 2][6]) {
+            else if (($pointsArr[$i + 1][6] == $pointsArr[$i + 2][6]) && ($pointsArr[$i + 1][6] == $pointsArr[$i + 3][6])) {
+
+                // $sharClubNames = [ $pointsArr[$i][0], $pointsArr[$i + 1][0], $pointsArr[$i + 2][0] ];
+                // echo "<pre>";
+                // print_r($sharClubNames);
+
+                // $sharMatchList = array_merge( getPairMatches($sharClubNames[0], $sharClubNames[1], $matchesList), getPairMatches($sharClubNames[0], $sharClubNames[2], $matchesList), getPairMatches($sharClubNames[1], $sharClubNames[2], $matchesList) );
+                // echo "<pre>";
+                // print_r($sharMatchList);
+
+                // Собираем массив с инфой об успехах на тройном турнире:
+                // $threeClPointsArr = [];
+                // for ($ind = 0; $ind < count($sharClubNames); $ind++) {
+                //     $threeClPointsArr[] = getPoints( $sharClubNames[$ind], getMatchesByClubName($sharMatchList, getClubByName($sharClubNames[$ind], $clubs)), $year );
+                // }
+
+                // Сортируем этот тройственный массив по набранным очкам:
+                // usort($threeClPointsArr, 'comparePoints');
+                // Проверяем этот массив на предмет равенства очков.
+                // Начнём с проверки на тройной делёж:
+                // if ($threeClPointsArr[0][6] == $threeClPointsArr[2][6]) {
+                    // то сортируем по разности мячей:
+                    // usort($threeClPointsArr, 'compareByGoalsDiff');
+                    usort($pointsArr, 'compareByGoalsDiff');
+                    // и пока на этом успокоимся.
+                // }
+
+                // $threeClForMergArr = getThreeClubsForMergeArr ($threeClPointsArr, $pointsArr);
+                // if ($i === 0) {
+                //     $threeClForMergArr[] = $pointsArr[3];
+                //     $resultArr = $threeClForMergArr;
+                //     return $resultArr;
+                // } 
+                // else if ($i === 1) {
+                //     $resultArr[1] = $threeClForMergArr[0];
+                //     $resultArr[2] = $threeClForMergArr[1];
+                //     $resultArr[3] = $threeClForMergArr[2];
+                //     return $resultArr;
+                // }
+
+                $resultArr[$i] = $pointsArr[$i];
+                $resultArr[$i + 1] = $pointsArr[$i + 1];
+
+            }
+
         }
+
         // А вот если дележа нет:
         else {
             $resultArr[$i] = $pointsArr[$i];
             $resultArr[$i + 1] = $pointsArr[$i + 1]; 
         }
+
     }
     return $resultArr;
+
 }
 
 // Функция для определения победителя классической современной дуэли (без учёта пенальти,
