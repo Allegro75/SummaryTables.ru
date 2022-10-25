@@ -204,8 +204,8 @@
                     </ul>
                 </div>
 
-                <? // require_once('nav-tourney-stripe-cl.php'); ?>
-                <? require_once('nav-tourney-stripe-el.php'); ?>
+                <? require_once('nav-tourney-stripe-cl.php'); ?>
+                <? // require_once('nav-tourney-stripe-el.php'); ?>
 
             </nav>
 
