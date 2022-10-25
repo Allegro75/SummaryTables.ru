@@ -341,6 +341,11 @@
                                 <span class="drop-item_small-text">2021/</span>2022
                             </a>
                         </li>
+                        <li class="nav__stripe__list__item">
+                            <a href="cl_2023.html" title="Лига чемпионов 2022 / 2023">
+                                <span class="drop-item_small-text">2022/</span>2023
+                            </a>
+                        </li>
                     </ul>
 
                 </div>
