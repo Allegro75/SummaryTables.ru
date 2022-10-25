@@ -750,9 +750,9 @@ function getMatchByClubs ($name1, $name2, $matchList) {
 // Для заполнения содержания ГРУППОВОй стадии:
 function writeGroupStage($orderedClubs, $matches, $stage, $clubs, $imagesList, $tourneyYear) {
 
-    // echo '<pre>';
-    // var_dump($orderedClubs);
-    // echo '</pre>';
+    echo '<pre>';
+    var_dump($orderedClubs);
+    echo '</pre>';
 
     if ($stage == 'группа') {
         $stageTitle = 'ГРУППОВОЙ этап';
@@ -771,9 +771,9 @@ function writeGroupStage($orderedClubs, $matches, $stage, $clubs, $imagesList, $
                     
     // Cначала выбираем все матчи групповой стадии во всех группах:
     $groupMatches = getStageMatches($matches, $stage);
-    // echo '<pre>';
-    // var_dump($groupMatches);
-    // echo '</pre>';
+    echo '<pre>';
+    var_dump($groupMatches);
+    echo '</pre>';
 
     // Перебираем все, кроме последнего элементы нашего массива orderedClubs (состоящего из команд, вышедших из групп) -
     // - участников плей-офф - находим клубы с новыми (отсутствующими в orderedClubs) соперниками по группе
