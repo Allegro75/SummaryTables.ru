@@ -7,8 +7,8 @@
 require_once '../../../database/config/config.php';
 require_once '../../../database/config/connect.php';
 $conn = connect();
-// $tourneyTitle = 'Лига чемпионов';
-$tourneyTitle = 'Лига Европы';
+$tourneyTitle = 'Лига чемпионов';
+// $tourneyTitle = 'Лига Европы';
 $sql = "SELECT * FROM `matches` WHERE tourneyTitle = '{$tourneyTitle}' AND tourneyFinalYear = {$_GET['year']}";
 $result = mysqli_query($conn, $sql);
 $matches = array();
@@ -81,7 +81,7 @@ $tourneyTitleToH1 = ($tourneyTitle === 'Лига Европы') ? $tourneyTitle 
                     <?="{$tourneyTitleToH1} {$tourStartYear}/{$tourFinalYear}"?>
                 </h1>
                 <p class="captions__explanation">
-                    Учтены матчи до 20.10.2022 включительно
+                    Учтены матчи до 25.10.2022 включительно
                 </p>                
             </section>
 
@@ -299,45 +299,47 @@ $tourneyTitleToH1 = ($tourneyTitle === 'Лига Европы') ? $tourneyTitle 
                     }
                     // Пишем следующую стадию и дополняем массив клубов:
                     if (true) { // Пишем текущий турнир ЛЧ 2022/2023. Т.к. турнир не закончен, формируем массив $orderedClubs 'искуственно'               
-                        // $orderedClubs = 
-                        // [
-                        //     getClubByName('Наполи', $clubs),
-                        //     getClubByName('Брюгге', $clubs),
-                        //     getClubByName('Бавария', $clubs),
-                        //     getClubByName('Тоттенхэм Хотспур', $clubs),
-                        //     getClubByName('Челси', $clubs),
-                        //     getClubByName('Реал Мадрид', $clubs),
-                        //     getClubByName('Манчестер Сити', $clubs),
-                        //     getClubByName('Пари Сен-Жермен', $clubs),
-                        //     getClubByName('Ливерпуль', $clubs),
-                        //     getClubByName('Порто', $clubs),
-                        //     getClubByName('Интер Милан', $clubs),
-                        //     getClubByName('Олимпик Марсель', $clubs),
-                        //     getClubByName('Зальцбург', $clubs),
-                        //     getClubByName('РБ Лейпциг', $clubs),
-                        //     getClubByName('Боруссия Дортмунд', $clubs),
-                        //     getClubByName('Бенфика', $clubs),
-                        // ];
-                        // Лига Европы 2023
+                        // ЛЧ 2023
                         $orderedClubs = 
                         [
-                            getClubByName('Арсенал', $clubs),
-                            getClubByName('ПСВ Эйндховен', $clubs),
-                            getClubByName('Фенербахче', $clubs),
-                            getClubByName('Ренн', $clubs),
-                            getClubByName('Бетис', $clubs),
-                            getClubByName('Лудогорец', $clubs),
-                            getClubByName('Юнион', $clubs),
-                            getClubByName('Брага', $clubs),
-                            getClubByName('Реал Сосьедад', $clubs),
-                            getClubByName('Манчестер Юнайтед', $clubs),
-                            getClubByName('Фейеноорд', $clubs),
-                            getClubByName('Мидтьюлланн', $clubs),
-                            getClubByName('Фрайбург', $clubs),
-                            getClubByName('Карабах', $clubs),
-                            getClubByName('Ференцварош', $clubs),
-                            getClubByName('Трабзонспор', $clubs),
+                            getClubByName('Наполи', $clubs),
+                            getClubByName('Брюгге', $clubs),
+                            getClubByName('Бавария', $clubs),
+                            getClubByName('Тоттенхэм Хотспур', $clubs),
+                            getClubByName('Челси', $clubs),
+                            getClubByName('Реал Мадрид', $clubs),
+                            getClubByName('Манчестер Сити', $clubs),
+                            getClubByName('Пари Сен-Жермен', $clubs),
+                            getClubByName('Ливерпуль', $clubs),
+                            getClubByName('Порто', $clubs),
+                            getClubByName('Интер Милан', $clubs),
+                            getClubByName('Олимпик Марсель', $clubs),
+                            // getClubByName('Зальцбург', $clubs),
+                            getClubByName('Милан', $clubs),
+                            getClubByName('РБ Лейпциг', $clubs),
+                            getClubByName('Боруссия Дортмунд', $clubs),
+                            getClubByName('Бенфика', $clubs),
                         ];
+                        // // Лига Европы 2023
+                        // $orderedClubs = 
+                        // [
+                        //     getClubByName('Арсенал', $clubs),
+                        //     getClubByName('ПСВ Эйндховен', $clubs),
+                        //     getClubByName('Фенербахче', $clubs),
+                        //     getClubByName('Ренн', $clubs),
+                        //     getClubByName('Бетис', $clubs),
+                        //     getClubByName('Лудогорец', $clubs),
+                        //     getClubByName('Юнион', $clubs),
+                        //     getClubByName('Брага', $clubs),
+                        //     getClubByName('Реал Сосьедад', $clubs),
+                        //     getClubByName('Манчестер Юнайтед', $clubs),
+                        //     getClubByName('Фейеноорд', $clubs),
+                        //     getClubByName('Мидтьюлланн', $clubs),
+                        //     getClubByName('Фрайбург', $clubs),
+                        //     getClubByName('Карабах', $clubs),
+                        //     getClubByName('Ференцварош', $clubs),
+                        //     getClubByName('Трабзонспор', $clubs),
+                        // ];
                     }
                     if ( getStageMatches($matches, 'группа') ) {
                         // echo '<pre>';
