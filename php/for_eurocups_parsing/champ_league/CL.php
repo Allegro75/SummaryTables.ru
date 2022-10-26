@@ -81,7 +81,7 @@ $tourneyTitleToH1 = ($tourneyTitle === 'Лига Европы') ? $tourneyTitle 
                     <?="{$tourneyTitleToH1} {$tourStartYear}/{$tourFinalYear}"?>
                 </h1>
                 <p class="captions__explanation">
-                    Учтены матчи до 25.10.2022 включительно
+                    Учтены матчи до 26.10.2022 включительно
                 </p>                
             </section>
 
@@ -313,7 +313,8 @@ $tourneyTitleToH1 = ($tourneyTitle === 'Лига Европы') ? $tourneyTitle 
                             getClubByName('Ливерпуль', $clubs),
                             getClubByName('Порто', $clubs),
                             getClubByName('Интер Милан', $clubs),
-                            getClubByName('Олимпик Марсель', $clubs),
+                            // getClubByName('Олимпик Марсель', $clubs),
+                            getClubByName('Спортинг Лиссабон', $clubs),
                             // getClubByName('Зальцбург', $clubs),
                             getClubByName('Милан', $clubs),
                             getClubByName('РБ Лейпциг', $clubs),
