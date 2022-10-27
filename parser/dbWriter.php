@@ -206,8 +206,8 @@ if (true) {
                 'secondClubId' => $secondClubId,
                 'score' => $score,
                 'home' => $firstClubName, // Это придётся контролировать руками, в частности, при записи матчей с нейтральных полей
-                'tourneyTitle' => 'Лига чемпионов',
-                // 'tourneyTitle' => 'Лига Европы',
+                // 'tourneyTitle' => 'Лига чемпионов',
+                'tourneyTitle' => 'Лига Европы',
                 'tourneyFinalYear' => 2023,
                 'tourneyStartYear' => 2022,
                 'tourneyStage' => $stage,
