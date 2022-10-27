@@ -141,7 +141,7 @@ if (true) {
 // if (false) {
 
     $netMatchesArr = []; // Готовим массив $netMatchesArr с матчами под запись в базу
-    $lastRecordedMatchDate = '25.10.2022'; // Дата последнего записанного матча. При обновлении базы, будут писаться только матчи, прошедшие после этой даты
+    $lastRecordedMatchDate = '27.10.2022'; // Дата последнего записанного матча. При обновлении базы, будут писаться только матчи, прошедшие после этой даты
     foreach ($clubsAndMatchesArr['matches'] as $ind => $curMatch) {
 
         // if (true) {
@@ -206,8 +206,8 @@ if (true) {
                 'secondClubId' => $secondClubId,
                 'score' => $score,
                 'home' => $firstClubName, // Это придётся контролировать руками, в частности, при записи матчей с нейтральных полей
-                // 'tourneyTitle' => 'Лига чемпионов',
-                'tourneyTitle' => 'Лига Европы',
+                'tourneyTitle' => 'Лига чемпионов',
+                // 'tourneyTitle' => 'Лига Европы',
                 'tourneyFinalYear' => 2023,
                 'tourneyStartYear' => 2022,
                 'tourneyStage' => $stage,
@@ -233,8 +233,8 @@ if (true) {
     echo json_encode($netMatchesArr);
 
     // Пишем в базу:
-    // if (false) {
-    if (true) {
+    if (false) {
+    // if (true) {
         $sqlDebugArr = [];
         foreach ($netMatchesArr as $ind => $curMatch) {
 

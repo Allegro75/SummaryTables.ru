@@ -19,8 +19,8 @@ if (true) {
         'accept-language: ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7',
     );
      
-    // $ch = curl_init("https://www.championat.com/football/_ucl/tournament/4993/calendar/"); // ЛЧ 2023
-    $ch = curl_init("https://www.championat.com/football/_europeleague/tournament/4995/calendar/"); // ЛЕ 2023
+    $ch = curl_init("https://www.championat.com/football/_ucl/tournament/4993/calendar/"); // ЛЧ 2023
+    // $ch = curl_init("https://www.championat.com/football/_europeleague/tournament/4995/calendar/"); // ЛЕ 2023
     curl_setopt($ch, CURLOPT_COOKIEFILE, __DIR__ . '/cookie.txt');
     curl_setopt($ch, CURLOPT_COOKIEJAR, __DIR__ . '/cookie.txt');
     curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
