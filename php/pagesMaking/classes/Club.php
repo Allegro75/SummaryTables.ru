@@ -1,5 +1,8 @@
             
-<?            
+<?
+
+require_once '../../../database/config/config.php';
+require_once '../../../database/config/connect.php';
 
 // Основная задача объекта класса Club - возвращать масссив с информацией о конкретном клубе, получаемый запросом в `eurocups_clubs`
 class Club {
@@ -8,9 +11,7 @@ class Club {
 
     public function __construct()
     {
-        require_once '../../../database/config/config.php';
-        require_once '../../../database/config/connect.php';
-        $this->db = connect();        
+        $this->db = connect();       
     }
 
     public function getClubByName ($opts = []) {
@@ -33,7 +34,7 @@ class Club {
                 $clubInfo = $row;
             }              
         }
-        
+
         return $clubInfo;
 
     }
