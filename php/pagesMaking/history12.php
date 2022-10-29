@@ -1,6 +1,20 @@
 
 <?
     $lastAccountedMatchDate = "27.10.2022";
+    $clubsList = [
+        "Реал Мадрид" => ["points" => 261],
+        "Барселона" => ["points" => 197],
+        "Бавария" => ["points" => 196],
+        "Ливерпуль" => ["points" => 138],
+        "Ювентус" => ["points" => 136],
+        "Милан" => ["points" => 128],
+        "Манчестер Юнайтед" => ["points" => 117],
+        "Интер Милан" => ["points" => 100],
+        "Бенфика" => ["points" => 98],
+        "Челси" => ["points" => 95],
+        "Аякс" => ["points" => 87],
+        "Атлетико Мадрид" => ["points" => 85],
+    ];
 ?>
 
 <!DOCTYPE html>
@@ -46,7 +60,13 @@
                 printCaptions (["lastAccountedMatchDate" => $lastAccountedMatchDate]);
             ?>
 
-
+            <? 
+                require_once 'tableInfo.php'; // Получение содержания таблицы
+                $tableInfo = getTableInfo (["clubsList" => $clubsList]);
+                echo "<pre>";
+                echo $tableInfo;
+                echo "</pre>";
+            ?>
 
             <!--Кнопка СНИЗУ для переключения в ДУЭЛЬНЫЙ вид: -->
             <div class="duels-switch  btn-lower">
