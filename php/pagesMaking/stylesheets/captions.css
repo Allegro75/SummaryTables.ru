@@ -1,0 +1,78 @@
+section.captions{
+  margin-bottom: 10px;
+}
+
+.captions a{
+  text-decoration: none;
+}
+
+.captions__h1, .captions__h2, .captions p{
+  text-align: center;
+  text-shadow: 1px 1px 1px snow;
+}
+
+.captions__h1, .captions__h2{  
+  margin-bottom: 0.3em;  
+  padding-top: 0.6em;
+  padding-bottom: 0.6em;
+  background-color: rgba(245, 245, 245, 0.9);
+}
+
+.captions__h1{
+  margin-top: 0.3em;
+  font-size: 32px;
+  font-style: italic;  
+}
+.captions__h2{
+  margin-top: 0px;
+}
+
+.captions__h1_range{
+  margin-top: 0;
+}
+
+p.captions__explanation::before
+/* ,
+p.captions__table-explanation::before */
+{
+  content: '';
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  background:brown;
+  position: relative;
+  bottom: 1px;
+  box-shadow: 1px 1px 1px snow;
+  margin-right: 2px;
+}
+
+p.captions__explanation{  
+  font-size: 16px;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+}
+
+span.captions__explanation_circle{
+  display: none;
+  /* color: #660000;
+  font-size: 1.5em;
+  vertical-align: -7%; */
+}
+
+p.captions__table-explanation, 
+span.captions__explanation_larger{
+  font-weight: bold;
+  font-style: italic;
+  font-size: 1.25em;
+  margin: 0.25em auto;
+}
+
+p.captions__explanation_12clubs{
+  font-size: 1.2em;
+}
+
+img.screamer {
+  height: 20px;
+  position: relative;
+  top: 4px;
+}

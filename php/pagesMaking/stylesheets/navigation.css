@@ -1,0 +1,216 @@
+
+nav{
+  padding-bottom: 13px;
+  color: wheat;
+}
+
+nav a{
+  text-decoration: none;
+}
+
+nav a:hover,
+nav a:active{
+  color: black;
+}
+
+.nav ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__stripe{
+  background-color: rgba(182, 50, 3, 0.9);
+  padding-left: 24px;
+  margin-top: 3px;
+  text-align: center;  
+}
+
+/* На будущее, если снова сделаем несколько строк в навигации
+нужны будут заголовки строк: */
+/* .nav__stripe__title{
+  display: inline-block;
+  font-weight: bold;
+  font-style: italic;
+  margin-right: 50px;
+} */
+
+ul.nav__stripe__list{
+  display: inline-block;
+}
+
+li.nav__stripe__list__item{
+  display: inline-block;
+  margin-right: 50px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 28px;
+}
+
+li.nav__stripe__list__item:last-child{
+  margin-right: 25px;
+}
+
+.nav__icon{
+  display: inline-block;
+  height: 13px;
+  width: 13px;
+  position: relative;
+  top: 1.5px;
+  margin-right: 5px;
+}
+
+nav div.football li.dropdown a div.nav__icon
+/* Такое подробное описание нужно, чтобы дать больший приоритет,
+чем у li.chess:hover .nav__icon (если приоритет у последней, то 
+пешка отображается нехорошо) */{
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+li.select-pair .nav__icon{
+  background: url('../images/screamer.png');
+}
+
+li.select-pair:hover .nav__icon,
+li.select-pair:focus .nav__icon{
+  background: url('../images/screamer_black.png');
+}
+
+li.current-season .nav__icon{
+  background: url('../images/screamer.png');
+}
+
+li.current-season:hover .nav__icon,
+li.current-season:focus .nav__icon{
+  background: url('../images/screamer_black.png');
+}
+
+li.ussr .nav__icon{
+  background: url('../images/ussr.png');
+}
+
+li.ussr:hover .nav__icon,
+li.ussr:focus .nav__icon{
+  background: url('../images/ussr_black.png');
+}
+
+li.history .nav__icon,
+li.archive .nav__icon{
+  background: url('../images/history_icon.png');
+}
+
+li.history:hover .nav__icon,
+li.history:focus .nav__icon,
+li.archive:hover .nav__icon,
+li.archive:focus .nav__icon{
+  background: url('../images/history_icon_black.png');
+}
+
+li.decade .nav__icon{
+  background: url('../images/ten.png');
+}
+
+li.decade:hover,
+li.range:hover,
+li.alphabet:hover{
+  color: black;
+}
+
+li.decade:hover .nav__icon,
+li.decade:focus .nav__icon{
+  background: url('../images/ten_black.png');
+}
+
+li.range .nav__icon{
+  background: url('../images/bar_chart.png');
+}
+
+li.range:hover .nav__icon,
+li.range:focus .nav__icon{
+  background: url('../images/bar_chart_black.png');
+}
+
+li.alphabet .nav__icon{
+  background: url('../images/alphabet.png');
+  width: 16px;
+}
+
+li.alphabet:hover .nav__icon,
+li.alphabet:focus .nav__icon{
+  background: url('../images/alphabet_black.png');
+}
+
+li.chess .nav__icon{
+  background: url('../images/chess/white_pawn_13px.png');
+}
+
+li.chess:hover .nav__icon,
+li.chess:focus .nav__icon{
+  background: url('../images/chess/black_pawn_13px.png');
+}
+
+li.dropdown {
+  position: relative;
+}
+
+li.dropdown:hover{
+  color: black;
+}
+
+li.dropdown:hover ul {
+  display: block;
+}
+
+li.dropdown ul {
+  display: none;
+  position: absolute;
+  color: black;
+  background: white;
+  border: 1px solid #dadada; 
+  z-index: 2; 
+}
+
+li.nav__stripe__list__item__droplist__item{
+  min-width: max-content;
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    border-bottom: 1px solid #dadada; 
+}
+
+li.nav__stripe__list__item__droplist__item a{
+  /* margin-left: 8px; */
+  margin-right: 16px;  /* Почему-то именно таким образом 
+  цетрируется (и даёт нужные отступы), 
+  а не с помощью двух маргинов по 8px*/
+  display: block;
+  width: 100%;
+}
+
+/* Почему-то при применении этого правила 
+все время начинает показывать всё как visited,
+хотя куки вроде очистил: */
+/* li.nav__stripe__list__item__droplist__item:visited,
+li.nav__stripe__list__item__droplist__item:visited,
+li.nav__stripe__list__item__droplist__item a:visited,
+li.nav__stripe__list__item__droplist__item a:visited{
+  color: #666666;
+} */
+
+li.nav__stripe__list__item__droplist__item:hover,
+li.nav__stripe__list__item__droplist__item:focus{
+  /* color: #990000;
+  background-color: wheat; */
+  color:wheat;
+  background-color: #999999;
+}
+
+li.nav__stripe__list__item__droplist__item a:hover,
+li.nav__stripe__list__item__droplist__item a:focus
+/* Почему-то срабатывает только на a, не на родительском li */{
+  /* color: #990000; */
+  color:wheat;
+}
+
+

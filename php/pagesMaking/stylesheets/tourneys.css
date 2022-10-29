@@ -1,0 +1,530 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.tour-stage {
+    margin-bottom: 15px;
+}
+
+.stage_et-pos-match {
+    margin-top: 10px;
+}
+
+.stage_final .tour-stage_name {
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+.tour-stage_name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    background-color: aliceblue;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.arrow-navigation {
+    height: 0;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 50%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* z-index: 10; */
+}
+
+.ar-nav-left {
+    position: absolute;
+    left: 3px;
+}
+
+.ar-nav-right {
+    position: absolute;
+    right: 3px;
+}
+
+.ar-nav-bottom {
+    /* height: 100px; */
+    /* width: 150px; */
+    /* background-color: #fff; */
+    position: fixed;
+    bottom: 3px;
+    right: 50%;
+    transform: translate(+50%, 0%);
+    text-align: center;
+}
+
+.arrow-nav-btn, #toTop {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px;
+    /* display: inline-block; */
+    text-align: center;
+    background-color: #333333;
+    color: white;
+    border-radius: 3px;
+    margin-top: 5px;
+}
+
+.arrow-nav-btn_forward, .arrow-nav-btn_back, .arrow-nav-btn_bottom, #toTop {
+    background-color: #666666;
+    color: wheat;
+    cursor: pointer;
+}
+
+.arrow-nav-btn_forward, .arrow-nav-btn_back, .arrow-nav-btn_bottom {
+    width: 100px;
+}
+
+#toTop {
+    display: none;
+    position: fixed;
+    bottom: 18px;
+    right: 18px;
+    z-index: 10;
+    padding: 15px;
+    border-radius: 7px;
+}
+
+.content-row:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding-top: 5px;
+    padding-bottom: 2px;
+}
+
+.content-group:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding-top: 5px;
+    padding-bottom: 15px;
+}
+
+.content-row:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding-top: 0px;
+    padding-bottom: 2px;
+}
+
+.content-group:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding-top: 5px;
+    padding-bottom: 15px;
+}
+
+.content-row div {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.content-row div.matches-row, .content-row div.field-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.content-row div.matches-row_1-match {
+    display: grid;
+    grid-template-columns: 1fr 100px 1fr;
+}
+
+div.stage_final .content-row_2-matches {
+    display: block;
+}
+
+.matches-row__1st-club, .field-row__1st-match {
+    text-align: right;
+}
+
+.matches-row__2nd-club, .field-row__2nd-match {
+    text-align: left;
+}
+
+.club-name {
+    font-weight: bold;
+    position: relative;
+    bottom: 2px;
+}
+
+.club-name_winner {
+    color: #993300;
+    font-size: 18px;
+}
+
+.score {
+    position: relative;
+    bottom: 2px;
+    font-weight: bold;
+    font-size: 18px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.matches-row_1-match .score {
+    position: static;
+}
+
+.field-row__1st-match .penalty {
+    margin-left: -10px;
+    margin-right: 15px;
+}
+
+.field-row_1-match .penalty {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.penalty {
+    margin-left: 20px;
+    margin-right: -10px;
+}
+
+.field-row .field {
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.field-row .field_1 {
+    margin-left: 10px;
+}
+
+.field-row .field_2 {
+    margin-right: 10px;
+}
+
+.content-group {
+    display: flex;
+    justify-content: space-evenly;
+    justify-items: center;
+    /* position: relative; */
+}
+
+table.group-table {
+    border-collapse: collapse;
+    font-weight: bold;
+    font-size: 15px;
+    white-space: nowrap;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    overflow: hidden;
+    display: inline-block;
+    box-shadow: 2px 2px 1px rgb(22, 19, 19);
+    border-top: oldlace solid 1px;
+    border-left: oldlace solid 1px;
+}
+
+.stage-content table.group-table thead tr {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+table.group-table tr:nth-child(odd) {
+    background-color: aliceblue;
+}
+
+table.group-table tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* table.group-table tr:nth-child(odd) td.gap{
+    background: rgba(255, 255, 255, 0.3);
+}
+table.group-table tr:nth-child(even) td.gap{
+    background: rgba(0, 0, 0, 0.16);
+} */
+
+/* Логотипы в таблицах: */
+
+img.football-logo-table {
+    height: 30px;
+    margin: 0.05em;
+}
+
+/* Для эмблем, вытянутых в высоту максимально (Боруссия М. У обычных лого высота 24px): */
+/* img.real, .logo img.height-32, img.zarya, .logo img.zarya{ */
+.logo img.height-32, img.zarya, .logo img.zarya,  img.logo-like-zarya, .logo img.logo-like-zarya {
+    height: 32px; 
+}
+
+/* Для эмблем, вытянутых в высоту (Реал, Тоттенхэм, Порто, Милан. У обычных лого высота 24px): */
+img.real, .logo img.real, img.logo-like-real, .logo img.logo-like-real {
+    height: 29px; 
+}
+
+/* Для эмблем, вытянутых в высоту, но не столь сильно как "Реал" (Рома, Порто. У обычных лого высота 24px): */
+img.roma, .logo img.roma, img.logo-like-roma, .logo img.logo-like-roma {
+    height: 27px;
+}
+
+.logo img.height-32, img.zarya, .logo img.zarya,  img.logo-like-zarya, .logo img.logo-like-zarya {
+    position: relative;
+    bottom: 0.15em;
+}
+
+.logo img.real {
+    position: relative;
+    bottom: 0.2em;
+}
+
+.logo img.roma {
+    position: relative;
+    bottom: 0.1em;
+}
+
+/* Для эмблем, вытянутых в высоту максимально (Боруссия М) внутри групповых таблиц: */
+table img.height-40, table .logo img.height-40, table img.logo-like-zarya, table .logo img.logo-like-zarya {
+    height: 40px;
+}
+
+/* Для эмблем, вытянутых в высоту внутри групповых таблиц: */
+table img.real, table .logo img.real, table img.logo-like-real, table .logo img.logo-like-real {
+    height: 36px;
+}
+
+/* Для эмблем, вытянутых в высоту не столь сильно, внутри групповых таблиц: */
+table img.roma, table .logo img.roma, table img.logo-like-roma, table .logo img.logo-like-roma {
+    height: 33px;
+}
+
+/* Лого Гамбурга вытянуто в ширину, посему его настраиваем специально: */
+.logo img.hamburg, img.hamburg, .logo img.logo-like-hamburg, img.logo-like-hamburg, .logo img.bayer, img.bayer {
+    width: 27px;
+    height: auto;
+    position: relative;
+    top: 0.2em;
+}
+
+/* Лого ПСВ: */
+.logo img.width-30, img.width-30 {
+    width: 30px;
+    height: auto;
+    position: relative;
+    top: 0.1em;
+}
+
+.logo img.az, img.az {
+    width: 36px;
+    height: auto;
+    position: relative;
+    top: 0.25em;
+}
+
+table .logo img.az, table img.az, table .logo img.logo-like-hamburg, table img.logo-like-hamburg {
+    width: 36px;
+    height: auto;
+    position: relative;
+    top: 0.1em;
+}
+
+/* Для лого "Зальцбурга" в таблицах, вытянутого в ширину, но промежуточно между Гамбургом и АЗ: */
+table .logo img.width-33, table img.width-33 {
+    width: 33px;
+    height: auto;
+    position: relative;
+    top: 0.1em;
+}
+
+.logo img.leipzig, img.leipzig, .logo img.logo-like-leipzig, img.logo-like-leipzig {
+    width: 48px;
+    height: auto;
+    /* position: relative;
+  top: 0.2em; */
+}
+
+/* Ноттингемскому лого нужна подложка.
+Иначе бледно-красное на сером не смотрится: */
+
+img.nottingham {
+    border: 0.1em solid rgb(230, 230, 230);
+    background-color: rgb(230, 230, 230);
+    border-radius: 0.3em;
+}
+
+/* Для слишком длинных названий клубов (типа "Вулверхэмптон"),
+к-рые в связи со своей длиной не встают в центр ячейки: */
+
+table span.long-club-title {
+    font-size: 0.8em;
+}
+
+table.group-table td {
+    text-align: center;
+    max-width: 10em;
+    /* min-width: 30px; */
+    padding: 0.6em;
+    border-right: 0.15em solid gray;
+}
+
+td.logo-cell_aside {
+    width: 50px;
+}
+
+td.club-name-cell {
+    max-width: 150px;
+    min-width: 150px;
+}
+
+td.match-cell {
+    width: 100px;
+}
+
+td.balls-cell {
+    width: 90px;
+}
+
+.explanation-in-table {
+    font-size: 7px;
+}
+
+table.group-table tr td:nth-child(9), table.group-table tr td:nth-child(10), table.group-table tr td:nth-child(11), table.group-table tr td:nth-child(12), table.group-table tr td:nth-child(13) {
+    min-width: 30px;
+}
+
+/* Для колонки очков: */
+
+table.group-table tr td:last-child {
+    font-size: 20px;
+}
+
+table.group-table tr td:last-child {
+    border-right: none;
+}
+
+table.group-table div.club-name {
+    margin: 0.25em;
+    white-space: normal;
+    font-size: 1.11em;
+}
+
+table.group-table div.club-name_winner {
+    color: #993300;
+    font-size: 18.5px;
+}
+
+table.group-table .group_score {
+    /* text-align: center; */
+    font-size: 18px;
+    /* letter-spacing: 0.4em; */
+}
+
+table.group-table .group_field-data {
+    font-size: 10px;
+    font-weight: normal;
+}
+
+.stage_final .content-row_row-1 {
+    display: grid;
+    grid-template-columns: 1fr 100px 1fr;
+}
+
+.stage_final .club-info_1 {
+    text-align: right;
+}
+
+.stage_final .club-info_2 {
+    text-align: left;
+}
+
+.stage_final .club-name {
+    font-size: 1.2em;
+}
+
+.stage_final .club-name_winner {
+    font-size: 1.4em;
+    bottom: 3px;
+}
+
+.stage_final .score {
+    font-size: 21px;
+    position: relative;
+    bottom: 1px;
+}
+
+.logo {
+    height: 27px;
+}
+
+.logo img {
+    height: 24px;
+}
+
+img.img_flag {
+    height: 10px;
+    /* Ниже коррекция, к-рая почему-то не нужна в php-файлах,
+    но в html вылезает дурное положение этих флагов: */
+    position: relative;
+    top: 2px;
+    box-shadow: 2px 2px 5px rgb(22, 19, 19);
+}
+
+table.group-table img.img_flag {
+    position: static;
+}
+
+.logo-left {
+    margin-right: 5px;
+}
+
+.logo-right {
+    margin-left: 5px;
+}
+
+.content-row_note-1 {
+    font-size: 12px;
+}
+
+.content-row_note-2 {
+    height: 10px;
+}
+
+.content-row_row-2, .content-row_row-4 {
+    font-size: 12px;
+}
+
+.stage-content .content-row_row-3 {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.stage-content .content-row_row-3 .score {
+    position: static;
+}
+
+.field-row__3rd-match {
+    margin-bottom: 5px;
+}
+
+.field-row__3rd-match div {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.stage_final .penalty {
+    margin-right: 10px;
+}
+
+div.stage_final .content-row_2-matches .penalty {
+    margin-right: -10px;
+}
+
+.stage_final .field {
+    margin-right: 5px;
+}
+
+.final-2matches .field_1 {
+    margin-right: 20px;
+}
+
+.stage_final .date {
+    margin-left: 5px;
+}
+
+.stage-content {
+    margin-bottom: 15px;
+}
+
+/* Для больших декоративных цифр - номеров групп: */
+.content-group__group-number-big {
+    font-size: 200px;
+    font-weight: bold;
+    color: lightgray;
+    line-height: 280px;
+}

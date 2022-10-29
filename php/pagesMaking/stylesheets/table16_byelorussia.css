@@ -1,0 +1,133 @@
+
+/* ТАБЛИЦА: */
+
+table.main-table{
+  border-collapse: collapse;
+  font-weight: bold;
+  font-size: 10px;
+  white-space: nowrap;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
+  overflow: hidden;
+  display: inline-block;
+  box-shadow: 2px 2px 1px rgb(22, 19, 19);
+  border-top: oldlace solid 1px;
+  border-left: oldlace solid 1px;
+}
+
+.main-table tr:nth-child(odd){
+  background-color:rgba(0, 0, 0, 0.1);
+}
+.main-table tr:nth-child(even){
+  background-color: aliceblue;
+}
+
+.main-table tr:nth-child(odd) td.main-table_gap{
+  background: rgba(255, 255, 255, 0.3);
+}
+.main-table tr:nth-child(even) td.main-table_gap{
+  background: rgba(0, 0, 0, 0.16);
+}
+
+.main-table td{
+  text-align: center;
+  max-width: 10em;  
+  box-sizing: content-box;
+  height: 41px;  
+  padding: 0.6em;
+  border-right: 2px solid gray;
+}
+
+.main-table td.statistics{
+  box-sizing: content-box;
+  max-width: 63px;
+}
+
+table.main-table tr td:last-child{
+  border-right: none;
+}
+
+.main-table tr.logotypes td{
+  position: relative;
+}
+
+tr.logotypes span.number{
+  position: absolute;
+  top: 0.5em;
+  left: 0.5em;
+  font-style: italic; 
+}
+
+.main-table td.number{
+  font-style: italic;  
+}
+
+/* Логотипы: */
+img.football-logo-table{
+  height: 30px;
+  margin: 0.05em;
+}
+/* Для эмблем, вытянутых в высоту (Реал, Тоттенхэм, Порто, Милан): */
+img.real{
+  height: 36px;
+}
+/* Для эмблем, вытянутых в высоту, но в меньшей мере, чем "Реал" (Рома, Порто): */
+img.roma{
+  height: 33px;
+}
+/* Лого Гамбурга вытянуто в ширину, посему его настаиваем специально: */
+img.hamburg{
+  width: 42px;
+  height: auto;
+  position: relative;
+  top: 0.2em;
+}
+/* Ноттингемскому лого нужна подложка.
+Иначе бледно-красное на сером не смотрится: */
+img.nottingham{
+  border: 0.1em solid rgb(230, 230, 230); 
+  background-color: rgb(230, 230, 230);
+  border-radius: 0.3em;
+}
+
+.main-table div.club-name{
+  margin: 0.25em;
+  white-space: normal;
+  font-size: 16px;
+  /* line-height: 14px; */
+}
+
+/* Для слишком длинных названий клубов (типа "Вулверхэмптон"),
+к-рые в связи со своей длиной не встают в центр ячейки: */
+.main-table span.long-club-title{
+  font-size: 0.8em;
+}
+
+.main-table div.results p{
+  /* font-size: 9px; */
+  font-size: 1.25em;  
+  margin: 0.25em auto;
+}
+
+.main-table td.has-history{
+  cursor: pointer;
+}
+
+.main-table td p.goals-difference{
+  font-weight: normal;
+  font-style: italic;
+}
+
+.main-table td div.duels{
+  font-size: 2.1em;
+  margin: 0.35em 0.24em;
+}
+
+tr.logotypes td.main-table_criterion{
+  font-size: 1.4em;  
+}
+
+td.main-table_criterion{
+  font-size: 2em;
+}

@@ -1,0 +1,162 @@
+
+/* ТАБЛИЦА: */
+
+table.main-table{
+  border-collapse: collapse;
+  font-weight: bold;
+  font-size: 20px;
+  white-space: nowrap;
+  border-radius: 30px;
+  overflow: hidden;
+  display: inline-block;
+  box-shadow: 2px 2px 1px rgb(22, 19, 19);
+  border-top: oldlace solid 1px;
+  border-left: oldlace solid 1px;
+  /* background: linear-gradient(to top left, rgba(170, 171, 172, 0.5), rgba(224, 221, 199, 0.5)); */
+}
+
+/* .main-table tr {
+  min-height: 102px;
+} */
+
+.main-table tr:nth-child(odd){
+  background-color:rgba(0, 0, 0, 0.1);
+}
+
+.main-table tr:nth-child(even){
+  background-color: aliceblue;
+}
+
+/* Для обозначения победителя турнира: */
+/* .main-table.champs-league tr:nth-child(2),
+.main-table.euroleague tr:nth-child(2){
+  background-color: rgba(255, 238, 0, 0.2);
+} */
+
+.main-table tr:nth-child(odd) td.main-table_gap{
+  background: rgba(255, 255, 255, 0.3);
+}
+.main-table tr:nth-child(even) td.main-table_gap{
+  background: rgba(0, 0, 0, 0.16);
+}
+
+/* Для обесцвечивания выбывших команд в файлах текущих турниров: */
+.main-table tr.dropout{
+  filter: opacity(35%);
+}
+
+.main-table td{
+  text-align: center;
+  max-width: 10em;
+  padding: 0.6em;
+  border-right: 2px solid gray;
+  position: relative; /*Это нужно, чтоб внутри ячеек
+  абсолютно позиционировать иконки с восклицательным знаком*/
+}
+
+.main-table td.statistics{
+  box-sizing: content-box;
+  max-height: 40px;  
+  min-width: 130px;
+  max-width: 130px;
+}
+
+table.main-table tr td:last-child{
+  border-right: none;
+}
+
+.main-table tr.logotypes td{
+  position: relative;
+}
+
+tr.logotypes span.number{
+  position: absolute;
+  top: 0.5em;
+  left: 0.5em;
+  font-style: italic; 
+}
+
+.main-table td.number{
+  font-style: italic;  
+}
+
+/* Логотипы: */
+img.football-logo-table{
+  height: 2em;
+  /* Высота лого - 40px (2em) */
+  margin: 0.05em;
+}
+/* Для эмблем, вытянутых в высоту (Реал, Тоттенхэм, Порто, Милан): */
+img.real, img.logo-like-real{
+  height: 2.4em;
+}
+img.roma, img.logo-like-roma{
+  height: 2.2em;
+}
+/* Лого Гамбурга вытянуто в ширину, посему его настаиваем специально: */
+img.hamburg{
+  width: 2.4em;
+  height: auto;
+  /* position: relative; */
+  /* top: 0.2em; */
+}
+/* Ноттингемскому лого нужна подложка.
+Иначе бледно-красное на сером не смотрится: */
+img.nottingham{
+  border: 0.1em solid rgb(230, 230, 230); 
+  background-color: rgb(230, 230, 230);
+  border-radius: 0.3em;
+}
+img.leipzig, img.logo-like-leipzig{
+  /* position: relative;
+  top: 5px; */
+  width: 65px;
+  height: auto;
+}
+
+.main-table div.club-name{
+  margin: 0.25em;
+  white-space: normal;
+  font-size: 21px;
+}
+
+/* Для слишком длинных названий клубов (типа "Вулверхэмптон"),
+к-рые в связи со своей длиной не встают в центр ячейки: */
+.main-table span.long-club-title{
+  font-size: 0.8em;
+}
+
+.main-table div.results p{
+  /* font-size: 9px; */
+  /* font-size: 1.25em;   */
+  margin: 0.25em auto;
+}
+
+.main-table td.has-history{
+  cursor: pointer;
+}
+
+.main-table td p.goals-difference{
+  font-weight: normal;
+  font-style: italic;
+}
+
+.main-table td div.duels{
+  font-size: 1.68em;
+  /* margin: 0.35em 0.24em; */
+  margin: 0.32em 0.24em;  
+}
+
+img.current-pair, img.winner{
+  position: absolute;
+  bottom: 1px;
+  right: 1px;
+}
+
+tr.logotypes td.main-table_criterion{
+  font-size: 1.4em;  
+}
+
+td.main-table_criterion{
+  font-size: 2em;
+}

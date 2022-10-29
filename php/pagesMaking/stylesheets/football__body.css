@@ -1,0 +1,51 @@
+
+.football__body{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+  color: black;
+  background: linear-gradient(to top left, #aaabac, #e0ddc7);
+  margin: 0;
+}
+
+a, button{
+  cursor: pointer;
+  text-decoration: none;
+}
+
+button{
+  /* background: linear-gradient(to top left, #aaabac, #e0ddc7); */
+  background: linear-gradient(to top left, rgba(170, 171, 172, 0.5), rgba(224, 221, 199, 0.5));
+  border-top: oldlace solid 1px;
+  border-left: oldlace solid 1px;   
+  box-shadow: 2px 2px 1px rgb(22, 19, 19);
+}
+
+button:hover,
+button:active,
+button:focus{ 
+  background-color: lightgray;
+  outline: none;
+  /* Почему-то если не прописать bg-image: none, не срабатывает смена цвета при hover: */
+  background-image: none;
+}
+
+/* Цвета ссылок. Чтобы не плыли в Firefox: */
+a:link, a:visited{
+  color: inherit;
+}
+
+.football__background{
+  background-image: url(.././images/football_ball_translucent_25pc.png), url(.././images/football_ball_translucent_25pc.png), url(.././images/football_ball_translucent_25pc.png);
+  background-size: 40%, 25%, 15%;
+  background-repeat: no-repeat;
+  background-position: left bottom, right 40%, left top;
+}
+
+main{
+  /* Это нужно, чтобы таблицы в состоянии inline-block вставали по центру: */
+  text-align: center;
+}
+
+#BavRMa p.games-score, #RMaBav p.games-score{
+  letter-spacing: -0.05em;
+}

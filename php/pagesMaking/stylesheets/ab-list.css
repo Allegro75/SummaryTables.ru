@@ -1,0 +1,252 @@
+a{
+    text-decoration: none;
+}
+
+.ab-letter-block{
+    margin-bottom: 5px;
+}
+
+.ab-list__letter{
+    /* position: relative; */
+    text-align: center;
+    /* padding-left: 30px; */
+    background-color: rgba(245, 245, 245, 0.2);
+}
+
+.ab-letter-block__letter{
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px;
+    display: inline-block;
+    text-align: center;
+    background-color: #333333;
+    color: white;
+    border-radius: 3px;
+}
+
+.ab-letter-block__letter_back{
+    float: left;
+    width: 36px;
+    margin-left: 3px;
+}
+
+.ab-letter-block__letter_forward{
+    float: right;
+    width: 36px;
+    margin-right: 3px;
+}
+
+/* Эти объекты нужны были, чтобы сохранялась центрация для пагинации на 1-й и последней страницах: */
+/* .ab-letter-block__letter.ab-letter-block_empty{
+        background-color: transparent;
+} */
+
+.ab-letter-block_current .ab-letter-block__letter{
+ font-size: 24px;
+}
+
+.ab-list__lists{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.list-club{
+    margin: 0 5px;
+}
+
+.ablist-header{
+    text-align: left;
+    margin-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /* background-color: rgba(245, 225, 175, 0.4); */
+    background-color: #999999;
+    height: 55px;
+    width: 500px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ablist-header__item{
+    /* display: inline-block; */
+    /* margin-right: 10px; */
+    vertical-align: middle;
+}
+
+.nation__item{
+    display: inline-block;
+    /* margin-right: 10px; */
+    vertical-align: middle;
+}
+
+.ablist-header__emblem img{
+    height: 50px;
+}
+
+.ablist-header__title{
+    font-size: 32px;
+    font-weight: bold;
+    position: relative;
+    top: 7px;
+}
+
+span.ablist-header__title_long-club-name_08{
+    font-size: 0.8em;
+    /* line-height: 0.4em; */
+}
+
+span.ablist-header__title_long-club-name_07{
+    font-size: 0.7em;
+    position: relative;
+    top: -4px;
+}
+
+span.ablist-header__title_long-club-name_06{
+    font-size: 0.6em;
+    position: relative;
+    top: -4px;
+}
+
+.details__nation{
+    font-style: italic;
+    margin-bottom: 5px;
+    text-align: center;
+    word-spacing: 3px;
+}
+
+.details__range-place{
+    text-align: center;
+    background: #cccccc;
+    padding: 5px;
+    border-radius: 7px;
+    /* border: 1px solid gray; */
+    font-size: 13px;
+    /* box-shadow: 2px 2px 1px rgb(22, 19, 19); */
+}
+
+span.range-place-text_number{
+    font-size: 18px;
+    font-weight: bold; 
+    position: relative;
+    top: 1px; 
+}
+
+.ab-row{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    /* padding-top: auto;
+    padding-bottom: auto; */
+    cursor: pointer;
+    width: 500px;
+    height: 23.2px;
+}
+
+/* .higher .ab-row,
+.row-w-higher{
+    height: 23.2px;
+} */
+
+.ab-row:nth-child(odd){
+    background-color: rgba(36, 35, 35, 0.2);
+}
+
+.ab-row:nth-child(even){
+    background-color: rgba(245, 245, 245, 0.6);
+}
+
+.ab-row:last-child{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.ab-row,
+.ab-row__pair-score{
+    text-align: left;
+}
+
+.ab-row div,
+.ab-score__games,
+.ab-score__goals,
+.ab-score__games div,
+.ab-score__goals div{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.row-logo img{
+    height: 20px;
+    position: relative;
+    top: 2px;
+}
+
+.row-club_2{
+    font-weight: bold;
+    /* margin-left: 10px; */
+}
+
+.ab-games,
+.ab-goals{
+    position: relative;
+    bottom: 2px;
+}
+
+.ab-games{
+    margin-left: 10px;
+    font-weight: bold; 
+}
+
+.ab-goals{
+    margin-left: 10px;
+}
+
+.ab-letter-block_low{
+    margin-top: 5px;
+}
+
+.letter_pagination,
+.ab-letter-block__letter_forward,
+.ab-letter-block__letter_back{
+    background-color: #666666;
+    color: wheat;
+}
+
+.letter_pagination{
+    width: 45px;
+}
+
+.ab-letter-block__letter_forward,
+.ab-letter-block__letter_back{
+    width: 65px;
+}
+
+/* Для логотипов, нуждающихся в увеличении высоты (бывший класс 'real') */
+img.higher{
+    height: 23px;
+    margin: -1px 0;
+}
+
+.ablist-header__emblem > img.hamburg{
+    width: 50px;
+    height: auto;
+    position: relative;
+    top: 10px;
+}
+
+.ab-pair-title__logo > img.hamburg{
+    width: 20px;
+    height: auto;
+    position: relative;
+    top: 1px;
+}
+
+.ab-letter-block_low .ab-letter-block__letter{
+    margin-bottom: 3px;
+}

@@ -1,0 +1,22 @@
+
+/* Про кнопку СНИЗУ: */
+
+div.btn-lower{
+    width: fit-content;
+    width: -moz-fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.btn-lower button{
+  height: 100px; 
+  width: 1000px;
+  font-size: 1.6em;
+  border-radius: 10px;
+  margin-top: 20px; 
+}
+
+.btn-lower__btn span{
+  margin: 10px 20px;
+  font-style: italic;
+}
