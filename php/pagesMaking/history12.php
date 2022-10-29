@@ -1,3 +1,8 @@
+
+<?
+    $lastAccountedMatchDate = "27.10.2022";
+?>
+
 <!DOCTYPE html>
 <html lang="ru" class="football">
 
@@ -32,9 +37,17 @@
 
     <div class="football__background">
 
-    <!-- Шапка, две оранжевые полосы с навигацией: -->
-    <? require_once 'layoutElements/header/shortHeader.php'; ?>
+        <? require_once 'layoutElements/header/shortHeader.php'; // Шапка, две оранжевые полосы с навигацией ?>
 
+        <main>
+
+            <? 
+                require_once 'layoutElements/captions/history12.php'; // Заголовки (крупнейший из к-рых - 'ЛУЧШИЕ КЛУБЫ ЕВРОПЫ ЗА ВСЮ ИСТОРИЮ')
+                printCaptions (["lastAccountedMatchDate" => $lastAccountedMatchDate]);
+            ?>
+
+
+        </main>
 
 
 
