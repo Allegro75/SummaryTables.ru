@@ -47,9 +47,91 @@
             ?>
 
 
+
+            <!--Кнопка СНИЗУ для переключения в ДУЭЛЬНЫЙ вид: -->
+            <div class="duels-switch  btn-lower">
+                <button class="duels-switch__btn  btn-lower__btn"
+                    title="Переключиться на отображение счёта в дуэльном виде (и обратно)">
+                    <span class="results">Переключиться на отображение счёта в <b>ДУЭЛЯХ</b></span>
+                    <span class="duels" hidden>Переключиться с дуэлей на ОБЫЧНЫЕ результаты</span>
+                </button>
+                <p class="btn-lower__duels-explanation">
+                    <b>Дуэль</b> - непосредственное столкновение двух команд в ходе турнира. <br>
+                    В дуэли побеждает тот, кто проходит дальше в кубковом турнире, либо выигрывает турнир (для финалов),
+                    <br>
+                    либо для групповых этапов - проходит в стадию более высокую, чем соперник по дуэли.
+                </p>
+            </div>
+
+            <div class="settings">
+
+                <div class="settings__row coloring-row">
+
+                    <div class="coloring-buttons__div make-coloring">
+                        <button class="make-coloring__btn"
+                            title="Раскрасить таблицу зелёным, жёлтым, красным в зависимости от результатов в парах">
+                            <span class="make-coloring__text">
+                                Раскрасить / Отменить раскрашивание
+                            </span>
+                        </button>
+                    </div>
+
+                    <div class="coloring-buttons__div coloring-onload">
+                        <label for="coloring-onload__input">
+                            <input type="checkbox" id="coloring-onload__input">
+                            <span class="coloring-onload__text">
+                                Не раскрашивать по умолчанию
+                            </span>
+                        </label>
+                    </div>
+
+                </div>
+
+                <div class="settings__row random-buttons-row">
+
+                    <div class="random-buttons__div show-random">
+                        <button class="show-random__btn"
+                            title="Показать всплывающее окно с историей игр случайной пары клубов">
+                            <span class="show-random__text">
+                                Показать случайную пару сейчас
+                            </span>
+                        </button>
+                    </div>
+
+                    <!-- <div class="random-buttons__div gap"></div> -->
+
+                    <div class="random-buttons__div random-onload">
+                        <label for="random-onload__input">
+                            <input type="checkbox" id="random-onload__input">
+                            <span class="random-onload__text">
+                                Показывать случайную пару при загрузке страницы
+                            </span>
+                        </label>
+                    </div>
+
+                    <!-- </div> -->
+                </div>
+
+                <div class="settings__row duels-row">
+
+                    <div class="duels-row__div">
+                        <label for="duels-row__input">
+                            <input type="checkbox" id="duels-row__input">
+                            <span class="duels-row__text">
+                                Начинать показ с дуэльного вида
+                            </span>
+                        </label>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <hr>
+
         </main>
 
-
+        <? require_once 'layoutElements/footer.php'; // Подвал, элемент footer ?>
 
     </div class="football__background">
 
