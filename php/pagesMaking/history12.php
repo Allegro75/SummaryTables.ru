@@ -64,7 +64,7 @@
                 require_once 'tableInfo.php'; // Получение содержания таблицы
                 $tableInfo = getTableInfo (["clubsList" => $clubsList]);
                 echo "<pre>";
-                echo $tableInfo;
+                var_dump($tableInfo);
                 echo "</pre>";
             ?>
 
