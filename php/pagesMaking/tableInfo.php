@@ -1,12 +1,23 @@
             
-<?            
+<?
+
+require_once "classes/Club.php";
 
 function getTableInfo ($opts = []) {
 
-    $clubsList = $opts['clubsList'];
+    $rawClubsList = $opts['clubsList'];
 
     $info = [];
+    // $info['rawClubsList'] = $rawClubsList;
+
+    $clubsList = [];
+    foreach (array_keys($rawClubsList) as $curClubName) {
+        $newClub = new Club();
+        $clubsList[$curClubName] = $newClub->getClubByName();
+    }
     $info['clubsList'] = $clubsList;
+
+
 
     return $info;
 
