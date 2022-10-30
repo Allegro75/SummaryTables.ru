@@ -17,7 +17,7 @@ function getTableInfo ($opts = []) {
         $newClub = new Club(['pathToRoot' => "../../"]);
         $clubsList[$curClubName] = $newClub->getClubByName(["clubName" => $curClubName]);
     }
-    // $info['clubsList'] = $clubsList;
+    $info['clubsList'] = $clubsList;
 
     // Получение массива ($pairsMatchesHistory) с краткими (представляемыми в итоговой таблице) данными о противостояниях:
     if (true) {

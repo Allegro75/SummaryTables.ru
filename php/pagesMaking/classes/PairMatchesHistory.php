@@ -28,9 +28,6 @@ class PairMatchesHistory
         $firstClubFullName = $firstClub['basicFullName'];
         $firstClubShortName = $firstClub['shortName'];
         $firstClubAltNames = $firstClub['altNames'];
-        $firstClubCode = $firstClub['code'];
-        $firstClubLogoClass = $firstClub['CSSClass'];
-        $firstClubCountryEngCode = $firstClub['countryEngCode'];        
 
         $history = [];
 

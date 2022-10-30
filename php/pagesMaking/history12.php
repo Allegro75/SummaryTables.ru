@@ -68,6 +68,77 @@
                 echo "</pre>";
             ?>
 
+            <!-- Таблица: -->
+            <table class="main-table">
+                <tbody>
+
+                <?
+                    // Массив имён файлов с логотипами (нужен чтобы правильно добавлять к коду клуба ".png", ".svg" и т.п.)
+                    // $logoFiles = scandir("../images");
+                    $logoFiles = scandir("images");
+                    // echo '<pre>';
+                    // echo 'logoFiles:';
+                    // var_dump($logoFiles);
+
+                    // Имя файла с картинкой логотипа:
+                    $specialImages = [
+                        "Akt" => "Akt_light.png",
+                        "AuW" => "AuW_light.png",
+                        "DuP" => "DuP_light.png",
+                        "Mar" => "Mar_light.png",
+                        "Mlm" => "Mlm_light.png",
+                        "Nan" => "Nan_light.png",
+                        "New" => "New_light.png",
+                        "Not" => "Not_light.png",
+                        "Prt" => "Prt_light.png",
+                        "SpL" => "SpL_light.png",
+                        "StL" => "StL_light.png",
+                        "Zen" => "Zen_light.png",
+                    ];
+                ?>
+
+                    <tr class="logotypes">
+
+                        <td colspan="3"></td>
+
+                        <? $number = 1; ?>
+
+                        <? foreach ($tableInfo['clubsList'] as $curClubInfo): ?>
+
+                            <?
+                                $logoImageFile = "";
+                                $clubCode = $curClubInfo['code'];
+                                $clubCSSClass = $curClubInfo['CSSClass'];
+                                $clubCssClassHtmlRecord = ($clubCSSClass === "") ? "" : " {$clubCSSClass}";
+                                if (in_array($clubCode, array_keys($specialImages))) {
+                                    $logoImageFile = $specialImages[$clubCode];
+                                } else {        
+                                    if (in_array("{$clubCode}.png", $logoFiles)) {
+                                        $logoImageFile = "{$clubCode}.png";
+                                    } elseif (in_array("{$clubCode}.svg", $logoFiles)) {
+                                        $logoImageFile = "{$clubCode}.svg";
+                                    } elseif (in_array("{$clubCode}.jpg", $logoFiles)) {
+                                        $logoImageFile = "{$clubCode}.jpg";
+                                    }
+                                }
+                            ?>                            
+
+                            <td>
+                                <span class="number"><?=$number?></span>
+                                <img alt="<?=$curClubInfo["shortName"]?>" src="<?=$logoImageFile?>" title="<?=$curClubInfo["shortName"]?>" class="football-logo-table<?=$clubCssClassHtmlRecord?>">
+                            </td>
+                            
+                            <? $number++; ?>
+
+                        <? endforeach; ?>
+
+
+                    </tr>
+
+
+                </tbody>
+            </table>
+
             <!--Кнопка СНИЗУ для переключения в ДУЭЛЬНЫЙ вид: -->
             <div class="duels-switch  btn-lower">
                 <button class="duels-switch__btn  btn-lower__btn"
