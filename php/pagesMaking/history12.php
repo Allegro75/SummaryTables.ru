@@ -125,7 +125,7 @@
 
                             <td>
                                 <span class="number"><?=$number?></span>
-                                <img alt="<?=$curClubInfo["shortName"]?>" src="<?=$logoImageFile?>" title="<?=$curClubInfo["shortName"]?>" class="football-logo-table<?=$clubCssClassHtmlRecord?>">
+                                <img alt="<?=$curClubInfo["shortName"]?>" src="../images/<?=$logoImageFile?>" title="<?=$curClubInfo["shortName"]?>" class="football-logo-table<?=$clubCssClassHtmlRecord?>">
                             </td>
                             
                             <? $number++; ?>
