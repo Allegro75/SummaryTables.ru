@@ -194,7 +194,15 @@
 
                                 <? endif; ?>
 
-                            <? endforeach; ?>                            
+                            <? endforeach; ?>
+                            
+                            <td class="main-table_gap"></td>
+
+                            <td class="main-table_criterion" title="<?=$curClubInfo["shortName"]?>: <?=$clubsList[$curClubInfo["basicFullName"]]["points"]?> очко">
+                                <a href="range.html">
+                                    <span class="main-table_criterion"><?=$clubsList[$curClubInfo["basicFullName"]]["points"]?></span>
+                                </a>
+                            </td>                            
                             
                         </tr>
 
