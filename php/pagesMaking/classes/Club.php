@@ -1,16 +1,16 @@
             
 <?
 
-require_once '../../../database/config/config.php';
-require_once '../../../database/config/connect.php';
-
-// Основная задача объекта класса Club - возвращать масссив с информацией о конкретном клубе, получаемый запросом в `eurocups_clubs`
+// Основная задача объекта класса Club - возвращать (методом getClubByName) масссив с информацией о конкретном клубе, получаемый запросом в `eurocups_clubs`
 class Club {
 
     private $db;
 
-    public function __construct()
+    public function __construct($opts = [])
     {
+        $pathToRoot = $opts["pathToRoot"];
+        require_once "{$pathToRoot}database/config/config.php";
+        require_once "{$pathToRoot}database/config/connect.php";
         $this->db = connect();       
     }
 
