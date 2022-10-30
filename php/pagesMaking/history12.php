@@ -176,15 +176,15 @@
 
                                     <td id="<?=$curPairCode?>" class="statistics <?=$curPairHasHistoryClass?>">
                                         <div class="results" title="<?=$curClubInfo["shortName"]?> - <?=$innerCycleClubInfo["shortName"]?>
-    3 победы, 3 ничьи, 2 поражения
-    Кликните, чтобы узнать подробности">
+<?=$curPairHistory["firstVictories"]?> победы, <?=$curPairHistory["draws"]?> ничьи, <?=$curPairHistory["firstLesions"]?> поражения
+Кликните, чтобы узнать подробности">
                                             <p class="games-score">+<?=$curPairHistory["firstVictories"]?> =<?=$curPairHistory["draws"]?> -<?=$curPairHistory["firstLesions"]?></p>
                                             <p class="goals-difference"><?=$curPairHistory["firstGoals"]?> - <?=$curPairHistory["secondGoals"]?></p>
                                         </div>
-                                        <div class="duels" title="&quot;Реал&quot; против &quot;Барселоны&quot;
-    2 победы в дуэлях, 2 поражения
-    Кликните, чтобы узнать подробности" hidden="">
-                                            2 - 2
+                                        <div class="duels" title="&quot;<?=$curClubInfo["shortName"]?>&quot; против &quot;<?=$innerCycleClubInfo["shortName"]?>&quot;
+<?=$curPairHistory["duels"]["firstClubDuelsVictories"]?> победы в дуэлях,<?=$curPairHistory["duels"]["firstClubDuelsLesions"]?> поражения
+Кликните, чтобы узнать подробности" hidden="">
+                                            <?=$curPairHistory["duels"]["firstClubDuelsVictories"]?> - <?=$curPairHistory["duels"]["firstClubDuelsLesions"]?>
                                         </div>
                                     </td>
 
