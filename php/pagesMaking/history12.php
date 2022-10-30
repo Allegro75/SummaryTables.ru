@@ -180,17 +180,17 @@
                                         $duelsLesionsWord = WordForms::getWordLikeLesion(["word" => "поражение", "number" => $curPairHistory["duels"]["firstClubDuelsLesions"]]);
 
                                         $resultsHintContent = ($hasHistory === true) ? 
-                                        "{$curClubInfo["shortName"]} - {$innerCycleClubInfo["shortName"]}\n
-                                        {$curPairHistory["firstVictories"]} {$victoriesWord}, {$curPairHistory["draws"]} {$drawsWord}, {$curPairHistory["firstLesions"]} {$lesionsWord}\n
-                                        Кликните, чтобы узнать подробности" : 
-                                        "{$curClubInfo["shortName"]} - {$innerCycleClubInfo["shortName"]}\n
-                                        {$curPairHistory["firstVictories"]} {$victoriesWord}, {$curPairHistory["draws"]} {$drawsWord}, {$curPairHistory["firstLesions"]} {$lesionsWord}";
+                                        "{$curClubInfo["shortName"]} - {$innerCycleClubInfo["shortName"]}
+{$curPairHistory["firstVictories"]} {$victoriesWord}, {$curPairHistory["draws"]} {$drawsWord}, {$curPairHistory["firstLesions"]} {$lesionsWord}
+Кликните, чтобы узнать подробности" : 
+                                        "{$curClubInfo["shortName"]} - {$innerCycleClubInfo["shortName"]}
+{$curPairHistory["firstVictories"]} {$victoriesWord}, {$curPairHistory["draws"]} {$drawsWord}, {$curPairHistory["firstLesions"]} {$lesionsWord}";
 
                                         $resultsCellContent = ($hasHistory === true) ? 
-                                        "<p class=\"games-score\">+{$curPairHistory["firstVictories"]} ={$curPairHistory["draws"]} -{$curPairHistory["firstLesions"]}</p>\n
-                                        <p class=\"goals-difference\">{$curPairHistory["firstGoals"]} - {$curPairHistory["secondGoals"]}</p>" : 
-                                        "<p class=\"games-score\">+ = -</p>\n
-                                        <p class=\"goals-difference\">-</p>";
+                                        "<p class=\"games-score\">+{$curPairHistory["firstVictories"]} ={$curPairHistory["draws"]} -{$curPairHistory["firstLesions"]}</p>
+<p class=\"goals-difference\">{$curPairHistory["firstGoals"]} - {$curPairHistory["secondGoals"]}</p>" : 
+                                        "<p class=\"games-score\">+ = -</p>
+<p class=\"goals-difference\">-</p>";
                                     ?>
 
                                     <td id="<?=$curPairCode?>" class="statistics <?=$curPairHasHistoryClass?>">
