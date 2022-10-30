@@ -63,9 +63,9 @@
             <? 
                 require_once 'tableInfo.php'; // Получение содержания таблицы
                 $tableInfo = getTableInfo (["clubsList" => $clubsList]);
-                echo "<pre>";
-                var_dump($tableInfo);
-                echo "</pre>";
+                // echo "<pre>";
+                // var_dump($tableInfo);
+                // echo "</pre>";
             ?>
 
             <!-- Таблица: -->
@@ -175,14 +175,14 @@
                                     ?>
 
                                     <td id="<?=$curPairCode?>" class="statistics <?=$curPairHasHistoryClass?>">
-                                        <div class="results" title="<?=$curClubInfo["shortName"]?> - <?=$innerCycleClubInfo["shortName"]?>
+                                        <div class="results" title="<?=$curClubInfo["shortName"]?> - <?=$innerCycleClubInfo["shortName"]?>\n
 <?=$curPairHistory["firstVictories"]?> победы, <?=$curPairHistory["draws"]?> ничьи, <?=$curPairHistory["firstLesions"]?> поражения
 Кликните, чтобы узнать подробности">
                                             <p class="games-score">+<?=$curPairHistory["firstVictories"]?> =<?=$curPairHistory["draws"]?> -<?=$curPairHistory["firstLesions"]?></p>
                                             <p class="goals-difference"><?=$curPairHistory["firstGoals"]?> - <?=$curPairHistory["secondGoals"]?></p>
                                         </div>
                                         <div class="duels" title="&quot;<?=$curClubInfo["shortName"]?>&quot; против &quot;<?=$innerCycleClubInfo["shortName"]?>&quot;
-<?=$curPairHistory["duels"]["firstClubDuelsVictories"]?> победы в дуэлях,<?=$curPairHistory["duels"]["firstClubDuelsLesions"]?> поражения
+<?=$curPairHistory["duels"]["firstClubDuelsVictories"]?> победы в дуэлях, <?=$curPairHistory["duels"]["firstClubDuelsLesions"]?> поражения
 Кликните, чтобы узнать подробности" hidden="">
                                             <?=$curPairHistory["duels"]["firstClubDuelsVictories"]?> - <?=$curPairHistory["duels"]["firstClubDuelsLesions"]?>
                                         </div>
