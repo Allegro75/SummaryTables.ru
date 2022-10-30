@@ -13,7 +13,7 @@ function getTableInfo ($opts = []) {
     $clubsList = [];
     foreach (array_keys($rawClubsList) as $curClubName) {
         $newClub = new Club(['pathToRoot' => "../../"]);
-        $clubsList[$curClubName] = $newClub->getClubByName();
+        $clubsList[$curClubName] = $newClub->getClubByName(["clubName" => $curClubName]);
     }
     $info['clubsList'] = $clubsList;
 
