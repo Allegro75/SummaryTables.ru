@@ -43,4 +43,23 @@ class WordForms
 
     }
 
+    // Получение правильной формы слова типа "поражение" (средний род") после числительного
+    public static function getWordLikeLesion($opts = [])
+    {
+
+        $number = $opts["number"];
+        $word = $opts["word"];
+
+        $wordBase = mb_substr($word, 0, (mb_strlen($word) - 1)); // Неизменяемая основа слова. Это слово без последнего символа (например, "поражени" для исходного слова "поражение")
+        $newWord = "{$wordBase}й";
+        if ($number === 1) {
+            $newWord = $word;
+        } else if (($number >= 2) && ($number <= 4)) {
+            $newWord = "{$wordBase}я";
+        }
+        
+        return $newWord;
+
+    }
+
 }

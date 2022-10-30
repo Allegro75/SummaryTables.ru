@@ -175,18 +175,20 @@
                                         $victoriesWord = WordForms::getWordLikePobeda(["word" => "победа", "number" => $curPairHistory["firstVictories"]]);
                                         $duelsVictoriesWord = WordForms::getWordLikePobeda(["word" => "победа", "number" => $curPairHistory["duels"]["firstClubDuelsVictories"]]);
                                         $drawsWord = WordForms::getWordLikeDraw(["word" => "ничья", "number" => $curPairHistory["draws"]]);
+                                        $lesionsWord = WordForms::getWordLikePobeda(["word" => "победа", "number" => $curPairHistory["firstLesions"]]);
+                                        $duelsLesionsWord = WordForms::getWordLikePobeda(["word" => "победа", "number" => $curPairHistory["duels"]["firstClubDuelsLesions"]]);
                                     ?>
 
                                     <td id="<?=$curPairCode?>" class="statistics <?=$curPairHasHistoryClass?>">
                                         <div class="results" title="<?=$curClubInfo["shortName"]?> - <?=$innerCycleClubInfo["shortName"]?>
 
-<?=$curPairHistory["firstVictories"]?> <?=$victoriesWord?>, <?=$curPairHistory["draws"]?> <?=$drawsWord?>, <?=$curPairHistory["firstLesions"]?> поражения
+<?=$curPairHistory["firstVictories"]?> <?=$victoriesWord?>, <?=$curPairHistory["draws"]?> <?=$drawsWord?>, <?=$curPairHistory["firstLesions"]?> <?=$lesionsWord?>
 Кликните, чтобы узнать подробности">
                                             <p class="games-score">+<?=$curPairHistory["firstVictories"]?> =<?=$curPairHistory["draws"]?> -<?=$curPairHistory["firstLesions"]?></p>
                                             <p class="goals-difference"><?=$curPairHistory["firstGoals"]?> - <?=$curPairHistory["secondGoals"]?></p>
                                         </div>
                                         <div class="duels" title="&quot;<?=$curClubInfo["shortName"]?>&quot; против &quot;<?=$innerCycleClubInfo["shortName"]?>&quot;
-<?=$curPairHistory["duels"]["firstClubDuelsVictories"]?> <?=$duelsVictoriesWord?> в дуэлях, <?=$curPairHistory["duels"]["firstClubDuelsLesions"]?> поражения
+<?=$curPairHistory["duels"]["firstClubDuelsVictories"]?> <?=$duelsVictoriesWord?> в дуэлях, <?=$curPairHistory["duels"]["firstClubDuelsLesions"]?> <?=$duelsLesionsWord?>
 Кликните, чтобы узнать подробности" hidden="">
                                             <?=$curPairHistory["duels"]["firstClubDuelsVictories"]?> - <?=$curPairHistory["duels"]["firstClubDuelsLesions"]?>
                                         </div>
