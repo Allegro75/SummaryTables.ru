@@ -164,7 +164,7 @@
 
                             <? foreach ($clubsList as $innerCycleClubName => $innerCycleClubInfo): ?>
 
-                                <? if ($clubName !== $innerCycleClubName): ?>
+                                <? if ($clubName === $innerCycleClubName): ?>
 
                                     <td>
                                         <img alt="<?=$curClubInfo["shortName"]?>" src="../images/<?=$curClubInfo["logoImageFile"]?>" title="<?=$curClubInfo["shortName"]?>" class="football-logo-table<?=$curClubInfo["clubCssClassHtmlRecord"]?>">
