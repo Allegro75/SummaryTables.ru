@@ -3,6 +3,7 @@
 
 require_once "classes/Club.php";
 // spl_autoload('classes/Club.php');
+require_once "classes/PairMatchesHistory.php";
 
 function getTableInfo ($opts = []) {
 
@@ -16,7 +17,7 @@ function getTableInfo ($opts = []) {
         $newClub = new Club(['pathToRoot' => "../../"]);
         $clubsList[$curClubName] = $newClub->getClubByName(["clubName" => $curClubName]);
     }
-    $info['clubsList'] = $clubsList;
+    // $info['clubsList'] = $clubsList;
 
     // Получение массива ($pairsMatchesHistory) с краткими (представляемыми в итоговой таблице) данными о противостояниях:
     if (true) {
@@ -29,8 +30,8 @@ function getTableInfo ($opts = []) {
                 if ($clubName !== $innerCycleClubName) { // Естественно, отбрасываем совпадения перебираемых имён клубов, чтобы пара содержала два разных клуба
 
                     $pairName = "{$clubName} - {$innerCycleClubName}";
-
-                    $pairsMatchesHistory[$pairName] = [];
+                    $newPairHistory = new PairMatchesHistory(['pathToRoot' => "../../"]);
+                    $pairsMatchesHistory[$pairName] = $newPairHistory->getBasicTableHistory(["firstClub" => $clubInfo, "secClub" => $innerCycleClubInfo,]); // Передаю всю инфу о клубах данной пары, хотя, возможно, достаточно их id.
 
                 }
 
