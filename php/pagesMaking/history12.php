@@ -74,13 +74,7 @@
 
                 <?
                     // Массив имён файлов с логотипами (нужен чтобы правильно добавлять к коду клуба ".png", ".svg" и т.п.)
-                    // $logoFiles = scandir("../images");
-                    $logoFiles = scandir("images");
-                    // echo '<pre>';
-                    // echo 'logoFiles:';
-                    // var_dump($logoFiles);
-
-                    // Имя файла с картинкой логотипа:
+                    $logoFiles = scandir("images");                    
                     $specialImages = [
                         "Akt" => "Akt_light.png",
                         "AuW" => "AuW_light.png",
@@ -106,6 +100,7 @@
                         <? foreach ($tableInfo['clubsList'] as &$curClubInfo): ?>
 
                             <?
+                                // Имя файла с картинкой логотипа:
                                 $logoImageFile = "";
                                 $clubCode = $curClubInfo['code'];
                                 $clubCSSClass = $curClubInfo['CSSClass'];
@@ -175,16 +170,16 @@
                                     <? 
                                         $curPairCode = "{$curClubInfo["code"]}{$innerCycleClubInfo["code"]}";
                                         $curPairClubTitlesStr = "{$curClubInfo["basicFullName"]} - {$innerCycleClubInfo["basicFullName"]}";
-                                        // var_dump($curPairClubTitlesStr);
-                                        $curPairHasHistoryClass = (empty($tableInfo['pairsMatchesHistory'][$curPairClubTitlesStr]["duels"])) ? "no-history" : "has-history";
+                                        $curPairHistory = $tableInfo['pairsMatchesHistory'][$curPairClubTitlesStr];
+                                        $curPairHasHistoryClass = (empty($curPairHistory["duels"])) ? "no-history" : "has-history";
                                     ?>
 
                                     <td id="<?=$curPairCode?>" class="statistics <?=$curPairHasHistoryClass?>">
-                                        <div class="results" title="Реал - Барселона
+                                        <div class="results" title="<?=$curClubInfo["shortName"]?> - <?=$innerCycleClubInfo["shortName"]?>
     3 победы, 3 ничьи, 2 поражения
     Кликните, чтобы узнать подробности">
-                                            <p class="games-score">+3 =3 -2</p>
-                                            <p class="goals-difference">13 - 10</p>
+                                            <p class="games-score">+<?=$curPairHistory["firstVictories"]?> =<?=$curPairHistory["draws"]?> -<?=$curPairHistory["firstLesions"]?></p>
+                                            <p class="goals-difference"><?=$curPairHistory["firstGoals"]?> - <?=$curPairHistory["secondGoals"]?></p>
                                         </div>
                                         <div class="duels" title="&quot;Реал&quot; против &quot;Барселоны&quot;
     2 победы в дуэлях, 2 поражения
