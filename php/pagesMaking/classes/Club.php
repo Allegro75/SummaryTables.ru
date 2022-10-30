@@ -32,7 +32,7 @@ class Club {
         if ($res = mysqli_query($this->db, $sql)) {
             if ($row = mysqli_fetch_assoc($res)) {
                 $clubInfo = $row;
-                $clubInfo["sql"] = $sql;
+                // $clubInfo["sql"] = $sql;
             }              
         }
 
