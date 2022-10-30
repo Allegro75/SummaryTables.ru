@@ -43,6 +43,25 @@ class WordForms
 
     }
 
+    // Получение правильной формы слова типа "дуэль" (женский род, окончание на "ь") после числительного
+    public static function getWordLikeDuel($opts = [])
+    {
+
+        $number = $opts["number"];
+        $word = $opts["word"];
+
+        $wordBase = mb_substr($word, 0, (mb_strlen($word) - 1)); // Основа, корень слова. Это слово без последнего символа (например, "дуэл" для исходного слова "дуэль")
+        $newWord = "{$wordBase}ей";
+        if (($number !== 11) && (($number % 10) === 1)) {
+            $newWord = $word;
+        } else if (($number != 12) && ($number != 13)  && ($number != 14) && ((($number % 10) === 2)) || (($number % 10) === 3) || (($number % 10) === 4)) {
+            $newWord = "{$wordBase}и";
+        }
+        
+        return $newWord;    
+
+    }
+
     // Получение правильной формы слова типа "поражение" (средний род) после числительного
     public static function getWordLikeLesion($opts = [])
     {

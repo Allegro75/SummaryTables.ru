@@ -199,8 +199,19 @@
                                         $secClubNameGender = $clubsList[$secClubFullName]["gender"];
                                         $secClubGenitiveName = ($secClubNameGender === "neuter") ? $innerCycleClubInfo["shortName"] : WordForms::getGenitiveWord(["word" => $innerCycleClubInfo["shortName"], "gender" => $secClubNameGender,]);
                                         $duelsHintFirstStr = "«{$curClubInfo["shortName"]}» против «{$secClubGenitiveName}»\n";
+                                        $duelsDrawsElement = "";
+                                        if ( ! (empty($curPairHistory["duels"]["duelDraws"])) ) {
+                                            $drawDuelsWord = WordForms::getWordLikeDuel(["word" => "дуэль", "number" => $curPairHistory["duels"]["duelDraws"]]);
+                                            $groupWord = 'группе';
+                                            $defineWord = 'выявила';
+                                            if ($curPairHistory["duels"]["duelDraws"] > 1) {
+                                                $groupWord = 'группах';
+                                                $defineWord = 'выявили';
+                                            }                
+                                            $duelsDrawsElement = ", {$curPairHistory["duels"]["duelDraws"]} {$drawDuelsWord} в {$groupWord} не {$defineWord} победителя";
+                                        }
                                         $duelsHintTheRest = ($hasHistory === true) ? 
-"{$curPairHistory["duels"]["firstClubDuelsVictories"]} {$duelsVictoriesWord} в дуэлях, {$curPairHistory["duels"]["firstClubDuelsLesions"]} {$duelsLesionsWord}
+"{$curPairHistory["duels"]["firstClubDuelsVictories"]} {$duelsVictoriesWord} в дуэлях, {$curPairHistory["duels"]["firstClubDuelsLesions"]} {$duelsLesionsWord}{$duelsDrawsElement}
 Кликните, чтобы узнать подробности" : 
 "В еврокубках не встречались";
 
