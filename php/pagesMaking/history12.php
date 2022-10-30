@@ -103,7 +103,7 @@
 
                         <? $number = 1; ?>
 
-                        <? foreach ($tableInfo['clubsList'] as $curClubInfo): ?>
+                        <? foreach ($tableInfo['clubsList'] as &$curClubInfo): ?>
 
                             <?
                                 $logoImageFile = "";
@@ -121,6 +121,8 @@
                                         $logoImageFile = "{$clubCode}.jpg";
                                     }
                                 }
+                                $curClubInfo["logoImageFile"] = $logoImageFile;
+                                $curClubInfo["clubCssClassHtmlRecord"] = $clubCssClassHtmlRecord;
                             ?>                            
 
                             <td>
@@ -131,6 +133,7 @@
                             <? $number++; ?>
 
                         <? endforeach; ?>
+                        <? unset($curClubInfo); ?>
 
                         <td class="main-table_gap"></td>
 
@@ -143,6 +146,61 @@
 
                     </tr>
 
+                    <? $rowNumber = 1; ?>
+
+                    <? foreach ($tableInfo['clubsList'] as $curClubInfo): ?>
+                        
+                        <tr class="<?=$curClubInfo['code']?>">
+
+                            <td class="number"><?=$rowNumber?></td>
+
+                            <td>
+                                <img alt="<?=$curClubInfo["shortName"]?>" src="../images/<?=$curClubInfo["logoImageFile"]?>" title="<?=$curClubInfo["shortName"]?>" class="football-logo-table<?=$curClubInfo["clubCssClassHtmlRecord"]?>">
+                            </td>
+
+                            <td>
+                                <div class="club-name"><?=$curClubInfo["basicFullName"]?></div>
+                            </td>
+
+                            <? foreach ($clubsList as $innerCycleClubName => $innerCycleClubInfo): ?>
+
+                                <? if ($clubName !== $innerCycleClubName): ?>
+
+                                    <td>
+                                        <img alt="<?=$curClubInfo["shortName"]?>" src="../images/<?=$curClubInfo["logoImageFile"]?>" title="<?=$curClubInfo["shortName"]?>" class="football-logo-table<?=$curClubInfo["clubCssClassHtmlRecord"]?>">
+                                    </td>
+
+                                <? else: ?>
+
+                                    <? 
+                                        $curPairCode = "{$curClubInfo["code"]}{$innerCycleClubInfo["code"]}";
+                                        $curPairClubTitlesStr = "{$curClubInfo["basicFullName"]}{$innerCycleClubInfo["basicFullName"]}";
+                                        $curPairHasHistoryClass = (empty($tableInfo['pairsMatchesHistory'][$curPairClubTitlesStr]["duels"])) ? "no-history" : "has-history";
+                                    ?>
+
+                                    <td id="<?=$curPairCode?>" class="statistics <?=$curPairHasHistoryClass?>">
+                                        <div class="results" title="Реал - Барселона
+    3 победы, 3 ничьи, 2 поражения
+    Кликните, чтобы узнать подробности">
+                                            <p class="games-score">+3 =3 -2</p>
+                                            <p class="goals-difference">13 - 10</p>
+                                        </div>
+                                        <div class="duels" title="&quot;Реал&quot; против &quot;Барселоны&quot;
+    2 победы в дуэлях, 2 поражения
+    Кликните, чтобы узнать подробности" hidden="">
+                                            2 - 2
+                                        </div>
+                                    </td>
+
+                                <? endif; ?>
+
+                            <? endforeach; ?>                            
+                            
+                        </tr>
+
+                        <? $rowNumber++; ?>
+
+                    <? endforeach; ?>
 
                 </tbody>
             </table>
