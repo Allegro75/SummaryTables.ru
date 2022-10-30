@@ -81,6 +81,25 @@ class WordForms
 
     }
 
+    // Получение правильной формы слова типа "очко" (средний род) после числительного
+    public static function getWordLikePoint($opts = [])
+    {
+
+        $number = $opts["number"];
+        $word = $opts["word"];
+
+        $wordBase = mb_substr($word, 0, (mb_strlen($word) - 1)); // Неизменяемая основа слова. Это слово без последнего символа (например, "очк" для исходного слова "очко")
+        $newWord = "{$wordBase}ов";
+        if ((($number % 10) === 1) && (($number !== 11) && ($number !== 111) && ($number !== 211) && ($number !== 311))) {
+            $newWord = $word;
+        } else if ( ( (($number % 10) === 2) || (($number % 10) === 3) || (($number % 10) === 4) ) && ( ! (in_array($number, [12, 13, 14, 112, 113, 114, 212, 213, 214, 312, 313, 314,])) ) ) {
+            $newWord = "{$wordBase}а";
+        }
+        
+        return $newWord;
+
+    }
+
     // Получение правильной формы названия клуба в родительном падеже (нужно для описания дуэлей):
     // Слово в среднем роде (напр., "Челси") не нуждается в изменениях в родительном падеже.
     public static function getGenitiveWord($opts = [])
