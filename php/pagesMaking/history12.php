@@ -61,9 +61,9 @@
 
                 require_once 'tableInfo.php'; // Получение содержания таблицы
                 $tableInfo = getTableInfo (["clubsList" => $clubsList]);
-                echo "<pre>";
-                var_dump($tableInfo);
-                echo "</pre>";
+                // echo "<pre>";
+                // var_dump($tableInfo);
+                // echo "</pre>";
 
                 require_once 'classes/WordForms.php'; // Получение правильных форм слов
             ?>
