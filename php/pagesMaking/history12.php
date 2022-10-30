@@ -175,7 +175,7 @@
                                         $victoriesWord = WordForms::getWordLikePobeda(["word" => "победа", "number" => $curPairHistory["firstVictories"]]);
                                         $duelsVictoriesWord = WordForms::getWordLikePobeda(["word" => "победа", "number" => $curPairHistory["duels"]["firstClubDuelsVictories"]]);
                                         $drawsWord = WordForms::getWordLikeDraw(["word" => "ничья", "number" => $curPairHistory["draws"]]);
-                                        $lesionsWord = WordForms::getWordLikePobeda(["word" => "победа", "number" => $curPairHistory["firstLesions"]]);
+                                        $lesionsWord = WordForms::getWordLikePobeda(["word" => "поражение", "number" => $curPairHistory["firstLesions"]]);
                                         $duelsLesionsWord = WordForms::getWordLikePobeda(["word" => "поражение", "number" => $curPairHistory["duels"]["firstClubDuelsLesions"]]);
                                     ?>
 
@@ -183,6 +183,7 @@
                                         <div class="results" title="<?=$curClubInfo["shortName"]?> - <?=$innerCycleClubInfo["shortName"]?>
 
 <?=$curPairHistory["firstVictories"]?> <?=$victoriesWord?>, <?=$curPairHistory["draws"]?> <?=$drawsWord?>, <?=$curPairHistory["firstLesions"]?> <?=$lesionsWord?>
+
 Кликните, чтобы узнать подробности">
                                             <p class="games-score">+<?=$curPairHistory["firstVictories"]?> =<?=$curPairHistory["draws"]?> -<?=$curPairHistory["firstLesions"]?></p>
                                             <p class="goals-difference"><?=$curPairHistory["firstGoals"]?> - <?=$curPairHistory["secondGoals"]?></p>
