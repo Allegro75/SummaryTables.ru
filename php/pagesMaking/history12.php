@@ -174,12 +174,13 @@
                                         $curPairHasHistoryClass = (empty($curPairHistory["duels"])) ? "no-history" : "has-history";
                                         $victoriesWord = WordForms::getWordLikePobeda(["word" => "победа", "number" => $curPairHistory["firstVictories"]]);
                                         $duelsVictoriesWord = WordForms::getWordLikePobeda(["word" => "победа", "number" => $curPairHistory["duels"]["firstClubDuelsVictories"]]);
+                                        $drawsWord = WordForms::getWordLikeDraw(["word" => "ничья", "number" => $curPairHistory["draws"]]);
                                     ?>
 
                                     <td id="<?=$curPairCode?>" class="statistics <?=$curPairHasHistoryClass?>">
                                         <div class="results" title="<?=$curClubInfo["shortName"]?> - <?=$innerCycleClubInfo["shortName"]?>
 
-<?=$curPairHistory["firstVictories"]?> <?=$victoriesWord?>, <?=$curPairHistory["draws"]?> ничьи, <?=$curPairHistory["firstLesions"]?> поражения
+<?=$curPairHistory["firstVictories"]?> <?=$victoriesWord?>, <?=$curPairHistory["draws"]?> <?=$drawsWord?>, <?=$curPairHistory["firstLesions"]?> поражения
 Кликните, чтобы узнать подробности">
                                             <p class="games-score">+<?=$curPairHistory["firstVictories"]?> =<?=$curPairHistory["draws"]?> -<?=$curPairHistory["firstLesions"]?></p>
                                             <p class="goals-difference"><?=$curPairHistory["firstGoals"]?> - <?=$curPairHistory["secondGoals"]?></p>
