@@ -200,7 +200,7 @@
                                         $secClubGenitiveName = ($secClubNameGender === "neuter") ? $innerCycleClubInfo["shortName"] : WordForms::getGenitiveWord(["word" => $innerCycleClubInfo["shortName"], "gender" => $secClubNameGender,]);
                                         $duelsHintFirstStr = "«{$curClubInfo["shortName"]}» против «{$secClubGenitiveName}»\n";
                                         $duelsHintTheRest = ($hasHistory === true) ? 
-"{$curPairHistory["duels"]["firstClubDuelsVictories"]} {$duelsVictoriesWord} в дуэлях, {$curPairHistory["duels"]["firstClubDuelsLesions"]} {$duelsLesionsWord}\n
+"{$curPairHistory["duels"]["firstClubDuelsVictories"]} {$duelsVictoriesWord} в дуэлях, {$curPairHistory["duels"]["firstClubDuelsLesions"]} {$duelsLesionsWord}
 Кликните, чтобы узнать подробности" : 
 "В еврокубках не встречались";
 
