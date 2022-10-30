@@ -162,9 +162,9 @@
                                 <div class="club-name"><?=$curClubInfo["basicFullName"]?></div>
                             </td>
 
-                            <? foreach ($clubsList as $innerCycleClubName => $innerCycleClubInfo): ?>
+                            <? foreach ($tableInfo['clubsList'] as $innerCycleClubInfo): ?>
 
-                                <? if ($curClubInfo["basicFullName"] === $innerCycleClubName): ?>
+                                <? if ($curClubInfo["basicFullName"] === $innerCycleClubInfo["basicFullName"]): ?>
 
                                     <td>
                                         <img alt="<?=$curClubInfo["shortName"]?>" src="../images/<?=$curClubInfo["logoImageFile"]?>" title="<?=$curClubInfo["shortName"]?>" class="football-logo-table<?=$curClubInfo["clubCssClassHtmlRecord"]?>">
@@ -175,7 +175,7 @@
                                     <? 
                                         $curPairCode = "{$curClubInfo["code"]}{$innerCycleClubInfo["code"]}";
                                         $curPairClubTitlesStr = "{$curClubInfo["basicFullName"]} - {$innerCycleClubInfo["basicFullName"]}";
-                                        var_dump($curPairClubTitlesStr);
+                                        // var_dump($curPairClubTitlesStr);
                                         $curPairHasHistoryClass = (empty($tableInfo['pairsMatchesHistory'][$curPairClubTitlesStr]["duels"])) ? "no-history" : "has-history";
                                     ?>
 
