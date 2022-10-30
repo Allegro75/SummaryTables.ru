@@ -185,7 +185,7 @@
                                             <p class="goals-difference"><?=$curPairHistory["firstGoals"]?> - <?=$curPairHistory["secondGoals"]?></p>
                                         </div>
                                         <div class="duels" title="&quot;<?=$curClubInfo["shortName"]?>&quot; против &quot;<?=$innerCycleClubInfo["shortName"]?>&quot;
-<?=$curPairHistory["duels"]["firstClubDuelsVictories"]?> победы в дуэлях, <?=$curPairHistory["duels"]["firstClubDuelsLesions"]?> поражения
+<?=$curPairHistory["duels"]["firstClubDuelsVictories"]?> <?=$duelsVictoriesWord?> в дуэлях, <?=$curPairHistory["duels"]["firstClubDuelsLesions"]?> поражения
 Кликните, чтобы узнать подробности" hidden="">
                                             <?=$curPairHistory["duels"]["firstClubDuelsVictories"]?> - <?=$curPairHistory["duels"]["firstClubDuelsLesions"]?>
                                         </div>
