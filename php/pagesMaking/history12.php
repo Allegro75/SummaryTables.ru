@@ -176,7 +176,7 @@
 
                                     <td id="<?=$curPairCode?>" class="statistics <?=$curPairHasHistoryClass?>">
                                         <div class="results" title="<?=$curClubInfo["shortName"]?> - <?=$innerCycleClubInfo["shortName"]?>
- <?=$curPairHistory["firstVictories"]?> победы, <?=$curPairHistory["draws"]?> ничьи, <?=$curPairHistory["firstLesions"]?> поражения
+<?=$curPairHistory["firstVictories"]?> победы, <?=$curPairHistory["draws"]?> ничьи, <?=$curPairHistory["firstLesions"]?> поражения
 Кликните, чтобы узнать подробности">
                                             <p class="games-score">+<?=$curPairHistory["firstVictories"]?> =<?=$curPairHistory["draws"]?> -<?=$curPairHistory["firstLesions"]?></p>
                                             <p class="goals-difference"><?=$curPairHistory["firstGoals"]?> - <?=$curPairHistory["secondGoals"]?></p>
