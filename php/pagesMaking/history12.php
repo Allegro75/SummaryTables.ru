@@ -173,6 +173,7 @@
                                         $curPairHistory = $tableInfo['pairsMatchesHistory'][$curPairClubTitlesStr];
                                         $curPairHasHistoryClass = (empty($curPairHistory["duels"])) ? "no-history" : "has-history";
                                         $victoriesWord = WordForms::getWordLikePobeda(["word" => "победа", "number" => $curPairHistory["firstVictories"]]);
+                                        $duelsVictoriesWord = WordForms::getWordLikePobeda(["word" => "победа", "number" => $curPairHistory["duels"]["firstClubDuelsVictories"]]);
                                     ?>
 
                                     <td id="<?=$curPairCode?>" class="statistics <?=$curPairHasHistoryClass?>">
