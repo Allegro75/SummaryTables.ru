@@ -2,18 +2,18 @@
 <?
     $lastAccountedMatchDate = "27.10.2022";
     $clubsList = [
-        "Реал Мадрид" => ["points" => 261],
-        "Барселона" => ["points" => 197],
-        "Бавария" => ["points" => 196],
-        "Ливерпуль" => ["points" => 138],
-        "Ювентус" => ["points" => 136],
-        "Милан" => ["points" => 128],
-        "Манчестер Юнайтед" => ["points" => 117],
-        "Интер Милан" => ["points" => 100],
-        "Бенфика" => ["points" => 98],
-        "Челси" => ["points" => 95],
-        "Аякс" => ["points" => 87],
-        "Атлетико Мадрид" => ["points" => 85],
+        "Реал Мадрид" => ["points" => 261, "gender" => "male"],
+        "Барселона" => ["points" => 197, "gender" => "female"],
+        "Бавария" => ["points" => 196, "gender" => "female"],
+        "Ливерпуль" => ["points" => 138, "gender" => "male"],
+        "Ювентус" => ["points" => 136, "gender" => "male"],
+        "Милан" => ["points" => 128, "gender" => "male"],
+        "Манчестер Юнайтед" => ["points" => 117, "gender" => "neuter"],
+        "Интер Милан" => ["points" => 100, "gender" => "male"],
+        "Бенфика" => ["points" => 98, "gender" => "female"],
+        "Челси" => ["points" => 95, "gender" => "neuter"],
+        "Аякс" => ["points" => 87, "gender" => "male"],
+        "Атлетико Мадрид" => ["points" => 85, "gender" => "neuter"],
     ];
 ?>
 
@@ -159,7 +159,11 @@
 
                             <? foreach ($tableInfo['clubsList'] as $innerCycleClubInfo): ?>
 
-                                <? if ($curClubInfo["basicFullName"] === $innerCycleClubInfo["basicFullName"]): ?>
+                                <?
+                                    $secClubFullName = $innerCycleClubInfo["basicFullName"];
+                                ?>
+
+                                <? if ($curClubInfo["basicFullName"] === $secClubFullName): ?>
 
                                     <td>
                                         <img alt="<?=$curClubInfo["shortName"]?>" src="../images/<?=$curClubInfo["logoImageFile"]?>" title="<?=$curClubInfo["shortName"]?>" class="football-logo-table<?=$curClubInfo["clubCssClassHtmlRecord"]?>">
@@ -169,7 +173,7 @@
 
                                     <? 
                                         $curPairCode = "{$curClubInfo["code"]}{$innerCycleClubInfo["code"]}";
-                                        $curPairClubTitlesStr = "{$curClubInfo["basicFullName"]} - {$innerCycleClubInfo["basicFullName"]}";
+                                        $curPairClubTitlesStr = "{$curClubInfo["basicFullName"]} - {$secClubFullName}";
                                         $curPairHistory = $tableInfo['pairsMatchesHistory'][$curPairClubTitlesStr];
                                         $hasHistory = (empty($curPairHistory["duels"])) ? false : true;
                                         $curPairHasHistoryClass = ($hasHistory === true ) ? "has-history" : "no-history";
@@ -191,13 +195,17 @@
 <p class=\"goals-difference\">{$curPairHistory["firstGoals"]} - {$curPairHistory["secondGoals"]}</p>" : 
                                         "<p class=\"games-score\">+ = -</p>
 <p class=\"goals-difference\">-</p>";
+
+                                        $secClubNameGender = $clubsList[$secClubFullName]["gender"];
+                                        $secClubGenitiveName = ($secClubNameGender === "neuter") ? $innerCycleClubInfo["shortName"] : WordForms::getGenitiveWord(["word" => $innerCycleClubInfo["shortName"], "gender" => $secClubNameGender,]);
+                                        $duelsHintFirstStr = "«{$curClubInfo["shortName"]}» против «{$secClubGenitiveName}»";
                                     ?>
 
                                     <td id="<?=$curPairCode?>" class="statistics <?=$curPairHasHistoryClass?>">
                                         <div class="results" title="<?=$resultsHintContent?>">
                                             <?=$resultsCellContent?>
                                         </div>
-                                        <div class="duels" title="&quot;<?=$curClubInfo["shortName"]?>&quot; против &quot;<?=$innerCycleClubInfo["shortName"]?>&quot;
+                                        <div class="duels" title="<?=$duelsHintFirstStr?>
 <?=$curPairHistory["duels"]["firstClubDuelsVictories"]?> <?=$duelsVictoriesWord?> в дуэлях, <?=$curPairHistory["duels"]["firstClubDuelsLesions"]?> <?=$duelsLesionsWord?>
 
 Кликните, чтобы узнать подробности" hidden="">

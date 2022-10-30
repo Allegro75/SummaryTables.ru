@@ -43,7 +43,7 @@ class WordForms
 
     }
 
-    // Получение правильной формы слова типа "поражение" (средний род") после числительного
+    // Получение правильной формы слова типа "поражение" (средний род) после числительного
     public static function getWordLikeLesion($opts = [])
     {
 
@@ -61,5 +61,61 @@ class WordForms
         return $newWord;
 
     }
+
+    // const getRusFormInDuels = (name, gender) => {
+    //     if (gender === "male") {
+    //         if (name[name.length - 1] === "ь") {
+    //             const basPart = name.slice(0, name.length - 1);
+    //             return "${basPart}я";
+    //         } else {
+    //             return "${name}а";
+    //         }
+    //     }
+    //     else if (gender === "neuter") {
+    //         return "${name}";
+    //     }
+    //     else if (gender === "female") {
+    //         const basPart = name.slice(0, name.length - 1);
+    //         if (name.slice(-2) === "ка") {
+    //             return "${basPart}и";
+    //         }
+    //         else if (name[name.length - 1] === "а") {
+    //             return "${basPart}ы";
+    //         }
+    //         else if (name[name.length - 1] === "я") {
+    //             return "${basPart}и";
+    //         }
+    //     }
+    // }
+
+    // Получение правильной формы названия клуба в родительном падеже (нужно для описания дуэлей):
+    // Слово в среднем роде (напр., "Челси") не нуждается в изменениях в родительном падеже.
+    public static function getGenitiveWord($opts = [])
+    {
+
+        $gender = $opts["gender"];
+        $word = $opts["word"];
+
+        if ($gender === "male") {
+            if (mb_substr($word, (mb_strlen($word) - 1), 1) === "ь") { // Если последний символ это "ь" (напр., для слова "Ливерпуль")
+                $wordBase = mb_substr($word, (mb_strlen($word) - 1), 1); // Неизменяемая основа слова. Это слово без последнего символа (например, "Ливерпул" для исходного слова "Ливерпуль"
+                return "{$wordBase}я"; // Например, "Ливерпуля"
+            } else {
+                return "${$word}а"; // Например, "Реала"
+            }
+        }
+        elseif ($gender === "female") {
+            $wordBase = mb_substr($word, (mb_strlen($word) - 1), 1); // Неизменяемая основа слова. Это слово без последнего символа (например, "Барселон" для исходного слова "Барселона"
+            if (mb_substr($word, (mb_strlen($word) - 2), 2) === "ка") { // Если последние два символ это "ка" (напр., для слова "Бенфика")
+                return "{$wordBase}и"; // Например, "Бенфики"
+            } elseif (mb_substr($word, (mb_strlen($word) - 1), 1) === "а")  {
+                return "${$word}ы"; // Например, "Барселоны"
+            } elseif (mb_substr($word, (mb_strlen($word) - 1), 1) === "я")  { // Например, "Валенсия"
+                return "${$word}и"; // Например, "Валенсии"
+            }
+        }
+
+    }    
+    
 
 }
