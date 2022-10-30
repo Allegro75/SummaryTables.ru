@@ -175,6 +175,7 @@
                                     <? 
                                         $curPairCode = "{$curClubInfo["code"]}{$innerCycleClubInfo["code"]}";
                                         $curPairClubTitlesStr = "{$curClubInfo["basicFullName"]} - {$innerCycleClubInfo["basicFullName"]}";
+                                        var_dump($curPairClubTitlesStr);
                                         $curPairHasHistoryClass = (empty($tableInfo['pairsMatchesHistory'][$curPairClubTitlesStr]["duels"])) ? "no-history" : "has-history";
                                     ?>
 
