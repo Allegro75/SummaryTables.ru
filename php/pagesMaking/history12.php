@@ -198,18 +198,21 @@
 
                                         $secClubNameGender = $clubsList[$secClubFullName]["gender"];
                                         $secClubGenitiveName = ($secClubNameGender === "neuter") ? $innerCycleClubInfo["shortName"] : WordForms::getGenitiveWord(["word" => $innerCycleClubInfo["shortName"], "gender" => $secClubNameGender,]);
-                                        $duelsHintFirstStr = "«{$curClubInfo["shortName"]}» против «{$secClubGenitiveName}»";
+                                        $duelsHintFirstStr = "«{$curClubInfo["shortName"]}» против «{$secClubGenitiveName}»\n";
+                                        $duelsHintTheRest = ($hasHistory === true) ? 
+"{$curPairHistory["duels"]["firstClubDuelsVictories"]} {$duelsVictoriesWord} в дуэлях, {$curPairHistory["duels"]["firstClubDuelsLesions"]} {$duelsLesionsWord}\n
+Кликните, чтобы узнать подробности" : 
+"В еврокубках не встречались";
+
+                                        $duelsCellContent = ($hasHistory === true) ? "{$curPairHistory["duels"]["firstClubDuelsVictories"]} - {$curPairHistory["duels"]["firstClubDuelsLesions"]}" : "-";
                                     ?>
 
                                     <td id="<?=$curPairCode?>" class="statistics <?=$curPairHasHistoryClass?>">
                                         <div class="results" title="<?=$resultsHintContent?>">
                                             <?=$resultsCellContent?>
                                         </div>
-                                        <div class="duels" title="<?=$duelsHintFirstStr?>
-<?=$curPairHistory["duels"]["firstClubDuelsVictories"]?> <?=$duelsVictoriesWord?> в дуэлях, <?=$curPairHistory["duels"]["firstClubDuelsLesions"]?> <?=$duelsLesionsWord?>
-
-Кликните, чтобы узнать подробности" hidden="">
-                                            <?=$curPairHistory["duels"]["firstClubDuelsVictories"]?> - <?=$curPairHistory["duels"]["firstClubDuelsLesions"]?>
+                                        <div class="duels" title="<?=$duelsHintFirstStr?><?=$duelsHintTheRest?>" hidden="">
+                                            <?=$duelsCellContent?>
                                         </div>
                                     </td>
 
