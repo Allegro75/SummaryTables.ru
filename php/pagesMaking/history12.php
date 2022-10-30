@@ -210,8 +210,12 @@
                                             }                
                                             $duelsDrawsElement = ", {$curPairHistory["duels"]["duelDraws"]} {$drawDuelsWord} в {$groupWord} не {$defineWord} победителя";
                                         }
+                                        $notFinishedDuelsElement = "";
+                                        if ($curPairHistory["duels"]["notFinishedDuels"] == 1) {
+                                            $notFinishedDuelsElement = ", 1 дуэль не завершена";
+                                        }                                        
                                         $duelsHintTheRest = ($hasHistory === true) ? 
-"{$curPairHistory["duels"]["firstClubDuelsVictories"]} {$duelsVictoriesWord} в дуэлях, {$curPairHistory["duels"]["firstClubDuelsLesions"]} {$duelsLesionsWord}{$duelsDrawsElement}
+"{$curPairHistory["duels"]["firstClubDuelsVictories"]} {$duelsVictoriesWord} в дуэлях, {$curPairHistory["duels"]["firstClubDuelsLesions"]} {$duelsLesionsWord}{$duelsDrawsElement}{$notFinishedDuelsElement}
 Кликните, чтобы узнать подробности" : 
 "В еврокубках не встречались";
 
