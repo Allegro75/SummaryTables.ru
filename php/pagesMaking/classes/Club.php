@@ -29,9 +29,10 @@ class Club {
             OR altNames LIKE '%,{$clubName}' 
             OR altNames LIKE '%,{$clubName},%'
         ";
-        if ($result = mysqli_query($this->db, $sql)) {
-            if ($row = mysqli_fetch_assoc($result)) {
+        if ($res = mysqli_query($this->db, $sql)) {
+            if ($row = mysqli_fetch_assoc($res)) {
                 $clubInfo = $row;
+                $clubInfo["sql"] = $sql;
             }              
         }
 
