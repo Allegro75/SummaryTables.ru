@@ -175,8 +175,8 @@
                                         $victoriesWord = WordForms::getWordLikePobeda(["word" => "победа", "number" => $curPairHistory["firstVictories"]]);
                                         $duelsVictoriesWord = WordForms::getWordLikePobeda(["word" => "победа", "number" => $curPairHistory["duels"]["firstClubDuelsVictories"]]);
                                         $drawsWord = WordForms::getWordLikeDraw(["word" => "ничья", "number" => $curPairHistory["draws"]]);
-                                        $lesionsWord = WordForms::getWordLikePobeda(["word" => "поражение", "number" => $curPairHistory["firstLesions"]]);
-                                        $duelsLesionsWord = WordForms::getWordLikePobeda(["word" => "поражение", "number" => $curPairHistory["duels"]["firstClubDuelsLesions"]]);
+                                        $lesionsWord = WordForms::getWordLikeLesion(["word" => "поражение", "number" => $curPairHistory["firstLesions"]]);
+                                        $duelsLesionsWord = WordForms::getWordLikeLesion(["word" => "поражение", "number" => $curPairHistory["duels"]["firstClubDuelsLesions"]]);
                                     ?>
 
                                     <td id="<?=$curPairCode?>" class="statistics <?=$curPairHasHistoryClass?>">
