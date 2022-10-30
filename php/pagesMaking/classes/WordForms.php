@@ -75,7 +75,7 @@ class WordForms
                 $wordBase = mb_substr($word, 0, (mb_strlen($word) - 1)); // Неизменяемая основа слова. Это слово без последнего символа (например, "Ливерпул" для исходного слова "Ливерпуль"
                 return "{$wordBase}я"; // Например, "Ливерпуля"
             } else {
-                return "${$word}а"; // Например, "Реала"
+                return "{$word}а"; // Например, "Реала"
             }
         }
         elseif ($gender === "female") {
@@ -83,9 +83,9 @@ class WordForms
             if (mb_substr($word, (mb_strlen($word) - 2), 2) === "ка") { // Если последние два символ это "ка" (напр., для слова "Бенфика")
                 return "{$wordBase}и"; // Например, "Бенфики"
             } elseif (mb_substr($word, (mb_strlen($word) - 1), 1) === "а")  {
-                return "${$wordBase}ы"; // Например, "Барселоны"
+                return "{$wordBase}ы"; // Например, "Барселоны"
             } elseif (mb_substr($word, (mb_strlen($word) - 1), 1) === "я")  { // Например, "Валенсия"
-                return "${$wordBase}и"; // Например, "Валенсии"
+                return "{$wordBase}и"; // Например, "Валенсии"
             }
         }
 
