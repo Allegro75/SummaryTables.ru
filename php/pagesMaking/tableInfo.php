@@ -2,7 +2,7 @@
 <?
 
 // require_once "classes/Club.php";
-spl_autoload('Club');
+spl_autoload('classes/Club.php');
 
 function getTableInfo ($opts = []) {
 
