@@ -58,14 +58,14 @@
             <? 
                 require_once 'layoutElements/captions/history12.php'; // Заголовки (крупнейший из к-рых - 'ЛУЧШИЕ КЛУБЫ ЕВРОПЫ ЗА ВСЮ ИСТОРИЮ')
                 printCaptions (["lastAccountedMatchDate" => $lastAccountedMatchDate]);
-            ?>
 
-            <? 
                 require_once 'tableInfo.php'; // Получение содержания таблицы
                 $tableInfo = getTableInfo (["clubsList" => $clubsList]);
                 // echo "<pre>";
                 // var_dump($tableInfo);
                 // echo "</pre>";
+
+                require_once 'classes/WordForms.php'; // Получение правильных форм слов
             ?>
 
             <!-- Таблица: -->
@@ -172,12 +172,13 @@
                                         $curPairClubTitlesStr = "{$curClubInfo["basicFullName"]} - {$innerCycleClubInfo["basicFullName"]}";
                                         $curPairHistory = $tableInfo['pairsMatchesHistory'][$curPairClubTitlesStr];
                                         $curPairHasHistoryClass = (empty($curPairHistory["duels"])) ? "no-history" : "has-history";
+                                        $victoriesWord = WordForms::getWordLikePobeda(["word" => "победа", "number" => $curPairHistory["firstVictories"]]);
                                     ?>
 
                                     <td id="<?=$curPairCode?>" class="statistics <?=$curPairHasHistoryClass?>">
                                         <div class="results" title="<?=$curClubInfo["shortName"]?> - <?=$innerCycleClubInfo["shortName"]?>
-                                        
-<?=$curPairHistory["firstVictories"]?> победы, <?=$curPairHistory["draws"]?> ничьи, <?=$curPairHistory["firstLesions"]?> поражения
+
+<?=$curPairHistory["firstVictories"]?> <?=$victoriesWord?> <?=$curPairHistory["draws"]?> ничьи, <?=$curPairHistory["firstLesions"]?> поражения
 Кликните, чтобы узнать подробности">
                                             <p class="games-score">+<?=$curPairHistory["firstVictories"]?> =<?=$curPairHistory["draws"]?> -<?=$curPairHistory["firstLesions"]?></p>
                                             <p class="goals-difference"><?=$curPairHistory["firstGoals"]?> - <?=$curPairHistory["secondGoals"]?></p>
