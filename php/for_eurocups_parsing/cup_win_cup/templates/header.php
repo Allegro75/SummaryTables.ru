@@ -24,6 +24,7 @@
             </div>
 
             <nav class="nav">
+
                 <div class="nav__stripe football">
                     <!-- <div class="nav__stripe__title">
                     <a href="../../history36.html" title="Лучшие клубы Европы. Личные встречи. Сводная таблица">
@@ -204,8 +205,10 @@
                     </ul>
                 </div>
 
+                <? $titleCode = ($tourneyTitle === 'Лига Европы') ? "el" : "cl"; ?>
                 <? //require_once('nav-tourney-stripe-cl.php'); ?>
-                <? require_once('nav-tourney-stripe-el.php'); ?>
+                <? //require_once('nav-tourney-stripe-el.php'); ?>
+                <? require_once("nav-tourney-stripe-{$titleCode}.php"); ?>
 
             </nav>
 

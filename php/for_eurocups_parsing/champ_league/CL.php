@@ -3,12 +3,14 @@
 <html lang="ru" class="football">
 
 <?php
+$tourneyTitle = 'Лига чемпионов';
+// $tourneyTitle = 'Лига Европы';
+$lastRecordedMatchDate = '01.11.2022'; // Дата последнего записанного матча.
+
 // Получаем массив МАТЧЕЙ турнира:
 require_once '../../../database/config/config.php';
 require_once '../../../database/config/connect.php';
 $conn = connect();
-// $tourneyTitle = 'Лига чемпионов';
-$tourneyTitle = 'Лига Европы';
 $sql = "SELECT * FROM `matches` WHERE tourneyTitle = '{$tourneyTitle}' AND tourneyFinalYear = {$_GET['year']}";
 $result = mysqli_query($conn, $sql);
 $matches = array();
@@ -81,7 +83,7 @@ $tourneyTitleToH1 = ($tourneyTitle === 'Лига Европы') ? $tourneyTitle 
                     <?="{$tourneyTitleToH1} {$tourStartYear}/{$tourFinalYear}"?>
                 </h1>
                 <p class="captions__explanation">
-                    Учтены матчи до 26.10.2022 включительно
+                    Учтены матчи до <?=$lastRecordedMatchDate?> включительно
                 </p>                
             </section>
 
@@ -294,58 +296,61 @@ $tourneyTitleToH1 = ($tourneyTitle === 'Лига Европы') ? $tourneyTitle 
                 
                 if ($tourFinalYear >= 2004) {
                     // Пишем следующую стадию и дополняем массив клубов:
-                    if ( getStageMatches($matches, '1/8 финала') ) {
+                    // if ( getStageMatches($matches, '1/8 финала') ) {
+                    if (getStageMatches($matches, '1/8 финала') && ($tourFinalYear <= 2022)) { // Для текущего турнира не пишем несыгранные матчи 
                         $orderedClubs = writeMatchesByStage('1/8 финала', $matches, $orderedClubs, $clubs, $imagesList);
                     }
                     // Пишем следующую стадию и дополняем массив клубов:
-                    if (true) { // Пишем текущий турнир ЛЧ 2022/2023. Т.к. турнир не закончен, формируем массив $orderedClubs 'искуственно'               
-                        // // ЛЧ 2023
-                        // $orderedClubs = 
-                        // [
-                        //     getClubByName('Наполи', $clubs),
-                        //     getClubByName('Брюгге', $clubs),
-                        //     getClubByName('Бавария', $clubs),
-                        //     getClubByName('Тоттенхэм Хотспур', $clubs),
-                        //     getClubByName('Челси', $clubs),
-                        //     getClubByName('Реал Мадрид', $clubs),
-                        //     getClubByName('Манчестер Сити', $clubs),
-                        //     getClubByName('Пари Сен-Жермен', $clubs),
-                        //     getClubByName('Ливерпуль', $clubs),
-                        //     getClubByName('Порто', $clubs),
-                        //     getClubByName('Интер Милан', $clubs),
-                        //     // getClubByName('Олимпик Марсель', $clubs),
-                        //     getClubByName('Спортинг Лиссабон', $clubs),
-                        //     // getClubByName('Зальцбург', $clubs),
-                        //     getClubByName('Милан', $clubs),
-                        //     getClubByName('РБ Лейпциг', $clubs),
-                        //     getClubByName('Боруссия Дортмунд', $clubs),
-                        //     getClubByName('Бенфика', $clubs),
-                        // ];
-                        // // Лига Европы 2023
+                    if (true) { // Пишем текущий турнир ЛЧ 2022/2023. Т.к. турнир не закончен, формируем массив $orderedClubs 'искуственно'
+                         
+                        // ЛЧ 2023
                         $orderedClubs = 
                         [
-                            getClubByName('Арсенал', $clubs),
-                            getClubByName('ПСВ Эйндховен', $clubs),
-                            // getClubByName('Фенербахче', $clubs),
-                            getClubByName('Ренн', $clubs),
-                            getClubByName('Фенербахче', $clubs),
-                            getClubByName('Бетис', $clubs),
-                            getClubByName('Лудогорец', $clubs),
-                            getClubByName('Унион Сент Жилуаз', $clubs),
-                            getClubByName('Унион Берлин', $clubs),
-                            // getClubByName('Брага', $clubs),                            
-                            getClubByName('Реал Сосьедад', $clubs),
-                            getClubByName('Манчестер Юнайтед', $clubs),
-                            // getClubByName('Фейеноорд', $clubs),
-                            getClubByName('Штурм', $clubs),
-                            // getClubByName('Мидтьюлланн', $clubs),
-                            getClubByName('Лацио', $clubs),
-                            getClubByName('Фрайбург', $clubs),
-                            getClubByName('Карабах', $clubs),
-                            getClubByName('Ференцварош', $clubs),
-                            // getClubByName('Трабзонспор', $clubs),
-                            getClubByName('Монако', $clubs),
+                            getClubByName('Наполи', $clubs),
+                            getClubByName('Ливерпуль', $clubs), 
+                            getClubByName('Порто', $clubs),
+                            getClubByName('Брюгге', $clubs),
+                            getClubByName('Бавария', $clubs),
+                            getClubByName('Интер Милан', $clubs),
+                            getClubByName('Тоттенхэм Хотспур', $clubs),
+                            getClubByName('Айнтрахт Франкфурт', $clubs),
+                            getClubByName('Челси', $clubs),
+                            getClubByName('Реал Мадрид', $clubs),
+                            getClubByName('Манчестер Сити', $clubs),
+                            getClubByName('Пари Сен-Жермен', $clubs),
+                            // getClubByName('Зальцбург', $clubs),
+                            getClubByName('Милан', $clubs),
+                            getClubByName('РБ Лейпциг', $clubs),
+                            getClubByName('Боруссия Дортмунд', $clubs),
+                            getClubByName('Бенфика', $clubs),
                         ];
+
+                        // // Лига Европы 2023
+                        // $orderedClubs = 
+                        // [
+                        //     getClubByName('Арсенал', $clubs),
+                        //     getClubByName('ПСВ Эйндховен', $clubs),
+                        //     // getClubByName('Фенербахче', $clubs),
+                        //     getClubByName('Ренн', $clubs),
+                        //     getClubByName('Фенербахче', $clubs),
+                        //     getClubByName('Бетис', $clubs),
+                        //     getClubByName('Лудогорец', $clubs),
+                        //     getClubByName('Унион Сент Жилуаз', $clubs),
+                        //     getClubByName('Унион Берлин', $clubs),
+                        //     // getClubByName('Брага', $clubs),                            
+                        //     getClubByName('Реал Сосьедад', $clubs),
+                        //     getClubByName('Манчестер Юнайтед', $clubs),
+                        //     // getClubByName('Фейеноорд', $clubs),
+                        //     getClubByName('Штурм', $clubs),
+                        //     // getClubByName('Мидтьюлланн', $clubs),
+                        //     getClubByName('Лацио', $clubs),
+                        //     getClubByName('Фрайбург', $clubs),
+                        //     getClubByName('Карабах', $clubs),
+                        //     getClubByName('Ференцварош', $clubs),
+                        //     // getClubByName('Трабзонспор', $clubs),
+                        //     getClubByName('Монако', $clubs),
+                        // ];
+
                     }
                     if ( getStageMatches($matches, 'группа') ) {
                         // echo '<pre>';
