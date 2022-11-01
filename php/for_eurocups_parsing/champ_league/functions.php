@@ -947,7 +947,8 @@ function writeGroupStage($orderedClubs, $matches, $stage, $clubs, $imagesList, $
                                     $curClub = getClubByName($groupInfo[$ri][0], $clubs);
                                     $curClubCity = $curClub['city'];
                                     // "Рыба" даты проведения будущего матча:
-                                    $matchDate = '03.11.2022';
+                                    $matchDate = '02.11.2022';
+                                    // $matchDate = $exampleFutureMatchdate;
                                 }
 
                                 $ifNeutral = '';

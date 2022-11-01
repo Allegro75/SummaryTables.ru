@@ -5,7 +5,8 @@
 <?php
 $tourneyTitle = 'Лига чемпионов';
 // $tourneyTitle = 'Лига Европы';
-$lastRecordedMatchDate = '01.11.2022'; // Дата последнего записанного матча.
+$lastRecordedMatchDate = '01.11.2022'; // Дата последнего записанного матча
+// $exampleFutureMatchdate = '02.11.2022'; // "Рыба" даты проведения будущего матча
 
 // Получаем массив МАТЧЕЙ турнира:
 require_once '../../../database/config/config.php';
