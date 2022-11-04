@@ -239,8 +239,8 @@ if (true) {
     echo json_encode($netMatchesArr);
 
     // Пишем в базу:
-    // if (false) {
-    if (true) {
+    if (false) {
+    // if (true) {
         $sqlDebugArr = [];
         foreach ($netMatchesArr as $ind => $curMatch) {
 
