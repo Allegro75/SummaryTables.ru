@@ -583,7 +583,7 @@ function getOrderAndInfo($clubNamesArr, $matchesList, $clubs, $year) {
 
                 // то ищем победителя дуэли в личных встречах:
                 $winner = getDuelWinner( $pointsArr[$i][0], $pointsArr[$i + 1][0], getMatchesByClubName( getMatchesByClubName( $matchesList, getClubByName($pointsArr[$i][0], $clubs) ), getClubByName( $pointsArr[$i + 1][0], $clubs ) ) );
-                var_dump($winner);
+                // var_dump($winner);
                 if ($winner === $pointsArr[$i][0]) {
                     $resultArr[$i] = $pointsArr[$i];
                     $resultArr[$i + 1] = $pointsArr[$i + 1];
@@ -696,8 +696,9 @@ function getOrderAndInfo($clubNamesArr, $matchesList, $clubs, $year) {
 
 }
 
-// Функция для определения победителя классической современной дуэли (без учёта пенальти,
-// мы будем использовать это для распределения мест в группах):
+// Функция для определения победителя классической современной дуэли 
+// (без учёта пенальти, мы будем использовать это для распределения мест в группах)
+// (с сезона 21/22 гостевые голы не имеют значения):
 function getDuelWinner($name1, $name2, $matchList) {
     if ($matchList[0]["firstClubName"] === $name1) {
         $firstClubGoals = $matchList[0]["firstClubGoals"] + $matchList[1]["secondClubGoals"];
@@ -712,7 +713,7 @@ function getDuelWinner($name1, $name2, $matchList) {
     else if ($firstClubGoals < $secClubGoals) {
         return $name2;
     }
-    else if ($firstClubGoals === $secClubGoals) {
+    else if (($firstClubGoals === $secClubGoals) && ($matchList[0]["tourneyFinalYear"] <= 2021)) {
         if ($matchList[0]["firstClubName"] === $name1) {
             $fCGuestGoals = $matchList[1]["secondClubGoals"];
             $sCGuestGoals = $matchList[0]["secondClubGoals"];
@@ -727,6 +728,7 @@ function getDuelWinner($name1, $name2, $matchList) {
         }
         else return false;
     }
+    return false;
 }
 
 // Служебная функция для сортировки по разнице мячей:
