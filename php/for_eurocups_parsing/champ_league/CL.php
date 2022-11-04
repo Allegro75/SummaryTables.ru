@@ -13,7 +13,13 @@ $lastRecordedMatchDate = '03.11.2022'; // Дата последнего запи
 require_once '../../../database/config/config.php';
 require_once '../../../database/config/connect.php';
 $conn = connect();
-$sql = "SELECT * FROM `matches` WHERE tourneyTitle = '{$tourneyTitle}' AND tourneyFinalYear = {$_GET['year']}";
+$sql = 
+    "SELECT * 
+    FROM `matches` 
+    WHERE `tourneyTitle` = '{$tourneyTitle}' 
+    AND `tourneyFinalYear` = {$_GET['year']}
+    AND `score` != '' -- для того, чтобы не учитывать будущие несыгранные матчи в незавершённых турнирах
+";
 $result = mysqli_query($conn, $sql);
 $matches = array();
 if (mysqli_num_rows($result) > 0) {
@@ -298,8 +304,8 @@ $tourneyTitleToH1 = ($tourneyTitle === 'Лига Европы') ? $tourneyTitle 
                 
                 if ($tourFinalYear >= 2004) {
                     // Пишем следующую стадию и дополняем массив клубов:
-                    // if ( getStageMatches($matches, '1/8 финала') ) {
-                    if (getStageMatches($matches, '1/8 финала') && ($tourFinalYear <= 2022)) { // Для текущего турнира не пишем несыгранные матчи 
+                    if ( getStageMatches($matches, '1/8 финала') ) {
+                    // if (getStageMatches($matches, '1/8 финала') && ($tourFinalYear <= 2022)) { // Для текущего турнира не пишем несыгранные матчи 
                         $orderedClubs = writeMatchesByStage('1/8 финала', $matches, $orderedClubs, $clubs, $imagesList);
                     }
                     // Пишем следующую стадию и дополняем массив клубов:
