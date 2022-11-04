@@ -713,7 +713,8 @@ function getDuelWinner($name1, $name2, $matchList) {
     else if ($firstClubGoals < $secClubGoals) {
         return $name2;
     }
-    else if (($firstClubGoals === $secClubGoals) && ($matchList[0]["tourneyFinalYear"] <= 2021)) {
+    else if (($firstClubGoals === $secClubGoals) && 
+        ($matchList[0]["tourneyFinalYear"] <= 2021)) { // с сезона 21/22 гостевые голы не имеют значения
         if ($matchList[0]["firstClubName"] === $name1) {
             $fCGuestGoals = $matchList[1]["secondClubGoals"];
             $sCGuestGoals = $matchList[0]["secondClubGoals"];
