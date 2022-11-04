@@ -581,6 +581,8 @@ function getOrderAndInfo($clubNamesArr, $matchesList, $clubs, $year) {
             // И при этом их больше, чем у третьей команды:
             if ($pointsArr[$i + 1][6] > $pointsArr[$i + 2][6]) {
 
+                var_dump("yes");
+
                 // то ищем победителя дуэли в личных встречах:
                 $winner = getDuelWinner( $pointsArr[$i][0], $pointsArr[$i + 1][0], getMatchesByClubName( getMatchesByClubName( $matchesList, getClubByName($pointsArr[$i][0], $clubs) ), getClubByName( $pointsArr[$i + 1][0], $clubs ) ) );
                 if ($winner === $pointsArr[$i][0]) {
