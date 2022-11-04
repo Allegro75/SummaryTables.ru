@@ -3,6 +3,7 @@
 <html lang="ru" class="football">
 
 <?php
+// Переменные, определяемые в начале, зависящие от времени и турнира. Дополнительно, возможно понадобится определить в functions $matchDate и $orderedClubs здесь
 $tourneyTitle = 'Лига чемпионов';
 // $tourneyTitle = 'Лига Европы';
 $lastRecordedMatchDate = '01.11.2022'; // Дата последнего записанного матча
@@ -318,12 +319,12 @@ $tourneyTitleToH1 = ($tourneyTitle === 'Лига Европы') ? $tourneyTitle 
                             getClubByName('Челси', $clubs),
                             getClubByName('Реал Мадрид', $clubs),
                             getClubByName('Манчестер Сити', $clubs),
+                            getClubByName('Бенфика', $clubs),
                             getClubByName('Пари Сен-Жермен', $clubs),
                             // getClubByName('Зальцбург', $clubs),
                             getClubByName('Милан', $clubs),
                             getClubByName('РБ Лейпциг', $clubs),
-                            getClubByName('Боруссия Дортмунд', $clubs),
-                            getClubByName('Бенфика', $clubs),
+                            getClubByName('Боруссия Дортмунд', $clubs),                            
                         ];
 
                         // // Лига Европы 2023
