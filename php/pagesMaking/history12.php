@@ -1,5 +1,8 @@
 
 <?
+
+    // Первый файл, с него мы начали работу над файлами, автоматически генерирующими таблицы.
+
     $lastAccountedMatchDate = "03.11.2022";
     $clubsList = [
         "Реал Мадрид" => ["points" => 261, "gender" => "male"],
@@ -15,6 +18,7 @@
         "Аякс" => ["points" => 87, "gender" => "male"],
         "Атлетико Мадрид" => ["points" => 85, "gender" => "neuter"],
     ];
+
 ?>
 
 <!DOCTYPE html>
@@ -163,7 +167,7 @@
                                     $secClubFullName = $innerCycleClubInfo["basicFullName"];
                                 ?>
 
-                                <? if ($curClubInfo["basicFullName"] === $secClubFullName): ?>
+                                <? if ($curClubInfo["basicFullName"] === $secClubFullName): // Для ячеек, где показываем эмблему клуба ?>
 
                                     <td>
                                         <img alt="<?=$curClubInfo["shortName"]?>" src="../images/<?=$curClubInfo["logoImageFile"]?>" title="<?=$curClubInfo["shortName"]?>" class="football-logo-table<?=$curClubInfo["clubCssClassHtmlRecord"]?>">
@@ -171,7 +175,8 @@
 
                                 <? else: ?>
 
-                                    <? 
+                                    <?
+
                                         $curPairCode = "{$curClubInfo["code"]}{$innerCycleClubInfo["code"]}";
                                         $curPairClubTitlesStr = "{$curClubInfo["basicFullName"]} - {$secClubFullName}";
                                         $curPairHistory = $tableInfo['pairsMatchesHistory'][$curPairClubTitlesStr];
@@ -220,9 +225,13 @@
 "В еврокубках не встречались";
 
                                         $duelsCellContent = ($hasHistory === true) ? "{$curPairHistory["duels"]["firstClubDuelsVictories"]} - {$curPairHistory["duels"]["firstClubDuelsLesions"]}" : "-";
+
+                                        $firstClubId = $curClubInfo['id'];
+                                        $secClubId = $innerCycleClubInfo['id'];
+
                                     ?>
 
-                                    <td id="<?=$curPairCode?>" class="statistics <?=$curPairHasHistoryClass?>">
+                                    <td id="<?=$curPairCode?>" data-first-club-id="<?=$firstClubId?>" data-sec-club-id="<?=$secClubId?>" class="statistics <?=$curPairHasHistoryClass?>">
                                         <div class="results" title="<?=$resultsHintContent?>">
                                             <?=$resultsCellContent?>
                                         </div>
