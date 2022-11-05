@@ -9,7 +9,7 @@ document.addEventListener(`DOMContentLoaded`, () => {
     allTables.forEach(item => item.onclick = function () { showSmallTable(); })
 
     const showSmallTable = () => {
-        let target = this.target;
+        let target = event.target;
         while (!target.classList.contains(`main-table`)) {
             if (target.getAttribute(`class`) == `statistics has-history`) {
                 const firstClubId = target.getAttribute(`data-first-club-id`);
