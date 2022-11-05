@@ -1,6 +1,6 @@
 
 <?
-    $lastAccountedMatchDate = "27.10.2022";
+    $lastAccountedMatchDate = "03.11.2022";
     $clubsList = [
         "Реал Мадрид" => ["points" => 261, "gender" => "male"],
         "Барселона" => ["points" => 197, "gender" => "female"],
