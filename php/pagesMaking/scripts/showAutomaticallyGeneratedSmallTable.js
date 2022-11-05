@@ -8,9 +8,8 @@ document.addEventListener(`DOMContentLoaded`, () => {
 
     allTables.forEach(item => item.onclick = function () { showSmallTable(); })
 
-    const showSmallTable = (event) => {
-        // let target = event.target;
-        let target = target;
+    const showSmallTable = () => {
+        let target = this.target;
         while (!target.classList.contains(`main-table`)) {
             if (target.getAttribute(`class`) == `statistics has-history`) {
                 const firstClubId = target.getAttribute(`data-first-club-id`);
