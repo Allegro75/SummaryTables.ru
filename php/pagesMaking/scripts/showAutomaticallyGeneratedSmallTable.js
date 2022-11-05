@@ -15,7 +15,7 @@ document.addEventListener(`DOMContentLoaded`, () => {
             if (target.getAttribute(`class`) == `statistics has-history`) {
                 const firstClubId = target.getAttribute(`data-first-club-id`);
                 const secClubId = target.getAttribute(`data-sec-club-id`);
-                const urlInWindowOpen = `selected-pair-small-table.php?club_1=${firstClubId}&club_2=${secClubId}`;
+                const urlInWindowOpen = `summarytables.ru/selected-pair-small-table.php?club_1=${firstClubId}&club_2=${secClubId}`;
                 window.open(urlInWindowOpen, ``, `width=520px, height=970px, top=0, left=0`);
                 return;
             }
