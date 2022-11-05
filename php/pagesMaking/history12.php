@@ -352,7 +352,8 @@
 
     </div class="football__background">
 
-    <script src="scripts/showSmallTableOnCellClick.js"></script>
+    <!-- <script src="scripts/showSmallTableOnCellClick.js"></script> -->
+    <script src="scripts/showAutomaticallyGeneratedSmallTable.js"></script>
     <script src="scripts/showHideDuels.js"></script>
     <script src="scripts/cellsColoring.js"></script>
     <script src="scripts/coloringOnLoad.js"></script>
