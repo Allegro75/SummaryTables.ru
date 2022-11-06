@@ -50,6 +50,8 @@
     require_once 'classes/TablePagesProperties.php'; // Получение свойств генерируемой страницы
     $tablePagesProperties = TablePagesProperties::$props;
     $clubsNumberPhrase = $tablePagesProperties[$pageName]["clubsNumberPhrase"];
+    $browserTitle = $tablePagesProperties[$pageName]["browserTitle"];
+    $cssFilesList = $tablePagesProperties[$pageName]["cssFilesList"];
 
 ?>
 
@@ -66,20 +68,14 @@
     Личные встречи. Личные счета. vs. История игр. История противостояний.  
     Сводная таблица. Таблица-'шахматка'. Статистика. История. Результаты. 
     Клубы. Суперклубы. Команды. 
-    Реал. Барселона. Ливерпуль. Манчестер Юнайтед. Бавария. Ювентус. Аякс. Милан. Интер.
+    Реал. Барселона. Ливерпуль. Манчестер Юнайтед. Бавария. Ювентус. Аякс. Милан. Интер. Арсенал.
     Лига чемпионов. Кубок чемпионов. Лига Европы. Кубок УЕФА. Кубок кубков. Суперкубок.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="images/football_ball.svg" type="image/x-icon">
-    <title>История. Личные счета суперклубов. Сводная таблица</title>
-    <link rel="stylesheet" href="stylesheets/football__body.css">
-    <link rel="stylesheet" href="stylesheets/cap-wo-nav.css">
-    <link rel="stylesheet" href="stylesheets/navigation.css">
-    <link rel="stylesheet" href="stylesheets/captions.css">
-    <link rel="stylesheet" href="stylesheets/table12.css">
-    <link rel="stylesheet" href="stylesheets/duel-button-lower.css">
-    <link rel="stylesheet" href="stylesheets/settings.css">
-    <link rel="stylesheet" href="stylesheets/donate.css">
-    <link rel="stylesheet" href="stylesheets/footer.css">
+    <title><?=$browserTitle?></title>
+    <? foreach($cssFilesList as $curFileName): ?>
+        <link rel="stylesheet" href="stylesheets/<?=$curFileName?>">
+    <? endforeach; ?>
 
 </head>
 
