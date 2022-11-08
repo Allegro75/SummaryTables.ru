@@ -237,7 +237,18 @@
                                         $secClubGenitiveName = $correctClubNameInDuels["clubNameCorrForm"] ?? $correctClubNameInDuels; // В случае, если в WordForms передавалось имя типа "Боруссия Д" здесь мы получим в ответ массив, элеиентом к-рого с ключом "clubNameCorrForm" будет слово "Боруссии". В большинстве же случаев - просто сразу получим нужную форму названия клуба.
                                         $cityPartClubName = $correctClubNameInDuels["cityPart"] ?? ""; // Для "Боруссия Д" здесь мы получим "Д". В остальных случаях - ничего.
 
-                                        $duelsHintFirstStr = "«{$curClubInfo["shortName"]}» против «{$secClubGenitiveName}»{$cityPartClubName}\n";
+                                        if ((mb_strpos($word, " ") !== false) && ($curClubInfo["shortName"] !== "Црвена звезда")) { // Для названий типа "Боруссия Д", "Динамо К". Работа над получением корректной формы этих названий в именительном падеже с учётом кавычек.
+
+                                            $clubNameWordsArr = explode(" ", $word);
+                                            $justClubName = $clubNameWordsArr[0];
+                                            $cityPart = $clubNameWordsArr[1];
+
+                                        } else {
+                                            $justClubName = $curClubInfo["shortName"];
+                                            $cityPart = "";
+                                        }                       
+
+                                        $duelsHintFirstStr = "«{$justClubName}»{$cityPart} против «{$secClubGenitiveName}»{$cityPartClubName}\n";
                                         $duelsDrawsElement = "";
                                         if ( ! (empty($curPairHistory["duels"]["duelDraws"])) ) {
                                             $drawDuelsWord = WordForms::getWordLikeDuel(["word" => "дуэль", "number" => $curPairHistory["duels"]["duelDraws"]]);
