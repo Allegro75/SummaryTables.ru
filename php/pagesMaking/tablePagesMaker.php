@@ -231,7 +231,8 @@
                                         "<p class=\"games-score\">+ = -</p>
 <p class=\"goals-difference\">-</p>";
 
-                                        $secClubNameGender = $clubsList[$secClubFullName]["gender"];
+                                        // $secClubNameGender = $clubsList[$secClubFullName]["gender"];
+                                        $secClubNameGender = $tableInfo['clubsList'][$secClubFullName]["gender"];
                                         $secClubGenitiveName = ($secClubNameGender === "neuter") ? $innerCycleClubInfo["shortName"] : WordForms::getGenitiveWord(["word" => $innerCycleClubInfo["shortName"], "gender" => $secClubNameGender,]);
                                         $duelsHintFirstStr = "«{$curClubInfo["shortName"]}» против «{$secClubGenitiveName}»\n";
                                         $duelsDrawsElement = "";
