@@ -45,7 +45,7 @@ function printCaptions ($opts = []) {
                 <p class=\"captions__explanation\">
                     <span class=\"captions__explanation_circle\">&#8226;</span>                
                         <!-- Таблица обновлена по итогам сезона 2021/2022 -->
-                        Учтены матчи до {$lastAccountedMatchDate} включительно
+                        Учтены матчи до {$lastAccountedMatchDate} включительно (учтены все матчи групповых этапов сезона 2022/2023)
                     <span class=\"captions__explanation_circle\">&#8226;</span>
                 </p>  
             </section>";
