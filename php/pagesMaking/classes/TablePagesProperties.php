@@ -8,6 +8,8 @@ class TablePagesProperties {
 
         "history12" => [
             "clubsNumberPhrase" => "12 лучших клубов",
+            "clubsNumberPhraseLastPart" => "лучших клубов",
+            "clubsNumber" => "12",
             "browserTitle" => "История. Личные счета суперклубов. Сводная таблица",
             "cssFilesList" => [
                 "football__body.css",
@@ -24,6 +26,8 @@ class TablePagesProperties {
 
         "history24" => [
             "clubsNumberPhrase" => "24 лучших клуба",
+            "clubsNumberPhraseLastPart" => "лучших клуба",
+            "clubsNumber" => "24",
             "browserTitle" => "24 лучших клуба в истории. Личные счета. Сводная таблица",
             "cssFilesList" => [
                 "football__body.css",

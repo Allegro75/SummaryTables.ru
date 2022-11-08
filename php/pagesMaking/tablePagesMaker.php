@@ -50,6 +50,8 @@
     require_once 'classes/TablePagesProperties.php'; // Получение свойств генерируемой страницы
     $tablePagesProperties = TablePagesProperties::$props;
     $clubsNumberPhrase = $tablePagesProperties[$pageName]["clubsNumberPhrase"];
+    $clubsNumber = $tablePagesProperties[$pageName]["clubsNumber"];
+    $clubsNumberPhraseLastPart = $tablePagesProperties[$pageName]["clubsNumberPhraseLastPart"];
     $browserTitle = $tablePagesProperties[$pageName]["browserTitle"];
     $cssFilesList = $tablePagesProperties[$pageName]["cssFilesList"];
 
@@ -88,8 +90,8 @@
         <main>
 
             <? 
-                require_once 'layoutElements/captions/history12.php'; // Заголовки (крупнейший из к-рых - 'ЛУЧШИЕ КЛУБЫ ЕВРОПЫ ЗА ВСЮ ИСТОРИЮ')
-                printCaptions (["lastAccountedMatchDate" => $lastAccountedMatchDate]);
+                require_once 'layoutElements/captions/captions'; // Заголовки (крупнейший из к-рых - 'ЛУЧШИЕ КЛУБЫ ЕВРОПЫ ЗА ВСЮ ИСТОРИЮ')
+                printCaptions (["lastAccountedMatchDate" => $lastAccountedMatchDate, "clubsNumberPhraseLastPart" => $clubsNumberPhraseLastPart, "clubsNumber" => $clubsNumber,]);
 
                 require_once 'tableInfo.php'; // Получение содержания таблицы
                 $tableInfo = getTableInfo (["clubsList" => $clubsList]);
