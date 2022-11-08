@@ -108,23 +108,54 @@ class WordForms
         $gender = $opts["gender"];
         $word = $opts["word"];
 
-        if ($gender === "male") {
-            if (mb_substr($word, (mb_strlen($word) - 1), 1) === "ь") { // Если последний символ это "ь" (напр., для слова "Ливерпуль")
-                $wordBase = mb_substr($word, 0, (mb_strlen($word) - 1)); // Неизменяемая основа слова. Это слово без последнего символа (например, "Ливерпул" для исходного слова "Ливерпуль"
-                return "{$wordBase}я"; // Например, "Ливерпуля"
-            } else {
-                return "{$word}а"; // Например, "Реала"
+        if (mb_strpos($word, " ") !== false) { // Для названий типа "Боруссия Д", "Динамо К"
+
+            $clubNameWordsArr = explode(" ", $word);
+            $justClubName = $clubNameWordsArr[0];
+            $cityPart = $clubNameWordsArr[1];
+
+            $clubNameCorrForm = self::getGenitiveWord(["word" => $justClubName, "gender" => $gender,]);
+            return ["clubNameCorrForm" => $clubNameCorrForm, "cityPart" => $cityPart,];
+
+        } else { // Для большинства названий клубов
+
+            if ($gender === "neuter") {
+                return $word;
             }
-        }
-        elseif ($gender === "female") {
-            $wordBase = mb_substr($word, 0, (mb_strlen($word) - 1)); // Неизменяемая основа слова. Это слово без последнего символа (например, "Барселон" для исходного слова "Барселона"
-            if (mb_substr($word, (mb_strlen($word) - 2), 2) === "ка") { // Если последние два символ это "ка" (напр., для слова "Бенфика")
-                return "{$wordBase}и"; // Например, "Бенфики"
-            } elseif (mb_substr($word, (mb_strlen($word) - 1), 1) === "а")  {
-                return "{$wordBase}ы"; // Например, "Барселоны"
-            } elseif (mb_substr($word, (mb_strlen($word) - 1), 1) === "я")  { // Например, "Валенсия"
-                return "{$wordBase}и"; // Например, "Валенсии"
+
+            elseif ($gender === "male") {
+
+                if (mb_substr($word, (mb_strlen($word) - 1), 1) === "ь") { // Если последний символ это "ь" (напр., для слова "Ливерпуль")
+                    $wordBase = mb_substr($word, 0, (mb_strlen($word) - 1)); // Неизменяемая основа слова. Это слово без последнего символа (например, "Ливерпул" для исходного слова "Ливерпуль"
+                    return "{$wordBase}я"; // Например, "Ливерпуля"
+                } else {
+                    return "{$word}а"; // Например, "Реала"
+                }
+
             }
+
+            elseif ($gender === "female") {
+
+                if ($word === "Црвена звезда") {
+                    return "Црвены звезды";
+                }
+
+                else { // Для всех (в женском роде), кроме "Црвены звезды"
+
+                    $wordBase = mb_substr($word, 0, (mb_strlen($word) - 1)); // Неизменяемая основа слова. Это слово без последнего символа (например, "Барселон" для исходного слова "Барселона"
+
+                    if (mb_substr($word, (mb_strlen($word) - 2), 2) === "ка") { // Если последние два символ это "ка" (напр., для слова "Бенфика")
+                        return "{$wordBase}и"; // Например, "Бенфики"
+                    } elseif (mb_substr($word, (mb_strlen($word) - 1), 1) === "а")  {
+                        return "{$wordBase}ы"; // Например, "Барселоны"
+                    } elseif (mb_substr($word, (mb_strlen($word) - 1), 1) === "я")  { // Например, "Валенсия"
+                        return "{$wordBase}и"; // Например, "Валенсии"
+                    }
+
+                }
+
+            }
+
         }
 
     }    
