@@ -237,9 +237,9 @@
                                         $secClubGenitiveName = $correctClubNameInDuels["clubNameCorrForm"] ?? $correctClubNameInDuels; // В случае, если в WordForms передавалось имя типа "Боруссия Д" здесь мы получим в ответ массив, элеиентом к-рого с ключом "clubNameCorrForm" будет слово "Боруссии". В большинстве же случаев - просто сразу получим нужную форму названия клуба.
                                         $cityPartClubName = $correctClubNameInDuels["cityPart"] ?? ""; // Для "Боруссия Д" здесь мы получим "Д". В остальных случаях - ничего.
 
-                                        if ((mb_strpos($word, " ") !== false) && ($curClubInfo["shortName"] !== "Црвена звезда")) { // Для названий типа "Боруссия Д", "Динамо К". Работа над получением корректной формы этих названий в именительном падеже с учётом кавычек.
+                                        if ((mb_strpos($curClubInfo["shortName"], " ") !== false) && ($curClubInfo["shortName"] !== "Црвена звезда")) { // Для названий типа "Боруссия Д", "Динамо К". Работа над получением корректной формы этих названий в именительном падеже с учётом кавычек.
 
-                                            $clubNameWordsArr = explode(" ", $word);
+                                            $clubNameWordsArr = explode(" ", $curClubInfo["shortName"]);
                                             $justClubName = $clubNameWordsArr[0];
                                             $cityPart = $clubNameWordsArr[1];
 
