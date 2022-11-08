@@ -3,17 +3,20 @@
 
         <!-- Шапка -->
         <header class="cap">
-
+            
             <div class="cap__site-title-stripe site-title-stripe">
 
+                <!-- Иконка с мячиком, левая: -->
                 <a href="../../index.html" title="Лучшие клубы Европы за всю историю. Личные встречи. Сводная таблица.">
                     <img class="site-title-stripe__icon  site-title-stripe__icon_left" src="../../images/football_ball_yellow.svg" alt="футбол">
                 </a>
 
+                <!-- Иконка с мячиком, правая: -->
                 <a href="../../index.html" title="Лучшие клубы Европы за всю историю. Личные встречи. Сводная таблица.">
                     <img class="site-title-stripe__icon  site-title-stripe__icon_right" src="../../images/football_ball_yellow.svg" alt="футбол">
                 </a>
 
+                <!-- Надписи: -->
                 <div class="site-title-stripe__text">
                     <a href="../../index.html" title="Лучшие клубы Европы за всю историю. Личные встречи. Сводная таблица.">
                         Футбол <span class="site-title-stripe__text_delimiter">&#8226;</span>
@@ -27,11 +30,7 @@
 
             <nav class="nav">
                 <div class="nav__stripe football">
-                    <!-- <div class="nav__stripe__title">
-                    <a href="../../history36.html" title="Лучшие клубы Европы. Личные встречи. Сводная таблица">
-                        ФУТБОЛ:
-                    </a>
-                    </div> -->
+
                     <ul class="nav__stripe__list">
                         
 						<li class="nav__stripe__list__item select-pair">
@@ -82,9 +81,6 @@
                             <a href="../../russia.html"
                                 title="Российские (и советские) клубы против европейских. Личные встречи. Сводная таблица">
                                 <div class="nav__icon ussr">
-                                    <!-- <img src="../../images/ussr.png" alt="Россия/СССР" class="nav__icon ussr nav__icon_yellow">
-                         <img src="../../images/ussr_black.png" alt="Россия/СССР"
-                            class="nav__icon ussr nav__icon_black"> -->
                                 </div>
                                 РОССИЯ / СССР
                             </a>
@@ -116,10 +112,6 @@
                             <a href="../../history36.html"
                                 title="Лучшие клубы Европы за всю историю. Личные встречи. Сводная таблица">
                                 <div class="nav__icon history">
-                                    <!-- <img src="./images/history_icon.png" alt="история"
-                            class="nav__icon history nav__icon_yellow">
-                         <img src="./images/history_icon_black.png" alt="история"
-                            class="nav__icon history nav__icon_black"> -->
                                 </div>
                                 вся ИСТОРИЯ
                             </a>
@@ -155,9 +147,6 @@
                             <a href="../../decade.html"
                                 title="24 лучших клуба десятилетия (2013-2022). Личные встречи. Сводная таблица">
                                 <div class="nav__icon decade">
-                                    <!-- <img src="./images/ten.png" alt="десятилетие" class="nav__icon decade nav__icon_yellow">
-                         <img src="./images/ten_black.png" alt="десятилетие"
-                            class="nav__icon decade nav__icon_black"> -->
                                 </div>
                                 Десятилетие
                             </a>
