@@ -315,7 +315,7 @@
             </table>
 
             <? if ($pageName === "history24"): ?>
-                
+
                 <!--Кнопка СПРАВА для переключения в дуэльный вид: -->
                 <div class="duels-switch  btn-right" id="history25">
                     <button class="duels-switch__btn  btn-right__btn"
@@ -386,8 +386,6 @@
                         </button>
                     </div>
 
-                    <!-- <div class="random-buttons__div gap"></div> -->
-
                     <div class="random-buttons__div random-onload">
                         <label for="random-onload__input">
                             <input type="checkbox" id="random-onload__input">
@@ -397,7 +395,6 @@
                         </label>
                     </div>
 
-                    <!-- </div> -->
                 </div>
 
                 <div class="settings__row duels-row">
@@ -428,8 +425,10 @@
     <script src="scripts/showHideDuels.js"></script>
     <script src="scripts/cellsColoring.js"></script>
     <script src="scripts/coloringOnLoad.js"></script>
-    <script src="scripts/randPairOnLoad.js"></script>
-    <script src="scripts/randomWindowOnClick.js"></script>
+    <!-- <script src="scripts/randPairOnLoad.js"></script> -->
+    <script src="scripts/randPairOnLoadDynamicPage.js"></script>
+    <!-- <script src="scripts/randomWindowOnClick.js"></script> -->
+    <script src="scripts/randomWindowOnClickDynamically.js"></script>
     <script src="scripts/duelsOnLoad.js"></script>
     <!-- <script src="scripts/service/service_rebuildTable.js"></script> -->
     
