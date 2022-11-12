@@ -194,6 +194,21 @@ function writeMatchesByStage($name, $matches, $orderedClubs, $clubs, $imagesList
         $goals_2_sum = $goals_1_2 + $goals_2_2;
         // var_dump($goals_1_sum, $goals_2_sum);
 
+        if (true) { // Для отображения пустого счёта для несыгранных матчей
+            if (empty($goals_1_1)) {
+                $goals_1_1 = "-";
+            }
+            if (empty($goals_2_1)) {
+                $goals_2_1 = "-";
+            }
+            if (empty($goals_1_2)) {
+                $goals_1_2 = "-";
+            }
+            if (empty($goals_2_2)) {
+                $goals_2_2 = "-";
+            }
+        }
+
         // если число голов неравное:
         if ($goals_1_sum > $goals_2_sum) {
             $club1Classes = 'club-name club-name_winner';
