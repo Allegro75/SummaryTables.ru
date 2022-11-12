@@ -8,8 +8,8 @@
 $tourneyTitle = 'Лига Европы';
 $lastRecordedMatchDate = '03.11.2022'; // Дата последнего записанного матча для заголовка
 // $exampleFutureMatchdate = '02.11.2022'; // "Рыба" даты проведения будущего матча
-// $showFutureMatchesClause = "AND `score` != ''"; // для того, чтобы не учитывать будущие несыгранные матчи в незавершённых турнирах
-$showFutureMatchesClause = "";
+$showFutureMatchesClause = "AND `score` != ''"; // для того, чтобы не учитывать будущие несыгранные матчи в незавершённых турнирах
+// $showFutureMatchesClause = "";
 
 // Получаем массив МАТЧЕЙ турнира:
 require_once '../../../database/config/config.php';
@@ -21,6 +21,7 @@ $sql =
     WHERE `tourneyTitle` = '{$tourneyTitle}' 
     AND `tourneyFinalYear` = {$_GET['year']}
     {$showFutureMatchesClause}
+    OR `tourneyStage` = '1/16 финала'
 ";
 $result = mysqli_query($conn, $sql);
 $matches = array();
