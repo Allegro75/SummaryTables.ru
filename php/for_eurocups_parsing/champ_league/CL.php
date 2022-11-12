@@ -20,8 +20,8 @@ $sql =
     FROM `matches` 
     WHERE `tourneyTitle` = '{$tourneyTitle}' 
     AND `tourneyFinalYear` = {$_GET['year']}
-    ({$showFutureMatchesClause}
-    OR `tourneyStage` = '1/16 финала')
+    -- {$showFutureMatchesClause}
+    AND (`score` != '' OR `tourneyStage` = '1/16 финала')
 ";
 $result = mysqli_query($conn, $sql);
 $matches = array();
