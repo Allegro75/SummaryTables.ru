@@ -294,22 +294,22 @@ $tourneyTitleToH1 = ($tourneyTitle === 'Лига Европы') ? $tourneyTitle 
                     $orderedClubs = 
                     [
                         getClubByName('Наполи', $clubs),
-                        getClubByName('Ливерпуль', $clubs),
+                        // getClubByName('Ливерпуль', $clubs),
                         getClubByName('Порто', $clubs),
-                        getClubByName('Брюгге', $clubs),
+                        // getClubByName('Брюгге', $clubs),
                         getClubByName('Бавария', $clubs),
-                        getClubByName('Интер Милан', $clubs),
+                        // getClubByName('Интер Милан', $clubs),
                         getClubByName('Тоттенхэм Хотспур', $clubs),
-                        getClubByName('Айнтрахт Франкфурт', $clubs),
+                        // getClubByName('Айнтрахт Франкфурт', $clubs),
                         getClubByName('Челси', $clubs),
                         getClubByName('Реал Мадрид', $clubs),
                         getClubByName('Манчестер Сити', $clubs),
                         getClubByName('Бенфика', $clubs),
-                        getClubByName('Пари Сен-Жермен', $clubs),
+                        // getClubByName('Пари Сен-Жермен', $clubs),
                         // getClubByName('Зальцбург', $clubs),
-                        getClubByName('Милан', $clubs),
-                        getClubByName('РБ Лейпциг', $clubs),
-                        getClubByName('Боруссия Дортмунд', $clubs),                            
+                        // getClubByName('Милан', $clubs),
+                        // getClubByName('РБ Лейпциг', $clubs),
+                        // getClubByName('Боруссия Дортмунд', $clubs),                            
                     ];
 
                         // // Лига Европы 2023
