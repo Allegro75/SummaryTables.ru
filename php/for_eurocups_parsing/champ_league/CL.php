@@ -18,7 +18,7 @@ $sql =
     FROM `matches` 
     WHERE `tourneyTitle` = '{$tourneyTitle}' 
     AND `tourneyFinalYear` = {$_GET['year']}
-    AND `score` != '' -- для того, чтобы не учитывать будущие несыгранные матчи в незавершённых турнирах
+    -- AND `score` != '' -- для того, чтобы не учитывать будущие несыгранные матчи в незавершённых турнирах
 ";
 $result = mysqli_query($conn, $sql);
 $matches = array();
