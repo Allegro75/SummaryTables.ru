@@ -165,25 +165,25 @@
 
                         <li class="nav__stripe__list__item  dropdown  archive">
 
-                            <a href="../champ_league/cl_2023.html" title="Еврокубки, история. Ход турниров">
+                            <a href="archive/champ_league/cl_2023.html" title="Еврокубки, история. Ход турниров">
                                 <div class="nav__icon history"></div>
                                 АРХИВ ТУРНИРОВ
                             </a>
 
                             <ul class="nav__stripe__list__item__droplist">
                                 <li class="nav__stripe__list__item__droplist__item">
-                                    <a href="../champ_league/cl_2023.html"
+                                    <a href="archive/champ_league/cl_2023.html"
                                         title="Лига/кубок чемпионов, история. Ход турниров">
                                         Лига чемпионов
                                     </a>
                                 </li>
                                 <li class="nav__stripe__list__item__droplist__item">
-                                    <a href="../cup_win_cup/cwc_1999.html" title="Кубок кубков, история. Ход турниров">
+                                    <a href="archive/cup_win_cup/cwc_1999.html" title="Кубок кубков, история. Ход турниров">
                                         Кубок кубков
                                     </a>
                                 </li>
                                 <li class="nav__stripe__list__item__droplist__item">
-                                    <a href="../euroleague/el_2023.html"
+                                    <a href="archive/euroleague/el_2023.html"
                                         title="Лига Европы / кубок УЕФА / кубок ярмарок, история. Ход турниров">
                                         Лига Европы
                                     </a>
