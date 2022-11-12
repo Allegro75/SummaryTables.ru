@@ -207,6 +207,7 @@ function writeMatchesByStage($name, $matches, $orderedClubs, $clubs, $imagesList
             // if ( ! (is_numeric($goals_2_2)) ) {
             //     $goals_2_2 = "-";
             // }
+            var_dump($orderedStageMatches[$i][0]['score']);
             if (empty($orderedStageMatches[$i][0]['score'])) {
                 $goals_1_1 = $goals_2_1 = $goals_1_2 = $goals_2_2 = "-";
             }
