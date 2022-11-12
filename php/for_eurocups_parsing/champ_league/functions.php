@@ -239,10 +239,10 @@ function writeMatchesByStage($name, $matches, $orderedClubs, $clubs, $imagesList
                     $toss2 = "поражение по жребию";
                 }
                 // Если решали голы на ЧУЖОМ поле:
-            } else if (($orderedStageMatches[$i][1]['tourneyFinalYear'] < 2022) && ($goals_2_1 > $goals_1_2)) { // про голы на чужоим поле
+            } else if (($orderedStageMatches[$i][1]['tourneyFinalYear'] < 2022) && ($goals_2_1 > $goals_1_2)) { // про голы на чужом поле
                 $club1Classes = 'club-name club-name_winner';
                 $club2Classes = 'club-name';
-            } else if (($orderedStageMatches[$i][1]['tourneyFinalYear'] < 2022) && ($goals_1_2 > $goals_2_1)) { // про голы на чужоим поле
+            } else if (($orderedStageMatches[$i][1]['tourneyFinalYear'] < 2022) && ($goals_1_2 > $goals_2_1)) { // про голы на чужом поле
                 $club1Classes = 'club-name';
                 $club2Classes = 'club-name club-name_winner';
             } 
@@ -262,6 +262,14 @@ function writeMatchesByStage($name, $matches, $orderedClubs, $clubs, $imagesList
                     $penalty2 = "<div class='penalty'>(поражение по пенальти)</div>";
                     $penalty2_basePart = "поражение по пенальти";
                 }
+            }
+        }
+        if (true) { // Для отображения будущих матчей
+            if (empty($club1Classes)) {
+                $club1Classes = 'club-name';
+            }
+            if (empty($club2Classes)) {
+                $club2Classes = 'club-name';
             }
         }
 
