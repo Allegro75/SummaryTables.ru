@@ -195,16 +195,16 @@ function writeMatchesByStage($name, $matches, $orderedClubs, $clubs, $imagesList
         // var_dump($goals_1_sum, $goals_2_sum);
 
         if (true) { // Для отображения пустого счёта для несыгранных матчей
-            if (empty($goals_1_1)) {
+            if ( ! (isset($goals_1_1)) ) {
                 $goals_1_1 = "-";
             }
-            if (empty($goals_2_1)) {
+            if ( ! (isset($goals_2_1)) ) {
                 $goals_2_1 = "-";
             }
-            if (empty($goals_1_2)) {
+            if ( ! (isset($goals_1_2)) ) {
                 $goals_1_2 = "-";
             }
-            if (empty($goals_2_2)) {
+            if ( ! (isset($goals_2_2)) ) {
                 $goals_2_2 = "-";
             }
         }
