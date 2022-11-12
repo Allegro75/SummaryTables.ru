@@ -3,7 +3,8 @@
 
     // Файл, генерирующий страницы со сводными таблицами.
 
-    $pageName = "history24";
+    // $pageName = "history24";
+    $pageName = "history12";
 
     $lastAccountedMatchDate = "03.11.2022";
     // $clubsList = [
