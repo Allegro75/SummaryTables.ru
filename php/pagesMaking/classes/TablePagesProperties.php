@@ -44,6 +44,23 @@ class TablePagesProperties {
             ],             
         ],
 
+        "history24" => [
+            "clubsNumberPhrase" => "36 лучших клубов",
+            "clubsNumberPhraseLastPart" => "лучших клубов",
+            "clubsNumber" => "36",
+            "browserTitle" => "36 лучших клубов в истории. Личные счета. Сводная таблица",
+            "cssFilesList" => [
+                "football__body.css",
+                "cap-wo-nav.css",
+                "navigation.css",
+                "captions.css",
+                "table36.css",
+                "settings.css",
+                "donate.css",
+                "footer.css",
+            ],             
+        ],
+
     ];
 
 }    
