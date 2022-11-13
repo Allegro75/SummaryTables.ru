@@ -135,6 +135,7 @@
     $h1Content = $tablePagesProperties[$pageName]["h1Content"];
     $clubsRangeExplanationHintText = $tablePagesProperties[$pageName]["clubsRangeExplanationHintText"] ?? "";
     $ranging = $tablePagesProperties[$pageName]["ranging"];
+    $jsFilesList = $tablePagesProperties[$pageName]["jsFilesList"];
 
 ?>
 
@@ -511,15 +512,9 @@
 
     </div class="football__background">
 
-    <!-- <script src="scripts/showSmallTableOnCellClick.js"></script> -->
-    <script src="scripts/showAutomaticallyGeneratedSmallTable.js"></script>
-    <script src="scripts/cellsColoring.js"></script>
-    <script src="scripts/history36/coloringOnLoad.js"></script>
-    <!-- <script src="scripts/randPairOnLoad.js"></script> -->
-    <script src="scripts/randPairOnLoadDynamicPage.js"></script>
-    <!-- <script src="scripts/randomWindowOnClick.js"></script> -->
-    <script src="scripts/randomWindowOnClickDynamically.js"></script>
-    <!-- <script src="scripts/service/service_rebuildTable.js"></script> -->
+    <? foreach($jsFilesList as $curFileName): ?>
+        <link rel="stylesheet" href="scripts/<?=$curFileName?>">
+    <? endforeach; ?>
     
 </body>
 
