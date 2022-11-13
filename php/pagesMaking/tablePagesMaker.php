@@ -329,7 +329,7 @@
                                         $secClubId = $innerCycleClubInfo['id'];
 
                                         $duelsDefaultVisibilityHtmlRecord = " hidden=''";
-                                        if ($pageName !== "history36") {
+                                        if ($pageName === "history36") {
                                             $duelsDefaultVisibilityHtmlRecord = "";
                                         }
 
