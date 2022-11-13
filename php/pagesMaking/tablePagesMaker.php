@@ -134,6 +134,7 @@
     $cssFilesList = $tablePagesProperties[$pageName]["cssFilesList"];
     $h1Content = $tablePagesProperties[$pageName]["h1Content"];
     $clubsRangeExplanationHintText = $tablePagesProperties[$pageName]["clubsRangeExplanationHintText"] ?? "";
+    $hasRightBtn = $tablePagesProperties[$pageName]["hasRightBtn"] ?? false;
     $ranging = $tablePagesProperties[$pageName]["ranging"];
     $jsFilesList = $tablePagesProperties[$pageName]["jsFilesList"];
 
@@ -184,7 +185,7 @@
                 require_once 'classes/WordForms.php'; // Файл для получения правильных форм слов
             ?>
 
-            <? if ($pageName === "history24"): ?>
+            <? if ($hasRightBtn): ?>
             <div class="table-plus-right-buttons">
             <? endif; ?>
 
@@ -253,12 +254,26 @@
 
                         <td class="main-table_gap"></td>
 
-                        <td class="main-table_criterion" title="Клубы ранжировались по следующей системе:
+                        <? if ($ranging === "mainRange"): ?>
+                            
+                            <td class="main-table_criterion" title="Клубы ранжировались по следующей системе:
 за победу в Лиге чемпионов с 2000-го года - 12 очков; за выход в финал - 9; выход в 1/2 финала - 6; выход в 1/4 финала - 3;
 за победу в кубке/Лиге чемпионов до 2000-го года - 8 очков; за выход в финал - 6; выход в 1/2 финала - 4; выход в 1/4 финала - 2;
 за победу в других еврокубках - 4 очка; за выход в финал - 3; выход в 1/2 финала - 2; выход в 1/4 финала - 1">
-                            Очки
-                        </td>
+                                Очки
+                            </td>
+
+                        <? elseif ($ranging === "championsLeagueWinners"): ?>
+
+                            <td class="main-table_criterion criterion_primary" title="Количество побед в лиге/кубке чемпионов">
+                                Победы
+                            </td>
+
+                            <td class="main-table_criterion criterion_secondary" title="Количество участий в финалах кубка чемпионов">
+                                Финалы
+                            </td>                            
+
+                        <? endif; ?>
 
                     </tr>
 
@@ -403,7 +418,7 @@
                 </tbody>
             </table>
 
-            <? if ($pageName === "history24"): ?>
+            <? if ($hasRightBtn): ?>
 
                     <!--Кнопка СПРАВА для переключения в дуэльный вид: -->
                     <div class="duels-switch  btn-right" id="history25">
