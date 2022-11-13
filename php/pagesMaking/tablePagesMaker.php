@@ -331,7 +331,7 @@
                                     ?>
 
                                     <td id="<?=$curPairCode?>" data-first-club-id="<?=$firstClubId?>" data-sec-club-id="<?=$secClubId?>" class="statistics <?=$curPairHasHistoryClass?>">
-                                        <? if ($clubsNumber != 36): // На странице history36 данные с результатами матчей не нужны (нужны только дуэли) ?>
+                                        <? if ($pageName !== "history36"): // На странице history36 данные с результатами матчей не нужны (нужны только дуэли) ?>
                                             <div class="results" title="<?=$resultsHintContent?>">
                                                 <?=$resultsCellContent?>
                                             </div>
@@ -474,14 +474,12 @@
 
     <!-- <script src="scripts/showSmallTableOnCellClick.js"></script> -->
     <script src="scripts/showAutomaticallyGeneratedSmallTable.js"></script>
-    <script src="scripts/showHideDuels.js"></script>
     <script src="scripts/cellsColoring.js"></script>
-    <script src="scripts/coloringOnLoad.js"></script>
+    <script src="scripts/history36/coloringOnLoad.js"></script>
     <!-- <script src="scripts/randPairOnLoad.js"></script> -->
     <script src="scripts/randPairOnLoadDynamicPage.js"></script>
     <!-- <script src="scripts/randomWindowOnClick.js"></script> -->
     <script src="scripts/randomWindowOnClickDynamically.js"></script>
-    <script src="scripts/duelsOnLoad.js"></script>
     <!-- <script src="scripts/service/service_rebuildTable.js"></script> -->
     
 </body>
