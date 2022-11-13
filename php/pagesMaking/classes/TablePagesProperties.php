@@ -44,7 +44,7 @@ class TablePagesProperties {
             ],             
         ],
 
-        "history24" => [
+        "history36" => [
             "clubsNumberPhrase" => "36 лучших клубов",
             "clubsNumberPhraseLastPart" => "лучших клубов",
             "clubsNumber" => "36",
