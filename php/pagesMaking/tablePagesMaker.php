@@ -373,26 +373,27 @@
 
             <? if ($pageName === "history24"): ?>
 
-                <!--Кнопка СПРАВА для переключения в дуэльный вид: -->
-                <div class="duels-switch  btn-right" id="history25">
-                    <button class="duels-switch__btn  btn-right__btn"
-                        title="Переключиться на отображение счёта в дуэльном виде (и обратно)">
-                        <span class="results"><b>ДУЭЛИ</b></span>
-                        <span class="duels" hidden>ОБРАТНО</span>
-                    </button>
-                    <p class="btn-right__duels-explanation">
-                        <b>Дуэль</b> - непосредственное столкновение двух команд в ходе турнира. <br>
-                        В дуэли побеждает тот, кто проходит дальше в кубковом турнире, либо выигрывает турнир (для
-                        финалов),
-                        <br>
-                        либо для групповых этапов - проходит в стадию более высокую, чем соперник по дуэли.
-                    </p>
-                </div>
+                    <!--Кнопка СПРАВА для переключения в дуэльный вид: -->
+                    <div class="duels-switch  btn-right" id="history25">
+                        <button class="duels-switch__btn  btn-right__btn"
+                            title="Переключиться на отображение счёта в дуэльном виде (и обратно)">
+                            <span class="results"><b>ДУЭЛИ</b></span>
+                            <span class="duels" hidden>ОБРАТНО</span>
+                        </button>
+                        <p class="btn-right__duels-explanation">
+                            <b>Дуэль</b> - непосредственное столкновение двух команд в ходе турнира. <br>
+                            В дуэли побеждает тот, кто проходит дальше в кубковом турнире, либо выигрывает турнир (для
+                            финалов),
+                            <br>
+                            либо для групповых этапов - проходит в стадию более высокую, чем соперник по дуэли.
+                        </p>
+                    </div>
 
-            </div>
+                </div>
 
             <? endif; ?>            
 
+            <? if ($pageName !== "history36"): ?>
             <!--Кнопка СНИЗУ для переключения в ДУЭЛЬНЫЙ вид: -->
             <div class="duels-switch  btn-lower">
                 <button class="duels-switch__btn  btn-lower__btn"
@@ -407,6 +408,7 @@
                     либо для групповых этапов - проходит в стадию более высокую, чем соперник по дуэли.
                 </p>
             </div>
+            <? endif; ?>
 
             <div class="settings">
 
@@ -454,6 +456,7 @@
 
                 </div>
 
+                <? if ($pageName !== "history36"): ?>
                 <div class="settings__row duels-row">
 
                     <div class="duels-row__div">
@@ -466,6 +469,7 @@
                     </div>
 
                 </div>
+                <? endif; ?>
 
             </div>
 
