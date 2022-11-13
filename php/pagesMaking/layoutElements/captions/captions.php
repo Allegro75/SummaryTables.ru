@@ -6,6 +6,18 @@ function printCaptions ($opts = []) {
     $lastAccountedMatchDate = $opts['lastAccountedMatchDate'];
     $clubsNumberPhraseLastPart = $opts['clubsNumberPhraseLastPart'];
     $clubsNumber = $opts['clubsNumber'];
+    $twelweClubsExplanationClassHtmlRecord = "";
+    if ($clubsNumber == 12) {
+        $twelweClubsExplanationClassHtmlRecord = " captions__explanation_12clubs";
+    }    
+    $h1Content = $opts['h1Content'];
+    $clubsRangeExplanationHintText = $opts['clubsRangeExplanationHintText'];
+    $clubsRangeExplanationHintHtmlRecord = empty($clubsRangeExplanationHintText) ? "" : " title=\"{$clubsRangeExplanationHintText}\"";
+    $ranging = $opts['ranging'];
+    $hrefFromClubsNumber = ["", ""];
+    if ($ranging === "mainRange") {
+        $hrefFromClubsNumber = ["<a href=\"range.html\">", "</a>"];
+    }
 
     $for36clubsCaptionsPart = ""; // Часть заголовков, используемая только на странице с 36 клубами
     if ($clubsNumber == 36) {
@@ -49,18 +61,15 @@ function printCaptions ($opts = []) {
                 </p>
 
                 <h1 class=\"captions__h1\">
-                    ЛУЧШИЕ КЛУБЫ ЕВРОПЫ ЗА ВСЮ ИСТОРИЮ
+                    {$h1Content}
                 </h1>
 
-                <p class=\"captions__explanation captions__explanation_12clubs\" title=\"Клубы ранжировались по следующей системе:
-за победу в Лиге чемпионов с 2000-го года - 12 очков; за выход в финал - 9; выход в 1/2 финала - 6; выход в 1/4 финала - 3;
-за победу в кубке/Лиге чемпионов до 2000-го года - 8 очков; за выход в финал - 6; выход в 1/2 финала - 4; выход в 1/4 финала - 2;
-за победу в других еврокубках - 4 очка; за выход в финал - 3; выход в 1/2 финала - 2; выход в 1/4 финала - 1\">
-                    <a href=\"range.html\">
+                <p class=\"captions__explanation{$twelweClubsExplanationClassHtmlRecord}\"{$clubsRangeExplanationHintHtmlRecord}>
+                    {$hrefFromClubsNumber[0]}
                         <span class=\"captions__explanation_circle\">&#8226;</span>
                         <span class=\"captions__explanation_larger\">{$clubsNumber}</span> {$clubsNumberPhraseLastPart}
                         <span class=\"captions__explanation_circle\">&#8226;</span>
-                    </a>
+                    {$hrefFromClubsNumber[1]}
                 </p>
 
                 <p class=\"captions__explanation\">
@@ -71,7 +80,7 @@ function printCaptions ($opts = []) {
                 </p>
                 
                 {$for36clubsCaptionsPart}
-                
+
             </section>";
 
 }        

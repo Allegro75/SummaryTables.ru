@@ -9,6 +9,7 @@
         // $pageName = "history12";
         // $pageName = "history24";
         $pageName = "history36";
+        // $pageName = "winners";
 
         $lastAccountedMatchDate = "03.11.2022";
 
@@ -96,6 +97,32 @@
             "Айнтрахт Франкфурт" => ["points" => 25,],
         ];
 
+        // Для winners
+        // $clubsList = [
+        //     "Реал Мадрид" => ["wins" => 14, "finals" => 3],
+        //     "Милан" => ["wins" => 7, "finals" => 4],
+        //     "Бавария" => ["wins" => 6, "finals" => 5],
+        //     "Ливерпуль" => ["wins" => 6, "finals" => 4],
+        //     "Барселона" => ["wins" => 5, "finals" => 3],
+        //     "Аякс" => ["wins" => 4, "finals" => 2],
+        //     "Интер Милан" => ["wins" => 3, "finals" => 2],
+        //     "Манчестер Юнайтед" => ["wins" => 3, "finals" => 2],
+        //     "Ювентус" => ["wins" => 2, "finals" => 7],
+        //     "Бенфика" => ["wins" => 2, "finals" => 5],
+        //     "Челси" => ["wins" => 2, "finals" => 1],
+        //     "Порто" => ["wins" => 2, "finals" => 0],   
+        //     "Ноттингем Форест" => ["wins" => 2, "finals" => 0],
+        //     "Боруссия Дортмунд" => ["wins" => 1, "finals" => 1],
+        //     "Олимпик Марсель" => ["wins" => 1, "finals" => 1],
+        //     "Стяуа" => ["wins" => 1, "finals" => 1],
+        //     "Гамбург" => ["wins" => 1, "finals" => 1],
+        //     "Селтик" => ["wins" => 1, "finals" => 1],
+        //     "Црвена звезда" => ["wins" => 1, "finals" => 0],
+        //     "ПСВ Эйндховен" => ["wins" => 1, "finals" => 0],
+        //     "Астон Вилла" => ["wins" => 1, "finals" => 0],
+        //     "Фейеноорд" => ["wins" => 1, "finals" => 0],
+        // ];        
+
     }
 
     require_once 'classes/TablePagesProperties.php'; // Получение свойств генерируемой страницы
@@ -105,6 +132,9 @@
     $clubsNumberPhraseLastPart = $tablePagesProperties[$pageName]["clubsNumberPhraseLastPart"];
     $browserTitle = $tablePagesProperties[$pageName]["browserTitle"];
     $cssFilesList = $tablePagesProperties[$pageName]["cssFilesList"];
+    $h1Content = $tablePagesProperties[$pageName]["h1Content"];
+    $clubsRangeExplanationHintText = $tablePagesProperties[$pageName]["clubsRangeExplanationHintText"] ?? "";
+    $ranging = $tablePagesProperties[$pageName]["ranging"];
 
 ?>
 
@@ -142,7 +172,7 @@
 
             <? 
                 require_once 'layoutElements/captions/captions.php'; // Заголовки (крупнейший из к-рых - 'ЛУЧШИЕ КЛУБЫ ЕВРОПЫ ЗА ВСЮ ИСТОРИЮ')
-                printCaptions (["lastAccountedMatchDate" => $lastAccountedMatchDate, "clubsNumberPhraseLastPart" => $clubsNumberPhraseLastPart, "clubsNumber" => $clubsNumber,]);
+                printCaptions (["lastAccountedMatchDate" => $lastAccountedMatchDate, "clubsNumberPhraseLastPart" => $clubsNumberPhraseLastPart, "clubsNumber" => $clubsNumber, "h1Content" => $h1Content, "clubsRangeExplanationHintText" => $clubsRangeExplanationHintText, "ranging" => $ranging,]);
 
                 require_once 'tableInfo.php'; // Получение содержания таблицы
                 $tableInfo = getTableInfo (["clubsList" => $clubsList]);
@@ -493,4 +523,4 @@
     
 </body>
 
-</html>    
+</html>
