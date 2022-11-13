@@ -328,6 +328,11 @@
                                         $firstClubId = $curClubInfo['id'];
                                         $secClubId = $innerCycleClubInfo['id'];
 
+                                        $duelsDefaultVisibilityHtmlRecord = " hidden=''";
+                                        if ($pageName !== "history36") {
+                                            $duelsDefaultVisibilityHtmlRecord = "";
+                                        }
+
                                     ?>
 
                                     <td id="<?=$curPairCode?>" data-first-club-id="<?=$firstClubId?>" data-sec-club-id="<?=$secClubId?>" class="statistics <?=$curPairHasHistoryClass?>">
@@ -336,7 +341,7 @@
                                                 <?=$resultsCellContent?>
                                             </div>
                                         <? endif; ?>
-                                        <div class="duels" title="<?=$duelsHintFirstStr?><?=$duelsHintTheRest?>" hidden="">
+                                        <div class="duels" title="<?=$duelsHintFirstStr?><?=$duelsHintTheRest?>"<?=$duelsDefaultVisibilityHtmlRecord?>>
                                             <?=$duelsCellContent?>
                                         </div>
                                     </td>
