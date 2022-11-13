@@ -415,7 +415,7 @@
 
                                 <?
                                     $corrVictoryWordForm = WordForms::getWordLikeVictory(["word" => "победа", "number" => $clubsList[$curClubInfo["basicFullName"]]["wins"]]);
-                                    $corrFinalWordForm = WordForms::getWordLikePoint(["word" => "финал", "number" => $clubsList[$curClubInfo["basicFullName"]]["finals"]]);
+                                    $corrFinalWordForm = WordForms::getWordLikeFinal(["word" => "финал", "number" => $clubsList[$curClubInfo["basicFullName"]]["finals"]]);
                                 ?>                                
 
                                 <td class="main-table_criterion criterion_primary" title="<?=$curClubInfo["shortName"]?>: <?=$clubsList[$curClubInfo["basicFullName"]]["wins"]?> <?=$corrVictoryWordForm?> в кубке чемпионов">

@@ -120,6 +120,24 @@ class WordForms
 
     }
 
+    // Получение правильной формы слова типа "финал" (мужской род) после числительного
+    public static function getWordLikeFinal($opts = [])
+    {
+
+        $number = $opts["number"];
+        $word = $opts["word"];
+
+        $newWord = "{$word}ов";
+        if ((($number % 10) === 1) && (($number !== 11) && ($number !== 111) && ($number !== 211) && ($number !== 311))) {
+            $newWord = $word;
+        } else if ( ( (($number % 10) === 2) || (($number % 10) === 3) || (($number % 10) === 4) ) && ( ! (in_array($number, [12, 13, 14, 112, 113, 114, 212, 213, 214, 312, 313, 314,])) ) ) {
+            $newWord = "{$word}а";
+        }
+        
+        return $newWord;
+
+    }
+
     // Получение правильной формы названия клуба в родительном падеже (нужно для описания дуэлей):
     // Слово в среднем роде (напр., "Челси") не нуждается в изменениях в родительном падеже.
     public static function getGenitiveWord($opts = [])
