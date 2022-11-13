@@ -556,7 +556,7 @@
     </div class="football__background">
 
     <? foreach($jsFilesList as $curFileName): ?>
-        <script src="scripts/<?=$curFileName?>"></script>
+        <script src="http://summarytables.ru/scripts/<?=$curFileName?>"></script>
     <? endforeach; ?>
     
 </body>
