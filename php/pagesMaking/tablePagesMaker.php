@@ -159,7 +159,7 @@
     <link rel="shortcut icon" href="images/football_ball.svg" type="image/x-icon">
     <title><?=$browserTitle?></title>
     <? foreach($cssFilesList as $curFileName): ?>
-        <link rel="stylesheet" href="stylesheets/<?=$curFileName?>">
+        <link rel="stylesheet" href="summarytables.ru/stylesheets/<?=$curFileName?>">
     <? endforeach; ?>
 
 </head>
@@ -200,7 +200,7 @@
                         "Akt" => "Akt_light.png",
                         "AuW" => "AuW_light.png",
                         "DuP" => "DuP_light.png",
-                        "Mar" => "Mar_light.png",
+                        // "Mar" => "Mar_light.png",
                         "Mlm" => "Mlm_light.png",
                         "Nan" => "Nan_light.png",
                         "New" => "New_light.png",
@@ -255,7 +255,7 @@
                         <td class="main-table_gap"></td>
 
                         <? if ($ranging === "mainRange"): ?>
-                            
+
                             <td class="main-table_criterion" title="Клубы ранжировались по следующей системе:
 за победу в Лиге чемпионов с 2000-го года - 12 очков; за выход в финал - 9; выход в 1/2 финала - 6; выход в 1/4 финала - 3;
 за победу в кубке/Лиге чемпионов до 2000-го года - 8 очков; за выход в финал - 6; выход в 1/2 финала - 4; выход в 1/4 финала - 2;
