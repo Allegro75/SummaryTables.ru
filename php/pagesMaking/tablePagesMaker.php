@@ -399,16 +399,39 @@
                             
                             <td class="main-table_gap"></td>
 
-                            <?
-                                $corrPointWordForm = WordForms::getWordLikePoint(["word" => "очко", "number" => $clubsList[$curClubInfo["basicFullName"]]["points"]]);
-                            ?>
+                            <? if ($ranging === "mainRange"): ?>
 
-                            <td class="main-table_criterion" title="<?=$curClubInfo["shortName"]?>: <?=$clubsList[$curClubInfo["basicFullName"]]["points"]?> <?=$corrPointWordForm?>">
-                                <a href="range.html">
-                                    <span class="main-table_criterion"><?=$clubsList[$curClubInfo["basicFullName"]]["points"]?></span>
-                                </a>
-                            </td>                            
+                                <?
+                                    $corrPointWordForm = WordForms::getWordLikePoint(["word" => "очко", "number" => $clubsList[$curClubInfo["basicFullName"]]["points"]]);
+                                ?>
+
+                                <td class="main-table_criterion" title="<?=$curClubInfo["shortName"]?>: <?=$clubsList[$curClubInfo["basicFullName"]]["points"]?> <?=$corrPointWordForm?>">
+                                    <a href="range.html">
+                                        <span class="main-table_criterion"><?=$clubsList[$curClubInfo["basicFullName"]]["points"]?></span>
+                                    </a>
+                                </td>
                             
+                            <? elseif ($ranging === "championsLeagueWinners"): ?>
+
+                                <?
+                                    $corrVictoryWordForm = WordForms::getWordLikeVictory(["word" => "победа", "number" => $clubsList[$curClubInfo["basicFullName"]]["wins"]]);
+                                    $corrFinalWordForm = WordForms::getWordLikePoint(["word" => "финал", "number" => $clubsList[$curClubInfo["basicFullName"]]["finals"]]);
+                                ?>                                
+
+                                <td class="main-table_criterion criterion_primary" title="<?=$curClubInfo["shortName"]?>: <?=$clubsList[$curClubInfo["basicFullName"]]["wins"]?> <?=$corrVictoryWordForm?> в кубке чемпионов">
+                                    <span class="main-table_criterion criterion_primary">
+                                        <?=$clubsList[$curClubInfo["basicFullName"]]["wins"]?>
+                                    </span>
+                                </td>
+
+                                <td class="main-table_criterion criterion_secondary" title="<?=$curClubInfo["shortName"]?>: <?=$clubsList[$curClubInfo["basicFullName"]]["finals"]?> <?=$corrFinalWordForm?>">
+                                    <span class="main-table_criterion criterion_secondary">
+                                        <?=$clubsList[$curClubInfo["basicFullName"]]["finals"]?>
+                                    </span>
+                                </td>                                
+
+                            <? endif; ?>
+
                         </tr>
 
                         <? $rowNumber++; ?>
