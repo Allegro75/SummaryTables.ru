@@ -159,7 +159,7 @@
     <link rel="shortcut icon" href="images/football_ball.svg" type="image/x-icon">
     <title><?=$browserTitle?></title>
     <? foreach($cssFilesList as $curFileName): ?>
-        <link rel="stylesheet" href="summarytables.ru/stylesheets/<?=$curFileName?>">
+        <link rel="stylesheet" href="http://summarytables.ru/stylesheets/<?=$curFileName?>">
     <? endforeach; ?>
 
 </head>
