@@ -150,7 +150,7 @@
                 // var_dump($tableInfo);
                 // echo "</pre>";
 
-                require_once 'classes/WordForms.php'; // Получение правильных форм слов
+                require_once 'classes/WordForms.php'; // Файл для получения правильных форм слов
             ?>
 
             <? if ($pageName === "history24"): ?>
@@ -287,9 +287,8 @@
 <p class=\"goals-difference\">-</p>";
 
                                         $secClubNameGender = $tableInfo['clubsList'][$secClubFullName]["gender"];
-                                        // $secClubGenitiveName = ($secClubNameGender === "neuter") ? $innerCycleClubInfo["shortName"] : WordForms::getGenitiveWord(["word" => $innerCycleClubInfo["shortName"], "gender" => $secClubNameGender,]);
                                         $correctClubNameInDuels = WordForms::getGenitiveWord(["word" => $innerCycleClubInfo["shortName"], "gender" => $secClubNameGender,]);
-                                        $secClubGenitiveName = $correctClubNameInDuels["clubNameCorrForm"] ?? $correctClubNameInDuels; // В случае, если в WordForms передавалось имя типа "Боруссия Д" здесь мы получим в ответ массив, элеиентом к-рого с ключом "clubNameCorrForm" будет слово "Боруссии". В большинстве же случаев - просто сразу получим нужную форму названия клуба.
+                                        $secClubGenitiveName = $correctClubNameInDuels["clubNameCorrForm"] ?? $correctClubNameInDuels; // В случае, если в WordForms передавалось имя типа "Боруссия Д" здесь мы получим в ответ массив, элементом к-рого с ключом "clubNameCorrForm" будет слово "Боруссии". В большинстве же случаев - просто сразу получим нужную форму названия клуба.
                                         $cityPartClubName = $correctClubNameInDuels["cityPart"] ?? ""; // Для "Боруссия Д" здесь мы получим "Д". В остальных случаях - ничего.
 
                                         if ((mb_strpos($curClubInfo["shortName"], " ") !== false) && ($curClubInfo["shortName"] !== "Црвена звезда")) { // Для названий типа "Боруссия Д", "Динамо К". Работа над получением корректной формы этих названий в именительном падеже с учётом кавычек.
@@ -332,9 +331,11 @@
                                     ?>
 
                                     <td id="<?=$curPairCode?>" data-first-club-id="<?=$firstClubId?>" data-sec-club-id="<?=$secClubId?>" class="statistics <?=$curPairHasHistoryClass?>">
-                                        <div class="results" title="<?=$resultsHintContent?>">
-                                            <?=$resultsCellContent?>
-                                        </div>
+                                        <? if ($clubsNumber != 36): // На странице history36 данные с результатами матчей не нужны (нужны только дуэли) ?>
+                                            <div class="results" title="<?=$resultsHintContent?>">
+                                                <?=$resultsCellContent?>
+                                            </div>
+                                        <? endif; ?>
                                         <div class="duels" title="<?=$duelsHintFirstStr?><?=$duelsHintTheRest?>" hidden="">
                                             <?=$duelsCellContent?>
                                         </div>
