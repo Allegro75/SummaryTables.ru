@@ -443,8 +443,12 @@
 
             <? if ($hasRightBtn): ?>
 
+                <?
+                    $btnIdHtmlRecord = ($pageName === "history24") ? " id=\"history25\"" : "";
+                ?>
+
                     <!--Кнопка СПРАВА для переключения в дуэльный вид: -->
-                    <div class="duels-switch  btn-right" id="history25">
+                    <div class="duels-switch  btn-right"<?=$btnIdHtmlRecord?>>
                         <button class="duels-switch__btn  btn-right__btn"
                             title="Переключиться на отображение счёта в дуэльном виде (и обратно)">
                             <span class="results"><b>ДУЭЛИ</b></span>
