@@ -513,7 +513,7 @@
     </div class="football__background">
 
     <? foreach($jsFilesList as $curFileName): ?>
-        <link rel="stylesheet" href="scripts/<?=$curFileName?>">
+        <script src="scripts/<?=$curFileName?>"></script>
     <? endforeach; ?>
     
 </body>
