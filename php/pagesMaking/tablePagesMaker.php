@@ -214,7 +214,7 @@
 
             <? 
                 require_once 'layoutElements/captions/captions.php'; // Заголовки (крупнейший из к-рых - 'ЛУЧШИЕ КЛУБЫ ЕВРОПЫ ЗА ВСЮ ИСТОРИЮ')
-                printCaptions (["lastAccountedMatchDate" => $lastAccountedMatchDate, "clubsNumberPhraseLastPart" => $clubsNumberPhraseLastPart, "clubsNumber" => $clubsNumber, "h1Content" => $h1Content, "clubsRangeExplanationHintText" => $clubsRangeExplanationHintText, "ranging" => $ranging, "bookmakersParagraph" => $bookmakersParagraph, "finishedTourneyParagraph" => $finishedTourneyParagraph,]);
+                printCaptions (["lastAccountedMatchDate" => $lastAccountedMatchDate, "clubsNumberPhraseLastPart" => $clubsNumberPhraseLastPart, "clubsNumber" => $clubsNumber, "h1Content" => $h1Content, "clubsRangeExplanationHintText" => $clubsRangeExplanationHintText, "ranging" => $ranging, "bookmakersParagraph" => $bookmakersParagraph, "screamerParagraph" => $screamerParagraph, "finishedTourneyParagraph" => $finishedTourneyParagraph,]);
 
                 require_once 'tableInfo.php'; // Получение содержания таблицы
                 $tableInfo = getTableInfo (["clubsList" => $clubsList]);
