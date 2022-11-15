@@ -21,6 +21,8 @@
 
         $lastAccountedMatchDate = "03.11.2022";
 
+        $bookmakersOddsDate = "15.11.2022";
+
         $tourneyStartYear = 2022;
         $tourneyEndYear = 2023;
 
@@ -312,6 +314,12 @@
                             <td class="main-table_criterion criterion_secondary" title="Количество участий в финалах кубка чемпионов">
                                 Финалы
                             </td>                            
+
+                        <? elseif ($ranging === "bookmakers"): ?>
+
+                            <td class="main-table_criterion" title="Коэффициенты на победу от букмекеров от <?=$bookmakersOddsDate?>">
+                                Шансы
+                            </td>
 
                         <? endif; ?>
 

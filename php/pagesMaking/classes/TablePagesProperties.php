@@ -134,7 +134,6 @@ class TablePagesProperties {
         "champ_league_current" => [
 
             "clubsNumberPhrase" => "Фавориты Лиги чемпионов",
-            "clubsNumberPhraseLastPart" => "лучших клубов",
             "hasTourneyYearIndicationInHead" => true,
             "clubsNumber" => "16",
             "browserTitle" => "Фавориты ЛЧ. Личные счета суперклубов. Сводная таблица",
