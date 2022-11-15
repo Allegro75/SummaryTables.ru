@@ -154,9 +154,43 @@ class TablePagesProperties {
                 "randomWindowOnClickDynamically.js",
                 "duelsOnLoad.js",
             ],
-            "h1Content" => "ЛУЧШИЕ КЛУБЫ ЕВРОПЫ ЗА ВСЮ ИСТОРИЮ",
-            "clubsRangeExplanationHintText" => "Клубы ранжировались по следующей системе:\nза победу в Лиге чемпионов с 2000-го года - 12 очков; за выход в финал - 9; выход в 1/2 финала - 6; выход в 1/4 финала - 3;\nза победу в кубке/Лиге чемпионов до 2000-го года - 8 очков; за выход в финал - 6; выход в 1/2 финала - 4; выход в 1/4 финала - 2;\nза победу в других еврокубках - 4 очка; за выход в финал - 3; выход в 1/2 финала - 2; выход в 1/4 финала - 1",
-            "ranging" => "mainRange",
+            // "h1Content" => "ФАВОРИТЫ 
+            //     <a href=\"archive/champ_league/cl_2023.html\" title=\"Лига чемпионов 2022/2023. Ход турнира\">ЛИГИ ЧЕМПИОНОВ 2022/2023</a>",
+            "h1Content" => "УЧАСТНИКИ ПЛЕЙ-ОФФ 
+                <a href=\"archive/champ_league/cl_2023.html\" title=\"Лига чемпионов 2022/2023. Ход турнира\">ЛИГИ ЧЕМПИОНОВ 2022/2023</a>",
+            // "h1Content" => "ЧЕТВЕРТЬФИНАЛИСТЫ 
+            //     <a href=\"archive/champ_league/cl_2023.html\" title=\"Лига чемпионов 2022/2023. Ход турнира\">ЛИГИ ЧЕМПИОНОВ 2022/2023</a>",
+            "bookmakersParagraph" => "<p class=\"captions__explanation\">
+                <span class=\"captions__explanation_circle\">&#8226;</span>
+                Указаны букмекерские коэффициенты от 15.11.2022
+                <span class=\"captions__explanation_circle\">&#8226;</span>
+            </p>",
+            "screamerParagraph" => "<p class=\"captions__explanation\">
+                <span class=\"captions__explanation_circle\">&#8226;</span>
+                Знаком <img src=\"images/screamer_brown.png\" alt=\"1/8 финала\" class=\"screamer\"> отмечены соперники по 1/8 финала текущего розыгрыша                  
+                <span class=\"captions__explanation_circle\">&#8226;</span>
+            </p>",
+            // "screamerParagraph" => "<p class=\"captions__explanation\">
+            //     <span class=\"captions__explanation_circle\">&#8226;</span>
+            //     Знаком <img src=\"images/screamer_brown.png\" alt=\"1/4 финала\" class=\"screamer\"> отмечены соперники по 1/4 финала текущего розыгрыша                  
+            //     <span class=\"captions__explanation_circle\">&#8226;</span>
+            // </p>",
+            // "screamerParagraph" => "<p class=\"captions__explanation\">
+            //     <span class=\"captions__explanation_circle\">&#8226;</span>
+            //     Знаком <img src=\"images/screamer_brown.png\" alt=\"1/2 финала\" class=\"screamer\"> отмечены соперники по 1/2 финала текущего розыгрыша                  
+            //     <span class=\"captions__explanation_circle\">&#8226;</span>
+            // </p>",
+            // "screamerParagraph" => "<p class=\"captions__explanation\">
+            //     <span class=\"captions__explanation_circle\">&#8226;</span>
+            //     Знаком <img src=\"images/screamer_brown.png\" alt=\"ФИНАЛ\" class=\"screamer\"> отмечены соперники по финалу текущего розыгрыша                  
+            //     <span class=\"captions__explanation_circle\">&#8226;</span>
+            // </p>",
+            // "finishedTourneyParagraph" => 
+            //     "<p class=\"captions__explanation\">
+            //     <span class=\"captions__explanation_circle\">&#8226;</span>
+            //     Турнир завершён
+            //     <span class=\"captions__explanation_circle\">&#8226;</span>
+            // </p>",
         ],
 
     ];

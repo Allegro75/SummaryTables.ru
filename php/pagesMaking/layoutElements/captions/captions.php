@@ -12,12 +12,36 @@ function printCaptions ($opts = []) {
     }    
     $h1Content = $opts['h1Content'];
     $clubsRangeExplanationHintText = $opts['clubsRangeExplanationHintText'];
+    $bookmakersParagraph = $opts['bookmakersParagraph'];
+    $screamerParagraph = $opts['screamerParagraph'];
+    $finishedTourneyParagraph = $opts['finishedTourneyParagraph'];
     $clubsRangeExplanationHintHtmlRecord = empty($clubsRangeExplanationHintText) ? "" : " title=\"{$clubsRangeExplanationHintText}\"";
     $ranging = $opts['ranging'];
     $hrefFromClubsNumber = ["", ""];
     if ($ranging === "mainRange") {
         $hrefFromClubsNumber = ["<a href=\"range.html\">", "</a>"];
     }
+
+    $clubsNumberParagraph = $lastDateParagrapContenthLastPart = "";
+    $lastDateParagrapContenthFirstPart = "Учтены";
+    if ($ranging !== "bookmakers") {
+        
+        // Формируем параграф типа "36 лучших клубов" для всех страниц, кроме страниц с фаворитами
+        $clubsNumberParagraph = 
+            "<p class=\"captions__explanation{$twelweClubsExplanationClassHtmlRecord}\"{$clubsRangeExplanationHintHtmlRecord}>
+                {$hrefFromClubsNumber[0]}
+                    <span class=\"captions__explanation_circle\">&#8226;</span>
+                    <span class=\"captions__explanation_larger\">{$clubsNumber}</span> {$clubsNumberPhraseLastPart}
+                    <span class=\"captions__explanation_circle\">&#8226;</span>
+                {$hrefFromClubsNumber[1]}
+            </p>
+        ";
+
+        $lastDateParagrapContenthLastPart = " (учтены все матчи групповых этапов сезона 2022/2023)";
+        $lastDateParagrapContenthFirstPart = "В таблице учтены";
+
+    }
+    
 
     $for36clubsCaptionsPart = ""; // Часть заголовков, используемая только на странице с 36 клубами
     if ($clubsNumber == 36) {
@@ -64,20 +88,19 @@ function printCaptions ($opts = []) {
                     {$h1Content}
                 </h1>
 
-                <p class=\"captions__explanation{$twelweClubsExplanationClassHtmlRecord}\"{$clubsRangeExplanationHintHtmlRecord}>
-                    {$hrefFromClubsNumber[0]}
-                        <span class=\"captions__explanation_circle\">&#8226;</span>
-                        <span class=\"captions__explanation_larger\">{$clubsNumber}</span> {$clubsNumberPhraseLastPart}
-                        <span class=\"captions__explanation_circle\">&#8226;</span>
-                    {$hrefFromClubsNumber[1]}
-                </p>
+                {$bookmakersParagraph}
+
+                {$clubsNumberParagraph}
 
                 <p class=\"captions__explanation\">
                     <span class=\"captions__explanation_circle\">&#8226;</span>                
                         <!-- Таблица обновлена по итогам сезона 2021/2022 -->
-                        Учтены матчи до {$lastAccountedMatchDate} включительно (учтены все матчи групповых этапов сезона 2022/2023)
+                        {$lastDateParagrapContenthFirstPart} матчи до {$lastAccountedMatchDate} включительно{$lastDateParagrapContenthLastPart}
                     <span class=\"captions__explanation_circle\">&#8226;</span>
                 </p>
+
+                {$screamerParagraph}
+                {$finishedTourneyParagraph}
                 
                 {$for36clubsCaptionsPart}
 

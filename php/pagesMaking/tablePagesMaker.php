@@ -3,7 +3,13 @@
 
     // Файл, генерирующий страницы со сводными таблицами.
 
-    // Переменные, нуждающиеся в определении перед генерацией таблицы. Кажется, больше нигде ничего определять не надо
+    // Переменные, нуждающиеся в определении перед генерацией таблицы. 
+    // Нужно ещё определить:
+    // - в layoutElements/header/shortHeader.php - от какого сезона турниры показываем по ссылкам в "Текущем сезоне"
+    // - если делаем champ_league_current, в classes/TablePagesProperties.php определить h1Content
+    // - если делаем champ_league_current, в classes/TablePagesProperties.php определить число в bookmakersParagraph
+    // - если делаем champ_league_current, в classes/TablePagesProperties.php определить стадию турнира в screamerParagraph
+    // - если делаем champ_league_current, в classes/TablePagesProperties.php определить наличие finishedTourneyParagraph
     if (true) {
 
         // $pageName = "history12";
@@ -159,6 +165,9 @@
     $h1Content = $tablePagesProperties[$pageName]["h1Content"];
     $clubsRangeExplanationHintText = $tablePagesProperties[$pageName]["clubsRangeExplanationHintText"] ?? "";
     $hasRightBtn = $tablePagesProperties[$pageName]["hasRightBtn"] ?? false;
+    $bookmakersParagraph = $tablePagesProperties[$pageName]["bookmakersParagraph"] ?? "";
+    $screamerParagraph = $tablePagesProperties[$pageName]["screamerParagraph"] ?? "";
+    $finishedTourneyParagraph = $tablePagesProperties[$pageName]["finishedTourneyParagraph"] ?? "";
     $hasTourneyYearIndicationInHead = $tablePagesProperties[$pageName]["hasTourneyYearIndicationInHead"] ?? false;
     $ranging = $tablePagesProperties[$pageName]["ranging"];
     $jsFilesList = $tablePagesProperties[$pageName]["jsFilesList"];
@@ -204,7 +213,7 @@
 
             <? 
                 require_once 'layoutElements/captions/captions.php'; // Заголовки (крупнейший из к-рых - 'ЛУЧШИЕ КЛУБЫ ЕВРОПЫ ЗА ВСЮ ИСТОРИЮ')
-                printCaptions (["lastAccountedMatchDate" => $lastAccountedMatchDate, "clubsNumberPhraseLastPart" => $clubsNumberPhraseLastPart, "clubsNumber" => $clubsNumber, "h1Content" => $h1Content, "clubsRangeExplanationHintText" => $clubsRangeExplanationHintText, "ranging" => $ranging,]);
+                printCaptions (["lastAccountedMatchDate" => $lastAccountedMatchDate, "clubsNumberPhraseLastPart" => $clubsNumberPhraseLastPart, "clubsNumber" => $clubsNumber, "h1Content" => $h1Content, "clubsRangeExplanationHintText" => $clubsRangeExplanationHintText, "ranging" => $ranging, "bookmakersParagraph" => $bookmakersParagraph, "finishedTourneyParagraph" => $finishedTourneyParagraph,]);
 
                 require_once 'tableInfo.php'; // Получение содержания таблицы
                 $tableInfo = getTableInfo (["clubsList" => $clubsList]);
