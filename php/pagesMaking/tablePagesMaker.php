@@ -10,6 +10,7 @@
     // - если делаем champ_league_current, в classes/TablePagesProperties.php определить число в bookmakersParagraph
     // - если делаем champ_league_current, в classes/TablePagesProperties.php определить стадию турнира в screamerParagraph
     // - если делаем champ_league_current, в classes/TablePagesProperties.php определить наличие finishedTourneyParagraph
+    // - если делаем champ_league_current, в classes/TablePagesProperties.php определить наличие clubsNumber (возможно, без него можно вообще обойтись для champ_league_current)
     if (true) {
 
         // $pageName = "history12";

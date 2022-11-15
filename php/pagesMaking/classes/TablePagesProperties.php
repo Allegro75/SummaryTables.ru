@@ -136,7 +136,7 @@ class TablePagesProperties {
             "clubsNumberPhrase" => "Фавориты Лиги чемпионов",
             "clubsNumberPhraseLastPart" => "лучших клубов",
             "hasTourneyYearIndicationInHead" => true,
-            "clubsNumber" => "36",
+            "clubsNumber" => "16",
             "browserTitle" => "Фавориты ЛЧ. Личные счета суперклубов. Сводная таблица",
             "cssFilesList" => [
                 "football__body.css",
@@ -197,7 +197,7 @@ class TablePagesProperties {
             // </p>",
 
             "ranging" => "bookmakers",
-            
+
         ],
 
     ];
