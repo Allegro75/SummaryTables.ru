@@ -9,9 +9,13 @@
         // $pageName = "history12";
         // $pageName = "history24";
         // $pageName = "history36";
-        $pageName = "winners";
+        // $pageName = "winners";
+        $pageName = "champ_league_current";
 
         $lastAccountedMatchDate = "03.11.2022";
+
+        $tourneyStartYear = 2022;
+        $tourneyEndYear = 2023;
 
         // // Для history12
         // $clubsList = [
@@ -97,31 +101,51 @@
         //     "Айнтрахт Франкфурт" => ["points" => 25,],
         // ];
 
-        // Для winners
+        // // Для winners
+        // $clubsList = [
+        //     "Реал Мадрид" => ["wins" => 14, "finals" => 3],
+        //     "Милан" => ["wins" => 7, "finals" => 4],
+        //     "Бавария" => ["wins" => 6, "finals" => 5],
+        //     "Ливерпуль" => ["wins" => 6, "finals" => 4],
+        //     "Барселона" => ["wins" => 5, "finals" => 3],
+        //     "Аякс" => ["wins" => 4, "finals" => 2],
+        //     "Интер Милан" => ["wins" => 3, "finals" => 2],
+        //     "Манчестер Юнайтед" => ["wins" => 3, "finals" => 2],
+        //     "Ювентус" => ["wins" => 2, "finals" => 7],
+        //     "Бенфика" => ["wins" => 2, "finals" => 5],
+        //     "Челси" => ["wins" => 2, "finals" => 1],
+        //     "Порто" => ["wins" => 2, "finals" => 0],   
+        //     "Ноттингем Форест" => ["wins" => 2, "finals" => 0],
+        //     "Боруссия Дортмунд" => ["wins" => 1, "finals" => 1],
+        //     "Олимпик Марсель" => ["wins" => 1, "finals" => 1],
+        //     "Стяуа" => ["wins" => 1, "finals" => 1],
+        //     "Гамбург" => ["wins" => 1, "finals" => 1],
+        //     "Селтик" => ["wins" => 1, "finals" => 1],
+        //     "Црвена звезда" => ["wins" => 1, "finals" => 0],
+        //     "ПСВ Эйндховен" => ["wins" => 1, "finals" => 0],
+        //     "Астон Вилла" => ["wins" => 1, "finals" => 0],
+        //     "Фейеноорд" => ["wins" => 1, "finals" => 0],
+        // ];
+
+        // Для champ_league_current
         $clubsList = [
-            "Реал Мадрид" => ["wins" => 14, "finals" => 3],
-            "Милан" => ["wins" => 7, "finals" => 4],
-            "Бавария" => ["wins" => 6, "finals" => 5],
-            "Ливерпуль" => ["wins" => 6, "finals" => 4],
-            "Барселона" => ["wins" => 5, "finals" => 3],
-            "Аякс" => ["wins" => 4, "finals" => 2],
-            "Интер Милан" => ["wins" => 3, "finals" => 2],
-            "Манчестер Юнайтед" => ["wins" => 3, "finals" => 2],
-            "Ювентус" => ["wins" => 2, "finals" => 7],
-            "Бенфика" => ["wins" => 2, "finals" => 5],
-            "Челси" => ["wins" => 2, "finals" => 1],
-            "Порто" => ["wins" => 2, "finals" => 0],   
-            "Ноттингем Форест" => ["wins" => 2, "finals" => 0],
-            "Боруссия Дортмунд" => ["wins" => 1, "finals" => 1],
-            "Олимпик Марсель" => ["wins" => 1, "finals" => 1],
-            "Стяуа" => ["wins" => 1, "finals" => 1],
-            "Гамбург" => ["wins" => 1, "finals" => 1],
-            "Селтик" => ["wins" => 1, "finals" => 1],
-            "Црвена звезда" => ["wins" => 1, "finals" => 0],
-            "ПСВ Эйндховен" => ["wins" => 1, "finals" => 0],
-            "Астон Вилла" => ["wins" => 1, "finals" => 0],
-            "Фейеноорд" => ["wins" => 1, "finals" => 0],
-        ];        
+            "Манчестер Сити" => ["odds" => 2.75,],
+            "Бавария" => ["odds" => 7,],
+            "Пари Сен-Жермен" => ["odds" => 10,],
+            "Ливерпуль" => ["odds" => 10,],
+            "Реал Мадрид" => ["odds" => 12,],
+            "Наполи" => ["odds" => 15,],
+            "Челси" => ["odds" => 17,],
+            "Тоттенхэм Хотспур" => ["odds" => 20,],
+            "Бенфика" => ["odds" => 25,],
+            "Интер Милан" => ["odds" => 35,],
+            "Милан" => ["odds" => 45,],
+            "Боруссия Дортмунд" => ["odds" => 50,],
+            "Порто" => ["odds" => 75,],
+            "РБ Лейпциг" => ["odds" => 100,],            
+            "Айнтрахт Франкфурт" => ["odds" => 150,],
+            "Брюгге" => ["odds" => 250,],            
+        ];
 
     }
 
@@ -135,8 +159,14 @@
     $h1Content = $tablePagesProperties[$pageName]["h1Content"];
     $clubsRangeExplanationHintText = $tablePagesProperties[$pageName]["clubsRangeExplanationHintText"] ?? "";
     $hasRightBtn = $tablePagesProperties[$pageName]["hasRightBtn"] ?? false;
+    $hasTourneyYearIndicationInHead = $tablePagesProperties[$pageName]["hasTourneyYearIndicationInHead"] ?? false;
     $ranging = $tablePagesProperties[$pageName]["ranging"];
     $jsFilesList = $tablePagesProperties[$pageName]["jsFilesList"];
+
+    $headDescriptionClubsNumberPhraseLastPart = "";
+    if ($hasTourneyYearIndicationInHead) {
+        $headDescriptionClubsNumberPhraseLastPart = " {$tourneyStartYear}/{$tourneyEndYear}";
+    }
 
 ?>
 
@@ -148,7 +178,7 @@
     <meta charset="utf-8">
     <meta name="author" content="Edwards, Allegro, Edwards75, Allegro75, Oleg Otkidach">
     <meta name="author" content="Олег Откидач">
-    <meta name="description" content="Сводная таблица истории противостояний европейских футбольных клубов в рамках еврокубков. <?=$clubsNumberPhrase?>.">
+    <meta name="description" content="Сводная таблица истории противостояний европейских футбольных клубов в рамках еврокубков. <?=$clubsNumberPhrase?><?=$headDescriptionClubsNumberPhraseLastPart?>.">
     <meta name="keywords" content="Футбол. Еврокубки. Европа. 
     Личные встречи. Личные счета. vs. История игр. История противостояний.  
     Сводная таблица. Таблица-'шахматка'. Статистика. История. Результаты. 

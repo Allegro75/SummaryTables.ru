@@ -128,6 +128,37 @@ class TablePagesProperties {
             "ranging" => "mainRange",
         ],
 
+        "champ_league_current" => [
+            "clubsNumberPhrase" => "Фавориты Лиги чемпионов",
+            "clubsNumberPhraseLastPart" => "лучших клубов",
+            "hasTourneyYearIndicationInHead" => true,
+            "clubsNumber" => "36",
+            "browserTitle" => "Фавориты ЛЧ. Личные счета суперклубов. Сводная таблица",
+            "cssFilesList" => [
+                "football__body.css",
+                "cap-wo-nav.css",
+                "navigation.css",
+                "captions.css",
+                "table16.css",
+                "duel-button-lower.css",
+                "settings.css",
+                "donate.css",
+                "footer.css",
+            ],
+            "jsFilesList" => [
+                "showAutomaticallyGeneratedSmallTable.js",
+                "showHideDuels.js",
+                "cellsColoring.js",
+                "coloringOnLoad.js",
+                "randPairOnLoadDynamicPage.js",
+                "randomWindowOnClickDynamically.js",
+                "duelsOnLoad.js",
+            ],
+            "h1Content" => "ЛУЧШИЕ КЛУБЫ ЕВРОПЫ ЗА ВСЮ ИСТОРИЮ",
+            "clubsRangeExplanationHintText" => "Клубы ранжировались по следующей системе:\nза победу в Лиге чемпионов с 2000-го года - 12 очков; за выход в финал - 9; выход в 1/2 финала - 6; выход в 1/4 финала - 3;\nза победу в кубке/Лиге чемпионов до 2000-го года - 8 очков; за выход в финал - 6; выход в 1/2 финала - 4; выход в 1/4 финала - 2;\nза победу в других еврокубках - 4 очка; за выход в финал - 3; выход в 1/2 финала - 2; выход в 1/4 финала - 1",
+            "ranging" => "mainRange",
+        ],
+
     ];
 
 }    
