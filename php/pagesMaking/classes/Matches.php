@@ -41,6 +41,7 @@ class Matches {
             AND `tourneyFinalYear` = '{$tourneyFinalYear}'
             {$stageOrScoreClause}
         ";
+        $pairsFor["sql"] = $sql;
         if ($res = mysqli_query($this->db, $sql)) {
             while ($row = mysqli_fetch_assoc($res)) {
                 $firstId = $row["firstClubId"];
