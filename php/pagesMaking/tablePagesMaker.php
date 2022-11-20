@@ -228,6 +228,7 @@
 
                 require_once 'classes/WordForms.php'; // Файл для получения правильных форм слов
 
+                $champLeagueClassHtmlRecordForTable = "";
                 if ($ranging === "bookmakers") {
 
                     require_once 'classes/Matches.php';
@@ -246,6 +247,10 @@
                         // echo "</pre>";
                     }
 
+                    if ($tourneyTitle === "Лига чемпионов") {
+                        $champLeagueClassHtmlRecordForTable = " champs-league";
+                    }
+
                 }
 
             ?>
@@ -255,7 +260,7 @@
             <? endif; ?>
 
             <!-- Таблица: -->
-            <table class="main-table">
+            <table class="main-table<?=$champLeagueClassHtmlRecordForTable?>">
                 <tbody>
 
                 <?
