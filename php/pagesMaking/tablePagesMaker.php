@@ -513,7 +513,19 @@
                                     <span class="main-table_criterion criterion_secondary">
                                         <?=$clubsList[$curClubInfo["basicFullName"]]["finals"]?>
                                     </span>
-                                </td>                                
+                                </td>
+                                                         
+                            <? elseif ($ranging === "bookmakers"): ?>
+
+                                <?
+                                    $curClubOdds = $clubsList[$curClubInfo["basicFullName"]]["odds"];
+                                ?>                                
+
+                                <td class="main-table_criterion" title="<?=$curClubInfo["shortName"]?>: <?$curClubOdds?>. Шансы от <?=$bookmakersOddsDate?>">
+                                    <span class="main-table_criterion">
+                                        <?=$curClubOdds?>
+                                    </span>
+                                </td>
 
                             <? endif; ?>
 
