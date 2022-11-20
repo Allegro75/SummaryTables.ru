@@ -30,7 +30,7 @@ class Matches {
         //     $defaultStagesOrder = Stages::$stagesOrder;
         // }
 
-        $stageOrScoreClause = ($stage !== false) ? "AND `tourneyStage` = '{$stage}'" : "AND `score = ''";
+        $stageOrScoreClause = ($stage !== false) ? "AND `tourneyStage` = '{$stage}'" : "AND `score` = ''";
 
         $pairsFor = [];
 
