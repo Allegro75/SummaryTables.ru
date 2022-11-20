@@ -11,6 +11,7 @@
     // - если делаем champ_league_current, в classes/TablePagesProperties.php определить стадию турнира в screamerParagraph
     // - если делаем champ_league_current, в classes/TablePagesProperties.php определить наличие finishedTourneyParagraph
     // - если делаем champ_league_current, в classes/TablePagesProperties.php определить наличие clubsNumber (возможно, без него можно вообще обойтись для champ_league_current)
+    // - если делаем таблицы с фаворитами текущих турниров, здесь определить наличие $tourneyTitle и, возможно, $tourneyStage
     if (true) {
 
         // $pageName = "history12";
@@ -214,7 +215,8 @@
 
         <main>
 
-            <? 
+            <?
+            
                 require_once 'layoutElements/captions/captions.php'; // Заголовки (крупнейший из к-рых - 'ЛУЧШИЕ КЛУБЫ ЕВРОПЫ ЗА ВСЮ ИСТОРИЮ')
                 printCaptions (["lastAccountedMatchDate" => $lastAccountedMatchDate, "clubsNumberPhraseLastPart" => $clubsNumberPhraseLastPart, "clubsNumber" => $clubsNumber, "h1Content" => $h1Content, "clubsRangeExplanationHintText" => $clubsRangeExplanationHintText, "ranging" => $ranging, "bookmakersParagraph" => $bookmakersParagraph, "screamerParagraph" => $screamerParagraph, "finishedTourneyParagraph" => $finishedTourneyParagraph,]);
 
@@ -225,6 +227,25 @@
                 // echo "</pre>";
 
                 require_once 'classes/WordForms.php'; // Файл для получения правильных форм слов
+
+                if ($ranging === "bookmakers") {
+
+                    require_once 'classes/Matches.php';
+                    $matchesClass = new Matches();
+
+                    // Получение массива пар незавершённой стадии турнира:
+                    {
+                        $tourneyTitle = "Лига чемпионов";
+                        // $tourneyTitle = "Лига Европы";
+                        // $tourneyStage = "";
+                        $actualStagePairs = $matchesClass->getActualStagePairs(["tourneyTitle" => $tourneyTitle, "tourneyFinalYear" => $tourneyEndYear,]);
+                        echo "<pre>";
+                        echo $actualStagePairs;
+                        echo "</pre>";
+                    }
+
+                }
+
             ?>
 
             <? if ($hasRightBtn): ?>
