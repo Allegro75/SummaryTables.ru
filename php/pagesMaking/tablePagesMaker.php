@@ -233,15 +233,17 @@
                     require_once 'classes/Matches.php';
                     $matchesClass = new Matches();
 
+                    require_once 'classes/Tourneys.php';
+
                     // Получение массива пар незавершённой стадии турнира:
                     {
                         $tourneyTitle = "Лига чемпионов";
                         // $tourneyTitle = "Лига Европы";
-                        // $tourneyStage = "";
-                        $actualStagePairs = $matchesClass->getActualStagePairs(["tourneyTitle" => $tourneyTitle, "tourneyFinalYear" => $tourneyEndYear,]);
-                        echo "<pre>";
-                        var_dump($actualStagePairs);
-                        echo "</pre>";
+                        $tourneyStage = "1/8 финала";
+                        $actualStagePairs = $matchesClass->getActualStagePairs(["tourneyTitle" => $tourneyTitle, "tourneyFinalYear" => $tourneyEndYear, "stage" => $tourneyStage,]);
+                        // echo "<pre>";
+                        // var_dump($actualStagePairs);
+                        // echo "</pre>";
                     }
 
                 }
@@ -449,6 +451,19 @@
                                             $duelsDefaultVisibilityHtmlRecord = "";
                                         }
 
+                                        $screamerNodeContent = "";
+                                        if ($ranging === "bookmakers") {
+                                            if ($actualStagePairs[$firstClubId]["rival"]["id"] == $secClubId) { // Если найден соперник данного клуба по незавершенной стадии турнира
+                                                $folder = Tourneys::$tourneysProps[$tourneyTitle]["archiveFolderName"];
+                                                $prefix = Tourneys::$tourneysProps[$tourneyTitle]["archiveFilePrefix"];
+                                                $stageCorectForm = ($tourneyStage === "ФИНАЛ") ? "финалу" : $tourneyStage;
+                                                $screamerNodeContent = 
+                                                    "<a href=\"archive/{$folder}/{$prefix}_{$tourneyEndYear}.html\">
+                                                    <img src=\"images/screamer_brown.png\" alt=\"{$tourneyStage}\" class=\"current-pair\" title=\"«{$curClubInfo["shortName"]}» - «{$innerCycleClubInfo["shortName"]}». Соперники по {$stageCorectForm} текущего розыгрыша\">
+                                                </a>";
+                                            }
+                                        }
+
                                     ?>
 
                                     <td id="<?=$curPairCode?>" data-first-club-id="<?=$firstClubId?>" data-sec-club-id="<?=$secClubId?>" class="statistics <?=$curPairHasHistoryClass?>">
@@ -460,6 +475,7 @@
                                         <div class="duels" title="<?=$duelsHintFirstStr?><?=$duelsHintTheRest?>"<?=$duelsDefaultVisibilityHtmlRecord?>>
                                             <?=$duelsCellContent?>
                                         </div>
+                                        <?=$screamerNodeContent?>
                                     </td>
 
                                 <? endif; ?>
