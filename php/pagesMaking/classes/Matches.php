@@ -1,7 +1,7 @@
             
 <?
 
-require_once("Stages.php");
+// require_once("Stages.php");
 
 class Matches {
 
@@ -9,11 +9,11 @@ class Matches {
 
     public function __construct($opts = [])
     {
-        $pathToRoot = $opts["pathToRoot"];
-        require_once "{$pathToRoot}database/config/config.php";
-        require_once "{$pathToRoot}database/config/connect.php";
-        // require_once "../../../database/config/config.php";
-        // require_once "../../../database/config/connect.php";
+        // $pathToRoot = $opts["pathToRoot"];
+        // require_once "{$pathToRoot}database/config/config.php";
+        // require_once "{$pathToRoot}database/config/connect.php";
+        require_once "../../../database/config/config.php";
+        require_once "../../../database/config/connect.php";
         $this->db = connect();       
     }
 
