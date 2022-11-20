@@ -240,7 +240,7 @@
                         // $tourneyStage = "";
                         $actualStagePairs = $matchesClass->getActualStagePairs(["tourneyTitle" => $tourneyTitle, "tourneyFinalYear" => $tourneyEndYear,]);
                         echo "<pre>";
-                        echo $actualStagePairs;
+                        var_dump($actualStagePairs);
                         echo "</pre>";
                     }
 
