@@ -521,7 +521,7 @@
                                     $curClubOdds = $clubsList[$curClubInfo["basicFullName"]]["odds"];
                                 ?>                                
 
-                                <td class="main-table_criterion" title="<?=$curClubInfo["shortName"]?>: <?$curClubOdds?>. Шансы от <?=$bookmakersOddsDate?>">
+                                <td class="main-table_criterion" title="<?=$curClubInfo["shortName"]?>: <?=$curClubOdds?>. Шансы от <?=$bookmakersOddsDate?>">
                                     <span class="main-table_criterion">
                                         <?=$curClubOdds?>
                                     </span>
