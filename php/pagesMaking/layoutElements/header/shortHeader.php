@@ -53,7 +53,7 @@
 
                             <ul class="nav__stripe__list__item__droplist">
                                 <li class="nav__stripe__list__item__droplist__item">
-                                    <a href="../champ_league/cl_2023.html"
+                                    <a href="archive/champ_league/cl_2023.html"
                                         title="Лига чемпионов 2022/2023. Ход турнира">
                                         ЛЧ 2022/2023. Ход турнира
                                     </a>
@@ -64,7 +64,7 @@
                                     </a>
                                 </li>
                                 <li class="nav__stripe__list__item__droplist__item">
-                                    <a href="../euroleague/el_2023.html"
+                                    <a href="archive/euroleague/el_2023.html"
                                         title="Лига Европы 2022/2023. Ход турнира">
                                         ЛЕ 2022/2023. Ход турнира
                                     </a>
