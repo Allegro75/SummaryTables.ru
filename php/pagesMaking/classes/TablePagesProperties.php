@@ -199,6 +199,80 @@ class TablePagesProperties {
 
         ],
 
+        "euroleague_current" => [
+
+            "clubsNumberPhrase" => "Фавориты Лиги Европы",
+            "hasTourneyYearIndicationInHead" => true,
+            "clubsNumber" => "8",
+            "browserTitle" => "Лига Европы. Личные счета фаворитов. Сводная таблица",
+            "cssFilesList" => [
+                "football__body.css",
+                "cap-wo-nav.css",
+                "navigation.css",
+                "captions.css",
+                "table8.css",
+                "duel-button-lower.css",
+                "settings.css",
+                "donate.css",
+                "footer.css",
+            ],
+            "jsFilesList" => [
+                "showAutomaticallyGeneratedSmallTable.js",
+                "showHideDuels.js",
+                "cellsColoring.js",
+                "coloringOnLoad.js",
+                "randPairOnLoadDynamicPage.js",
+                "randomWindowOnClickDynamically.js",
+                "duelsOnLoad.js",
+            ],
+
+            "h1Content" => "ФАВОРИТЫ
+                <a href=\"archive/euroleague/el_2023.html\" title=\"Лига Европы 2022/2023. Ход турнира\">ЛИГИ ЕВРОПЫ 2022/2023</a>",
+            // "h1Content" => "ЧЕТВЕРТЬФИНАЛИСТЫ 
+            //     <a href=\"archive/euroleague/el_2023.html\" title=\"Лига Европы 2022/2023. Ход турнира\">ЛИГИ ЕВРОПЫ 2022/2023</a>",
+
+            "bookmakersParagraph" => "<p class=\"captions__explanation\">
+                <span class=\"captions__explanation_circle\">&#8226;</span>
+                Указаны букмекерские коэффициенты от 27.11.2022
+                <span class=\"captions__explanation_circle\">&#8226;</span>
+            </p>",
+
+            "screamerParagraph" => "<p class=\"captions__explanation\">
+                <span class=\"captions__explanation_circle\">&#8226;</span>
+                Знаком <img src=\"images/screamer_brown.png\" alt=\"1/16 финала\" class=\"screamer\"> отмечены соперники по 1/16 финала текущего розыгрыша                  
+                <span class=\"captions__explanation_circle\">&#8226;</span>
+            </p>",
+            // "screamerParagraph" => "<p class=\"captions__explanation\">
+            //     <span class=\"captions__explanation_circle\">&#8226;</span>
+            //     Знаком <img src=\"images/screamer_brown.png\" alt=\"1/8 финала\" class=\"screamer\"> отмечены соперники по 1/8 финала текущего розыгрыша                  
+            //     <span class=\"captions__explanation_circle\">&#8226;</span>
+            // </p>",
+            // "screamerParagraph" => "<p class=\"captions__explanation\">
+            //     <span class=\"captions__explanation_circle\">&#8226;</span>
+            //     Знаком <img src=\"images/screamer_brown.png\" alt=\"1/4 финала\" class=\"screamer\"> отмечены соперники по 1/4 финала текущего розыгрыша                  
+            //     <span class=\"captions__explanation_circle\">&#8226;</span>
+            // </p>",
+            // "screamerParagraph" => "<p class=\"captions__explanation\">
+            //     <span class=\"captions__explanation_circle\">&#8226;</span>
+            //     Знаком <img src=\"images/screamer_brown.png\" alt=\"1/2 финала\" class=\"screamer\"> отмечены соперники по 1/2 финала текущего розыгрыша                  
+            //     <span class=\"captions__explanation_circle\">&#8226;</span>
+            // </p>",
+            // "screamerParagraph" => "<p class=\"captions__explanation\">
+            //     <span class=\"captions__explanation_circle\">&#8226;</span>
+            //     Знаком <img src=\"images/screamer_brown.png\" alt=\"ФИНАЛ\" class=\"screamer\"> отмечены соперники по финалу текущего розыгрыша                  
+            //     <span class=\"captions__explanation_circle\">&#8226;</span>
+            // </p>",
+            // "finishedTourneyParagraph" => 
+            //     "<p class=\"captions__explanation\">
+            //     <span class=\"captions__explanation_circle\">&#8226;</span>
+            //     Турнир завершён
+            //     <span class=\"captions__explanation_circle\">&#8226;</span>
+            // </p>",
+
+            "ranging" => "bookmakers",
+
+        ],
+
     ];
 
 }    

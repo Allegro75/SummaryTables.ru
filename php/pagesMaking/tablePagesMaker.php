@@ -3,26 +3,28 @@
 
     // Файл, генерирующий страницы со сводными таблицами.
 
-    // Переменные, нуждающиеся в определении перед генерацией таблицы. 
-    // Нужно ещё определить:
-    // - в layoutElements/header/shortHeader.php - от какого сезона турниры показываем по ссылкам в "Текущем сезоне"
-    // - если делаем champ_league_current, в classes/TablePagesProperties.php определить h1Content
-    // - если делаем champ_league_current, в classes/TablePagesProperties.php определить число в bookmakersParagraph
-    // - если делаем champ_league_current, в classes/TablePagesProperties.php определить стадию турнира в screamerParagraph
-    // - если делаем champ_league_current, в classes/TablePagesProperties.php определить наличие finishedTourneyParagraph
-    // - если делаем champ_league_current, в classes/TablePagesProperties.php определить наличие clubsNumber (возможно, без него можно вообще обойтись для champ_league_current)
-    // - если делаем таблицы с фаворитами текущих турниров, здесь определить наличие $tourneyTitle и, возможно, $tourneyStage
-    if (true) {
+    { // Переменные, нуждающиеся в определении перед генерацией таблицы.
+        
+        // Нужно ещё определить:
+        // - в layoutElements/header/shortHeader.php - от какого сезона турниры показываем по ссылкам в "Текущем сезоне"
+        // - если делаем champ_league_current (или euroleague_current), в classes/TablePagesProperties.php определить h1Content
+        // - если делаем champ_league_current (или euroleague_current), в classes/TablePagesProperties.php определить число в bookmakersParagraph
+        // - если делаем champ_league_current (или euroleague_current), в classes/TablePagesProperties.php определить стадию турнира в screamerParagraph
+        // - если делаем champ_league_current (или euroleague_current), в classes/TablePagesProperties.php определить наличие finishedTourneyParagraph
+        // - если делаем champ_league_current, в classes/TablePagesProperties.php определить наличие clubsNumber (возможно, без него можно вообще обойтись для champ_league_current)
+        // - если делаем таблицы с фаворитами текущих турниров, здесь определить наличие $tourneyTitle и, возможно, $tourneyStage
 
         // $pageName = "history12";
         // $pageName = "history24";
         // $pageName = "history36";
         // $pageName = "winners";
-        $pageName = "champ_league_current";
+        // $pageName = "champ_league_current";
+        $pageName = "euroleague_current";
 
         $lastAccountedMatchDate = "03.11.2022";
 
-        $bookmakersOddsDate = "15.11.2022";
+        // $bookmakersOddsDate = "15.11.2022";
+        $bookmakersOddsDate = "27.11.2022";
 
         $tourneyStartYear = 2022;
         $tourneyEndYear = 2023;
@@ -137,24 +139,36 @@
         //     "Фейеноорд" => ["wins" => 1, "finals" => 0],
         // ];
 
-        // Для champ_league_current
+        // // Для champ_league_current
+        // $clubsList = [
+        //     "Манчестер Сити" => ["odds" => 2.75,],
+        //     "Бавария" => ["odds" => 7,],
+        //     "Пари Сен-Жермен" => ["odds" => 10,],
+        //     "Ливерпуль" => ["odds" => 10,],
+        //     "Реал Мадрид" => ["odds" => 12,],
+        //     "Наполи" => ["odds" => 15,],
+        //     "Челси" => ["odds" => 17,],
+        //     "Тоттенхэм Хотспур" => ["odds" => 20,],
+        //     "Бенфика" => ["odds" => 25,],
+        //     "Интер Милан" => ["odds" => 35,],
+        //     "Милан" => ["odds" => 45,],
+        //     "Боруссия Дортмунд" => ["odds" => 50,],
+        //     "Порто" => ["odds" => 75,],
+        //     "РБ Лейпциг" => ["odds" => 100,],            
+        //     "Айнтрахт Франкфурт" => ["odds" => 150,],
+        //     "Брюгге" => ["odds" => 250,],            
+        // ];
+
+        // Для euroleague_current
         $clubsList = [
-            "Манчестер Сити" => ["odds" => 2.75,],
-            "Бавария" => ["odds" => 7,],
-            "Пари Сен-Жермен" => ["odds" => 10,],
-            "Ливерпуль" => ["odds" => 10,],
-            "Реал Мадрид" => ["odds" => 12,],
-            "Наполи" => ["odds" => 15,],
-            "Челси" => ["odds" => 17,],
-            "Тоттенхэм Хотспур" => ["odds" => 20,],
-            "Бенфика" => ["odds" => 25,],
-            "Интер Милан" => ["odds" => 35,],
-            "Милан" => ["odds" => 45,],
-            "Боруссия Дортмунд" => ["odds" => 50,],
-            "Порто" => ["odds" => 75,],
-            "РБ Лейпциг" => ["odds" => 100,],            
-            "Айнтрахт Франкфурт" => ["odds" => 150,],
-            "Брюгге" => ["odds" => 250,],            
+            "Арсенал" => ["odds" => 5.5,],
+            "Барселона" => ["odds" => 6.5,],
+            "Манчестер Юнайтед" => ["odds" => 8.5,],
+            "Ювентус" => ["odds" => 13,],
+            "Аякс" => ["odds" => 17,],
+            "Бетис" => ["odds" => 17,],
+            "Реал Сосьедад" => ["odds" => 17,],
+            "Рома" => ["odds" => 20,],       
         ];
 
     }
