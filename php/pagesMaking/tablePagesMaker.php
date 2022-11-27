@@ -414,7 +414,7 @@
                                         "«{$curClubInfo["shortName"]}» - «{$innerCycleClubInfo["shortName"]}»
 {$curPairHistory["firstVictories"]} {$victoriesWord}, {$curPairHistory["draws"]} {$drawsWord}, {$curPairHistory["firstLesions"]} {$lesionsWord}
 Кликните, чтобы узнать подробности" : 
-                                        "{$curClubInfo["shortName"]} - {$innerCycleClubInfo["shortName"]}
+                                        "«{$curClubInfo["shortName"]}» - «{$innerCycleClubInfo["shortName"]}»
 {$curPairHistory["firstVictories"]} {$victoriesWord}, {$curPairHistory["draws"]} {$drawsWord}, {$curPairHistory["firstLesions"]} {$lesionsWord}";
 
                                         $resultsCellContent = ($hasHistory === true) ? 
