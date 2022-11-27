@@ -5,6 +5,7 @@ require_once "classes/Club.php";
 // spl_autoload('classes/Club.php');
 require_once "classes/PairMatchesHistory.php";
 
+// Получение основных данных, необходимых для отображения сводных таблиц: суммарной статитстике встреч в парах клубов и информации о клубах
 function getTableInfo ($opts = []) {
 
     $rawClubsList = $opts['clubsList'];

@@ -7,10 +7,10 @@
         
         // Нужно ещё определить:
         // - в layoutElements/header/shortHeader.php - от какого сезона турниры показываем по ссылкам в "Текущем сезоне"
-        // - если делаем champ_league_current (или euroleague_current), в classes/TablePagesProperties.php определить h1Content
-        // - если делаем champ_league_current (или euroleague_current), в classes/TablePagesProperties.php определить число в bookmakersParagraph
-        // - если делаем champ_league_current (или euroleague_current), в classes/TablePagesProperties.php определить стадию турнира в screamerParagraph
-        // - если делаем champ_league_current (или euroleague_current), в classes/TablePagesProperties.php определить наличие finishedTourneyParagraph
+        // - если делаем таблицы с фаворитами текущих турниров, в classes/TablePagesProperties.php определить h1Content
+        // - если делаем таблицы с фаворитами текущих турниров, в classes/TablePagesProperties.php определить число в bookmakersParagraph
+        // - если делаем таблицы с фаворитами текущих турниров, в classes/TablePagesProperties.php определить стадию турнира в screamerParagraph
+        // - если делаем таблицы с фаворитами текущих турниров, в classes/TablePagesProperties.php определить наличие finishedTourneyParagraph
         // - если делаем champ_league_current, в classes/TablePagesProperties.php определить наличие clubsNumber (возможно, без него можно вообще обойтись для champ_league_current)
         // - если делаем таблицы с фаворитами текущих турниров, здесь определить наличие $tourneyTitle и, возможно, $tourneyStage
 
@@ -252,9 +252,10 @@
 
                     // Получение массива пар незавершённой стадии турнира:
                     {
-                        $tourneyTitle = "Лига чемпионов";
-                        // $tourneyTitle = "Лига Европы";
-                        $tourneyStage = "1/8 финала";
+                        // $tourneyTitle = "Лига чемпионов";
+                        $tourneyTitle = "Лига Европы";
+                        // $tourneyStage = "1/8 финала";
+                        $tourneyStage = "1/16 финала";
                         $actualStagePairs = $matchesClass->getActualStagePairs(["tourneyTitle" => $tourneyTitle, "tourneyFinalYear" => $tourneyEndYear, "stage" => $tourneyStage,]);
                         // echo "<pre>";
                         // var_dump($actualStagePairs);
