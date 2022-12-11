@@ -9,6 +9,7 @@ require_once "classes/PairMatchesHistory.php";
 function getTableInfo ($opts = []) {
 
     $rawClubsList = $opts['clubsList'];
+    $rawActualCountryClubsList = $opts['actualCountryClubsList'];
 
     $info = [];
 
@@ -20,13 +21,23 @@ function getTableInfo ($opts = []) {
     }
     $info['clubsList'] = $clubsList;
 
-    // Получение массива ($pairsMatchesHistory) с краткими (представляемыми в итоговой таблице) данными о противостояниях:
-    if (true) {
+    if ( ! (empty($rawActualCountryClubsList)) ) { // Получение такого же, как и выше массива клубов, но представляющих данную страну для национальных таблиц:
+        $actualCountryClubsList = [];
+        foreach (array_keys($rawActualCountryClubsList) as $curClubName) {
+            $newClub = new Club(['pathToRoot' => "../../"]);
+            $actualCountryClubsList[$curClubName] = $newClub->getClubByName(["clubName" => $curClubName]);
+        }
+        $info['actualCountryClubsList'] = $actualCountryClubsList;
+    }
+
+    { // Получение массива ($pairsMatchesHistory) с краткими (представляемыми в итоговой таблице) данными о противостояниях:
 
         $pairsMatchesHistory = [];
         foreach ($clubsList as $clubName => $clubInfo) { // Перебираем массив клубов
 
-            foreach ($clubsList as $innerCycleClubName => $innerCycleClubInfo) { // Для каждого клуба снова перебираем массив клубов, определяя таким образом рассматриваемые конкретные пары клубов
+            $innerCycleClubsList = ( ! (empty($actualCountryClubsList)) ) ? $actualCountryClubsList : $clubsList; // Определяем массив клубов для перебора во внутреннем цикле. Для национальных таблиц - это клубы актуальной страны, для остальных - те же клубы, что и во внешнем переборе.
+
+            foreach ($innerCycleClubsList as $innerCycleClubName => $innerCycleClubInfo) { // Для каждого клуба снова перебираем массив клубов, определяя таким образом рассматриваемые конкретные пары клубов
                 
                 if ($clubName !== $innerCycleClubName) { // Естественно, отбрасываем совпадения перебираемых имён клубов, чтобы пара содержала два разных клуба
 
@@ -41,6 +52,7 @@ function getTableInfo ($opts = []) {
         }
 
     }
+
     $info['pairsMatchesHistory'] = $pairsMatchesHistory;
 
     return $info;

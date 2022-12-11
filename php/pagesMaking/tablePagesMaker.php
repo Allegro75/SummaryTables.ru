@@ -265,10 +265,10 @@
             <? // Данные для таблицы:
 
                 require_once 'tableInfo.php'; // Получение содержания таблицы
-                $tableInfo = getTableInfo (["clubsList" => $clubsList]);
-                // echo "<pre>";
-                // var_dump($tableInfo);
-                // echo "</pre>";
+                $tableInfo = getTableInfo (["clubsList" => $clubsList, "actualCountryClubsList" => $actualCountryClubsList ?? [],]);
+                echo "<pre>";
+                var_dump($tableInfo);
+                echo "</pre>";
 
                 require_once 'classes/WordForms.php'; // Файл для получения правильных форм слов
 
