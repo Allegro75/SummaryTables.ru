@@ -33,7 +33,8 @@ function printCaptions ($opts = []) {
             "<p class=\"captions__explanation{$twelweClubsExplanationClassHtmlRecord}\"{$clubsRangeExplanationHintHtmlRecord}>
                 {$hrefFromClubsNumber[0]}
                     <span class=\"captions__explanation_circle\">&#8226;</span>
-                    <span class=\"captions__explanation_larger\">{$captionsClubsNumberPhraseFirstPart}{$clubsNumber}</span> {$clubsNumberPhraseLastPart}
+                    {$captionsClubsNumberPhraseFirstPart}
+                    <span class=\"captions__explanation_larger\">{$clubsNumber}</span> {$clubsNumberPhraseLastPart}
                     <span class=\"captions__explanation_circle\">&#8226;</span>
                 {$hrefFromClubsNumber[1]}
             </p>
