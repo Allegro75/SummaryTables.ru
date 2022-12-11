@@ -4,6 +4,7 @@
 function printCaptions ($opts = []) {
 
     $lastAccountedMatchDate = $opts['lastAccountedMatchDate'];
+    $captionsClubsNumberPhraseFirstPart = $opts['captionsClubsNumberPhraseFirstPart'];
     $clubsNumberPhraseLastPart = $opts['clubsNumberPhraseLastPart'];
     $clubsNumber = $opts['clubsNumber'];
     $twelweClubsExplanationClassHtmlRecord = "";
@@ -18,7 +19,8 @@ function printCaptions ($opts = []) {
     $clubsRangeExplanationHintHtmlRecord = empty($clubsRangeExplanationHintText) ? "" : " title=\"{$clubsRangeExplanationHintText}\"";
     $ranging = $opts['ranging'];
     $hrefFromClubsNumber = ["", ""];
-    if ($ranging === "mainRange") {
+    // if ($ranging === "mainRange") {
+    if (in_array($ranging, ["mainRange", "national"])) {
         $hrefFromClubsNumber = ["<a href=\"range.html\">", "</a>"];
     }
 
@@ -31,7 +33,7 @@ function printCaptions ($opts = []) {
             "<p class=\"captions__explanation{$twelweClubsExplanationClassHtmlRecord}\"{$clubsRangeExplanationHintHtmlRecord}>
                 {$hrefFromClubsNumber[0]}
                     <span class=\"captions__explanation_circle\">&#8226;</span>
-                    <span class=\"captions__explanation_larger\">{$clubsNumber}</span> {$clubsNumberPhraseLastPart}
+                    <span class=\"captions__explanation_larger\">{$captionsClubsNumberPhraseFirstPart}{$clubsNumber}</span> {$clubsNumberPhraseLastPart}
                     <span class=\"captions__explanation_circle\">&#8226;</span>
                 {$hrefFromClubsNumber[1]}
             </p>

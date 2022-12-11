@@ -159,17 +159,17 @@
         //     "Брюгге" => ["odds" => 250,],            
         // ];
 
-        // Для euroleague_current
-        $clubsList = [
-            "Арсенал" => ["odds" => 5.5,],
-            "Барселона" => ["odds" => 6.5,],
-            "Манчестер Юнайтед" => ["odds" => 8.5,],
-            "Ювентус" => ["odds" => 13,],
-            "Аякс" => ["odds" => 17,],
-            "Бетис" => ["odds" => 17,],
-            "Реал Сосьедад" => ["odds" => 17,],
-            "Рома" => ["odds" => 20,],       
-        ];
+        // // Для euroleague_current
+        // $clubsList = [
+        //     "Арсенал" => ["odds" => 5.5,],
+        //     "Барселона" => ["odds" => 6.5,],
+        //     "Манчестер Юнайтед" => ["odds" => 8.5,],
+        //     "Ювентус" => ["odds" => 13,],
+        //     "Аякс" => ["odds" => 17,],
+        //     "Бетис" => ["odds" => 17,],
+        //     "Реал Сосьедад" => ["odds" => 17,],
+        //     "Рома" => ["odds" => 20,],       
+        // ];
 
         // Для ukraine
         $actualCountryClubsList = [
@@ -191,6 +191,7 @@
     $clubsNumberPhrase = $tablePagesProperties[$pageName]["clubsNumberPhrase"];
     $clubsNumber = $tablePagesProperties[$pageName]["clubsNumber"];
     $clubsNumberPhraseFirstPart = $tablePagesProperties[$pageName]["clubsNumberPhraseFirstPart"];
+    $captionsClubsNumberPhraseFirstPart = $tablePagesProperties[$pageName]["captionsClubsNumberPhraseFirstPart"];
     $clubsNumberPhraseLastPart = $tablePagesProperties[$pageName]["clubsNumberPhraseLastPart"];
     $keywordsContentPart = $tablePagesProperties[$pageName]["keywordsContentPart"] ?? "";
     $browserTitle = $tablePagesProperties[$pageName]["browserTitle"];
@@ -254,10 +255,14 @@
 
         <main>
 
-            <?
+            <? // Заголовки
             
                 require_once 'layoutElements/captions/captions.php'; // Заголовки (крупнейший из к-рых - 'ЛУЧШИЕ КЛУБЫ ЕВРОПЫ ЗА ВСЮ ИСТОРИЮ')
-                printCaptions (["lastAccountedMatchDate" => $lastAccountedMatchDate, "clubsNumberPhraseLastPart" => $clubsNumberPhraseLastPart, "clubsNumber" => $clubsNumber, "h1Content" => $h1Content, "clubsRangeExplanationHintText" => $clubsRangeExplanationHintText, "ranging" => $ranging, "bookmakersParagraph" => $bookmakersParagraph, "screamerParagraph" => $screamerParagraph, "finishedTourneyParagraph" => $finishedTourneyParagraph,]);
+                printCaptions (["lastAccountedMatchDate" => $lastAccountedMatchDate, "captionsClubsNumberPhraseFirstPart" => $captionsClubsNumberPhraseFirstPart, "clubsNumberPhraseLastPart" => $clubsNumberPhraseLastPart, "clubsNumber" => $clubsNumber, "h1Content" => $h1Content, "clubsRangeExplanationHintText" => $clubsRangeExplanationHintText, "ranging" => $ranging, "bookmakersParagraph" => $bookmakersParagraph, "screamerParagraph" => $screamerParagraph, "finishedTourneyParagraph" => $finishedTourneyParagraph,]);
+
+            ?>
+
+            <? // Данные для таблицы:
 
                 require_once 'tableInfo.php'; // Получение содержания таблицы
                 $tableInfo = getTableInfo (["clubsList" => $clubsList]);
