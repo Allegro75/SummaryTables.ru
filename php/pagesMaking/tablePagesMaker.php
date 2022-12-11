@@ -19,11 +19,11 @@
         // $pageName = "history36";
         // $pageName = "winners";
         // $pageName = "champ_league_current";
-        $pageName = "euroleague_current";
+        // $pageName = "euroleague_current";
+        $pageName = "ukraine";
 
         $lastAccountedMatchDate = "03.11.2022";
 
-        // $bookmakersOddsDate = "15.11.2022";
         $bookmakersOddsDate = "27.11.2022";
 
         $tourneyStartYear = 2022;
@@ -45,33 +45,33 @@
         //     "Атлетико Мадрид" => ["points" => 85, "gender" => "neuter"],
         // ];
 
-        // // Для history24
-        // $clubsList = [
-        //     "Реал Мадрид" => ["points" => 261,],
-        //     "Барселона" => ["points" => 197,],
-        //     "Бавария" => ["points" => 196,],
-        //     "Ливерпуль" => ["points" => 138,],
-        //     "Ювентус" => ["points" => 136,],
-        //     "Милан" => ["points" => 128,],
-        //     "Манчестер Юнайтед" => ["points" => 117,],
-        //     "Интер Милан" => ["points" => 100,],
-        //     "Бенфика" => ["points" => 98,],
-        //     "Челси" => ["points" => 95,],
-        //     "Аякс" => ["points" => 87,],
-        //     "Атлетико Мадрид" => ["points" => 85,],
-        //     "Порто" => ["points" => 61,],
-        //     "Валенсия" => ["points" => 55,],
-        //     "Арсенал" => ["points" => 54,],
-        //     "Боруссия Дортмунд" => ["points" => 52,],
-        //     "Андерлехт" => ["points" => 49,],
-        //     "Пари Сен-Жермен" => ["points" => 44,],
-        //     "ПСВ Эйндховен" => ["points" => 43,],
-        //     "Црвена звезда" => ["points" => 40,],
-        //     "Рома" => ["points" => 39,],
-        //     "Тоттенхэм Хотспур" => ["points" => 39,],
-        //     "Манчестер Сити" => ["points" => 38,],
-        //     "Динамо Киев" => ["points" => 38,],
-        // ];
+        // Для history24 и ukraine:
+        $clubsList = [
+            "Реал Мадрид" => ["points" => 261,],
+            "Барселона" => ["points" => 197,],
+            "Бавария" => ["points" => 196,],
+            "Ливерпуль" => ["points" => 138,],
+            "Ювентус" => ["points" => 136,],
+            "Милан" => ["points" => 128,],
+            "Манчестер Юнайтед" => ["points" => 117,],
+            "Интер Милан" => ["points" => 100,],
+            "Бенфика" => ["points" => 98,],
+            "Челси" => ["points" => 95,],
+            "Аякс" => ["points" => 87,],
+            "Атлетико Мадрид" => ["points" => 85,],
+            "Порто" => ["points" => 61,],
+            "Валенсия" => ["points" => 55,],
+            "Арсенал" => ["points" => 54,],
+            "Боруссия Дортмунд" => ["points" => 52,],
+            "Андерлехт" => ["points" => 49,],
+            "Пари Сен-Жермен" => ["points" => 44,],
+            "ПСВ Эйндховен" => ["points" => 43,],
+            "Црвена звезда" => ["points" => 40,],
+            "Рома" => ["points" => 39,],
+            "Тоттенхэм Хотспур" => ["points" => 39,],
+            "Манчестер Сити" => ["points" => 38,],
+            "Динамо Киев" => ["points" => 38,],
+        ];
 
         // // Для history36
         // $clubsList = [
@@ -171,13 +171,28 @@
             "Рома" => ["odds" => 20,],       
         ];
 
+        // Для ukraine
+        $actualCountryClubsList = [
+            "Динамо Киев" => ["seasons" => 53,],
+            "Шахтёр Донецк" => ["seasons" => 33,],
+            "Днепр" => ["seasons" => 20,],
+            "Черноморец Одесса" => ["seasons" => 10,],
+            "Заря Луганск" => ["seasons" => 9,],
+            "Металлист Харьков" => ["seasons" => 9,],
+            "Ворскла" => ["seasons" => 7,],
+            "Карпаты" => ["seasons" => 5,],       
+            "ЦСКА Киев" => ["seasons" => 2,],
+        ];
+
     }
 
     require_once 'classes/TablePagesProperties.php'; // Получение свойств генерируемой страницы
     $tablePagesProperties = TablePagesProperties::$props;
     $clubsNumberPhrase = $tablePagesProperties[$pageName]["clubsNumberPhrase"];
     $clubsNumber = $tablePagesProperties[$pageName]["clubsNumber"];
+    $clubsNumberPhraseFirstPart = $tablePagesProperties[$pageName]["clubsNumberPhraseFirstPart"];
     $clubsNumberPhraseLastPart = $tablePagesProperties[$pageName]["clubsNumberPhraseLastPart"];
+    $keywordsContentPart = $tablePagesProperties[$pageName]["keywordsContentPart"] ?? "";
     $browserTitle = $tablePagesProperties[$pageName]["browserTitle"];
     $cssFilesList = $tablePagesProperties[$pageName]["cssFilesList"];
     $h1Content = $tablePagesProperties[$pageName]["h1Content"];
@@ -195,6 +210,15 @@
         $headDescriptionClubsNumberPhraseLastPart = " {$tourneyStartYear}/{$tourneyEndYear}";
     }
 
+    $headDescripitionContent = "";
+    if ($ranging !== "national") {
+        $headDescripitionContent = "Сводная таблица истории противостояний европейских футбольных клубов в рамках еврокубков. {$clubsNumberPhrase}{$headDescriptionClubsNumberPhraseLastPart}.";
+    }
+    elseif ($ranging === "national") {
+        $headDescripitionContent = "{$clubsNumberPhraseFirstPart} клубы против европейских.
+        Сводная таблица истории противостояний в рамках еврокубков.";
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -205,11 +229,12 @@
     <meta charset="utf-8">
     <meta name="author" content="Edwards, Allegro, Edwards75, Allegro75, Oleg Otkidach">
     <meta name="author" content="Олег Откидач">
-    <meta name="description" content="Сводная таблица истории противостояний европейских футбольных клубов в рамках еврокубков. <?=$clubsNumberPhrase?><?=$headDescriptionClubsNumberPhraseLastPart?>.">
+    <meta name="description" content="<?=$headDescripitionContent?>">
     <meta name="keywords" content="Футбол. Еврокубки. Европа. 
     Личные встречи. Личные счета. vs. История игр. История противостояний.  
-    Сводная таблица. Таблица-'шахматка'. Статистика. История. Результаты. 
-    Клубы. Суперклубы. Команды. 
+    Сводная таблица. Таблица-'шахматка'. Статистика. История. Результаты.
+    <?=$keywordsContentPart?>
+    Клубы. Суперклубы. Команды.
     Реал. Барселона. Ливерпуль. Манчестер Юнайтед. Бавария. Ювентус. Аякс. Милан. Интер. Арсенал.
     Лига чемпионов. Кубок чемпионов. Лига Европы. Кубок УЕФА. Кубок кубков. Суперкубок.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
