@@ -354,10 +354,10 @@
                                 $logotypesInfo[$curClubsListName][$curClubName] ["clubCssClassHtmlRecord"] = $clubCssClassHtmlRecord;
                             }
                     }
-                    echo "<pre>";
-                    // var_dump($logotypesInfo);
-                    var_dump($logotypesInfo['actualCountryClubsList']);
-                    echo "</pre>";
+                    // echo "<pre>";
+                    // // var_dump($logotypesInfo);
+                    // var_dump($logotypesInfo['actualCountryClubsList']);
+                    // echo "</pre>";
                   
                 ?>
 
@@ -427,10 +427,10 @@
 
                     <? 
                         $verticalClubsList = ($ranging === "national") ? $tableInfo['actualCountryClubsList'] : $tableInfo['clubsList'];
-                        echo "<pre>";
-                        echo "verticalClubsList:";
-                        var_dump($verticalClubsList);
-                        echo "</pre>";                        
+                        // echo "<pre>";
+                        // echo "verticalClubsList:";
+                        // var_dump($verticalClubsList);
+                        // echo "</pre>";                        
                     ?>
 
                     <? foreach ($verticalClubsList as $curClubName => $curClubInfo): ?>
@@ -456,7 +456,7 @@
                                 <? if ($curClubInfo["basicFullName"] === $secClubFullName): // Для ячеек, где показываем эмблему клуба ?>
 
                                     <td>
-                                        <img alt="<?=$curClubInfo["shortName"]?>" src="../images/<?=$curClubInfo["logoImageFile"]?>" title="<?=$curClubInfo["shortName"]?>" class="football-logo-table<?=$curClubInfo["clubCssClassHtmlRecord"]?>">
+                                        <img alt="<?=$curClubInfo["shortName"]?>" src="../images/<?=$logotypesInfo['actualCountryClubsList'][$curClubName]["logoImageFile"]?>" title="<?=$curClubInfo["shortName"]?>" class="football-logo-table<?=$logotypesInfo['actualCountryClubsList'][$curClubName]["clubCssClassHtmlRecord"]?>">
                                     </td>
 
                                 <? else: ?>
