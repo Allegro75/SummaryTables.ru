@@ -413,7 +413,11 @@
 
                     <? $rowNumber = 1; ?>
 
-                    <? foreach ($tableInfo['clubsList'] as $curClubInfo): ?>
+                    <? 
+                        $verticalClubsList = ($ranging === "national") ? $tableInfo['actualCountryClubsList'] : $tableInfo['clubsList'];
+                    ?>
+
+                    <? foreach ($verticalClubsList as $curClubInfo): ?>
                         
                         <tr class="<?=$curClubInfo['code']?>">
 
