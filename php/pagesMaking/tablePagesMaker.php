@@ -332,7 +332,7 @@
 
                     $clubsLists = ($ranging === "national") ? [$tableInfo['clubsList'], $tableInfo['actualCountryClubsList']] : [$tableInfo['clubsList']];
                     // Имя файла с картинкой логотипа:                    
-                    foreach ($clubsLists as $curClubList) {
+                    foreach ($clubsLists as &$curClubList) {
                         // foreach ($tableInfo['clubsList'] as &$curClubInfo) {
                         foreach ($curClubList as &$curClubInfo) {
                             $logoImageFile = "";
@@ -354,7 +354,8 @@
                             $curClubInfo["clubCssClassHtmlRecord"] = $clubCssClassHtmlRecord;
                         }
                         unset($curClubInfo);
-                    }                    
+                    }
+                    unset($curClubList);
                   
                 ?>
 
