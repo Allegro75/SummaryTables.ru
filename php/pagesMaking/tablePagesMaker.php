@@ -330,7 +330,13 @@
 
                     <tr class="logotypes">
 
-                        <td colspan="3"></td>
+                        <td colspan="3">
+                            <? if (in_array($pageName, ["ukraine", "russia"])): ?>
+                                <div class="change-range-text" title="Упорядочить иностранные клубы по алфавиту / по достижениям">
+                                Упорядочить по алфавиту ▶
+                                </div>                                
+                            <? endif; ?>
+                        </td>
 
                         <? $number = 1; ?>
 
