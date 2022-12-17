@@ -315,6 +315,7 @@
                         "Akt" => "Akt_light.png",
                         "AuW" => "AuW_light.png",
                         "DuP" => "DuP_light.png",
+                        "DyK" => "DyK_dark.png",
                         // "Mar" => "Mar_light.png",
                         "Mlm" => "Mlm_light.png",
                         "Nan" => "Nan_light.png",
@@ -398,6 +399,12 @@
 
                             <td class="main-table_criterion" title="Коэффициенты на победу от букмекеров от <?=$bookmakersOddsDate?>">
                                 Шансы
+                            </td>
+
+                        <? elseif ($ranging === "national"): ?>
+
+                            <td class="main-table_criterion" title="Количество сезонов с участием в еврокубках">
+                                Сезоны
                             </td>
 
                         <? endif; ?>
