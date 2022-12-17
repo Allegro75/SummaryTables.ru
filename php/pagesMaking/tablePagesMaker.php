@@ -614,7 +614,7 @@
                             <? elseif ($ranging === "national"): ?>
 
                                 <?
-                                    $curClubSeasons = $clubsList[$curClubName]["seasons"];
+                                    $curClubSeasons = $actualCountryClubsList[$curClubName]["seasons"];
                                     $corrSeasonWordForm = WordForms::getWordLikeFinal(["word" => "сезон", "number" => $curClubSeasons]);                                    
                                 ?>                                
 
