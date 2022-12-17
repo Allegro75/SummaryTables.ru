@@ -266,10 +266,11 @@
 
                 require_once 'tableInfo.php'; // Получение содержания таблицы
                 $tableInfo = getTableInfo (["clubsList" => $clubsList, "actualCountryClubsList" => $actualCountryClubsList ?? [],]);
-                // echo "<pre>";
-                // // var_dump($tableInfo);
+                echo "<pre>";
+                // var_dump($tableInfo);
                 // var_dump($tableInfo['actualCountryClubsList']);
-                // echo "</pre>";
+                var_dump($tableInfo['pairsMatchesHistory']);
+                echo "</pre>";
 
                 require_once 'classes/WordForms.php'; // Файл для получения правильных форм слов
 
