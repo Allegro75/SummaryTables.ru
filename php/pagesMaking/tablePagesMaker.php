@@ -354,9 +354,9 @@
                                 $logotypesInfo[$curClubsListName][$curClubName] ["clubCssClassHtmlRecord"] = $clubCssClassHtmlRecord;
                             }
                     }
-                    echo "<pre>";
-                    var_dump($logotypesInfo);
-                    echo "</pre>";       
+                    // echo "<pre>";
+                    // var_dump($logotypesInfo);
+                    // echo "</pre>";      
                   
                 ?>
 
@@ -435,7 +435,7 @@
                             <td class="number"><?=$rowNumber?></td>
 
                             <td>
-                                <img alt="<?=$curClubInfo["shortName"]?>" src="../images/<?=$curClubInfo["logoImageFile"]?>" title="<?=$curClubInfo["shortName"]?>" class="football-logo-table<?=$curClubInfo["clubCssClassHtmlRecord"]?>">
+                                <img alt="<?=$curClubInfo["shortName"]?>" src="../images/<?=$logotypesInfo['clubsList'][$curClubInfo["basicFullName"]]["logoImageFile"]?>" title="<?=$curClubInfo["shortName"]?>" class="football-logo-table<?=$logotypesInfo['clubsList'][$curClubInfo["basicFullName"]]["clubCssClassHtmlRecord"]?>">
                             </td>
 
                             <td>
