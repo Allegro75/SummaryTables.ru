@@ -344,7 +344,7 @@
                             $number = 1;
                         ?>
 
-                            <? foreach ($curClubList as &$curClubInfo): ?>
+                            <? foreach ($tableInfo['clubsList'] as &$curClubInfo): ?>
 
                                 <?
                                     // Имя файла с картинкой логотипа:
