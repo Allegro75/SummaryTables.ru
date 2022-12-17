@@ -354,9 +354,9 @@
                                 $logotypesInfo[$curClubsListName][$curClubName] ["clubCssClassHtmlRecord"] = $clubCssClassHtmlRecord;
                             }
                     }
-                    // echo "<pre>";
-                    // var_dump($logotypesInfo);
-                    // echo "</pre>";      
+                    echo "<pre>";
+                    var_dump($logotypesInfo);
+                    echo "</pre>";
                   
                 ?>
 
