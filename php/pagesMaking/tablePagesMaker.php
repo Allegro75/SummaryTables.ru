@@ -266,10 +266,10 @@
 
                 require_once 'tableInfo.php'; // Получение содержания таблицы
                 $tableInfo = getTableInfo (["clubsList" => $clubsList, "actualCountryClubsList" => $actualCountryClubsList ?? [],]);
-                echo "<pre>";
-                // var_dump($tableInfo);
-                var_dump($tableInfo['actualCountryClubsList']);
-                echo "</pre>";
+                // echo "<pre>";
+                // // var_dump($tableInfo);
+                // var_dump($tableInfo['actualCountryClubsList']);
+                // echo "</pre>";
 
                 require_once 'classes/WordForms.php'; // Файл для получения правильных форм слов
 
@@ -310,6 +310,7 @@
                 <tbody>
 
                 <?
+
                     // Массив имён файлов с логотипами (нужен чтобы правильно добавлять к коду клуба ".png", ".svg" и т.п.)
                     $logoFiles = scandir("images");                    
                     $specialImages = [
@@ -329,27 +330,31 @@
                         "Zen" => "Zen_light.png",
                     ];
 
-                    // Имя файла с картинкой логотипа:
-                    foreach ($tableInfo['clubsList'] as &$curClubInfo) {
-                        $logoImageFile = "";
-                        $clubCode = $curClubInfo['code'];
-                        $clubCSSClass = $curClubInfo['CSSClass'];
-                        $clubCssClassHtmlRecord = ($clubCSSClass === "") ? "" : " {$clubCSSClass}";
-                        if (in_array($clubCode, array_keys($specialImages))) {
-                            $logoImageFile = $specialImages[$clubCode];
-                        } else {        
-                            if (in_array("{$clubCode}.png", $logoFiles)) {
-                                $logoImageFile = "{$clubCode}.png";
-                            } elseif (in_array("{$clubCode}.svg", $logoFiles)) {
-                                $logoImageFile = "{$clubCode}.svg";
-                            } elseif (in_array("{$clubCode}.jpg", $logoFiles)) {
-                                $logoImageFile = "{$clubCode}.jpg";
+                    $clubsLists = ($ranging === "national") ? [$tableInfo['clubsList'], $tableInfo['actualCountryClubsList']] : [$tableInfo['clubsList']];
+                    // Имя файла с картинкой логотипа:                    
+                    foreach ($clubsLists as $curClubList) {
+                        // foreach ($tableInfo['clubsList'] as &$curClubInfo) {
+                        foreach ($curClubList as &$curClubInfo) {
+                            $logoImageFile = "";
+                            $clubCode = $curClubInfo['code'];
+                            $clubCSSClass = $curClubInfo['CSSClass'];
+                            $clubCssClassHtmlRecord = ($clubCSSClass === "") ? "" : " {$clubCSSClass}";
+                            if (in_array($clubCode, array_keys($specialImages))) {
+                                $logoImageFile = $specialImages[$clubCode];
+                            } else {        
+                                if (in_array("{$clubCode}.png", $logoFiles)) {
+                                    $logoImageFile = "{$clubCode}.png";
+                                } elseif (in_array("{$clubCode}.svg", $logoFiles)) {
+                                    $logoImageFile = "{$clubCode}.svg";
+                                } elseif (in_array("{$clubCode}.jpg", $logoFiles)) {
+                                    $logoImageFile = "{$clubCode}.jpg";
+                                }
                             }
+                            $curClubInfo["logoImageFile"] = $logoImageFile;
+                            $curClubInfo["clubCssClassHtmlRecord"] = $clubCssClassHtmlRecord;
                         }
-                        $curClubInfo["logoImageFile"] = $logoImageFile;
-                        $curClubInfo["clubCssClassHtmlRecord"] = $clubCssClassHtmlRecord;
-                    }
-                    unset($curClubInfo);
+                        unset($curClubInfo);
+                    }                    
                   
                 ?>
 
