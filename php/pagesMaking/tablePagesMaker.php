@@ -340,40 +340,45 @@
                             <? endif; ?>
                         </td>
 
-                        <? $number = 1; ?>
+                        <? 
+                            $number = 1;
+                            $clubsLists = ($ranging === "national") ? [$tableInfo['clubsList'], $tableInfo['actualCountryClubsList']] : [$tableInfo['clubsList']];
+                        ?>
 
-                        <? foreach ($tableInfo['clubsList'] as &$curClubInfo): ?>
+                        <? foreach ($clubsLists as $curClubList): ?>
+                            <? foreach ($curClubList as &$curClubInfo): ?>
 
-                            <?
-                                // Имя файла с картинкой логотипа:
-                                $logoImageFile = "";
-                                $clubCode = $curClubInfo['code'];
-                                $clubCSSClass = $curClubInfo['CSSClass'];
-                                $clubCssClassHtmlRecord = ($clubCSSClass === "") ? "" : " {$clubCSSClass}";
-                                if (in_array($clubCode, array_keys($specialImages))) {
-                                    $logoImageFile = $specialImages[$clubCode];
-                                } else {        
-                                    if (in_array("{$clubCode}.png", $logoFiles)) {
-                                        $logoImageFile = "{$clubCode}.png";
-                                    } elseif (in_array("{$clubCode}.svg", $logoFiles)) {
-                                        $logoImageFile = "{$clubCode}.svg";
-                                    } elseif (in_array("{$clubCode}.jpg", $logoFiles)) {
-                                        $logoImageFile = "{$clubCode}.jpg";
+                                <?
+                                    // Имя файла с картинкой логотипа:
+                                    $logoImageFile = "";
+                                    $clubCode = $curClubInfo['code'];
+                                    $clubCSSClass = $curClubInfo['CSSClass'];
+                                    $clubCssClassHtmlRecord = ($clubCSSClass === "") ? "" : " {$clubCSSClass}";
+                                    if (in_array($clubCode, array_keys($specialImages))) {
+                                        $logoImageFile = $specialImages[$clubCode];
+                                    } else {        
+                                        if (in_array("{$clubCode}.png", $logoFiles)) {
+                                            $logoImageFile = "{$clubCode}.png";
+                                        } elseif (in_array("{$clubCode}.svg", $logoFiles)) {
+                                            $logoImageFile = "{$clubCode}.svg";
+                                        } elseif (in_array("{$clubCode}.jpg", $logoFiles)) {
+                                            $logoImageFile = "{$clubCode}.jpg";
+                                        }
                                     }
-                                }
-                                $curClubInfo["logoImageFile"] = $logoImageFile;
-                                $curClubInfo["clubCssClassHtmlRecord"] = $clubCssClassHtmlRecord;
-                            ?>                            
+                                    $curClubInfo["logoImageFile"] = $logoImageFile;
+                                    $curClubInfo["clubCssClassHtmlRecord"] = $clubCssClassHtmlRecord;
+                                ?>                            
 
-                            <td>
-                                <span class="number"><?=$number?></span>
-                                <img alt="<?=$curClubInfo["shortName"]?>" src="../images/<?=$logoImageFile?>" title="<?=$curClubInfo["shortName"]?>" class="football-logo-table<?=$clubCssClassHtmlRecord?>">
-                            </td>
-                            
-                            <? $number++; ?>
+                                <td>
+                                    <span class="number"><?=$number?></span>
+                                    <img alt="<?=$curClubInfo["shortName"]?>" src="../images/<?=$logoImageFile?>" title="<?=$curClubInfo["shortName"]?>" class="football-logo-table<?=$clubCssClassHtmlRecord?>">
+                                </td>
+                                
+                                <? $number++; ?>
 
-                        <? endforeach; ?>
-                        <? unset($curClubInfo); ?>
+                            <? endforeach; ?>
+                            <? unset($curClubInfo); ?>
+                        <? endforeach; ?>                        
 
                         <td class="main-table_gap"></td>
 
