@@ -266,10 +266,10 @@
 
                 require_once 'tableInfo.php'; // Получение содержания таблицы
                 $tableInfo = getTableInfo (["clubsList" => $clubsList, "actualCountryClubsList" => $actualCountryClubsList ?? [],]);
-                // echo "<pre>";
-                // // var_dump($tableInfo);
-                // var_dump($tableInfo['actualCountryClubsList']);
-                // echo "</pre>";
+                echo "<pre>";
+                // var_dump($tableInfo);
+                var_dump($tableInfo['actualCountryClubsList']);
+                echo "</pre>";
 
                 require_once 'classes/WordForms.php'; // Файл для получения правильных форм слов
 
@@ -330,32 +330,33 @@
                         "Zen" => "Zen_light.png",
                     ];
 
-                    $clubsLists = ($ranging === "national") ? [$tableInfo['clubsList'], $tableInfo['actualCountryClubsList']] : [$tableInfo['clubsList']];
+                    $clubsLists = ($ranging === "national") ? ['clubsList' => $tableInfo['clubsList'], 'actualCountryClubsList' => $tableInfo['actualCountryClubsList']] : ['clubsList' => $tableInfo['clubsList']];
+                    $logotypesInfo = ['clubsList' => [], 'actualCountryClubsList' => []];
                     // Имя файла с картинкой логотипа:                    
-                    foreach ($clubsLists as &$curClubList) {
-                        // foreach ($tableInfo['clubsList'] as &$curClubInfo) {
-                        foreach ($curClubList as &$curClubInfo) {
-                            $logoImageFile = "";
-                            $clubCode = $curClubInfo['code'];
-                            $clubCSSClass = $curClubInfo['CSSClass'];
-                            $clubCssClassHtmlRecord = ($clubCSSClass === "") ? "" : " {$clubCSSClass}";
-                            if (in_array($clubCode, array_keys($specialImages))) {
-                                $logoImageFile = $specialImages[$clubCode];
-                            } else {        
-                                if (in_array("{$clubCode}.png", $logoFiles)) {
-                                    $logoImageFile = "{$clubCode}.png";
-                                } elseif (in_array("{$clubCode}.svg", $logoFiles)) {
-                                    $logoImageFile = "{$clubCode}.svg";
-                                } elseif (in_array("{$clubCode}.jpg", $logoFiles)) {
-                                    $logoImageFile = "{$clubCode}.jpg";
+                    foreach ($clubsLists as $curClubsListName => $curClubsList) {
+                        // foreach ($curClubsList as $curClubsListName => $curClubInfo) {
+                            foreach ($curClubList as $curClubsListName => $curClubInfo) {
+                                $logoImageFile = "";
+                                $clubCode = $curClubInfo['code'];
+                                $clubCSSClass = $curClubInfo['CSSClass'];
+                                $clubCssClassHtmlRecord = ($clubCSSClass === "") ? "" : " {$clubCSSClass}";
+                                if (in_array($clubCode, array_keys($specialImages))) {
+                                    $logoImageFile = $specialImages[$clubCode];
+                                } else {        
+                                    if (in_array("{$clubCode}.png", $logoFiles)) {
+                                        $logoImageFile = "{$clubCode}.png";
+                                    } elseif (in_array("{$clubCode}.svg", $logoFiles)) {
+                                        $logoImageFile = "{$clubCode}.svg";
+                                    } elseif (in_array("{$clubCode}.jpg", $logoFiles)) {
+                                        $logoImageFile = "{$clubCode}.jpg";
+                                    }
                                 }
+                                // $curClubInfo["logoImageFile"] = $logoImageFile;
+                                // $curClubInfo["clubCssClassHtmlRecord"] = $clubCssClassHtmlRecord;
+                                $logotypesInfo[$curClubsListName] = "";
                             }
-                            $curClubInfo["logoImageFile"] = $logoImageFile;
-                            $curClubInfo["clubCssClassHtmlRecord"] = $clubCssClassHtmlRecord;
-                        }
-                        unset($curClubInfo);
+                        // }
                     }
-                    unset($curClubList);
                   
                 ?>
 
