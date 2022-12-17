@@ -266,10 +266,10 @@
 
                 require_once 'tableInfo.php'; // Получение содержания таблицы
                 $tableInfo = getTableInfo (["clubsList" => $clubsList, "actualCountryClubsList" => $actualCountryClubsList ?? [],]);
-                echo "<pre>";
-                // var_dump($tableInfo);
-                var_dump($tableInfo['actualCountryClubsList']);
-                echo "</pre>";
+                // echo "<pre>";
+                // // var_dump($tableInfo);
+                // var_dump($tableInfo['actualCountryClubsList']);
+                // echo "</pre>";
 
                 require_once 'classes/WordForms.php'; // Файл для получения правильных форм слов
 
@@ -335,7 +335,7 @@
                     // Имя файла с картинкой логотипа:                    
                     foreach ($clubsLists as $curClubsListName => $curClubsList) {
                         // foreach ($curClubsList as $curClubsListName => $curClubInfo) {
-                            foreach ($curClubList as $curClubsListName => $curClubInfo) {
+                            foreach ($curClubsList as $curClubName => $curClubInfo) {
                                 $logoImageFile = "";
                                 $clubCode = $curClubInfo['code'];
                                 $clubCSSClass = $curClubInfo['CSSClass'];
@@ -353,7 +353,8 @@
                                 }
                                 // $curClubInfo["logoImageFile"] = $logoImageFile;
                                 // $curClubInfo["clubCssClassHtmlRecord"] = $clubCssClassHtmlRecord;
-                                $logotypesInfo[$curClubsListName] = "";
+                                $logotypesInfo[$curClubsListName][$curClubName] ["logoImageFile"] = $logoImageFile;
+                                $logotypesInfo[$curClubsListName][$curClubName] ["clubCssClassHtmlRecord"] = $clubCssClassHtmlRecord;
                             }
                         // }
                     }
@@ -404,7 +405,7 @@
                                 </td> -->
                                 <td>
                                     <span class="number"><?=$number?></span>
-                                    <img alt="<?=$curClubInfo["shortName"]?>" src="../images/<?=$curClubInfo["logoImageFile"]?>" title="<?=$curClubInfo["shortName"]?>" class="football-logo-table<?=$curClubInfo["clubCssClassHtmlRecord"]?>">
+                                    <img alt="<?=$curClubInfo["shortName"]?>" src="../images/<?=$logotypesInfo['clubsList'][$curClubInfo["basicFullName"]]["logoImageFile"]?>" title="<?=$curClubInfo["shortName"]?>" class="football-logo-table<?=$logotypesInfo['clubsList'][$curClubInfo["basicFullName"]]["clubCssClassHtmlRecord"]?>">
                                 </td>
                                 
                                 <? $number++; ?>
