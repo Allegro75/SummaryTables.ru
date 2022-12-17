@@ -355,7 +355,8 @@
                             }
                     }
                     echo "<pre>";
-                    var_dump($logotypesInfo);
+                    // var_dump($logotypesInfo);
+                    var_dump($logotypesInfo['actualCountryClubsList']);
                     echo "</pre>";
                   
                 ?>
@@ -426,6 +427,10 @@
 
                     <? 
                         $verticalClubsList = ($ranging === "national") ? $tableInfo['actualCountryClubsList'] : $tableInfo['clubsList'];
+                        echo "<pre>";
+                        echo "verticalClubsList:";
+                        var_dump($verticalClubsList);
+                        echo "</pre>";                        
                     ?>
 
                     <? foreach ($verticalClubsList as $curClubInfo): ?>
