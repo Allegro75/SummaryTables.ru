@@ -433,14 +433,14 @@
                         echo "</pre>";                        
                     ?>
 
-                    <? foreach ($verticalClubsList as $curClubInfo): ?>
+                    <? foreach ($verticalClubsList as $curClubName => $curClubInfo): ?>
                         
                         <tr class="<?=$curClubInfo['code']?>">
 
                             <td class="number"><?=$rowNumber?></td>
 
                             <td>
-                                <img alt="<?=$curClubInfo["shortName"]?>" src="../images/<?=$logotypesInfo['actualCountryClubsList'][$curClubInfo["basicFullName"]]["logoImageFile"]?>" title="<?=$curClubInfo["shortName"]?>" class="football-logo-table<?=$logotypesInfo['actualCountryClubsList'][$curClubInfo["basicFullName"]]["clubCssClassHtmlRecord"]?>">
+                                <img alt="<?=$curClubInfo["shortName"]?>" src="../images/<?=$logotypesInfo['actualCountryClubsList'][$curClubName]["logoImageFile"]?>" title="<?=$curClubInfo["shortName"]?>" class="football-logo-table<?=$logotypesInfo['actualCountryClubsList'][$curClubName]["clubCssClassHtmlRecord"]?>">
                             </td>
 
                             <td>
