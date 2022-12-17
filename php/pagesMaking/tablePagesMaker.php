@@ -611,6 +611,18 @@
                                         <?=$curClubOdds?>
                                     </span>
                                 </td>
+                            <? elseif ($ranging === "national"): ?>
+
+                                <?
+                                    $curClubSeasons = $clubsList[$curClubName]["seasons"];
+                                    $corrSeasonWordForm = WordForms::getWordLikeFinal(["word" => "сезон", "number" => $curClubSeasons]);                                    
+                                ?>                                
+
+                                <td class="main-table_criterion" title="<?=$curClubInfo["shortName"]?>: <?=$curClubSeasons?> <?=$corrSeasonWordForm?> с участием в еврокубках">
+                                    <span class="main-table_criterion">
+                                        <?=$curClubSeasons?>
+                                    </span>
+                                </td>
 
                             <? endif; ?>
 
