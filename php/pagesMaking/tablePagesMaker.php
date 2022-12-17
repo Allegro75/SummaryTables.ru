@@ -342,10 +342,8 @@
 
                         <? 
                             $number = 1;
-                            $clubsLists = ($ranging === "national") ? [$tableInfo['clubsList'], $tableInfo['actualCountryClubsList']] : [$tableInfo['clubsList']];
                         ?>
 
-                        <? foreach ($clubsLists as $curClubList): ?>
                             <? foreach ($curClubList as &$curClubInfo): ?>
 
                                 <?
@@ -378,7 +376,6 @@
 
                             <? endforeach; ?>
                             <? unset($curClubInfo); ?>
-                        <? endforeach; ?>                        
 
                         <td class="main-table_gap"></td>
 
