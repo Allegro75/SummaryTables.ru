@@ -435,7 +435,7 @@
                             <td class="number"><?=$rowNumber?></td>
 
                             <td>
-                                <img alt="<?=$curClubInfo["shortName"]?>" src="../images/<?=$logotypesInfo['clubsList'][$curClubInfo["basicFullName"]]["logoImageFile"]?>" title="<?=$curClubInfo["shortName"]?>" class="football-logo-table<?=$logotypesInfo['clubsList'][$curClubInfo["basicFullName"]]["clubCssClassHtmlRecord"]?>">
+                                <img alt="<?=$curClubInfo["shortName"]?>" src="../images/<?=$logotypesInfo['actualCountryClubsList'][$curClubInfo["basicFullName"]]["logoImageFile"]?>" title="<?=$curClubInfo["shortName"]?>" class="football-logo-table<?=$logotypesInfo['actualCountryClubsList'][$curClubInfo["basicFullName"]]["clubCssClassHtmlRecord"]?>">
                             </td>
 
                             <td>
