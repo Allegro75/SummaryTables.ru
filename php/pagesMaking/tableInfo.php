@@ -36,12 +36,8 @@ function getTableInfo ($opts = []) {
 
         $outerCycleClubsList = ( ! (empty($actualCountryClubsList)) ) ? $actualCountryClubsList : $clubsList; // Определяем массив клубов для перебора во внешнем (первом) цикле. Для национальных таблиц - это клубы актуальной страны, для остальных - те же клубы, что и во внутреннем переборе.
 
-        // foreach ($clubsList as $clubName => $clubInfo) { // Перебираем массив клубов
         foreach ($outerCycleClubsList as $clubName => $clubInfo) { // Перебираем массив клубов
 
-            // $innerCycleClubsList = ( ! (empty($actualCountryClubsList)) ) ? $actualCountryClubsList : $clubsList; // Определяем массив клубов для перебора во внутреннем цикле. Для национальных таблиц - это клубы актуальной страны, для остальных - те же клубы, что и во внешнем переборе.
-
-            // foreach ($innerCycleClubsList as $innerCycleClubName => $innerCycleClubInfo) { // Для каждого клуба снова перебираем массив клубов, определяя таким образом рассматриваемые конкретные пары клубов
             foreach ($clubsList as $innerCycleClubName => $innerCycleClubInfo) { // Для каждого клуба снова перебираем массив клубов, определяя таким образом рассматриваемые конкретные пары клубов
                 
                 if ($clubName !== $innerCycleClubName) { // Естественно, отбрасываем совпадения перебираемых имён клубов, чтобы пара содержала два разных клуба
