@@ -291,6 +291,41 @@
                 var_dump($tableInfo['pairsMatchesHistory']);
                 echo "</pre>";
 
+                if ($ranging === "national") { // Выяснение списка национальных клубов, имеющих историю встреч с грандами. И списка грандов имеющих историю встреч с национальными клубами.
+
+                    $filteredActualCountryClubsList = $fiteredBasicRangeClubsList = [];
+
+                    foreach ($actualCountryClubsList as $curClubName => $curClubInfo) {
+
+                        foreach ($tableInfo['pairsMatchesHistory'] as $curPairNamesStr => $curPairHistory) {
+
+                            $curPairClubsNamesArr = explode(" - ", $curPairNamesStr);
+                            $curNationalClubName = $curPairClubsNamesArr[0];
+
+                            if ($curClubName === $curNationalClubName) {
+
+                                if (($curPairHistory["firstVictories"] > 0) || ($curPairHistory["draws"] > 0) || ($curPairHistory["firstLesions"] > 0)) { // Если есть история встреч
+
+                                    $filteredActualCountryClubsList[$curClubName] = $curClubInfo;
+                                    $curEuropeanClubName = $curPairClubsNamesArr[1];
+                                    $curEuroClubIndInBasicRange = array_search($curEuropeanClubName, array_keys($clubsList));
+                                    $fiteredBasicRangeClubsList[$curEuroClubIndInBasicRange] = $clubsList[$curEuroClubIndInBasicRange];
+
+                                    break;
+
+                                }
+
+                            }
+
+                        }
+
+                    }
+
+                    $clubsList = $fiteredBasicRangeClubsList;
+                    $actualCountryClubsList = $filteredActualCountryClubsList;
+
+                }
+
                 require_once 'classes/WordForms.php'; // Файл для получения правильных форм слов
 
                 $champLeagueClassHtmlRecordForTable = "";
