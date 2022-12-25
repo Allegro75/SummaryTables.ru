@@ -308,7 +308,7 @@
                                 if (($curPairHistory["firstVictories"] > 0) || ($curPairHistory["draws"] > 0) || ($curPairHistory["firstLesions"] > 0)) { // Если есть история встреч
 
                                     if ( ! (isset($filteredActualCountryClubsList[$curClubName])) ) {
-                                        $filteredActualCountryClubsList[$curClubName] = $curClubInfo;
+                                        $filteredActualCountryClubsList[$curClubName] = $tableInfo['actualCountryClubsList'][$curClubName];
                                     }
 
                                     $curEuropeanClubName = $curPairClubsNamesArr[1];
@@ -329,10 +329,10 @@
                     $tableInfo['actualCountryClubsList'] = $filteredActualCountryClubsList;
 
                 }
-                echo "<pre>";
-                // var_dump($tableInfo['actualCountryClubsList']);
-                var_dump($tableInfo['clubsList']);
-                echo "</pre>";                
+                // echo "<pre>";
+                // // var_dump($tableInfo['actualCountryClubsList']);
+                // var_dump($tableInfo['clubsList']);
+                // echo "</pre>";                
 
                 require_once 'classes/WordForms.php'; // Файл для получения правильных форм слов
 
