@@ -321,8 +321,8 @@
 
                     }
 
-                    $clubsList = $fiteredBasicRangeClubsList;
-                    $actualCountryClubsList = $filteredActualCountryClubsList;
+                    $tableInfo['clubsList'] = $fiteredBasicRangeClubsList;
+                    $tableInfo['actualCountryClubsList'] = $filteredActualCountryClubsList;
 
                 }
 
