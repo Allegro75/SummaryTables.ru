@@ -115,7 +115,7 @@ class TablePagesProperties {
                 "cap-wo-nav.css",
                 "navigation.css",
                 "captions.css",
-                "table24.css",
+                "table16_byelorussia.css",
                 "duel-button-lower.css",
                 "settings.css",
                 "donate.css",
@@ -129,7 +129,6 @@ class TablePagesProperties {
                 "randPairOnLoadDynamicPage.js",
                 "randomWindowOnClickDynamically.js",
                 "duelsOnLoad.js",
-                "rangeColsAlpBlly.js"
             ],            
             "h1Content" => "БЕЛОРУСКИЕ КЛУБЫ ПРОТИВ ЕВРОПЕЙСКИХ",
             "clubsRangeExplanationHintText" => "Иностранные клубы ранжировались по следующей системе:\nза победу в Лиге чемпионов с 2000-го года - 12 очков; за выход в финал - 9; выход в 1/2 финала - 6; выход в 1/4 финала - 3;\nза победу в кубке/Лиге чемпионов до 2000-го года - 8 очков; за выход в финал - 6; выход в 1/2 финала - 4; выход в 1/4 финала - 2;\nза победу в других еврокубках - 4 очка; за выход в финал - 3; выход в 1/2 финала - 2; выход в 1/4 финала - 1",

@@ -172,18 +172,18 @@
         //     "Рома" => ["odds" => 20,],       
         // ];
 
-        // Для ukraine
-        $actualCountryClubsList = [
-            "Динамо Киев" => ["seasons" => 53,],
-            "Шахтёр Донецк" => ["seasons" => 33,],
-            "Днепр" => ["seasons" => 20,],
-            "Черноморец Одесса" => ["seasons" => 10,],
-            "Заря Луганск" => ["seasons" => 9,],
-            "Металлист Харьков" => ["seasons" => 9,],
-            "Ворскла" => ["seasons" => 7,],
-            "Карпаты" => ["seasons" => 5,],       
-            "ЦСКА Киев" => ["seasons" => 2,],
-        ];
+        // // Для ukraine
+        // $actualCountryClubsList = [
+        //     "Динамо Киев" => ["seasons" => 53,],
+        //     "Шахтёр Донецк" => ["seasons" => 33,],
+        //     "Днепр" => ["seasons" => 20,],
+        //     "Черноморец Одесса" => ["seasons" => 10,],
+        //     "Заря Луганск" => ["seasons" => 9,],
+        //     "Металлист Харьков" => ["seasons" => 9,],
+        //     "Ворскла" => ["seasons" => 7,],
+        //     "Карпаты" => ["seasons" => 5,],       
+        //     "ЦСКА Киев" => ["seasons" => 2,],
+        // ];
 
     }
 
@@ -264,6 +264,22 @@
             ?>
 
             <? // Данные для таблицы:
+
+
+
+                if ($ranging === "national") {
+
+                    $countryCodes = [
+                        "byelorussia" => "BLR",
+                    ];
+
+                    require_once 'classes/ActualCountryClubsList.php'; 
+                    // Получение списка клубов данной страны (для национальных страниц (за исключением Украины пока))
+                    $actualCountryClubsListClass = new ActualCountryClubsList();
+                    $actualCountryClubsList = $actualCountryClubsListClass->getActualCountryClubsList (["clubsList" => $clubsList, "countryCode" => $countryCodes[$pageName],]);
+                    var_dump($actualCountryClubsList);
+
+                }            
 
                 require_once 'tableInfo.php'; // Получение содержания таблицы
                 $tableInfo = getTableInfo (["clubsList" => $clubsList, "actualCountryClubsList" => $actualCountryClubsList ?? [],]);
