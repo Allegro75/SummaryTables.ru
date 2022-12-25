@@ -277,19 +277,19 @@
                     // Получение списка клубов данной страны (для национальных страниц (за исключением Украины пока))
                     $actualCountryClubsListClass = new ActualCountryClubsList(["pathToRoot" => "../../"]);
                     $actualCountryClubsList = $actualCountryClubsListClass->getActualCountryClubsList (["countryCode" => $countryCodes[$pageName],]);
-                    echo "<pre>";
-                    var_dump($actualCountryClubsList);
-                    echo "</pre>";                    
+                    // echo "<pre>";
+                    // var_dump($actualCountryClubsList);
+                    // echo "</pre>";          
 
                 }            
 
                 require_once 'tableInfo.php'; // Получение содержания таблицы
                 $tableInfo = getTableInfo (["clubsList" => $clubsList, "actualCountryClubsList" => $actualCountryClubsList ?? [],]);
-                // echo "<pre>";
-                // // var_dump($tableInfo);
-                // // var_dump($tableInfo['actualCountryClubsList']);
-                // var_dump($tableInfo['pairsMatchesHistory']);
-                // echo "</pre>";
+                echo "<pre>";
+                // var_dump($tableInfo);
+                // var_dump($tableInfo['actualCountryClubsList']);
+                var_dump($tableInfo['pairsMatchesHistory']);
+                echo "</pre>";
 
                 require_once 'classes/WordForms.php'; // Файл для получения правильных форм слов
 
