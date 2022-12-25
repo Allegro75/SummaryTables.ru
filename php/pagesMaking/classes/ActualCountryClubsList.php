@@ -20,46 +20,32 @@ class ActualCountryClubsList
 
         $basicRangeClubs = $opts["clubsList"];
         $countryCode = $opts["countryCode"];
-        return $countryCode;
 
-        $history = [];
+        $clubsList = [];
 
         // Определяем набор матчей данной пары:
+        // $sql =
+        //     "SELECT `clubs`.`basicFullName`, COUNT(DISTINCT(`matches`.`tourneyFinalYear`)) AS `seasons`
+        //     FROM `eurocups_clubs` AS `clubs`, `matches`
+        //     GROUP BY `clubs`.`basicFullName`
+        // ";
         $sql =
-            "SELECT * 
-            FROM `matches` 
-            WHERE 
-                (
-                        (
-                            firstClubId = '{$firstClubId}' 
-                            AND secondClubId = '{$secClubId}'
-                        ) 
-                    OR 
-                        (
-                            firstClubId = '{$secClubId}' 
-                            AND secondClubId = '{$firstClubId}'
-                        )
-                )
-            AND `score` != ''
+            "SELECT `basicFullName`
+            FROM `eurocups_clubs`
+            WHERE `countryEngCode` = '{$countryCode}'
         ";
-        $matchesArr = array();
         if ($result = mysqli_query($this->db, $sql)) {
             if (mysqli_num_rows($result) > 0) {
                 while ($row = mysqli_fetch_assoc($result)) {
-                    $matchesArr[] = $row;
+                    $clubsList[] = $row["basicFullName"];
                 }
             }
         }
-        $noHistory = false;
-        if (count($matchesArr) === 0) {
-            $noHistory = true;
-        }
-        // $history = count($matchesArr);
 
         mysqli_close($this->db);
 
-        return $history;
-        
+        return $clubsList;
+
     }
 
 }
