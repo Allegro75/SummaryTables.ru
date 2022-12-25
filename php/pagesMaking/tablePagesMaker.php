@@ -285,12 +285,12 @@
 
                 require_once 'tableInfo.php'; // Получение содержания таблицы
                 $tableInfo = getTableInfo (["clubsList" => $clubsList, "actualCountryClubsList" => $actualCountryClubsList ?? [],]);
-                echo "<pre>";
-                // var_dump($tableInfo);
-                // var_dump($tableInfo['actualCountryClubsList']);
-                var_dump($tableInfo['clubsList']);
-                // var_dump($tableInfo['pairsMatchesHistory']);
-                echo "</pre>";
+                // echo "<pre>";
+                // // var_dump($tableInfo);
+                // // var_dump($tableInfo['actualCountryClubsList']);
+                // var_dump($tableInfo['clubsList']);
+                // // var_dump($tableInfo['pairsMatchesHistory']);
+                // echo "</pre>";
 
                 if ($ranging === "national") { // Выяснение списка национальных клубов, имеющих историю встреч с грандами. И списка грандов имеющих историю встреч с национальными клубами.
 
@@ -307,12 +307,13 @@
 
                                 if (($curPairHistory["firstVictories"] > 0) || ($curPairHistory["draws"] > 0) || ($curPairHistory["firstLesions"] > 0)) { // Если есть история встреч
 
-                                    $filteredActualCountryClubsList[$curClubName] = $curClubInfo;
+                                    if ( ! (isset($filteredActualCountryClubsList[$curClubName])) ) {
+                                        $filteredActualCountryClubsList[$curClubName] = $curClubInfo;
+                                    }
+
                                     $curEuropeanClubName = $curPairClubsNamesArr[1];
                                     $curEuroClubIndInBasicRange = array_search($curEuropeanClubName, array_keys($tableInfo['clubsList']));
                                     $fiteredBasicRangeClubsList[$curEuroClubIndInBasicRange] = $tableInfo['clubsList'][$curEuroClubIndInBasicRange];
-
-                                    break;
 
                                 }
 
@@ -326,10 +327,10 @@
                     $tableInfo['actualCountryClubsList'] = $filteredActualCountryClubsList;
 
                 }
-                // echo "<pre>";
-                // // var_dump($tableInfo['actualCountryClubsList']);
-                // var_dump($tableInfo['clubsList']);
-                // echo "</pre>";                
+                echo "<pre>";
+                // var_dump($tableInfo['actualCountryClubsList']);
+                var_dump($tableInfo['clubsList']);
+                echo "</pre>";                
 
                 require_once 'classes/WordForms.php'; // Файл для получения правильных форм слов
 
