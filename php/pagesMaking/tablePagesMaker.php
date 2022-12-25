@@ -312,8 +312,10 @@
                                     }
 
                                     $curEuropeanClubName = $curPairClubsNamesArr[1];
-                                    $curEuroClubIndInBasicRange = array_search($curEuropeanClubName, array_keys($tableInfo['clubsList']));
-                                    $fiteredBasicRangeClubsList[$curEuroClubIndInBasicRange] = $tableInfo['clubsList'][$curEuroClubIndInBasicRange];
+                                    // $curEuroClubIndInBasicRange = array_search($curEuropeanClubName, array_keys($tableInfo['clubsList']));
+                                    if ( ! (isset($fiteredBasicRangeClubsList[$curEuropeanClubName])) ) {
+                                        $fiteredBasicRangeClubsList[$curEuropeanClubName] = $tableInfo['clubsList'][$curEuropeanClubName];
+                                    }
 
                                 }
 
