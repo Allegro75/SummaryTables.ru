@@ -308,8 +308,8 @@
 
                                     $filteredActualCountryClubsList[$curClubName] = $curClubInfo;
                                     $curEuropeanClubName = $curPairClubsNamesArr[1];
-                                    $curEuroClubIndInBasicRange = array_search($curEuropeanClubName, array_keys($clubsList));
-                                    $fiteredBasicRangeClubsList[$curEuroClubIndInBasicRange] = $clubsList[$curEuroClubIndInBasicRange];
+                                    $curEuroClubIndInBasicRange = array_search($curEuropeanClubName, array_keys($tableInfo['clubsList']));
+                                    $fiteredBasicRangeClubsList[$curEuroClubIndInBasicRange] = $tableInfo['clubsList'][$curEuroClubIndInBasicRange];
 
                                     break;
 
@@ -326,7 +326,8 @@
 
                 }
                 echo "<pre>";
-                var_dump($tableInfo['actualCountryClubsList']);
+                // var_dump($tableInfo['actualCountryClubsList']);
+                var_dump($tableInfo['clubsList']);
                 echo "</pre>";                
 
                 require_once 'classes/WordForms.php'; // Файл для получения правильных форм слов
