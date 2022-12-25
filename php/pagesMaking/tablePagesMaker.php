@@ -20,7 +20,8 @@
         // $pageName = "winners";
         // $pageName = "champ_league_current";
         // $pageName = "euroleague_current";
-        $pageName = "ukraine";
+        // $pageName = "ukraine";
+        $pageName = "byelorussia";
 
         $lastAccountedMatchDate = "03.11.2022";
 
