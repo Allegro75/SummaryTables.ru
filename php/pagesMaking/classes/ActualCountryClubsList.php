@@ -18,28 +18,46 @@ class ActualCountryClubsList
     public function getActualCountryClubsList($opts = [])
     {
 
-        $basicRangeClubs = $opts["clubsList"];
         $countryCode = $opts["countryCode"];
 
-        $clubsList = [];
+        $clubsList = $clubsNamesByIds = $clubsIds = [];
 
-        // Определяем набор матчей данной пары:
-        // $sql =
-        //     "SELECT `clubs`.`basicFullName`, COUNT(DISTINCT(`matches`.`tourneyFinalYear`)) AS `seasons`
-        //     FROM `eurocups_clubs` AS `clubs`, `matches`
-        //     GROUP BY `clubs`.`basicFullName`
-        // ";
+        // Определяем все клубы актуальной страны:
         $sql =
-            "SELECT `basicFullName`
+            "SELECT `id`,`basicFullName`
             FROM `eurocups_clubs`
             WHERE `countryEngCode` = '{$countryCode}'
         ";
         if ($result = mysqli_query($this->db, $sql)) {
             if (mysqli_num_rows($result) > 0) {
                 while ($row = mysqli_fetch_assoc($result)) {
-                    $clubsList[] = $row["basicFullName"];
+                    // $clubsList[] = $row["basicFullName"];
+                    $clubsNamesByIds[$row["id"]] = $row["basicFullName"];
+                    $clubsIds = $row["id"];
                 }
             }
+        }
+
+        if ( ! (empty($clubsIds)) ) { // Определяем число сезонов в еврокубках для каждого клуба:
+
+            foreach ($clubsIds as $curClubId) {                
+
+                $sql =
+                    "SELECT COUNT(DISTINCT(`tourneyFinalYear`)) AS `seasons`
+                    FROM `matches`
+                    WHERE `firstClubId` = {$curClubId}
+                    OR `secondClubId` = {$curClubId}
+                ";
+                if ($result = mysqli_query($this->db, $sql)) {
+                    if (mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            $curClubName = $clubsNamesByIds[$curClubId];
+                            $clubsList[$curClubName]["seasons"] = $row["seasons"];
+                        }
+                    }
+                }
+            }
+
         }
 
         mysqli_close($this->db);
