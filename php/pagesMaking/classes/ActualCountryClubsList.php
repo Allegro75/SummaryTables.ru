@@ -58,6 +58,13 @@ class ActualCountryClubsList
                 }
             }
 
+            // Сортировка клубов по числу сезонов в еврокубках:
+            if ( ! (empty($clubsList)) ) {
+                uasort($clubsList, function ($a, $b) {
+                    return ($a["seasons"] > $b["seasons"]) ? -1 : 1;
+                });
+            }
+
         }
 
         mysqli_close($this->db);
