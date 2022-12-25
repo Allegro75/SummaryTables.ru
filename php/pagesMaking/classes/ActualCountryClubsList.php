@@ -33,7 +33,7 @@ class ActualCountryClubsList
                 while ($row = mysqli_fetch_assoc($result)) {
                     // $clubsList[] = $row["basicFullName"];
                     $clubsNamesByIds[$row["id"]] = $row["basicFullName"];
-                    $clubsIds = $row["id"];
+                    $clubsIds[] = $row["id"];
                 }
             }
         }
