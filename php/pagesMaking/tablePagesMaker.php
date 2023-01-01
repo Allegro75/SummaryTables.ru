@@ -443,10 +443,12 @@
 
                         <? foreach ($tableInfo['clubsList'] as $curClubNameInLogoRow => $curClubInfo): ?>
 
-                            <? if ((in_array($pageName, ["byelorussia", "kazakhstan"])) && ( ! (in_array($curClubNameInLogoRow, array_keys($fiteredBasicRangeClubsList))) ) && ($prevStepClubHasHistory === true)): ?>
-
-                                <td>...</td>
-                                <? $prevStepClubHasHistory = false; ?>
+                            <? if ((in_array($pageName, ["byelorussia", "kazakhstan"])) && ( ! (in_array($curClubNameInLogoRow, array_keys($fiteredBasicRangeClubsList))) )): ?>
+                                
+                                <? if ($prevStepClubHasHistory === true): ?>
+                                    <td>...</td>
+                                    <? $prevStepClubHasHistory = false; ?>
+                                <? endif; ?>
 
                             <? else: ?>
 
