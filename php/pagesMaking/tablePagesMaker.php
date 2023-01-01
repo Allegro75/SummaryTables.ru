@@ -434,7 +434,7 @@
                             <? endif; ?>
                         </td>
 
-                        <? 
+                        <?
                             $number = 1;
                             if (in_array($pageName, ["byelorussia", "kazakhstan"])) {
                                 $prevStepClubHasHistory = true;
@@ -529,10 +529,13 @@
                                 <div class="club-name"><?=$curClubInfo["basicFullName"]?></div>
                             </td>
 
-                            <? foreach ($tableInfo['clubsList'] as $innerCycleClubInfo): ?>
+                            <? foreach ($tableInfo['clubsList'] as $curClubNameInTableBodyCycle => $innerCycleClubInfo): ?>
 
                                 <?
                                     $secClubFullName = $innerCycleClubInfo["basicFullName"];
+                                    if (in_array($pageName, ["byelorussia", "kazakhstan"])) {
+                                        $prevStepClubHasHistory = true;
+                                    }                                    
                                 ?>
 
                                 <? if ($curClubInfo["basicFullName"] === $secClubFullName): // Для ячеек, где показываем эмблему клуба ?>
@@ -542,6 +545,16 @@
                                     </td>
 
                                 <? else: ?>
+
+
+                                    <? if ((in_array($pageName, ["byelorussia", "kazakhstan"])) && ( ! (in_array($curClubNameInTableBodyCycle, array_keys($fiteredBasicRangeClubsList))) )): ?>
+                                
+                                        <? if ($prevStepClubHasHistory === true): ?>
+                                            <td></td>
+                                            <? $prevStepClubHasHistory = false; ?>
+                                        <? endif; ?>
+
+                                    <? else: ?>
 
                                     <?
 
@@ -644,6 +657,8 @@
                                         <?=$screamerNodeContent?>
                                     </td>
 
+                                    <? endif; ?>
+                                
                                 <? endif; ?>
 
                             <? endforeach; ?>
