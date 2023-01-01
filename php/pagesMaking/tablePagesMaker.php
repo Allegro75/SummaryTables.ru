@@ -561,6 +561,8 @@
 
                                     <?
 
+                                        $prevStepClubHasHistory = true;
+
                                         $curPairCode = "{$curClubInfo["code"]}{$innerCycleClubInfo["code"]}";
                                         // $curPairClubTitlesStr = "{$curClubInfo["basicFullName"]} - {$secClubFullName}";
                                         $curPairClubTitlesStr = "{$curClubName} - {$secClubFullName}";
