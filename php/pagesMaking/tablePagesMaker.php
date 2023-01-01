@@ -436,13 +436,17 @@
 
                         <? 
                             $number = 1;
+                            if (in_array($pageName, ["byelorussia", "kazakhstan"])) {
+                                $prevStepClubHasHistory = true;
+                            }
                         ?>
 
                         <? foreach ($tableInfo['clubsList'] as $curClubNameInLogoRow => $curClubInfo): ?>
 
-                            <? if ((in_array($pageName, ["byelorussia", "kazakhstan"])) && ( ! (in_array($curClubNameInLogoRow, array_keys($fiteredBasicRangeClubsList))) )): ?>
+                            <? if ((in_array($pageName, ["byelorussia", "kazakhstan"])) && ( ! (in_array($curClubNameInLogoRow, array_keys($fiteredBasicRangeClubsList))) ) && ($prevStepClubHasHistory === true)): ?>
 
                                 <td>...</td>
+                                <? $prevStepClubHasHistory = false; ?>
 
                             <? else: ?>
 
@@ -450,6 +454,8 @@
                                     <span class="number"><?=$number?></span>
                                     <img alt="<?=$curClubInfo["shortName"]?>" src="../images/<?=$logotypesInfo['clubsList'][$curClubInfo["basicFullName"]]["logoImageFile"]?>" title="<?=$curClubInfo["shortName"]?>" class="football-logo-table<?=$logotypesInfo['clubsList'][$curClubInfo["basicFullName"]]["clubCssClassHtmlRecord"]?>">
                                 </td>
+
+                                <? $prevStepClubHasHistory = true; ?>
 
                             <? endif; ?>
 
