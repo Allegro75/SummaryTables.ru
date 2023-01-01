@@ -438,9 +438,9 @@
                             $number = 1;
                         ?>
 
-                        <? foreach ($tableInfo['clubsList'] as $cucClubName => $curClubInfo): ?>
+                        <? foreach ($tableInfo['clubsList'] as $curClubNameInLogoRow => $curClubInfo): ?>
 
-                            <? if ((in_array($pageName, ["byelorussia", "kazakhstan"])) && ( ! (in_array($curClubName, array_keys($fiteredBasicRangeClubsList))) )): ?>
+                            <? if ((in_array($pageName, ["byelorussia", "kazakhstan"])) && ( ! (in_array($curClubNameInLogoRow, array_keys($fiteredBasicRangeClubsList))) )): ?>
 
                                 <td>...</td>
 
