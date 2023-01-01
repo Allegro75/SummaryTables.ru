@@ -450,10 +450,10 @@
                                     <span class="number"><?=$number?></span>
                                     <img alt="<?=$curClubInfo["shortName"]?>" src="../images/<?=$logotypesInfo['clubsList'][$curClubInfo["basicFullName"]]["logoImageFile"]?>" title="<?=$curClubInfo["shortName"]?>" class="football-logo-table<?=$logotypesInfo['clubsList'][$curClubInfo["basicFullName"]]["clubCssClassHtmlRecord"]?>">
                                 </td>
-                                
-                                <? $number++; ?>
 
                             <? endif; ?>
+
+                            <? $number++; ?>
 
                         <? endforeach; ?>
 
