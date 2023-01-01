@@ -438,7 +438,13 @@
                             $number = 1;
                         ?>
 
-                        <? foreach ($tableInfo['clubsList'] as $curClubInfo): ?>
+                        <? foreach ($tableInfo['clubsList'] as $cucClubName => $curClubInfo): ?>
+
+                            <? if ((in_array($pageName, ["byelorussia", "kazakhstan"])) && ( ! (in_array($curClubName, array_keys($fiteredBasicRangeClubsList))) )): ?>
+
+                                <td>...</td>
+
+                            <? else: ?>
 
                                 <td>
                                     <span class="number"><?=$number?></span>
@@ -446,6 +452,8 @@
                                 </td>
                                 
                                 <? $number++; ?>
+
+                            <? endif; ?>
 
                         <? endforeach; ?>
 
