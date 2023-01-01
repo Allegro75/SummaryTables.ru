@@ -516,6 +516,12 @@
                     ?>
 
                     <? foreach ($verticalClubsList as $curClubName => $curClubInfo): ?>
+
+                        <?
+                            if (in_array($pageName, ["byelorussia", "kazakhstan"])) {
+                                $prevStepClubHasHistory = true;
+                            }                                    
+                        ?>                        
                         
                         <tr class="<?=$curClubInfo['code']?>">
 
@@ -532,10 +538,7 @@
                             <? foreach ($tableInfo['clubsList'] as $curClubNameInTableBodyCycle => $innerCycleClubInfo): ?>
 
                                 <?
-                                    $secClubFullName = $innerCycleClubInfo["basicFullName"];
-                                    if (in_array($pageName, ["byelorussia", "kazakhstan"])) {
-                                        $prevStepClubHasHistory = true;
-                                    }                                    
+                                    $secClubFullName = $innerCycleClubInfo["basicFullName"];                               
                                 ?>
 
                                 <? if ($curClubInfo["basicFullName"] === $secClubFullName): // Для ячеек, где показываем эмблему клуба ?>
