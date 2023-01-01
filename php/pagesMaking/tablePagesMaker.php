@@ -489,7 +489,10 @@
                     <? $rowNumber = 1; ?>
 
                     <? 
-                        $verticalClubsList = ($ranging === "national") ? $tableInfo['actualCountryClubsList'] : $tableInfo['clubsList'];
+                        $verticalClubsList = $tableInfo['clubsList'];
+                        if ($ranging === "national") {
+                            $verticalClubsList = (in_array($pageName, ["byelorussia", "kazakhstan"])) ? $filteredActualCountryClubsList : $tableInfo['actualCountryClubsList'];
+                        }
                         // echo "<pre>";
                         // echo "verticalClubsList:";
                         // var_dump($verticalClubsList);
