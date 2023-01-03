@@ -279,9 +279,9 @@
                     // Получение списка клубов данной страны (для национальных страниц (за исключением Украины пока))
                     $actualCountryClubsListClass = new ActualCountryClubsList(["pathToRoot" => "../../"]);
                     $actualCountryClubsList = $actualCountryClubsListClass->getActualCountryClubsList (["countryCode" => $countryCodes[$pageName],]);
-                    echo "<pre>";
-                    var_dump($actualCountryClubsList);
-                    echo "</pre>";
+                    // echo "<pre>";
+                    // var_dump($actualCountryClubsList);
+                    // echo "</pre>";
 
                 }            
 

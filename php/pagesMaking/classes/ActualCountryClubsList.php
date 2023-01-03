@@ -40,7 +40,7 @@ class ActualCountryClubsList
 
         if ( ! (empty($clubsIds)) ) { // Определяем число сезонов в еврокубках для каждого клуба:
 
-            foreach ($clubsIds as $curClubId) {                
+            foreach ($clubsIds as $curClubId) {           
 
                 $sql =
                     "SELECT COUNT(DISTINCT(`tourneyFinalYear`)) AS `seasons`
