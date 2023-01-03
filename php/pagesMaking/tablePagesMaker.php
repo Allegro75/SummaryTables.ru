@@ -21,7 +21,8 @@
         // $pageName = "champ_league_current";
         // $pageName = "euroleague_current";
         // $pageName = "ukraine";
-        $pageName = "byelorussia";
+        // $pageName = "byelorussia";
+        $pageName = "kazakhstan";
 
         $lastAccountedMatchDate = "03.11.2022";
 
@@ -271,6 +272,7 @@
 
                     $countryCodes = [
                         "byelorussia" => "BLR",
+                        "kazakhstan" => "KAZ",
                     ];
 
                     require_once 'classes/ActualCountryClubsList.php'; 
