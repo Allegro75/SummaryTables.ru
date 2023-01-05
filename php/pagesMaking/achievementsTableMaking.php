@@ -14,7 +14,6 @@ $conn = connect();
         $sql =
             "SELECT firstClubId, firstClubName, secondClubId, secondClubName, tourneyTitle, tourneyFinalYear, tourneyStage
             FROM `matches`
-            WHERE `tourneyFinalYear` = {$curYear}
         ";
         if ($result = mysqli_query($conn, $sql)) {
             while ($item = mysqli_fetch_assoc($result)) {
