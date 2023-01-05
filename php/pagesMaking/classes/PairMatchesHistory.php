@@ -75,15 +75,14 @@ class PairMatchesHistory
                 }
             }
         } 
-        else {
-            $history["sql"] = $sql;
-        }
+        // else {
+        //     $history["sql"] = $sql;
+        // }
         $noHistory = false;
         if (count($matchesArr) === 0) {
             $noHistory = true;
         }
         // $history = count($matchesArr);
-        // $history["sql"] = $sql;
 
         // Про победы, ничьи, поражения:
         if (true) {
