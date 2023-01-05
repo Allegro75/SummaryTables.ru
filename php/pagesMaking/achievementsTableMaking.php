@@ -67,9 +67,9 @@ $conn = connect();
 
     $achievesByTourneysByClubs = [];
     require_once 'classes/Stages.php';
-    require_once 'Club.php';
+    require_once 'classes/Club.php';
     $newClub = new Club(['pathToRoot' => "../../"]);
-    require_once 'PairMatchesHistory.php';
+    require_once 'classes/PairMatchesHistory.php';
     $newPairHistory = new PairMatchesHistory(['pathToRoot' => "../../"]);
     $stagesOrder = Stages::$stagesOrder;
 
