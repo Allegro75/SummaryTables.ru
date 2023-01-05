@@ -92,12 +92,13 @@ $conn = connect();
                         $curStageIndex = array_search($curStage, $stagesOrder);
                         $curTourneyStagesIndexes[$curStageIndex] = $curStage;
                     }
-                    $minIndex = (array_keys($curTourneyStagesIndexes))[0];
+                    // $minIndex = (array_keys($curTourneyStagesIndexes))[0];
+                    $minIndex = min(array_keys($curTourneyStagesIndexes));
                     $achievesByTourneysByClubs[$curClubId]["achievesInfo"][] = [
                         "curTourneyTitle" => $curTourTitle,
                         "curTourneyFinalYear" => $curFinalYear,                        
                         "curTourneyResult" => $curTourneyStagesIndexes[$minIndex],
-                        "curTourneyStagesIndexes" => $curTourneyStagesIndexes,
+                        // "curTourneyStagesIndexes" => $curTourneyStagesIndexes,
                     ];
 
                 }
