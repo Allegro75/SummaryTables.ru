@@ -20,14 +20,38 @@ class PairMatchesHistory
     {
 
         $firstClub = $opts["firstClub"];
-        $secClub = $opts["secClub"];
+        $secClub = $opts["secClub"] ?? "";
 
         $firstClubId = $firstClub["id"];
-        $secClubId = $secClub["id"];
+        $secClubId = $secClub["id"] ?? "";
 
         $firstClubFullName = $firstClub['basicFullName'];
         $firstClubShortName = $firstClub['shortName'];
         $firstClubAltNames = $firstClub['altNames'];
+
+        $tourneyFinalYear = $opts["tourneyFinalYear"] ?? "";
+        $tourneyStage = $opts["tourneyStage"] ?? "";
+
+        $clubsIdsClause = "WHERE (`firstClubId` = '{$firstClubId}' OR `secondClubId` = '{$firstClubId}')";
+        if ( ! (empty($secClubId)) ) {
+            $clubsIdsClause = 
+                "WHERE
+                    (
+                            (
+                                firstClubId = '{$firstClubId}' 
+                                AND secondClubId = '{$secClubId}'
+                            ) 
+                        OR 
+                            (
+                                firstClubId = '{$secClubId}' 
+                                AND secondClubId = '{$firstClubId}'
+                            )
+                    )
+            ";
+        }
+
+        $tourneyFinalYearClause = ( ! (empty($tourneyFinalYear)) ) ? "AND `tourneyFinalYear` = {$tourneyFinalYear}" : "";
+        $tourneyStageClause = ( ! (empty($tourneyStage)) ) ? "AND `tourneyStage` = {$tourneyStage}" : "";
 
         $history = [];
 
@@ -35,19 +59,10 @@ class PairMatchesHistory
         $sql =
             "SELECT * 
             FROM `matches` 
-            WHERE 
-                (
-                        (
-                            firstClubId = '{$firstClubId}' 
-                            AND secondClubId = '{$secClubId}'
-                        ) 
-                    OR 
-                        (
-                            firstClubId = '{$secClubId}' 
-                            AND secondClubId = '{$firstClubId}'
-                        )
-                )
+            {$clubsIdsClause}
             AND `score` != ''
+            {$tourneyFinalYearClause}
+            {$tourneyStageClause}
         ";
         $matchesArr = array();
         if ($result = mysqli_query($this->db, $sql)) {
@@ -212,6 +227,7 @@ class PairMatchesHistory
                                     $duelsResults[$duelInd]["result"] = "firstClubVictory";
                                 }
                             }
+
                         } elseif (count($curDuel) === 2) { // Если финальных матчей в этом турнире два
 
                             if (($curDuel[0]["penaltiesWinner"] != "") || ($curDuel[1]["penaltiesWinner"] != "")) { // Если была серия пенальти
@@ -318,6 +334,7 @@ class PairMatchesHistory
                                 }
                             }
                         }
+
                     }
                     // Определение победителя дуэли для более ранних (чем финал) стадий:
                     else {
@@ -503,5 +520,5 @@ class PairMatchesHistory
 
         return $history;
     }
-    
+
 }

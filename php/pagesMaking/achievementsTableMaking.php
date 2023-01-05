@@ -67,9 +67,15 @@ $conn = connect();
 
     $achievesByTourneysByClubs = [];
     require_once 'classes/Stages.php';
+    require_once 'Club.php';
+    $newClub = new Club(['pathToRoot' => "../../"]);
+    require_once 'PairMatchesHistory.php';
+    $newPairHistory = new PairMatchesHistory(['pathToRoot' => "../../"]);
     $stagesOrder = Stages::$stagesOrder;
 
     foreach ($stagesByTourneysByClubs as $curClubId => $curClubSummaryInfo) {
+
+        $fullClubInfo = [];
 
         $achievesByTourneysByClubs[$curClubId]["clubInfo"] = $curClubSummaryInfo["clubInfo"];
 
@@ -77,12 +83,17 @@ $conn = connect();
 
             foreach ($curTitleTourneyInfo as $curFinalYear => $curTourneyInfo) {                
 
-                if (in_array("Финал", $curTourneyInfo["stages"])) {
+                if (in_array("Финал", $curTourneyInfo["stages"])) {                    
+                    
+                    $fullClubInfo = $newClub->getClubByName(["clubName" => $curClubSummaryInfo["clubInfo"]["clubName"]]);           
+                    
+                    $pairsMatchesHistory = $newPairHistory->getBasicTableHistory(["firstClub" => $fullClubInfo, "secClub" => $rivalFullClubInfo, "tourneyFinalYear" => $curFinalYear, "tourneyStage" => "Финал",]);
+                    $finalResult = ($pairsMatchesHistory["duels"]["firstClubDuelsVictories"] == 1) ? "winner" : "Финал";
 
                     $achievesByTourneysByClubs[$curClubId]["achievesInfo"][] = [
                         "curTourneyTitle" => $curTourTitle,
                         "curTourneyFinalYear" => $curFinalYear,
-                        "curTourneyResult" => "Финал",
+                        "curTourneyResult" => $finalResult,
                     ];
 
                 } else {
@@ -92,7 +103,6 @@ $conn = connect();
                         $curStageIndex = array_search($curStage, $stagesOrder);
                         $curTourneyStagesIndexes[$curStageIndex] = $curStage;
                     }
-                    // $minIndex = (array_keys($curTourneyStagesIndexes))[0];
                     $minIndex = min(array_keys($curTourneyStagesIndexes));
                     $achievesByTourneysByClubs[$curClubId]["achievesInfo"][] = [
                         "curTourneyTitle" => $curTourTitle,
