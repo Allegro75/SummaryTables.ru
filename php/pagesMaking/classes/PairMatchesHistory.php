@@ -77,6 +77,7 @@ class PairMatchesHistory
             $noHistory = true;
         }
         // $history = count($matchesArr);
+        $history["sql"] = $sql;
 
         // Про победы, ничьи, поражения:
         if (true) {
@@ -92,11 +93,14 @@ class PairMatchesHistory
                 }
             }
             $firstLesions = count($matchesArr) - $firstVictories - $draws;
-            $history = [
-                "firstVictories" => $firstVictories,
-                "draws" => $draws,
-                "firstLesions" => $firstLesions,
-            ];
+            // $history = [
+            //     "firstVictories" => $firstVictories,
+            //     "draws" => $draws,
+            //     "firstLesions" => $firstLesions,
+            // ];
+            $history["firstVictories"] = $firstVictories;
+            $history["draws"] = $draws;
+            $history["firstLesions"] = $firstLesions;
 
             // Про разницу мячей:
             $firstGoals = 0;
