@@ -80,7 +80,7 @@ class PairMatchesHistory
             $noHistory = true;
         }
         // $history = count($matchesArr);
-        // $history["sql"] = $sql;
+        $history["sql"] = $sql;
 
         // Про победы, ничьи, поражения:
         if (true) {
