@@ -95,6 +95,7 @@ $conn = connect();
                         "curTourneyFinalYear" => $curFinalYear,
                         "curTourneyResult" => $finalResult,
                         "pairsMatchesHistorySql" => $pairsMatchesHistory["sql"],
+                        "fullHistory" => $pairsMatchesHistory,
                     ];
 
                 } else {

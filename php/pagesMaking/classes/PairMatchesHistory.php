@@ -526,7 +526,7 @@ class PairMatchesHistory
 
         }
 
-        mysqli_close($this->db);
+        // mysqli_close($this->db);
 
         return $history;
     }
