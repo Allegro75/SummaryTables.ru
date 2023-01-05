@@ -266,8 +266,6 @@
 
             <? // Данные для таблицы:
 
-
-
                 if ($ranging === "national") {
 
                     $countryCodes = [
