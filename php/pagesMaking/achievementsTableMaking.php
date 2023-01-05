@@ -66,6 +66,7 @@ $conn = connect();
 { // Из сырого массива с данными ($stagesByTourneysByClubs) формируем массив, в к-ром достижения клуба в каждом турнире будут оценены ($achievesByTourneysByClubs)
 
     $achievesByTourneysByClubs = [];
+    require_once 'classes/Stages.php';
     $stagesOrder = Stages::$stagesOrder;
 
     foreach ($stagesByTourneysByClubs as $curClubId => $curClubSummaryInfo) {
