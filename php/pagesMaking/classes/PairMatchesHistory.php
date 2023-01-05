@@ -503,4 +503,5 @@ class PairMatchesHistory
 
         return $history;
     }
+    
 }

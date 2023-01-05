@@ -57,9 +57,58 @@ $conn = connect();
             }
         } 
 
-        echo "<pre>";
-        var_dump($stagesByTourneysByClubs);
-        echo "</pre>";
+        // echo "<pre>";
+        // var_dump($stagesByTourneysByClubs);
+        // echo "</pre>";
+
+}
+
+{ // Из сырого массива с данными ($stagesByTourneysByClubs) формируем массив, в к-ром достижения клуба в каждом турнире будут оценены ($achievesByTourneysByClubs)
+
+    $achievesByTourneysByClubs = [];
+    $stagesOrder = Stages::$stagesOrder;
+
+    foreach ($stagesByTourneysByClubs as $curClubId => $curClubSummaryInfo) {
+
+        $achievesByTourneysByClubs[$curClubId]["clubInfo"] = $curClubSummaryInfo["clubInfo"];
+
+        foreach ($curClubSummaryInfo["achievesInfo"] as $curTourTitle => $curTitleTourneyInfo) {
+
+            foreach ($curTitleTourneyInfo as $curFinalYear => $curTourneyInfo) {                
+
+                if (in_array("Финал", $curTourneyInfo["stages"])) {
+
+                    $achievesByTourneysByClubs[$curClubId]["achievesInfo"][] = [
+                        "curTourneyTitle" => $curTourTitle,
+                        "curTourneyFinalYear" => $curFinalYear,
+                        "curTourneyResult" => "Финал",
+                    ];
+
+                } else {
+
+                    $curTourneyStagesIndexes = []; // Массив с индексами стадий (пройденных данным клубом в данном турнире) в $stagesOrder
+                    foreach ($curTourneyInfo["stages"] as $curStage) {
+                        $curStageIndex = array_search($curStage, $stagesOrder);
+                        $curTourneyStagesIndexes[$curStageIndex] = $curStage;
+                    }
+                    $minIndex = (array_keys($curTourneyStagesIndexes))[0];
+                    $achievesByTourneysByClubs[$curClubId]["achievesInfo"][] = [
+                        "curTourneyTitle" => $curTourTitle,
+                        "curTourneyFinalYear" => $curFinalYear,
+                        "curTourneyResult" => $curTourneyStagesIndexes[$minIndex],
+                    ];
+
+                }
+
+            }
+
+        }
+
+    }
+
+    echo "<pre>";
+    var_dump($stagesByTourneysByClubs);
+    echo "</pre>";
 
 }
 
