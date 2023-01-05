@@ -108,7 +108,7 @@ $conn = connect();
     }
 
     echo "<pre>";
-    var_dump($stagesByTourneysByClubs);
+    var_dump($achievesByTourneysByClubs);
     echo "</pre>";
 
 }
