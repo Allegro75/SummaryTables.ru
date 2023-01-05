@@ -31,6 +31,7 @@ class PairMatchesHistory
 
         $tourneyFinalYear = $opts["tourneyFinalYear"] ?? "";
         $tourneyStage = $opts["tourneyStage"] ?? "";
+        $tourneyTitle = $opts["tourneyTitle"] ?? "";
 
         $clubsIdsClause = "WHERE (`firstClubId` = '{$firstClubId}' OR `secondClubId` = '{$firstClubId}')";
         if ( ! (empty($secClubId)) ) {
@@ -51,7 +52,8 @@ class PairMatchesHistory
         }
 
         $tourneyFinalYearClause = ( ! (empty($tourneyFinalYear)) ) ? "AND `tourneyFinalYear` = {$tourneyFinalYear}" : "";
-        $tourneyStageClause = ( ! (empty($tourneyStage)) ) ? "AND `tourneyStage` = {$tourneyStage}" : "";
+        $tourneyStageClause = ( ! (empty($tourneyStage)) ) ? "AND `tourneyStage` = '{$tourneyStage}'" : "";
+        $tourneyTitleClause = ( ! (empty($tourneyTitle)) ) ? "AND `tourneyTitle` = '{$tourneyTitle}'" : "";
 
         $history = [];
 
@@ -63,6 +65,7 @@ class PairMatchesHistory
             AND `score` != ''
             {$tourneyFinalYearClause}
             {$tourneyStageClause}
+            {$tourneyTitleClause}
         ";
         $matchesArr = array();
         if ($result = mysqli_query($this->db, $sql)) {
@@ -77,7 +80,7 @@ class PairMatchesHistory
             $noHistory = true;
         }
         // $history = count($matchesArr);
-        $history["sql"] = $sql;
+        // $history["sql"] = $sql;
 
         // Про победы, ничьи, поражения:
         if (true) {

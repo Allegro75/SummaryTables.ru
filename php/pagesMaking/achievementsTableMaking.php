@@ -87,14 +87,14 @@ $conn = connect();
                     
                     $fullClubInfo = $newClub->getClubByName(["clubName" => $curClubSummaryInfo["clubInfo"]["clubName"]]);           
                     
-                    $pairsMatchesHistory = $newPairHistory->getBasicTableHistory(["firstClub" => $fullClubInfo, "secClub" => $rivalFullClubInfo, "tourneyFinalYear" => $curFinalYear, "tourneyStage" => "Финал",]);
+                    $pairsMatchesHistory = $newPairHistory->getBasicTableHistory(["firstClub" => $fullClubInfo, "secClub" => $rivalFullClubInfo, "tourneyFinalYear" => $curFinalYear, "tourneyStage" => "Финал", "tourneyTitle" => $curTourTitle,]);
                     $finalResult = ($pairsMatchesHistory["duels"]["firstClubDuelsVictories"] == 1) ? "winner" : "Финал";
 
                     $achievesByTourneysByClubs[$curClubId]["achievesInfo"][] = [
                         "curTourneyTitle" => $curTourTitle,
                         "curTourneyFinalYear" => $curFinalYear,
                         "curTourneyResult" => $finalResult,
-                        "pairsMatchesHistorySql" => $pairsMatchesHistory["sql"],
+                        // "pairsMatchesHistorySql" => $pairsMatchesHistory["sql"],
                     ];
 
                 } else {
