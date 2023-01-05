@@ -95,8 +95,9 @@ $conn = connect();
                     $minIndex = (array_keys($curTourneyStagesIndexes))[0];
                     $achievesByTourneysByClubs[$curClubId]["achievesInfo"][] = [
                         "curTourneyTitle" => $curTourTitle,
-                        "curTourneyFinalYear" => $curFinalYear,
+                        "curTourneyFinalYear" => $curFinalYear,                        
                         "curTourneyResult" => $curTourneyStagesIndexes[$minIndex],
+                        "curTourneyStagesIndexes" => $curTourneyStagesIndexes,
                     ];
 
                 }
