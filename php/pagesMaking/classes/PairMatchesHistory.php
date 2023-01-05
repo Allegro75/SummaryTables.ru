@@ -74,13 +74,16 @@ class PairMatchesHistory
                     $matchesArr[] = $row;
                 }
             }
+        } 
+        else {
+            $history["sql"] = $sql;
         }
         $noHistory = false;
         if (count($matchesArr) === 0) {
             $noHistory = true;
         }
         // $history = count($matchesArr);
-        $history["sql"] = $sql;
+        // $history["sql"] = $sql;
 
         // Про победы, ничьи, поражения:
         if (true) {
