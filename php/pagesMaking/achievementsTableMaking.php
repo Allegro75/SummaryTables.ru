@@ -57,9 +57,9 @@ $conn = connect();
             }
         } 
 
-        // echo "<pre>";
-        // var_dump($stagesByTourneysByClubs);
-        // echo "</pre>";
+        echo "<pre>";
+        var_dump($stagesByTourneysByClubs);
+        echo "</pre>";
 
 }
 
@@ -98,7 +98,8 @@ $conn = connect();
                         // "fullHistory" => $pairsMatchesHistory,
                     ];
 
-                } 
+                }
+                
                 elseif ((in_array($curTourTitle, ["Кубок чемпионов", "Лига чемпионов"])) && ($curFinalYear >= 1992) && ($curFinalYear <= 1994)) {
                     if ((in_array("группа", $curTourneyInfo["stages"])) && ( ! (in_array("1/2 финала", $curTourneyInfo["stages"]))) ) {
                         $achievesByTourneysByClubs[$curClubId]["achievesInfo"][] = [
@@ -108,6 +109,7 @@ $conn = connect();
                         ];
                     }
                 }
+
                 else {
 
                     $curTourneyStagesIndexes = []; // Массив с индексами стадий (пройденных данным клубом в данном турнире) в $stagesOrder
