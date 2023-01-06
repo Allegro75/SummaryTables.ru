@@ -83,7 +83,7 @@ $conn = connect();
 
             foreach ($curTitleTourneyInfo as $curFinalYear => $curTourneyInfo) {                
 
-                if (in_array("Финал", $curTourneyInfo["stages"])) {                    
+                if (in_array("Финал", $curTourneyInfo["stages"])) {           
                     
                     $fullClubInfo = $newClub->getClubByName(["clubName" => $curClubSummaryInfo["clubInfo"]["clubName"]]);           
                     
@@ -98,7 +98,17 @@ $conn = connect();
                         // "fullHistory" => $pairsMatchesHistory,
                     ];
 
-                } else {
+                } 
+                elseif ((in_array($curTourTitle, ["Кубок чемпионов", "Лига чемпионов"])) && ($curFinalYear >= 1992) && ($curFinalYear <= 1994)) {
+                    if ((in_array("группа", $curTourneyInfo["stages"])) && ( ! (in_array("1/2 финала", $curTourneyInfo["stages"]))) ) {
+                        $achievesByTourneysByClubs[$curClubId]["achievesInfo"][] = [
+                            "curTourneyTitle" => $curTourTitle,
+                            "curTourneyFinalYear" => $curFinalYear,
+                            "curTourneyResult" => "группа",
+                        ];
+                    }
+                }
+                else {
 
                     $curTourneyStagesIndexes = []; // Массив с индексами стадий (пройденных данным клубом в данном турнире) в $stagesOrder
                     foreach ($curTourneyInfo["stages"] as $curStage) {
