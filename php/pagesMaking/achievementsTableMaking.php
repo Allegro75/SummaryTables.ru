@@ -137,9 +137,9 @@ $conn = connect();
 
     }
 
-    // echo "<pre>";
-    // var_dump($achievesByTourneysByClubs);
-    // echo "</pre>";
+    echo "<pre>";
+    var_dump($achievesByTourneysByClubs);
+    echo "</pre>";
 
 }
 
@@ -181,54 +181,54 @@ $conn = connect();
 
         $curClubName = $curClubInfo["clubInfo"]["clubName"];
 
-        { // Определение рейтинговых оценок: по основной шкале ($mainRangeMark) и по шкале типа "Десятилетие" ($actualPeriodsMark)
+        $sqlDebugArr = [];
+        foreach ($curClubInfo["achievesInfo"] as $curClubTourneyWayInfo) {
 
-            $mainRangeMark = $actualPeriodsMark = 0;
+            { // Определение рейтинговых оценок: по основной шкале ($mainRangeMark) и по шкале типа "Десятилетие" ($actualPeriodsMark)
 
-            $curTourneyResult = $curClubTourneyWayInfo["curTourneyResult"];
-
-            if (in_array($curClubTourneyWayInfo["curTourneyTitle"], ["Кубок чемпионов", "Лига чемпионов"])) {
-
-                if ($curClubTourneyWayInfo["curTourneyFinalYear"] >= 2000) {
-                    if (in_array($curTourneyResult, array_keys($mainRangeMarksRules["newCL"]))) {
-                        $mainRangeMark = $mainRangeMarksRules["newCL"][$curTourneyResult];
+                $mainRangeMark = $actualPeriodsMark = 0;
+    
+                $curTourneyResult = $curClubTourneyWayInfo["curTourneyResult"];
+    
+                if (in_array($curClubTourneyWayInfo["curTourneyTitle"], ["Кубок чемпионов", "Лига чемпионов"])) {
+    
+                    if ($curClubTourneyWayInfo["curTourneyFinalYear"] >= 2000) {
+                        if (in_array($curTourneyResult, array_keys($mainRangeMarksRules["newCL"]))) {
+                            $mainRangeMark = $mainRangeMarksRules["newCL"][$curTourneyResult];
+                        }
+                        if (($curClubTourneyWayInfo["curTourneyFinalYear"] >= 2004) && (in_array($curTourneyResult, array_keys($actualRangeMarksRule)))) {
+                            $actualPeriodsMark = $actualRangeMarksRule[$curTourneyResult];
+                        }
                     }
-                    if (($curClubTourneyWayInfo["curTourneyFinalYear"] >= 2004) && (in_array($curTourneyResult, array_keys($actualRangeMarksRule)))) {
-                        $actualPeriodsMark = $actualRangeMarksRule[$curTourneyResult];
-                    }
-                }
-                elseif ($curClubTourneyWayInfo["curTourneyFinalYear"] < 2000) {
-                    if (in_array($curTourneyResult, array_keys($mainRangeMarksRules["oldCL"]))) {
-                        $mainRangeMark = $mainRangeMarksRules["oldCL"][$curTourneyResult];
-                    }
-                    if (($curFinalYear >= 1992) && ($curFinalYear <= 1994)) {
-                        if ($curTourneyResult === "группа") {
-                            $mainRangeMark = 2;
-                            if (($curFinalYear == 1992) && (in_array($curClubName, ["Спарта Прага", "Црвена звезда"]))) {
-                                $mainRangeMark = 4;
-                            }
-                            if (($curFinalYear == 1993) && (in_array($curClubName, ["Глазго Рейнджерс", "Гётеборг"]))) {
-                                $mainRangeMark = 4;
+                    elseif ($curClubTourneyWayInfo["curTourneyFinalYear"] < 2000) {
+                        if (in_array($curTourneyResult, array_keys($mainRangeMarksRules["oldCL"]))) {
+                            $mainRangeMark = $mainRangeMarksRules["oldCL"][$curTourneyResult];
+                        }
+                        if (($curFinalYear >= 1992) && ($curFinalYear <= 1994)) {
+                            if ($curTourneyResult === "группа") {
+                                $mainRangeMark = 2;
+                                if (($curFinalYear == 1992) && (in_array($curClubName, ["Спарта Прага", "Црвена звезда"]))) {
+                                    $mainRangeMark = 4;
+                                }
+                                if (($curFinalYear == 1993) && (in_array($curClubName, ["Глазго Рейнджерс", "Гётеборг"]))) {
+                                    $mainRangeMark = 4;
+                                }
                             }
                         }
                     }
+    
                 }
-
-            }
-
-            elseif (in_array($curClubTourneyWayInfo["curTourneyTitle"], ["Лига Европы", "Кубок УЕФА", "Кубок ярмарок", "Кубок кубков",])) {
-                if (in_array($curTourneyResult, array_keys($mainRangeMarksRules["ordinaryCup"]))) {
-                    $mainRangeMark = $mainRangeMarksRules["ordinaryCup"][$curTourneyResult];
+    
+                elseif (in_array($curClubTourneyWayInfo["curTourneyTitle"], ["Лига Европы", "Кубок УЕФА", "Кубок ярмарок", "Кубок кубков",])) {
+                    if (in_array($curTourneyResult, array_keys($mainRangeMarksRules["ordinaryCup"]))) {
+                        $mainRangeMark = $mainRangeMarksRules["ordinaryCup"][$curTourneyResult];
+                    }
+                    if (($curFinalYear == 1958) && (in_array($curClubName, ["сб. Копенгагена", "сб. Франкфурта", "Интер Милан", "сб. Лейпцига",]))) {
+                        $mainRangeMark = 1;
+                    }                
                 }
-                if (($curFinalYear == 1958) && (in_array($curClubName, ["сб. Копенгагена", "сб. Франкфурта", "Интер Милан", "сб. Лейпцига",]))) {
-                    $mainRangeMark = 1;
-                }                
-            }
-
-        }
-
-        $sqlDebugArr = [];
-        foreach ($curClubInfo["achievesInfo"] as $curClubTourneyWayInfo) {
+    
+            }            
 
             // if (true) {
             if ($curClubId == 763) {
@@ -258,7 +258,7 @@ $conn = connect();
                         {$actualPeriodsMark}
                     )
                 ";
-                $sqlDebugArr[$ind] = $sql;
+                $sqlDebugArr[] = $sql;
                 mysqli_query($conn, $sql);
             }
 
