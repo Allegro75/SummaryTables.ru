@@ -176,95 +176,99 @@ $conn = connect();
         "1/8 финала" => 2,
     ];
 
-    // Пишем в базу:
+    {// Пишем в базу:
     // if (false) {
-    foreach ($achievesByTourneysByClubs as $curClubId => $curClubInfo) {
-
-        $curClubName = $curClubInfo["clubInfo"]["clubName"];
 
         $sqlDebugArr = [];
-        foreach ($curClubInfo["achievesInfo"] as $curClubTourneyWayInfo) {
 
-            { // Определение рейтинговых оценок: по основной шкале ($mainRangeMark) и по шкале типа "Десятилетие" ($actualPeriodsMark)
+        foreach ($achievesByTourneysByClubs as $curClubId => $curClubInfo) {
 
-                $mainRangeMark = $actualPeriodsMark = 0;
-    
-                $curTourneyResult = $curClubTourneyWayInfo["curTourneyResult"];
-    
-                if (in_array($curClubTourneyWayInfo["curTourneyTitle"], ["Кубок чемпионов", "Лига чемпионов"])) {
-    
-                    if ($curClubTourneyWayInfo["curTourneyFinalYear"] >= 2000) {
-                        if (in_array($curTourneyResult, array_keys($mainRangeMarksRules["newCL"]))) {
-                            $mainRangeMark = $mainRangeMarksRules["newCL"][$curTourneyResult];
+            $curClubName = $curClubInfo["clubInfo"]["clubName"];
+            
+            foreach ($curClubInfo["achievesInfo"] as $curClubTourneyWayInfo) {
+
+                { // Определение рейтинговых оценок: по основной шкале ($mainRangeMark) и по шкале типа "Десятилетие" ($actualPeriodsMark)
+
+                    $mainRangeMark = $actualPeriodsMark = 0;
+        
+                    $curTourneyResult = $curClubTourneyWayInfo["curTourneyResult"];
+        
+                    if (in_array($curClubTourneyWayInfo["curTourneyTitle"], ["Кубок чемпионов", "Лига чемпионов"])) {
+        
+                        if ($curClubTourneyWayInfo["curTourneyFinalYear"] >= 2000) {
+                            if (in_array($curTourneyResult, array_keys($mainRangeMarksRules["newCL"]))) {
+                                $mainRangeMark = $mainRangeMarksRules["newCL"][$curTourneyResult];
+                            }
+                            if (($curClubTourneyWayInfo["curTourneyFinalYear"] >= 2004) && (in_array($curTourneyResult, array_keys($actualRangeMarksRule)))) {
+                                $actualPeriodsMark = $actualRangeMarksRule[$curTourneyResult];
+                            }
                         }
-                        if (($curClubTourneyWayInfo["curTourneyFinalYear"] >= 2004) && (in_array($curTourneyResult, array_keys($actualRangeMarksRule)))) {
-                            $actualPeriodsMark = $actualRangeMarksRule[$curTourneyResult];
-                        }
-                    }
-                    elseif ($curClubTourneyWayInfo["curTourneyFinalYear"] < 2000) {
-                        if (in_array($curTourneyResult, array_keys($mainRangeMarksRules["oldCL"]))) {
-                            $mainRangeMark = $mainRangeMarksRules["oldCL"][$curTourneyResult];
-                        }
-                        if (($curFinalYear >= 1992) && ($curFinalYear <= 1994)) {
-                            if ($curTourneyResult === "группа") {
-                                $mainRangeMark = 2;
-                                if (($curFinalYear == 1992) && (in_array($curClubName, ["Спарта Прага", "Црвена звезда"]))) {
-                                    $mainRangeMark = 4;
-                                }
-                                if (($curFinalYear == 1993) && (in_array($curClubName, ["Глазго Рейнджерс", "Гётеборг"]))) {
-                                    $mainRangeMark = 4;
+                        elseif ($curClubTourneyWayInfo["curTourneyFinalYear"] < 2000) {
+                            if (in_array($curTourneyResult, array_keys($mainRangeMarksRules["oldCL"]))) {
+                                $mainRangeMark = $mainRangeMarksRules["oldCL"][$curTourneyResult];
+                            }
+                            if (($curFinalYear >= 1992) && ($curFinalYear <= 1994)) {
+                                if ($curTourneyResult === "группа") {
+                                    $mainRangeMark = 2;
+                                    if (($curFinalYear == 1992) && (in_array($curClubName, ["Спарта Прага", "Црвена звезда"]))) {
+                                        $mainRangeMark = 4;
+                                    }
+                                    if (($curFinalYear == 1993) && (in_array($curClubName, ["Глазго Рейнджерс", "Гётеборг"]))) {
+                                        $mainRangeMark = 4;
+                                    }
                                 }
                             }
                         }
+        
                     }
-    
-                }
-    
-                elseif (in_array($curClubTourneyWayInfo["curTourneyTitle"], ["Лига Европы", "Кубок УЕФА", "Кубок ярмарок", "Кубок кубков",])) {
-                    if (in_array($curTourneyResult, array_keys($mainRangeMarksRules["ordinaryCup"]))) {
-                        $mainRangeMark = $mainRangeMarksRules["ordinaryCup"][$curTourneyResult];
+        
+                    elseif (in_array($curClubTourneyWayInfo["curTourneyTitle"], ["Лига Европы", "Кубок УЕФА", "Кубок ярмарок", "Кубок кубков",])) {
+                        if (in_array($curTourneyResult, array_keys($mainRangeMarksRules["ordinaryCup"]))) {
+                            $mainRangeMark = $mainRangeMarksRules["ordinaryCup"][$curTourneyResult];
+                        }
+                        if (($curFinalYear == 1958) && (in_array($curClubName, ["сб. Копенгагена", "сб. Франкфурта", "Интер Милан", "сб. Лейпцига",]))) {
+                            $mainRangeMark = 1;
+                        }                
                     }
-                    if (($curFinalYear == 1958) && (in_array($curClubName, ["сб. Копенгагена", "сб. Франкфурта", "Интер Милан", "сб. Лейпцига",]))) {
-                        $mainRangeMark = 1;
-                    }                
-                }
-    
-            }            
+        
+                }            
 
-            // if (true) {
-            if ($curClubId == 763) {
-            // if ($ind == 3) {
-            // if (($ind >= 0) && ($ind <= 13)) {
-            // if (($ind >= 14) && ($ind <= 33)) {
-            // if (($ind >= 41) && ($ind <= 76)) {
-            // if (($ind >= 77) && ($ind <= 88)) {
-            // if (($ind >= 34)) {
-                $sql =
-                    "INSERT INTO `clubs_achievements` (
-                        `clubId `, 
-                        `clubName`,
-                        `tourneyTitle`,
-                        `tourneyFinalYear`,
-                        `tourneyResult`,
-                        `mainRangeMark`,
-                        `actualPeriodsMark`
-                    )
-                    VALUES (
-                        {$curClubId},
-                        '{$curClubName}',
-                        '{$curClubTourneyWayInfo["curTourneyTitle"]}',
-                        {$curClubTourneyWayInfo["curTourneyFinalYear"]},
-                        '{$curTourneyResult}',
-                        {$mainRangeMark},
-                        {$actualPeriodsMark}
-                    )
-                ";
-                $sqlDebugArr[] = $sql;
-                mysqli_query($conn, $sql);
+                // if (true) {
+                if ($curClubId == 763) {
+                // if ($ind == 3) {
+                // if (($ind >= 0) && ($ind <= 13)) {
+                // if (($ind >= 14) && ($ind <= 33)) {
+                // if (($ind >= 41) && ($ind <= 76)) {
+                // if (($ind >= 77) && ($ind <= 88)) {
+                // if (($ind >= 34)) {
+                    $sql =
+                        "INSERT INTO `clubs_achievements` (
+                            `clubId `, 
+                            `clubName`,
+                            `tourneyTitle`,
+                            `tourneyFinalYear`,
+                            `tourneyResult`,
+                            `mainRangeMark`,
+                            `actualPeriodsMark`
+                        )
+                        VALUES (
+                            {$curClubId},
+                            '{$curClubName}',
+                            '{$curClubTourneyWayInfo["curTourneyTitle"]}',
+                            {$curClubTourneyWayInfo["curTourneyFinalYear"]},
+                            '{$curTourneyResult}',
+                            {$mainRangeMark},
+                            {$actualPeriodsMark}
+                        )
+                    ";
+                    $sqlDebugArr[] = $sql;
+                    mysqli_query($conn, $sql);
+                }
+
             }
 
         }
-
+        
     }
 
     echo "<pre>";
