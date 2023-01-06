@@ -176,8 +176,8 @@ $conn = connect();
         "1/8 финала" => 2,
     ];
 
-    {// Пишем в базу:
-    // if (false) {
+    // { // Пишем в базу:
+    if (false) {
 
         $sqlDebugArr = [];
 
@@ -233,8 +233,8 @@ $conn = connect();
         
                 }            
 
-                // if (true) {
-                if ($curClubId != 763) {
+                if (true) {
+
                     $sql =
                         "INSERT INTO `clubs_achievements` (
                             `clubId`, 
