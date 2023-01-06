@@ -243,7 +243,7 @@ $conn = connect();
                 // if (($ind >= 34)) {
                     $sql =
                         "INSERT INTO `clubs_achievements` (
-                            `clubId `, 
+                            `clubId`, 
                             `clubName`,
                             `tourneyTitle`,
                             `tourneyFinalYear`,
@@ -268,12 +268,12 @@ $conn = connect();
             }
 
         }
-        
+
     }
 
-    echo "<pre>";
-    echo "sqlDebugArr:";
-    var_dump($sqlDebugArr);
-    echo "</pre>";    
+    // echo "<pre>";
+    // echo "sqlDebugArr:";
+    // var_dump($sqlDebugArr);
+    // echo "</pre>";
 
 }
