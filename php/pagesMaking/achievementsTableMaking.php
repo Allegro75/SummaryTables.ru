@@ -138,6 +138,7 @@ $conn = connect();
     }
 
     echo "<pre>";
+    echo "achievesByTourneysByClubs:";
     var_dump($achievesByTourneysByClubs);
     echo "</pre>";
 
@@ -265,5 +266,10 @@ $conn = connect();
         }
 
     }
+
+    echo "<pre>";
+    echo "sqlDebugArr:";
+    var_dump($sqlDebugArr);
+    echo "</pre>";    
 
 }
