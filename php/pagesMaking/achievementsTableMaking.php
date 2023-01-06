@@ -57,9 +57,9 @@ $conn = connect();
             }
         } 
 
-        echo "<pre>";
-        var_dump($stagesByTourneysByClubs);
-        echo "</pre>";
+        // echo "<pre>";
+        // var_dump($stagesByTourneysByClubs);
+        // echo "</pre>";
 
 }
 
@@ -100,14 +100,18 @@ $conn = connect();
 
                 }
                 
-                elseif ((in_array($curTourTitle, ["Кубок чемпионов", "Лига чемпионов"])) && ($curFinalYear >= 1992) && ($curFinalYear <= 1994)) {
-                    if ((in_array("группа", $curTourneyInfo["stages"])) && ( ! (in_array("1/2 финала", $curTourneyInfo["stages"]))) ) {
-                        $achievesByTourneysByClubs[$curClubId]["achievesInfo"][] = [
-                            "curTourneyTitle" => $curTourTitle,
-                            "curTourneyFinalYear" => $curFinalYear,
-                            "curTourneyResult" => "группа",
-                        ];
-                    }
+                elseif ( 
+                    (in_array($curTourTitle, ["Кубок чемпионов", "Лига чемпионов"])) 
+                    && ($curFinalYear >= 1992) 
+                    && ($curFinalYear <= 1994) 
+                    && (in_array("группа", $curTourneyInfo["stages"])) 
+                    && ( ! (in_array("1/2 финала", $curTourneyInfo["stages"])) ) 
+                ) {
+                    $achievesByTourneysByClubs[$curClubId]["achievesInfo"][] = [
+                        "curTourneyTitle" => $curTourTitle,
+                        "curTourneyFinalYear" => $curFinalYear,
+                        "curTourneyResult" => "группа",
+                    ];
                 }
 
                 else {
