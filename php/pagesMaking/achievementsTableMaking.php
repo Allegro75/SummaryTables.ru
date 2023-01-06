@@ -234,13 +234,7 @@ $conn = connect();
                 }            
 
                 // if (true) {
-                if ($curClubId == 763) {
-                // if ($ind == 3) {
-                // if (($ind >= 0) && ($ind <= 13)) {
-                // if (($ind >= 14) && ($ind <= 33)) {
-                // if (($ind >= 41) && ($ind <= 76)) {
-                // if (($ind >= 77) && ($ind <= 88)) {
-                // if (($ind >= 34)) {
+                if ($curClubId != 763) {
                     $sql =
                         "INSERT INTO `clubs_achievements` (
                             `clubId`, 
