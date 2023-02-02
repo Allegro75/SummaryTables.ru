@@ -98,10 +98,10 @@
                 require_once 'rangeInfo.php'; // Получение содержания таблицы
                 $rangeInfo = getRangeInfo ();
 
-                echo "<pre>";
-                // var_dump($rangeInfo);
-                var_dump($rangeInfo["clubsList"]);
-                echo "</pre>";
+                // echo "<pre>";
+                // var_dump($rangeInfo["range"]);
+                // // var_dump($rangeInfo["clubsList"]);
+                // echo "</pre>";
 
                 require_once 'classes/WordForms.php'; // Файл для получения правильных форм слов
 
