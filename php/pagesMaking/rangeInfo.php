@@ -2,6 +2,7 @@
 <?
 
 require_once "classes/Range.php";
+require_once "classes/Club.php";
 
 // Получение данных, необходимых для отображения ранжира
 function getRangeInfo ($opts = []) {
