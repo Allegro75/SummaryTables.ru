@@ -1,0 +1,353 @@
+
+<?
+
+    // Файл, генерирующий страницу "Ранжир".
+
+    { // Переменные, нуждающиеся в определении перед генерацией страницы.
+        
+        // Нужно ещё определить:
+        // - в layoutElements/header/shortHeader.php - от какого сезона турниры показываем по ссылкам в "Текущем сезоне"
+
+        // $lastAccountedMatchDate = "03.11.2022";
+
+        // $tourneyStartYear = 2022;
+        // $tourneyEndYear = 2023;
+
+    }
+
+    require_once 'classes/TablePagesProperties.php'; // Получение свойств генерируемой страницы
+    $tablePagesProperties = TablePagesProperties::$props;
+    $clubsNumberPhrase = $tablePagesProperties[$pageName]["clubsNumberPhrase"];
+
+?>
+
+<!DOCTYPE html>
+<html lang="ru" class="football">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Edwards, Allegro, Edwards75, Allegro75, Oleg Otkidach">
+    <meta name="author" content="Олег Откидач">
+    <meta name="description" content="Список 100 лучших клубов в истории
+    в соответствии с их достижениями в еврокубках">
+    <meta name="keywords" content="Футбол. Еврокубки. Европа. 
+        Статистика. История. Результаты. 
+        Клубы. Суперклубы. Команды. Список. 
+        Реал. Барселона. Ливерпуль. Манчестер Юнайтед. Арсенал. Бавария. Ювентус. Аякс.
+        Лига чемпионов. Кубок чемпионов. Лига Европы. Кубок УЕФА. Кубок кубков. Суперкубок.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/football_ball.svg" type="image/x-icon">
+    <title>Ранжир. Лучшие клубы в истории. Сводная таблица</title>
+    <link rel="stylesheet" href="stylesheets/football__body.css">
+    <link rel="stylesheet" href="stylesheets/cap-wo-nav.css">
+    <link rel="stylesheet" href="stylesheets/navigation.css">
+    <link rel="stylesheet" href="stylesheets/captions.css">
+    <link rel="stylesheet" href="stylesheets/table-range.css">
+    <link rel="stylesheet" href="stylesheets/donate.css">
+    <link rel="stylesheet" href="stylesheets/footer.css">
+</head>
+
+<body class="football__body">
+
+    <div class="football__background">
+
+        <? require_once 'layoutElements/header/shortHeader.php'; // Шапка, две оранжевые полосы с навигацией ?>
+
+        <main>
+
+            <!-- Заголовки -->
+            <section class="captions">
+
+                <h1 class="captions__h1 captions__h1_range">
+                    ЛУЧШИЕ КЛУБЫ ЕВРОПЫ ЗА ВСЮ ИСТОРИЮ
+                </h1>
+
+                <p class="captions__explanation">
+                    <span class="captions__explanation_circle">&#8226;</span>
+                    <span class="captions__explanation_larger">100</span> лучших клубов
+                    <span class="captions__explanation_circle">&#8226;</span>
+                </p>
+
+                <p class="captions__explanation">
+                    <span class="captions__explanation_circle">&#8226;</span>
+                    Клубы ранжировались по следующей системе:
+                    <br>
+                    за победу в Лиге чемпионов с 2000-го года - 12 очков; за выход в финал - 9; выход в 1/2 финала - 6; выход в 1/4 финала - 3;
+                    <br>
+                    за победу в кубке/Лиге чемпионов до 2000-го года - 8 очков; за выход в финал - 6; выход в 1/2 финала - 4; выход в 1/4 финала - 2;
+                    <br>
+                    за победу в других еврокубках - 4 очка; за выход в финал - 3; выход в 1/2 финала - 2; выход в 1/4 финала - 1
+                    <span class="captions__explanation_circle">&#8226;</span>
+                </p>
+
+                <p class="captions__explanation">
+                    <span class="captions__explanation_circle">&#8226;</span>
+                    <!-- Таблица обновлена по итогам сезона 2022/2023 -->
+                    Таблица обновлена по итогам групповых турниров сезона 2022/2023
+                    <!-- Таблица обновлена по итогам четвертьфиналов сезона 2022/2023 -->
+                    <!-- Таблица обновлена по итогам полуфиналов сезона 2022/2023 -->
+                    <!-- Таблица обновлена по итогам матчей от 14.04.2022 -->
+                    <!-- В таблице учтены результаты до 18.05.2021 включительно (финал лиги Европы учтён) -->
+                    <span class="captions__explanation_circle">&#8226;</span>
+                </p>
+
+            </section>
+
+            <? // Данные для таблиц:       
+
+                require_once 'rangeInfo.php'; // Получение содержания таблицы
+                $rangeInfo = getRangeInfo ();
+                echo "<pre>";
+                var_dump($rangeInfo);
+                echo "</pre>";
+
+                require_once 'classes/WordForms.php'; // Файл для получения правильных форм слов
+
+            ?>
+
+            <div class="tables">
+
+                <!-- Таблица: -->
+                <table class="main-table<?=$champLeagueClassHtmlRecordForTable?>">
+                    <tbody>
+
+                    </tbody>
+
+                </table>
+
+            </div class="tables">
+                      
+            <div class="table-explanation">
+                <p class="table-explanation__explanation explanation_RUS">Российские клубы</p>
+                <p class="table-explanation__explanation explanation_UKR">Украинские клубы</p>
+                <!-- <p class="table-explanation__explanation explanation_current"> -->
+                    <!-- Клубы, участвующие в текущем
+                    розыгрыше еврокубков (2021/2022) -->
+                    <!-- Клубы, продолжающие участие в текущем
+                    розыгрыше еврокубков (2021/2022) -->
+                <!-- </p> -->
+            </div>
+
+            <div class="main__nations">
+
+                <p class="nations__header">
+                    В таблице представлены клубы стран:
+                </p>
+
+                <div class="nations__list">
+
+                    <div class="nations__item ENG">
+                        <div class="item__item nations__flag ENG">
+                            <img src="images/flags/ENG.png" alt="Англия">
+                        </div>
+                        <div class="item__item nations__name ENG">Англия</div>
+                        <div class="item__item nations__number ENG">13</div>
+                    </div>
+
+                    <div class="nations__item GER">
+                        <div class="item__item nations__flag GER">
+                            <img src="images/flags/GER.png" alt="Германия">
+                        </div>
+                        <div class="item__item nations__name GER">Германия</div>
+                        <div class="item__item nations__number GER">12</div>
+                    </div>
+
+                    <div class="nations__item ESP">
+                        <div class="item__item nations__flag ESP">
+                            <img src="images/flags/ESP.png" alt="Испания">
+                        </div>
+                        <div class="item__item nations__name ESP">Испания</div>
+                        <div class="item__item nations__number ESP">10</div>
+                    </div>
+
+                    <div class="nations__item ITA">
+                        <div class="item__item nations__flag ITA">
+                            <img src="images/flags/ITA.png" alt="Италия">
+                        </div>
+                        <div class="item__item nations__name ITA">Италия</div>
+                        <div class="item__item nations__number ITA">10</div>
+                    </div>
+
+                    <div class="nations__item FRA">
+                        <div class="item__item nations__flag FRA">
+                            <img src="images/flags/FRA.png" alt="Франция">
+                        </div>
+                        <div class="item__item nations__name FRA">Франция</div>
+                        <div class="item__item nations__number FRA">9</div>
+                    </div>
+
+                    <div class="nations__item HOL">
+                        <div class="item__item nations__flag HOL">
+                            <img src="images/flags/HOL.png" alt="Нидерланды">
+                        </div>
+                        <div class="item__item nations__name HOL">Нидерланды</div>
+                        <div class="item__item nations__number HOL">5</div>
+                    </div>
+
+                    <div class="nations__item SCO">
+                        <div class="item__item nations__flag SCO">
+                            <img src="images/flags/SCO.png" alt="Шотландия">
+                        </div>
+                        <div class="item__item nations__name SCO">Шотландия</div>
+                        <div class="item__item nations__number SCO">5</div>
+                    </div>
+
+                    <div class="nations__item BEL">
+                        <div class="item__item nations__flag BEL">
+                            <img src="images/flags/BEL.png" alt="Бельгия">
+                        </div>
+                        <div class="item__item nations__name BEL">Бельгия</div>
+                        <div class="item__item nations__number BEL">4</div>
+                    </div>
+
+                    <div class="nations__item POR">
+                        <div class="item__item nations__flag POR">
+                            <img src="images/flags/POR.png" alt="Португалия">
+                        </div>
+                        <div class="item__item nations__name POR">Португалия</div>
+                        <div class="item__item nations__number POR">3</div>
+                    </div>
+
+                    <div class="nations__item RUS">
+                        <div class="item__item nations__flag RUS">
+                            <img src="images/flags/RUS.png" alt="Россия">
+                        </div>
+                        <div class="item__item nations__name RUS">Россия</div>
+                        <div class="item__item nations__number RUS">3</div>
+                    </div>
+
+                    <div class="nations__item HUN">
+                        <div class="item__item nations__flag HUN">
+                            <img src="images/flags/HUN.png" alt="Венгрия">
+                        </div>
+                        <div class="item__item nations__name HUN">Венгрия</div>
+                        <div class="item__item nations__number HUN">3</div>
+                    </div>
+
+                    <div class="nations__item GDR">
+                        <div class="item__item nations__flag GDR">
+                            <img src="images/flags/GDR.png" alt="ГДР">
+                        </div>
+                        <div class="item__item nations__name GDR">ГДР</div>
+                        <div class="item__item nations__number GDR">3</div>
+                    </div>
+
+                    <div class="nations__item SRB">
+                        <div class="item__item nations__flag SRB">
+                            <img src="images/flags/SRB.png" alt="Сербия">
+                        </div>
+                        <div class="item__item nations__name SRB">Сербия</div>
+                        <div class="item__item nations__number SRB">2</div>
+                    </div>
+
+                    <div class="nations__item UKR">
+                        <div class="item__item nations__flag UKR">
+                            <img src="images/flags/UKR.png" alt="Украина">
+                        </div>
+                        <div class="item__item nations__name UKR">Украина</div>
+                        <div class="item__item nations__number UKR">2</div>
+                    </div>
+
+                    <div class="nations__item SWE">
+                        <div class="item__item nations__flag SWE">
+                            <img src="images/flags/SWE.png" alt="Швеция">
+                        </div>
+                        <div class="item__item nations__name SWE">Швеция</div>
+                        <div class="item__item nations__number SWE">2</div>
+                    </div>
+
+                    <div class="nations__item AUT">
+                        <div class="item__item nations__flag AUT">
+                            <img src="images/flags/AUT.png" alt="Австрия">
+                        </div>
+                        <div class="item__item nations__name AUT">Австрия</div>
+                        <div class="item__item nations__number AUT">2</div>
+                    </div>
+
+                    <div class="nations__item CZE">
+                        <div class="item__item nations__flag CZE">
+                            <img src="images/flags/CZE.png" alt="Чехия">
+                        </div>
+                        <div class="item__item nations__name CZE">Чехия</div>
+                        <div class="item__item nations__number CZE">2</div>
+                    </div>
+
+                    <div class="nations__item CRO">
+                        <div class="item__item nations__flag CRO">
+                            <img src="images/flags/CRO.png" alt="Хорватия">
+                        </div>
+                        <div class="item__item nations__name CRO">Хорватия</div>
+                        <div class="item__item nations__number CRO">2</div>
+                    </div>
+
+                    <div class="nations__item SUI">
+                        <div class="item__item nations__flag SUI">
+                            <img src="images/flags/SUI.png" alt="Швейцария">
+                        </div>
+                        <div class="item__item nations__name SUI">Швейцария</div>
+                        <div class="item__item nations__number SUI">2</div>
+                    </div>                    
+
+                    <div class="nations__item ROU">
+                        <div class="item__item nations__flag ROU">
+                            <img src="images/flags/ROU.png" alt="Румыния">
+                        </div>
+                        <div class="item__item nations__name ROU">Румыния</div>
+                        <div class="item__item nations__number ROU">1</div>
+                    </div>
+
+                    <div class="nations__item GRE">
+                        <div class="item__item nations__flag GRE">
+                            <img src="images/flags/GRE.png" alt="Греция">
+                        </div>
+                        <div class="item__item nations__name GRE">Греция</div>
+                        <div class="item__item nations__number GRE">1</div>
+                    </div>
+
+                    <div class="nations__item TUR">
+                        <div class="item__item nations__flag TUR">
+                            <img src="images/flags/TUR.png" alt="Турция">
+                        </div>
+                        <div class="item__item nations__name TUR">Турция</div>
+                        <div class="item__item nations__number TUR">1</div>
+                    </div>
+
+                    <div class="nations__item BUL">
+                        <div class="item__item nations__flag BUL">
+                            <img src="images/flags/BUL.png" alt="Болгария">
+                        </div>
+                        <div class="item__item nations__name BUL">Болгария</div>
+                        <div class="item__item nations__number BUL">1</div>
+                    </div>
+
+                    <div class="nations__item POL">
+                        <div class="item__item nations__flag POL">
+                            <img src="images/flags/POL.png" alt="Польша">
+                        </div>
+                        <div class="item__item nations__name POL">Польша</div>
+                        <div class="item__item nations__number POL">1</div>
+                    </div>
+
+                    <div class="nations__item SVK">
+                        <div class="item__item nations__flag SVK">
+                            <img src="images/flags/SVK.png" alt="Словакия">
+                        </div>
+                        <div class="item__item nations__name SVK">Словакия</div>
+                        <div class="item__item nations__number SVK">1</div>
+                    </div>
+
+                </div>
+            </div>
+
+        </main>
+
+        <? require_once 'layoutElements/footer.php'; // Подвал, элемент footer ?>
+
+    </div class="football__background">
+
+    <script src="scripts/range/highlightRows.js"></script>
+    <script src="scripts/range/clubsAchievesDetails.js"></script>
+    
+</body>
+
+</html>
