@@ -155,9 +155,10 @@
                                     $curClubName = $rangeInfo["range"][$curClubIndex]["clubName"];
                                     $curClubInfo = $rangeInfo["clubsList"][$curClubName];
                                     $curClubCode = $curClubInfo["code"];
+                                    $curClubCountryCode = $curClubInfo["countryEngCode"];
                                 ?>
 
-                                <tr class="club-row <?=$curClubCode?> ESP">
+                                <tr class="club-row <?=$curClubCode?> <?=$curClubCountryCode?>">
                                 </tr>
 
                             <? endfor; ?>
