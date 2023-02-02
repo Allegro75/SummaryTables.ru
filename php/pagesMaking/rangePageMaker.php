@@ -113,6 +113,39 @@
                     <table class="main-table range range_<?=$tableNumber?>">
                         <tbody>
 
+                        <tr class="main-table__header">
+                            <td colspan="3"></td>
+                            <td class="main-table_gap"></td>
+                            <td class="main-table_victory">
+                                <img src="images/ChampCup_h20_990000.png" alt="Лига чемпионов" title="Победы в кубке чемпионов
+Вознаграждаются 12 или 8 очками">
+                            </td>
+                            <td class="main-table_playoff playoff_final" title="Выходы в финал кубка чемпионов
+Вознаграждаются 9 или 6 очками">Ф</td>
+                            <td class="main-table_playoff playoff_semi" title="Выходы в полуфинал кубка чемпионов
+Вознаграждаются 6 или 4 очками">1/2</td>
+                            <td class="main-table_playoff playoff_quarter" title="Выходы в четвертьфинал кубка чемпионов
+Вознаграждаются 3 или 2 очками">1/4</td>
+                            <td class="main-table_gap"></td>
+                            <td class="main-table_victory">
+                                <img src="images/EuroLeagueCup_h20_990000.png" alt="Лига Европы" title="Победы в еврокубках (помимо кубка чемпионов)
+Вознаграждаются 4 очками">
+                            </td>
+                            <td class="main-table_playoff playoff_final" title="Выходы в финал еврокубков (помимо кубка чемпионов)
+Вознаграждаются 3 очками">Ф</td>
+                            <td class="main-table_playoff playoff_semi" title="Выходы в полуфинал еврокубков (помимо кубка чемпионов)
+Вознаграждаются 2 очками">1/2</td>
+                            <td class="main-table_playoff playoff_quarter" title="Выходы в четвертьфинал еврокубков (помимо кубка чемпионов)
+Вознаграждаются 1 очком">1/4</td>
+                            <td class="main-table_gap"></td>
+                            <td class="main-table_criterion" title="Очки считались по следующей системе:
+за победу в Лиге чемпионов с 2000-го года - 12 очков; за выход в финал - 9; выход в 1/2 финала - 6; выход в 1/4 финала - 3;
+за победу в кубке/Лиге чемпионов до 2000-го года - 8 очков; за выход в финал - 6; выход в 1/2 финала - 4; выход в 1/4 финала - 2;
+за победу в других еврокубках - 4 очка; за выход в финал - 3; выход в 1/2 финала - 2; выход в 1/4 финала - 1">
+                                Очки
+                            </td>
+                        </tr>                        
+
                         </tbody>
                     </table>
 
