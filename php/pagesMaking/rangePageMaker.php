@@ -97,23 +97,26 @@
 
                 require_once 'rangeInfo.php'; // Получение содержания таблицы
                 $rangeInfo = getRangeInfo ();
-                echo "<pre>";
-                var_dump($rangeInfo);
-                echo "</pre>";
+                // echo "<pre>";
+                // var_dump($rangeInfo);
+                // echo "</pre>";
 
                 require_once 'classes/WordForms.php'; // Файл для получения правильных форм слов
 
             ?>
 
+            <!-- Таблицы (4 таблицы по 25 строк в каждой): -->
             <div class="tables">
+                
+                <? for($tableNumber = 1; $tableNumber <= 4; $tableNumber++): ?>
 
-                <!-- Таблица: -->
-                <table class="main-table<?=$champLeagueClassHtmlRecordForTable?>">
-                    <tbody>
+                    <table class="main-table range range_<?=$tableNumber?>">
+                        <tbody>
 
-                    </tbody>
+                        </tbody>
+                    </table>
 
-                </table>
+                <? endfor; ?>
 
             </div class="tables">
                       
