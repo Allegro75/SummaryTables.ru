@@ -97,7 +97,7 @@
 
                 require_once 'rangeInfo.php'; // Получение содержания таблицы
                 $rangeInfo = getRangeInfo ();
-                
+
                 echo "<pre>";
                 // var_dump($rangeInfo);
                 var_dump($rangeInfo["clubsList"]);
@@ -150,7 +150,14 @@
                         
                             <? for($clubNumber = 1; $clubNumber <= 25; $clubNumber++): ?>
 
-                                <tr class="club-row RMa ESP">
+                                <?
+                                    $curClubIndex = ((($tableNumber * 25) -25) + ($clubNumber - 1));
+                                    $curClubName = $rangeInfo["range"]["clubName"];
+                                    $curClubInfo = $rangeInfo["clubsList"][$curClubName];
+                                    $curClubCode = $curClubInfo["code"];
+                                ?>
+
+                                <tr class="club-row <?=$curClubCode?> ESP">
                                 </tr>
 
                             <? endfor; ?>
