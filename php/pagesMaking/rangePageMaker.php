@@ -152,7 +152,7 @@
 
                                 <?
                                     $curClubIndex = ((($tableNumber * 25) -25) + ($clubNumber - 1));
-                                    $curClubName = $rangeInfo["range"]["clubName"];
+                                    $curClubName = $rangeInfo["range"][$curClubIndex]["clubName"];
                                     $curClubInfo = $rangeInfo["clubsList"][$curClubName];
                                     $curClubCode = $curClubInfo["code"];
                                 ?>
