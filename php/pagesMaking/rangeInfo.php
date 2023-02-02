@@ -9,10 +9,9 @@ function getRangeInfo ($opts = []) {
 
     $info = [];
 
-    // $rawClubsList = $opts['clubsList'];
-
-
-    $info['pairsMatchesHistory'] = 1;
+    $newRange = new Range(['pathToRoot' => "../../"]);
+    $rangeInfo = $newRange->getBasicRange(["minMark" => 8,]);
+    $info["range"] = $rangeInfo["range"];
 
     return $info;
 
