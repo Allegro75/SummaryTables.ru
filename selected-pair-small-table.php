@@ -837,12 +837,18 @@
                             if ($curMatch["hadEfficientAddTime"] == 1) {
                                 $addText = "<br><span class='add-time-text'>(доп. время)</span>";
                             }
-                            if ($curMatch["hadPenalties"] == 1) {
+                            // if ($curMatch["hadPenalties"] == 1) {
+                            if (($curMatch["hadPenalties"] == 1) || ($curMatch["hadToss"] == 1)) {
                                 $victOrLes = "победа";
                                 if ($duelsResults[$duelSerialInd]["result"] === "secondClubVictory") {
                                     $victOrLes = "поражение";
                                 }
-                                $addText = "<br><span class='penalty-text'>({$victOrLes}<br>по пенальти)</span>";
+                                if ($curMatch["hadPenalties"] == 1) {
+                                    $addText = "<br><span class='penalty-text'>({$victOrLes}<br>по пенальти)</span>";
+                                }
+                                if ($curMatch["hadToss"] == 1) {
+                                    $addText = "<br><span class='penalty-text'>({$victOrLes}<br>по жребию)</span>";
+                                }
                             }
                             if ($curMatch["comments"] === "доп. матч") {
                                 $addText = "<br><span class='add-match-text'>(доп. матч)</span>";
