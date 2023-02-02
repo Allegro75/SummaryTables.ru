@@ -99,6 +99,7 @@
                 $rangeInfo = getRangeInfo ();
                 // echo "<pre>";
                 // var_dump($rangeInfo);
+                var_dump($rangeInfo["clubsList"]);
                 // echo "</pre>";
 
                 require_once 'classes/WordForms.php'; // Файл для получения правильных форм слов
@@ -144,7 +145,14 @@
 за победу в других еврокубках - 4 очка; за выход в финал - 3; выход в 1/2 финала - 2; выход в 1/4 финала - 1">
                                 Очки
                             </td>
-                        </tr>                        
+                        </tr>
+                        
+                            <? for($clubNumber = 1; $clubNumber <= 25; $clubNumber++): ?>
+
+                                <tr class="club-row RMa ESP">
+                                </tr>
+
+                            <? endfor; ?>
 
                         </tbody>
                     </table>
