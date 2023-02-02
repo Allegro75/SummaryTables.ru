@@ -1,8 +1,7 @@
             
 <?
 
-// require_once "classes/Club.php";
-// require_once "classes/PairMatchesHistory.php";
+require_once "classes/Range.php";
 
 // Получение данных, необходимых для отображения ранжира
 function getRangeInfo ($opts = []) {
