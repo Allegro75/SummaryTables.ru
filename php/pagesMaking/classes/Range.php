@@ -24,11 +24,13 @@ class Range {
         }
 
         $sql = 
-            "SELECT `clubName`, `clubId`, SUM(`mainRangeMark`) AS `mainRangeMarksSum`
+            "SELECT `clubName`, `clubId`, 
+            SUM(`mainRangeMark`) AS `mainRangeMarksSum`, 
+            MAX(CASE WHEN `mainRangeMark` > 0 THEN `tourneyFinalYear` END) AS `lastTourney`
             FROM `clubs_achievements`
             GROUP BY `clubId`
             {$minMarkClause}
-            ORDER BY `mainRangeMarksSum` DESC, `tourneyFinalYear` DESC
+            ORDER BY `mainRangeMarksSum` DESC, `lastTourney` DESC
         ";
         if ($res = mysqli_query($this->db, $sql)) {
             while ($row = mysqli_fetch_assoc($res)) {
