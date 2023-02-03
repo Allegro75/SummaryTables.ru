@@ -94,12 +94,12 @@
                 require_once 'rangeInfo.php'; // Получение содержания таблицы
                 $rangeInfo = getRangeInfo();
 
-                echo "<pre>";
-                // var_dump(array_keys($rangeInfo));
-                var_dump($rangeInfo["range"]);
-                // var_dump($rangeInfo["clubsList"]);
-                // var_dump($rangeInfo["achieves"]);
-                echo "</pre>";
+                // echo "<pre>";
+                // // var_dump(array_keys($rangeInfo));
+                // var_dump($rangeInfo["range"]);
+                // // var_dump($rangeInfo["clubsList"]);
+                // // var_dump($rangeInfo["achieves"]);
+                // echo "</pre>";
 
                 require_once 'classes/ClubsInfo.php';
                 $clubsInfoClass = new ClubsInfo(["pathToRoot" => "../../"]);

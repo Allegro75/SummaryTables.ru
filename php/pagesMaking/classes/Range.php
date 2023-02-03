@@ -34,7 +34,7 @@ class Range {
         ";
         if ($res = mysqli_query($this->db, $sql)) {
             while ($row = mysqli_fetch_assoc($res)) {
-                $range[$row["clubId"]] = $row;
+                $range[] = $row;
                 // $clubInfo["sql"] = $sql;
             }              
         }
@@ -45,8 +45,9 @@ class Range {
 
         $clNames = ["Кубок чемпионов", "Лига чемпионов"];
 
-        foreach ($range as $curClubId => $curClubInfo) {
+        foreach ($range as $curClubInfo) {
 
+            $curClubId = $curClubInfo["clubId"];
             $achieves[$curClubId]["clubName"] = $curClubInfo["clubName"];
             $sql = 
                 "SELECT `tourneyTitle`, `tourneyFinalYear`, `tourneyResult`, `mainRangeMark`
