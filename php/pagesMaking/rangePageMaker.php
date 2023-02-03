@@ -11,13 +11,9 @@
         // $lastAccountedMatchDate = "03.11.2022";
 
         // $tourneyStartYear = 2022;
-        // $tourneyEndYear = 2023;
+        $tourneyEndYear = 2023;
 
     }
-
-    require_once 'classes/TablePagesProperties.php'; // Получение свойств генерируемой страницы
-    $tablePagesProperties = TablePagesProperties::$props;
-    $clubsNumberPhrase = $tablePagesProperties[$pageName]["clubsNumberPhrase"];
 
 ?>
 
@@ -96,12 +92,20 @@
             <? // Данные для таблиц:       
 
                 require_once 'rangeInfo.php'; // Получение содержания таблицы
-                $rangeInfo = getRangeInfo ();
+                $rangeInfo = getRangeInfo();
 
                 // echo "<pre>";
                 // var_dump($rangeInfo["range"]);
                 // // var_dump($rangeInfo["clubsList"]);
                 // echo "</pre>";
+
+                require_once 'classes/ClubsInfo.php';
+                $clubsInfoClass = new ClubsInfo(["pathToRoot" => "../../"]);
+                $currentSeasonClubsInfo = $clubsInfoClass->getСurrentSeasonClubsInfo(["tourneyEndYear" => $tourneyEndYear,]); // Получение данных о клубах, продолжающих участие в текущем сезоне розыгрыша еврокубков
+
+                echo "<pre>";
+                var_dump($currentSeasonClubsInfo);
+                echo "</pre>";
 
                 require_once 'classes/WordForms.php'; // Файл для получения правильных форм слов
 

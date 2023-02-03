@@ -2,6 +2,7 @@
 <?
 
 // Для формирования в БД таблицы `clubs_achievements`
+// Скрипт не оч. хорошо работает в смысле определения победителей финалов, получилось много ошибок.
 require_once '../../database/config/config.php';
 require_once '../../database/config/connect.php';
 $conn = connect();
