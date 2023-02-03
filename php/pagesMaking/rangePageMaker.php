@@ -101,15 +101,19 @@
                 $achievesStages = [
                     "wins" => [
                         "rusStageWord" => "победа",
+                        "methodToGetCorrForm" => "getWordLikeVictory",
                     ],
                     "finals" => [
                         "rusStageWord" => "финал",
+                        "methodToGetCorrForm" => "getWordLikeFinal",
                     ],
                     "semiFinals" => [
                         "rusStageWord" => "полуфинал",
+                        "methodToGetCorrForm" => "getWordLikeFinal",
                     ],
                     "qurterFinals" => [
                         "rusStageWord" => "четвертьфинал",
+                        "methodToGetCorrForm" => "getWordLikeFinal",
                     ],
                 ];                
 
@@ -274,7 +278,8 @@
                                                 $hasAchievesRecord = ($curStageAchievesNumber > 0) ? " has-achieves" : "";
 
                                                 $curStageRusWordBacicForm = $curStageInfo["rusStageWord"];
-                                                $curStageRusWordCorrectForm = WordForms::getWordLikeVictory(["word" => $curStageRusWordBacicForm, "number" => $curStageAchievesNumber,]);
+                                                $methodToGetCorrForm = $curStageInfo["methodToGetCorrForm"];
+                                                $curStageRusWordCorrectForm = WordForms::$methodToGetCorrForm(["word" => $curStageRusWordBacicForm, "number" => $curStageAchievesNumber,]);
 
                                             ?>                                            
 
@@ -287,9 +292,7 @@
 
                                         <? endforeach; ?>
 
-                                        <? if ($curTourneyType === "cl"): ?>
-                                            <td class="main-table_gap"></td>
-                                        <? endif; ?>
+                                        <td class="main-table_gap"></td>
 
                                     <? endforeach; ?>
 
