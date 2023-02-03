@@ -41,45 +41,45 @@ class Range {
 
         $info["range"] = $range;
 
-        // $achieves = [];
+        $achieves = [];
 
-        // $clNames = ["Кубок чемпионов", "Лига чемпионов"];
+        $clNames = ["Кубок чемпионов", "Лига чемпионов"];
 
-        // foreach ($range as $curClubId => $curClubInfo) {
+        foreach ($range as $curClubId => $curClubInfo) {
 
-        //     $achieves[$curClubId]["clubName"] = $curClubInfo["clubName"];
-        //     $sql = 
-        //         "SELECT `tourneyTitle`, `tourneyFinalYear`, `tourneyResult`, `mainRangeMark`
-        //         FROM `clubs_achievements` 
-        //         WHERE `clubId` = {$curClubId}
-        //         AND `mainRangeMark` > 0
-        //         ORDER BY `tourneyFinalYear`
-        //     ";
-        //     if ($res = mysqli_query($this->db, $sql)) {
-        //         while ($row = mysqli_fetch_assoc($res)) {
-        //             $isClAchieve = (in_array($row["tourneyTitle"], $clNames)) ? true : false;
-        //             if ($isClAchieve === true) {
-        //                 $achieves[$curClubId]["achieves"]["cl"][] = [
-        //                     "tourneyTitle" => $row["tourneyTitle"],
-        //                     "tourneyFinalYear" => $row["tourneyFinalYear"],
-        //                     "tourneyResult" => $row["tourneyResult"],
-        //                     "mainRangeMark" => $row["mainRangeMark"],
-        //                 ];
-        //             }                    
-        //             elseif ($isClAchieve === false) {
-        //                 $achieves[$curClubId]["achieves"]["el"][] = [
-        //                     "tourneyTitle" => $row["tourneyTitle"],
-        //                     "tourneyFinalYear" => $row["tourneyFinalYear"],
-        //                     "tourneyResult" => $row["tourneyResult"],
-        //                     "mainRangeMark" => $row["mainRangeMark"],
-        //                 ];
-        //             }                    
-        //         }              
-        //     }                        
+            $achieves[$curClubId]["clubName"] = $curClubInfo["clubName"];
+            $sql = 
+                "SELECT `tourneyTitle`, `tourneyFinalYear`, `tourneyResult`, `mainRangeMark`
+                FROM `clubs_achievements` 
+                WHERE `clubId` = {$curClubId}
+                AND `mainRangeMark` > 0
+                ORDER BY `tourneyFinalYear`
+            ";
+            if ($res = mysqli_query($this->db, $sql)) {
+                while ($row = mysqli_fetch_assoc($res)) {
+                    $isClAchieve = (in_array($row["tourneyTitle"], $clNames)) ? true : false;
+                    if ($isClAchieve === true) {
+                        $achieves[$curClubId]["achieves"]["cl"][] = [
+                            "tourneyTitle" => $row["tourneyTitle"],
+                            "tourneyFinalYear" => $row["tourneyFinalYear"],
+                            "tourneyResult" => $row["tourneyResult"],
+                            "mainRangeMark" => $row["mainRangeMark"],
+                        ];
+                    }                    
+                    elseif ($isClAchieve === false) {
+                        $achieves[$curClubId]["achieves"]["el"][] = [
+                            "tourneyTitle" => $row["tourneyTitle"],
+                            "tourneyFinalYear" => $row["tourneyFinalYear"],
+                            "tourneyResult" => $row["tourneyResult"],
+                            "mainRangeMark" => $row["mainRangeMark"],
+                        ];
+                    }                    
+                }              
+            }                        
 
-        // }
+        }
 
-        // $info["achieves"] = $achieves;
+        $info["achieves"] = $achieves;
 
         return $info;
 
