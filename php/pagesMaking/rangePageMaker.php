@@ -89,12 +89,12 @@
                 require_once 'rangeInfo.php'; // Получение содержания таблицы
                 $rangeInfo = getRangeInfo();
 
-                echo "<pre>";
-                // var_dump(array_keys($rangeInfo));
-                // var_dump($rangeInfo["range"]);
-                // var_dump($rangeInfo["clubsList"]);
-                var_dump($rangeInfo["achieves"]);
-                echo "</pre>";
+                // echo "<pre>";
+                // // var_dump(array_keys($rangeInfo));
+                // // var_dump($rangeInfo["range"]);
+                // // var_dump($rangeInfo["clubsList"]);
+                // var_dump($rangeInfo["achieves"]);
+                // echo "</pre>";
 
                 $achievesArrIndexes = array_keys($rangeInfo["achieves"]);
 
@@ -274,7 +274,7 @@
                                                 $hasAchievesRecord = ($curStageAchievesNumber > 0) ? " has-achieves" : "";
 
                                                 $curStageRusWordBacicForm = $curStageInfo["rusStageWord"];
-                                                $curStageRusWordCorrectForm = WordForms::getWordLikeVictory(["word" => "победа", "number" => $curStageAchievesNumber,]);
+                                                $curStageRusWordCorrectForm = WordForms::getWordLikeVictory(["word" => $curStageRusWordBacicForm, "number" => $curStageAchievesNumber,]);
 
                                             ?>                                            
 
@@ -286,6 +286,10 @@
                                             </td>
 
                                         <? endforeach; ?>
+
+                                        <? if ($curTourneyType === "cl"): ?>
+                                            <td class="main-table_gap"></td>
+                                        <? endif; ?>
 
                                     <? endforeach; ?>
 
