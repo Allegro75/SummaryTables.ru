@@ -94,10 +94,10 @@
                 require_once 'rangeInfo.php'; // Получение содержания таблицы
                 $rangeInfo = getRangeInfo();
 
-                echo "<pre>";
-                // var_dump($rangeInfo["range"]);
-                var_dump($rangeInfo["clubsList"]);
-                echo "</pre>";
+                // echo "<pre>";
+                // // var_dump($rangeInfo["range"]);
+                // var_dump($rangeInfo["clubsList"]);
+                // echo "</pre>";
 
                 require_once 'classes/ClubsInfo.php';
                 $clubsInfoClass = new ClubsInfo(["pathToRoot" => "../../"]);
@@ -156,9 +156,9 @@
 
                     }
 
-                    echo "<pre>";
-                    var_dump($logotypesInfo);
-                    echo "</pre>";
+                    // echo "<pre>";
+                    // var_dump($logotypesInfo);
+                    // echo "</pre>";
 
                 }               
 
@@ -230,6 +230,14 @@
                                     <td>
                                         <img alt="<?=$curClubInfo["shortName"]?>" src="../images/<?=$logotypesInfo[$curClubInfo["id"]]["logoImageFile"]?>" title="<?=$curClubInfo["shortName"]?>" class="football-logo-table<?=$logotypesInfo[$curClubInfo["id"]]["clubCssClassHtmlRecord"]?>">                                        
                                     </td>
+
+                                    <td>
+                                        <div class="club-name">
+                                            <?=$curClubInfo["shortName"]?>
+                                        </div>
+                                    </td>
+                                    
+                                    <td class="main-table_gap"></td>
 
                                 </tr>
 
