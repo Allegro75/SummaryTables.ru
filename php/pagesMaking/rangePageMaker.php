@@ -95,8 +95,8 @@
                 $rangeInfo = getRangeInfo();
 
                 echo "<pre>";
-                var_dump($rangeInfo["range"]);
-                // var_dump($rangeInfo["clubsList"]);
+                // var_dump($rangeInfo["range"]);
+                var_dump($rangeInfo["clubsList"]);
                 echo "</pre>";
 
                 require_once 'classes/ClubsInfo.php';
