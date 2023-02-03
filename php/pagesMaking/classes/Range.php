@@ -24,7 +24,7 @@ class Range {
         }
 
         $sql = 
-            "SELECT `clubName`, `clubId`, 
+            "SELECT `clubName`, `clubId`,
             SUM(`mainRangeMark`) AS `mainRangeMarksSum`, 
             MAX(CASE WHEN `mainRangeMark` > 0 THEN `tourneyFinalYear` END) AS `lastTourney`
             FROM `clubs_achievements`
@@ -34,12 +34,44 @@ class Range {
         ";
         if ($res = mysqli_query($this->db, $sql)) {
             while ($row = mysqli_fetch_assoc($res)) {
-                $range[] = $row;
+                $range[$row["clubId"]] = $row;
                 // $clubInfo["sql"] = $sql;
             }              
         }
 
         $info["range"] = $range;
+
+        $achieves = [];
+
+        $clNames = ["Кубок чемпионов", "Лига чемпионов"];
+
+        foreach ($range as $curClubId => $curClubInfo) {
+
+            $achieves[$curClubId]["clubName"] = $curClubInfo["clubName"];
+            $sql = 
+                "SELECT `tourneyTitle`, `tourneyFinalYear`, `tourneyResult`, `mainRangeMark`
+                FROM `clubs_achievements` 
+                WHERE `clubId` = {$curClubId}
+                AND `mainRangeMark` > 0
+                ORDER BY `tourneyFinalYear`
+            ";
+            if ($res = mysqli_query($this->db, $sql)) {
+                while ($row = mysqli_fetch_assoc($res)) {
+                    $isClAchieve = (in_array($row["tourneyTitle"], $clNames)) ? true : false;
+                    if ($isClAchieve === true) {
+                        $achieves[$curClubId]["acieves"]["cl"][] = [
+                            "tourneyTitle" => $row["tourneyTitle"],
+                            "tourneyFinalYear" => $row["tourneyFinalYear"],
+                            "tourneyResult" => $row["tourneyResult"],
+                            "mainRangeMark" => $row["mainRangeMark"],
+                        ];
+                    }                    
+                }              
+            }                        
+
+        }
+
+        $info["achieves"] = $achieves;
 
         return $info;
 
