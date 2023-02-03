@@ -148,8 +148,11 @@
                                         $logoImageFile = "{$clubCode}.jpg";
                                     }
                                 }
-                                $logotypesInfo[$curClubName]["logoImageFile"] = $logoImageFile;
-                                $logotypesInfo[$curClubName]["clubCssClassHtmlRecord"] = $clubCssClassHtmlRecord;
+                                $clubId = $curClubInfo['id'];
+                                // $logotypesInfo[$curClubName]["logoImageFile"] = $logoImageFile;
+                                // $logotypesInfo[$curClubName]["clubCssClassHtmlRecord"] = $clubCssClassHtmlRecord;
+                                $logotypesInfo[$clubId]["logoImageFile"] = $logoImageFile;
+                                $logotypesInfo[$clubId]["clubCssClassHtmlRecord"] = $clubCssClassHtmlRecord;
 
                     }
 
@@ -225,7 +228,7 @@
                                     <td class="number"><?=($curClubIndex + 1)?></td>
 
                                     <td>
-                                        <img alt="<?=$curClubInfo["shortName"]?>" src="../images/<?=$logotypesInfo[$curClubInfo["basicFullName"]]["logoImageFile"]?>" title="<?=$curClubInfo["shortName"]?>" class="football-logo-table<?=$logotypesInfo[$curClubInfo["basicFullName"]]["clubCssClassHtmlRecord"]?>">                                        
+                                        <img alt="<?=$curClubInfo["shortName"]?>" src="../images/<?=$logotypesInfo[$curClubInfo["id"]]["logoImageFile"]?>" title="<?=$curClubInfo["shortName"]?>" class="football-logo-table<?=$logotypesInfo[$curClubInfo["id"]]["clubCssClassHtmlRecord"]?>">                                        
                                     </td>
 
                                 </tr>
