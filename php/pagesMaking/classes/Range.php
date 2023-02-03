@@ -66,6 +66,14 @@ class Range {
                             "mainRangeMark" => $row["mainRangeMark"],
                         ];
                     }                    
+                    elseif ($isClAchieve === false) {
+                        $achieves[$curClubId]["acieves"]["el"][] = [
+                            "tourneyTitle" => $row["tourneyTitle"],
+                            "tourneyFinalYear" => $row["tourneyFinalYear"],
+                            "tourneyResult" => $row["tourneyResult"],
+                            "mainRangeMark" => $row["mainRangeMark"],
+                        ];
+                    }                    
                 }              
             }                        
 
