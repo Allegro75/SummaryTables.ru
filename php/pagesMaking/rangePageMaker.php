@@ -222,8 +222,10 @@
 
                                 <tr class="club-row <?=$curClubCode?> <?=$curClubCountryCode?><?=$curTourneyParticipantHtmlRecord?>">
 
+                                    <td class="number"><?=($curClubIndex + 1)?></td>
+
                                     <td>
-                                        <img alt="<?=$curClubInfo["shortName"]?>" src="images/RMa.png" title="<?=$curClubInfo["shortName"]?>" class="football-logo-table real">
+                                        <img alt="<?=$curClubInfo["shortName"]?>" src="../images/<?=$logotypesInfo[$curClubInfo["basicFullName"]]["logoImageFile"]?>" title="<?=$curClubInfo["shortName"]?>" class="football-logo-table<?=$logotypesInfo[$curClubInfo["basicFullName"]]["clubCssClassHtmlRecord"]?>">                                        
                                     </td>
 
                                 </tr>
