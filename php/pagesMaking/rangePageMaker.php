@@ -300,7 +300,7 @@
                                                 $methodToGetCorrForm = $curStageInfo["methodToGetCorrForm"];
                                                 $curStageRusWordCorrectForm = WordForms::$methodToGetCorrForm(["word" => $curStageRusWordBacicForm, "number" => $curStageAchievesNumber,]);
 
-                                                $correctTourneyForm = ($curStage === "wins") ? $tourTypesInfo[$curTourneyType]["wins"] : $tourTypesInfo[$curTourneyType]["other"];
+                                                $correctTourneyForm = ($curStage === "wins") ? $tourTypesInfo[$curTourneyType]["wins"]["correctTourneyForm"] : $tourTypesInfo[$curTourneyType]["other"]["correctTourneyForm"];
 
                                             ?>                                            
 
