@@ -12,6 +12,7 @@ function getRangeInfo ($opts = []) {
     $newRange = new Range(['pathToRoot' => "../../"]);
     $rangeInfo = $newRange->getBasicRange(["minMark" => 8,]);
     $info["range"] = $rangeInfo["range"];
+    $info["achieves"] = $rangeInfo["achieves"];
 
     foreach ($rangeInfo["range"] as $curClubInfo) {
         $newClub = new Club(['pathToRoot' => "../../"]);
