@@ -4,13 +4,8 @@
     // Файл, генерирующий страницу "Ранжир".
 
     { // Переменные, нуждающиеся в определении перед генерацией страницы.
-        
-        // Нужно ещё определить:
-        // - в layoutElements/header/shortHeader.php - от какого сезона турниры показываем по ссылкам в "Текущем сезоне"
 
         // $lastAccountedMatchDate = "03.11.2022";
-
-        // $tourneyStartYear = 2022;
         $tourneyEndYear = 2023;
 
     }
@@ -104,10 +99,18 @@
                 $achievesArrIndexes = array_keys($rangeInfo["achieves"]);
 
                 $achievesStages = [
-                    "wins",
-                    "finals",
-                    "semiFinals",
-                    "qurterFinals",
+                    "wins" => [
+                        "rusStageWord" => "победа",
+                    ],
+                    "finals" => [
+                        "rusStageWord" => "финал",
+                    ],
+                    "semiFinals" => [
+                        "rusStageWord" => "полуфинал",
+                    ],
+                    "qurterFinals" => [
+                        "rusStageWord" => "четвертьфинал",
+                    ],
                 ];                
 
                 require_once 'classes/ClubsInfo.php';
@@ -250,7 +253,7 @@
                                     <td class="number"><?=($curClubIndex + 1)?></td>
 
                                     <td>
-                                        <img alt="<?=$curClubInfo["shortName"]?>" src="../images/<?=$logotypesInfo[$curClubInfo["id"]]["logoImageFile"]?>" title="<?=$curClubInfo["shortName"]?>" class="football-logo-table<?=$logotypesInfo[$curClubInfo["id"]]["clubCssClassHtmlRecord"]?>">                                        
+                                        <img alt="<?=$curClubInfo["shortName"]?>" src="../images/<?=$logotypesInfo[$curClubInfo["id"]]["logoImageFile"]?>" title="<?=$curClubInfo["shortName"]?>" class="football-logo-table<?=$logotypesInfo[$curClubInfo["id"]]["clubCssClassHtmlRecord"]?>">                                 
                                     </td>
 
                                     <td>
@@ -263,14 +266,19 @@
 
                                     <? foreach (["cl", "el"] as $curTourneyType): ?>
 
-                                        <? foreach ($achievesStages as $curStage): ?>
+                                        <? foreach ($achievesStages as $curStage => $curStageInfo): ?>
 
                                             <?
+
                                                 $curStageAchievesNumber = $rangeInfo["achieves"][$curClubId]["achieves"][$curTourneyType][$curStage]["number"];
                                                 $hasAchievesRecord = ($curStageAchievesNumber > 0) ? " has-achieves" : "";
+
+                                                $curStageRusWordBacicForm = $curStageInfo["rusStageWord"];
+                                                $curStageRusWordCorrectForm = WordForms::getWordLikeVictory(["word" => "победа", "number" => $curStageAchievesNumber,]);
+
                                             ?>                                            
 
-                                            <td class="main-table_victory<?=$hasAchievesRecord?>" title="Реал: 14 побед в кубке чемпионов
+                                            <td class="main-table_victory<?=$hasAchievesRecord?>" title="<?=$curClubInfo["shortName"]?>: <?=$curStageAchievesNumber?> <?=$curStageRusWordCorrectForm?> в кубке чемпионов
 Кликните, чтобы узнать подробности">
 
                                                 <span class="main-table_victory"><?=$curStageAchievesNumber?></span>
