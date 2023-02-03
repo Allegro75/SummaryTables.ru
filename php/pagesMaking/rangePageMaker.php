@@ -304,8 +304,7 @@
 
                                             ?>                                            
 
-                                            <td class="main-table_victory<?=$hasAchievesRecord?>" title="<?=$curClubInfo["shortName"]?>: <?=$curStageAchievesNumber?> <?=$curStageRusWordCorrectForm?> <?=$correctTourneyForm?>
-Кликните, чтобы узнать подробности">
+                                            <td class="main-table_victory<?=$hasAchievesRecord?>" title="<?=$curClubInfo["shortName"]?>: <?=$curStageAchievesNumber?> <?=$curStageRusWordCorrectForm?> <?=$correctTourneyForm?>\nКликните, чтобы узнать подробности">
 
                                                 <span class="main-table_victory"><?=$curStageAchievesNumber?></span>
 
