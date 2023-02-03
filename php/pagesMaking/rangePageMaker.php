@@ -94,12 +94,12 @@
                 require_once 'rangeInfo.php'; // Получение содержания таблицы
                 $rangeInfo = getRangeInfo();
 
-                // echo "<pre>";
-                // // var_dump(array_keys($rangeInfo));
+                echo "<pre>";
+                // var_dump(array_keys($rangeInfo));
                 // var_dump($rangeInfo["range"]);
-                // // var_dump($rangeInfo["clubsList"]);
-                // // var_dump($rangeInfo["achieves"]);
-                // echo "</pre>";
+                // var_dump($rangeInfo["clubsList"]);
+                var_dump($rangeInfo["achieves"]);
+                echo "</pre>";
 
                 require_once 'classes/ClubsInfo.php';
                 $clubsInfoClass = new ClubsInfo(["pathToRoot" => "../../"]);
@@ -249,6 +249,17 @@
                                     </td>
                                     
                                     <td class="main-table_gap"></td>
+
+                                    <? foreach (["cl", "el"] as $curTourneyType): ?>
+
+                                        <td class="main-table_victory has-achieves" title="Реал: 14 побед в кубке чемпионов
+Кликните, чтобы узнать подробности">
+
+                                            <span class="main-table_victory">14</span>
+
+                                        </td>
+
+                                    <? endforeach; ?>
 
                                 </tr>
 
