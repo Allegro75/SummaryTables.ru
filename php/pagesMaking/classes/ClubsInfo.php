@@ -21,13 +21,13 @@ class ClubsInfo {
         $tourneyEndYear = $opts['tourneyEndYear'];       
 
         $sql = 
-            "SELECT DISTINCT(`firstClubId`), `firstClubName`, `tourneyTitle`
+            "SELECT DISTINCT(`firstClubId`) AS `clubId`, `firstClubName`, `tourneyTitle`
             FROM `matches`  
             WHERE tourneyFinalYear = {$tourneyEndYear}
             AND `score` = ''
             AND `firstClubId` != 1274
             UNION
-            SELECT DISTINCT(`secondClubId`), `secondClubName`, `tourneyTitle`
+            SELECT DISTINCT(`secondClubId`) AS `clubId`, `secondClubName`, `tourneyTitle`
             FROM `matches`  
             WHERE `tourneyFinalYear` = {$tourneyEndYear}
             AND `score` = ''
