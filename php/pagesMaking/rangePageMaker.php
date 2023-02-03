@@ -115,7 +115,26 @@
                         "rusStageWord" => "четвертьфинал",
                         "methodToGetCorrForm" => "getWordLikeFinal",
                     ],
-                ];                
+                ];    
+
+                $tourTypesInfo = [
+                    "cl" => [
+                        "wins" => [
+                            "correctTourneyForm" => "в кубке чемпионов",
+                        ],
+                        "other" => [
+                            "correctTourneyForm" => "кубка чемпионов",
+                        ],
+                    ],
+                    "el" => [
+                        "wins" => [
+                            "correctTourneyForm" => "в еврокубках",
+                        ],
+                        "other" => [
+                            "correctTourneyForm" => "еврокубка",
+                        ],
+                    ],
+                ];    
 
                 require_once 'classes/ClubsInfo.php';
                 $clubsInfoClass = new ClubsInfo(["pathToRoot" => "../../"]);
@@ -268,7 +287,7 @@
                                     
                                     <td class="main-table_gap"></td>
 
-                                    <? foreach (["cl", "el"] as $curTourneyType): ?>
+                                    <? foreach (array_keys($tourTypesInfo) as $curTourneyType): ?>
 
                                         <? foreach ($achievesStages as $curStage => $curStageInfo): ?>
 
@@ -281,9 +300,11 @@
                                                 $methodToGetCorrForm = $curStageInfo["methodToGetCorrForm"];
                                                 $curStageRusWordCorrectForm = WordForms::$methodToGetCorrForm(["word" => $curStageRusWordBacicForm, "number" => $curStageAchievesNumber,]);
 
+                                                $correctTourneyForm = ($curStage === "wins") ? $tourTypesInfo[$curTourneyType]["wins"] : $tourTypesInfo[$curTourneyType]["other"];
+
                                             ?>                                            
 
-                                            <td class="main-table_victory<?=$hasAchievesRecord?>" title="<?=$curClubInfo["shortName"]?>: <?=$curStageAchievesNumber?> <?=$curStageRusWordCorrectForm?> в кубке чемпионов
+                                            <td class="main-table_victory<?=$hasAchievesRecord?>" title="<?=$curClubInfo["shortName"]?>: <?=$curStageAchievesNumber?> <?=$curStageRusWordCorrectForm?> <?=$correctTourneyForm?>
 Кликните, чтобы узнать подробности">
 
                                                 <span class="main-table_victory"><?=$curStageAchievesNumber?></span>
