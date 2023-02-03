@@ -101,6 +101,15 @@
                 var_dump($rangeInfo["achieves"]);
                 echo "</pre>";
 
+                $achievesArrIndexes = array_keys($rangeInfo["achieves"]);
+
+                $achievesStages = [
+                    "wins",
+                    "finals",
+                    "semiFinals",
+                    "qurterFinals",
+                ];                
+
                 require_once 'classes/ClubsInfo.php';
                 $clubsInfoClass = new ClubsInfo(["pathToRoot" => "../../"]);
                 $currentSeasonClubsInfo = $clubsInfoClass->getСurrentSeasonClubsInfo(["tourneyEndYear" => $tourneyEndYear,]); // Получение данных о клубах, продолжающих участие в текущем сезоне розыгрыша еврокубков
@@ -232,6 +241,8 @@
                                         $nameRecord = "<div class='club-name'><span class='club-name_minsize'>{$curClubInfo["shortName"]}</span></div>";
                                     }
 
+                                    $curClubId = $achievesArrIndexes[$curClubIndex];
+
                                 ?>
 
                                 <tr class="club-row <?=$curClubCode?> <?=$curClubCountryCode?><?=$curTourneyParticipantHtmlRecord?>">
@@ -252,12 +263,21 @@
 
                                     <? foreach (["cl", "el"] as $curTourneyType): ?>
 
-                                        <td class="main-table_victory has-achieves" title="Реал: 14 побед в кубке чемпионов
+                                        <? foreach ($achievesStages as $curStage): ?>
+
+                                            <?
+                                                $curStageAchievesNumber = $rangeInfo["achieves"][$curClubId]["achieves"][$curTourneyType][$curStage]["number"];
+                                                $hasAchievesRecord = ($curStageAchievesNumber > 0) ? " has-achieves" : "";
+                                            ?>                                            
+
+                                            <td class="main-table_victory<?=$hasAchievesRecord?>" title="Реал: 14 побед в кубке чемпионов
 Кликните, чтобы узнать подробности">
 
-                                            <span class="main-table_victory">14</span>
+                                                <span class="main-table_victory"><?=$curStageAchievesNumber?></span>
 
-                                        </td>
+                                            </td>
+
+                                        <? endforeach; ?>
 
                                     <? endforeach; ?>
 
