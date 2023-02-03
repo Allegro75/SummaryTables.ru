@@ -160,7 +160,9 @@
                     // var_dump($logotypesInfo);
                     // echo "</pre>";
 
-                }               
+                }
+                
+                $tooLongNames = ["Вулверхэмптон","Данди Юнайтед","Кайзерслаутерн","Ференцварош","Панатинаикос","Црвена звезда",];
 
                 require_once 'classes/WordForms.php'; // Файл для получения правильных форм слов
 
@@ -221,6 +223,13 @@
                                     $isCurTourneyParticipant = in_array($rangeInfo["clubsList"][$curClubName]["id"], array_keys($currentSeasonClubsInfo["clubsInfo"]));
                                     $curTourneyParticipantHtmlRecord = $isCurTourneyParticipant ? " current" : "";
 
+                                    if ( ! (in_array($curClubInfo["shortName"], $tooLongNames)) ) {
+                                        $nameRecord = $curClubInfo["shortName"];
+                                    }
+                                    elseif (in_array($curClubInfo["shortName"], $tooLongNames)) {
+                                        $nameRecord = "<div class='club-name'><span class='club-name_minsize'>{$curClubInfo["shortName"]}</span></div>";
+                                    }
+
                                 ?>
 
                                 <tr class="club-row <?=$curClubCode?> <?=$curClubCountryCode?><?=$curTourneyParticipantHtmlRecord?>">
@@ -233,7 +242,7 @@
 
                                     <td>
                                         <div class="club-name">
-                                            <?=$curClubInfo["shortName"]?>
+                                            <?=$nameRecord?>
                                         </div>
                                     </td>
                                     
