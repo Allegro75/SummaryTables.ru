@@ -160,9 +160,11 @@
                                     $curClubInfo = $rangeInfo["clubsList"][$curClubName];
                                     $curClubCode = $curClubInfo["code"];
                                     $curClubCountryCode = $curClubInfo["countryEngCode"];
+                                    $isCurTourneyParticipant = in_array($rangeInfo["clubsList"][$curClubName]["id"], array_keys($currentSeasonClubsInfo["clubsInfo"]));
+                                    $curTourneyParticipantHtmlRecord = $isCurTourneyParticipant ? " current" : "";
                                 ?>
 
-                                <tr class="club-row <?=$curClubCode?> <?=$curClubCountryCode?>">
+                                <tr class="club-row <?=$curClubCode?> <?=$curClubCountryCode?><?=$curTourneyParticipantHtmlRecord?>">
                                 </tr>
 
                             <? endfor; ?>

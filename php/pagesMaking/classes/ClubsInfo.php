@@ -35,7 +35,7 @@ class ClubsInfo {
         ";
         if ($res = mysqli_query($this->db, $sql)) {
             while ($row = mysqli_fetch_assoc($res)) {
-                $info["clubsInfo"][] = $row;
+                $info["clubsInfo"][$row["clubId"]] = $row;
             }              
         }
 
