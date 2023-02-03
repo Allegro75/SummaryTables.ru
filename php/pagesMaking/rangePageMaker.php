@@ -103,9 +103,61 @@
                 $clubsInfoClass = new ClubsInfo(["pathToRoot" => "../../"]);
                 $currentSeasonClubsInfo = $clubsInfoClass->getСurrentSeasonClubsInfo(["tourneyEndYear" => $tourneyEndYear,]); // Получение данных о клубах, продолжающих участие в текущем сезоне розыгрыша еврокубков
 
-                echo "<pre>";
-                var_dump($currentSeasonClubsInfo);
-                echo "</pre>";
+                // echo "<pre>";
+                // var_dump($currentSeasonClubsInfo);
+                // echo "</pre>";
+
+                { // Логотипы
+
+                    // Массив имён файлов с логотипами (нужен чтобы правильно добавлять к коду клуба ".png", ".svg" и т.п.)
+                    $logoFiles = scandir("images");                    
+                    $specialImages = [
+                        "Akt" => "Akt_light.png",
+                        "AuW" => "AuW_light.png",
+                        "DuP" => "DuP_light.png",
+                        "DyK" => "DyK_dark.png",
+                        // "Mar" => "Mar_light.png",
+                        "Mlm" => "Mlm_light.png",
+                        "Nan" => "Nan_light.png",
+                        "New" => "New_light.png",
+                        // "Not" => "Not_light.png",
+                        "Not" => "Not_dark.png",
+                        "Prt" => "Prt_light.png",
+                        "SpL" => "SpL_light.png",
+                        "StL" => "StL_light.png",
+                        "Zen" => "Zen_light.png",
+                    ];
+
+                    // $logotypesInfo = ['clubsList' => [], 'actualCountryClubsList' => []];
+                    // Имя файла с картинкой логотипа:                    
+
+                    foreach ($rangeInfo["clubsList"] as $curClubName => $curClubInfo) {
+
+                                $logoImageFile = "";
+                                $clubCode = $curClubInfo['code'];
+                                $clubCSSClass = $curClubInfo['CSSClass'];
+                                $clubCssClassHtmlRecord = ($clubCSSClass === "") ? "" : " {$clubCSSClass}";
+                                if (in_array($clubCode, array_keys($specialImages))) {
+                                    $logoImageFile = $specialImages[$clubCode];
+                                } else {        
+                                    if (in_array("{$clubCode}.png", $logoFiles)) {
+                                        $logoImageFile = "{$clubCode}.png";
+                                    } elseif (in_array("{$clubCode}.svg", $logoFiles)) {
+                                        $logoImageFile = "{$clubCode}.svg";
+                                    } elseif (in_array("{$clubCode}.jpg", $logoFiles)) {
+                                        $logoImageFile = "{$clubCode}.jpg";
+                                    }
+                                }
+                                $logotypesInfo[$curClubName]["logoImageFile"] = $logoImageFile;
+                                $logotypesInfo[$curClubName]["clubCssClassHtmlRecord"] = $clubCssClassHtmlRecord;
+
+                    }
+
+                    echo "<pre>";
+                    var_dump($logotypesInfo);
+                    echo "</pre>";
+
+                }               
 
                 require_once 'classes/WordForms.php'; // Файл для получения правильных форм слов
 
@@ -155,16 +207,25 @@
                             <? for($clubNumber = 1; $clubNumber <= 25; $clubNumber++): ?>
 
                                 <?
+
                                     $curClubIndex = ((($tableNumber * 25) -25) + ($clubNumber - 1));
                                     $curClubName = $rangeInfo["range"][$curClubIndex]["clubName"];
                                     $curClubInfo = $rangeInfo["clubsList"][$curClubName];
+
                                     $curClubCode = $curClubInfo["code"];
                                     $curClubCountryCode = $curClubInfo["countryEngCode"];
+
                                     $isCurTourneyParticipant = in_array($rangeInfo["clubsList"][$curClubName]["id"], array_keys($currentSeasonClubsInfo["clubsInfo"]));
                                     $curTourneyParticipantHtmlRecord = $isCurTourneyParticipant ? " current" : "";
+
                                 ?>
 
                                 <tr class="club-row <?=$curClubCode?> <?=$curClubCountryCode?><?=$curTourneyParticipantHtmlRecord?>">
+
+                                    <td>
+                                        <img alt="<?=$curClubInfo["shortName"]?>" src="images/RMa.png" title="<?=$curClubInfo["shortName"]?>" class="football-logo-table real">
+                                    </td>
+
                                 </tr>
 
                             <? endfor; ?>

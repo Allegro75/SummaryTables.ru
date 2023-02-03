@@ -413,8 +413,8 @@
                                         $logoImageFile = "{$clubCode}.jpg";
                                     }
                                 }
-                                $logotypesInfo[$curClubsListName][$curClubName] ["logoImageFile"] = $logoImageFile;
-                                $logotypesInfo[$curClubsListName][$curClubName] ["clubCssClassHtmlRecord"] = $clubCssClassHtmlRecord;
+                                $logotypesInfo[$curClubsListName][$curClubName]["logoImageFile"] = $logoImageFile;
+                                $logotypesInfo[$curClubsListName][$curClubName]["clubCssClassHtmlRecord"] = $clubCssClassHtmlRecord;
                             }
                     }
                     // echo "<pre>";
