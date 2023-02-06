@@ -131,7 +131,7 @@
                             "correctTourneyForm" => "в еврокубках",
                         ],
                         "other" => [
-                            "correctTourneyForm" => "еврокубка",
+                            "correctTourneyForm" => "еврокубков",
                         ],
                     ],
                 ];    
