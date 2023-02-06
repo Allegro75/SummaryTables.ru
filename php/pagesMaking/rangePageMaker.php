@@ -282,10 +282,10 @@
                                         $nameRecord = $curClubInfo["shortName"];
                                     }
                                     elseif (in_array($curClubInfo["shortName"], $tooLongNames)) {
-                                        $nameRecord = "<div class='club-name'><span class='club-name_minsize'>{$curClubInfo["shortName"]}</span></div>";
+                                        $nameRecord = "<span class='club-name_minsize'>{$curClubInfo["shortName"]}</span>";
                                     }                                    
                                     if ($curClubInfo["shortName"] === "ЦСКА") {
-                                        $nameRecord = "<div class='club-name'>ЦСКА <span class='club-name_minsize'>Москва</span></div>";
+                                        $nameRecord = "ЦСКА <span class='club-name_minsize'>Москва</span>";
                                     }                                    
 
                                     $curClubPointsRusWordCorrectForm = WordForms::getWordLikePoint(["word" => "очко", "number" => $curClubPoints,])                                    
