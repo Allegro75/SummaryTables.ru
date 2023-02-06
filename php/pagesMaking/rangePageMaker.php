@@ -345,7 +345,8 @@
                                                 <? if ($curStageAchievesNumber > 0): ?>
 
                                                     <?
-                                                        $correctPopupAchForm = $achievesStages[$curStage]["popupStageWord"];
+                                                        $correctPopupAchForm = $curStageInfo["popupStageWord"];
+                                                        $correctPopupTourTypeForm = $tourTypesInfo[$curTourneyType]["popup"]["correctTourneyForm"];
                                                     ?>
 
                                                     <div class="popup d-none">
@@ -362,7 +363,7 @@
                                                         </div>
 
                                                         <div>
-                                                            <p class="achives-info_explanation-achieves"><?=$correctPopupAchForm?> в еврокубках</p>
+                                                            <p class="achives-info_explanation-achieves"><?=$correctPopupAchForm?> <?=$correctPopupTourTypeForm?></p>
                                                             <p class="achives-info_explanation-click">кликните для перехода к турниру</p>
                                                         </div>                                                    
                                                         
