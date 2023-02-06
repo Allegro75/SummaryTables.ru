@@ -303,7 +303,13 @@
                                                 }
                                                 elseif ($curStage === "wins") {
                                                     $achNumRecord = ($curStageAchievesNumber > 0) ? "<span class='main-table_victory'>{$curStageAchievesNumber}</span>" : "";
-                                                }                                                 
+                                                }
+
+                                                $curStageRusWordBacicForm = $curStageInfo["rusStageWord"];
+                                                $methodToGetCorrForm = $curStageInfo["methodToGetCorrForm"];
+                                                $curStageRusWordCorrectForm = WordForms::$methodToGetCorrForm(["word" => $curStageRusWordBacicForm, "number" => $curStageAchievesNumber,]);
+
+                                                $correctTourneyForm = ($curStage === "wins") ? $tourTypesInfo[$curTourneyType]["wins"]["correctTourneyForm"] : $tourTypesInfo[$curTourneyType]["other"]["correctTourneyForm"];
 
                                                 if ($curStageAchievesNumber <= 0) {
                                                     $hintContent = "";
@@ -311,13 +317,7 @@
                                                 elseif ($curStageAchievesNumber > 0) {
                                                     $hintContent = "{$curClubInfo["shortName"]}: {$curStageAchievesNumber} {$curStageRusWordCorrectForm} {$correctTourneyForm}
 Кликните, чтобы узнать подробности";
-                                                }                                                 
-
-                                                $curStageRusWordBacicForm = $curStageInfo["rusStageWord"];
-                                                $methodToGetCorrForm = $curStageInfo["methodToGetCorrForm"];
-                                                $curStageRusWordCorrectForm = WordForms::$methodToGetCorrForm(["word" => $curStageRusWordBacicForm, "number" => $curStageAchievesNumber,]);
-
-                                                $correctTourneyForm = ($curStage === "wins") ? $tourTypesInfo[$curTourneyType]["wins"]["correctTourneyForm"] : $tourTypesInfo[$curTourneyType]["other"]["correctTourneyForm"];
+                                                }                                                
 
                                             ?>                                            
 
