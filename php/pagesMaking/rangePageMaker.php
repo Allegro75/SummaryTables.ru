@@ -255,7 +255,8 @@
                                     $curClubName = $rangeInfo["range"][$curClubIndex]["clubName"];
                                     $curClubPoints = $rangeInfo["range"][$curClubIndex]["mainRangeMarksSum"];
                                     $curClubInfo = $rangeInfo["clubsList"][$curClubName];
-                                    $curClubId = $curClubInfo["id"];
+                                    // $curClubId = $curClubInfo["id"];
+                                    $curClubId = $achievesArrIndexes[$curClubIndex];
 
                                     $curClubCode = $curClubInfo["code"];
                                     $curClubCountryCode = $curClubInfo["countryEngCode"];
@@ -271,9 +272,9 @@
                                     }
                                     elseif (in_array($curClubInfo["shortName"], $tooLongNames)) {
                                         $nameRecord = "<div class='club-name'><span class='club-name_minsize'>{$curClubInfo["shortName"]}</span></div>";
-                                    }
+                                    }                                    
 
-                                    $curClubId = $achievesArrIndexes[$curClubIndex];
+                                    $curClubPointsRusWordCorrectForm = WordForms::getWordLikePoint(["word" => "очко", "number" => $curClubPoints,])                                    
 
                                 ?>
 
