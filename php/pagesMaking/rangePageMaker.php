@@ -253,6 +253,7 @@
 
                                     $curClubIndex = ((($tableNumber * 25) -25) + ($clubNumber - 1));
                                     $curClubName = $rangeInfo["range"][$curClubIndex]["clubName"];
+                                    $curClubPoints = $rangeInfo["range"][$curClubIndex]["mainRangeMarksSum"];
                                     $curClubInfo = $rangeInfo["clubsList"][$curClubName];
 
                                     $curClubCode = $curClubInfo["code"];
@@ -339,7 +340,7 @@
                                     <td class="main-table_criterion<?=$curTourneyParticipantCriterionHtmlRecord?>" title="<?=$criterionHintContent?>">
                                         <a href="archive/champ_league/cl_2022.html">
                                             <div class="for-href">
-                                                <span class="main-table_criterion" title="<?=$curClubInfo["shortName"]?>: 261 очко">261</span>
+                                                <span class="main-table_criterion" title="<?=$curClubInfo["shortName"]?>: <?=$curClubPoints?> очко"><?=$curClubPoints?></span>
                                             </div>
                                         </a>
                                     </td>                                     
