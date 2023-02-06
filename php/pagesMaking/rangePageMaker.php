@@ -341,7 +341,7 @@
 
                                     <td class="main-table_criterion<?=$curTourneyParticipantCriterionHtmlRecord?>" title="<?=$criterionHintContent?>">
                                         <? if($isCurTourneyParticipant === true): ?>
-                                            <a href="archive/champ_league/<?=$curSeasonCurClubTourneyCode?>_<?=$tourneyEndYear?>.html">
+                                            <a href="archive/<?=$curSeasonCurClubTourneyCode?>_<?=$tourneyEndYear?>.html">
                                                 <div class="for-href">
                                         <? endif;?>
                                                     <span class="main-table_criterion" title="<?=$curClubInfo["shortName"]?>: <?=$curClubPoints?> очко"><?=$curClubPoints?></span>
