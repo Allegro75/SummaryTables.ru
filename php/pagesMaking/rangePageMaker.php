@@ -334,9 +334,49 @@
 
                                             </td>
 
+                                            <? if ($curStageAchievesNumber > 0): ?>
+
+                                                <div class="popup d-none">
+
+                                                    <div class="popup__cross">
+                                                        <img src="images/cross.png" alt="Закрыть" title="Закрыть">
+                                                    </div>
+
+                                                    <div>
+                                                        <p class="popup__club-info">
+                                                            <img alt="<?=$curClubInfo["shortName"]?>" src="../images/<?=$logotypesInfo[$curClubInfo["id"]]["logoImageFile"]?>" title="<?=$curClubInfo["shortName"]?>" class="football-logo-table popup__club-info_logo">
+                                                            <?=$curClubInfo["shortName"]?>
+                                                        </p>
+                                                    </div>
+
+                                                    <div>
+                                                        <p class="achives-info_explanation-achieves">победы в еврокубках</p>
+                                                        <p class="achives-info_explanation-click">кликните для перехода к турниру</p>
+                                                    </div>                                                    
+                                                    
+                                                    <div class="popup__achieves-info">
+                                                        <p class="tourney-info">
+                                                            <a href="archive/cup_win_cup/cwc_1967.html" target="blank" title="Посмотреть турнир кубка кубков 1966/1967">
+                                                                Кубок кубков 1967
+                                                            </a>
+                                                        </p>
+                                                    </div>                                                    
+                                                    
+                                                    <div class="popup__achieves-info">
+                                                        <p class="tourney-info">
+                                                            <a href="archive/euroleague/el_1996.html" target="blank" title="Посмотреть турнир кубка УЕФА 1995/1996">
+                                                                Кубок УЕФА 1996
+                                                            </a>
+                                                        </p>
+                                                    </div>
+                                                    
+                                                </div>
+
+                                            <? endif;?>                                                
+
                                         <? endforeach; ?>
 
-                                        <td class="main-table_gap"></td>                                       
+                                        <td class="main-table_gap"></td>                               
 
                                     <? endforeach; ?>
 
