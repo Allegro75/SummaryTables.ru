@@ -293,6 +293,8 @@
 
                                             <?
 
+                                                $victoriesClassPart = ($curStage === "wins") ? "victory" : "playoff";
+
                                                 $curStageAchievesNumber = $rangeInfo["achieves"][$curClubId]["achieves"][$curTourneyType][$curStage]["number"];
                                                 $hasAchievesRecord = ($curStageAchievesNumber > 0) ? " has-achieves" : "";
 
@@ -304,7 +306,7 @@
 
                                             ?>                                            
 
-                                            <td class="main-table_victory<?=$hasAchievesRecord?>" title="<?=$curClubInfo["shortName"]?>: <?=$curStageAchievesNumber?> <?=$curStageRusWordCorrectForm?> <?=$correctTourneyForm?>
+                                            <td class="main-table_<?=$victoriesClassPart?><?=$hasAchievesRecord?>" title="<?=$curClubInfo["shortName"]?>: <?=$curStageAchievesNumber?> <?=$curStageRusWordCorrectForm?> <?=$correctTourneyForm?>
 
 Кликните, чтобы узнать подробности">
 
