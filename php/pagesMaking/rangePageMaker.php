@@ -102,18 +102,22 @@
                 $achievesStages = [
                     "wins" => [
                         "rusStageWord" => "победа",
+                        "popupStageWord" => "победы",
                         "methodToGetCorrForm" => "getWordLikeVictory",
                     ],
                     "finals" => [
                         "rusStageWord" => "финал",
+                        "popupStageWord" => "выходы в финал",
                         "methodToGetCorrForm" => "getWordLikeFinal",
                     ],
                     "semiFinals" => [
                         "rusStageWord" => "полуфинал",
+                        "popupStageWord" => "выходы в полуфинал",
                         "methodToGetCorrForm" => "getWordLikeFinal",
                     ],
                     "qurterFinals" => [
                         "rusStageWord" => "четвертьфинал",
+                        "popupStageWord" => "выходы в четвертьфинал",
                         "methodToGetCorrForm" => "getWordLikeFinal",
                     ],
                 ];    
@@ -126,6 +130,9 @@
                         "other" => [
                             "correctTourneyForm" => "кубка чемпионов",
                         ],
+                        "popup" => [
+                            "correctTourneyForm" => "в кубке/лиге чемпионов",
+                        ],
                     ],
                     "el" => [
                         "wins" => [
@@ -134,6 +141,9 @@
                         "other" => [
                             "correctTourneyForm" => "еврокубков",
                         ],
+                        "popup" => [
+                            "correctTourneyForm" => "в еврокубках",
+                        ],                        
                     ],
                 ];    
 
@@ -334,6 +344,10 @@
 
                                                 <? if ($curStageAchievesNumber > 0): ?>
 
+                                                    <?
+                                                        $correctPopupAchForm = $achievesStages[$curStage]["popupStageWord"];
+                                                    ?>
+
                                                     <div class="popup d-none">
 
                                                         <div class="popup__cross">
@@ -348,7 +362,7 @@
                                                         </div>
 
                                                         <div>
-                                                            <p class="achives-info_explanation-achieves">победы в еврокубках</p>
+                                                            <p class="achives-info_explanation-achieves"><?=$correctPopupAchForm?> в еврокубках</p>
                                                             <p class="achives-info_explanation-click">кликните для перехода к турниру</p>
                                                         </div>                                                    
                                                         
