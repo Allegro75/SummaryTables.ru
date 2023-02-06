@@ -260,6 +260,7 @@
 
                                     $isCurTourneyParticipant = in_array($rangeInfo["clubsList"][$curClubName]["id"], array_keys($currentSeasonClubsInfo["clubsInfo"]));
                                     $curTourneyParticipantHtmlRecord = $isCurTourneyParticipant ? " current" : "";
+                                    $curTourneyParticipantCriterionHtmlRecord = $isCurTourneyParticipant ? " criterion_current-participant" : "";
 
                                     if ( ! (in_array($curClubInfo["shortName"], $tooLongNames)) ) {
                                         $nameRecord = $curClubInfo["shortName"];
@@ -331,6 +332,14 @@
                                         <? endforeach; ?>
 
                                         <td class="main-table_gap"></td>
+
+                                        <td class="main-table_criterion criterion_current-participant" title="Участвует в текущем розыгрыше еврокубков">
+                                            <a href="archive/champ_league/cl_2022.html">
+                                                <div class="for-href">
+                                                    <span class="main-table_criterion" title="Реал Мадрид: 261 очко">261</span>
+                                                </div>
+                                            </a>
+                                        </td>                                        
 
                                     <? endforeach; ?>
 
