@@ -270,7 +270,7 @@
                                     $curClubId = $achievesArrIndexes[$curClubIndex];
 
                                     $curClubCode = $curClubInfo["code"];
-                                    $curClubCountryCode = $curClubInfo["countryEngCode"];
+                                    $curClubCountryCode = ($curClubInfo["countryEngCode"] === "TCH") ? "CZE" : $curClubInfo["countryEngCode"];
 
                                     $isCurTourneyParticipant = in_array($curClubId, array_keys($currentSeasonClubsInfo["clubsInfo"]));
                                     $curTourneyParticipantHtmlRecord = $isCurTourneyParticipant ? " current" : "";
