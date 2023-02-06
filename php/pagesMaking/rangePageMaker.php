@@ -6,6 +6,7 @@
     { // Переменные, нуждающиеся в определении перед генерацией страницы.
 
         // $lastAccountedMatchDate = "03.11.2022";
+        $tourneyStartYear = 2022;
         $tourneyEndYear = 2023;
 
     }
@@ -74,7 +75,7 @@
                 <p class="captions__explanation">
                     <span class="captions__explanation_circle">&#8226;</span>
                     <!-- Таблица обновлена по итогам сезона 2022/2023 -->
-                    Таблица обновлена по итогам групповых турниров сезона 2022/2023
+                    Таблица обновлена по итогам групповых турниров сезона <?=$tourneyStartYear?>/<?=$tourneyEndYear?>
                     <!-- Таблица обновлена по итогам четвертьфиналов сезона 2022/2023 -->
                     <!-- Таблица обновлена по итогам полуфиналов сезона 2022/2023 -->
                     <!-- Таблица обновлена по итогам матчей от 14.04.2022 -->
@@ -347,12 +348,12 @@
             <div class="table-explanation">
                 <p class="table-explanation__explanation explanation_RUS">Российские клубы</p>
                 <p class="table-explanation__explanation explanation_UKR">Украинские клубы</p>
-                <!-- <p class="table-explanation__explanation explanation_current"> -->
+                <p class="table-explanation__explanation explanation_current">
                     <!-- Клубы, участвующие в текущем
-                    розыгрыше еврокубков (2021/2022) -->
-                    <!-- Клубы, продолжающие участие в текущем
-                    розыгрыше еврокубков (2021/2022) -->
-                <!-- </p> -->
+                    розыгрыше еврокубков (<?=$tourneyStartYear?>/<?=$tourneyEndYear?>) -->
+                    Клубы, продолжающие участие в текущем
+                    розыгрыше еврокубков (<?=$tourneyStartYear?>/<?=$tourneyEndYear?>)
+                </p>
             </div>
 
             <div class="main__nations">
