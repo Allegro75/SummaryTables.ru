@@ -88,7 +88,7 @@ img.real, img.logo-like-real{
   height: 16px;
 }
 /* Лого Гамбурга вытянуто в ширину, посему его настаиваем специально: */
-img.hamburg{
+img.hamburg, img.logo-like-hamburg, img.logo-like-az{
   width: 16px;
   height: auto;
   position: relative;
