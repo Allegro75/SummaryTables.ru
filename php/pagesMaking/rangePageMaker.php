@@ -141,9 +141,9 @@
                 $clubsInfoClass = new ClubsInfo(["pathToRoot" => "../../"]);
                 $currentSeasonClubsInfo = $clubsInfoClass->getСurrentSeasonClubsInfo(["tourneyEndYear" => $tourneyEndYear,]); // Получение данных о клубах, продолжающих участие в текущем сезоне розыгрыша еврокубков
 
-                echo "<pre>";
-                var_dump($currentSeasonClubsInfo);
-                echo "</pre>";
+                // echo "<pre>";
+                // var_dump($currentSeasonClubsInfo);
+                // echo "</pre>";
 
                 { // Логотипы
 
