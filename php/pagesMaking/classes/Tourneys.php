@@ -8,37 +8,45 @@ class Tourneys {
         "Лига чемпионов" => [
             "archiveFolderName" => "champ_league",
             "archiveFilePrefix" => "cl",   
-            "genitiveForm" => "Лиги чемпионов",
+            "genitiveForm" => "лиги чемпионов",
         ],
 
         "Лига Европы" => [
             "archiveFolderName" => "euroleague",
             "archiveFilePrefix" => "el",
-            "genitiveForm" => "Лиги Европы",
+            "genitiveForm" => "лиги Европы",
         ],
 
         "Кубок чемпионов" => [
             "archiveFolderName" => "champ_league",
             "archiveFilePrefix" => "cl",
-            "genitiveForm" => "Кубка чемпионов", 
+            "genitiveForm" => "кубка чемпионов", 
         ],
 
         "Кубок кубков" => [
             "archiveFolderName" => "cup_win_cup",
             "archiveFilePrefix" => "cwc",
-            "genitiveForm" => "Кубка кубков",
+            "genitiveForm" => "кубка кубков",
         ],
 
         "Кубок УЕФА" => [
             "archiveFolderName" => "euroleague",
             "archiveFilePrefix" => "el",
-            "genitiveForm" => "Кубка УЕФА",
+            "genitiveForm" => "кубка УЕФА",
         ],        
 
         "Кубок ярмарок" => [
             "archiveFolderName" => "euroleague",
             "archiveFilePrefix" => "el",
-            "genitiveForm" => "Кубка ярмарок",
+            "genitiveForm" => "кубка ярмарок",
+            "specialYears" => [
+                1958 => [
+                    "tourneyStartYear" => 1955,
+                ],
+                1960 => [
+                    "tourneyStartYear" => 1958,
+                ],
+            ]
         ],        
 
     ];
