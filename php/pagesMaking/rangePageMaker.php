@@ -212,7 +212,8 @@
                 
                 $tooLongNames = ["Вулверхэмптон","Данди Юнайтед","Кайзерслаутерн","Ференцварош","Панатинаикос","Црвена звезда",];
 
-                require_once 'classes/WordForms.php'; // Файл для получения правильных форм слов
+                require_once 'classes/WordForms.php'; // Для получения правильных форм слов
+                require_once 'classes/Tourneys.php'; // Для формирования ссылок на турнир в архиве турниров
 
             ?>
 
@@ -344,7 +345,7 @@
 
                                                 <? if ($curStageAchievesNumber > 0): ?>
 
-                                                    <?
+                                                    <? // Данные для всплывающего окна
                                                         $correctPopupAchForm = $curStageInfo["popupStageWord"];
                                                         $correctPopupTourTypeForm = $tourTypesInfo[$curTourneyType]["popup"]["correctTourneyForm"];
                                                     ?>
@@ -369,10 +370,18 @@
                                                         
                                                         <? foreach ($rangeInfo["achieves"][$curClubId]["achieves"][$curTourneyType][$curStage]["tourneys"] as $curTourneyInfo): ?>
 
+                                                            <? // Данные для списка турниров во всплывающем окне
+                                                                $curTourName = $curTourneyInfo["tourneyTitle"];
+                                                                $curTourFinalYear = $curTourneyInfo["tourneyFinalYear"];
+                                                                $curTourFoder = Tourneys::$tourneysProps[$curTourName]["archiveFolderName"];
+                                                                $curTourFilePrefix = Tourneys::$tourneysProps[$curTourName]["archiveFilePrefix"];
+                                                                $tourPathInArchive = "{$curTourFoder}/{$curTourFilePrefix}_{$curTourFinalYear}";
+                                                            ?>                                                 
+
                                                             <div class="popup__achieves-info">
                                                                 <p class="tourney-info">
-                                                                    <a href="archive/cup_win_cup/cwc_1967.html" target="blank" title="Посмотреть турнир кубка кубков 1966/1967">
-                                                                        <?=$curTourneyInfo["tourneyTitle"]?> <?=$curTourneyInfo["tourneyFinalYear"]?>
+                                                                    <a href="archive/<?=$tourPathInArchive?>.html" target="blank" title="Посмотреть турнир кубка кубков 1966/1967">
+                                                                        <?=$curTourName?> <?=$curTourFinalYear?>
                                                                     </a>
                                                                 </p>
                                                             </div>
