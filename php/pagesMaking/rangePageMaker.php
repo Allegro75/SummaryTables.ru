@@ -377,7 +377,7 @@
                                                                 $curTourFilePrefix = Tourneys::$tourneysProps[$curTourName]["archiveFilePrefix"];
                                                                 $tourPathInArchive = "{$curTourFoder}/{$curTourFilePrefix}_{$curTourFinalYear}";
                                                                 $curTourGenitiveForm = Tourneys::$tourneysProps[$curTourName]["genitiveForm"];
-                                                                $curTourStartYear = (($curTourName === "Кубок ярмарок") && (in_array($curTourFinalYear, array_keys(Tourneys::$tourneysProps[$curTourName]["specialYears"])))) ? (Tourneys::$tourneysProps[$curTourName]["genitiveForm"]["specialYears"][$curTourFinalYear]["tourneyStartYear"]) : ($curTourFinalYear - 1);
+                                                                $curTourStartYear = (($curTourName === "Кубок ярмарок") && (in_array($curTourFinalYear, array_keys(Tourneys::$tourneysProps[$curTourName]["specialYears"])))) ? (Tourneys::$tourneysProps[$curTourName]["specialYears"][$curTourFinalYear]["tourneyStartYear"]) : ($curTourFinalYear - 1);
                                                             ?>                                                 
 
                                                             <div class="popup__achieves-info">
