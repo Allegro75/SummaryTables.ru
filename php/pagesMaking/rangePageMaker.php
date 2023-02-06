@@ -90,12 +90,12 @@
                 require_once 'rangeInfo.php'; // Получение содержания таблицы
                 $rangeInfo = getRangeInfo();
 
-                // echo "<pre>";
-                // // var_dump(array_keys($rangeInfo));
-                // // var_dump($rangeInfo["range"]);
-                // // var_dump($rangeInfo["clubsList"]);
+                echo "<pre>";
+                // var_dump(array_keys($rangeInfo));
+                var_dump($rangeInfo["range"]);
+                // var_dump($rangeInfo["clubsList"]);
                 // var_dump($rangeInfo["achieves"]);
-                // echo "</pre>";
+                echo "</pre>";
 
                 $achievesArrIndexes = array_keys($rangeInfo["achieves"]);
 
@@ -339,7 +339,7 @@
                                     <td class="main-table_criterion<?=$curTourneyParticipantCriterionHtmlRecord?>" title="<?=$criterionHintContent?>">
                                         <a href="archive/champ_league/cl_2022.html">
                                             <div class="for-href">
-                                                <span class="main-table_criterion" title="Реал Мадрид: 261 очко">261</span>
+                                                <span class="main-table_criterion" title="<?=$curClubInfo["shortName"]?>: 261 очко">261</span>
                                             </div>
                                         </a>
                                     </td>                                     
