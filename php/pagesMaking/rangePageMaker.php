@@ -367,21 +367,17 @@
                                                             <p class="achives-info_explanation-click">кликните для перехода к турниру</p>
                                                         </div>                                                    
                                                         
-                                                        <div class="popup__achieves-info">
-                                                            <p class="tourney-info">
-                                                                <a href="archive/cup_win_cup/cwc_1967.html" target="blank" title="Посмотреть турнир кубка кубков 1966/1967">
-                                                                    Кубок кубков 1967
-                                                                </a>
-                                                            </p>
-                                                        </div>                                                    
-                                                        
-                                                        <div class="popup__achieves-info">
-                                                            <p class="tourney-info">
-                                                                <a href="archive/euroleague/el_1996.html" target="blank" title="Посмотреть турнир кубка УЕФА 1995/1996">
-                                                                    Кубок УЕФА 1996
-                                                                </a>
-                                                            </p>
-                                                        </div>
+                                                        <? foreach ($rangeInfo["achieves"][$curClubId]["achieves"][$curTourneyType][$curStage]["tourneys"] as $curTourneyInfo): ?>
+
+                                                            <div class="popup__achieves-info">
+                                                                <p class="tourney-info">
+                                                                    <a href="archive/cup_win_cup/cwc_1967.html" target="blank" title="Посмотреть турнир кубка кубков 1966/1967">
+                                                                        <?=$curTourneyInfo["tourneyTitle"]?> <?=$curTourneyInfo["tourneyFinalYear"]?>
+                                                                    </a>
+                                                                </p>
+                                                            </div>
+
+                                                        <? endforeach; ?>                                                    
                                                         
                                                     </div>
 
