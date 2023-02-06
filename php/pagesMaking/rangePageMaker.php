@@ -331,17 +331,17 @@
 
                                         <? endforeach; ?>
 
-                                        <td class="main-table_gap"></td>
-
-                                        <td class="main-table_criterion criterion_current-participant" title="Участвует в текущем розыгрыше еврокубков">
-                                            <a href="archive/champ_league/cl_2022.html">
-                                                <div class="for-href">
-                                                    <span class="main-table_criterion" title="Реал Мадрид: 261 очко">261</span>
-                                                </div>
-                                            </a>
-                                        </td>                                        
+                                        <td class="main-table_gap"></td>                                       
 
                                     <? endforeach; ?>
+
+                                    <td class="main-table_criterion criterion_current-participant" title="Участвует в текущем розыгрыше еврокубков">
+                                        <a href="archive/champ_league/cl_2022.html">
+                                            <div class="for-href">
+                                                <span class="main-table_criterion" title="Реал Мадрид: 261 очко">261</span>
+                                            </div>
+                                        </a>
+                                    </td>                                     
 
                                 </tr>
 
