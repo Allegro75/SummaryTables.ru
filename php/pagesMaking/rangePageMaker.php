@@ -293,10 +293,17 @@
 
                                             <?
 
-                                                $victoriesClassPart = ($curStage === "wins") ? "victory" : "playoff";
+                                                $victoriesClassPart = ($curStage === "wins") ? "victory" : "playoff";                                             
 
                                                 $curStageAchievesNumber = $rangeInfo["achieves"][$curClubId]["achieves"][$curTourneyType][$curStage]["number"];
                                                 $hasAchievesRecord = ($curStageAchievesNumber > 0) ? " has-achieves" : "";
+
+                                                if ($curStage !== "wins") {
+                                                    $achNumRecord = $curStageAchievesNumber;
+                                                }
+                                                elseif ($curStage === "wins") {
+                                                    $achNumRecord = "<span class='main-table_victory'>{$curStageAchievesNumber}</span>";
+                                                }                                                 
 
                                                 $curStageRusWordBacicForm = $curStageInfo["rusStageWord"];
                                                 $methodToGetCorrForm = $curStageInfo["methodToGetCorrForm"];
@@ -310,7 +317,7 @@
 
 Кликните, чтобы узнать подробности">
 
-                                                <span class="main-table_victory"><?=$curStageAchievesNumber?></span>
+                                                <?=$achNumRecord?>
 
                                             </td>
 
