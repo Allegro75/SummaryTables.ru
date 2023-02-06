@@ -305,6 +305,15 @@
                                                     $achNumRecord = "<span class='main-table_victory'>{$curStageAchievesNumber}</span>";
                                                 }                                                 
 
+                                                if ($curStageAchievesNumber <= 0) {
+                                                    $hintContent = "";
+                                                }
+                                                elseif ($curStageAchievesNumber > 0) {
+                                                    $hintContent = "{$curClubInfo["shortName"]}: {$curStageAchievesNumber} {$curStageRusWordCorrectForm} {$correctTourneyForm}
+
+Кликните, чтобы узнать подробности";
+                                                }                                                 
+
                                                 $curStageRusWordBacicForm = $curStageInfo["rusStageWord"];
                                                 $methodToGetCorrForm = $curStageInfo["methodToGetCorrForm"];
                                                 $curStageRusWordCorrectForm = WordForms::$methodToGetCorrForm(["word" => $curStageRusWordBacicForm, "number" => $curStageAchievesNumber,]);
@@ -313,9 +322,7 @@
 
                                             ?>                                            
 
-                                            <td class="main-table_<?=$victoriesClassPart?><?=$hasAchievesRecord?>" title="<?=$curClubInfo["shortName"]?>: <?=$curStageAchievesNumber?> <?=$curStageRusWordCorrectForm?> <?=$correctTourneyForm?>
-
-Кликните, чтобы узнать подробности">
+                                            <td class="main-table_<?=$victoriesClassPart?><?=$hasAchievesRecord?>" title="<?=$hintContent?>">
 
                                                 <?=$achNumRecord?>
 
