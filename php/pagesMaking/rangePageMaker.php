@@ -299,10 +299,10 @@
                                                 $hasAchievesRecord = ($curStageAchievesNumber > 0) ? " has-achieves" : "";
 
                                                 if ($curStage !== "wins") {
-                                                    $achNumRecord = $curStageAchievesNumber;
+                                                    $achNumRecord = ($curStageAchievesNumber > 0) ? $curStageAchievesNumber : "";
                                                 }
                                                 elseif ($curStage === "wins") {
-                                                    $achNumRecord = "<span class='main-table_victory'>{$curStageAchievesNumber}</span>";
+                                                    $achNumRecord = ($curStageAchievesNumber > 0) ? "<span class='main-table_victory'>{$curStageAchievesNumber}</span>" : "";
                                                 }                                                 
 
                                                 if ($curStageAchievesNumber <= 0) {
@@ -310,7 +310,6 @@
                                                 }
                                                 elseif ($curStageAchievesNumber > 0) {
                                                     $hintContent = "{$curClubInfo["shortName"]}: {$curStageAchievesNumber} {$curStageRusWordCorrectForm} {$correctTourneyForm}
-
 Кликните, чтобы узнать подробности";
                                                 }                                                 
 
