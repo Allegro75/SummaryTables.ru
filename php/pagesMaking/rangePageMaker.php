@@ -284,6 +284,9 @@
                                     elseif (in_array($curClubInfo["shortName"], $tooLongNames)) {
                                         $nameRecord = "<div class='club-name'><span class='club-name_minsize'>{$curClubInfo["shortName"]}</span></div>";
                                     }                                    
+                                    if ($curClubInfo["shortName"] === "ЦСКА") {
+                                        $nameRecord = "<div class='club-name'>ЦСКА <span class='club-name_minsize'>Москва</span></div>";
+                                    }                                    
 
                                     $curClubPointsRusWordCorrectForm = WordForms::getWordLikePoint(["word" => "очко", "number" => $curClubPoints,])                                    
 
