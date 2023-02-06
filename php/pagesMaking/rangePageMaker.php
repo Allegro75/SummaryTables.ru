@@ -376,11 +376,12 @@
                                                                 $curTourFoder = Tourneys::$tourneysProps[$curTourName]["archiveFolderName"];
                                                                 $curTourFilePrefix = Tourneys::$tourneysProps[$curTourName]["archiveFilePrefix"];
                                                                 $tourPathInArchive = "{$curTourFoder}/{$curTourFilePrefix}_{$curTourFinalYear}";
+                                                                $curTourGenitiveForm = Tourneys::$tourneysProps[$curTourName]["genitiveForm"];
                                                             ?>                                                 
 
                                                             <div class="popup__achieves-info">
                                                                 <p class="tourney-info">
-                                                                    <a href="archive/<?=$tourPathInArchive?>.html" target="blank" title="Посмотреть турнир кубка кубков 1966/1967">
+                                                                    <a href="archive/<?=$tourPathInArchive?>.html" target="blank" title="Посмотреть турнир <?=$curTourGenitiveForm?> 1966/<?=$curTourFinalYear?>">
                                                                         <?=$curTourName?> <?=$curTourFinalYear?>
                                                                     </a>
                                                                 </p>
