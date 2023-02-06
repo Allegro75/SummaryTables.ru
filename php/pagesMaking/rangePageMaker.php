@@ -345,7 +345,7 @@
                                             <a href="archive/<?=$curSeasonCurClubTourneyCode?>_<?=$tourneyEndYear?>.html">
                                                 <div class="for-href">
                                         <? endif;?>
-                                                    <span class="main-table_criterion" title="<?=$curClubInfo["shortName"]?>: <?=$curClubPoints?> очко"><?=$curClubPoints?></span>
+                                                    <span class="main-table_criterion" title="<?=$curClubInfo["shortName"]?>: <?=$curClubPoints?> <?=$curClubPointsRusWordCorrectForm?>"><?=$curClubPoints?></span>
                                         <? if($isCurTourneyParticipant === true): ?>                                                    
                                                 </div>
                                             </a>
