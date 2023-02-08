@@ -446,10 +446,10 @@
                                 $logotypesInfo[$curClubsListName][$curClubName]["clubCssClassHtmlRecord"] = $clubCssClassHtmlRecord;
                             }
                     }
-                    // echo "<pre>";
-                    // var_dump($logotypesInfo);
-                    // // var_dump($logotypesInfo['actualCountryClubsList']);
-                    // echo "</pre>";
+                    echo "<pre>";
+                    var_dump($logotypesInfo);
+                    // var_dump($logotypesInfo['actualCountryClubsList']);
+                    echo "</pre>";
                   
                 ?>
 
@@ -552,10 +552,10 @@
                         if ($ranging === "national") {
                             $verticalClubsList = (in_array($pageName, ["byelorussia", "kazakhstan"])) ? $filteredActualCountryClubsList : $tableInfo['actualCountryClubsList'];
                         }
-                        echo "<pre>";
-                        echo "verticalClubsList:";
-                        var_dump($verticalClubsList);
-                        echo "</pre>";                        
+                        // echo "<pre>";
+                        // echo "verticalClubsList:";
+                        // var_dump($verticalClubsList);
+                        // echo "</pre>";
                     ?>
 
                     <? foreach ($verticalClubsList as $curClubName => $curClubInfo): ?>
