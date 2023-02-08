@@ -313,7 +313,8 @@
                 }            
 
                 require_once 'tableInfo.php'; // Получение содержания таблицы
-                $tableInfo = getTableInfo (["clubsList" => $clubsList, "actualCountryClubsList" => $actualCountryClubsList ?? [],]);
+                // $tableInfo = getTableInfo (["clubsList" => $clubsList, "actualCountryClubsList" => $actualCountryClubsList ?? [],]);
+                $tableInfo = getTableInfo (["clubsList" => $clubsList, "actualCountryClubsList" => $actualCountryClubsList ?? $clubsList,]);
                 // echo "<pre>";
                 // // var_dump($tableInfo);
                 // // var_dump($tableInfo['actualCountryClubsList']);
