@@ -196,8 +196,8 @@ class Range {
         // var_dump($sql);
         if ($res = mysqli_query($this->db, $sql)) {
             while ($row = mysqli_fetch_assoc($res)) {
-                $rangeInfo[] = $row;
-                // $clubInfo["sql"] = $sql;
+                $clubName = $row["clubName"];
+                $rangeInfo[$clubName] = $row;
             }              
         }
 
