@@ -13,6 +13,7 @@
         // - если делаем таблицы с фаворитами текущих турниров, в classes/TablePagesProperties.php определить наличие finishedTourneyParagraph
         // - если делаем champ_league_current, в classes/TablePagesProperties.php определить наличие clubsNumber (возможно, без него можно вообще обойтись для champ_league_current)
         // - если делаем таблицы с фаворитами текущих турниров, здесь определить наличие $tourneyTitle и, возможно, $tourneyStage
+        // - если делаем таблицу с периодическим ранжиром (пока это только "Десятилетие"), в classes/TablePagesProperties.php определить года в "keywordsContentPart" и "h1Content"
 
         // $pageName = "history12";
         // $pageName = "history24";
@@ -27,10 +28,17 @@
 
         $lastAccountedMatchDate = "03.11.2022";
 
-        $bookmakersOddsDate = "27.11.2022";
-
         $tourneyStartYear = 2022;
         $tourneyEndYear = 2023;
+        if ($ranging === "bookmakers") {
+            $bookmakersOddsDate = "27.11.2022";
+        }
+
+        if ($ranging === "periodic") {
+            $periodEndYear = $tourneyEndYear;
+            // $periodEndYear = $tourneyStartYear;
+            $periodStartYear = $periodEndYear - 9;
+        }
 
         // // Для history12
         // $clubsList = [
@@ -212,6 +220,9 @@
     $headDescriptionClubsNumberPhraseLastPart = "";
     if ($hasTourneyYearIndicationInHead) {
         $headDescriptionClubsNumberPhraseLastPart = " {$tourneyStartYear}/{$tourneyEndYear}";
+    }
+    if ($ranging === "periodic") {
+        $headDescriptionClubsNumberPhraseLastPart = " десятилетия ({$periodStartYear} - {$periodEndYear})";
     }
 
     $headDescripitionContent = "";
