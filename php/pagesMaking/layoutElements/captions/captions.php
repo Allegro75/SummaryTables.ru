@@ -14,6 +14,7 @@ function printCaptions ($opts = []) {
     $h1Content = $opts['h1Content'];
     $clubsRangeExplanationHintText = $opts['clubsRangeExplanationHintText'];
     $bookmakersParagraph = $opts['bookmakersParagraph'];
+    $periodicRangeParagraph = $opts['periodicRangeParagraph'];
     $screamerParagraph = $opts['screamerParagraph'];
     $finishedTourneyParagraph = $opts['finishedTourneyParagraph'];
     $clubsRangeExplanationHintHtmlRecord = empty($clubsRangeExplanationHintText) ? "" : " title=\"{$clubsRangeExplanationHintText}\"";
@@ -94,6 +95,8 @@ function printCaptions ($opts = []) {
                 {$bookmakersParagraph}
 
                 {$clubsNumberParagraph}
+
+                {$periodicRangeParagraph}
 
                 <p class=\"captions__explanation\">
                     <span class=\"captions__explanation_circle\">&#8226;</span>                

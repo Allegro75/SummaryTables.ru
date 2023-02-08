@@ -32,6 +32,7 @@
     $clubsRangeExplanationHintText = $tablePagesProperties[$pageName]["clubsRangeExplanationHintText"] ?? "";
     $hasRightBtn = $tablePagesProperties[$pageName]["hasRightBtn"] ?? false;
     $bookmakersParagraph = $tablePagesProperties[$pageName]["bookmakersParagraph"] ?? "";
+    $periodicRangeParagraph = $tablePagesProperties[$pageName]["periodicRangeParagraph"] ?? "";
     $screamerParagraph = $tablePagesProperties[$pageName]["screamerParagraph"] ?? "";
     $finishedTourneyParagraph = $tablePagesProperties[$pageName]["finishedTourneyParagraph"] ?? "";
     $hasTourneyYearIndicationInHead = $tablePagesProperties[$pageName]["hasTourneyYearIndicationInHead"] ?? false;
@@ -277,7 +278,7 @@
             <? // Заголовки
             
                 require_once 'layoutElements/captions/captions.php'; // Заголовки (крупнейший из к-рых - 'ЛУЧШИЕ КЛУБЫ ЕВРОПЫ ЗА ВСЮ ИСТОРИЮ')
-                printCaptions (["lastAccountedMatchDate" => $lastAccountedMatchDate, "captionsClubsNumberPhraseFirstPart" => $captionsClubsNumberPhraseFirstPart, "clubsNumberPhraseLastPart" => $clubsNumberPhraseLastPart, "clubsNumber" => $clubsNumber, "h1Content" => $h1Content, "clubsRangeExplanationHintText" => $clubsRangeExplanationHintText, "ranging" => $ranging, "bookmakersParagraph" => $bookmakersParagraph, "screamerParagraph" => $screamerParagraph, "finishedTourneyParagraph" => $finishedTourneyParagraph,]);
+                printCaptions (["lastAccountedMatchDate" => $lastAccountedMatchDate, "captionsClubsNumberPhraseFirstPart" => $captionsClubsNumberPhraseFirstPart, "clubsNumberPhraseLastPart" => $clubsNumberPhraseLastPart, "clubsNumber" => $clubsNumber, "h1Content" => $h1Content, "clubsRangeExplanationHintText" => $clubsRangeExplanationHintText, "ranging" => $ranging, "bookmakersParagraph" => $bookmakersParagraph, "periodicRangeParagraph" => $periodicRangeParagraph, "screamerParagraph" => $screamerParagraph, "finishedTourneyParagraph" => $finishedTourneyParagraph,]);
 
             ?>
 
