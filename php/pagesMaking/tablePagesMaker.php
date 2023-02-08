@@ -446,10 +446,10 @@
                                 $logotypesInfo[$curClubsListName][$curClubName]["clubCssClassHtmlRecord"] = $clubCssClassHtmlRecord;
                             }
                     }
-                    echo "<pre>";
-                    var_dump($logotypesInfo);
-                    // var_dump($logotypesInfo['actualCountryClubsList']);
-                    echo "</pre>";
+                    // echo "<pre>";
+                    // var_dump($logotypesInfo);
+                    // // var_dump($logotypesInfo['actualCountryClubsList']);
+                    // echo "</pre>";
                   
                 ?>
 
@@ -570,8 +570,22 @@
 
                             <td class="number"><?=$rowNumber?></td>
 
+                                <?
+                                    $curClubFullName = $curClubInfo["basicFullName"];
+                                    $curClubAltNames = explode(",", $curClubInfo["altNames"]);
+                                    $logotypesInfoCurClubInfo = $logotypesInfo['actualCountryClubsList'][$curClubName] ?? [];
+                                    if (empty($logotypesInfoCurClubInfo)) {
+                                        foreach ($curClubAltNames as $curAltName) {
+                                            if (isset($logotypesInfo['actualCountryClubsList'][$curAltName])) {
+                                                $logotypesInfoCurClubInfo = $logotypesInfo['actualCountryClubsList'][$curAltName];
+                                                break;
+                                            }
+                                        }
+                                    }
+                                ?>                            
+
                             <td>
-                                <img alt="<?=$curClubInfo["shortName"]?>" src="../images/<?=$logotypesInfo['actualCountryClubsList'][$curClubName]["logoImageFile"]?>" title="<?=$curClubInfo["shortName"]?>" class="football-logo-table<?=$logotypesInfo['actualCountryClubsList'][$curClubName]["clubCssClassHtmlRecord"]?>">
+                                <img alt="<?=$curClubInfo["shortName"]?>" src="../images/<?=$logotypesInfoCurClubInfo["logoImageFile"]?>" title="<?=$curClubInfo["shortName"]?>" class="football-logo-table<?=$logotypesInfoCurClubInfo["clubCssClassHtmlRecord"]?>">
                             </td>
 
                             <td>
