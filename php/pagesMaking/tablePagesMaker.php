@@ -599,7 +599,7 @@
                             <? foreach ($tableInfo['clubsList'] as $curClubNameInTableBodyCycle => $innerCycleClubInfo): ?>
 
                                 <?
-                                    $secClubFullName = $innerCycleClubInfo["basicFullName"];                               
+                                    $secClubFullName = $innerCycleClubInfo["basicFullName"];
                                 ?>
 
                                 <? if ($curClubInfo["basicFullName"] === $secClubFullName): // Для ячеек, где показываем эмблему клуба ?>
@@ -625,9 +625,20 @@
                                         $prevStepClubHasHistory = true;
 
                                         $curPairCode = "{$curClubInfo["code"]}{$innerCycleClubInfo["code"]}";
-                                        // $curPairClubTitlesStr = "{$curClubInfo["basicFullName"]} - {$secClubFullName}";
-                                        $curPairClubTitlesStr = "{$curClubName} - {$secClubFullName}";
+
+                                        $curPairClubTitlesStr = "{$curClubName} - {$secClubFullName}";                                        
                                         $curPairHistory = $tableInfo['pairsMatchesHistory'][$curPairClubTitlesStr];
+                                        if (empty($curPairHistory)) {
+                                            $secClubAltNames = explode(",", $innerCycleClubInfo["altNames"]);
+                                            foreach ($secClubAltNames as $curAltName) {
+                                                $curPairClubTitlesStr = "{$curClubName} - {$curAltName}";
+                                                if (isset($tableInfo['pairsMatchesHistory'][$curPairClubTitlesStr])) {
+                                                    $curPairHistory = $tableInfo['pairsMatchesHistory'][$curPairClubTitlesStr];
+                                                    break;
+                                                }
+                                            }
+                                        }
+
                                         $hasHistory = (empty($curPairHistory["duels"])) ? false : true;
                                         $curPairHasHistoryClass = ($hasHistory === true ) ? "has-history" : "no-history";
                                         $victoriesWord = WordForms::getWordLikePobeda(["word" => "победа", "number" => $curPairHistory["firstVictories"]]);
