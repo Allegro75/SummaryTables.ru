@@ -22,4 +22,23 @@ function getRangeInfo ($opts = []) {
 
     return $info;
 
-}        
+}
+
+// Получение ранжира по периоду
+function getPeriodicRangeInfo ($opts = []) {
+
+    $info = [];
+
+    $range = $opts["range"];
+    $subrange = $opts["subrange"];
+
+    $newRange = new Range(['pathToRoot' => "../../"]);
+
+    if ($range === "periodic") {    
+        $rangeInfo = $newRange->getRange(["range" => $range, "subrange" => $subrange,]);
+    }
+    $info["range"] = $rangeInfo["range"];
+
+    return $info;
+
+}

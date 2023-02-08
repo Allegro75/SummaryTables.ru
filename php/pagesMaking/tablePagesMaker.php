@@ -61,9 +61,19 @@
         }
 
         if ($ranging === "periodic") {
+
             $periodEndYear = $tourneyEndYear;
             // $periodEndYear = $tourneyStartYear;
+
             $periodStartYear = $periodEndYear - 9;
+
+            require_once 'rangeInfo.php'; // Получение ранжира клубов для decade:
+            $rangeInfo = getPeriodicRangeInfo(["range" => "periodic", "subrange" => ["title" => "decade", "years"=> 10, "periodStartYear" => $periodStartYear,], "clubsNumber" => $clubsNumber,]);
+            $clubsList = $rangeInfo["range"];
+            echo "<pre>";
+            var_dump($clubsList);
+            echo "</pre>";            
+
         }
 
         // // Для history12

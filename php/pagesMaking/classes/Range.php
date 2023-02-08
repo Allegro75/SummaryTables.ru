@@ -161,5 +161,49 @@ class Range {
 
     }
 
+    public function getRange ($opts = []) { // Пробуем сделать более универсальный (не зависящий от того, флормируем мы периодический или базовый ранжир, и если периодический, то на какой период) метод получения ранжира клубов.
+
+        $info = $rangeInfo = [];
+
+        $range = $opts["range"];
+        $subrange = $opts["subrange"];
+        $clubsNumber = $opts["clubsNumber"];
+
+        if ($range === "periodic") {
+            $marksField = "`actualPeriodsMark`";
+        }
+        elseif ($range === "basic") {
+            $marksField = "`mainRangeMark`";
+        }
+
+        $earliestRangeYearClause = "";
+        if ($range === "periodic") {
+            $earliestRangeYear = $subrange["periodStartYear"];
+            $earliestRangeYearClause = "AND `tourneyFinalYear` >= {$earliestRangeYear}";
+        }
+
+        $sql = 
+            "SELECT `clubName`, `clubId`,
+            SUM({$marksField}) AS `points`, 
+            MAX(CASE WHEN {$marksField} > 0 THEN `tourneyFinalYear` END) AS `lastTourney`
+            FROM `clubs_achievements`
+            WHERE 1 = 1
+            {$earliestRangeYearClause}
+            GROUP BY `clubId`
+            ORDER BY `points` DESC, `lastTourney` DESC
+            LIMIT {$clubsNumber}
+        ";
+        if ($res = mysqli_query($this->db, $sql)) {
+            while ($row = mysqli_fetch_assoc($res)) {
+                $rangeInfo[] = $row;
+                // $clubInfo["sql"] = $sql;
+            }              
+        }
+
+        $info["range"] = $rangeInfo;
+
+        return $info;
+
+    }
 
 }    
