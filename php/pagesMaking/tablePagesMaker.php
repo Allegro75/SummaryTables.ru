@@ -3,7 +3,27 @@
 
     // Файл, генерирующий страницы со сводными таблицами.
 
-    { // Переменные, нуждающиеся в определении перед генерацией таблицы.
+    require_once 'classes/TablePagesProperties.php'; // Получение свойств генерируемой страницы
+    $tablePagesProperties = TablePagesProperties::$props;
+    $clubsNumberPhrase = $tablePagesProperties[$pageName]["clubsNumberPhrase"];
+    $clubsNumber = $tablePagesProperties[$pageName]["clubsNumber"];
+    $clubsNumberPhraseFirstPart = $tablePagesProperties[$pageName]["clubsNumberPhraseFirstPart"];
+    $captionsClubsNumberPhraseFirstPart = $tablePagesProperties[$pageName]["captionsClubsNumberPhraseFirstPart"];
+    $clubsNumberPhraseLastPart = $tablePagesProperties[$pageName]["clubsNumberPhraseLastPart"];
+    $keywordsContentPart = $tablePagesProperties[$pageName]["keywordsContentPart"] ?? "";
+    $browserTitle = $tablePagesProperties[$pageName]["browserTitle"];
+    $cssFilesList = $tablePagesProperties[$pageName]["cssFilesList"];
+    $h1Content = $tablePagesProperties[$pageName]["h1Content"];
+    $clubsRangeExplanationHintText = $tablePagesProperties[$pageName]["clubsRangeExplanationHintText"] ?? "";
+    $hasRightBtn = $tablePagesProperties[$pageName]["hasRightBtn"] ?? false;
+    $bookmakersParagraph = $tablePagesProperties[$pageName]["bookmakersParagraph"] ?? "";
+    $screamerParagraph = $tablePagesProperties[$pageName]["screamerParagraph"] ?? "";
+    $finishedTourneyParagraph = $tablePagesProperties[$pageName]["finishedTourneyParagraph"] ?? "";
+    $hasTourneyYearIndicationInHead = $tablePagesProperties[$pageName]["hasTourneyYearIndicationInHead"] ?? false;
+    $ranging = $tablePagesProperties[$pageName]["ranging"];
+    $jsFilesList = $tablePagesProperties[$pageName]["jsFilesList"];    
+
+    { // Переменные, нуждающиеся в ручном определении перед генерацией таблицы.
         
         // Нужно ещё определить:
         // - в layoutElements/header/shortHeader.php - от какого сезона турниры показываем по ссылкам в "Текущем сезоне"
@@ -196,26 +216,6 @@
         // ];
 
     }
-
-    require_once 'classes/TablePagesProperties.php'; // Получение свойств генерируемой страницы
-    $tablePagesProperties = TablePagesProperties::$props;
-    $clubsNumberPhrase = $tablePagesProperties[$pageName]["clubsNumberPhrase"];
-    $clubsNumber = $tablePagesProperties[$pageName]["clubsNumber"];
-    $clubsNumberPhraseFirstPart = $tablePagesProperties[$pageName]["clubsNumberPhraseFirstPart"];
-    $captionsClubsNumberPhraseFirstPart = $tablePagesProperties[$pageName]["captionsClubsNumberPhraseFirstPart"];
-    $clubsNumberPhraseLastPart = $tablePagesProperties[$pageName]["clubsNumberPhraseLastPart"];
-    $keywordsContentPart = $tablePagesProperties[$pageName]["keywordsContentPart"] ?? "";
-    $browserTitle = $tablePagesProperties[$pageName]["browserTitle"];
-    $cssFilesList = $tablePagesProperties[$pageName]["cssFilesList"];
-    $h1Content = $tablePagesProperties[$pageName]["h1Content"];
-    $clubsRangeExplanationHintText = $tablePagesProperties[$pageName]["clubsRangeExplanationHintText"] ?? "";
-    $hasRightBtn = $tablePagesProperties[$pageName]["hasRightBtn"] ?? false;
-    $bookmakersParagraph = $tablePagesProperties[$pageName]["bookmakersParagraph"] ?? "";
-    $screamerParagraph = $tablePagesProperties[$pageName]["screamerParagraph"] ?? "";
-    $finishedTourneyParagraph = $tablePagesProperties[$pageName]["finishedTourneyParagraph"] ?? "";
-    $hasTourneyYearIndicationInHead = $tablePagesProperties[$pageName]["hasTourneyYearIndicationInHead"] ?? false;
-    $ranging = $tablePagesProperties[$pageName]["ranging"];
-    $jsFilesList = $tablePagesProperties[$pageName]["jsFilesList"];
 
     $headDescriptionClubsNumberPhraseLastPart = "";
     if ($hasTourneyYearIndicationInHead) {
