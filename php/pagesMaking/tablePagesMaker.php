@@ -605,7 +605,7 @@
                                 <? if ($curClubInfo["basicFullName"] === $secClubFullName): // Для ячеек, где показываем эмблему клуба ?>
 
                                     <td>
-                                        <img alt="<?=$curClubInfo["shortName"]?>" src="../images/<?=$logotypesInfo['actualCountryClubsList'][$curClubName]["logoImageFile"]?>" title="<?=$curClubInfo["shortName"]?>" class="football-logo-table<?=$logotypesInfo['actualCountryClubsList'][$curClubName]["clubCssClassHtmlRecord"]?>">
+                                        <img alt="<?=$curClubInfo["shortName"]?>" src="../images/<?=$logotypesInfoCurClubInfo["logoImageFile"]?>" title="<?=$curClubInfo["shortName"]?>" class="football-logo-table<?=$logotypesInfoCurClubInfo["clubCssClassHtmlRecord"]?>">
                                     </td>
 
                                 <? else: ?>
