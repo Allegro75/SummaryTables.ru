@@ -519,6 +519,14 @@
                                 Очки
                             </td>
 
+                        <? elseif ($ranging === "periodic"): ?>
+
+                            <td class="main-table_criterion" title="Клубы ранжировались по следующей системе:
+за победу в Лиге чемпионов - 6 очков; за выход в финал - 5; выход в 1/2 финала - 4; выход в 1/4 финала - 3; выход в 1/8 финала - 2; 
+за победу в Лиге Европы - 1 очко">
+                                Очки
+                            </td>
+
                         <? elseif ($ranging === "championsLeagueWinners"): ?>
 
                             <td class="main-table_criterion criterion_primary" title="Количество побед в лиге/кубке чемпионов">
@@ -752,8 +760,8 @@
                                     $сurClubPointsInfo = $clubsList[$curClubFullName]["points"] ?? [];
                                     if (empty($сurClubPointsInfo)) {
                                         foreach ($curClubAltNames as $curAltName) {
-                                            if (isset($clubsList[$curClubFullName]["points"])) {
-                                                $сurClubPointsInfo = $clubsList[$curClubFullName]["points"];
+                                            if (isset($clubsList[$curAltName]["points"])) {
+                                                $сurClubPointsInfo = $clubsList[$curAltName]["points"];
                                                 break;
                                             }
                                         }
