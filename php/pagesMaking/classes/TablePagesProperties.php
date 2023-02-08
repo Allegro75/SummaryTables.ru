@@ -71,7 +71,8 @@ class TablePagesProperties {
 
         "decade" => [
             "clubsNumberPhrase" => "Лучшие клубы",
-            "clubsNumberPhraseLastPart" => "десятилетия (2014 - 2023)",
+            "clubsNumberPhraseLastPart" => "лучших клуба",
+            // "clubsNumberPhraseLastPart" => "десятилетия (2014 - 2023)",
             "keywordsContentPart" => "Десятилетие. 2014 - 2023.",            
             "clubsNumber" => "24",
             "browserTitle" => "Десятилетие. Личные счета суперклубов. Сводная таблица",
@@ -97,7 +98,7 @@ class TablePagesProperties {
                 "randomWindowOnClickDynamically.js",
                 "duelsOnLoad.js",
             ],            
-            "h1Content" => "ЛУЧШИЕ КЛУБЫ ЕВРОПЫ ЗА ВСЮ ИСТОРИЮ",
+            "h1Content" => "ЛУЧШИЕ КЛУБЫ ДЕСЯТИЛЕТИЯ (2014 - 2023)",
             "clubsRangeExplanationHintText" => "Клубы ранжировались по следующей системе:\nза победу в Лиге чемпионов с 2000-го года - 12 очков; за выход в финал - 9; выход в 1/2 финала - 6; выход в 1/4 финала - 3;\nза победу в кубке/Лиге чемпионов до 2000-го года - 8 очков; за выход в финал - 6; выход в 1/2 финала - 4; выход в 1/4 финала - 2;\nза победу в других еврокубках - 4 очка; за выход в финал - 3; выход в 1/2 финала - 2; выход в 1/4 финала - 1",
             "ranging" => "periodic",
             "hasRightBtn" => true,
