@@ -49,6 +49,7 @@
         // - если делаем champ_league_current, в classes/TablePagesProperties.php определить наличие clubsNumber (возможно, без него можно вообще обойтись для champ_league_current)
         // - если делаем таблицы с фаворитами текущих турниров, здесь определить наличие $tourneyTitle и, возможно, $tourneyStage
         // - если делаем таблицу с периодическим ранжиром (пока это только "Десятилетие"), в classes/TablePagesProperties.php определить года в "keywordsContentPart" и "h1Content"
+        // - в captions отслеживать содержание параграфа типа "В таблице учтены матчи до..."
 
         $lastAccountedMatchDate = "03.11.2022";
 

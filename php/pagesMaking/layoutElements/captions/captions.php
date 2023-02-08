@@ -97,9 +97,8 @@ function printCaptions ($opts = []) {
 
                 <p class=\"captions__explanation\">
                     <span class=\"captions__explanation_circle\">&#8226;</span>                
-                        <!-- Таблица обновлена по итогам сезона 2021/2022 -->
-                        Таблица обновлена по итогам сезона 2022/2023
-                        <!-- {$lastDateParagrapContenthFirstPart} матчи до {$lastAccountedMatchDate} включительно{$lastDateParagrapContenthLastPart} -->
+                        <!-- Таблица обновлена по итогам сезона 2022/2023 -->
+                        {$lastDateParagrapContenthFirstPart} матчи до {$lastAccountedMatchDate} включительно{$lastDateParagrapContenthLastPart}
                     <span class=\"captions__explanation_circle\">&#8226;</span>
                 </p>
 
