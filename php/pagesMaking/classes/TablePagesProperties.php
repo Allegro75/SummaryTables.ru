@@ -106,6 +106,7 @@ class TablePagesProperties {
                     выход в 1/4 финала - 3; выход в 1/8 финала - 2; за победу в Лиге Европы - 1 очко
                 <span class=\"captions__explanation_circle\">&#8226;</span>
             </p>",
+            "ranging" => "periodic",
             "hasRightBtn" => true,
         ],
 
