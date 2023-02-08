@@ -636,12 +636,14 @@
 
                                         $curPairClubTitlesStr = "{$curClubName} - {$secClubFullName}";                                        
                                         $curPairHistory = $tableInfo['pairsMatchesHistory'][$curPairClubTitlesStr];
+                                        $secClubNameGender = $tableInfo['clubsList'][$secClubFullName]["gender"];
                                         if (empty($curPairHistory)) {
                                             $secClubAltNames = explode(",", $innerCycleClubInfo["altNames"]);
                                             foreach ($secClubAltNames as $curAltName) {
                                                 $curPairClubTitlesStr = "{$curClubName} - {$curAltName}";
                                                 if (isset($tableInfo['pairsMatchesHistory'][$curPairClubTitlesStr])) {
                                                     $curPairHistory = $tableInfo['pairsMatchesHistory'][$curPairClubTitlesStr];
+                                                    $secClubNameGender = $tableInfo['clubsList'][$curAltName]["gender"];
                                                     break;
                                                 }
                                             }
@@ -668,7 +670,7 @@
                                         "<p class=\"games-score\">+ = -</p>
 <p class=\"goals-difference\">-</p>";
 
-                                        $secClubNameGender = $tableInfo['clubsList'][$secClubFullName]["gender"];
+                                        // $secClubNameGender = $tableInfo['clubsList'][$secClubFullName]["gender"];
                                         $correctClubNameInDuels = WordForms::getGenitiveWord(["word" => $innerCycleClubInfo["shortName"], "gender" => $secClubNameGender,]);
                                         $secClubGenitiveName = $correctClubNameInDuels["clubNameCorrForm"] ?? $correctClubNameInDuels; // В случае, если в WordForms передавалось имя типа "Боруссия Д" здесь мы получим в ответ массив, элементом к-рого с ключом "clubNameCorrForm" будет слово "Боруссии". В большинстве же случаев - просто сразу получим нужную форму названия клуба.
                                         $cityPartClubName = $correctClubNameInDuels["cityPart"] ?? ""; // Для "Боруссия Д" здесь мы получим "Д". В остальных случаях - ничего.
