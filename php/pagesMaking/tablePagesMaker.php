@@ -731,7 +731,8 @@
                             
                             <td class="main-table_gap"></td>
 
-                            <? if ($ranging === "mainRange"): ?>
+                            <? // if ($ranging === "mainRange"): ?>
+                            <? if (in_array($ranging, ["mainRange", "periodic"])): ?>
 
                                 <?
                                     $corrPointWordForm = WordForms::getWordLikePoint(["word" => "очко", "number" => $clubsList[$curClubInfo["basicFullName"]]["points"]]);
