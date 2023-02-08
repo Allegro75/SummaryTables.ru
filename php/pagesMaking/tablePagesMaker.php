@@ -481,9 +481,23 @@
 
                             <? else: ?>
 
+                                <?
+                                    $curClubFullName = $curClubInfo["basicFullName"];
+                                    $curClubAltNames = explode(",", $curClubInfo["altNames"]);
+                                    $logotypesInfoCurClubInfo = $logotypesInfo['clubsList'][$curClubFullName] ?? [];
+                                    if (empty($logotypesInfoCurClubInfo)) {
+                                        foreach ($curClubAltNames as $curAltName) {
+                                            if (isset($logotypesInfo['clubsList'][$curAltName])) {
+                                                $logotypesInfoCurClubInfo = $logotypesInfo['clubsList'][$curAltName];
+                                                break;
+                                            }
+                                        }
+                                    }
+                                ?>
+
                                 <td>
                                     <span class="number"><?=$number?></span>
-                                    <img alt="<?=$curClubInfo["shortName"]?>" src="../images/<?=$logotypesInfo['clubsList'][$curClubInfo["basicFullName"]]["logoImageFile"]?>" title="<?=$curClubInfo["shortName"]?>" class="football-logo-table<?=$logotypesInfo['clubsList'][$curClubInfo["basicFullName"]]["clubCssClassHtmlRecord"]?>">
+                                    <img alt="<?=$curClubInfo["shortName"]?>" src="../images/<?=$logotypesInfoCurClubInfo["logoImageFile"]?>" title="<?=$curClubInfo["shortName"]?>" class="football-logo-table<?=$logotypesInfoCurClubInfo["clubCssClassHtmlRecord"]?>">
                                 </td>
 
                                 <? $prevStepClubHasHistory = true; ?>
