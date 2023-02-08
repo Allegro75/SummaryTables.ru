@@ -70,10 +70,10 @@
             require_once 'rangeInfo.php'; // Получение ранжира клубов для decade:
             $rangeInfo = getPeriodicRangeInfo(["range" => "periodic", "subrange" => ["title" => "decade", "years"=> 10, "periodStartYear" => $periodStartYear,], "clubsNumber" => $clubsNumber,]);
             $clubsList = $rangeInfo["range"];
-            echo "<pre>";
-            // var_dump($clubsList);
-            var_dump($rangeInfo);
-            echo "</pre>";
+            // echo "<pre>";
+            // // var_dump($clubsList);
+            // var_dump($rangeInfo);
+            // echo "</pre>";
 
         }
 
@@ -446,10 +446,10 @@
                                 $logotypesInfo[$curClubsListName][$curClubName]["clubCssClassHtmlRecord"] = $clubCssClassHtmlRecord;
                             }
                     }
-                    // echo "<pre>";
-                    // // var_dump($logotypesInfo);
+                    echo "<pre>";
+                    var_dump($logotypesInfo);
                     // var_dump($logotypesInfo['actualCountryClubsList']);
-                    // echo "</pre>";
+                    echo "</pre>";
                   
                 ?>
 
