@@ -401,7 +401,7 @@
             <table class="main-table<?=$champLeagueClassHtmlRecordForTable?>">
                 <tbody>
 
-                <?
+                <? // Данные о логотипах
 
                     // Массив имён файлов с логотипами (нужен чтобы правильно добавлять к коду клуба ".png", ".svg" и т.п.)
                     $logoFiles = scandir("images");                    
@@ -746,12 +746,26 @@
                             <? if (in_array($ranging, ["mainRange", "periodic"])): ?>
 
                                 <?
-                                    $corrPointWordForm = WordForms::getWordLikePoint(["word" => "очко", "number" => $clubsList[$curClubInfo["basicFullName"]]["points"]]);
+
+                                    $curClubFullName = $curClubInfo["basicFullName"];
+                                    $curClubAltNames = explode(",", $curClubInfo["altNames"]);
+                                    $сurClubPointsInfo = $clubsList[$curClubFullName]["points"] ?? [];
+                                    if (empty($сurClubPointsInfo)) {
+                                        foreach ($curClubAltNames as $curAltName) {
+                                            if (isset($clubsList[$curClubFullName]["points"])) {
+                                                $сurClubPointsInfo = $clubsList[$curClubFullName]["points"];
+                                                break;
+                                            }
+                                        }
+                                    }
+                                                        
+                                    $corrPointWordForm = WordForms::getWordLikePoint(["word" => "очко", "number" => $сurClubPointsInfo]);
+
                                 ?>
 
-                                <td class="main-table_criterion" title="<?=$curClubInfo["shortName"]?>: <?=$clubsList[$curClubInfo["basicFullName"]]["points"]?> <?=$corrPointWordForm?>">
+                                <td class="main-table_criterion" title="<?=$curClubInfo["shortName"]?>: <?=$сurClubPointsInfo?> <?=$corrPointWordForm?>">
                                     <a href="range.html">
-                                        <span class="main-table_criterion"><?=$clubsList[$curClubInfo["basicFullName"]]["points"]?></span>
+                                        <span class="main-table_criterion"><?=$сurClubPointsInfo?></span>
                                     </a>
                                 </td>
                             
