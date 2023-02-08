@@ -3,6 +3,21 @@
 
     // Файл, генерирующий страницы со сводными таблицами.
 
+    { // Переменные, нуждающиеся в ручном определении перед генерацией таблицы. Часть 1 (из двух).
+
+        // $pageName = "history12";
+        // $pageName = "history24";
+        // $pageName = "history36";
+        // $pageName = "winners";
+        // $pageName = "champ_league_current";
+        // $pageName = "euroleague_current";
+        // $pageName = "ukraine";
+        // $pageName = "byelorussia";
+        // $pageName = "kazakhstan";
+        $pageName = "decade";
+
+    }
+
     require_once 'classes/TablePagesProperties.php'; // Получение свойств генерируемой страницы
     $tablePagesProperties = TablePagesProperties::$props;
     $clubsNumberPhrase = $tablePagesProperties[$pageName]["clubsNumberPhrase"];
@@ -23,7 +38,7 @@
     $ranging = $tablePagesProperties[$pageName]["ranging"];
     $jsFilesList = $tablePagesProperties[$pageName]["jsFilesList"];    
 
-    { // Переменные, нуждающиеся в ручном определении перед генерацией таблицы.
+    { // Переменные, нуждающиеся в ручном определении перед генерацией таблицы. Часть 2 (из двух).
         
         // Нужно ещё определить:
         // - в layoutElements/header/shortHeader.php - от какого сезона турниры показываем по ссылкам в "Текущем сезоне"
@@ -34,17 +49,6 @@
         // - если делаем champ_league_current, в classes/TablePagesProperties.php определить наличие clubsNumber (возможно, без него можно вообще обойтись для champ_league_current)
         // - если делаем таблицы с фаворитами текущих турниров, здесь определить наличие $tourneyTitle и, возможно, $tourneyStage
         // - если делаем таблицу с периодическим ранжиром (пока это только "Десятилетие"), в classes/TablePagesProperties.php определить года в "keywordsContentPart" и "h1Content"
-
-        // $pageName = "history12";
-        // $pageName = "history24";
-        // $pageName = "history36";
-        // $pageName = "winners";
-        // $pageName = "champ_league_current";
-        // $pageName = "euroleague_current";
-        // $pageName = "ukraine";
-        // $pageName = "byelorussia";
-        // $pageName = "kazakhstan";
-        $pageName = "decade";
 
         $lastAccountedMatchDate = "03.11.2022";
 
