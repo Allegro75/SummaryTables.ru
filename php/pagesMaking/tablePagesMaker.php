@@ -313,8 +313,7 @@
                 }            
 
                 require_once 'tableInfo.php'; // Получение содержания таблицы
-                // $tableInfo = getTableInfo (["clubsList" => $clubsList, "actualCountryClubsList" => $actualCountryClubsList ?? [],]);
-                $tableInfo = getTableInfo (["clubsList" => $clubsList, "actualCountryClubsList" => $actualCountryClubsList ?? $clubsList,]);
+                $tableInfo = getTableInfo (["clubsList" => $clubsList, "actualCountryClubsList" => $actualCountryClubsList ?? [],]);
                 // echo "<pre>";
                 // // var_dump($tableInfo);
                 // // var_dump($tableInfo['actualCountryClubsList']);
@@ -447,10 +446,10 @@
                                 $logotypesInfo[$curClubsListName][$curClubName]["clubCssClassHtmlRecord"] = $clubCssClassHtmlRecord;
                             }
                     }
-                    echo "<pre>";
-                    var_dump($logotypesInfo);
-                    // var_dump($logotypesInfo['actualCountryClubsList']);
-                    echo "</pre>";
+                    // echo "<pre>";
+                    // var_dump($logotypesInfo);
+                    // // var_dump($logotypesInfo['actualCountryClubsList']);
+                    // echo "</pre>";
                   
                 ?>
 
@@ -572,17 +571,21 @@
                             <td class="number"><?=$rowNumber?></td>
 
                                 <?
+
+                                    $actualClubsListName = ($ranging === "national") ? 'actualCountryClubsList' : 'clubsList';
+
                                     $curClubFullName = $curClubInfo["basicFullName"];
                                     $curClubAltNames = explode(",", $curClubInfo["altNames"]);
-                                    $logotypesInfoCurClubInfo = $logotypesInfo['actualCountryClubsList'][$curClubName] ?? [];
+                                    $logotypesInfoCurClubInfo = $logotypesInfo[$actualClubsListName][$curClubName] ?? [];
                                     if (empty($logotypesInfoCurClubInfo)) {
                                         foreach ($curClubAltNames as $curAltName) {
-                                            if (isset($logotypesInfo['actualCountryClubsList'][$curAltName])) {
-                                                $logotypesInfoCurClubInfo = $logotypesInfo['actualCountryClubsList'][$curAltName];
+                                            if (isset($logotypesInfo[$actualClubsListName][$curAltName])) {
+                                                $logotypesInfoCurClubInfo = $logotypesInfo[$actualClubsListName][$curAltName];
                                                 break;
                                             }
                                         }
                                     }
+
                                 ?>                            
 
                             <td>
