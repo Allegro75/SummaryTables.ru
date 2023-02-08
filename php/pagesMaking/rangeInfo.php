@@ -31,11 +31,12 @@ function getPeriodicRangeInfo ($opts = []) {
 
     $range = $opts["range"];
     $subrange = $opts["subrange"];
+    $clubsNumber = $opts["clubsNumber"];
 
     $newRange = new Range(['pathToRoot' => "../../"]);
 
     if ($range === "periodic") {    
-        $rangeInfo = $newRange->getRange(["range" => $range, "subrange" => $subrange,]);
+        $rangeInfo = $newRange->getRange(["range" => $range, "subrange" => $subrange, "clubsNumber" => $clubsNumber,]);
     }
     $info["range"] = $rangeInfo["range"];
 
