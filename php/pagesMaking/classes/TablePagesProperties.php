@@ -69,6 +69,47 @@ class TablePagesProperties {
             "hasRightBtn" => true,
         ],
 
+        "5years" => [
+            "clubsNumberPhrase" => "Лучшие клубы",
+            "clubsNumberPhraseLastPart" => "лучших клуба",
+            "keywordsContentPart" => "Пятилетка. 2019 - 2023.",            
+            "clubsNumber" => "24",
+            "browserTitle" => "Пятилетка. Личные счета суперклубов. Сводная таблица",
+            "cssFilesList" => [
+                "football__body.css",
+                "cap-wo-nav.css",
+                "navigation.css",
+                "captions.css",
+                "table-plus-right-buttons.css",
+                "table24.css",
+                "duel-button-right.css",
+                "duel-button-lower.css",
+                "settings.css",
+                "donate.css",
+                "footer.css",
+            ],
+            "jsFilesList" => [
+                "showAutomaticallyGeneratedSmallTable.js",
+                "showHideDuels.js",
+                "cellsColoring.js",
+                "coloringOnLoad.js",
+                "randPairOnLoadDynamicPage.js",
+                "randomWindowOnClickDynamically.js",
+                "duelsOnLoad.js",
+            ],            
+            "h1Content" => "ЛУЧШИЕ КЛУБЫ ПЯТИЛЕТКИ (2019 - 2023)",
+            "periodicRangeParagraph" => "<p class=\"captions__explanation\">
+                <span class=\"captions__explanation_circle\">&#8226;</span>
+                Клубы ранжировались по следующей системе:
+                    <br> за победу в Лиге чемпионов - 6 очков; за выход в финал - 5; выход в 1/2 финала - 4;
+                    выход в 1/4 финала - 3; выход в 1/8 финала - 2; за победу в Лиге Европы - 1 очко
+                <span class=\"captions__explanation_circle\">&#8226;</span>
+            </p>",
+            "ranging" => "periodic",
+            "yearsNumber" => 5,
+            "hasRightBtn" => true,
+        ],
+
         "decade" => [
             "clubsNumberPhrase" => "Лучшие клубы",
             "clubsNumberPhraseLastPart" => "лучших клуба",
@@ -107,6 +148,7 @@ class TablePagesProperties {
                 <span class=\"captions__explanation_circle\">&#8226;</span>
             </p>",
             "ranging" => "periodic",
+            "yearsNumber" => 10,
             "hasRightBtn" => true,
         ],
 
