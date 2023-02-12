@@ -26,6 +26,7 @@
     $clubsNumberPhraseFirstPart = $tablePagesProperties[$pageName]["clubsNumberPhraseFirstPart"];
     $captionsClubsNumberPhraseFirstPart = $tablePagesProperties[$pageName]["captionsClubsNumberPhraseFirstPart"];
     $clubsNumberPhraseLastPart = $tablePagesProperties[$pageName]["clubsNumberPhraseLastPart"];
+    $descriptionPeriodWord = $tablePagesProperties[$pageName]["descriptionPeriodWord"] ?? "";
     $keywordsContentPart = $tablePagesProperties[$pageName]["keywordsContentPart"] ?? "";
     $browserTitle = $tablePagesProperties[$pageName]["browserTitle"];
     $cssFilesList = $tablePagesProperties[$pageName]["cssFilesList"];
@@ -244,7 +245,7 @@
         $headDescriptionClubsNumberPhraseLastPart = " {$tourneyStartYear}/{$tourneyEndYear}";
     }
     if ($ranging === "periodic") {
-        $headDescriptionClubsNumberPhraseLastPart = " десятилетия ({$periodStartYear} - {$periodEndYear})";
+        $headDescriptionClubsNumberPhraseLastPart = " {$descriptionPeriodWord} ({$periodStartYear} - {$periodEndYear})";
     }
 
     $headDescripitionContent = "";

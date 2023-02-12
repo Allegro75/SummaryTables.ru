@@ -72,7 +72,8 @@ class TablePagesProperties {
         "5years" => [
             "clubsNumberPhrase" => "Лучшие клубы",
             "clubsNumberPhraseLastPart" => "лучших клуба",
-            "keywordsContentPart" => "Пятилетка. 2019 - 2023.",            
+            "descriptionPeriodWord" => "пятилетки",
+            "keywordsContentPart" => "Пятилетка. 2019 - 2023.",
             "clubsNumber" => "24",
             "browserTitle" => "Пятилетка. Личные счета суперклубов. Сводная таблица",
             "cssFilesList" => [
@@ -114,6 +115,7 @@ class TablePagesProperties {
             "clubsNumberPhrase" => "Лучшие клубы",
             "clubsNumberPhraseLastPart" => "лучших клуба",
             // "clubsNumberPhraseLastPart" => "десятилетия (2014 - 2023)",
+            "descriptionPeriodWord" => "десятилетия",
             "keywordsContentPart" => "Десятилетие. 2014 - 2023.",            
             "clubsNumber" => "24",
             "browserTitle" => "Десятилетие. Личные счета суперклубов. Сводная таблица",
