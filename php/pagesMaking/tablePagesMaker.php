@@ -774,9 +774,13 @@
                                 ?>
 
                                 <td class="main-table_criterion" title="<?=$curClubInfo["shortName"]?>: <?=$сurClubPointsInfo?> <?=$corrPointWordForm?>">
-                                    <a href="range.html">
-                                        <span class="main-table_criterion"><?=$сurClubPointsInfo?></span>
-                                    </a>
+                                    <? if ($ranging === "mainRange"): ?>
+                                        <a href="range.html">
+                                    <? endif; ?>
+                                            <span class="main-table_criterion"><?=$сurClubPointsInfo?></span>
+                                    <? if ($ranging === "mainRange"): ?>
+                                        </a>
+                                    <? endif; ?>                                        
                                 </td>
                             
                             <? elseif ($ranging === "championsLeagueWinners"): ?>
