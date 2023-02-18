@@ -5,7 +5,7 @@
 
     { // Переменные, нуждающиеся в ручном определении перед генерацией таблицы. Часть 1 (из двух).
 
-        // $pageName = "history12";
+        $pageName = "history12";
         // $pageName = "history24";
         // $pageName = "history36";
         // $pageName = "winners";
@@ -14,7 +14,7 @@
         // $pageName = "ukraine";
         // $pageName = "byelorussia";
         // $pageName = "kazakhstan";
-        $pageName = "decade";
+        // $pageName = "decade";
         // $pageName = "5years";
 
     }
@@ -63,41 +63,21 @@
             $bookmakersOddsDate = "27.11.2022";
         }
 
-        if ($ranging === "periodic") {
-
-            $periodEndYear = $tourneyEndYear;
-            // $periodEndYear = $tourneyStartYear;
-
-            // $periodStartYear = $periodEndYear - 9;
-            $yearsNumberToSubtract = $yearsNumber - 1;
-            $periodStartYear = $periodEndYear - $yearsNumberToSubtract;
-
-            require_once 'rangeInfo.php'; // Получение ранжира клубов для decade:
-            // $rangeInfo = getPeriodicRangeInfo(["range" => "periodic", "subrange" => ["title" => "decade", "years"=> 10, "periodStartYear" => $periodStartYear,], "clubsNumber" => $clubsNumber,]);
-            $rangeInfo = getPeriodicRangeInfo(["range" => "periodic", "subrange" => ["periodStartYear" => $periodStartYear,], "clubsNumber" => $clubsNumber,]);
-            $clubsList = $rangeInfo["range"];
-            // echo "<pre>";
-            // // var_dump($clubsList);
-            // var_dump($rangeInfo);
-            // echo "</pre>";
-
-        }
-
-        // // Для history12
-        // $clubsList = [
-        //     "Реал Мадрид" => ["points" => 261, "gender" => "male"],
-        //     "Барселона" => ["points" => 197, "gender" => "female"],
-        //     "Бавария" => ["points" => 196, "gender" => "female"],
-        //     "Ливерпуль" => ["points" => 138, "gender" => "male"],
-        //     "Ювентус" => ["points" => 136, "gender" => "male"],
-        //     "Милан" => ["points" => 128, "gender" => "male"],
-        //     "Манчестер Юнайтед" => ["points" => 117, "gender" => "neuter"],
-        //     "Интер Милан" => ["points" => 100, "gender" => "male"],
-        //     "Бенфика" => ["points" => 98, "gender" => "female"],
-        //     "Челси" => ["points" => 95, "gender" => "neuter"],
-        //     "Аякс" => ["points" => 87, "gender" => "male"],
-        //     "Атлетико Мадрид" => ["points" => 85, "gender" => "neuter"],
-        // ];
+        // Для history12
+        $clubsList = [
+            "Реал Мадрид" => ["points" => 261, "gender" => "male"],
+            "Барселона" => ["points" => 197, "gender" => "female"],
+            "Бавария" => ["points" => 196, "gender" => "female"],
+            "Ливерпуль" => ["points" => 138, "gender" => "male"],
+            "Ювентус" => ["points" => 136, "gender" => "male"],
+            "Милан" => ["points" => 128, "gender" => "male"],
+            "Манчестер Юнайтед" => ["points" => 117, "gender" => "neuter"],
+            "Интер Милан" => ["points" => 100, "gender" => "male"],
+            "Бенфика" => ["points" => 98, "gender" => "female"],
+            "Челси" => ["points" => 95, "gender" => "neuter"],
+            "Аякс" => ["points" => 87, "gender" => "male"],
+            "Атлетико Мадрид" => ["points" => 85, "gender" => "neuter"],
+        ];
 
         // // Для history24 и ukraine:
         // $clubsList = [
@@ -239,6 +219,26 @@
         // ];
 
     }
+
+    if ($ranging === "periodic") {
+
+        $periodEndYear = $tourneyEndYear;
+        // $periodEndYear = $tourneyStartYear;
+
+        // $periodStartYear = $periodEndYear - 9;
+        $yearsNumberToSubtract = $yearsNumber - 1;
+        $periodStartYear = $periodEndYear - $yearsNumberToSubtract;
+
+        require_once 'rangeInfo.php'; // Получение ранжира клубов для decade:
+        // $rangeInfo = getPeriodicRangeInfo(["range" => "periodic", "subrange" => ["title" => "decade", "years"=> 10, "periodStartYear" => $periodStartYear,], "clubsNumber" => $clubsNumber,]);
+        $rangeInfo = getPeriodicRangeInfo(["range" => "periodic", "subrange" => ["periodStartYear" => $periodStartYear,], "clubsNumber" => $clubsNumber,]);
+        $clubsList = $rangeInfo["range"];
+        // echo "<pre>";
+        // // var_dump($clubsList);
+        // var_dump($rangeInfo);
+        // echo "</pre>";
+
+    }    
 
     $headDescriptionClubsNumberPhraseLastPart = "";
     if ($hasTourneyYearIndicationInHead) {
