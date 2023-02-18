@@ -58,7 +58,9 @@ div.change-range-text{
 }
 
 .main-table td.statistics#RMaBav, 
-.main-table td.statistics#BavRMa{
+.main-table td.statistics#BavRMa,
+.main-table td.statistics#BarBav, 
+.main-table td.statistics#BavBar {
   min-width: 62px;
   padding: 0;
 }

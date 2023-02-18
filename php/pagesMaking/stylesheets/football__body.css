@@ -46,6 +46,6 @@ main{
   text-align: center;
 }
 
-#BavRMa p.games-score, #RMaBav p.games-score{
+#BavRMa p.games-score, #RMaBav p.games-score, #BavBar p.games-score, #BarBav p.games-score {
   letter-spacing: -0.05em;
 }
