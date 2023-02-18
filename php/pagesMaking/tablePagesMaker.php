@@ -55,7 +55,7 @@
         // - если делаем таблицу с периодическим ранжиром, в classes/TablePagesProperties.php определить года в "keywordsContentPart" и "h1Content"
         // - в captions отслеживать содержание параграфа типа "В таблице учтены матчи до..."
 
-        $lastAccountedMatchDate = "03.11.2022";
+        $lastAccountedMatchDate = "16.02.2022";
 
         $tourneyStartYear = 2022;
         $tourneyEndYear = 2023;

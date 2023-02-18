@@ -41,7 +41,8 @@ function printCaptions ($opts = []) {
             </p>
         ";
 
-        $lastDateParagrapContenthLastPart = " (учтены все матчи групповых этапов сезона 2022/2023)";
+        // $lastDateParagrapContenthLastPart = " (учтены все матчи групповых этапов сезона 2022/2023)";
+        $lastDateParagrapContenthLastPart = "";
         $lastDateParagrapContenthFirstPart = "В таблице учтены";
 
     }
