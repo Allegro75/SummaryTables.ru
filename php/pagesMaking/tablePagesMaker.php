@@ -8,8 +8,8 @@
         // $pageName = "history12";
         // $pageName = "history24";
         // $pageName = "history36";
-        $pageName = "winners";
-        // $pageName = "champ_league_current";
+        // $pageName = "winners";
+        $pageName = "champ_league_current";
         // $pageName = "euroleague_current";
         // $pageName = "ukraine";
         // $pageName = "byelorussia";
@@ -381,10 +381,10 @@
 
                     // Получение массива пар незавершённой стадии турнира:
                     {
-                        // $tourneyTitle = "Лига чемпионов";
-                        $tourneyTitle = "Лига Европы";
-                        // $tourneyStage = "1/8 финала";
-                        $tourneyStage = "1/16 финала";
+                        $tourneyTitle = "Лига чемпионов";
+                        // $tourneyTitle = "Лига Европы";
+                        $tourneyStage = "1/8 финала";
+                        // $tourneyStage = "1/16 финала";
                         $actualStagePairs = $matchesClass->getActualStagePairs(["tourneyTitle" => $tourneyTitle, "tourneyFinalYear" => $tourneyEndYear, "stage" => $tourneyStage,]);
                         // echo "<pre>";
                         // var_dump($actualStagePairs);
