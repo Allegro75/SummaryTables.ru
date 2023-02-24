@@ -14,8 +14,8 @@
         // $pageName = "ukraine";
         // $pageName = "byelorussia";
         // $pageName = "kazakhstan";
-        $pageName = "decade";
-        // $pageName = "5years";
+        // $pageName = "decade";
+        $pageName = "5years";
 
     }
 
