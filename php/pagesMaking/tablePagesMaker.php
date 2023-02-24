@@ -60,7 +60,11 @@
         $tourneyStartYear = 2022;
         $tourneyEndYear = 2023;
         if ($ranging === "bookmakers") {
-            $bookmakersOddsDate = "24.02.2023";
+            if ($pageName === "champ_league_current") {
+                $bookmakersOddsDate = "15.11.2022";
+            } elseif ($pageName === "euroleague_current") {
+                $bookmakersOddsDate = "24.02.2023";
+            }
         }
 
         // // Для history12
