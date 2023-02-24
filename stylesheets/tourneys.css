@@ -252,6 +252,8 @@ img.real, .logo img.real, img.logo-like-real, .logo img.logo-like-real {
 /* Для эмблем, вытянутых в высоту, но не столь сильно как "Реал" (Рома, Порто. У обычных лого высота 24px): */
 img.roma, .logo img.roma, img.logo-like-roma, .logo img.logo-like-roma {
     height: 27px;
+    position: relative;
+    bottom: 0.1em;    
 }
 
 .logo img.height-32, img.zarya, .logo img.zarya,  img.logo-like-zarya, .logo img.logo-like-zarya {
@@ -264,10 +266,10 @@ img.roma, .logo img.roma, img.logo-like-roma, .logo img.logo-like-roma {
     bottom: 0.2em;
 }
 
-.logo img.roma {
+/* .logo img.roma {
     position: relative;
     bottom: 0.1em;
-}
+} */
 
 /* Для эмблем, вытянутых в высоту максимально (Боруссия М) внутри групповых таблиц: */
 table img.height-40, table .logo img.height-40, table img.logo-like-zarya, table .logo img.logo-like-zarya {
@@ -297,14 +299,15 @@ table img.roma, table .logo img.roma, table img.logo-like-roma, table .logo img.
     width: 30px;
     height: auto;
     position: relative;
-    top: 0.1em;
+    top: 0.35em;
 }
 
-.logo img.az, img.az {
+.logo img.az, img.az, img.logo-like-az {
     width: 36px;
     height: auto;
-    position: relative;
-    top: 0.25em;
+    /* Убираю данные ниже, ориентируясь на Унион Берлин в ЛЕ-2023: */
+    /* position: relative;
+    top: 0.25em; */
 }
 
 table .logo img.az, table img.az, table .logo img.logo-like-hamburg, table img.logo-like-hamburg {
