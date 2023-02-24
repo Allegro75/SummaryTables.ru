@@ -25,19 +25,20 @@ function getRangeInfo ($opts = []) {
 }
 
 // Получение ранжира по периоду
+// UPD. Пробуем сделать тут универсальный метод, подходящий и для базового ранжира
 function getPeriodicRangeInfo ($opts = []) {
 
     $info = [];
 
     $range = $opts["range"];
-    $subrange = $opts["subrange"];
+    $subrange = $opts["subrange"] ?? null;
     $clubsNumber = $opts["clubsNumber"];
 
     $newRange = new Range(['pathToRoot' => "../../"]);
 
-    if ($range === "periodic") {    
+    // if ($range === "periodic") {
         $rangeInfo = $newRange->getRange(["range" => $range, "subrange" => $subrange, "clubsNumber" => $clubsNumber,]);
-    }
+    // }
     $info["range"] = $rangeInfo["range"];
 
     return $info;
