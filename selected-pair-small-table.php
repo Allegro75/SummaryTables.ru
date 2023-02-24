@@ -325,6 +325,7 @@
                                 $duelsResults[$duelInd]["result"] = "firstClubVictory";
                             }
                         }
+                        
                     } elseif (count($curDuel) === 2) { // Если финальных матчей в этом турнире два
 
                         if (($curDuel[0]["penaltiesWinner"] != "") || ($curDuel[1]["penaltiesWinner"] != "")) { // Если была серия пенальти
