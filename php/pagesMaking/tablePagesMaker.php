@@ -51,16 +51,16 @@
         // - если делаем таблицы с фаворитами текущих турниров, в classes/TablePagesProperties.php определить стадию турнира в screamerParagraph
         // - если делаем таблицы с фаворитами текущих турниров, в classes/TablePagesProperties.php определить наличие finishedTourneyParagraph
         // - если делаем champ_league_current, в classes/TablePagesProperties.php определить наличие clubsNumber (возможно, без него можно вообще обойтись для champ_league_current)
-        // - если делаем таблицы с фаворитами текущих турниров, здесь определить наличие $tourneyTitle и, возможно, $tourneyStage
+        // - если делаем таблицы с фаворитами текущих турниров, здесь определить $tourneyStage
         // - если делаем таблицу с периодическим ранжиром, в classes/TablePagesProperties.php определить года в "keywordsContentPart" и "h1Content"
         // - в captions отслеживать содержание параграфа типа "В таблице учтены матчи до..."
 
-        $lastAccountedMatchDate = "16.02.2022";
+        $lastAccountedMatchDate = "23.02.2022";
 
         $tourneyStartYear = 2022;
         $tourneyEndYear = 2023;
         if ($ranging === "bookmakers") {
-            $bookmakersOddsDate = "27.11.2022";
+            $bookmakersOddsDate = "24.02.2023";
         }
 
         // // Для history12
@@ -195,14 +195,14 @@
 
         // Для euroleague_current
         $clubsList = [
-            "Арсенал" => ["odds" => 5.5,],
-            "Барселона" => ["odds" => 6.5,],
-            "Манчестер Юнайтед" => ["odds" => 8.5,],
-            "Ювентус" => ["odds" => 13,],
-            "Аякс" => ["odds" => 17,],
-            "Бетис" => ["odds" => 17,],
-            "Реал Сосьедад" => ["odds" => 17,],
-            "Рома" => ["odds" => 20,],       
+            "Манчестер Юнайтед" => ["odds" => 3.5,],
+            "Арсенал" => ["odds" => 4.5,],
+            "Ювентус" => ["odds" => 8,],
+            "Реал Сосьедад" => ["odds" => 15,],
+            "Рома" => ["odds" => 15,],             
+            "Севилья" => ["odds" => 20,],
+            "Унион Берлин" => ["odds" => 20,],
+            "Бетис" => ["odds" => 25,],     
         ];
 
         // // Для ukraine
@@ -381,10 +381,14 @@
 
                     // Получение массива пар незавершённой стадии турнира:
                     {
-                        // $tourneyTitle = "Лига чемпионов";
-                        $tourneyTitle = "Лига Европы";
-                        // $tourneyStage = "1/8 финала";
-                        $tourneyStage = "1/16 финала";
+                        if ($pageName === "champ_league_current") {
+                            $tourneyTitle = "Лига чемпионов";
+                        }
+                        elseif ($pageName === "euroleague_current") {
+                            $tourneyTitle = "Лига Европы";
+                        }
+                        $tourneyStage = "1/8 финала";
+                        // $tourneyStage = "1/16 финала";
                         $actualStagePairs = $matchesClass->getActualStagePairs(["tourneyTitle" => $tourneyTitle, "tourneyFinalYear" => $tourneyEndYear, "stage" => $tourneyStage,]);
                         // echo "<pre>";
                         // var_dump($actualStagePairs);

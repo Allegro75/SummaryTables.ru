@@ -418,20 +418,20 @@ class TablePagesProperties {
 
             "bookmakersParagraph" => "<p class=\"captions__explanation\">
                 <span class=\"captions__explanation_circle\">&#8226;</span>
-                Указаны букмекерские коэффициенты от 27.11.2022
+                Указаны букмекерские коэффициенты от 24.02.2023
                 <span class=\"captions__explanation_circle\">&#8226;</span>
             </p>",
 
-            "screamerParagraph" => "<p class=\"captions__explanation\">
-                <span class=\"captions__explanation_circle\">&#8226;</span>
-                Знаком <img src=\"images/screamer_brown.png\" alt=\"1/16 финала\" class=\"screamer\"> отмечены соперники по 1/16 финала текущего розыгрыша                  
-                <span class=\"captions__explanation_circle\">&#8226;</span>
-            </p>",
             // "screamerParagraph" => "<p class=\"captions__explanation\">
             //     <span class=\"captions__explanation_circle\">&#8226;</span>
-            //     Знаком <img src=\"images/screamer_brown.png\" alt=\"1/8 финала\" class=\"screamer\"> отмечены соперники по 1/8 финала текущего розыгрыша                  
+            //     Знаком <img src=\"images/screamer_brown.png\" alt=\"1/16 финала\" class=\"screamer\"> отмечены соперники по 1/16 финала текущего розыгрыша                  
             //     <span class=\"captions__explanation_circle\">&#8226;</span>
             // </p>",
+            "screamerParagraph" => "<p class=\"captions__explanation\">
+                <span class=\"captions__explanation_circle\">&#8226;</span>
+                Знаком <img src=\"images/screamer_brown.png\" alt=\"1/8 финала\" class=\"screamer\"> отмечены соперники по 1/8 финала текущего розыгрыша                  
+                <span class=\"captions__explanation_circle\">&#8226;</span>
+            </p>",
             // "screamerParagraph" => "<p class=\"captions__explanation\">
             //     <span class=\"captions__explanation_circle\">&#8226;</span>
             //     Знаком <img src=\"images/screamer_brown.png\" alt=\"1/4 финала\" class=\"screamer\"> отмечены соперники по 1/4 финала текущего розыгрыша                  
