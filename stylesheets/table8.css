@@ -97,7 +97,7 @@ img.roma, img.logo-like-roma{
   height: 2.2em;
 }
 /* Лого Гамбурга вытянуто в ширину, посему его настаиваем специально: */
-img.hamburg{
+img.hamburg, .logo-like-hamburg{
   width: 2.4em;
   height: auto;
   /* position: relative; */
