@@ -8,14 +8,14 @@
         // $pageName = "history12";
         // $pageName = "history24";
         // $pageName = "history36";
-        // $pageName = "winners";
+        $pageName = "winners";
         // $pageName = "champ_league_current";
         // $pageName = "euroleague_current";
         // $pageName = "ukraine";
         // $pageName = "byelorussia";
         // $pageName = "kazakhstan";
         // $pageName = "decade";
-        $pageName = "5years";
+        // $pageName = "5years";
 
     }
 
@@ -151,31 +151,31 @@
         //     "Айнтрахт Франкфурт" => ["points" => 25,],
         // ];
 
-        // // Для winners
-        // $clubsList = [
-        //     "Реал Мадрид" => ["wins" => 14, "finals" => 3],
-        //     "Милан" => ["wins" => 7, "finals" => 4],
-        //     "Бавария" => ["wins" => 6, "finals" => 5],
-        //     "Ливерпуль" => ["wins" => 6, "finals" => 4],
-        //     "Барселона" => ["wins" => 5, "finals" => 3],
-        //     "Аякс" => ["wins" => 4, "finals" => 2],
-        //     "Интер Милан" => ["wins" => 3, "finals" => 2],
-        //     "Манчестер Юнайтед" => ["wins" => 3, "finals" => 2],
-        //     "Ювентус" => ["wins" => 2, "finals" => 7],
-        //     "Бенфика" => ["wins" => 2, "finals" => 5],
-        //     "Челси" => ["wins" => 2, "finals" => 1],
-        //     "Порто" => ["wins" => 2, "finals" => 0],   
-        //     "Ноттингем Форест" => ["wins" => 2, "finals" => 0],
-        //     "Боруссия Дортмунд" => ["wins" => 1, "finals" => 1],
-        //     "Олимпик Марсель" => ["wins" => 1, "finals" => 1],
-        //     "Стяуа" => ["wins" => 1, "finals" => 1],
-        //     "Гамбург" => ["wins" => 1, "finals" => 1],
-        //     "Селтик" => ["wins" => 1, "finals" => 1],
-        //     "Црвена звезда" => ["wins" => 1, "finals" => 0],
-        //     "ПСВ Эйндховен" => ["wins" => 1, "finals" => 0],
-        //     "Астон Вилла" => ["wins" => 1, "finals" => 0],
-        //     "Фейеноорд" => ["wins" => 1, "finals" => 0],
-        // ];
+        // Для winners
+        $clubsList = [
+            "Реал Мадрид" => ["wins" => 14, "finals" => 3],
+            "Милан" => ["wins" => 7, "finals" => 4],
+            "Бавария" => ["wins" => 6, "finals" => 5],
+            "Ливерпуль" => ["wins" => 6, "finals" => 4],
+            "Барселона" => ["wins" => 5, "finals" => 3],
+            "Аякс" => ["wins" => 4, "finals" => 2],
+            "Интер Милан" => ["wins" => 3, "finals" => 2],
+            "Манчестер Юнайтед" => ["wins" => 3, "finals" => 2],
+            "Ювентус" => ["wins" => 2, "finals" => 7],
+            "Бенфика" => ["wins" => 2, "finals" => 5],
+            "Челси" => ["wins" => 2, "finals" => 1],
+            "Порто" => ["wins" => 2, "finals" => 0],   
+            "Ноттингем Форест" => ["wins" => 2, "finals" => 0],
+            "Боруссия Дортмунд" => ["wins" => 1, "finals" => 1],
+            "Олимпик Марсель" => ["wins" => 1, "finals" => 1],
+            "Стяуа" => ["wins" => 1, "finals" => 1],
+            "Гамбург" => ["wins" => 1, "finals" => 1],
+            "Селтик" => ["wins" => 1, "finals" => 1],
+            "Црвена звезда" => ["wins" => 1, "finals" => 0],
+            "ПСВ Эйндховен" => ["wins" => 1, "finals" => 0],
+            "Астон Вилла" => ["wins" => 1, "finals" => 0],
+            "Фейеноорд" => ["wins" => 1, "finals" => 0],
+        ];
 
         // // Для champ_league_current
         // $clubsList = [
