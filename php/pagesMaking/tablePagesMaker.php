@@ -246,10 +246,10 @@
         require_once 'rangeInfo.php';
         $rangeInfo = getPeriodicRangeInfo(["range" => "basic", "clubsNumber" => $clubsNumber,]);
         $clubsList = $rangeInfo["range"];
-        // echo "<pre>";
-        // // var_dump($clubsList);
-        // var_dump($rangeInfo);
-        // echo "</pre>";
+        echo "<pre>";
+        // var_dump($clubsList);
+        var_dump($rangeInfo);
+        echo "</pre>";
 
     }
 
