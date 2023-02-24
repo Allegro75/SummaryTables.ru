@@ -5,8 +5,8 @@
 
     { // Переменные, нуждающиеся в ручном определении перед генерацией таблицы. Часть 1 (из двух).
 
-        // $pageName = "history12";
-        $pageName = "history24";
+        $pageName = "history12";
+        // $pageName = "history24";
         // $pageName = "history36";
         // $pageName = "winners";
         // $pageName = "champ_league_current";
@@ -66,50 +66,6 @@
                 $bookmakersOddsDate = "24.02.2023";
             }
         }
-
-        // // Для history12
-        // $clubsList = [
-        //     "Реал Мадрид" => ["points" => 261, "gender" => "male"],
-        //     "Барселона" => ["points" => 197, "gender" => "female"],
-        //     "Бавария" => ["points" => 196, "gender" => "female"],
-        //     "Ливерпуль" => ["points" => 138, "gender" => "male"],
-        //     "Ювентус" => ["points" => 136, "gender" => "male"],
-        //     "Милан" => ["points" => 128, "gender" => "male"],
-        //     "Манчестер Юнайтед" => ["points" => 117, "gender" => "neuter"],
-        //     "Интер Милан" => ["points" => 100, "gender" => "male"],
-        //     "Бенфика" => ["points" => 98, "gender" => "female"],
-        //     "Челси" => ["points" => 95, "gender" => "neuter"],
-        //     "Аякс" => ["points" => 87, "gender" => "male"],
-        //     "Атлетико Мадрид" => ["points" => 85, "gender" => "neuter"],
-        // ];
-
-        // // Для history24 и ukraine:
-        // $clubsList = [
-        //     "Реал Мадрид" => ["points" => 261,],
-        //     "Барселона" => ["points" => 197,],
-        //     "Бавария" => ["points" => 196,],
-        //     "Ливерпуль" => ["points" => 138,],
-        //     "Ювентус" => ["points" => 136,],
-        //     "Милан" => ["points" => 128,],
-        //     "Манчестер Юнайтед" => ["points" => 117,],
-        //     "Интер Милан" => ["points" => 100,],
-        //     "Бенфика" => ["points" => 98,],
-        //     "Челси" => ["points" => 95,],
-        //     "Аякс" => ["points" => 87,],
-        //     "Атлетико Мадрид" => ["points" => 85,],
-        //     "Порто" => ["points" => 61,],
-        //     "Валенсия" => ["points" => 55,],
-        //     "Арсенал" => ["points" => 54,],
-        //     "Боруссия Дортмунд" => ["points" => 52,],
-        //     "Андерлехт" => ["points" => 49,],
-        //     "Пари Сен-Жермен" => ["points" => 44,],
-        //     "ПСВ Эйндховен" => ["points" => 43,],
-        //     "Црвена звезда" => ["points" => 40,],
-        //     "Рома" => ["points" => 39,],
-        //     "Тоттенхэм Хотспур" => ["points" => 39,],
-        //     "Манчестер Сити" => ["points" => 38,],
-        //     "Динамо Киев" => ["points" => 38,],
-        // ];
 
         // // Для history36
         // $clubsList = [
@@ -246,10 +202,6 @@
         require_once 'rangeInfo.php';
         $rangeInfo = getPeriodicRangeInfo(["range" => "basic", "clubsNumber" => $clubsNumber,]);
         $clubsList = $rangeInfo["range"];
-        // echo "<pre>";
-        // // var_dump($clubsList);
-        // var_dump($rangeInfo);
-        // echo "</pre>";
 
     }
 
