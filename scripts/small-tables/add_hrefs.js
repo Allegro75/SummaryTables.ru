@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     // 1) мы имеем дело с исключительным розыгрышем 1993-1994,
                     // и тогда мы должны просто перечислить 4 пары-исключения:
-                        const pairHeader = document.querySelector('title').textContent;
+                        const pairHeader = document.querySelector('div.additional-table h1').textContent;
                         if (pairHeader == `Спартак - Барселона` ||
                             pairHeader == `Барселона - Спартак` ||
                             pairHeader == `Монако - Галатасарай` ||
