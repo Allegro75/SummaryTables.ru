@@ -320,7 +320,7 @@ class TablePagesProperties {
 
             "clubsNumberPhrase" => "Фавориты Лиги чемпионов",
             "hasTourneyYearIndicationInHead" => true,
-            "clubsNumber" => "16",
+            // "clubsNumber" => "16",
             "browserTitle" => "Фавориты ЛЧ. Личные счета суперклубов. Сводная таблица",
             "cssFilesList" => [
                 "football__body.css",
@@ -388,7 +388,7 @@ class TablePagesProperties {
 
             "clubsNumberPhrase" => "Фавориты Лиги Европы",
             "hasTourneyYearIndicationInHead" => true,
-            "clubsNumber" => "8",
+            // "clubsNumber" => "8",
             "browserTitle" => "Лига Европы. Личные счета фаворитов. Сводная таблица",
             "cssFilesList" => [
                 "football__body.css",

@@ -8,8 +8,8 @@
         // $pageName = "history12";
         // $pageName = "history24";
         // $pageName = "history36";
-        $pageName = "winners";
-        // $pageName = "champ_league_current";
+        // $pageName = "winners";
+        $pageName = "champ_league_current";
         // $pageName = "euroleague_current";
         // $pageName = "ukraine";
         // $pageName = "byelorussia";
@@ -44,22 +44,28 @@
 
     { // Переменные, нуждающиеся в ручном определении перед генерацией таблицы. Часть 2 (из двух).
         
-        // Нужно ещё определить:
+        { // Для начала нужно ещё определить:
 
-            // - если делаем таблицы с фаворитами текущих турниров:
-                // - в classes/TablePagesProperties.php определить h1Content
-                // - в classes/TablePagesProperties.php определить число в bookmakersParagraph
+            // Комм на удаление:
+            // - если делаем champ_league_current, в classes/TablePagesProperties.php определить наличие clubsNumber (возможно, без него можно вообще обойтись для champ_league_current)                      
+
+            { // При смене предстоящей стадии плей-офф нужно определять:
                 // - в classes/TablePagesProperties.php определить стадию турнира в screamerParagraph
-                // - в classes/TablePagesProperties.php определить наличие finishedTourneyParagraph
                 // - здесь определить $tourneyStage
-                // - если делаем champ_league_current, в classes/TablePagesProperties.php определить наличие clubsNumber (возможно, без него можно вообще обойтись для champ_league_current)
+            }
 
-            // - если делаем таблицу с периодическим ранжиром, в classes/TablePagesProperties.php определить года в "keywordsContentPart" и "h1Content"
+            { // Три раза в сезон (перед началом турнира, началом плей-офф и перед 1/4 финала) нужно определять:
+                // - если делаем таблицы с фаворитами текущих турниров, в classes/TablePagesProperties.php определить h1Content. Нужно выбрать из трёх вариантов: "УЧАСТНИКИ ПЛЕЙ-ОФФ", "ЧЕТВЕРТЬФИНАЛИСТЫ", "ФАВОРИТЫ". Для "euroleague_current" только из двух: "ЧЕТВЕРТЬФИНАЛИСТЫ" и "ФАВОРИТЫ".
+            }
 
-            // - в captions отслеживать содержание параграфа типа "В таблице учтены матчи до..."
+            { // Раз в год (по окончании текущего турнира / перед началом следующего) нужно определять:
+                // - в layoutElements/header/shortHeader.php - от какого сезона турниры показываем по ссылкам в "Текущем сезоне"
+                // - в captions отслеживать содержание параграфа типа "В таблице учтены матчи до...". Раз в год меняем содержание на "Таблица обновлена по итогам сезона ...". Также можно вписывать здесь указание на последнюю завершивуяся стадию турнира (например, "учтены все матчи групповых этапов"), но это и вовсе не обязательно.
+                // - если делаем таблицы с фаворитами текущих турниров, в classes/TablePagesProperties.php определить наличие finishedTourneyParagraph
+                // - если делаем таблицу с периодическим ранжиром, в classes/TablePagesProperties.php определить года в "keywordsContentPart" и "h1Content"
+            }
 
-            // Раз в год нужно определять:
-            // - в layoutElements/header/shortHeader.php - от какого сезона турниры показываем по ссылкам в "Текущем сезоне"       
+        }
 
         $lastAccountedMatchDate = "09.03.2023";
 
@@ -68,6 +74,7 @@
         $tourneyEndYear = 2023;
 
         // При изменении букмекерской котировки, на к-рую мы ориентируемся:
+        // - в classes/TablePagesProperties.php определить число в bookmakersParagraph (на число, совпадающее с новой $bookmakersOddsDate)
         if ($ranging === "bookmakers") {
             if ($pageName === "champ_league_current") {
                 $bookmakersOddsDate = "15.11.2022";
@@ -76,76 +83,84 @@
             }
         }
 
-        // Для winners
-        $clubsList = [
-            "Реал Мадрид" => ["wins" => 14, "finals" => 3],
-            "Милан" => ["wins" => 7, "finals" => 4],
-            "Бавария" => ["wins" => 6, "finals" => 5],
-            "Ливерпуль" => ["wins" => 6, "finals" => 4],
-            "Барселона" => ["wins" => 5, "finals" => 3],
-            "Аякс" => ["wins" => 4, "finals" => 2],
-            "Интер Милан" => ["wins" => 3, "finals" => 2],
-            "Манчестер Юнайтед" => ["wins" => 3, "finals" => 2],
-            "Ювентус" => ["wins" => 2, "finals" => 7],
-            "Бенфика" => ["wins" => 2, "finals" => 5],
-            "Челси" => ["wins" => 2, "finals" => 1],
-            "Порто" => ["wins" => 2, "finals" => 0],   
-            "Ноттингем Форест" => ["wins" => 2, "finals" => 0],
-            "Боруссия Дортмунд" => ["wins" => 1, "finals" => 1],
-            "Олимпик Марсель" => ["wins" => 1, "finals" => 1],
-            "Стяуа" => ["wins" => 1, "finals" => 1],
-            "Гамбург" => ["wins" => 1, "finals" => 1],
-            "Селтик" => ["wins" => 1, "finals" => 1],
-            "Црвена звезда" => ["wins" => 1, "finals" => 0],
-            "ПСВ Эйндховен" => ["wins" => 1, "finals" => 0],
-            "Астон Вилла" => ["wins" => 1, "finals" => 0],
-            "Фейеноорд" => ["wins" => 1, "finals" => 0],
-        ];
+        {// Базовые списки клубов:
 
-        // // Для champ_league_current
-        // $clubsList = [
-        //     "Манчестер Сити" => ["odds" => 2.75,],
-        //     "Бавария" => ["odds" => 7,],
-        //     "Пари Сен-Жермен" => ["odds" => 10,],
-        //     "Ливерпуль" => ["odds" => 10,],
-        //     "Реал Мадрид" => ["odds" => 12,],
-        //     "Наполи" => ["odds" => 15,],
-        //     "Челси" => ["odds" => 17,],
-        //     "Тоттенхэм Хотспур" => ["odds" => 20,],
-        //     "Бенфика" => ["odds" => 25,],
-        //     "Интер Милан" => ["odds" => 35,],
-        //     "Милан" => ["odds" => 45,],
-        //     "Боруссия Дортмунд" => ["odds" => 50,],
-        //     "Порто" => ["odds" => 75,],
-        //     "РБ Лейпциг" => ["odds" => 100,],            
-        //     "Айнтрахт Франкфурт" => ["odds" => 150,],
-        //     "Брюгге" => ["odds" => 250,],            
-        // ];
+            if ($pageName === "winners") {
+                $clubsList = [
+                    "Реал Мадрид" => ["wins" => 14, "finals" => 3],
+                    "Милан" => ["wins" => 7, "finals" => 4],
+                    "Бавария" => ["wins" => 6, "finals" => 5],
+                    "Ливерпуль" => ["wins" => 6, "finals" => 4],
+                    "Барселона" => ["wins" => 5, "finals" => 3],
+                    "Аякс" => ["wins" => 4, "finals" => 2],
+                    "Интер Милан" => ["wins" => 3, "finals" => 2],
+                    "Манчестер Юнайтед" => ["wins" => 3, "finals" => 2],
+                    "Ювентус" => ["wins" => 2, "finals" => 7],
+                    "Бенфика" => ["wins" => 2, "finals" => 5],
+                    "Челси" => ["wins" => 2, "finals" => 1],
+                    "Порто" => ["wins" => 2, "finals" => 0],   
+                    "Ноттингем Форест" => ["wins" => 2, "finals" => 0],
+                    "Боруссия Дортмунд" => ["wins" => 1, "finals" => 1],
+                    "Олимпик Марсель" => ["wins" => 1, "finals" => 1],
+                    "Стяуа" => ["wins" => 1, "finals" => 1],
+                    "Гамбург" => ["wins" => 1, "finals" => 1],
+                    "Селтик" => ["wins" => 1, "finals" => 1],
+                    "Црвена звезда" => ["wins" => 1, "finals" => 0],
+                    "ПСВ Эйндховен" => ["wins" => 1, "finals" => 0],
+                    "Астон Вилла" => ["wins" => 1, "finals" => 0],
+                    "Фейеноорд" => ["wins" => 1, "finals" => 0],
+                ];
+            }
 
-        // // Для euroleague_current
-        // $clubsList = [
-        //     "Манчестер Юнайтед" => ["odds" => 3.5,],
-        //     "Арсенал" => ["odds" => 4.5,],
-        //     "Ювентус" => ["odds" => 8,],
-        //     "Реал Сосьедад" => ["odds" => 15,],
-        //     "Рома" => ["odds" => 15,],             
-        //     "Севилья" => ["odds" => 20,],
-        //     "Унион Берлин" => ["odds" => 20,],
-        //     "Бетис" => ["odds" => 25,],     
-        // ];
+            elseif ($pageName === "champ_league_current") {
+                $clubsList = [
+                    "Манчестер Сити" => ["odds" => 2.75,],
+                    "Бавария" => ["odds" => 7,],
+                    "Пари Сен-Жермен" => ["odds" => 10,],
+                    "Ливерпуль" => ["odds" => 10,],
+                    "Реал Мадрид" => ["odds" => 12,],
+                    "Наполи" => ["odds" => 15,],
+                    "Челси" => ["odds" => 17,],
+                    "Тоттенхэм Хотспур" => ["odds" => 20,],
+                    "Бенфика" => ["odds" => 25,],
+                    "Интер Милан" => ["odds" => 35,],
+                    "Милан" => ["odds" => 45,],
+                    "Боруссия Дортмунд" => ["odds" => 50,],
+                    "Порто" => ["odds" => 75,],
+                    "РБ Лейпциг" => ["odds" => 100,],            
+                    "Айнтрахт Франкфурт" => ["odds" => 150,],
+                    "Брюгге" => ["odds" => 250,],            
+                ];
+            }
 
-        // // Для ukraine
-        // $actualCountryClubsList = [
-        //     "Динамо Киев" => ["seasons" => 53,],
-        //     "Шахтёр Донецк" => ["seasons" => 33,],
-        //     "Днепр" => ["seasons" => 20,],
-        //     "Черноморец Одесса" => ["seasons" => 10,],
-        //     "Заря Луганск" => ["seasons" => 9,],
-        //     "Металлист Харьков" => ["seasons" => 9,],
-        //     "Ворскла" => ["seasons" => 7,],
-        //     "Карпаты" => ["seasons" => 5,],       
-        //     "ЦСКА Киев" => ["seasons" => 2,],
-        // ];
+            elseif ($pageName === "euroleague_current") {
+                $clubsList = [
+                    "Манчестер Юнайтед" => ["odds" => 3.5,],
+                    "Арсенал" => ["odds" => 4.5,],
+                    "Ювентус" => ["odds" => 8,],
+                    "Реал Сосьедад" => ["odds" => 15,],
+                    "Рома" => ["odds" => 15,],             
+                    "Севилья" => ["odds" => 20,],
+                    "Унион Берлин" => ["odds" => 20,],
+                    "Бетис" => ["odds" => 25,],     
+                ];
+            }
+
+            elseif ($pageName === "ukraine") {
+                $actualCountryClubsList = [
+                    "Динамо Киев" => ["seasons" => 53,],
+                    "Шахтёр Донецк" => ["seasons" => 33,],
+                    "Днепр" => ["seasons" => 20,],
+                    "Черноморец Одесса" => ["seasons" => 10,],
+                    "Заря Луганск" => ["seasons" => 9,],
+                    "Металлист Харьков" => ["seasons" => 9,],
+                    "Ворскла" => ["seasons" => 7,],
+                    "Карпаты" => ["seasons" => 5,],       
+                    "ЦСКА Киев" => ["seasons" => 2,],
+                ];
+            }
+
+        }
 
     }
 
@@ -317,12 +332,13 @@
                     {
                         if ($pageName === "champ_league_current") {
                             $tourneyTitle = "Лига чемпионов";
+                            $tourneyStage = "1/8 финала";
                         }
                         elseif ($pageName === "euroleague_current") {
                             $tourneyTitle = "Лига Европы";
+                            // $tourneyStage = "1/16 финала";
+                            $tourneyStage = "1/8 финала";
                         }
-                        $tourneyStage = "1/8 финала";
-                        // $tourneyStage = "1/16 финала";
                         $actualStagePairs = $matchesClass->getActualStagePairs(["tourneyTitle" => $tourneyTitle, "tourneyFinalYear" => $tourneyEndYear, "stage" => $tourneyStage,]);
                         // echo "<pre>";
                         // var_dump($actualStagePairs);
