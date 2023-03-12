@@ -5,8 +5,8 @@
 
     { // Переменные, нуждающиеся в ручном определении перед генерацией таблицы. Часть 1 (из двух).
 
-        $pageName = "history12";
-        // $pageName = "history24";
+        // $pageName = "history12";
+        $pageName = "history24";
         // $pageName = "history36";
         // $pageName = "winners";
         // $pageName = "champ_league_current";
@@ -45,15 +45,21 @@
     { // Переменные, нуждающиеся в ручном определении перед генерацией таблицы. Часть 2 (из двух).
         
         // Нужно ещё определить:
-        // - в layoutElements/header/shortHeader.php - от какого сезона турниры показываем по ссылкам в "Текущем сезоне" (это нужно раз в год, при смене сезона)
-        // - если делаем таблицы с фаворитами текущих турниров, в classes/TablePagesProperties.php определить h1Content
-        // - если делаем таблицы с фаворитами текущих турниров, в classes/TablePagesProperties.php определить число в bookmakersParagraph
-        // - если делаем таблицы с фаворитами текущих турниров, в classes/TablePagesProperties.php определить стадию турнира в screamerParagraph
-        // - если делаем таблицы с фаворитами текущих турниров, в classes/TablePagesProperties.php определить наличие finishedTourneyParagraph
-        // - если делаем champ_league_current, в classes/TablePagesProperties.php определить наличие clubsNumber (возможно, без него можно вообще обойтись для champ_league_current)
-        // - если делаем таблицы с фаворитами текущих турниров, здесь определить $tourneyStage
-        // - если делаем таблицу с периодическим ранжиром, в classes/TablePagesProperties.php определить года в "keywordsContentPart" и "h1Content"
-        // - в captions отслеживать содержание параграфа типа "В таблице учтены матчи до..."
+
+            // - если делаем таблицы с фаворитами текущих турниров:
+                // - в classes/TablePagesProperties.php определить h1Content
+                // - в classes/TablePagesProperties.php определить число в bookmakersParagraph
+                // - в classes/TablePagesProperties.php определить стадию турнира в screamerParagraph
+                // - в classes/TablePagesProperties.php определить наличие finishedTourneyParagraph
+                // - здесь определить $tourneyStage
+                // - если делаем champ_league_current, в classes/TablePagesProperties.php определить наличие clubsNumber (возможно, без него можно вообще обойтись для champ_league_current)
+
+            // - если делаем таблицу с периодическим ранжиром, в classes/TablePagesProperties.php определить года в "keywordsContentPart" и "h1Content"
+
+            // - в captions отслеживать содержание параграфа типа "В таблице учтены матчи до..."
+
+            // Раз в год нужно определять:
+            // - в layoutElements/header/shortHeader.php - от какого сезона турниры показываем по ссылкам в "Текущем сезоне"       
 
         $lastAccountedMatchDate = "09.03.2023";
 
