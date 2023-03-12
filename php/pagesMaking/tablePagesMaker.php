@@ -12,8 +12,8 @@
         // $pageName = "champ_league_current";
         // $pageName = "euroleague_current";
         // $pageName = "ukraine";
-        $pageName = "decade";
-        // $pageName = "5years";
+        // $pageName = "decade";
+        $pageName = "5years";
 
     }
 
