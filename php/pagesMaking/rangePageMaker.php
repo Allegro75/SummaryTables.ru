@@ -88,7 +88,8 @@
             <? // Данные для таблиц:       
 
                 require_once 'rangeInfo.php'; // Получение содержания таблицы
-                $rangeInfo = getRangeInfo();
+                // $rangeInfo = getRangeInfo();
+                $rangeInfo = getPeriodicRangeInfo(["range" => "basic", "clubsNumber" => 100,]);
 
                 // echo "<pre>";
                 // // var_dump(array_keys($rangeInfo));
