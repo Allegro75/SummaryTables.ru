@@ -4,8 +4,7 @@
 require_once "classes/Range.php";
 require_once "classes/Club.php";
 
-// Получение данных, необходимых для отображения ранжира
-// Метод на удаление. Ибо в rangePageMaker переходим на использование getPeriodicRangeInfo
+// Получение данных, необходимых для отображения базового ранжира
 function getRangeInfo ($opts = []) {
 
     $info = [];
