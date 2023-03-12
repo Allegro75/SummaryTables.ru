@@ -6,8 +6,8 @@
     { // Переменные, нуждающиеся в ручном определении перед генерацией таблицы. Часть 1 (из двух).
 
         // $pageName = "history12";
-        $pageName = "history24";
-        // $pageName = "history36";
+        // $pageName = "history24";
+        $pageName = "history36";
         // $pageName = "winners";
         // $pageName = "champ_league_current";
         // $pageName = "euroleague_current";
@@ -63,8 +63,11 @@
 
         $lastAccountedMatchDate = "09.03.2023";
 
+        // Раз в год нужно определять:
         $tourneyStartYear = 2022;
         $tourneyEndYear = 2023;
+
+        // При изменении букмекерской котировки, на к-рую мы ориентируемся:
         if ($ranging === "bookmakers") {
             if ($pageName === "champ_league_current") {
                 $bookmakersOddsDate = "15.11.2022";
