@@ -5,7 +5,7 @@
 
     { // Переменные, нуждающиеся в определении перед генерацией страницы.
 
-        $lastAccountedMatchDate = "23.02.2022";
+        $lastAccountedMatchDate = "09.03.2023";
         $tourneyStartYear = 2022;
         $tourneyEndYear = 2023;
 
