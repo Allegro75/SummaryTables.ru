@@ -10,13 +10,16 @@
         // $pageName = "history36";
         // $pageName = "winners";
         // $pageName = "champ_league_current";
-        $pageName = "euroleague_current";
+        // $pageName = "euroleague_current";
         // $pageName = "ukraine";
-        // $pageName = "byelorussia";
-        // $pageName = "kazakhstan";
-        // $pageName = "decade";
+        $pageName = "decade";
         // $pageName = "5years";
 
+    }
+
+    { // Страницы, не нуждающиеся в обновлении (обычно нац. таблицы, в связи с окончанием участия клубов страны в розыгрышах в текущем сезоне)
+        // $pageName = "byelorussia";
+        // $pageName = "kazakhstan";
     }
 
     require_once 'classes/TablePagesProperties.php'; // Получение свойств генерируемой страницы
