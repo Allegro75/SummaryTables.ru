@@ -82,9 +82,9 @@ class Range {
 
         // $info["range"] = $range;
         $info["range"] = $range = $rangeInfo["range"];
-        echo "<pre>";
-        var_dump($rangeInfo);
-        echo "</pre>";        
+        // echo "<pre>";
+        // var_dump($rangeInfo);
+        // echo "</pre>";        
 
         $achieves = [];
 

@@ -267,7 +267,8 @@
 
                                     $curClubIndex = ((($tableNumber * 25) -25) + ($clubNumber - 1));
                                     $curClubName = $rangeInfo["range"][$curClubIndex]["clubName"];
-                                    $curClubPoints = $rangeInfo["range"][$curClubIndex]["mainRangeMarksSum"];
+                                    // $curClubPoints = $rangeInfo["range"][$curClubIndex]["mainRangeMarksSum"];
+                                    $curClubPoints = $rangeInfo["range"][$curClubIndex]["points"];
                                     $curClubInfo = $rangeInfo["clubsList"][$curClubName];
                                     // $curClubId = $curClubInfo["id"];
                                     $curClubId = $achievesArrIndexes[$curClubIndex];
