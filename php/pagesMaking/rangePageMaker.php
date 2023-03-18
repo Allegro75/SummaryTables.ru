@@ -266,11 +266,12 @@
                                 <?
 
                                     $curClubIndex = ((($tableNumber * 25) -25) + ($clubNumber - 1));
-                                    $curClubName = $rangeInfo["range"][$curClubIndex]["clubName"];
+                                    // $curClubName = $rangeInfo["range"][$curClubIndex]["clubName"];
+                                    $curClubName = (array_keys($rangeInfo["range"]))[$curClubIndex];
                                     // $curClubPoints = $rangeInfo["range"][$curClubIndex]["mainRangeMarksSum"];
-                                    $curClubPoints = $rangeInfo["range"][$curClubIndex]["points"];
+                                    // $curClubPoints = $rangeInfo["range"][$curClubIndex]["points"];
+                                    $curClubPoints = $rangeInfo["range"][$curClubName]["points"];
                                     $curClubInfo = $rangeInfo["clubsList"][$curClubName];
-                                    // $curClubId = $curClubInfo["id"];
                                     $curClubId = $achievesArrIndexes[$curClubIndex];
 
                                     $curClubCode = $curClubInfo["code"];
