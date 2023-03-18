@@ -10,9 +10,9 @@
         // $pageName = "history36";
         // $pageName = "winners";
         // $pageName = "champ_league_current";
-        // $pageName = "euroleague_current";
+        $pageName = "euroleague_current";
         // $pageName = "ukraine";
-        $pageName = "decade";
+        // $pageName = "decade";
         // $pageName = "5years";
 
     }
@@ -135,14 +135,14 @@
 
             elseif ($pageName === "euroleague_current") {
                 $clubsList = [
-                    "Манчестер Юнайтед" => ["odds" => 3.5,],
-                    "Арсенал" => ["odds" => 4.5,],
-                    "Ювентус" => ["odds" => 8,],
-                    "Реал Сосьедад" => ["odds" => 15,],
-                    "Рома" => ["odds" => 15,],             
-                    "Севилья" => ["odds" => 20,],
-                    "Унион Берлин" => ["odds" => 20,],
-                    "Бетис" => ["odds" => 25,],     
+                    "Манчестер Юнайтед" => ["odds" => 2.4,],
+                    "Ювентус" => ["odds" => 6,],
+                    "Рома" => ["odds" => 7,],             
+                    "Севилья" => ["odds" => 10,],
+                    "Байер Леверкузен" => ["odds" => 10,],
+                    "Спортинг Лиссабон" => ["odds" => 13,],     
+                    "Фейеноорд" => ["odds" => 17,],     
+                    "Унион Сент Жилуаз" => ["odds" => 35,],     
                 ];
             }
 
