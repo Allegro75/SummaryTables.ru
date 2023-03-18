@@ -162,19 +162,19 @@
                 ];
             }
 
-            // elseif ($pageName === "ukraine") {
-            //     $actualCountryClubsList = [
-            //         "Динамо Киев" => ["seasons" => 53,],
-            //         "Шахтёр Донецк" => ["seasons" => 33,],
-            //         "Днепр" => ["seasons" => 20,],
-            //         "Черноморец Одесса" => ["seasons" => 10,],
-            //         "Заря Луганск" => ["seasons" => 9,],
-            //         "Металлист Харьков" => ["seasons" => 9,],
-            //         "Ворскла" => ["seasons" => 7,],
-            //         "Карпаты" => ["seasons" => 5,],       
-            //         "ЦСКА Киев" => ["seasons" => 2,],
-            //     ];
-            // }
+            elseif ($pageName === "ukraine") {
+                $actualCountryClubsList = [
+                    "Динамо Киев" => ["seasons" => 52,],
+                    "Шахтёр Донецк" => ["seasons" => 33,],
+                    "Днепр" => ["seasons" => 20,],
+                    "Черноморец Одесса" => ["seasons" => 10,],
+                    "Заря Луганск" => ["seasons" => 9,],
+                    "Металлист Харьков" => ["seasons" => 9,],
+                    "Ворскла" => ["seasons" => 7,],
+                    "Карпаты" => ["seasons" => 5,],       
+                    "ЦСКА Киев" => ["seasons" => 2,],
+                ];
+            }
 
         }
 
@@ -274,7 +274,7 @@
                 if ($ranging === "national") {
 
                     $countryCodes = [
-                        "ukraine" => "UKR",
+                        // "ukraine" => "UKR",
                         "byelorussia" => "BLR",
                         "kazakhstan" => "KAZ",
                     ];
