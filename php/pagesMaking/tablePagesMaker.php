@@ -5,19 +5,19 @@
 
     { // Переменные, нуждающиеся в ручном определении перед генерацией таблицы. Часть 1 (из двух).
 
-        $pageName = "history12";
+        // $pageName = "history12";
         // $pageName = "history24";
         // $pageName = "history36";
         // $pageName = "winners";
         // $pageName = "champ_league_current";
         // $pageName = "euroleague_current";
-        // $pageName = "ukraine";
         // $pageName = "decade";
         // $pageName = "5years";
 
     }
 
     { // Страницы, не нуждающиеся в обновлении (обычно нац. таблицы, в связи с окончанием участия клубов страны в розыгрышах в текущем сезоне)
+        $pageName = "ukraine";
         // $pageName = "byelorussia";
         // $pageName = "kazakhstan";
     }
