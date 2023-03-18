@@ -197,7 +197,8 @@
         // echo "</pre>";
 
     }
-    elseif ($ranging === "mainRange") {
+    // elseif ($ranging === "mainRange") {
+    elseif (($ranging === "mainRange") || ($ranging === "national")) {
 
         require_once 'rangeInfo.php';
         $rangeInfo = getPeriodicRangeInfo(["range" => "basic", "clubsNumber" => $clubsNumber,]);
