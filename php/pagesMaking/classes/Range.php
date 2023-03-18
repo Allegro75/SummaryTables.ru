@@ -213,7 +213,7 @@ class Range {
             ORDER BY `t1`.`points` DESC, `t1`.`lastTourney` DESC, `lastMark` DESC
             LIMIT {$clubsNumber}
         ";
-        var_dump($sql);
+        // var_dump($sql);
         if ($res = mysqli_query($this->db, $sql)) {
             while ($row = mysqli_fetch_assoc($res)) {
                 $clubName = $row["clubName"];
