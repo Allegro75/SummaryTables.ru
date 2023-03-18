@@ -81,7 +81,7 @@ class Range {
         $rangeInfo = $this->getRange(["range" => $range, "clubsNumber" => 100,]);        
 
         // $info["range"] = $range;
-        $info["range"] = $rangeInfo["range"];
+        $info["range"] = $range = $rangeInfo["range"];
 
         $achieves = [];
 
