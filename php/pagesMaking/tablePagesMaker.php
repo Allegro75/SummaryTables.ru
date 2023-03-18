@@ -67,7 +67,7 @@
 
         }
 
-        $lastAccountedMatchDate = "09.03.2023";
+        $lastAccountedMatchDate = "16.03.2023";
 
         // Раз в год нужно определять:
         $tourneyStartYear = 2022;
@@ -77,9 +77,9 @@
         // - в classes/TablePagesProperties.php определить число в bookmakersParagraph (на число, совпадающее с новой $bookmakersOddsDate)
         if ($ranging === "bookmakers") {
             if ($pageName === "champ_league_current") {
-                $bookmakersOddsDate = "15.11.2022";
+                $bookmakersOddsDate = "18.03.2023";
             } elseif ($pageName === "euroleague_current") {
-                $bookmakersOddsDate = "24.02.2023";
+                $bookmakersOddsDate = "18.03.2023";
             }
         }
 
@@ -332,12 +332,14 @@
                     {
                         if ($pageName === "champ_league_current") {
                             $tourneyTitle = "Лига чемпионов";
-                            $tourneyStage = "1/8 финала";
+                            // $tourneyStage = "1/8 финала";
+                            $tourneyStage = "1/4 финала";
                         }
                         elseif ($pageName === "euroleague_current") {
                             $tourneyTitle = "Лига Европы";
                             // $tourneyStage = "1/16 финала";
-                            $tourneyStage = "1/8 финала";
+                            // $tourneyStage = "1/8 финала";
+                            $tourneyStage = "1/4 финала";
                         }
                         $actualStagePairs = $matchesClass->getActualStagePairs(["tourneyTitle" => $tourneyTitle, "tourneyFinalYear" => $tourneyEndYear, "stage" => $tourneyStage,]);
                         // echo "<pre>";
