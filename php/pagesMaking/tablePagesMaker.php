@@ -63,6 +63,7 @@
                 // - в captions отслеживать содержание параграфа типа "В таблице учтены матчи до...". Раз в год меняем содержание на "Таблица обновлена по итогам сезона ...". Также можно вписывать здесь указание на последнюю завершивуяся стадию турнира (например, "учтены все матчи групповых этапов"), но это и вовсе не обязательно.
                 // - если делаем таблицы с фаворитами текущих турниров, в classes/TablePagesProperties.php определить наличие finishedTourneyParagraph
                 // - если делаем таблицу с периодическим ранжиром, в classes/TablePagesProperties.php определить года в "keywordsContentPart" и "h1Content"
+                // - для winners обновить $clubsList здесь
             }
 
         }
@@ -73,8 +74,9 @@
         $tourneyStartYear = 2022;
         $tourneyEndYear = 2023;
 
-        // При изменении букмекерской котировки, на к-рую мы ориентируемся:
+        // При изменении букмекерской котировки, на к-рую мы ориентируемся, для таблиц с фаворитами текущих турниров:
         // - в classes/TablePagesProperties.php определить число в bookmakersParagraph (на число, совпадающее с новой $bookmakersOddsDate)
+        // обновить $clubsList здесь
         if ($ranging === "bookmakers") {
             if ($pageName === "champ_league_current") {
                 $bookmakersOddsDate = "18.03.2023";
@@ -82,6 +84,18 @@
                 $bookmakersOddsDate = "18.03.2023";
             }
         }
+
+        if ($pageName === "champ_league_current") {
+            $tourneyTitle = "Лига чемпионов";
+            // $tourneyStage = "1/8 финала";
+            $tourneyStage = "1/4 финала";
+        }
+        elseif ($pageName === "euroleague_current") {
+            $tourneyTitle = "Лига Европы";
+            // $tourneyStage = "1/16 финала";
+            // $tourneyStage = "1/8 финала";
+            $tourneyStage = "1/4 финала";
+        }        
 
         {// Базовые списки клубов:
 
@@ -114,22 +128,22 @@
 
             elseif ($pageName === "champ_league_current") {
                 $clubsList = [
-                    "Манчестер Сити" => ["odds" => 2.75,],
-                    "Бавария" => ["odds" => 7,],
-                    "Пари Сен-Жермен" => ["odds" => 10,],
-                    "Ливерпуль" => ["odds" => 10,],
-                    "Реал Мадрид" => ["odds" => 12,],
-                    "Наполи" => ["odds" => 15,],
-                    "Челси" => ["odds" => 17,],
-                    "Тоттенхэм Хотспур" => ["odds" => 20,],
-                    "Бенфика" => ["odds" => 25,],
-                    "Интер Милан" => ["odds" => 35,],
-                    "Милан" => ["odds" => 45,],
-                    "Боруссия Дортмунд" => ["odds" => 50,],
-                    "Порто" => ["odds" => 75,],
-                    "РБ Лейпциг" => ["odds" => 100,],            
-                    "Айнтрахт Франкфурт" => ["odds" => 150,],
-                    "Брюгге" => ["odds" => 250,],            
+                    "Манчестер Сити" => ["odds" => 3.7,],
+                    "Бавария" => ["odds" => 4.5,],
+                    "Наполи" => ["odds" => 4.5,],
+                    // "Пари Сен-Жермен" => ["odds" => 10,],
+                    // "Ливерпуль" => ["odds" => 10,],
+                    "Реал Мадрид" => ["odds" => 6,],                    
+                    "Челси" => ["odds" => 15,],
+                    // "Тоттенхэм Хотспур" => ["odds" => 20,],
+                    "Бенфика" => ["odds" => 15,],
+                    "Интер Милан" => ["odds" => 15,],
+                    "Милан" => ["odds" => 25,],
+                    // "Боруссия Дортмунд" => ["odds" => 50,],
+                    // "Порто" => ["odds" => 75,],
+                    // "РБ Лейпциг" => ["odds" => 100,],            
+                    // "Айнтрахт Франкфурт" => ["odds" => 150,],
+                    // "Брюгге" => ["odds" => 250,],            
                 ];
             }
 
@@ -228,7 +242,11 @@
     <link rel="shortcut icon" href="images/football_ball.svg" type="image/x-icon">
     <title><?=$browserTitle?></title>
     <? foreach($cssFilesList as $curFileName): ?>
-        <link rel="stylesheet" href="http://summarytables.ru/stylesheets/<?=$curFileName?>">
+        <? if (($pageName === "champ_league_current") && ($curFileName === "table16.css") && (in_array($tourneyStage, ["1/4 финала", "1/2 финала", "Финал"]))): ?>
+            <link rel="stylesheet" href="http://summarytables.ru/stylesheets/table8.css">
+        <? else: ?>
+            <link rel="stylesheet" href="http://summarytables.ru/stylesheets/<?=$curFileName?>">
+        <? endif; ?>
     <? endforeach; ?>
 
 </head>
@@ -330,17 +348,6 @@
 
                     // Получение массива пар незавершённой стадии турнира:
                     {
-                        if ($pageName === "champ_league_current") {
-                            $tourneyTitle = "Лига чемпионов";
-                            // $tourneyStage = "1/8 финала";
-                            $tourneyStage = "1/4 финала";
-                        }
-                        elseif ($pageName === "euroleague_current") {
-                            $tourneyTitle = "Лига Европы";
-                            // $tourneyStage = "1/16 финала";
-                            // $tourneyStage = "1/8 финала";
-                            $tourneyStage = "1/4 финала";
-                        }
                         $actualStagePairs = $matchesClass->getActualStagePairs(["tourneyTitle" => $tourneyTitle, "tourneyFinalYear" => $tourneyEndYear, "stage" => $tourneyStage,]);
                         // echo "<pre>";
                         // var_dump($actualStagePairs);
