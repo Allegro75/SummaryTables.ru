@@ -271,7 +271,8 @@
 
             <? // Данные для таблицы:
 
-                if ($ranging === "national") {
+                // if ($ranging === "national") {
+                if (($ranging === "national") && ($pageName !== "ukraine")) {
 
                     $countryCodes = [
                         // "ukraine" => "UKR",
