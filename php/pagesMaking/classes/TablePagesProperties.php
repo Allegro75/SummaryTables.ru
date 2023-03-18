@@ -350,7 +350,7 @@ class TablePagesProperties {
                 <a href=\"archive/champ_league/cl_2023.html\" title=\"Лига чемпионов 2022/2023. Ход турнира\">ЛИГИ ЧЕМПИОНОВ 2022/2023</a>",
             "bookmakersParagraph" => "<p class=\"captions__explanation\">
                 <span class=\"captions__explanation_circle\">&#8226;</span>
-                Указаны букмекерские коэффициенты от 15.11.2022
+                Указаны букмекерские коэффициенты от 18.03.2023
                 <span class=\"captions__explanation_circle\">&#8226;</span>
             </p>",
             // "screamerParagraph" => "<p class=\"captions__explanation\">
@@ -418,7 +418,7 @@ class TablePagesProperties {
 
             "bookmakersParagraph" => "<p class=\"captions__explanation\">
                 <span class=\"captions__explanation_circle\">&#8226;</span>
-                Указаны букмекерские коэффициенты от 24.02.2023
+                Указаны букмекерские коэффициенты от 18.03.2023
                 <span class=\"captions__explanation_circle\">&#8226;</span>
             </p>",
 
