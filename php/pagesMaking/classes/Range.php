@@ -78,13 +78,13 @@ class Range {
         // }
 
 
-        $rangeInfo = $this->getRange(["range" => $range, "clubsNumber" => 100,]);        
+        $rangeInfo = $this->getRange(["range" => "basic", "clubsNumber" => 100,]);        
 
         // $info["range"] = $range;
         $info["range"] = $range = $rangeInfo["range"];
-        echo "<pre>";
-        var_dump($rangeInfo);
-        echo "</pre>";        
+        // echo "<pre>";
+        // var_dump($rangeInfo);
+        // echo "</pre>";        
 
         $achieves = [];
 
