@@ -23,23 +23,65 @@ class Range {
             $minMarkClause = "HAVING `mainRangeMarksSum` >= {$minMark}";
         }
 
-        $sql = 
-            "SELECT `clubName`, `clubId`,
-            SUM(`mainRangeMark`) AS `mainRangeMarksSum`, 
-            MAX(CASE WHEN `mainRangeMark` > 0 THEN `tourneyFinalYear` END) AS `lastTourney`
-            FROM `clubs_achievements`
-            GROUP BY `clubId`
-            {$minMarkClause}
-            ORDER BY `mainRangeMarksSum` DESC, `lastTourney` DESC
-        ";
-        if ($res = mysqli_query($this->db, $sql)) {
-            while ($row = mysqli_fetch_assoc($res)) {
-                $range[] = $row;
-                // $clubInfo["sql"] = $sql;
-            }              
-        }
+        // $sql = 
+        //     "SELECT `clubName`, `clubId`,
+        //     SUM(`mainRangeMark`) AS `mainRangeMarksSum`, 
+        //     MAX(CASE WHEN `mainRangeMark` > 0 THEN `tourneyFinalYear` END) AS `lastTourney`
+        //     FROM `clubs_achievements`
+        //     GROUP BY `clubId`
+        //     {$minMarkClause}
+        //     ORDER BY `mainRangeMarksSum` DESC, `lastTourney` DESC
+        // ";
+        // if ($res = mysqli_query($this->db, $sql)) {
+        //     while ($row = mysqli_fetch_assoc($res)) {
+        //         $range[] = $row;
+        //         // $clubInfo["sql"] = $sql;
+        //     }
+        // }
 
-        $info["range"] = $range;
+        // $sql = 
+        //     "SELECT `t1`.`clubName`, `t1`.`clubId`, `t1`.`points`, `t1`.`lastTourney`, `clubs_achievements`.{$marksField} AS `lastMark`
+        //     FROM
+        //     (
+        //         SELECT `clubName`, `clubId`,
+        //         SUM({$marksField}) AS `points`, 
+        //         MAX(CASE WHEN {$marksField} > 0 THEN `tourneyFinalYear` END) AS `lastTourney`
+        //         FROM `clubs_achievements`
+        //         WHERE 1 = 1
+        //         {$earliestRangeYearClause}
+        //         GROUP BY `clubId`
+        //     ) 
+        //     AS `t1`
+        //     JOIN `clubs_achievements`
+        //     ON `clubs_achievements`.`clubId` = `t1`.`clubId`
+        //     WHERE `clubs_achievements`.`tourneyFinalYear` = `t1`.`lastTourney`
+        //     GROUP BY `t1`.`clubId`
+        //     ORDER BY `t1`.`points` DESC, `t1`.`lastTourney` DESC, `lastMark` DESC
+        //     LIMIT {$clubsNumber}
+        // ";
+
+        // $sql = 
+        //     "SELECT `clubName`, `clubId`,
+        //     SUM(`mainRangeMark`) AS `mainRangeMarksSum`, 
+        //     MAX(CASE WHEN `mainRangeMark` > 0 THEN `tourneyFinalYear` END) AS `lastTourney`
+        //     FROM `clubs_achievements`
+        //     GROUP BY `clubId`
+        //     {$minMarkClause}
+        //     ORDER BY `mainRangeMarksSum` DESC, `lastTourney` DESC
+        // ";
+
+        // if ($res = mysqli_query($this->db, $sql)) {
+        //     while ($row = mysqli_fetch_assoc($res)) {
+        //         $range[] = $row;
+        //         // $clubInfo["sql"] = $sql;
+        //     }
+        // }
+
+
+        $rangeInfo = $this->getRange(["range" => $range, "clubsNumber" => 100,]);        
+
+        // $info["range"] = $range;
+        $info["range"] = $rangeInfo["range"];
 
         $achieves = [];
 
@@ -182,17 +224,6 @@ class Range {
             $earliestRangeYearClause = "AND `tourneyFinalYear` >= {$earliestRangeYear}";
         }
 
-        // $sql = 
-        //     "SELECT `clubName`, `clubId`,
-        //     SUM({$marksField}) AS `points`, 
-        //     MAX(CASE WHEN {$marksField} > 0 THEN `tourneyFinalYear` END) AS `lastTourney`
-        //     FROM `clubs_achievements`
-        //     WHERE 1 = 1
-        //     {$earliestRangeYearClause}
-        //     GROUP BY `clubId`
-        //     ORDER BY `points` DESC, `lastTourney` DESC
-        //     LIMIT {$clubsNumber}
-        // ";
         $sql = 
             "SELECT `t1`.`clubName`, `t1`.`clubId`, `t1`.`points`, `t1`.`lastTourney`, `clubs_achievements`.{$marksField} AS `lastMark`
             FROM
