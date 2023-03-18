@@ -17,8 +17,8 @@
     }
 
     { // Страницы, не нуждающиеся в обновлении (обычно нац. таблицы, в связи с окончанием участия клубов страны в розыгрышах в текущем сезоне)
-        $pageName = "ukraine";
-        // $pageName = "byelorussia";
+        // $pageName = "ukraine";
+        $pageName = "byelorussia";
         // $pageName = "kazakhstan";
     }
 
