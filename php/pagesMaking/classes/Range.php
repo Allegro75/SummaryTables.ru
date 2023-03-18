@@ -82,6 +82,9 @@ class Range {
 
         // $info["range"] = $range;
         $info["range"] = $range = $rangeInfo["range"];
+        echo "<pre>";
+        var_dump($rangeInfo);
+        echo "</pre>";        
 
         $achieves = [];
 
@@ -142,12 +145,6 @@ class Range {
                 while ($row = mysqli_fetch_assoc($res)) {
                     $isClAchieve = (in_array($row["tourneyTitle"], $clNames)) ? true : false;
                     if ($isClAchieve === true) {
-                        // $achieves[$curClubId]["achieves"]["cl"]["tourneys"][] = [
-                        //     "tourneyTitle" => $row["tourneyTitle"],
-                        //     "tourneyFinalYear" => $row["tourneyFinalYear"],
-                        //     "tourneyResult" => $row["tourneyResult"],
-                        //     "mainRangeMark" => $row["mainRangeMark"],
-                        // ];
                         if ($row["tourneyFinalYear"] <= 1999) {
                             $achieveStage = $oldCcPointsExplanations[$row["mainRangeMark"]];
                         }
@@ -163,26 +160,6 @@ class Range {
                         ];                        
                     }                    
                     elseif ($isClAchieve === false) {
-                        // $achieves[$curClubId]["achieves"]["el"]["tourneys"][] = [
-                        //     "tourneyTitle" => $row["tourneyTitle"],
-                        //     "tourneyFinalYear" => $row["tourneyFinalYear"],
-                        //     "tourneyResult" => $row["tourneyResult"],
-                        //     "mainRangeMark" => $row["mainRangeMark"],
-                        // ];
-                        // switch ($row["mainRangeMark"]) {
-                        //     case 4:
-                        //         $achieves[$curClubId]["achieves"]["el"]["totalInfo"]["wins"]["number"]++;
-                        //         break;
-                        //     case 3:
-                        //         $achieves[$curClubId]["achieves"]["el"]["totalInfo"]["finals"]["number"]++;
-                        //         break;
-                        //     case 2:
-                        //         $achieves[$curClubId]["achieves"]["el"]["totalInfo"]["semiFinals"]["number"]++;
-                        //         break;
-                        //     case 1:
-                        //         $achieves[$curClubId]["achieves"]["el"]["totalInfo"]["qurterFinals"]["number"]++;
-                        //         break;
-                        // }
                         $achieveStage = $elPointsExplanations[$row["mainRangeMark"]];
                         $achieves[$curClubId]["achieves"]["el"][$achieveStage]["number"]++;
                         $achieves[$curClubId]["achieves"]["el"][$achieveStage]["tourneys"][] = [
