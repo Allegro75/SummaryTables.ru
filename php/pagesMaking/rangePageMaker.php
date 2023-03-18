@@ -91,12 +91,12 @@
                 $rangeInfo = getRangeInfo();
                 // $rangeInfo = getPeriodicRangeInfo(["range" => "basic", "clubsNumber" => 100,]);
 
-                echo "<pre>";
-                // var_dump(array_keys($rangeInfo));
-                var_dump($rangeInfo["range"]);
-                // var_dump($rangeInfo["clubsList"]);
-                // var_dump($rangeInfo["achieves"]);
-                echo "</pre>";
+                // echo "<pre>";
+                // // var_dump(array_keys($rangeInfo));
+                // var_dump($rangeInfo["range"]);
+                // // var_dump($rangeInfo["clubsList"]);
+                // // var_dump($rangeInfo["achieves"]);
+                // echo "</pre>";
 
                 $achievesArrIndexes = array_keys($rangeInfo["achieves"]);
 
