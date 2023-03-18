@@ -274,6 +274,7 @@
                 if ($ranging === "national") {
 
                     $countryCodes = [
+                        "ukraine" => "UKR",
                         "byelorussia" => "BLR",
                         "kazakhstan" => "KAZ",
                     ];
