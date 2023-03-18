@@ -379,7 +379,7 @@
                         // "Not" => "Not_light.png",
                         "Not" => "Not_dark.png",
                         "Prt" => "Prt_light.png",
-                        "SpL" => "SpL_light.png",
+                        // "SpL" => "SpL_light.png", // Не понравилась светлая версия в euroleague_current (на 6-й позиции в таблице)
                         "StL" => "StL_light.png",
                         "Zen" => "Zen_light.png",
                     ];
