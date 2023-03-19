@@ -917,18 +917,44 @@
                         $sovietRepublicsInfo = [
                             "ukraine" => [
                                 "h2" => "УКРАИНА",
+                                "reptableAddClassHtml" => " UKR",
                             ],
                             "georgia" => [
                                 "h2" => "ГРУЗИЯ",
+                                "reptableAddClassHtml" => " georgia",
                             ],
                             "lithuania" => [
                                 "h2" => "ЛИТВА",
+                                "reptableAddClassHtml" => " lithuania",
                             ],
                             "armenia" => [
                                 "h2" => "АРМЕНИЯ",
+                                "reptableAddClassHtml" => " armenia",
                             ],
                         ];
                     ?>
+
+                    <? foreach ($sovietRepublicsInfo as $curRepublic): ?>
+
+                        <h2>
+                            <?= $curRepublic["h2"] ?>
+                        </h2>
+
+                        <table class="main-table republican-table<?=$curRepublic["reptableAddClassHtml"]?>">
+                            <tbody>
+
+                                <tr class="logotypes">
+
+
+                                
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                        <hr>
+
+                    <? endforeach; ?>
 
                 </section class="soviet-republics">
 
