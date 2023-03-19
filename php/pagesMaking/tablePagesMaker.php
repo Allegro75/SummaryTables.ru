@@ -10,14 +10,14 @@
         // $pageName = "history36";
         // $pageName = "winners";
         // $pageName = "champ_league_current";
-        $pageName = "euroleague_current";
+        // $pageName = "euroleague_current";
         // $pageName = "decade";
         // $pageName = "5years";
 
     }
 
     { // Нац. страницы, нуждающиеся в обновлении только при изменениях в ранжировании первых 24 клубов Европы (а при отсутствии таких изменений - не нуждающиеся в связи с окончанием участия клубов страны в розыгрышах в текущем сезоне)
-        // $pageName = "russia";
+        $pageName = "russia";
         // $pageName = "ukraine";
         // $pageName = "byelorussia";
         // $pageName = "kazakhstan";
@@ -77,6 +77,7 @@
         }
 
         // Нужно ещё поработать над определением переменной $seasonIsFinished, от к-рой зависит появление заголовка типа "Таблица обновлена по итогам сезона"
+        // А, может быть, она и вовсе не нужна (если уж, как выясняется, нац. таблицы могут обновляться независимо от участия нац. команд в еврокубках)
 
         $lastAccountedMatchDate = "16.03.2023";
 
@@ -274,7 +275,8 @@
             
                 require_once 'layoutElements/captions/captions.php'; // Заголовки (крупнейший из к-рых - 'ЛУЧШИЕ КЛУБЫ ЕВРОПЫ ЗА ВСЮ ИСТОРИЮ')
 
-                $seasonIsFinished = ($ranging === "national") ? true : false;
+                // $seasonIsFinished = ($ranging === "national") ? true : false;
+                $seasonIsFinished = false;
 
                 printCaptions (["lastAccountedMatchDate" => $lastAccountedMatchDate, "captionsClubsNumberPhraseFirstPart" => $captionsClubsNumberPhraseFirstPart, "clubsNumberPhraseLastPart" => $clubsNumberPhraseLastPart, "clubsNumber" => $clubsNumber, "h1Content" => $h1Content, "clubsRangeExplanationHintText" => $clubsRangeExplanationHintText, "ranging" => $ranging, "bookmakersParagraph" => $bookmakersParagraph, "periodicRangeParagraph" => $periodicRangeParagraph, "screamerParagraph" => $screamerParagraph, "finishedTourneyParagraph" => $finishedTourneyParagraph, "seasonIsFinished" => $seasonIsFinished, "tourneyStartYear" => $tourneyStartYear, "tourneyEndYear" => $tourneyEndYear,]);
 
@@ -286,6 +288,7 @@
                 if (($ranging === "national") && ($pageName !== "ukraine")) {
 
                     $countryCodes = [
+                        "russia" => "RUS",
                         // "ukraine" => "UKR",
                         "byelorussia" => "BLR",
                         "kazakhstan" => "KAZ",
