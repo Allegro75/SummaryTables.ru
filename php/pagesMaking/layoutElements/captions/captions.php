@@ -44,19 +44,18 @@ function printCaptions ($opts = []) {
             </p>
         ";
 
-        // $lastDateParagrapContenthLastPart = " (учтены все матчи групповых этапов сезона 2022/2023)";
-        $lastDateParagrapContenthLastPart = "";
-        $lastDateParagrapContenthFirstPart = "В таблице учтены";
-
-        if ($seasonIsFinished === true) {
-            $updatingDateParagraphContent = "Таблица обновлена по итогам сезона {$tourneyStartYear}/{$tourneyEndYear}";
-        }
-        elseif ($seasonIsFinished === false) {
-            $updatingDateParagraphContent = "{$lastDateParagrapContenthFirstPart} матчи до {$lastAccountedMatchDate} включительно{$lastDateParagrapContenthLastPart}";
-        }
-
-
     }
+
+    // $lastDateParagrapContenthLastPart = " (учтены все матчи групповых этапов сезона 2022/2023)";
+    $lastDateParagrapContenthLastPart = "";
+    $lastDateParagrapContenthFirstPart = "В таблице учтены";
+
+    if ($seasonIsFinished === true) {
+        $updatingDateParagraphContent = "Таблица обновлена по итогам сезона {$tourneyStartYear}/{$tourneyEndYear}";
+    }
+    elseif ($seasonIsFinished === false) {
+        $updatingDateParagraphContent = "{$lastDateParagrapContenthFirstPart} матчи до {$lastAccountedMatchDate} включительно{$lastDateParagrapContenthLastPart}";
+    }    
     
 
     $for36clubsCaptionsPart = ""; // Часть заголовков, используемая только на странице с 36 клубами
