@@ -690,7 +690,7 @@
 //                                             "«{$curClubInfo["shortName"]}» - «{$innerCycleClubInfo["shortName"]}»
 // {$curPairHistory["firstVictories"]} {$victoriesWord}, {$curPairHistory["draws"]} {$drawsWord}, {$curPairHistory["firstLesions"]} {$lesionsWord}";
                                         $resultsHintContent = ($hasHistory === true) ? 
-                                            "«{$justClubName}»{$cityPart} - «{$rivalJustClubName}»{$rivalCityPart}»
+                                            "«{$justClubName}»{$cityPart} - «{$rivalJustClubName}»{$rivalCityPart}
 {$curPairHistory["firstVictories"]} {$victoriesWord}, {$curPairHistory["draws"]} {$drawsWord}, {$curPairHistory["firstLesions"]} {$lesionsWord}
 Кликните, чтобы узнать подробности" 
                                             : 
