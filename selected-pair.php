@@ -287,7 +287,7 @@
                 // var_dump($clubsList);
                 
                 $firstClubDemoId = (isset($_GET['club_1']) && (in_array($_GET['club_1'], $allClubsIds))) ? $_GET['club_1'] : 165;
-                $secondClubDemoId = (isset($_GET['club_2']) && (in_array($_GET['club_2'], $allClubsIds))) ? $_GET['club_2'] : 21;
+                $secondClubDemoId = (isset($_GET['club_2']) && (in_array($_GET['club_2'], $allClubsIds))) ? $_GET['club_2'] : 114;
 
             ?>
             
