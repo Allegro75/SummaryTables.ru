@@ -407,7 +407,7 @@
                         "Prt" => "Prt_light.png",
                         // "SpL" => "SpL_light.png", // Не понравилась светлая версия в euroleague_current (на 6-й позиции в таблице)
                         "StL" => "StL_light.png",
-                        "Zen" => "Zen_light.png",
+                        // "Zen" => "Zen_light.png", // Не понравилась светлая версия в russia (на 3-й позиции в таблице)
                     ];
 
                     $clubsLists = ($ranging === "national") ? ['clubsList' => $tableInfo['clubsList'], 'actualCountryClubsList' => $tableInfo['actualCountryClubsList']] : ['clubsList' => $tableInfo['clubsList']];
@@ -546,7 +546,8 @@
                     <? 
                         $verticalClubsList = $tableInfo['clubsList'];
                         if ($ranging === "national") {
-                            $verticalClubsList = (in_array($pageName, ["byelorussia", "kazakhstan"])) ? $filteredActualCountryClubsList : $tableInfo['actualCountryClubsList'];
+                            // $verticalClubsList = (in_array($pageName, ["byelorussia", "kazakhstan"])) ? $filteredActualCountryClubsList : $tableInfo['actualCountryClubsList'];
+                            $verticalClubsList = ($ranging === "national") ? $filteredActualCountryClubsList : $tableInfo['actualCountryClubsList'];
                         }
                         // echo "<pre>";
                         // echo "verticalClubsList:";
