@@ -646,23 +646,18 @@
                                         $lesionsWord = WordForms::getWordLikeLesion(["word" => "поражение", "number" => $curPairHistory["firstLesions"]]);
                                         $duelsLesionsWord = WordForms::getWordLikeLesion(["word" => "поражение", "number" => $curPairHistory["duels"]["firstClubDuelsLesions"]]);
 
-                                        $resultsHintContent = ($hasHistory === true) ? 
-                                        "«{$curClubInfo["shortName"]}» - «{$innerCycleClubInfo["shortName"]}»
-{$curPairHistory["firstVictories"]} {$victoriesWord}, {$curPairHistory["draws"]} {$drawsWord}, {$curPairHistory["firstLesions"]} {$lesionsWord}
-Кликните, чтобы узнать подробности" : 
-                                        "«{$curClubInfo["shortName"]}» - «{$innerCycleClubInfo["shortName"]}»
-{$curPairHistory["firstVictories"]} {$victoriesWord}, {$curPairHistory["draws"]} {$drawsWord}, {$curPairHistory["firstLesions"]} {$lesionsWord}";
-
-                                        $resultsCellContent = ($hasHistory === true) ? 
-                                        "<p class=\"games-score\">+{$curPairHistory["firstVictories"]} ={$curPairHistory["draws"]} -{$curPairHistory["firstLesions"]}</p>
-<p class=\"goals-difference\">{$curPairHistory["firstGoals"]} - {$curPairHistory["secondGoals"]}</p>" : 
-                                        "<p class=\"games-score\">+ = -</p>
-<p class=\"goals-difference\">-</p>";
-
                                         // $secClubNameGender = $tableInfo['clubsList'][$secClubFullName]["gender"];
                                         $correctClubNameInDuels = WordForms::getGenitiveWord(["word" => $innerCycleClubInfo["shortName"], "gender" => $secClubNameGender,]);
                                         $secClubGenitiveName = $correctClubNameInDuels["clubNameCorrForm"] ?? $correctClubNameInDuels; // В случае, если в WordForms передавалось имя типа "Боруссия Д" здесь мы получим в ответ массив, элементом к-рого с ключом "clubNameCorrForm" будет слово "Боруссии". В большинстве же случаев - просто сразу получим нужную форму названия клуба.
                                         $cityPartClubName = $correctClubNameInDuels["cityPart"] ?? ""; // Для "Боруссия Д" здесь мы получим "Д". В остальных случаях - ничего.
+
+                                        $resultsCellContent = ($hasHistory === true) ? 
+                                            "<p class=\"games-score\">+{$curPairHistory["firstVictories"]} ={$curPairHistory["draws"]} -{$curPairHistory["firstLesions"]}</p>
+                                            <p class=\"goals-difference\">{$curPairHistory["firstGoals"]} - {$curPairHistory["secondGoals"]}</p>" 
+                                            : 
+                                            "<p class=\"games-score\">+ = -</p>
+                                            <p class=\"goals-difference\">-</p>
+                                        ";                                        
 
                                         $specialCasesClubsNames = [
                                             "Црвена звезда",
@@ -670,17 +665,37 @@
                                             "Астон Вилла",
                                             "Унион Сент Жилуаз",
                                         ];
-                                        // if ((mb_strpos($curClubInfo["shortName"], " ") !== false) && ($curClubInfo["shortName"] !== "Црвена звезда")) {
                                         if ((mb_strpos($curClubInfo["shortName"], " ") !== false) && (!(in_array($curClubInfo["shortName"], $specialCasesClubsNames)))) { // Для названий типа "Боруссия Д", "Динамо К". Работа над получением корректной формы этих названий в именительном падеже с учётом кавычек.
 
                                             $clubNameWordsArr = explode(" ", $curClubInfo["shortName"]);
                                             $justClubName = $clubNameWordsArr[0];
                                             $cityPart = $clubNameWordsArr[1];
 
+                                            $rivalNameWordsArr = explode(" ", $innerCycleClubInfo["shortName"]);
+                                            $rivalJustClubName = $rivalNameWordsArr[0];
+                                            $rivalCityPart = $rivalNameWordsArr[1];                                            
+
                                         } else {
                                             $justClubName = $curClubInfo["shortName"];
                                             $cityPart = "";
-                                        }                       
+                                            $rivalJustClubName = $innerCycleClubInfo["shortName"];
+                                            $rivalCityPart = "";
+                                        }
+                                        
+//                                         $resultsHintContent = ($hasHistory === true) ? 
+//                                             "«{$curClubInfo["shortName"]}» - «{$innerCycleClubInfo["shortName"]}»
+// {$curPairHistory["firstVictories"]} {$victoriesWord}, {$curPairHistory["draws"]} {$drawsWord}, {$curPairHistory["firstLesions"]} {$lesionsWord}
+// Кликните, чтобы узнать подробности" 
+//                                             : 
+//                                             "«{$curClubInfo["shortName"]}» - «{$innerCycleClubInfo["shortName"]}»
+// {$curPairHistory["firstVictories"]} {$victoriesWord}, {$curPairHistory["draws"]} {$drawsWord}, {$curPairHistory["firstLesions"]} {$lesionsWord}";
+                                        $resultsHintContent = ($hasHistory === true) ? 
+                                            "«{$justClubName}»{$cityPart} - «{$rivalJustClubName}»{$rivalCityPart}»
+{$curPairHistory["firstVictories"]} {$victoriesWord}, {$curPairHistory["draws"]} {$drawsWord}, {$curPairHistory["firstLesions"]} {$lesionsWord}
+Кликните, чтобы узнать подробности" 
+                                            : 
+                                            "«{$curClubInfo["shortName"]}» - «{$innerCycleClubInfo["shortName"]}»
+{$curPairHistory["firstVictories"]} {$victoriesWord}, {$curPairHistory["draws"]} {$drawsWord}, {$curPairHistory["firstLesions"]} {$lesionsWord}";                                        
 
                                         $duelsHintFirstStr = "«{$justClubName}»{$cityPart} против «{$secClubGenitiveName}»{$cityPartClubName}\n";
                                         $duelsDrawsElement = "";
