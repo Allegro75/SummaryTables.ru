@@ -17,6 +17,9 @@ function printCaptions ($opts = []) {
     $periodicRangeParagraph = $opts['periodicRangeParagraph'];
     $screamerParagraph = $opts['screamerParagraph'];
     $finishedTourneyParagraph = $opts['finishedTourneyParagraph'];
+    $seasonIsFinished = $opts['seasonIsFinished'] ?? false;
+    $tourneyStartYear = $opts['tourneyStartYear'];
+    $tourneyEndYear = $opts['tourneyEndYear'];
     $clubsRangeExplanationHintHtmlRecord = empty($clubsRangeExplanationHintText) ? "" : " title=\"{$clubsRangeExplanationHintText}\"";
     $ranging = $opts['ranging'];
     $hrefFromClubsNumber = ["", ""];
@@ -44,6 +47,14 @@ function printCaptions ($opts = []) {
         // $lastDateParagrapContenthLastPart = " (учтены все матчи групповых этапов сезона 2022/2023)";
         $lastDateParagrapContenthLastPart = "";
         $lastDateParagrapContenthFirstPart = "В таблице учтены";
+
+        if ($seasonIsFinished === true) {
+            $updatingDateParagraphContent = "Таблица обновлена по итогам сезона {$tourneyStartYear}/{$tourneyEndYear}";
+        }
+        elseif ($seasonIsFinished === false) {
+            $updatingDateParagraphContent = "{$lastDateParagrapContenthFirstPart} матчи до {$lastAccountedMatchDate} включительно{$lastDateParagrapContenthLastPart}";
+        }
+
 
     }
     
@@ -101,9 +112,7 @@ function printCaptions ($opts = []) {
 
                 <p class=\"captions__explanation\">
                     <span class=\"captions__explanation_circle\">&#8226;</span>                
-                        <!-- Таблица обновлена по итогам сезона 2022/2023 -->
-                        Таблица обновлена по итогам сезона 2022/2023
-                        <!-- {$lastDateParagrapContenthFirstPart} матчи до {$lastAccountedMatchDate} включительно{$lastDateParagrapContenthLastPart} -->
+                        {$updatingDateParagraphContent}
                     <span class=\"captions__explanation_circle\">&#8226;</span>
                 </p>
 

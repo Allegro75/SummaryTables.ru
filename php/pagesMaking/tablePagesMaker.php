@@ -48,7 +48,12 @@
 
     { // Переменные, нуждающиеся в ручном определении перед генерацией таблицы. Часть 2 (из двух).
         
-        { // Для начала нужно ещё определить:                   
+        { // Для начала нужно ещё определить:
+            
+            { // Для нац. таблиц:
+                // - При изменениях в ранжировании первых 24 клубов Европы - обновлять страницу вне зависимости от окончания сезона для данной страны
+                // - При окончании сезона для данной страны (вылете всех её клубов из текущего розыгрыша) в captions меняем содержание на "Таблица обновлена по итогам сезона ...".
+            }            
 
             { // При смене предстоящей стадии плей-офф нужно определять:
                 // - в classes/TablePagesProperties.php определить стадию турнира в screamerParagraph
@@ -60,6 +65,8 @@
             }
 
             { // Раз в год (по окончании текущего турнира / перед началом следующего) нужно определять:
+                $tourneyStartYear = 2022;
+                $tourneyEndYear = 2023;
                 // - в layoutElements/header/shortHeader.php - от какого сезона турниры показываем по ссылкам в "Текущем сезоне"
                 // - в captions отслеживать содержание параграфа типа "В таблице учтены матчи до...". Раз в год меняем содержание на "Таблица обновлена по итогам сезона ...". Также можно вписывать здесь указание на последнюю завершивуяся стадию турнира (например, "учтены все матчи групповых этапов"), но это и вовсе не обязательно.
                 // - если делаем таблицы с фаворитами текущих турниров, в classes/TablePagesProperties.php определить наличие finishedTourneyParagraph
@@ -67,18 +74,11 @@
                 // - для winners обновить $clubsList здесь
             }
 
-            { // Для нац. таблиц:
-                // - При изменениях в ранжировании первых 24 клубов Европы - обновлять страницу вне зависимости от окончания сезона для данной страны
-                // - При окончании сезона для данной страны (вылете всех её клубов из текущего розыгрыша) в captions меняем содержание на "Таблица обновлена по итогам сезона ...".
-            }
-
         }
 
-        $lastAccountedMatchDate = "16.03.2023";
+        // Нужно ещё поработать над определением переменной $seasonIsFinished, от к-рой зависит появление заголовка типа "Таблица обновлена по итогам сезона"
 
-        // Раз в год нужно определять:
-        $tourneyStartYear = 2022;
-        $tourneyEndYear = 2023;
+        $lastAccountedMatchDate = "16.03.2023";
 
         // При изменении букмекерской котировки, на к-рую мы ориентируемся, для таблиц с фаворитами текущих турниров:
         // - в classes/TablePagesProperties.php определить число в bookmakersParagraph (на число, совпадающее с новой $bookmakersOddsDate)
@@ -105,8 +105,8 @@
 
         }
 
-        {// Базовые списки клубов:
-
+        { // Базовые списки клубов:
+ 
             if ($pageName === "winners") {
                 $clubsList = [
                     "Реал Мадрид" => ["wins" => 14, "finals" => 3],
@@ -182,35 +182,37 @@
                 ];
             }
 
+
+            if ($ranging === "periodic") {
+
+                $periodEndYear = $tourneyEndYear;
+                // $periodEndYear = $tourneyStartYear;
+        
+                $yearsNumberToSubtract = $yearsNumber - 1;
+                $periodStartYear = $periodEndYear - $yearsNumberToSubtract;
+        
+                require_once 'rangeInfo.php';
+                $rangeInfo = getPeriodicRangeInfo(["range" => "periodic", "subrange" => ["periodStartYear" => $periodStartYear,], "clubsNumber" => $clubsNumber,]);
+                $clubsList = $rangeInfo["range"];
+                // echo "<pre>";
+                // // var_dump($clubsList);
+                // var_dump($rangeInfo);
+                // echo "</pre>";
+        
+            }
+            // elseif ($ranging === "mainRange") {
+            elseif (($ranging === "mainRange") || ($ranging === "national")) {
+        
+                require_once 'rangeInfo.php';
+                $rangeInfo = getPeriodicRangeInfo(["range" => "basic", "clubsNumber" => $clubsNumber,]);
+                $clubsList = $rangeInfo["range"];
+        
+            }          
+
         }
 
     }
 
-    if ($ranging === "periodic") {
-
-        $periodEndYear = $tourneyEndYear;
-        // $periodEndYear = $tourneyStartYear;
-
-        $yearsNumberToSubtract = $yearsNumber - 1;
-        $periodStartYear = $periodEndYear - $yearsNumberToSubtract;
-
-        require_once 'rangeInfo.php';
-        $rangeInfo = getPeriodicRangeInfo(["range" => "periodic", "subrange" => ["periodStartYear" => $periodStartYear,], "clubsNumber" => $clubsNumber,]);
-        $clubsList = $rangeInfo["range"];
-        // echo "<pre>";
-        // // var_dump($clubsList);
-        // var_dump($rangeInfo);
-        // echo "</pre>";
-
-    }
-    // elseif ($ranging === "mainRange") {
-    elseif (($ranging === "mainRange") || ($ranging === "national")) {
-
-        require_once 'rangeInfo.php';
-        $rangeInfo = getPeriodicRangeInfo(["range" => "basic", "clubsNumber" => $clubsNumber,]);
-        $clubsList = $rangeInfo["range"];
-
-    }
 
     $headDescriptionClubsNumberPhraseLastPart = "";
     if ($hasTourneyYearIndicationInHead) {
@@ -271,7 +273,10 @@
             <? // Заголовки
             
                 require_once 'layoutElements/captions/captions.php'; // Заголовки (крупнейший из к-рых - 'ЛУЧШИЕ КЛУБЫ ЕВРОПЫ ЗА ВСЮ ИСТОРИЮ')
-                printCaptions (["lastAccountedMatchDate" => $lastAccountedMatchDate, "captionsClubsNumberPhraseFirstPart" => $captionsClubsNumberPhraseFirstPart, "clubsNumberPhraseLastPart" => $clubsNumberPhraseLastPart, "clubsNumber" => $clubsNumber, "h1Content" => $h1Content, "clubsRangeExplanationHintText" => $clubsRangeExplanationHintText, "ranging" => $ranging, "bookmakersParagraph" => $bookmakersParagraph, "periodicRangeParagraph" => $periodicRangeParagraph, "screamerParagraph" => $screamerParagraph, "finishedTourneyParagraph" => $finishedTourneyParagraph,]);
+
+                $seasonIsFinished = ($ranging === "national") ? true : false;
+
+                printCaptions (["lastAccountedMatchDate" => $lastAccountedMatchDate, "captionsClubsNumberPhraseFirstPart" => $captionsClubsNumberPhraseFirstPart, "clubsNumberPhraseLastPart" => $clubsNumberPhraseLastPart, "clubsNumber" => $clubsNumber, "h1Content" => $h1Content, "clubsRangeExplanationHintText" => $clubsRangeExplanationHintText, "ranging" => $ranging, "bookmakersParagraph" => $bookmakersParagraph, "periodicRangeParagraph" => $periodicRangeParagraph, "screamerParagraph" => $screamerParagraph, "finishedTourneyParagraph" => $finishedTourneyParagraph, "seasonIsFinished" => $seasonIsFinished, "tourneyStartYear" => $tourneyStartYear, "tourneyEndYear" => $tourneyEndYear,]);
 
             ?>
 
