@@ -665,19 +665,23 @@
                                             "Астон Вилла",
                                             "Унион Сент Жилуаз",
                                         ];
-                                        if ((mb_strpos($curClubInfo["shortName"], " ") !== false) && (!(in_array($curClubInfo["shortName"], $specialCasesClubsNames)))) { // Для названий типа "Боруссия Д", "Динамо К". Работа над получением корректной формы этих названий в именительном падеже с учётом кавычек.
+                                        if ((mb_strpos($curClubInfo["shortName"], " ") !== false) && (!(in_array($curClubInfo["shortName"], $specialCasesClubsNames)))) { // Для названий типа "Боруссия Д", "Динамо К". Работа над получением корректной формы этих названий в именительном падеже с учётом кавычек. Для первой команды в паре.
 
                                             $clubNameWordsArr = explode(" ", $curClubInfo["shortName"]);
                                             $justClubName = $clubNameWordsArr[0];
-                                            $cityPart = $clubNameWordsArr[1];
+                                            $cityPart = $clubNameWordsArr[1];                                        
+
+                                        } else {
+                                            $justClubName = $curClubInfo["shortName"];
+                                            $cityPart = "";
+                                        }
+                                        if ((mb_strpos($curClubInfo["shortName"], " ") !== false) && (!(in_array($innerCycleClubInfo["shortName"], $specialCasesClubsNames)))) { // Для названий типа "Боруссия Д", "Динамо К". Работа над получением корректной формы этих названий в именительном падеже с учётом кавычек. Для второй команды в паре.
 
                                             $rivalNameWordsArr = explode(" ", $innerCycleClubInfo["shortName"]);
                                             $rivalJustClubName = $rivalNameWordsArr[0];
                                             $rivalCityPart = $rivalNameWordsArr[1];                                            
 
                                         } else {
-                                            $justClubName = $curClubInfo["shortName"];
-                                            $cityPart = "";
                                             $rivalJustClubName = $innerCycleClubInfo["shortName"];
                                             $rivalCityPart = "";
                                         }
