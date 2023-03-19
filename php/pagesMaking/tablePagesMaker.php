@@ -10,7 +10,7 @@
         // $pageName = "history36";
         // $pageName = "winners";
         // $pageName = "champ_league_current";
-        // $pageName = "euroleague_current";
+        $pageName = "euroleague_current";
         // $pageName = "decade";
         // $pageName = "5years";
 
@@ -20,7 +20,7 @@
         // $pageName = "russia";
         // $pageName = "ukraine";
         // $pageName = "byelorussia";
-        $pageName = "kazakhstan";
+        // $pageName = "kazakhstan";
     }
 
     require_once 'classes/TablePagesProperties.php'; // Получение свойств генерируемой страницы
