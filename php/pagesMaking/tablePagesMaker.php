@@ -357,7 +357,8 @@
 
                 require_once 'classes/WordForms.php'; // Файл для получения правильных форм слов
 
-                $champLeagueClassHtmlRecordForTable = "";
+                $addClassesForMainTableHtml = "";
+
                 if ($ranging === "bookmakers") {
 
                     require_once 'classes/Matches.php';
@@ -374,9 +375,13 @@
                     }
 
                     if ($tourneyTitle === "Лига чемпионов") {
-                        $champLeagueClassHtmlRecordForTable = " champs-league";
+                        $addClassesForMainTableHtml = " champs-league";
                     }
 
+                }
+
+                elseif ($pageName === "russia") {
+                    $addClassesForMainTableHtml = " RUS";
                 }
 
             ?>
@@ -386,7 +391,7 @@
             <? endif; ?>
 
             <!-- Таблица: -->
-            <table class="main-table<?=$champLeagueClassHtmlRecordForTable?>">
+            <table class="main-table<?=$addClassesForMainTableHtml?>">
                 <tbody>
 
                 <? // Данные о логотипах
@@ -594,7 +599,7 @@
                                     $clubNamesWLongParts = [
                                         "Черноморец Новороссийск",
                                         "Днепр Днепропетровск",
-                                    ]
+                                    ];
                                 ?>
                                 <? if (($pageName === "russia") && (in_array($curClubInfo["basicFullName"], $clubNamesWLongParts))): ?>
                                     <?
