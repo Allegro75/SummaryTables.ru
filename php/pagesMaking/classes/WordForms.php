@@ -166,6 +166,9 @@ class WordForms
         } else { // Для большинства названий клубов
 
             if ($gender === "neuter") {
+                if ($word === "Унион Сент Жилуаз") {
+                    var_dump("ok");
+                }
                 return $word;
             }
 
