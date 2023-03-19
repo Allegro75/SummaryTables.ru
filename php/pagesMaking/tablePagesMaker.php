@@ -590,7 +590,23 @@
                             </td>
 
                             <td>
-                                <div class="club-name"><?=$curClubInfo["basicFullName"]?></div>
+                                <?
+                                    $clubNamesWLongParts = [
+                                        "Черноморец Новороссийск",
+                                        "Днепр Днепропетровск",
+                                    ]
+                                ?>
+                                <? if (($pageName === "russia") && (in_array($curClubInfo["basicFullName"], $clubNamesWLongParts))): ?>
+                                    <?
+                                        $clubNameArr = explode(" ", $curClubInfo["basicFullName"]);
+                                    ?>
+                                    <div class="club-name">
+                                        <?=$clubNameArr[0]?>
+                                        <span class="long-club-title"><?=$clubNameArr[1]?></span>
+                                    </div>
+                                <? else: ?>
+                                    <div class="club-name"><?=$curClubInfo["basicFullName"]?></div>
+                                <? endif; ?>
                             </td>
 
                             <? foreach ($tableInfo['clubsList'] as $curClubNameInTableBodyCycle => $innerCycleClubInfo): ?>
