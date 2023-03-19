@@ -897,7 +897,42 @@
 
                 </div>
 
-            <? endif; ?>            
+            <? endif; ?>
+            
+            <? if ($pageName === "russia"): // Республиканские таблицы ?>
+
+                <hr>
+
+                <section class="soviet-republics">
+
+                    <h3>
+                        РЕСПУБЛИКИ СССР
+                    </h3>
+
+                    <p class="table-explanation">
+                        Матчи до 1991 года
+                    </p>
+
+                    <?
+                        $sovietRepublicsInfo = [
+                            "ukraine" => [
+                                "h2" => "УКРАИНА",
+                            ],
+                            "georgia" => [
+                                "h2" => "ГРУЗИЯ",
+                            ],
+                            "lithuania" => [
+                                "h2" => "ЛИТВА",
+                            ],
+                            "armenia" => [
+                                "h2" => "АРМЕНИЯ",
+                            ],
+                        ];
+                    ?>
+
+                </section class="soviet-republics">
+
+            <? endif; ?> 
 
             <? if ($pageName !== "history36"): ?>
             <!--Кнопка СНИЗУ для переключения в ДУЭЛЬНЫЙ вид: -->
