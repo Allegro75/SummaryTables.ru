@@ -146,7 +146,15 @@ class WordForms
         $gender = $opts["gender"];
         $word = $opts["word"];
 
-        if ((mb_strpos($word, " ") !== false) && ($word !== "Црвена звезда") && ($word !== "Астон Вилла") && ($word !== "Реал Сосьедад")) { // Для названий типа "Боруссия Д", "Динамо К"
+        $specialCasesClubsNames = [
+            "Црвена звезда",
+            "Реал Сосьедад",
+            "Астон Вилла",
+            "Унион Сент Жилуаз",
+        ];
+
+        // if ((mb_strpos($word, " ") !== false) && ($word !== "Црвена звезда") && ($word !== "Астон Вилла") && ($word !== "Реал Сосьедад")) { // Для названий типа "Боруссия Д", "Динамо К"
+        if ((mb_strpos($word, " ") !== false) && (!(in_array($word, $specialCasesClubsNames)))) { // Для названий типа "Боруссия Д", "Динамо К"
 
             $clubNameWordsArr = explode(" ", $word);
             $justClubName = $clubNameWordsArr[0];
