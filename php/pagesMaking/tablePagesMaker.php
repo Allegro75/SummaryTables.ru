@@ -918,23 +918,52 @@
                             "ukraine" => [
                                 "h2" => "УКРАИНА",
                                 "reptableAddClassHtml" => " UKR",
+                                "code" => "UKR",
                             ],
                             "georgia" => [
                                 "h2" => "ГРУЗИЯ",
                                 "reptableAddClassHtml" => " georgia",
+                                "code" => "GEO",
                             ],
                             "lithuania" => [
                                 "h2" => "ЛИТВА",
                                 "reptableAddClassHtml" => " lithuania",
+                                "code" => "LTU",
                             ],
                             "armenia" => [
                                 "h2" => "АРМЕНИЯ",
                                 "reptableAddClassHtml" => " armenia",
+                                "code" => "ARM",
                             ],
                         ];
                     ?>
 
                     <? foreach ($sovietRepublicsInfo as $curRepublic): ?>
+
+                        <?
+                            // Получение данных для республиканских таблиц на странице СССР
+
+                            {
+
+                                // require_once 'classes/ActualCountryClubsList.php'; 
+                                // Получение списка клубов данной страны (для национальных страниц)
+                                // $actualCountryClubsListClass = new ActualCountryClubsList(["pathToRoot" => "../../"]);
+                                $actualRepublicClubsList = $actualCountryClubsListClass->getActualCountryClubsList (["countryCode" => $curRepublic["code"],]);
+                                echo "<pre>";
+                                var_dump($actualRepublicClubsList);
+                                echo "</pre>";
+          
+                            }
+
+                            // require_once 'tableInfo.php'; // Получение содержания таблицы
+                            // $tableInfo = getTableInfo (["clubsList" => $clubsList, "actualCountryClubsList" => $actualCountryClubsList ?? [],]);
+                            // echo "<pre>";
+                            // // var_dump($tableInfo);
+                            // // var_dump($tableInfo['actualCountryClubsList']);
+                            // // var_dump($tableInfo['clubsList']);
+                            // var_dump($tableInfo['pairsMatchesHistory']);
+                            // echo "</pre>";
+                        ?>                        
 
                         <h2>
                             <?= $curRepublic["h2"] ?>
@@ -945,7 +974,7 @@
 
                                 <tr class="logotypes">
 
-
+                                    <td colspan="3"></td>
                                 
                                 </tr>
 
