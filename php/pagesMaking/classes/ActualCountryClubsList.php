@@ -22,7 +22,8 @@ class ActualCountryClubsList
 
         $clubsList = $clubsNamesByIds = $clubsIds = [];
 
-        mysqli_report(MYSQLI_REPORT_ERROR);
+        // mysqli_report(MYSQLI_REPORT_ERROR);
+        // mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
         // Определяем все клубы актуальной страны:
         $sql =
@@ -30,7 +31,8 @@ class ActualCountryClubsList
             FROM `eurocups_clubs`
             WHERE `countryEngCode` = '{$countryCode}'
         ";
-        var_dump($sql);
+        // var_dump($sql);
+        var_dump(mysqli_query($this->db, $sql));
         if ($result = mysqli_query($this->db, $sql)) {
             // var_dump("ok_1");
             if (mysqli_num_rows($result) > 0) {
