@@ -32,11 +32,9 @@ class ActualCountryClubsList
             WHERE `countryEngCode` = '{$countryCode}'
         ";
         // var_dump($sql);
-        var_dump(mysqli_query($this->db, $sql));
+        // var_dump(mysqli_query($this->db, $sql));
         if ($result = mysqli_query($this->db, $sql)) {
-            // var_dump("ok_1");
             if (mysqli_num_rows($result) > 0) {
-                // var_dump("ok_2");
                 while ($row = mysqli_fetch_assoc($result)) {
                     // $clubsList[] = $row["basicFullName"];
                     $clubsNamesByIds[$row["id"]] = $row["basicFullName"];
