@@ -22,7 +22,7 @@ class ActualCountryClubsList
 
         $clubsList = $clubsNamesByIds = $clubsIds = [];
 
-        mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+        mysqli_report(MYSQLI_REPORT_ERROR);
 
         // Определяем все клубы актуальной страны:
         $sql =
