@@ -28,6 +28,7 @@ class ActualCountryClubsList
             FROM `eurocups_clubs`
             WHERE `countryEngCode` = '{$countryCode}'
         ";
+        var_dump($sql);
         if ($result = mysqli_query($this->db, $sql)) {
             if (mysqli_num_rows($result) > 0) {
                 while ($row = mysqli_fetch_assoc($result)) {
