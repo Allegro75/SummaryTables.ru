@@ -28,7 +28,7 @@ class ActualCountryClubsList
             FROM `eurocups_clubs`
             WHERE `countryEngCode` = '{$countryCode}'
         ";
-        var_dump($sql);
+        // var_dump($sql);
         if ($result = mysqli_query($this->db, $sql)) {
             if (mysqli_num_rows($result) > 0) {
                 while ($row = mysqli_fetch_assoc($result)) {
@@ -41,7 +41,7 @@ class ActualCountryClubsList
 
         if ( ! (empty($clubsIds)) ) { // Определяем число сезонов в еврокубках для каждого клуба:
 
-            foreach ($clubsIds as $curClubId) {           
+            foreach ($clubsIds as $curClubId) {
 
                 $sql =
                     "SELECT COUNT(DISTINCT(`tourneyFinalYear`)) AS `seasons`
@@ -49,6 +49,7 @@ class ActualCountryClubsList
                     WHERE `firstClubId` = {$curClubId}
                     OR `secondClubId` = {$curClubId}
                 ";
+                // var_dump($sql);
                 if ($result = mysqli_query($this->db, $sql)) {
                     if (mysqli_num_rows($result) > 0) {
                         while ($row = mysqli_fetch_assoc($result)) {
