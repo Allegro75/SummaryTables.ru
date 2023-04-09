@@ -948,7 +948,7 @@
                                 // require_once 'classes/ActualCountryClubsList.php'; 
                                 // Получение списка клубов данной страны (для национальных страниц)
                                 $actualCountryClubsListClass = new ActualCountryClubsList(["pathToRoot" => "../../"]);
-                                $actualRepublicClubsList = $actualCountryClubsListClass->getActualCountryClubsList (["countryCode" => $curRepublic["code"],]);
+                                $actualRepublicClubsList = $actualCountryClubsListClass->getActualCountryClubsList (["countryCode" => $curRepublic["code"], "lastYear" => 1992,]);
                                 echo "<pre>";
                                 var_dump($actualRepublicClubsList);
                                 echo "</pre>";

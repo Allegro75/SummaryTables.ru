@@ -19,6 +19,7 @@ class ActualCountryClubsList
     {
 
         $countryCode = $opts["countryCode"];
+        $lastYear = $opts["lastYear"] ?? "";
 
         $clubsList = $clubsNamesByIds = $clubsIds = [];
 
@@ -36,7 +37,6 @@ class ActualCountryClubsList
         if ($result = mysqli_query($this->db, $sql)) {
             if (mysqli_num_rows($result) > 0) {
                 while ($row = mysqli_fetch_assoc($result)) {
-                    // $clubsList[] = $row["basicFullName"];
                     $clubsNamesByIds[$row["id"]] = $row["basicFullName"];
                     $clubsIds[] = $row["id"];
                 }
@@ -46,6 +46,11 @@ class ActualCountryClubsList
 
         if ( ! (empty($clubsIds)) ) { // Определяем число сезонов в еврокубках для каждого клуба:
 
+            $lastYearClause = "";
+            if (!(empty($lastYear))) {
+                $lastYearClause = "AND `tourneyFinalYear` <= {$lastYear}";
+            }
+
             foreach ($clubsIds as $curClubId) {
 
                 $sql =
@@ -53,13 +58,16 @@ class ActualCountryClubsList
                     FROM `matches`
                     WHERE `firstClubId` = {$curClubId}
                     OR `secondClubId` = {$curClubId}
+                    {$lastYearClause}
                 ";
                 // var_dump($sql);
                 if ($result = mysqli_query($this->db, $sql)) {
                     if (mysqli_num_rows($result) > 0) {
                         while ($row = mysqli_fetch_assoc($result)) {
-                            $curClubName = $clubsNamesByIds[$curClubId];
-                            $clubsList[$curClubName]["seasons"] = $row["seasons"];
+                            if ($row["seasons"] > 0) {
+                                $curClubName = $clubsNamesByIds[$curClubId];
+                                $clubsList[$curClubName]["seasons"] = $row["seasons"];
+                            }
                         }
                     }
                 }
