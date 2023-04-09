@@ -22,6 +22,8 @@ class ActualCountryClubsList
 
         $clubsList = $clubsNamesByIds = $clubsIds = [];
 
+        mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+
         // Определяем все клубы актуальной страны:
         $sql =
             "SELECT `id`,`basicFullName`
@@ -30,9 +32,9 @@ class ActualCountryClubsList
         ";
         var_dump($sql);
         if ($result = mysqli_query($this->db, $sql)) {
-            var_dump("ok_1");
+            // var_dump("ok_1");
             if (mysqli_num_rows($result) > 0) {
-                var_dump("ok_1");
+                // var_dump("ok_2");
                 while ($row = mysqli_fetch_assoc($result)) {
                     // $clubsList[] = $row["basicFullName"];
                     $clubsNamesByIds[$row["id"]] = $row["basicFullName"];
