@@ -28,9 +28,11 @@ class ActualCountryClubsList
             FROM `eurocups_clubs`
             WHERE `countryEngCode` = '{$countryCode}'
         ";
-        // var_dump($sql);
+        var_dump($sql);
         if ($result = mysqli_query($this->db, $sql)) {
+            var_dump("ok_1");
             if (mysqli_num_rows($result) > 0) {
+                var_dump("ok_1");
                 while ($row = mysqli_fetch_assoc($result)) {
                     // $clubsList[] = $row["basicFullName"];
                     $clubsNamesByIds[$row["id"]] = $row["basicFullName"];
@@ -38,7 +40,7 @@ class ActualCountryClubsList
                 }
             }
         }
-        var_dump($clubsIds);
+        // var_dump($clubsIds);
 
         if ( ! (empty($clubsIds)) ) { // Определяем число сезонов в еврокубках для каждого клуба:
 
