@@ -258,7 +258,7 @@
 
                 <p class="captions__explanation">
                     <span class="captions__explanation_circle">&#8226;</span>                
-                        Учтены матчи до 16.03.2023 включительно
+                        Учтены матчи до 13.04.2023 включительно
                     <span class="captions__explanation_circle">&#8226;</span>
                 </p>  
             </section>  
