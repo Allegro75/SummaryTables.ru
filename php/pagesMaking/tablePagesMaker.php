@@ -566,12 +566,23 @@
                     <? foreach ($verticalClubsList as $curClubName => $curClubInfo): ?>
 
                         <?
+
                             if (in_array($pageName, ["byelorussia", "kazakhstan"])) {
                                 $prevStepClubHasHistory = true;
-                            }                                    
+                            }
+
+                            $dropoutClubsClass = "";
+                            if ($ranging === "bookmakers") {
+                                if (in_array($tourneyStage, ["1/2 финала", "ФИНАЛ"])) { // Определяем, не выбыл ли клуб из турнира
+                                    if (!(in_array($curClubInfo["id"], array_keys($actualStagePairs)))) {
+                                        $dropoutClubsClass = " dropout";
+                                    }
+                                }
+                            }
+                            
                         ?>                        
                         
-                        <tr class="<?=$curClubInfo['code']?>">
+                        <tr class="<?=$curClubInfo['code']?><?=$dropoutClubsClass?>">
 
                             <td class="number"><?=$rowNumber?></td>
 
