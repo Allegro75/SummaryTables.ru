@@ -87,9 +87,9 @@
         if ($ranging === "bookmakers") {
 
             if ($pageName === "champ_league_current") {
-                $bookmakersOddsDate = "20.04.2023";
+                $bookmakersOddsDate = "22.04.2023";
             } elseif ($pageName === "euroleague_current") {
-                $bookmakersOddsDate = "20.04.2023";
+                $bookmakersOddsDate = "22.04.2023";
             }
 
             if ($pageName === "champ_league_current") {
@@ -372,9 +372,9 @@
                     // Получение массива пар незавершённой стадии турнира:
                     {
                         $actualStagePairs = $matchesClass->getActualStagePairs(["tourneyTitle" => $tourneyTitle, "tourneyFinalYear" => $tourneyEndYear, "stage" => $tourneyStage,]);
-                        // echo "<pre>";
-                        // var_dump($actualStagePairs);
-                        // echo "</pre>";
+                        echo "<pre>";
+                        var_dump($actualStagePairs);
+                        echo "</pre>";
                     }
 
                     if ($tourneyTitle === "Лига чемпионов") {
