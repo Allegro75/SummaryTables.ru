@@ -372,9 +372,9 @@
                     // Получение массива пар незавершённой стадии турнира:
                     {
                         $actualStagePairs = $matchesClass->getActualStagePairs(["tourneyTitle" => $tourneyTitle, "tourneyFinalYear" => $tourneyEndYear, "stage" => $tourneyStage,]);
-                        echo "<pre>";
-                        var_dump($actualStagePairs);
-                        echo "</pre>";
+                        // echo "<pre>";
+                        // var_dump($actualStagePairs);
+                        // echo "</pre>";
                     }
 
                     if ($tourneyTitle === "Лига чемпионов") {
@@ -571,11 +571,13 @@
                                 $prevStepClubHasHistory = true;
                             }
 
-                            $dropoutClubsClass = "";
+                            $dropoutClubsClass = "";                            
                             if ($ranging === "bookmakers") {
+                                $clubDroppedOut = false;
                                 if (in_array($tourneyStage, ["1/2 финала", "ФИНАЛ"])) { // Определяем, не выбыл ли клуб из турнира
                                     if (!(in_array($curClubInfo["id"], array_keys($actualStagePairs)))) {
                                         $dropoutClubsClass = " dropout";
+                                        $clubDroppedOut = true;
                                     }
                                 }
                             }
@@ -858,11 +860,17 @@
                                     $curClubOdds = $clubsList[$curClubInfo["basicFullName"]]["odds"];
                                 ?>                                
 
-                                <td class="main-table_criterion" title="<?=$curClubInfo["shortName"]?>: <?=$curClubOdds?>. Шансы от <?=$bookmakersOddsDate?>">
-                                    <span class="main-table_criterion">
-                                        <?=$curClubOdds?>
-                                    </span>
-                                </td>
+                                <? if ($clubDroppedOut === false): ?>
+                                    <td class="main-table_criterion" title="<?=$curClubInfo["shortName"]?>: <?=$curClubOdds?>. Шансы от <?=$bookmakersOddsDate?>">
+                                        <span class="main-table_criterion">
+                                            <?=$curClubOdds?>
+                                        </span>
+                                    </td>
+                                <? elseif ($clubDroppedOut === true): ?>
+                                    <td class="main-table_criterion">
+                                    </td>
+                                <? endif; ?>
+
                             <? elseif ($ranging === "national"): ?>
 
                                 <?
