@@ -399,16 +399,16 @@ class TablePagesProperties {
             //     Знаком <img src=\"images/screamer_brown.png\" alt=\"1/8 финала\" class=\"screamer\"> отмечены соперники по 1/8 финала текущего розыгрыша                  
             //     <span class=\"captions__explanation_circle\">&#8226;</span>
             // </p>",
-            "screamerParagraph" => "<p class=\"captions__explanation\">
-                <span class=\"captions__explanation_circle\">&#8226;</span>
-                Знаком <img src=\"images/screamer_brown.png\" alt=\"1/4 финала\" class=\"screamer\"> отмечены соперники по 1/4 финала текущего розыгрыша                  
-                <span class=\"captions__explanation_circle\">&#8226;</span>
-            </p>",
             // "screamerParagraph" => "<p class=\"captions__explanation\">
             //     <span class=\"captions__explanation_circle\">&#8226;</span>
-            //     Знаком <img src=\"images/screamer_brown.png\" alt=\"1/2 финала\" class=\"screamer\"> отмечены соперники по 1/2 финала текущего розыгрыша                  
+            //     Знаком <img src=\"images/screamer_brown.png\" alt=\"1/4 финала\" class=\"screamer\"> отмечены соперники по 1/4 финала текущего розыгрыша                  
             //     <span class=\"captions__explanation_circle\">&#8226;</span>
             // </p>",
+            "screamerParagraph" => "<p class=\"captions__explanation\">
+                <span class=\"captions__explanation_circle\">&#8226;</span>
+                Знаком <img src=\"images/screamer_brown.png\" alt=\"1/2 финала\" class=\"screamer\"> отмечены соперники по 1/2 финала текущего розыгрыша                  
+                <span class=\"captions__explanation_circle\">&#8226;</span>
+            </p>",
             // "screamerParagraph" => "<p class=\"captions__explanation\">
             //     <span class=\"captions__explanation_circle\">&#8226;</span>
             //     Знаком <img src=\"images/screamer_brown.png\" alt=\"ФИНАЛ\" class=\"screamer\"> отмечены соперники по финалу текущего розыгрыша                  
@@ -473,11 +473,11 @@ class TablePagesProperties {
             //     Знаком <img src=\"images/screamer_brown.png\" alt=\"1/8 финала\" class=\"screamer\"> отмечены соперники по 1/8 финала текущего розыгрыша                  
             //     <span class=\"captions__explanation_circle\">&#8226;</span>
             // </p>",
-            "screamerParagraph" => "<p class=\"captions__explanation\">
-                <span class=\"captions__explanation_circle\">&#8226;</span>
-                Знаком <img src=\"images/screamer_brown.png\" alt=\"1/4 финала\" class=\"screamer\"> отмечены соперники по 1/4 финала текущего розыгрыша                  
-                <span class=\"captions__explanation_circle\">&#8226;</span>
-            </p>",
+            // "screamerParagraph" => "<p class=\"captions__explanation\">
+            //     <span class=\"captions__explanation_circle\">&#8226;</span>
+            //     Знаком <img src=\"images/screamer_brown.png\" alt=\"1/4 финала\" class=\"screamer\"> отмечены соперники по 1/4 финала текущего розыгрыша
+            //     <span class=\"captions__explanation_circle\">&#8226;</span>
+            // </p>",
             // "screamerParagraph" => "<p class=\"captions__explanation\">
             //     <span class=\"captions__explanation_circle\">&#8226;</span>
             //     Знаком <img src=\"images/screamer_brown.png\" alt=\"1/2 финала\" class=\"screamer\"> отмечены соперники по 1/2 финала текущего розыгрыша                  

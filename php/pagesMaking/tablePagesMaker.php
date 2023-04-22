@@ -79,7 +79,7 @@
         // Нужно ещё поработать над определением переменной $seasonIsFinished, от к-рой зависит появление заголовка типа "Таблица обновлена по итогам сезона"
         // А, может быть, она и вовсе не нужна (если уж, как выясняется, нац. таблицы могут обновляться независимо от участия нац. команд в еврокубках)
 
-        $lastAccountedMatchDate = "13.04.2023";
+        $lastAccountedMatchDate = "20.04.2023";
 
         // При изменении букмекерской котировки, на к-рую мы ориентируемся, для таблиц с фаворитами текущих турниров:
         // - в classes/TablePagesProperties.php определить число в bookmakersParagraph (на число, совпадающее с новой $bookmakersOddsDate)
@@ -87,21 +87,23 @@
         if ($ranging === "bookmakers") {
 
             if ($pageName === "champ_league_current") {
-                $bookmakersOddsDate = "18.03.2023";
+                $bookmakersOddsDate = "20.04.2023";
             } elseif ($pageName === "euroleague_current") {
-                $bookmakersOddsDate = "18.03.2023";
+                $bookmakersOddsDate = "20.04.2023";
             }
 
             if ($pageName === "champ_league_current") {
                 $tourneyTitle = "Лига чемпионов";
                 // $tourneyStage = "1/8 финала";
-                $tourneyStage = "1/4 финала";
+                // $tourneyStage = "1/4 финала";
+                $tourneyStage = "1/2 финала";
             }
             elseif ($pageName === "euroleague_current") {
                 $tourneyTitle = "Лига Европы";
                 // $tourneyStage = "1/16 финала";
                 // $tourneyStage = "1/8 финала";
-                $tourneyStage = "1/4 финала";
+                // $tourneyStage = "1/4 финала";
+                $tourneyStage = "1/2 финала";
             }
 
         }
@@ -137,17 +139,17 @@
 
             elseif ($pageName === "champ_league_current") {
                 $clubsList = [
-                    "Манчестер Сити" => ["odds" => 3.7,],
+                    "Манчестер Сити" => ["odds" => 1.75,],
                     "Бавария" => ["odds" => 4.5,],
                     "Наполи" => ["odds" => 4.5,],
                     // "Пари Сен-Жермен" => ["odds" => 10,],
                     // "Ливерпуль" => ["odds" => 10,],
-                    "Реал Мадрид" => ["odds" => 6,],                    
+                    "Реал Мадрид" => ["odds" => 4.5,],                    
                     "Челси" => ["odds" => 15,],
                     // "Тоттенхэм Хотспур" => ["odds" => 20,],
                     "Бенфика" => ["odds" => 15,],
-                    "Интер Милан" => ["odds" => 15,],
-                    "Милан" => ["odds" => 25,],
+                    "Интер Милан" => ["odds" => 7.5,],
+                    "Милан" => ["odds" => 9,],
                     // "Боруссия Дортмунд" => ["odds" => 50,],
                     // "Порто" => ["odds" => 75,],
                     // "РБ Лейпциг" => ["odds" => 100,],            
@@ -159,10 +161,10 @@
             elseif ($pageName === "euroleague_current") {
                 $clubsList = [
                     "Манчестер Юнайтед" => ["odds" => 2.4,],
-                    "Ювентус" => ["odds" => 6,],
-                    "Рома" => ["odds" => 7,],             
-                    "Севилья" => ["odds" => 10,],
-                    "Байер Леверкузен" => ["odds" => 10,],
+                    "Ювентус" => ["odds" => 2.9,],
+                    "Рома" => ["odds" => 3.7,],             
+                    "Севилья" => ["odds" => 4.5,],
+                    "Байер Леверкузен" => ["odds" => 4,],
                     "Спортинг Лиссабон" => ["odds" => 13,],     
                     "Фейеноорд" => ["odds" => 17,],     
                     "Унион Сент Жилуаз" => ["odds" => 35,],     
