@@ -181,16 +181,39 @@
                             </ul>
                         </li>
 
-                        <li class="nav__stripe__list__item  decade">
-                            <a href="decade.html"
+                        <!-- <li class="nav__stripe__list__item  decade">
+                            <a href="../../decade.html"
                                 title="24 лучших клуба десятилетия (2014-2023). Личные встречи. Сводная таблица">
                                 <div class="nav__icon decade">
-                                    <!-- <img src="./images/ten.png" alt="десятилетие" class="nav__icon decade nav__icon_yellow">
-                                    <img src="./images/ten_black.png" alt="десятилетие"
-                                    class="nav__icon decade nav__icon_black"> -->
                                 </div>
                                 Десятилетие
                             </a>
+                        </li> -->
+
+                        <li class="nav__stripe__list__item  dropdown  decade">
+
+                            <a href="../../5years.html"
+                                title="Лучшие клубы Европы последних лет. Личные встречи. Сводная таблица">
+                                <div class="nav__icon decade">
+                                </div>
+                                Актуальные периоды
+                            </a>
+
+                            <ul class="nav__stripe__list__item__droplist">
+
+                                <li class="nav__stripe__list__item__droplist__item">
+                                    <a href="../../decade.html" title="24 лучших клуба десятилетия (2014-2023). Личные встречи. Сводная таблица">
+                                        Десятилетие
+                                    </a>
+                                </li>
+
+                                <li class="nav__stripe__list__item__droplist__item">
+                                    <a href="../../5years.html" title="24 лучших клуба пятилетки (2019-2023). Личные встречи. Сводная таблица">
+                                        Пятилетка
+                                    </a>
+                                </li>
+
+                            </ul>
                         </li>
 
                         <li class="nav__stripe__list__item  range">
