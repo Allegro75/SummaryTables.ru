@@ -391,7 +391,7 @@ class TablePagesProperties {
                 <a href=\"archive/champ_league/cl_2023.html\" title=\"Лига чемпионов 2022/2023. Ход турнира\">ЛИГИ ЧЕМПИОНОВ 2022/2023</a>",
             "bookmakersParagraph" => "<p class=\"captions__explanation\">
                 <span class=\"captions__explanation_circle\">&#8226;</span>
-                Указаны букмекерские коэффициенты от 22.04.2023
+                Указаны букмекерские коэффициенты от 20.05.2023
                 <span class=\"captions__explanation_circle\">&#8226;</span>
             </p>",
             // "screamerParagraph" => "<p class=\"captions__explanation\">
@@ -404,16 +404,16 @@ class TablePagesProperties {
             //     Знаком <img src=\"images/screamer_brown.png\" alt=\"1/4 финала\" class=\"screamer\"> отмечены соперники по 1/4 финала текущего розыгрыша                  
             //     <span class=\"captions__explanation_circle\">&#8226;</span>
             // </p>",
-            "screamerParagraph" => "<p class=\"captions__explanation\">
-                <span class=\"captions__explanation_circle\">&#8226;</span>
-                Знаком <img src=\"images/screamer_brown.png\" alt=\"1/2 финала\" class=\"screamer\"> отмечены соперники по 1/2 финала текущего розыгрыша                  
-                <span class=\"captions__explanation_circle\">&#8226;</span>
-            </p>",
             // "screamerParagraph" => "<p class=\"captions__explanation\">
             //     <span class=\"captions__explanation_circle\">&#8226;</span>
-            //     Знаком <img src=\"images/screamer_brown.png\" alt=\"ФИНАЛ\" class=\"screamer\"> отмечены соперники по финалу текущего розыгрыша                  
+            //     Знаком <img src=\"images/screamer_brown.png\" alt=\"1/2 финала\" class=\"screamer\"> отмечены соперники по 1/2 финала текущего розыгрыша                  
             //     <span class=\"captions__explanation_circle\">&#8226;</span>
             // </p>",
+            "screamerParagraph" => "<p class=\"captions__explanation\">
+                <span class=\"captions__explanation_circle\">&#8226;</span>
+                Знаком <img src=\"images/screamer_brown.png\" alt=\"ФИНАЛ\" class=\"screamer\"> отмечены соперники по финалу текущего розыгрыша                  
+                <span class=\"captions__explanation_circle\">&#8226;</span>
+            </p>",
             // "finishedTourneyParagraph" => 
             //     "<p class=\"captions__explanation\">
             //     <span class=\"captions__explanation_circle\">&#8226;</span>
@@ -459,7 +459,7 @@ class TablePagesProperties {
 
             "bookmakersParagraph" => "<p class=\"captions__explanation\">
                 <span class=\"captions__explanation_circle\">&#8226;</span>
-                Указаны букмекерские коэффициенты от 22.04.2023
+                Указаны букмекерские коэффициенты от 20.05.2023
                 <span class=\"captions__explanation_circle\">&#8226;</span>
             </p>",
 
@@ -483,11 +483,11 @@ class TablePagesProperties {
             //     Знаком <img src=\"images/screamer_brown.png\" alt=\"1/2 финала\" class=\"screamer\"> отмечены соперники по 1/2 финала текущего розыгрыша                  
             //     <span class=\"captions__explanation_circle\">&#8226;</span>
             // </p>",
-            // "screamerParagraph" => "<p class=\"captions__explanation\">
-            //     <span class=\"captions__explanation_circle\">&#8226;</span>
-            //     Знаком <img src=\"images/screamer_brown.png\" alt=\"ФИНАЛ\" class=\"screamer\"> отмечены соперники по финалу текущего розыгрыша                  
-            //     <span class=\"captions__explanation_circle\">&#8226;</span>
-            // </p>",
+            "screamerParagraph" => "<p class=\"captions__explanation\">
+                <span class=\"captions__explanation_circle\">&#8226;</span>
+                Знаком <img src=\"images/screamer_brown.png\" alt=\"ФИНАЛ\" class=\"screamer\"> отмечены соперники по финалу текущего розыгрыша                  
+                <span class=\"captions__explanation_circle\">&#8226;</span>
+            </p>",
             // "finishedTourneyParagraph" => 
             //     "<p class=\"captions__explanation\">
             //     <span class=\"captions__explanation_circle\">&#8226;</span>

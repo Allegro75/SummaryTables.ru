@@ -79,7 +79,7 @@
         // Нужно ещё поработать над определением переменной $seasonIsFinished, от к-рой зависит появление заголовка типа "Таблица обновлена по итогам сезона"
         // А, может быть, она и вовсе не нужна (если уж, как выясняется, нац. таблицы могут обновляться независимо от участия нац. команд в еврокубках)
 
-        $lastAccountedMatchDate = "11.05.2023";
+        $lastAccountedMatchDate = "18.05.2023";
 
         // При изменении букмекерской котировки, на к-рую мы ориентируемся, для таблиц с фаворитами текущих турниров:
         // - в classes/TablePagesProperties.php определить число в bookmakersParagraph (на число, совпадающее с новой $bookmakersOddsDate)
@@ -87,23 +87,25 @@
         if ($ranging === "bookmakers") {
 
             if ($pageName === "champ_league_current") {
-                $bookmakersOddsDate = "22.04.2023";
+                $bookmakersOddsDate = "20.05.2023";
             } elseif ($pageName === "euroleague_current") {
-                $bookmakersOddsDate = "22.04.2023";
+                $bookmakersOddsDate = "20.05.2023";
             }
 
             if ($pageName === "champ_league_current") {
                 $tourneyTitle = "Лига чемпионов";
                 // $tourneyStage = "1/8 финала";
                 // $tourneyStage = "1/4 финала";
-                $tourneyStage = "1/2 финала";
+                // $tourneyStage = "1/2 финала";
+                $tourneyStage = "Финал";
             }
             elseif ($pageName === "euroleague_current") {
                 $tourneyTitle = "Лига Европы";
                 // $tourneyStage = "1/16 финала";
                 // $tourneyStage = "1/8 финала";
                 // $tourneyStage = "1/4 финала";
-                $tourneyStage = "1/2 финала";
+                // $tourneyStage = "1/2 финала";
+                $tourneyStage = "Финал";
             }
 
         }
@@ -140,9 +142,9 @@
             // Здесь важен порядок клубов
             elseif ($pageName === "champ_league_current") {
                 $clubsList = [
-                    "Манчестер Сити" => ["odds" => 1.75,],
-                    "Реал Мадрид" => ["odds" => 4.5,],
-                    "Интер Милан" => ["odds" => 7.5,],
+                    "Манчестер Сити" => ["odds" => 1.22,],
+                    "Интер Милан" => ["odds" => 4.3,],
+                    "Реал Мадрид" => ["odds" => 4.5,],                    
                     "Милан" => ["odds" => 9,],                    
                     "Бавария" => ["odds" => 4.5,],
                     "Наполи" => ["odds" => 4.5,],
@@ -162,10 +164,11 @@
             // Здесь важен порядок клубов
             elseif ($pageName === "euroleague_current") {
                 $clubsList = [                    
+                    
+                    "Севилья" => ["odds" => 1.88,], 
+                    "Рома" => ["odds" => 1.93,],
                     "Ювентус" => ["odds" => 2.9,],
-                    "Рома" => ["odds" => 3.7,],
-                    "Байер Леверкузен" => ["odds" => 4,],       
-                    "Севилья" => ["odds" => 4.5,],                    
+                    "Байер Леверкузен" => ["odds" => 4,],                                       
                     "Манчестер Юнайтед" => ["odds" => 2.4,],
                     "Спортинг Лиссабон" => ["odds" => 13,],     
                     "Фейеноорд" => ["odds" => 17,],     
