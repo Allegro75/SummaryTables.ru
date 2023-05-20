@@ -260,7 +260,7 @@
     <link rel="shortcut icon" href="images/football_ball.svg" type="image/x-icon">
     <title><?=$browserTitle?></title>
     <? foreach($cssFilesList as $curFileName): ?>
-        <? if (($pageName === "champ_league_current") && ($curFileName === "table16.css") && (in_array($tourneyStage, ["1/4 финала", "1/2 финала", "Финал"]))): ?>
+        <? if (($pageName === "champ_league_current") && ($curFileName === "table16.css") && (in_array($tourneyStage, ["1/4 финала", "1/2 финала", "ФИНАЛ", "Финал"]))): ?>
             <link rel="stylesheet" href="http://summarytables.ru/stylesheets/table8.css">
         <? else: ?>
             <link rel="stylesheet" href="http://summarytables.ru/stylesheets/<?=$curFileName?>">
