@@ -97,7 +97,7 @@
                 // $tourneyStage = "1/8 финала";
                 // $tourneyStage = "1/4 финала";
                 // $tourneyStage = "1/2 финала";
-                $tourneyStage = "Финал";
+                $tourneyStage = "ФИНАЛ";
             }
             elseif ($pageName === "euroleague_current") {
                 $tourneyTitle = "Лига Европы";
@@ -105,7 +105,7 @@
                 // $tourneyStage = "1/8 финала";
                 // $tourneyStage = "1/4 финала";
                 // $tourneyStage = "1/2 финала";
-                $tourneyStage = "Финал";
+                $tourneyStage = "ФИНАЛ";
             }
 
         }
