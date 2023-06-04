@@ -5,9 +5,9 @@
 
     { // Переменные, нуждающиеся в ручном определении перед генерацией таблицы. Часть 1 (из двух).
 
-        $pageName = "history12";
+        // $pageName = "history12";
         // $pageName = "history24";
-        // $pageName = "history36";
+        $pageName = "history36";
         // $pageName = "winners";
         // $pageName = "champ_league_current";
         // $pageName = "euroleague_current";
@@ -79,7 +79,7 @@
         // Нужно ещё поработать над определением переменной $seasonIsFinished, от к-рой зависит появление заголовка типа "Таблица обновлена по итогам сезона"
         // А, может быть, она и вовсе не нужна (если уж, как выясняется, нац. таблицы могут обновляться независимо от участия нац. команд в еврокубках)
 
-        $lastAccountedMatchDate = "18.05.2023";
+        $lastAccountedMatchDate = "31.05.2023";
 
         // При изменении букмекерской котировки, на к-рую мы ориентируемся, для таблиц с фаворитами текущих турниров:
         // - в classes/TablePagesProperties.php определить число в bookmakersParagraph (на число, совпадающее с новой $bookmakersOddsDate)
