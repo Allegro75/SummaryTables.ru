@@ -8,8 +8,8 @@
         // $pageName = "history12";
         // $pageName = "history24";
         // $pageName = "history36";
-        // $pageName = "winners";
-        $pageName = "champ_league_current";
+        $pageName = "winners";
+        // $pageName = "champ_league_current";
         // $pageName = "euroleague_current";
         // $pageName = "decade";
         // $pageName = "5years";
@@ -127,6 +127,7 @@
                     "Челси" => ["wins" => 2, "finals" => 1],
                     "Порто" => ["wins" => 2, "finals" => 0],   
                     "Ноттингем Форест" => ["wins" => 2, "finals" => 0],
+                    "Манчестер Сити" => ["wins" => 1, "finals" => 1],
                     "Боруссия Дортмунд" => ["wins" => 1, "finals" => 1],
                     "Олимпик Марсель" => ["wins" => 1, "finals" => 1],
                     "Стяуа" => ["wins" => 1, "finals" => 1],
