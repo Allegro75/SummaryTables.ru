@@ -131,7 +131,7 @@
                                 </li>
                                 <li class="nav__stripe__list__item__droplist__item">
                                     <a href="../../winners.html"
-                                        title="Все 22 победителя Лиги/кубка чемпионов всех лет">
+                                        title="Все 23 победителя Лиги/кубка чемпионов всех лет">
                                         Победители ЛЧ
                                     </a>
                                 </li>

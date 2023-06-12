@@ -298,7 +298,7 @@ class TablePagesProperties {
         "winners" => [
             "clubsNumberPhrase" => "Все победители кубка (Лиги) чемпионов за всю историю.",
             "clubsNumberPhraseLastPart" => "клуба-победителя кубка/лиги чемпионов всех лет",
-            "clubsNumber" => "22",
+            "clubsNumber" => "23",
             "browserTitle" => "Победители ЛЧ. Личные счета суперклубов. Сводная таблица",
             "cssFilesList" => [
                 "football__body.css",
