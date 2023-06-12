@@ -9,9 +9,9 @@
         // $pageName = "history24";
         // $pageName = "history36";
         // $pageName = "winners";
-        // $pageName = "champ_league_current";
+        $pageName = "champ_league_current";
         // $pageName = "euroleague_current";
-        $pageName = "decade";
+        // $pageName = "decade";
         // $pageName = "5years";
 
     }
